@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FDFF244F1A1800190088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFE244F1A1800190088 /* SceneDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
-		1039FE04244F1A1800190088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE02244F1A1800190088 /* Main.storyboard */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
 		1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE07244F1A1A00190088 /* LaunchScreen.storyboard */; };
+		1039FE11244F20A900190088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE10244F20A900190088 /* Main.storyboard */; };
+		1039FE17244F25E100190088 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE16244F25E100190088 /* LoginViewController.swift */; };
+		1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE1F244F33A100190088 /* ApiConstsant.swift */; };
+		1039FE43244F608100190088 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE42244F608100190088 /* Logger.swift */; };
+		1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE44244F6C1F00190088 /* Guest.storyboard */; };
+		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +25,22 @@
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FDFE244F1A1800190088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1039FE03244F1A1800190088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1039FE05244F1A1A00190088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1039FE08244F1A1A00190088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1039FE0A244F1A1A00190088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1039FE10244F20A900190088 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1039FE16244F25E100190088 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1039FE1F244F33A100190088 /* ApiConstsant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstsant.swift; sourceTree = "<group>"; };
+		1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigQA.xcconfig; sourceTree = "<group>"; };
+		1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigAppStore.xcconfig; sourceTree = "<group>"; };
+		1039FE42244F608100190088 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		1039FE44244F6C1F00190088 /* Guest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guest.storyboard; sourceTree = "<group>"; };
+		1C85763EA134529E65BC648C /* Pods-EvolveGT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
+		73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.appstore.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.appstore.xcconfig"; sourceTree = "<group>"; };
+		9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolveGT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE86EE90B82E53ECE2138B49 /* Pods-EvolveGT-iOS.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.qa.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.qa.xcconfig"; sourceTree = "<group>"; };
+		FEF52093E7F1FBFC66BA6E5A /* Pods-EvolveGT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,8 @@
 			children = (
 				1039FDFB244F1A1800190088 /* EvolveGT-iOS */,
 				1039FDFA244F1A1800190088 /* Products */,
+				B25958DA9322864B0E791DD4 /* Pods */,
+				9618B72B430B35C33B2F4B05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +76,161 @@
 		1039FDFB244F1A1800190088 /* EvolveGT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE41244F607000190088 /* Logger */,
+				1039FE3A244F5C9B00190088 /* Config */,
+				1039FE19244F332F00190088 /* Network */,
+				1039FE18244F332700190088 /* Model */,
+				1039FE12244F25A100190088 /* Features */,
 				1039FDFC244F1A1800190088 /* AppDelegate.swift */,
 				1039FDFE244F1A1800190088 /* SceneDelegate.swift */,
 				1039FE00244F1A1800190088 /* ViewController.swift */,
-				1039FE02244F1A1800190088 /* Main.storyboard */,
 				1039FE05244F1A1A00190088 /* Assets.xcassets */,
 				1039FE07244F1A1A00190088 /* LaunchScreen.storyboard */,
 				1039FE0A244F1A1A00190088 /* Info.plist */,
 			);
 			path = "EvolveGT-iOS";
+			sourceTree = "<group>";
+		};
+		1039FE12244F25A100190088 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE46244F6C3000190088 /* Guest */,
+				1039FE13244F25AA00190088 /* Login */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		1039FE13244F25AA00190088 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE15244F25C700190088 /* View */,
+				1039FE14244F25B000190088 /* Controllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1039FE14244F25B000190088 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE16244F25E100190088 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1039FE15244F25C700190088 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE10244F20A900190088 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1039FE18244F332700190088 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1039FE19244F332F00190088 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE1E244F337B00190088 /* Adapter */,
+				1039FE1D244F336900190088 /* Api */,
+				1039FE1A244F333900190088 /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1039FE1A244F333900190088 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE1C244F334D00190088 /* Response */,
+				1039FE1B244F334300190088 /* Request */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1039FE1B244F334300190088 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		1039FE1C244F334D00190088 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		1039FE1D244F336900190088 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE1F244F33A100190088 /* ApiConstsant.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		1039FE1E244F337B00190088 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		1039FE3A244F5C9B00190088 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */,
+				1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		1039FE41244F607000190088 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE42244F608100190088 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		1039FE46244F6C3000190088 /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE47244F6C3F00190088 /* View */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		1039FE47244F6C3F00190088 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE44244F6C1F00190088 /* Guest.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9618B72B430B35C33B2F4B05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B25958DA9322864B0E791DD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C85763EA134529E65BC648C /* Pods-EvolveGT-iOS.debug.xcconfig */,
+				FEF52093E7F1FBFC66BA6E5A /* Pods-EvolveGT-iOS.release.xcconfig */,
+				AE86EE90B82E53ECE2138B49 /* Pods-EvolveGT-iOS.qa.xcconfig */,
+				73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */,
+				6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1039FE0D244F1A1A00190088 /* Build configuration list for PBXNativeTarget "EvolveGT-iOS" */;
 			buildPhases = (
+				3B97CC3DE3479C6F4B04BED5 /* [CP] Check Pods Manifest.lock */,
 				1039FDF5244F1A1800190088 /* Sources */,
 				1039FDF6244F1A1800190088 /* Frameworks */,
 				1039FDF7244F1A1800190088 /* Resources */,
+				CE4547EC993031543E6414C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +295,64 @@
 			files = (
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
-				1039FE04244F1A1800190088 /* Main.storyboard in Resources */,
+				1039FE11244F20A900190088 /* Main.storyboard in Resources */,
+				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B97CC3DE3479C6F4B04BED5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvolveGT-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE4547EC993031543E6414C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1039FDF5244F1A1800190088 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
+				1039FE43244F608100190088 /* Logger.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
+				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				1039FDFF244F1A1800190088 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +361,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1039FE02244F1A1800190088 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1039FE03244F1A1800190088 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1039FE07244F1A1A00190088 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +488,7 @@
 		};
 		1039FE0E244F1A1A00190088 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C85763EA134529E65BC648C /* Pods-EvolveGT-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,15 +498,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS.debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		1039FE0F244F1A1A00190088 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEF52093E7F1FBFC66BA6E5A /* Pods-EvolveGT-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,10 +519,164 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		1039FE3D244F5D0000190088 /* QA */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = QA;
+		};
+		1039FE3E244F5D0000190088 /* QA */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE86EE90B82E53ECE2138B49 /* Pods-EvolveGT-iOS.qa.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS.debug";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = QA;
+		};
+		1039FE3F244F5D0C00190088 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		1039FE40244F5D0C00190088 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = AppStore;
 		};
 /* End XCBuildConfiguration section */
 
@@ -323,7 +685,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1039FE0B244F1A1A00190088 /* Debug */,
+				1039FE3D244F5D0000190088 /* QA */,
 				1039FE0C244F1A1A00190088 /* Release */,
+				1039FE3F244F5D0C00190088 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -332,7 +696,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1039FE0E244F1A1A00190088 /* Debug */,
+				1039FE3E244F5D0000190088 /* QA */,
 				1039FE0F244F1A1A00190088 /* Release */,
+				1039FE40244F5D0C00190088 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
