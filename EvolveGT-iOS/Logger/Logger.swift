@@ -32,7 +32,7 @@ enum LogEvent: String {
 ///
 /// - Parameter object: The object which is to be logged
 ///
-func print(_ object: Any) {
+func print(_ object: Any...) {
     // Only allowing in DEBUG mode
     #if DEBUG
     Swift.print(object)

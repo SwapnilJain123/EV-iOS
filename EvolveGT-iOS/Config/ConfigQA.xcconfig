@@ -9,5 +9,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 APP_NAME=QA
-BASE_URL=https:\/\/evolvegt.webeteerprojects.com
+BASE_URL=evolvegt.webeteerprojects.com
 LOG_ENABLED=YES

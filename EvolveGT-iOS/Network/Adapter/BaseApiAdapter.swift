@@ -1,0 +1,154 @@
+//
+//  BaseApiAdapter.swift
+//  EvolveGT-iOS
+//
+//  Created by Subair Ariyil on 22/04/20.
+//  Copyright © 2020 YaraTech. All rights reserved.
+//
+
+import Foundation
+
+
+class BaseApiAdapter{
+    
+    enum Method{
+        case GET
+        case POST
+    }
+    
+    var completionHandler : ((Any?, ApiError?) -> Void)? = nil
+    
+    var requestBody : Data?
+    private let apiClient = ApiClient.sharedInstance
+    
+    
+    init(){
+        apiClient.addHeader(key: "Content-Type", value: "application/json")
+    }
+    
+    func setUrl(url : String){
+        apiClient.urlString = url
+    }
+    
+    func setParameters(parameters : [String: Any]){
+        apiClient.replaceParameter(parameters: parameters)
+    }
+    
+    func postDecodedResponse(_ jsonResponse: Data){
+        
+    }
+    
+    func didFail(error: ApiError) {
+        Log.e(error)
+    }
+    
+    
+    private func doPost(){
+        apiClient.doPost(completionHandler: didFinishTask(data:error:))
+    }
+    
+    private func doGet(){
+        apiClient.doGet(completionHandler: didFinishTask(data:error:))
+    }
+    
+    func makeRequest(method: Method){
+        
+        Log.i(apiClient.urlString)
+        
+        switch method {
+        case .GET:
+            doGet()
+        case .POST:
+            doPost()
+        }
+    }
+}
+extension BaseApiAdapter{
+    func didFinishTask(data: Data?, error : ApiError?) -> Void{
+        
+        if(error != nil){
+            didFail(error: error!)
+        }else{
+            if let safeData = data{
+                let decoder = JSONDecoder()
+                do{
+                    let etResponse = try decoder.decode(ETResponse.self, from: safeData)
+                    if etResponse.status == 1{
+                        postDecodedResponse(safeData)
+                    }else{
+                        
+                        var error = ApiError()
+                        error.errorCode = etResponse.status
+                        error.errorMessage = etResponse.msg ?? ApiError.ERROR_GENERIC_MESSAGE
+                        didFail(error: error)
+                    }
+                    
+                }catch{
+                    var error = ApiError()
+                    error.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                    didFail(error: error)
+                }
+            }
+        }
+        
+    }
+    
+    func makeJSONData<T: Encodable>(_ value: T) -> Data {
+        Log.d("Dictonary - \(makeDictionary(value))")
+        var jsonData = Data()
+        var encodedData = Data()
+        let jsonEncoder = JSONEncoder()
+        // jsonEncoder.outputFormatting = .prettyPrinted
+        
+        do {
+            jsonData = try jsonEncoder.encode(value)
+            let data = String(data: jsonData, encoding: .utf8)?
+                .data(using: String.Encoding.utf8, allowLossyConversion: false)!
+            
+            let dataText = String(data: data!, encoding: .utf8)
+            print("Encoded Json - \(String(describing: dataText))")
+            encodedData = dataText!.data(using: .utf8) ?? Data()
+            
+        }
+        catch {
+            Log.e("Json encode error")
+        }
+        return encodedData
+    }
+    
+    func decodeFromJson<T: Decodable>(_ data: Data, modelType: T.Type) -> T? {
+           
+        var decoded : T?
+        let decoder = JSONDecoder()
+        do{
+             decoded = try decoder.decode(modelType, from: data)
+        }catch{
+            Log.e("Json Decode error")
+        }
+    
+        return decoded
+    }
+    
+    func makeDictionary<T: Encodable>(_ value: T) -> [String: Any]{
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(value)
+            let data = String(data: jsonData, encoding: .utf8)?
+                .data(using: String.Encoding.utf8, allowLossyConversion: false)!
+            
+            if let dataText = data {
+                do {
+                    return try (JSONSerialization.jsonObject(with: dataText, options: []) as? [String: Any])!
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+            
+        } catch {
+            Log.e("Json encode error")
+        }
+        return ["":""]
+        
+    }
+    
+}

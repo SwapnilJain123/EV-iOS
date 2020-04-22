@@ -17,6 +17,16 @@
 		1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE1F244F33A100190088 /* ApiConstsant.swift */; };
 		1039FE43244F608100190088 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE42244F608100190088 /* Logger.swift */; };
 		1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE44244F6C1F00190088 /* Guest.storyboard */; };
+		1039FE49244FFF3000190088 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE48244FFF3000190088 /* ApiClient.swift */; };
+		1039FE4B2450057C00190088 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE4A2450057C00190088 /* ApiError.swift */; };
+		1039FE502450076300190088 /* UserApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE4F2450076300190088 /* UserApiConstants.swift */; };
+		1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5124500A4F00190088 /* BaseApiAdapter.swift */; };
+		1039FE5424500F4C00190088 /* ETResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5324500F4C00190088 /* ETResponse.swift */; };
+		1039FE5724501CB800190088 /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5624501CB800190088 /* LoginApi.swift */; };
+		1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5824501EAF00190088 /* LoginRequest.swift */; };
+		1039FE5B2450424800190088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5A2450424800190088 /* User.swift */; };
+		1039FE5D2450429600190088 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5C2450429600190088 /* LoginResponse.swift */; };
+		1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5F2450569F00190088 /* ViewControllerExtension.swift */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +45,16 @@
 		1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigAppStore.xcconfig; sourceTree = "<group>"; };
 		1039FE42244F608100190088 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		1039FE44244F6C1F00190088 /* Guest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guest.storyboard; sourceTree = "<group>"; };
+		1039FE48244FFF3000190088 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		1039FE4A2450057C00190088 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		1039FE4F2450076300190088 /* UserApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiConstants.swift; sourceTree = "<group>"; };
+		1039FE5124500A4F00190088 /* BaseApiAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiAdapter.swift; sourceTree = "<group>"; };
+		1039FE5324500F4C00190088 /* ETResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETResponse.swift; sourceTree = "<group>"; };
+		1039FE5624501CB800190088 /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		1039FE5824501EAF00190088 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		1039FE5A2450424800190088 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1039FE5C2450429600190088 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		1039FE5F2450569F00190088 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		1C85763EA134529E65BC648C /* Pods-EvolveGT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
 		73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.appstore.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +96,7 @@
 		1039FDFB244F1A1800190088 /* EvolveGT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE5E2450568A00190088 /* Extensions */,
 				1039FE41244F607000190088 /* Logger */,
 				1039FE3A244F5C9B00190088 /* Config */,
 				1039FE19244F332F00190088 /* Network */,
@@ -128,6 +149,7 @@
 		1039FE18244F332700190088 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE5A2450424800190088 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +157,7 @@
 		1039FE19244F332F00190088 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE4E2450074000190088 /* UrlConstants */,
 				1039FE1E244F337B00190088 /* Adapter */,
 				1039FE1D244F336900190088 /* Api */,
 				1039FE1A244F333900190088 /* Model */,
@@ -154,6 +177,7 @@
 		1039FE1B244F334300190088 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE5824501EAF00190088 /* LoginRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -161,6 +185,8 @@
 		1039FE1C244F334D00190088 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE5324500F4C00190088 /* ETResponse.swift */,
+				1039FE5C2450429600190088 /* LoginResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -168,7 +194,8 @@
 		1039FE1D244F336900190088 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				1039FE1F244F33A100190088 /* ApiConstsant.swift */,
+				1039FE48244FFF3000190088 /* ApiClient.swift */,
+				1039FE4A2450057C00190088 /* ApiError.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -176,6 +203,8 @@
 		1039FE1E244F337B00190088 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE5524501C9C00190088 /* UserApi */,
+				1039FE5124500A4F00190088 /* BaseApiAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -211,6 +240,31 @@
 				1039FE44244F6C1F00190088 /* Guest.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1039FE4E2450074000190088 /* UrlConstants */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE1F244F33A100190088 /* ApiConstsant.swift */,
+				1039FE4F2450076300190088 /* UserApiConstants.swift */,
+			);
+			path = UrlConstants;
+			sourceTree = "<group>";
+		};
+		1039FE5524501C9C00190088 /* UserApi */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE5624501CB800190088 /* LoginApi.swift */,
+			);
+			path = UserApi;
+			sourceTree = "<group>";
+		};
+		1039FE5E2450568A00190088 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1039FE5F2450569F00190088 /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9618B72B430B35C33B2F4B05 /* Frameworks */ = {
@@ -349,12 +403,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
+				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
+				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
+				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
 				1039FE43244F608100190088 /* Logger.swift in Sources */,
+				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
+				1039FE5B2450424800190088 /* User.swift in Sources */,
+				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
+				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
+				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				1039FDFF244F1A1800190088 /* SceneDelegate.swift in Sources */,
+				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

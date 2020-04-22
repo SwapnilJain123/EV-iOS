@@ -10,14 +10,16 @@ import Foundation
 
 class ApiConstants{
     
-    var BASE_URL : String {
+    static var BASE_URL : String {
         var nsDictionary : NSDictionary?
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
              nsDictionary = NSDictionary(contentsOfFile: path)
             let baseUrl = nsDictionary!["BASE_URL"] as! String? ?? "Error!!"
             Log.i("\nBase Url \(baseUrl)")
-            return baseUrl
+            return "\(ProtocolHTTPS)\(baseUrl)"
         }
         return "https://evolvegt.webeteerprojects.com"
     }
+    
+    static let ProtocolHTTPS = "https://"
 }

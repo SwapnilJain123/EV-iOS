@@ -9,19 +9,52 @@
 import Foundation
 import UIKit
 
-class LoginViewController : UIViewController{
+import SkyFloatingLabelTextField
+class LoginViewController : UIViewController, UITextFieldDelegate{
+    
+    
+    @IBOutlet weak var tfEmail: SkyFloatingLabelTextField!
+    
+    @IBOutlet weak var tfPassword: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
-        var nsDictionary : NSDictionary?
-        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
-            nsDictionary = NSDictionary(contentsOfFile: path)
-            let appName = nsDictionary!["APP_NAME"] as! String? ?? "Error!!"
-            Log.i("\n\nAPP Name IS \(appName)")
-            
-            let baseUrl = nsDictionary!["BASE_URL"] as! String? ?? "Error!!"
-            Log.i("\n\nBase Url IS \(baseUrl)")
-        }
+        super.viewDidLoad()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tfEmail.delegate = self
+        tfEmail.returnKeyType = .done
+        
+        tfPassword.delegate = self
+        tfPassword.returnKeyType = .done
+        
+        
+
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
+    @IBAction func didPressLogin(_ sender: Any) {
+        self.addLoadingIndicator()
+        let loginApi = LoginApi ()
+        loginApi.setCompletionHandler{ response, error in
+            self.removeLoadingIndicator()
+            if error == nil{
+                Log.i("Login Success - ")
+                let loginResponse = response as! LoginResponse
+                Log.i("Logged In By - \(loginResponse.currentUser.displayName)")
+            }else{
+                Log.i("Login Error - \(String(describing: error?.errorMessage)) ")
+            }
+        }
+        loginApi.doLogin(email: tfEmail.text!, password: tfPassword.text!)
+    }
+    
 }
 
