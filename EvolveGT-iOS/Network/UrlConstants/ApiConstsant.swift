@@ -16,10 +16,11 @@ class ApiConstants{
              nsDictionary = NSDictionary(contentsOfFile: path)
             let baseUrl = nsDictionary!["BASE_URL"] as! String? ?? "Error!!"
             Log.i("\nBase Url \(baseUrl)")
-            return "\(ProtocolHTTPS)\(baseUrl)"
+            return "\(ProtocolHTTPS)\(baseUrl)\(API_PATH)"
         }
         return "https://evolvegt.webeteerprojects.com"
     }
     
     static let ProtocolHTTPS = "https://"
+    static let API_PATH = "/evolve-api/public/app/v3/"
 }

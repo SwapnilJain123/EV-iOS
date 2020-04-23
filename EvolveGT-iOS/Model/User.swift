@@ -8,8 +8,13 @@
 
 import Foundation
 struct User: Codable {
+    
+    private static let ROLE_ADMIN = "administrator";
+    private static let ROLE_COACH = "coach";
+    
+    
     var id, email, firstName, lastName: String
-    var displayName, skillLevel, role: String
+    var displayName, skillLevel, role: String 
 
     enum CodingKeys: String, CodingKey {
         case id, email
@@ -18,5 +23,17 @@ struct User: Codable {
         case displayName = "display_name"
         case skillLevel = "skill_level"
         case role
+    }
+    
+    func isAdmin() -> Bool{
+        return role == User.ROLE_ADMIN
+    }
+    
+    func isCoach() -> Bool{
+        return role == User.ROLE_COACH
+    }
+    
+    func isAdminOrCoach() -> Bool{
+        return role == User.ROLE_COACH || role == User.ROLE_ADMIN
     }
 }

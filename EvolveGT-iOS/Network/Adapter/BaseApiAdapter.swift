@@ -16,7 +16,7 @@ class BaseApiAdapter{
         case POST
     }
     
-    var completionHandler : ((Any?, ApiError?) -> Void)? = nil
+    var completionHandler : ((Data?, ApiError?) -> Void)? = nil
     
     var requestBody : Data?
     private let apiClient = ApiClient.sharedInstance
@@ -24,6 +24,10 @@ class BaseApiAdapter{
     
     init(){
         apiClient.addHeader(key: "Content-Type", value: "application/json")
+    }
+    
+    func setCompletionHandler( completionHandler : @escaping (Data?, ApiError? )-> Void){
+        self.completionHandler = completionHandler
     }
     
     func setUrl(url : String){
@@ -34,12 +38,11 @@ class BaseApiAdapter{
         apiClient.replaceParameter(parameters: parameters)
     }
     
-    func postDecodedResponse(_ jsonResponse: Data){
-        
-    }
-    
     func didFail(error: ApiError) {
         Log.e(error)
+        if completionHandler != nil {
+            completionHandler!(nil, error)
+        }
     }
     
     
@@ -74,7 +77,9 @@ extension BaseApiAdapter{
                 do{
                     let etResponse = try decoder.decode(ETResponse.self, from: safeData)
                     if etResponse.status == 1{
-                        postDecodedResponse(safeData)
+                        if completionHandler != nil {
+                            completionHandler!(safeData, nil)
+                        }
                     }else{
                         
                         var error = ApiError()
@@ -116,18 +121,7 @@ extension BaseApiAdapter{
         return encodedData
     }
     
-    func decodeFromJson<T: Decodable>(_ data: Data, modelType: T.Type) -> T? {
-           
-        var decoded : T?
-        let decoder = JSONDecoder()
-        do{
-             decoded = try decoder.decode(modelType, from: data)
-        }catch{
-            Log.e("Json Decode error")
-        }
     
-        return decoded
-    }
     
     func makeDictionary<T: Encodable>(_ value: T) -> [String: Any]{
         let jsonEncoder = JSONEncoder()

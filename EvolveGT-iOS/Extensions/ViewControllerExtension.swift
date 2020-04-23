@@ -20,7 +20,6 @@ extension UIViewController{
     func addLoadingIndicator(){
         DispatchQueue.main.async(execute: { () -> Void in
             MBProgressHUD.showAdded(to: self.view, animated: true)
-
         })
     }
 
