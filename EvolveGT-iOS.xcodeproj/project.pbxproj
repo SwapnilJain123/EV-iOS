@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A15245319D800EF2B9F /* UiColor+Extension.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FDFF244F1A1800190088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFE244F1A1800190088 /* SceneDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100A2A15245319D800EF2B9F /* UiColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiColor+Extension.swift"; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FDFE244F1A1800190088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				1039FE72245071A100190088 /* StringValidatorExtension.swift */,
 				10FCA256245212AD00EA95C0 /* StringDateExtension.swift */,
 				10FCA25824521E6300EA95C0 /* UiViewExtension.swift */,
+				100A2A15245319D800EF2B9F /* UiColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
+				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,

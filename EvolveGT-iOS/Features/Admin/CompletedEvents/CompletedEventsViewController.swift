@@ -69,7 +69,7 @@ extension CompletedEventViewController: CompletedEventsViewDelegate{
     }
     
     func showError(message: String) {
-        self.showAlert(title: "Api Error", message: "Events not found")
+        self.displayEmptyMessage(message: message)
     }
     
     

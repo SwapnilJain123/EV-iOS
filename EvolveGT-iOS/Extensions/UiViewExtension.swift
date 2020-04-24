@@ -21,4 +21,11 @@ extension UIView {
         layer.shadowOffset = CGSize(width:5, height: 5)
         layer.masksToBounds = true
     }
+    
+    func pinEdges(to other: UIView) {
+        leadingAnchor.constraint(equalTo: other.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: other.trailingAnchor).isActive = true
+        topAnchor.constraint(equalTo: other.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: other.bottomAnchor).isActive = true
+    }
 }

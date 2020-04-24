@@ -22,8 +22,27 @@ extension UIViewController{
             MBProgressHUD.showAdded(to: self.view, animated: true)
         })
     }
-
+    
     func removeLoadingIndicator(){
         MBProgressHUD.hide(for: self.view, animated: true)
+    }
+    
+    static let ERROR_VIEW_TAG = -1
+    func displayEmptyMessage(message: String){
+        
+        if let existingView = self.view.viewWithTag(UIViewController.ERROR_VIEW_TAG){
+            existingView.removeFromSuperview()
+        }
+        
+        let errorView: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        errorView.text          = message
+        errorView.numberOfLines = 0
+        errorView.tag = UIViewController.ERROR_VIEW_TAG
+        errorView.backgroundColor = UIColor.init(hexFromString: "#F9FAF7")
+        errorView.textColor     = UIColor.black
+        errorView.textAlignment = .center
+        self.view.addSubview(errorView)
+        
+        
     }
 }
