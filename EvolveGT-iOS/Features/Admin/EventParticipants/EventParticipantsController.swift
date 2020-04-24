@@ -85,7 +85,7 @@ extension EventParticipantsController : UITableViewDataSource{
         //cell.delegate = self
         //cell.indePathForRef = indexPath
         cell.eventParticipant = participants[indexPath.row]
-        cell.contentView.setCardView()
+        //cell.contentView.setCardView()
         return cell
     }
     
