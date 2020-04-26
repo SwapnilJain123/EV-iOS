@@ -12,19 +12,30 @@ import UIKit
 import SkyFloatingLabelTextField
 class LoginViewController : ETViewController, UITextFieldDelegate{
     
+
+    @IBOutlet weak var passwordConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var loginInteractor = LoginInteractor()
+    
     @IBOutlet weak var tfEmail: SkyFloatingLabelTextField!
     
     @IBOutlet weak var tfPassword: SkyFloatingLabelTextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
          loginInteractor.delegate = self
         
         tfEmail.text! = "support@evolvegt.com"
         tfPassword.text! = "EvolveGT750"
+        
+        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         tfEmail.delegate = self
@@ -33,10 +44,13 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         tfPassword.delegate = self
         tfPassword.returnKeyType = .done
         
-        
+        self.navigationController?.isNavigationBarHidden = true
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+         
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
@@ -60,8 +74,8 @@ extension LoginViewController : LoginViewDelegate{
         Log.i("\n\n Should Launch Admin Dashboard \n\n")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
         let adminViewController = storyBoard.instantiateViewController(withIdentifier: "CompletedEventsViewController") as! CompletedEventViewController
-        //self.navigationController!.viewControllers.removeAll()
         self.navigationController?.pushViewController(adminViewController, animated: true)
+        self.navigationController?.popToViewController(adminViewController, animated: true)
     }
     
     func launchUserPage() {

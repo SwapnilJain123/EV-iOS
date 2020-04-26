@@ -20,6 +20,7 @@ struct EventParticipant: Codable {
     var show: Bool?
     var signEnabled: Int
     var rentals: [Rental]?
+    var trainings: [String]?
     
     var namewithRole : String{
         
@@ -37,6 +38,10 @@ struct EventParticipant: Codable {
     
     var hasSignature : Bool{
         status == "1"
+    }
+    
+    var hasTrainingOrRentals : Bool{
+        ((trainings?.count ?? 0) + (rentals?.count ?? 0)) > 0
     }
 
     enum CodingKeys: String, CodingKey {
@@ -56,6 +61,7 @@ struct EventParticipant: Codable {
         case role, show
         case signEnabled = "sign_enabled"
         case rentals
+        case trainings = "trainings"
     }
     
     struct Rental: Codable {

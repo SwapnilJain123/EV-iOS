@@ -45,4 +45,27 @@ extension UIViewController{
         
         
     }
+    
+    func showBackButton(){
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    func hideBackButton(){
+        self.navigationItem.setHidesBackButton(true, animated: true);
+    }
+    
+    func setNavigationBackgroundColor(color: UIColor){
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.barTintColor = color
+    }
+    func setScreenTitle(title: String)
+    {
+        guard navigationController != nil else { return }
+                let barButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
+                barButtonItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)],
+                                                     for: .normal)
+        //        navigationItem.leftItemsSupplementBackButton = needsDefaultBack
+        //        navigationItem.leftBarButtonItem = barButtonItem
+                self.title = title
+    }
 }

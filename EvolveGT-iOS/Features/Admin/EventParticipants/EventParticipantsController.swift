@@ -29,8 +29,13 @@ class EventParticipantsController : ETViewController{
         particiapntTable.delegate = self
         particiapntTable.dataSource = self
         
+        self.showBackButton()
         setupUI()
         requestEventParticipants()
+    }
+    
+    override func getScreenTitle() -> String? {
+        ScreenTitle.TITLE_EVENTS_USERS
     }
     
     func requestEventParticipants(){
@@ -38,9 +43,11 @@ class EventParticipantsController : ETViewController{
     }
     func setupUI(){
         
-        eventSearch.showsCancelButton = false
+        eventSearch.showsCancelButton = true
+        
         if let url = URL(string: completedEvent?.eventLogo ?? ""){
-            eventBanner.kf.setImage(with: url,  options: [.transition(ImageTransition.fade(1))])
+            let fallbackImage = UIImage(named: "et_fallback_image")
+            eventBanner.kf.setImage(with: url,placeholder: fallbackImage,  options: [.transition(ImageTransition.fade(1))])
         }
         eventTitle.text = completedEvent?.title ?? ""
         eventDate.text = completedEvent?.eventDate.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? ""

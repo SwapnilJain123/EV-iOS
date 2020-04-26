@@ -28,4 +28,21 @@ extension UIView {
         topAnchor.constraint(equalTo: other.topAnchor).isActive = true
         bottomAnchor.constraint(equalTo: other.bottomAnchor).isActive = true
     }
+    
+    func  showRoundCorner(roundCorner: CGFloat){
+        self.layer.cornerRadius = roundCorner
+        self.clipsToBounds = true
+    }
+    
+    func showRoundCorner(){
+        self.layer.cornerRadius = self.frame.size.height/2
+        self.clipsToBounds = true
+    }
+    
+    func showRoundBorder(){
+        self.clipsToBounds = true
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 3.0
+    }
 }

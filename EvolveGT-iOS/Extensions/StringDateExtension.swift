@@ -10,11 +10,29 @@ import Foundation
 import AFDateHelper
 extension String{
     static let FORMAT_DD_MMM_YYYY = "dd MMM YYYY"
+    static let FORMAT_MMM_YYYY = "MMM YYYY"
+    static let FORMAT_MM_YYYY = "MM YYYY"
+     static let FORMAT_YYYY_MM = "YYYY MM"
     
     func formattedDate(outputFormat: String) -> String {
+       
         let date = Date(fromString: self, format: .isoDate)
         let formattedDate = date?.toString(format: .custom(outputFormat)) ?? self
-
+        
+        return formattedDate
+    }
+    
+    func convertToDate() -> Date? {
+       
+        let date = Date(fromString: self, format: .isoDate)
+        return date
+    }
+    
+    func formattedDate(inputPattern: String, outputFormat: String) -> String {
+       
+        let date = Date(fromString: self, format: .custom(inputPattern))
+        let formattedDate = date?.toString(format: .custom(outputFormat)) ?? self
+        
         return formattedDate
     }
 }

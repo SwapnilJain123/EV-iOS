@@ -34,7 +34,7 @@ class AppEngine{
     }
     
     func isUserLoggedIn() -> Bool{
-        return currentUser == nil
+        return currentUser != nil
     }
     
     
@@ -67,5 +67,12 @@ class AppEngine{
     func saveAuthToken(token : String){
         self.authToken = token
         userDefaultHelper.saveData(key: KEY_AUTH_TOKEN, value: token)
+    }
+    
+    func reset(){
+        saveAuthToken(token: "")
+        saveUserInfo(user: currentUser!)
+        self.currentUser = nil
+        
     }
 }

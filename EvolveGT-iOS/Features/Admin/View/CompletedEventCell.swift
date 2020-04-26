@@ -24,9 +24,9 @@ class CompletedEventCell: UITableViewCell{
         let imageUrl =  completdEvent.eventLogo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         if  let url = URL(string : imageUrl){
-            
+             let fallbackImage = UIImage(named: "et_fallback_image")
             eventImage.kf.setImage(with: url,
-                                   placeholder: nil,
+                                   placeholder: fallbackImage,
                                    options: [.transition(ImageTransition.fade(1))]){ _, _, _, _ in
                            //         self.setNeedsLayout()
             }

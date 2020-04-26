@@ -18,6 +18,8 @@ target 'EvolveGT-iOS' do
   pod 'IQKeyboardManagerSwift','6.0.4'
   
 
+   pod 'SnapKit', '~> 5.0.0'
+   
 #  pod 'SideMenuSwift','1.0.2'
   pod 'SideMenuSwift'
   pod 'XLPagerTabStrip', '~> 8.1'

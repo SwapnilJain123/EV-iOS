@@ -50,7 +50,7 @@ class EventParticipantCell: UITableViewCell{
         orderId.text = "#"
         orderId.text?.append(eventParticipant?.orderID ?? "-")
         
-        btnTraining.isHidden = eventParticipant?.rentals?.isEmpty ?? true
+        btnTraining.isHidden = !(eventParticipant?.hasTrainingOrRentals ?? false)
         btnSign.isHidden = eventParticipant?.signEnabled == 1 ? false : true
         
         if eventParticipant?.hasSignature ?? false{
