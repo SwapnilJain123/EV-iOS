@@ -13,6 +13,9 @@ import UIKit
 let KEY_USER = "saved_user"
 let KEY_AUTH_TOKEN = "auth_token"
 
+struct AppConstants{
+     static let SkillLevels = ["GT1","E1","E2","E3","E4","COACHES"]
+}
 struct ScreenTitle{
     
     //Mark: Admin Screen
@@ -40,5 +43,5 @@ struct DeviceType
     static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH >= 812.0
     static let IS_IPAD = UIDevice.current.userInterfaceIdiom == .pad
 
-    
+   
 }

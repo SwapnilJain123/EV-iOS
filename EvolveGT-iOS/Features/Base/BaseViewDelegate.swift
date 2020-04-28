@@ -12,5 +12,6 @@ protocol BaseViewDelegate {
     func showProgressIndicator(message : String?)
     func hideProgressIndicator()
     func showError(message: String)
+    func showSuccessMessage(message: String)
    
 }

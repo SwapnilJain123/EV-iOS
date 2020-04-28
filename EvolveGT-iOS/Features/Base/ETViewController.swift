@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RSSelectionMenu
 class ETViewController : UIViewController{
     
     
@@ -63,5 +64,24 @@ class ETViewController : UIViewController{
     
     func getScreenTitle() ->String?{
         nil
+    }
+    
+    @objc func didPressLogout(){
+        Log.d("Logout !!")
+        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.doLogout()
+    }
+    
+    func presentSelectionMenu( title: String, data: [String], dismissHandler :@escaping (_ selectedItems: DataSource<String>) -> Void){
+        let selectionMenu = RSSelectionMenu(dataSource: data) { (cell, item, indexPath) in
+            cell.textLabel?.text = item
+        }
+        
+        selectionMenu.onDismiss = dismissHandler
+        selectionMenu.maxSelectionLimit = 1
+        selectionMenu.cellSelectionStyle = .checkbox
+        selectionMenu.title = title
+        
+        selectionMenu.show(style: .present, from: self)
     }
 }

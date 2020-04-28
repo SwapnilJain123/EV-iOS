@@ -66,6 +66,10 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
 }
 
 extension LoginViewController : LoginViewDelegate{
+    func showSuccessMessage(message: String) {
+        
+    }
+    
     func showLoginError(errorMessage: String) {
         self.showAlert(title: "Login Error", message: errorMessage)
     }

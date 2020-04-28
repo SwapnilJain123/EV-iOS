@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-protocol EventParticipantDelegate  {
-    func clickedOnSignature(_ cell: EventParticipantCell, event: EventParticipant?)
-    func clickedOnUpgradeSkill(_ cell: EventParticipantCell, event: EventParticipant?)
-    func clickedOnTraining(_ cell: EventParticipantCell, trainingInfo: [String])
+protocol EventParticipantCellDelegate  {
+    func clickedOnSignature(_ cell: EventParticipantCell, participant: EventParticipant?)
+    func clickedOnUpgradeSkill(_ cell: EventParticipantCell, participant: EventParticipant?)
+    func clickedOnTraining(_ cell: EventParticipantCell, participant: EventParticipant?)
 }
 
 class EventParticipantCell: UITableViewCell{
@@ -24,7 +24,7 @@ class EventParticipantCell: UITableViewCell{
         }
     }
     
-    var delegate : EventParticipantDelegate?
+    var delegate : EventParticipantCellDelegate?
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var skill: UILabel!
     @IBOutlet weak var userID: UILabel!
@@ -34,10 +34,7 @@ class EventParticipantCell: UITableViewCell{
     
     
     @IBOutlet weak var btnTraining: UIButton!
-    
     @IBOutlet weak var btnSign: UIButton!
-    
-    
     @IBOutlet weak var btnSkillUpgrade: UIButton!
     
     func updateUI() {
@@ -64,11 +61,18 @@ class EventParticipantCell: UITableViewCell{
         }
         
     }
-    /*
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    
+    
+    @IBAction func didPressTrainingButton(_ sender: UIButton) {
+        delegate?.clickedOnTraining(self, participant: eventParticipant)
     }
- */
+    
+    @IBAction func didPressSignButton(_ sender: UIButton) {
+        delegate?.clickedOnSignature(self, participant: eventParticipant)
+    }
+    
+    
+    @IBAction func didPressUpgradeSkill(_ sender: UIButton) {
+        delegate?.clickedOnUpgradeSkill(self, participant: eventParticipant)
+    }
 }

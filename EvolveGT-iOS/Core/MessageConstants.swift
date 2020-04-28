@@ -53,7 +53,14 @@ struct LoadingIndicatorMessages {
 
 struct ErrorMessages {
     
-     static let emptyCompletedEvents = "Sorry, there are currently no events available."
+    static let emptyCompletedEvents = "Sorry, there are currently no events available."
     static let emptyEventParticipants = "There are currently no users enrolled for this event."
+    
+    static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
 }
 
+struct SuccessMessages {
+    
+    static let skillUpgraded = "Skill Level upgraded successfully"
+    
+}

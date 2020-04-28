@@ -266,6 +266,9 @@
                                                                         <constraint firstAttribute="width" constant="40" id="o0d-vO-AQV"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="star"/>
+                                                                    <connections>
+                                                                        <action selector="didPressTrainingButton:" destination="hRs-al-s9F" eventType="touchUpInside" id="ENA-IG-eEI"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="183-gz-1p2">
                                                                     <rect key="frame" x="44" y="0.0" width="40" height="40"/>
@@ -274,6 +277,9 @@
                                                                         <constraint firstAttribute="width" constant="40" id="xhD-1b-0jd"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="sign"/>
+                                                                    <connections>
+                                                                        <action selector="didPressSignButton:" destination="hRs-al-s9F" eventType="touchUpInside" id="bee-Mg-ZWs"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -308,6 +314,9 @@
                                                                 <constraint firstAttribute="height" constant="35" id="JQr-c6-bJ1"/>
                                                             </constraints>
                                                             <state key="normal" image="upward_arrow"/>
+                                                            <connections>
+                                                                <action selector="didPressUpgradeSkill:" destination="hRs-al-s9F" eventType="touchUpInside" id="vge-YH-RPZ"/>
+                                                            </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-Gg-nuL">
                                                             <rect key="frame" x="80" y="49" width="75" height="50"/>
@@ -472,19 +481,30 @@
                                     <constraint firstAttribute="height" constant="30" id="dxu-LH-YvZ"/>
                                 </constraints>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-jB-3Le">
+                                <rect key="frame" x="20" y="293" width="374" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zX2-kW-jOf" secondAttribute="trailing" id="1mf-r9-ZQa"/>
                             <constraint firstItem="F9P-qt-4wp" firstAttribute="top" secondItem="Rzu-aT-1PB" secondAttribute="bottom" constant="8" id="2M6-B3-mF7"/>
+                            <constraint firstItem="eZA-jB-3Le" firstAttribute="leading" secondItem="xu4-Ja-rqy" secondAttribute="leadingMargin" id="35n-0O-KhT"/>
                             <constraint firstItem="Rzu-aT-1PB" firstAttribute="trailing" secondItem="AiL-1K-48e" secondAttribute="trailing" constant="5" id="7fW-dc-k9N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F9P-qt-4wp" secondAttribute="trailing" constant="8" id="9aD-69-nmB"/>
+                            <constraint firstItem="eZA-jB-3Le" firstAttribute="top" secondItem="k4N-7R-3kO" secondAttribute="bottom" constant="8" id="IFP-qu-Kfc"/>
                             <constraint firstItem="zX2-kW-jOf" firstAttribute="top" secondItem="k4N-7R-3kO" secondAttribute="bottom" constant="8" id="KMw-3r-EWf"/>
+                            <constraint firstItem="eZA-jB-3Le" firstAttribute="trailing" secondItem="xu4-Ja-rqy" secondAttribute="trailingMargin" id="OjL-gl-2IB"/>
                             <constraint firstItem="Rzu-aT-1PB" firstAttribute="leading" secondItem="AiL-1K-48e" secondAttribute="leading" constant="5" id="TNb-Uh-ZSe"/>
                             <constraint firstItem="Rzu-aT-1PB" firstAttribute="top" secondItem="AiL-1K-48e" secondAttribute="top" constant="5" id="j4G-d2-lFN"/>
                             <constraint firstItem="k4N-7R-3kO" firstAttribute="leading" secondItem="xu4-Ja-rqy" secondAttribute="leading" constant="10" id="jzY-7t-Qfo"/>
                             <constraint firstItem="F9P-qt-4wp" firstAttribute="leading" secondItem="xu4-Ja-rqy" secondAttribute="leadingMargin" constant="8" id="l3r-fE-0el"/>
                             <constraint firstAttribute="trailing" secondItem="k4N-7R-3kO" secondAttribute="trailing" constant="10" id="lhK-7G-njB"/>
+                            <constraint firstItem="eZA-jB-3Le" firstAttribute="bottom" secondItem="xu4-Ja-rqy" secondAttribute="bottomMargin" id="nfM-hc-4Of"/>
                             <constraint firstItem="zX2-kW-jOf" firstAttribute="leading" secondItem="xu4-Ja-rqy" secondAttribute="leading" id="onO-LR-NRl"/>
                             <constraint firstItem="k4N-7R-3kO" firstAttribute="top" secondItem="F9P-qt-4wp" secondAttribute="bottom" constant="8" id="rNe-nv-tJo"/>
                             <constraint firstAttribute="bottom" secondItem="zX2-kW-jOf" secondAttribute="bottom" id="s8x-Qu-TKb"/>
@@ -494,14 +514,16 @@
                     <connections>
                         <outlet property="eventBanner" destination="aoV-6S-5cL" id="wa1-De-oCG"/>
                         <outlet property="eventDate" destination="FvT-AX-d92" id="6oX-bO-jXk"/>
-                        <outlet property="eventSearch" destination="Rzu-aT-1PB" id="ec8-JB-zXG"/>
+                        <outlet property="eventShortInfoStack" destination="F9P-qt-4wp" id="Ehr-VQ-Ubb"/>
                         <outlet property="eventTitle" destination="nuF-aa-e2w" id="Xtm-tG-Snd"/>
+                        <outlet property="listErrorLable" destination="eZA-jB-3Le" id="fYa-dK-OF6"/>
                         <outlet property="particiapntTable" destination="zX2-kW-jOf" id="yYB-ul-cIV"/>
+                        <outlet property="searchBar" destination="Rzu-aT-1PB" id="ec8-JB-zXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNJ-f7-EHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191.19999999999999" y="-145.56650246305421"/>
+            <point key="canvasLocation" x="189.85507246376812" y="-145.98214285714286"/>
         </scene>
         <!--Signature Input View Controller-->
         <scene sceneID="4KE-Xu-Ezs">

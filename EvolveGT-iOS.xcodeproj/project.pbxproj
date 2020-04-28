@@ -11,6 +11,7 @@
 		100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */; };
 		100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */; };
 		100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A23245607A300EF2B9F /* Sequence+Extension.swift */; };
+		100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UibarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		100A2A23245607A300EF2B9F /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeSkillRequest.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				1039FE5824501EAF00190088 /* LoginRequest.swift */,
 				1039FE882450A19600190088 /* CompletedEventRequest.swift */,
 				10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */,
+				100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
+				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,

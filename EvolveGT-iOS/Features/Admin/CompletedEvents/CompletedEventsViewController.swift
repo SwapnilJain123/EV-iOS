@@ -81,11 +81,7 @@ class CompletedEventViewController : ETViewController{
         let morebutton = createMoreButton()
         self.navigationItem.rightBarButtonItems = [logoutItem, morebutton]
     }
-    @objc func didPressLogout(){
-        Log.d("Logout !!")
-        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-        appDelegate?.doLogout()
-    }
+    
     
     //Mark: More Button
     override func didPressMoreButton() {
@@ -168,6 +164,10 @@ extension CompletedEventViewController:UISearchBarDelegate{
     }
 }
 extension CompletedEventViewController: CompletedEventsViewDelegate{
+    func showSuccessMessage(message: String) {
+        
+    }
+    
     func presentEventTypeFilterOptions(options: [String]) {
         let title = "Filter by Event Type"
         
@@ -199,18 +199,7 @@ extension CompletedEventViewController: CompletedEventsViewDelegate{
         }
     }
     
-    func presentSelectionMenu( title: String, data: [String], dismissHandler :@escaping (_ selectedItems: DataSource<String>) -> Void){
-        let selectionMenu = RSSelectionMenu(dataSource: data) { (cell, item, indexPath) in
-            cell.textLabel?.text = item
-        }
-        
-        selectionMenu.onDismiss = dismissHandler
-        selectionMenu.maxSelectionLimit = 1
-        selectionMenu.cellSelectionStyle = .checkbox
-        selectionMenu.title = title
-        
-        selectionMenu.show(style: .present, from: self)
-    }
+    
     
     
     func didFetchCompletedEvents(events: [CompletedEvent]) {
