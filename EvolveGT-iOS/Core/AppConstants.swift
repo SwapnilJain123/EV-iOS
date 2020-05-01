@@ -15,12 +15,14 @@ let KEY_AUTH_TOKEN = "auth_token"
 
 struct AppConstants{
      static let SkillLevels = ["GT1","E1","E2","E3","E4","COACHES"]
+     static let ImageTag = "data:image/png;base64,"
 }
 struct ScreenTitle{
     
     //Mark: Admin Screen
     static let TITLE_EVENTS = "Events"
     static let TITLE_EVENTS_USERS = "Event Participants"
+    static let TITLE_SIGNATURE = "Signature"
 }
 
 struct ScreenSize{

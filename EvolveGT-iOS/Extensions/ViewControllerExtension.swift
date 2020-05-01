@@ -8,64 +8,99 @@
 
 import Foundation
 import UIKit
-import MBProgressHUD
-
+import SVProgressHUD
+import Loaf
 extension UIViewController{
-    func showAlert(title: String?, message: String?) {
-        let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alerController.addAction(cancelAction)
-        present(alerController, animated: true, completion: nil)
-    }
-    func addLoadingIndicator(){
-        DispatchQueue.main.async(execute: { () -> Void in
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-        })
-    }
     
-    func removeLoadingIndicator(){
-        MBProgressHUD.hide(for: self.view, animated: true)
-    }
-    
-    static let ERROR_VIEW_TAG = -1
-    func displayEmptyMessage(message: String){
+    public class Ext {
+        init(vc : UIViewController){
+            self.vc = vc
+        }
+        var vc : UIViewController
         
-        if let existingView = self.view.viewWithTag(UIViewController.ERROR_VIEW_TAG){
-            existingView.removeFromSuperview()
+        func showAlert(title: String?, message: String?, handler: (()->Void)? = nil) {
+            let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel){ alertAction in
+                if let safeHandler = handler{
+                    safeHandler()
+                }
+            }
+            alerController.addAction(cancelAction)
+            vc.present(alerController, animated: true, completion: nil)
+        }
+        func addLoadingIndicator(_ message: String?){
+            DispatchQueue.main.async(execute: { () -> Void in
+                // MBProgressHUD.showAdded(to: self.view, animated: true)
+                SVProgressHUD.show(withStatus: message)
+            })
         }
         
-        let errorView: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-        errorView.text          = message
-        errorView.numberOfLines = 0
-        errorView.tag = UIViewController.ERROR_VIEW_TAG
-        errorView.backgroundColor = UIColor.init(hexFromString: "#F9FAF7")
-        errorView.textColor     = UIColor.black
-        errorView.textAlignment = .center
-        self.view.addSubview(errorView)
+        func removeLoadingIndicator(){
+            //MBProgressHUD.hide(for: self.view, animated: true)
+            SVProgressHUD.dismiss()
+        }
         
+        static let ERROR_VIEW_TAG = -1
+        func displayEmptyMessage(message: String){
+            
+            if let existingView = vc.view.viewWithTag(UIViewController.Ext.ERROR_VIEW_TAG){
+                existingView.removeFromSuperview()
+            }
+            
+            let errorView: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: vc.view.bounds.size.width, height: vc.view.bounds.size.height))
+            errorView.text          = message
+            errorView.numberOfLines = 0
+            errorView.tag = UIViewController.Ext.ERROR_VIEW_TAG
+            errorView.backgroundColor = UIColor.init(hexFromString: "#F9FAF7")
+            errorView.textColor     = UIColor.black
+            errorView.textAlignment = .center
+            vc.view.addSubview(errorView)
+            
+            
+        }
+        
+        func showSuccessToast(message: String, handler: (()->Void)? = nil){
+            Loaf(message, state: .custom(.init(backgroundColor: UIColor.getAppThemeColor(), icon: Loaf.Icon.success, width: .screenPercentage(0.8))), sender: vc).show(){ dismissalType in
+                if handler != nil{
+                    handler!()
+                }
+            }
+        }
+        func showErrorToast(message: String, handler: (()->Void)?){
+            Loaf(message, state: .custom(.init(backgroundColor: UIColor.red, icon: Loaf.Icon.error, width: .screenPercentage(0.8))), sender: vc).show(){ dismissalType in
+                if handler != nil{
+                    handler!()
+                }
+            }
+        }
+        
+        func showBackButton(){
+            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        
+        func hideBackButton(){
+            vc.navigationItem.setHidesBackButton(true, animated: true);
+        }
+        
+        func setNavigationBackgroundColor(color: UIColor){
+            let navigationBarAppearace = UINavigationBar.appearance()
+            navigationBarAppearace.barTintColor = color
+        }
+        func setScreenTitle(title: String)
+        {
+            guard vc.navigationController != nil else { return }
+            let barButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
+            barButtonItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)],
+                                                 for: .normal)
+            //        navigationItem.leftItemsSupplementBackButton = needsDefaultBack
+            //        navigationItem.leftBarButtonItem = barButtonItem
+            vc.title = title
+        }
         
     }
-    
-    func showBackButton(){
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
-    func hideBackButton(){
-        self.navigationItem.setHidesBackButton(true, animated: true);
-    }
-    
-    func setNavigationBackgroundColor(color: UIColor){
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.barTintColor = color
-    }
-    func setScreenTitle(title: String)
-    {
-        guard navigationController != nil else { return }
-                let barButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
-                barButtonItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)],
-                                                     for: .normal)
-        //        navigationItem.leftItemsSupplementBackButton = needsDefaultBack
-        //        navigationItem.leftBarButtonItem = barButtonItem
-                self.title = title
+    var ext: Ext {
+        return  Ext(vc: self)
+        
     }
 }
+

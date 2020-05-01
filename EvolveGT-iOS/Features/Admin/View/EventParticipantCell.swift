@@ -12,7 +12,7 @@ import UIKit
 protocol EventParticipantCellDelegate  {
     func clickedOnSignature(_ cell: EventParticipantCell, participant: EventParticipant?)
     func clickedOnUpgradeSkill(_ cell: EventParticipantCell, participant: EventParticipant?)
-    func clickedOnTraining(_ cell: EventParticipantCell, participant: EventParticipant?)
+    func clickedOnAccessories(_ cell: EventParticipantCell, participant: EventParticipant?)
 }
 
 class EventParticipantCell: UITableViewCell{
@@ -64,7 +64,7 @@ class EventParticipantCell: UITableViewCell{
     
     
     @IBAction func didPressTrainingButton(_ sender: UIButton) {
-        delegate?.clickedOnTraining(self, participant: eventParticipant)
+        delegate?.clickedOnAccessories(self, participant: eventParticipant)
     }
     
     @IBAction func didPressSignButton(_ sender: UIButton) {
@@ -75,4 +75,42 @@ class EventParticipantCell: UITableViewCell{
     @IBAction func didPressUpgradeSkill(_ sender: UIButton) {
         delegate?.clickedOnUpgradeSkill(self, participant: eventParticipant)
     }
+}
+class EventParticipantTrainingCell: UITableViewCell{
+    
+    
+    @IBOutlet weak var trainingLabel: UILabel!
+    var training: String? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    func updateUI(){
+        trainingLabel.text = training ?? ""
+    }
+    
+}
+
+class EventParticipantRentalCell: UITableViewCell{
+    
+    
+    @IBOutlet weak var rentalLabel: UILabel!
+    
+    @IBOutlet weak var rentalAttribute: UILabel!
+    var rental: EventParticipant.Rental? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    func updateUI(){
+        rentalLabel.text = rental?.name ?? ""
+        if let attribute = rental?.attribute, let value = rental?.value{
+            rentalAttribute.text = "\(attribute) : \(value)"
+        }else{
+            rentalAttribute.text = ""
+        }
+    }
+    
 }

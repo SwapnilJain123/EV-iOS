@@ -61,7 +61,7 @@ struct EventParticipant: Codable {
         case role, show
         case signEnabled = "sign_enabled"
         case rentals
-        case trainings = "trainings"
+        case trainings = "training"
     }
     
     struct Rental: Codable {

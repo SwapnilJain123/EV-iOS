@@ -525,10 +525,10 @@
             </objects>
             <point key="canvasLocation" x="189.85507246376812" y="-145.98214285714286"/>
         </scene>
-        <!--Signature Input View Controller-->
+        <!--Signature Reader Controller-->
         <scene sceneID="4KE-Xu-Ezs">
             <objects>
-                <viewController storyboardIdentifier="SignatureInputViewController" id="I6W-JR-Ofa" customClass="SignatureInputViewController" customModule="EvolveGT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignatureReader" id="I6W-JR-Ofa" customClass="SignatureReaderController" customModule="EvolveGT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6rf-PI-c1d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -580,10 +580,12 @@
                                     <constraint firstAttribute="height" constant="50" id="coA-HW-4F1"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qw-GV-PAG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qw-GV-PAG">
                                 <rect key="frame" x="6" y="144.5" width="402" height="401.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">IN CONSIDERATION of being permitted to complete, officiate, observe, work, or participate in any way in the EVENT(S) or being permitted to enter for any purpose any RESTRICTED AREA (defined as any area requiring special authorization, credentials, or permission to enter or any area to which admission by the general public is restricted or prohibited), EACH OF THE UNDERSIGNED, for himself, his personal representatives, heirs, and next of kin:
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">IN CONSIDERATION of being permitted to complete, officiate, observe, work, or participate in any way in the EVENT(S) or being permitted to enter for any purpose any RESTRICTED AREA (defined as any area requiring special authorization, credentials, or permission to enter or any area to which admission by the general public is restricted or prohibited), EACH OF THE UNDERSIGNED, for himself, his personal representatives, heirs, and next of kin:
 Acknowledges, agrees, and represents that he has or will immediately upon entering any of such RESTRICTED AREAS, and will continuously thereafter, inspect the RESTRICTED AREAS which he enters, and he further agrees and warrants that, if at any time, he is in or about RESTRICTED AREAS and he feels anything to be unsafe, he will immediately advise the officials of such and if necessary will leave the RESTRICTED AREAS and/or refuse to participate further in the EVENT(S).
 HEREBY RELEASES, WAIVES, DISCHARGES AND COVENAMTS NOT TO SUE the promoters, participants, racing associations, sanctioning organizations or any subdivision thereof, track operators, track owners, officials, car owners, drivers, pit crews, rescue personnel, any persons in any RESTRICTED AREA, sponsors, advertisers, owners and leassees of premises used to conduct the EVENT(S), premises and event inspectors, surveyors, underwriters, consultants and others who give recommendations, directions, or instructions or engage in risk evaluation or loss control activities regarding the premises or EVENT(S) and each of them, their directors, officers, agents, employees, representatives, owners, members, affiliates, successors and assigns all for the purposes herein referred to as "Releasees," FROM ALL LIABILITY TO THE UNDERSIGNED, his personal representatives, assigns, heirs, next of kin FOR ANY AND ALL LOSS OR DAMAGE, AND ANY CLAIM OR DEMANDS THEREFOR ON ACCOUNT OF INJURY OF THE PERSON OR PROPERTY OR RESULTING IN DEATH OF THE UNDERSIGNED ARISING OUT OF OR RELATED TO THE EVENT(S), WHETHER CAUSED BY THE NEGLIGENCE OF THE RELEASEES OR OTHERWISE.
 HEREBY AGREES TO INDEMNIFY AND SAVE AND HOLD HARMLESS the Releasees and each of them FROM ANY LOSS, LIABILITY, DAMAGE, OR COST they may incur arising out of or related to the UNDERSIGNED'S INJURY OR DEATH, WHETHER CAUSED BY THE NEGLIGENCE OF THE RELEASEES OR OTHERWISE.
@@ -592,7 +594,11 @@ HEREBY acknowledges that THE ACTIVITIES OF THE EVENT(S) ARE VERY DANGEROUS and i
 HEREBY agrees that this Release and Waiver of Liability, Assumption of Risk and Indemnity Agreement extends to all acts of negligence by the Releasees, INCLUDING NEGLIGENT RESCUE OPERATIONS and is intended to be as broad and inclusive as is permitted by the laws of the State or Province in which the Event(s) is/are conducted and that if any portion thereof is held invalid, it is agreed that the balance shall, notwithstanding, continue in full legal force and effect.
 HEREBY acknowledges that the undersigned has the right to negotiate the terms and conditions of this release agreement but by signing below hereby waives such right.
 I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNITY AGREEMENT, UNDERSTAND ITS TERMS, UNDERSTAND THAT I HAVE GIVEN UP SUBSTANTIAL RIGHTS BY SIGNING IT, AND HAVE SIGNED IT FREELY AND VOLUTARILY WITHOUT ANY INDUCEMENT, ASSURANCE OR GUARANTEE BEING MADE TO ME AND INTEND MY SIGNATURE TO BE A COMPLETE AND UNCONDITIONAL RELEASE OF ALL LIABILITY TO THE GREATEST EXTENT ALLOWED BY LAW. ANY INDUCEMENT, ASSURANCE OR GUARANTEE BEING MADE TO ME AND INTEND MY SIGNATURE TO BE A COMPLETE AND UNCONDITIONAL RELEASE OF ALL LIABILITY TO THE GREATEST EXTENT ALLOWED BY LAW.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ue6-YP-5fI">
@@ -681,7 +687,7 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2up-Mi-LmK">
                                 <rect key="frame" x="20" y="114" width="374" height="358.5"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-om-yzM">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-om-yzM">
                                 <rect key="frame" x="314" y="488.5" width="80" height="45"/>
                                 <color key="backgroundColor" red="0.94384023350000001" green="0.19817998219999999" blue="0.26943785570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -693,8 +699,7 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="close:" destination="I6W-JR-Ofa" eventType="touchUpInside" id="Eo2-1z-u2o"/>
-                                    <action selector="closePreview:" destination="D73-nS-rj6" eventType="touchUpInside" id="q4T-No-whw"/>
+                                    <action selector="didTapCloseButton:" destination="D73-nS-rj6" eventType="touchUpInside" id="oKh-RF-ciX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -710,7 +715,8 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
                         <viewLayoutGuide key="safeArea" id="wPa-Mz-uYk"/>
                     </view>
                     <connections>
-                        <outlet property="singaturePreviewImgVIew" destination="2up-Mi-LmK" id="CK8-sC-mgn"/>
+                        <outlet property="closeButton" destination="zGG-om-yzM" id="kOd-vr-JAs"/>
+                        <outlet property="signatureImage" destination="2up-Mi-LmK" id="zJM-fy-m7X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mI4-5z-Kfj" userLabel="First Responder" sceneMemberID="firstResponder"/>

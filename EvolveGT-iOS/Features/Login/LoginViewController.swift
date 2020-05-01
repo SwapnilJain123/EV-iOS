@@ -29,8 +29,8 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         
          loginInteractor.delegate = self
         
-        tfEmail.text! = "support@evolvegt.com"
-        tfPassword.text! = "EvolveGT750"
+        tfEmail.text! = "geevar83@gmail.com"
+        tfPassword.text! = "geevar@123"
         
         
     }
@@ -66,12 +66,9 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
 }
 
 extension LoginViewController : LoginViewDelegate{
-    func showSuccessMessage(message: String) {
-        
-    }
     
     func showLoginError(errorMessage: String) {
-        self.showAlert(title: "Login Error", message: errorMessage)
+        self.ext.showAlert(title: "Login Error", message: errorMessage)
     }
     
     func launchAdminPage() {
@@ -90,18 +87,7 @@ extension LoginViewController : LoginViewDelegate{
         
     }
     
-    func showError(message: String) {
-        self.showAlert(title: "Login Error", message: message)
-    }
-    
-    func showProgressIndicator(message: String?) {
-        self.addLoadingIndicator()
-    }
-    
-    func hideProgressIndicator() {
-        self.removeLoadingIndicator()
-    }
-    
+   
     
 }
 

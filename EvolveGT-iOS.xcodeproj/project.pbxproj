@@ -49,6 +49,15 @@
 		1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE862450A06C00190088 /* AdminApiConstants.swift */; };
 		1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE882450A19600190088 /* CompletedEventRequest.swift */; };
 		1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */; };
+		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
+		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
+		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
+		10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01B2459BFC700F05700 /* SignatureRequest.swift */; };
+		10BDD01E2459C0F600F05700 /* SignatureIntercator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01D2459C0F600F05700 /* SignatureIntercator.swift */; };
+		10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01F2459FB3700F05700 /* SignaturePreviewViewController.swift */; };
+		10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD021245B0C6300F05700 /* SignatureReaderController.swift */; };
+		10BDD026245B101700F05700 /* EVCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD025245B101700F05700 /* EVCheckBox.swift */; };
+		10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */; };
 		10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */; };
 		10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */; };
 		10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */; };
@@ -107,6 +116,15 @@
 		1039FE862450A06C00190088 /* AdminApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApiConstants.swift; sourceTree = "<group>"; };
 		1039FE882450A19600190088 /* CompletedEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventRequest.swift; sourceTree = "<group>"; };
 		1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsInteractor.swift; sourceTree = "<group>"; };
+		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
+		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		10BDD01B2459BFC700F05700 /* SignatureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureRequest.swift; sourceTree = "<group>"; };
+		10BDD01D2459C0F600F05700 /* SignatureIntercator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureIntercator.swift; sourceTree = "<group>"; };
+		10BDD01F2459FB3700F05700 /* SignaturePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignaturePreviewViewController.swift; sourceTree = "<group>"; };
+		10BDD021245B0C6300F05700 /* SignatureReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureReaderController.swift; sourceTree = "<group>"; };
+		10BDD025245B101700F05700 /* EVCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVCheckBox.swift; sourceTree = "<group>"; };
+		10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureUpdateRequest.swift; sourceTree = "<group>"; };
 		10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsController.swift; sourceTree = "<group>"; };
 		10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantCell.swift; sourceTree = "<group>"; };
 		10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantRequest.swift; sourceTree = "<group>"; };
@@ -156,6 +174,7 @@
 		1039FDFB244F1A1800190088 /* EvolveGT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				10BDD00F245982CA00F05700 /* Common */,
 				1039FE622450631500190088 /* Core */,
 				1039FE5E2450568A00190088 /* Extensions */,
 				1039FE41244F607000190088 /* Logger */,
@@ -230,6 +249,8 @@
 				1039FE882450A19600190088 /* CompletedEventRequest.swift */,
 				10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */,
 				100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */,
+				10BDD01B2459BFC700F05700 /* SignatureRequest.swift */,
+				10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -354,6 +375,7 @@
 		1039FE742450874C00190088 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				10BDD01A2459B8A700F05700 /* Signature */,
 				10FCA2492451CA5F00EA95C0 /* EventParticipants */,
 				1039FE782450886700190088 /* CompletedEvents */,
 				1039FE752450875600190088 /* View */,
@@ -386,6 +408,43 @@
 				1039FE8424509FE600190088 /* AdminApi.swift */,
 			);
 			path = AdminApi;
+			sourceTree = "<group>";
+		};
+		10BDD00F245982CA00F05700 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				10BDD024245B100700F05700 /* CustomViews */,
+				10BDD023245B0FF300F05700 /* Alert */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		10BDD01A2459B8A700F05700 /* Signature */ = {
+			isa = PBXGroup;
+			children = (
+				10BDD021245B0C6300F05700 /* SignatureReaderController.swift */,
+				10BDD01D2459C0F600F05700 /* SignatureIntercator.swift */,
+				10BDD01F2459FB3700F05700 /* SignaturePreviewViewController.swift */,
+			);
+			path = Signature;
+			sourceTree = "<group>";
+		};
+		10BDD023245B0FF300F05700 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */,
+				10BDD01724598AAF00F05700 /* AlertViewController.swift */,
+				10BDD011245982ED00F05700 /* AlertService.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		10BDD024245B100700F05700 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				10BDD025245B101700F05700 /* EVCheckBox.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		10FCA2492451CA5F00EA95C0 /* EventParticipants */ = {
@@ -481,6 +540,7 @@
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				1039FE11244F20A900190088 /* Main.storyboard in Resources */,
+				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +600,7 @@
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
 				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
+				10BDD014245982ED00F05700 /* AlertService.swift in Sources */,
 				100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */,
 				10FCA257245212AD00EA95C0 /* StringDateExtension.swift in Sources */,
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
@@ -549,21 +610,26 @@
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
 				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
+				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				1039FE8224509F3100190088 /* CompletedEventsResponse.swift in Sources */,
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
 				1039FE43244F608100190088 /* Logger.swift in Sources */,
+				10BDD026245B101700F05700 /* EVCheckBox.swift in Sources */,
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
+				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
 				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
+				10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
+				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
@@ -577,6 +643,8 @@
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
 				1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */,
 				10FCA25924521E6300EA95C0 /* UiViewExtension.swift in Sources */,
+				10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */,
+				10BDD01E2459C0F600F05700 /* SignatureIntercator.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 			);

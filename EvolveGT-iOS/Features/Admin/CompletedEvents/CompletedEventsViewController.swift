@@ -69,8 +69,8 @@ class CompletedEventViewController : ETViewController{
     }
     
     func setNavbarControls(){
-        self.hideBackButton()
-        self.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
+        self.ext.hideBackButton()
+        self.ext.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
         popUpMenu.setBackground(color: UIColor.getAppThemeColor())
         popUpMenu.isHidden = true
         
@@ -102,7 +102,7 @@ class CompletedEventViewController : ETViewController{
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.showBackButton()
+        self.ext.showBackButton()
     }
     
     
@@ -164,9 +164,7 @@ extension CompletedEventViewController:UISearchBarDelegate{
     }
 }
 extension CompletedEventViewController: CompletedEventsViewDelegate{
-    func showSuccessMessage(message: String) {
-        
-    }
+    
     
     func presentEventTypeFilterOptions(options: [String]) {
         let title = "Filter by Event Type"
@@ -198,35 +196,19 @@ extension CompletedEventViewController: CompletedEventsViewDelegate{
             self!.interactor.filterBy(selectedTraining, .trainingType)
         }
     }
-    
-    
-    
-    
+     
     func didFetchCompletedEvents(events: [CompletedEvent]) {
         completedEvents.removeAll()
         completedEvents.append(contentsOf: events)
         eventsTableView.reloadData()
     }
-    
-    func showProgressIndicator(message: String?) {
-        self.addLoadingIndicator()
-    }
-    
-    func hideProgressIndicator() {
-        self.removeLoadingIndicator()
-    }
-    
-    func showError(message: String) {
-        self.displayEmptyMessage(message: message)
-    }
-    
-    
+
 }
 
 //Mark: Toolbar Actions
 extension CompletedEventViewController{
     func showFilterOptions(){
-        let filterActionSheet = UIAlertController(title: "Select filter", message: "", preferredStyle: .actionSheet)
+        let filterActionSheet = UIAlertController(title: "Select filter", message: "", preferredStyle: .alert)
         let month         = UIAlertAction(title: "By Month", style: .default, handler: { _ in
             self.interactor.filterItems(with: .month)
         })
@@ -243,11 +225,7 @@ extension CompletedEventViewController{
         filterActionSheet.addAction(eventType)
         filterActionSheet.addAction(trainingType)
         filterActionSheet.addAction(clear)
-        if DeviceType.IS_IPAD {
-            filterActionSheet.popoverPresentationController?.permittedArrowDirections = []
-            filterActionSheet.popoverPresentationController?.sourceView = self.view
-            filterActionSheet.popoverPresentationController?.sourceRect = CGRect(x: ScreenSize.SCREEN_WIDTH / 2, y: ScreenSize.SCREEN_HEIGHT, width: 1.0, height: 1.0)
-        }
+
         present(filterActionSheet, animated: true, completion: nil)
     }
     

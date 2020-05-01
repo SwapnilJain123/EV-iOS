@@ -14,6 +14,7 @@ class EventParticipantsController : ETViewController{
     
     var completedEvent : CompletedEvent?
     var participants = [EventParticipant]()
+    var selectedParticipant : EventParticipant?
     
     @IBOutlet weak var listErrorLable: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -30,14 +31,17 @@ class EventParticipantsController : ETViewController{
         interactor.delegate = self
         particiapntTable.dataSource = self
         
+        
         setUpSearchBar()
-        self.showBackButton()
+        self.ext.showBackButton()
         setupUI()
         setNavbarControls()
         requestEventParticipants()
-    
+        
     }
     
+    
+    /// Setting up the search bar
     func setUpSearchBar(){
         searchBar?.delegate = self
         searchBar?.placeholder = "Search participants here"
@@ -46,19 +50,19 @@ class EventParticipantsController : ETViewController{
         hideSearchbar()
     }
     func setNavbarControls(){
-        self.showBackButton()
-        self.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
+        self.ext.showBackButton()
+        self.ext.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
         
         
         let logoutItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout_icon"),
                                          style: .plain,
                                          target: self,
                                          action: #selector(self.didPressLogout))
-       
+        
         let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Search"),
-        style: .plain,
-        target: self,
-        action: #selector(self.searchUsers))
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(self.searchUsers))
         self.navigationItem.rightBarButtonItems = [logoutItem, searchButton]
     }
     
@@ -97,10 +101,12 @@ class EventParticipantsController : ETViewController{
         eventDate.text = completedEvent?.eventDate.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? ""
     }
 }
-extension EventParticipantsController : EventParticipantsViewDelegate{
-    func showSuccessMessage(message: String) {
-        
+extension EventParticipantsController : EventParticipantsViewDelegate, SignatureRefreshDelegate{
+    func didModifySignature(signatureId: String) {
+        interactor.getEventParticipants(completedEvent?.eventID ?? "")
     }
+    
+    
     
     func filteredParticipants(participants: [EventParticipant], query: String) {
         self.participants.removeAll()
@@ -119,31 +125,25 @@ extension EventParticipantsController : EventParticipantsViewDelegate{
         
     }
     
-    func showProgressIndicator(message: String?) {
-        self.addLoadingIndicator()
-    }
-    
-    func hideProgressIndicator() {
-        self.removeLoadingIndicator()
-    }
-    
-    func showError(message: String) {
-        self.displayEmptyMessage(message: message)
-    }
     
 }
 
 extension EventParticipantsController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.participants.count
+        
+        return self.participants.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventParticipantCell",
                                                  for: indexPath) as! EventParticipantCell
         cell.eventParticipant = participants[indexPath.row]
         cell.delegate = self
         return cell
+        
+        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -154,22 +154,25 @@ extension EventParticipantsController : UITableViewDataSource{
             }else{
                 return "Showing \(count) users"
             }
-            
         }
         return ""
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let count = participants.count
-        if count > 0 {
-            return 30
+        
+        if(tableView == particiapntTable){
+            let count = participants.count
+            if count > 0 {
+                return 30
+            }
         }
         return 0
     }
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) { if(tableView == particiapntTable){
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.backgroundView?.backgroundColor = .white
+        }
     }
 }
 extension EventParticipantsController:UISearchBarDelegate{
@@ -189,6 +192,17 @@ extension EventParticipantsController:UISearchBarDelegate{
 extension EventParticipantsController: EventParticipantCellDelegate{
     func clickedOnSignature(_ cell: EventParticipantCell, participant: EventParticipant?) {
         Log.i("Signature Tap identified")
+        
+        if participant?.hasSignature ?? false{
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignaturePreviewViewController") as! SignaturePreviewViewController
+            controller.signatureId = participant?.signatureID ?? ""
+            navigationController?.pushViewController(controller, animated: true)
+        }else{
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignatureReader") as! SignatureReaderController
+            controller.eventparticipant = participant
+            controller.delegate = self
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     func clickedOnUpgradeSkill(_ cell: EventParticipantCell, participant: EventParticipant?) {
@@ -201,9 +215,69 @@ extension EventParticipantsController: EventParticipantCellDelegate{
         }
     }
     
-    func clickedOnTraining(_ cell: EventParticipantCell, participant: EventParticipant?) {
+    func clickedOnAccessories(_ cell: EventParticipantCell, participant: EventParticipant?) {
         Log.i("Training Tap identified")
+        //self.interactor.onAccessoriesClicked(participant: participant!)
+        showListAlert(title: "Sample", btnText: "ok", eventParticiapnt: participant!)
     }
     
+    func showListAlert(title: String, btnText: String, eventParticiapnt: EventParticipant){
     
+        let alertService = AlertService()
+        let alertVC = alertService.alert(title: "Accessories", buttonTitle: "OK")
+        alertVC.titleHidden = true
+        
+        Log.d("Training Count \(eventParticiapnt.trainings?.count ?? 0)")
+        Log.d("Rental Count \(eventParticiapnt.rentals?.count ?? 0)")
+        if let trainings = eventParticiapnt.trainings{
+            let trainingTitle = createHeaderLabel(title: "Trainings")
+            alertVC.addView(child: trainingTitle)
+            trainingTitle.backgroundColor = UIColor.lightGray
+            
+            for training in trainings{
+                let trainingLabel = UILabel()
+                trainingLabel.text = training
+                alertVC.addView(child: trainingLabel)
+            }
+        }
+        
+        if let rentals = eventParticiapnt.rentals{
+            let rentalTitle  = createHeaderLabel(title: "Rentals")
+            alertVC.addView(child: rentalTitle)
+            rentalTitle.backgroundColor = UIColor.lightGray
+            
+            for rental in rentals{
+                
+                let stackView = UIStackView()
+                stackView.axis = .horizontal
+                stackView.alignment = .fill // .leading .firstBaseline .center .trailing .lastBaseline
+                stackView.distribution = .fillEqually
+                stackView.spacing = 10
+                
+                let rentalLabel = UILabel()
+                rentalLabel.text = rental.name
+                
+                let rentalValue = UILabel()
+                rentalValue.text = "\(rental.attribute.capitalized) : \(rental.value)"
+                
+                stackView.addArrangedSubview(rentalLabel)
+                stackView.addArrangedSubview(rentalValue)
+                
+                alertVC.addView(child: stackView)
+            }
+        }
+        
+        present(alertVC, animated: true)
+    }
+    
+    func createHeaderLabel(title: String)->UIView{
+        let label = UIButton()
+                   
+       label.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+       label.setTitle(title, for: .normal)
+       label.tintColor = .black // this will be the textColor
+       label.isUserInteractionEnabled = false
+        
+        return label
+    }
 }

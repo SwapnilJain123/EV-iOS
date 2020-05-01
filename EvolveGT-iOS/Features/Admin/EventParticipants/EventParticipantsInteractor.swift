@@ -17,10 +17,13 @@ class EventParticipantIntercator : BaseInteractor{
     
     var delegate: EventParticipantsViewDelegate?
     var participants = [EventParticipant]()
+    var eventId = ""
     
     func getEventParticipants(_ eventId: String){
-        delegate?.showProgressIndicator(message: "")
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingParticipants)
         let adminApi  = AdminApi()
+        self.eventId = eventId
+        
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
             if error == nil{
@@ -28,16 +31,22 @@ class EventParticipantIntercator : BaseInteractor{
                 if let eventParticipantsResponse = self.decodeFromJson(response!, modelType: EventParticpantResponse.self){
                     
                     if eventParticipantsResponse.eventParticipants.count == 0{
-                        self.delegate?.showError(message: ErrorMessages.emptyEventParticipants)
+                        self.delegate?.showEmptyPageError(message: ErrorMessages.emptyEventParticipants)
                     }else{
-                        self.participants = eventParticipantsResponse.eventParticipants
-                        self.delegate?.didFetchParticipants(participants:  eventParticipantsResponse.eventParticipants)
+                        self.participants = eventParticipantsResponse.eventParticipants.sorted(by:
+                            {
+                                if let displayName = $0.displayName{
+                                    return displayName < $1.displayName ?? ""
+                                }
+                                return false
+                            })
+                        self.delegate?.didFetchParticipants(participants:  self.participants)
                     }
                     
                 }
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
-                self.delegate?.showError(message: error!.errorMessage)
+                self.delegate?.showEmptyPageError(message: error!.errorMessage)
             }
         }
         adminApi.fetchEventParticipants(eventID: eventId)
@@ -58,9 +67,14 @@ class EventParticipantIntercator : BaseInteractor{
         let adminApi  = AdminApi()
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
-            self.delegate?.showSuccessMessage(message: SuccessMessages.skillUpgraded)
+            self.delegate?.showSuccessToastMessage(message: SuccessMessages.skillUpgraded)
+            self.getEventParticipants(self.eventId)
         }
         adminApi.upgradeSkill(skill: skill, userID: userID)
+    }
+    
+    
+    func onAccessoriesClicked(participant : EventParticipant){
         
     }
 }

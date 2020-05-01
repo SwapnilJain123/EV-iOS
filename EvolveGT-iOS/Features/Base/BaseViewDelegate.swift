@@ -7,11 +7,13 @@
 //
 
 import Foundation
-protocol BaseViewDelegate {
+@objc protocol BaseViewDelegate {
     
     func showProgressIndicator(message : String?)
     func hideProgressIndicator()
-    func showError(message: String)
-    func showSuccessMessage(message: String)
+    func showEmptyPageError(message: String)
+    func showSuccessToastMessage(message: String)
+    func showErrorToastMessage(message: String)
+    func showAlert(title: String, message: String)
    
 }

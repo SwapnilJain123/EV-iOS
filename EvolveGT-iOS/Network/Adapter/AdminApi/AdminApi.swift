@@ -37,4 +37,21 @@ class AdminApi: BaseApiAdapter{
         
         super.makeRequest(method: .POST)
     }
+    
+    func getSignature(signatureId: String){
+        let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.GET_SIGNATURE)"
+        setUrl(url: url)
+        let signatueRequest = SignatureRequest(signatureID: signatureId)
+        setParameters(parameters: makeDictionary(signatueRequest))
+        super.makeRequest(method: .POST)
+    }
+    
+    func uploadSignature(signatureId: String, signature: Data){
+        let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.UPDATE_SIGNATURE)"
+        setUrl(url: url)
+        let encodedSignature = signature.base64EncodedString() 
+        let signatueRequest = SignatureUpdateRequest(signatureID: signatureId, signature: encodedSignature)
+        setParameters(parameters: makeDictionary(signatueRequest))
+        super.makeRequest(method: .POST)
+    }
 }

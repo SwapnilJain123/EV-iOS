@@ -37,7 +37,7 @@ class CompletedEventsInteractor : BaseInteractor{
     }
     
     func fetchCompletedEvents() {
-        delegate?.showProgressIndicator(message: "")
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCompletedEvents)
         let adminApi = AdminApi()
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
@@ -46,7 +46,7 @@ class CompletedEventsInteractor : BaseInteractor{
                 if let completedeventResponse = self.decodeFromJson(response!, modelType: CompletedEventsResponse.self){
                     
                     if completedeventResponse.completedEvents.count == 0{
-                        self.delegate?.showError(message: ErrorMessages.emptyCompletedEvents)
+                        self.delegate?.showEmptyPageError(message: ErrorMessages.emptyCompletedEvents)
                     }else{
                         self.completedEvents.removeAll()
                         self.completedEvents.append(contentsOf: completedeventResponse.completedEvents)
@@ -56,7 +56,7 @@ class CompletedEventsInteractor : BaseInteractor{
                 }
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
-                self.delegate?.showError(message: error!.errorMessage)
+                self.delegate?.showEmptyPageError(message: error!.errorMessage)
             }
         }
         adminApi.fetchCompletedEvents()

@@ -14,9 +14,9 @@ class ETViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationBackgroundColor(color: UIColor.init(hexFromString: UIColor.COLOR_EV))
+        self.ext.setNavigationBackgroundColor(color: UIColor.init(hexFromString: UIColor.COLOR_EV))
         
-        self.setScreenTitle(title: getScreenTitle() ?? "")
+        self.ext.setScreenTitle(title: getScreenTitle() ?? "")
     
     }
     @objc func logout(){
@@ -84,4 +84,31 @@ class ETViewController : UIViewController{
         
         selectionMenu.show(style: .present, from: self)
     }
+}
+
+extension ETViewController{
+    @objc func showSuccessToastMessage(message: String) {
+        self.ext.showSuccessToast(message: message, handler: nil)
+    }
+    
+    @objc func showErrorToastMessage(message: String) {
+        self.ext.showErrorToast(message: message, handler: nil)
+    }
+    @objc  
+    func showProgressIndicator(message: String?) {
+        self.ext.addLoadingIndicator(message)
+    }
+    
+    @objc func hideProgressIndicator() {
+        self.ext.removeLoadingIndicator()
+    }
+    @objc  
+    func showEmptyPageError(message: String) {
+        self.ext.displayEmptyMessage(message: message)
+    }
+    
+    @objc func showAlert(title: String, message: String) {
+        self.ext.showAlert(title: title, message: message)
+    }
+    
 }

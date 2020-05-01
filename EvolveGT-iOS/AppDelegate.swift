@@ -66,7 +66,7 @@ extension AppDelegate{
         self.window?.makeKeyAndVisible()
     }
     func launchUserDashboard(){
-        
+        launchAdminDashboard()
     }
     func launchAdminDashboard(){
         

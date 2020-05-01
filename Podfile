@@ -11,23 +11,22 @@ target 'EvolveGT-iOS' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Kingfisher', '~> 4.2'
   pod 'AFDateHelper'
-  pod 'SwiftyJSON','4.2'
-  pod 'ReachabilitySwift','4.2'
+pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 4.6'
-  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'SVProgressHUD'
   pod 'IQKeyboardManagerSwift','6.0.4'
-  
-
-   pod 'SnapKit', '~> 5.0.0'
-   
+  pod 'RSSelectionMenu'
+  pod 'Loaf'
+   pod 'ReachabilitySwift','4.2'
+#pod 'SwiftyJSON','4.2'
 #  pod 'SideMenuSwift','1.0.2'
   pod 'SideMenuSwift'
   pod 'XLPagerTabStrip', '~> 8.1'
   pod 'NXDrawKit'
-  pod 'RSSelectionMenu' or pod 'RSSelectionMenu', '~> 6.0.3'
   pod 'SwiftSignatureView'
 #  pod 'Braintree'
   pod 'BraintreeDropIn'
+#  pod 'SwiftEntryKit'
 
 
   # Pods for EvolveGT
