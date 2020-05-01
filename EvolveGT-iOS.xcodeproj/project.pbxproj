@@ -58,6 +58,7 @@
 		10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD021245B0C6300F05700 /* SignatureReaderController.swift */; };
 		10BDD026245B101700F05700 /* EVCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD025245B101700F05700 /* EVCheckBox.swift */; };
 		10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */; };
+		10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */; };
 		10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */; };
 		10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */; };
 		10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */; };
@@ -125,6 +126,7 @@
 		10BDD021245B0C6300F05700 /* SignatureReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureReaderController.swift; sourceTree = "<group>"; };
 		10BDD025245B101700F05700 /* EVCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVCheckBox.swift; sourceTree = "<group>"; };
 		10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureUpdateRequest.swift; sourceTree = "<group>"; };
+		10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsController.swift; sourceTree = "<group>"; };
 		10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantCell.swift; sourceTree = "<group>"; };
 		10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantRequest.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */,
 				100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */,
 				100A2A23245607A300EF2B9F /* Sequence+Extension.swift */,
+				10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
+				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
 				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,

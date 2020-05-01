@@ -27,9 +27,7 @@ class CompletedEventCell: UITableViewCell{
              let fallbackImage = UIImage(named: "et_fallback_image")
             eventImage.kf.setImage(with: url,
                                    placeholder: fallbackImage,
-                                   options: [.transition(ImageTransition.fade(1))]){ _, _, _, _ in
-                           //         self.setNeedsLayout()
-            }
+                                   options: [.transition(ImageTransition.fade(1))])
             
         }
         

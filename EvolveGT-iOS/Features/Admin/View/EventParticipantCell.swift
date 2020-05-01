@@ -32,10 +32,14 @@ class EventParticipantCell: UITableViewCell{
     @IBOutlet weak var dateOfBirth: UILabel!
     @IBOutlet weak var orderId: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var btnTraining: UIButton!
     @IBOutlet weak var btnSign: UIButton!
     @IBOutlet weak var btnSkillUpgrade: UIButton!
+    
+    @IBOutlet weak var backroundView: UIView!
+    
     
     func updateUI() {
         userName.text = eventParticipant?.namewithRole ?? "-"
@@ -47,18 +51,33 @@ class EventParticipantCell: UITableViewCell{
         orderId.text = "#"
         orderId.text?.append(eventParticipant?.orderID ?? "-")
         
-        btnTraining.isHidden = !(eventParticipant?.hasTrainingOrRentals ?? false)
-        btnSign.isHidden = eventParticipant?.signEnabled == 1 ? false : true
-        
-        if eventParticipant?.hasSignature ?? false{
-            //green or blue
-            let image = UIImage(named: "sign_green") as UIImage?
-            btnSign.setImage(image, for: .normal)
+        //btnTraining.isHidden = !(eventParticipant?.hasTrainingOrRentals ?? false)
+        // btnSign.isHidden = eventParticipant?.signEnabled == 1 ? false : true
+        if eventParticipant?.signEnabled != 1 {
+            if btnSign != nil &&  btnSign.isHidden == false{
+                btnSign.removeFromSuperview()
+            }
+            
         }else{
-            //red icon
-            let image = UIImage(named: "sign") as UIImage?
-            btnSign.setImage(image, for: .normal)
+            if eventParticipant?.hasSignature ?? false{
+                //green or blue
+                let image = UIImage(named: "sign_green") as UIImage?
+                btnSign.setImage(image, for: .normal)
+            }else{
+                //red icon
+                let image = UIImage(named: "sign") as UIImage?
+                btnSign.setImage(image, for: .normal)
+            }
         }
+        if !(eventParticipant?.hasTrainingOrRentals ?? false){
+            if btnTraining != nil && btnTraining.isHidden == false{
+                btnTraining.removeFromSuperview()
+            }
+        }
+        
+        backroundView.backgroundColor = UIColor.init(hexFromString: "e6e6e6")
+        contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 0.8)
+        containerView.setCardView()
         
     }
     
@@ -75,42 +94,4 @@ class EventParticipantCell: UITableViewCell{
     @IBAction func didPressUpgradeSkill(_ sender: UIButton) {
         delegate?.clickedOnUpgradeSkill(self, participant: eventParticipant)
     }
-}
-class EventParticipantTrainingCell: UITableViewCell{
-    
-    
-    @IBOutlet weak var trainingLabel: UILabel!
-    var training: String? {
-        didSet {
-            updateUI()
-        }
-    }
-    
-    func updateUI(){
-        trainingLabel.text = training ?? ""
-    }
-    
-}
-
-class EventParticipantRentalCell: UITableViewCell{
-    
-    
-    @IBOutlet weak var rentalLabel: UILabel!
-    
-    @IBOutlet weak var rentalAttribute: UILabel!
-    var rental: EventParticipant.Rental? {
-        didSet {
-            updateUI()
-        }
-    }
-    
-    func updateUI(){
-        rentalLabel.text = rental?.name ?? ""
-        if let attribute = rental?.attribute, let value = rental?.value{
-            rentalAttribute.text = "\(attribute) : \(value)"
-        }else{
-            rentalAttribute.text = ""
-        }
-    }
-    
 }
