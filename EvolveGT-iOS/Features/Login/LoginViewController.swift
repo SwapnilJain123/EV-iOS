@@ -12,7 +12,10 @@ import UIKit
 import SkyFloatingLabelTextField
 class LoginViewController : ETViewController, UITextFieldDelegate{
     
-
+    @IBOutlet weak var loginImage: UIImageView!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBOutlet weak var passwordConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -23,15 +26,24 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
     
     @IBOutlet weak var tfPassword: SkyFloatingLabelTextField!
     
+    @IBOutlet weak var guestButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         loginInteractor.delegate = self
-        
         tfEmail.text! = "geevar83@gmail.com"
         tfPassword.text! = "geevar@123"
         
+        loginButton.backgroundColor = UIColor.getAppThemeColor()
+        
+        guestButton.isHidden = !AppEngine.sharedInstance.isEvApp()
+        
+        var image = UIImage(named: "splash_logo")
+        if !AppEngine.sharedInstance.isEvApp(){
+            image = UIImage(named: "moto_logo")
+        }
+        
+        loginImage.image = image
         
     }
     
@@ -59,7 +71,7 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
 
     
     @IBAction func didPressLogin(_ sender: Any) {
-       
+       loginInteractor.delegate = self
         loginInteractor.doLogin(email: tfEmail.text ?? "", password: tfPassword.text ?? "")
     }
     
@@ -68,19 +80,20 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
 extension LoginViewController : LoginViewDelegate{
     
     func showLoginError(errorMessage: String) {
+        self.ext.removeLoadingIndicator()
         self.ext.showAlert(title: "Login Error", message: errorMessage)
+        
     }
     
     func launchAdminPage() {
-        Log.i("\n\n Should Launch Admin Dashboard \n\n")
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
-        let adminViewController = storyBoard.instantiateViewController(withIdentifier: "CompletedEventsViewController") as! CompletedEventViewController
-        self.navigationController?.pushViewController(adminViewController, animated: true)
-        self.navigationController?.popToViewController(adminViewController, animated: true)
+       let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.launchAdminDashboard()
     }
     
     func launchUserPage() {
         Log.i("\n\n Should Launch User Dashboard \n\n")
+        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.launchAdminDashboard()
     }
     
     func launchGuestPage() {

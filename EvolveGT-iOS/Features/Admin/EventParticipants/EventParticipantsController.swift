@@ -37,7 +37,7 @@ class EventParticipantsController : ETViewController{
         setupUI()
         setNavbarControls()
         requestEventParticipants()
-        
+        eventTitle.textColor = UIColor.getAppThemeColor()
     }
     
     

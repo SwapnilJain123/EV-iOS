@@ -31,13 +31,22 @@ extension UIViewController{
         func addLoadingIndicator(_ message: String?){
             DispatchQueue.main.async(execute: { () -> Void in
                 // MBProgressHUD.showAdded(to: self.view, animated: true)
+                SVProgressHUD.setDefaultMaskType(.black)
                 SVProgressHUD.show(withStatus: message)
             })
         }
         
         func removeLoadingIndicator(){
             //MBProgressHUD.hide(for: self.view, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.150, execute: {
+                SVProgressHUD.dismiss()
+            })
+            
+        }
+        func removeLoadingIndicatorImmediately(){
+            //MBProgressHUD.hide(for: self.view, animated: true)
             SVProgressHUD.dismiss()
+            
         }
         
         static let ERROR_VIEW_TAG = -1

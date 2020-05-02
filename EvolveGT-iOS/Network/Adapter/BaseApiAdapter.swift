@@ -57,7 +57,12 @@ class BaseApiAdapter{
     func makeRequest(method: Method){
         
         Log.i(apiClient.urlString)
-        
+        if(!apiClient.isConnectedToInternet){
+            var error = ApiError()
+            error.errorMessage = ApiError.ERROR_OFFLINE
+            didFail(error: error)
+            return
+        }
         switch method {
         case .GET:
             doGet()

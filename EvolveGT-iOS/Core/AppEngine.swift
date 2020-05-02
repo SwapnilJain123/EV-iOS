@@ -10,7 +10,7 @@ import Foundation
 class AppEngine{
     
     
-    enum AppMode{
+    enum AppMode: Int{
         case APP_EV
         case APP_MOTO
     }
@@ -27,6 +27,8 @@ class AppEngine{
     
     func switchApp(appMode : AppMode){
         self.appMode = appMode
+        
+        userDefaultHelper.saveData(key: AppConstants.KEY_APP_MODE, value: self.appMode.rawValue)
     }
     
     func isEvApp() -> Bool{
@@ -60,6 +62,8 @@ class AppEngine{
                 Log.e("Restoring user info Failed")
             }
         }
+        let savedAppMode = userDefaultHelper.getData(key: AppConstants.KEY_APP_MODE) as? Int ?? AppMode.APP_EV.rawValue
+        self.appMode = AppMode(rawValue: savedAppMode) ?? AppMode.APP_EV
         authToken = userDefaultHelper.getData(key: KEY_AUTH_TOKEN) as? String ?? ""
         
     }
@@ -70,9 +74,10 @@ class AppEngine{
     }
     
     func reset(){
-        saveAuthToken(token: "")
-        saveUserInfo(user: currentUser!)
+        userDefaultHelper.delete(key: KEY_AUTH_TOKEN)
+        userDefaultHelper.delete(key: KEY_USER)
         self.currentUser = nil
+        self.authToken = ""
         
     }
 }

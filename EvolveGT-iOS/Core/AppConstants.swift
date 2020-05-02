@@ -13,9 +13,12 @@ import UIKit
 let KEY_USER = "saved_user"
 let KEY_AUTH_TOKEN = "auth_token"
 
+
 struct AppConstants{
      static let SkillLevels = ["GT1","E1","E2","E3","E4","COACHES"]
      static let ImageTag = "data:image/png;base64,"
+    
+     static let KEY_APP_MODE = "appMode"
 }
 struct ScreenTitle{
     

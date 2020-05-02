@@ -41,6 +41,14 @@ class EventParticipantCell: UITableViewCell{
     @IBOutlet weak var backroundView: UIView!
     
     
+    override func prepareForReuse() {
+        
+        super.prepareForReuse()
+        btnSign.isHidden = false
+        btnTraining.isHidden = false
+
+    }
+    
     func updateUI() {
         userName.text = eventParticipant?.namewithRole ?? "-"
         skill.text = eventParticipant?.skillLevel
@@ -59,19 +67,30 @@ class EventParticipantCell: UITableViewCell{
             }
             
         }else{
+            var image = UIImage(named: "sign_green") as UIImage?
             if eventParticipant?.hasSignature ?? false{
-                //green or blue
-                let image = UIImage(named: "sign_green") as UIImage?
-                btnSign.setImage(image, for: .normal)
+                if !AppEngine.sharedInstance.isEvApp(){
+                    image = UIImage(named: "admin_moto_signature") as UIImage?
+                }
             }else{
-                //red icon
-                let image = UIImage(named: "sign") as UIImage?
+                image = UIImage(named: "sign") as UIImage?
+                
+            }
+            if btnSign != nil{
                 btnSign.setImage(image, for: .normal)
             }
         }
-        if !(eventParticipant?.hasTrainingOrRentals ?? false){
+        if (eventParticipant?.hasTrainingOrRentals ?? false) == false{
             if btnTraining != nil && btnTraining.isHidden == false{
-                btnTraining.removeFromSuperview()
+                btnTraining.isHidden = true// removeFromSuperview()
+            }
+        }else{
+            var image = UIImage(named: "star") as UIImage?
+            if !AppEngine.sharedInstance.isEvApp(){
+                image = UIImage(named: "admin_moto_star") as UIImage?
+            }
+            if(btnTraining != nil){
+                btnTraining.setImage(image, for: .normal)
             }
         }
         
@@ -79,6 +98,14 @@ class EventParticipantCell: UITableViewCell{
         contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 0.8)
         containerView.setCardView()
         
+        
+        
+        userName.textColor = UIColor.getAppThemeColor()
+         userID.textColor = UIColor.getAppThemeColor()
+         skill.textColor = UIColor.getAppThemeColor()
+         dateOfBirth.textColor = UIColor.getAppThemeColor()
+         email.textColor = UIColor.getAppThemeColor()
+         orderId.textColor = UIColor.getAppThemeColor()
     }
     
     

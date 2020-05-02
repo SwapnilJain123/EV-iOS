@@ -46,6 +46,7 @@ class LoginInteractor : BaseInteractor{
                         }
                     }
                 }else{
+                    self.delegate?.hideProgressIndicator()
                     Log.i("Login Error - \(String(describing: error?.errorMessage)) ")
                     self.delegate?.showLoginError(errorMessage: error!.errorMessage)
                 }

@@ -14,7 +14,7 @@ class ETViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ext.setNavigationBackgroundColor(color: UIColor.init(hexFromString: UIColor.COLOR_EV))
+        self.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
         
         self.ext.setScreenTitle(title: getScreenTitle() ?? "")
     
@@ -84,6 +84,8 @@ class ETViewController : UIViewController{
         
         selectionMenu.show(style: .present, from: self)
     }
+    
+    
 }
 
 extension ETViewController{
@@ -109,6 +111,11 @@ extension ETViewController{
     
     @objc func showAlert(title: String, message: String) {
         self.ext.showAlert(title: title, message: message)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.ext.removeLoadingIndicatorImmediately()
     }
     
 }

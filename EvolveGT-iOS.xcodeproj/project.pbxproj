@@ -59,6 +59,7 @@
 		10BDD026245B101700F05700 /* EVCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD025245B101700F05700 /* EVCheckBox.swift */; };
 		10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */; };
 		10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */; };
+		10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD059245D4B7600F05700 /* AppModeSelector.swift */; };
 		10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */; };
 		10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */; };
 		10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */; };
@@ -127,6 +128,7 @@
 		10BDD025245B101700F05700 /* EVCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVCheckBox.swift; sourceTree = "<group>"; };
 		10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureUpdateRequest.swift; sourceTree = "<group>"; };
 		10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		10BDD059245D4B7600F05700 /* AppModeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModeSelector.swift; sourceTree = "<group>"; };
 		10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsController.swift; sourceTree = "<group>"; };
 		10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantCell.swift; sourceTree = "<group>"; };
 		10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantRequest.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				1039FE16244F25E100190088 /* LoginViewController.swift */,
 				1039FE10244F20A900190088 /* Main.storyboard */,
 				1039FE6924506DE800190088 /* LoginInterator.swift */,
+				10BDD059245D4B7600F05700 /* AppModeSelector.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
+				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,

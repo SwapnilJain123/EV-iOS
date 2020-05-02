@@ -25,12 +25,67 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5TB-mt-t5C"/>
+                        <segue destination="UpC-NE-WFh" kind="relationship" relationship="rootViewController" id="6fN-hP-EdP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Az-Gq-QjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-586" y="108"/>
+        </scene>
+        <!--App Mode Selection Controller-->
+        <scene sceneID="q8M-O4-hh1">
+            <objects>
+                <viewController storyboardIdentifier="AppModeSelector" id="UpC-NE-WFh" customClass="AppModeSelectionController" customModule="EvolveGT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Adx-1z-PoB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rS3-Tc-OpA">
+                                <rect key="frame" x="137" y="305" width="140" height="340"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYF-Kh-lrW">
+                                        <rect key="frame" x="12" y="-24" width="115" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="XUK-Br-uh1"/>
+                                            <constraint firstAttribute="height" constant="140" id="rs7-g8-1VP"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ev_logo"/>
+                                        <connections>
+                                            <action selector="switchToEvApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="rWz-f0-q4j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4Z-1U-avh">
+                                        <rect key="frame" x="12" y="200" width="115" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="91R-0B-v1U"/>
+                                            <constraint firstAttribute="height" constant="140" id="mot-Tc-28S"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="moto_logo"/>
+                                        <connections>
+                                            <action selector="switchToMotoApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="leY-Os-t3n"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="6Jb-Tt-mPh"/>
+                                    <constraint firstAttribute="bottom" secondItem="x4Z-1U-avh" secondAttribute="bottom" id="aKU-0e-Jac"/>
+                                    <constraint firstAttribute="width" constant="140" id="nCW-T7-EzJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rS3-Tc-OpA" firstAttribute="centerY" secondItem="Iwi-Hd-3vA" secondAttribute="centerY" id="2Hg-Dm-Ve0"/>
+                            <constraint firstItem="rS3-Tc-OpA" firstAttribute="centerX" secondItem="Iwi-Hd-3vA" secondAttribute="centerX" id="tw5-qM-8hw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Iwi-Hd-3vA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="abX-Q2-20f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbE-FE-Zuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="107.8125"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -144,14 +199,14 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-EG-4mU">
-                                <rect key="frame" x="85" y="148" width="244" height="199"/>
+                                <rect key="frame" x="107" y="144" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="244" id="1NJ-6p-bUB"/>
-                                    <constraint firstAttribute="height" constant="199" id="xYD-5i-aRR"/>
+                                    <constraint firstAttribute="width" constant="200" id="1NJ-6p-bUB"/>
+                                    <constraint firstAttribute="height" constant="200" id="xYD-5i-aRR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-gm-xeA">
-                                <rect key="frame" x="107" y="362" width="200" height="21"/>
+                                <rect key="frame" x="107" y="359" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7x8-YQ-IKa"/>
                                     <constraint firstAttribute="width" constant="200" id="FS0-EO-yKW"/>
@@ -169,7 +224,7 @@
                             <constraint firstItem="JqQ-EG-4mU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mhh-j9-K4h"/>
                             <constraint firstItem="46t-Hi-Gvu" firstAttribute="top" secondItem="gFC-Pg-qW3" secondAttribute="bottom" constant="8" id="OhB-vT-Xbs"/>
                             <constraint firstItem="PfD-6j-8uQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="QTJ-4Q-bz5"/>
-                            <constraint firstItem="JqQ-EG-4mU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="W79-eN-1xy"/>
+                            <constraint firstItem="JqQ-EG-4mU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="W79-eN-1xy"/>
                             <constraint firstItem="OVd-Mw-VoT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="Zuz-yc-hhi"/>
                             <constraint firstItem="gFC-Pg-qW3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="cGB-ct-WHK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="46t-Hi-Gvu" secondAttribute="bottom" constant="40" id="dFD-F7-1Ms"/>
@@ -187,13 +242,16 @@
                     <navigationItem key="navigationItem" id="cdb-i9-Th3"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="j6K-8P-aCm" id="7Wv-R1-XB9"/>
+                        <outlet property="guestButton" destination="46t-Hi-Gvu" id="eJP-3O-FK1"/>
+                        <outlet property="loginButton" destination="gFC-Pg-qW3" id="Mpc-Ey-ZiI"/>
+                        <outlet property="loginImage" destination="JqQ-EG-4mU" id="rZn-cR-hfG"/>
                         <outlet property="tfEmail" destination="PfD-6j-8uQ" id="atg-aC-QAh"/>
                         <outlet property="tfPassword" destination="OVd-Mw-VoT" id="k3c-38-wx1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="108.42391304347827"/>
+            <point key="canvasLocation" x="835" y="108"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="snc-v2-5XK">
@@ -306,7 +364,9 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="ev_logo" width="106.33333587646484" height="106.33333587646484"/>
         <image name="forgot_password" width="135.5" height="135.5"/>
+        <image name="moto_logo" width="106.33333587646484" height="106.33333587646484"/>
         <image name="splash_logo" width="780" height="1191"/>
     </resources>
 </document>

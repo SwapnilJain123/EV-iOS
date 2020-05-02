@@ -19,6 +19,7 @@ class CompletedEventCell: UITableViewCell{
     
     
     func showData(completdEvent: CompletedEvent){
+        eventTitle.textColor = UIColor.getAppThemeColor()
         eventTitle.text! = completdEvent.title
         eventDate.text! = completdEvent.eventDate.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY)
         let imageUrl =  completdEvent.eventLogo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

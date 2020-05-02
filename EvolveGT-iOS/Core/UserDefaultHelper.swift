@@ -27,5 +27,10 @@ struct UserDefaultHelper{
     func getData(key: String) -> Any?{
         return userDefaults.object(forKey: key) as Any
     }
+    
+    func delete(key: String) -> Void{
+        userDefaults.removeObject(forKey: key)
+        userDefaults.synchronize()
+    }
 
 }

@@ -18,6 +18,7 @@ class ApiClient{
     
     
     static let sharedInstance : ApiClient = ApiClient()
+    let networkManager = NetworkReachabilityManager()!
     
     private init(){
         
@@ -79,5 +80,9 @@ class ApiClient{
     
     func replaceParameter(parameters : [String: Any]){
         self.parameters = parameters
+    }
+    
+    var isConnectedToInternet:Bool {
+        return self.networkManager.isReachable
     }
 }
