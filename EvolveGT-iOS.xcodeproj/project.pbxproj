@@ -60,6 +60,7 @@
 		10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */; };
 		10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */; };
 		10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD059245D4B7600F05700 /* AppModeSelector.swift */; };
+		10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD05B245EC75700F05700 /* GuestViewController.swift */; };
 		10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */; };
 		10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */; };
 		10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */; };
@@ -129,6 +130,7 @@
 		10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureUpdateRequest.swift; sourceTree = "<group>"; };
 		10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		10BDD059245D4B7600F05700 /* AppModeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModeSelector.swift; sourceTree = "<group>"; };
+		10BDD05B245EC75700F05700 /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsController.swift; sourceTree = "<group>"; };
 		10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantCell.swift; sourceTree = "<group>"; };
 		10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantRequest.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				1039FE47244F6C3F00190088 /* View */,
+				10BDD05B245EC75700F05700 /* GuestViewController.swift */,
 			);
 			path = Guest;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				10FCA257245212AD00EA95C0 /* StringDateExtension.swift in Sources */,
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
+				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,

@@ -75,6 +75,10 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         loginInteractor.doLogin(email: tfEmail.text ?? "", password: tfPassword.text ?? "")
     }
     
+    @IBAction func didPressGuest(_ sender: Any) {
+        let controller = UIStoryboard.init(name: "Guest", bundle: nil).instantiateViewController(withIdentifier: "GuestVC") as! GuestViewController
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension LoginViewController : LoginViewDelegate{
