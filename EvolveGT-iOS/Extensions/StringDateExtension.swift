@@ -10,9 +10,11 @@ import Foundation
 import AFDateHelper
 extension String{
     static let FORMAT_DD_MMM_YYYY = "dd MMM YYYY"
+    static let FORMAT_API_DATE = "yyyy-MM-dd HH:mm:ss"
     static let FORMAT_MMM_YYYY = "MMM YYYY"
     static let FORMAT_MM_YYYY = "MM YYYY"
      static let FORMAT_YYYY_MM = "YYYY MM"
+    static let FORMAT_YYYY_MM_DD = "yyyyMMdd"
     
     func formattedDate(outputFormat: String) -> String {
        
@@ -34,5 +36,12 @@ extension String{
         let formattedDate = date?.toString(format: .custom(outputFormat)) ?? self
         
         return formattedDate
+    }
+    
+    func isEalierThanToday() -> Bool{
+        let today = Date()
+        let formattedToday = today.toString(format: .custom(.FORMAT_YYYY_MM_DD))
+        
+        return self.formattedDate(outputFormat: .FORMAT_YYYY_MM_DD) < formattedToday
     }
 }

@@ -18,6 +18,7 @@ class GuestViewController : ETViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.ext.showNavbar()
         self.ext.showBackButton()
         self.ext.setScreenTitle(title: "Guest")
         
@@ -127,10 +128,10 @@ class GuestActionCell : UITableViewCell{
         self.leftMenu = left
         self.rightMenu = right
         leftActionIcon.image = UIImage(named: left.actionIcon)
-        leftActionName.text = left.actionName
+        leftActionName.text = left.actionName.uppercased()
         
         rightActionIcon.image = UIImage(named: right.actionIcon)
-        rightActionName.text = right.actionName
+        rightActionName.text = right.actionName.uppercased()
         
         leftActionView.setCardView()
         rightActionView.setCardView()

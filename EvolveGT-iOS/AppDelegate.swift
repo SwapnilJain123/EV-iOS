@@ -66,7 +66,18 @@ extension AppDelegate{
         self.window?.makeKeyAndVisible()
     }
     func launchUserDashboard(){
-        launchAdminDashboard()
+        let storboard = UIStoryboard.init(name: "Tabs", bundle: nil)
+        
+        let tabarCntlr = storboard.instantiateViewController(withIdentifier: "TabView") as! ETTabViewController
+        UIView.transition(with: self.window!, duration: 0.1
+            , options: .transitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                self.window?.rootViewController = tabarCntlr
+                UIView.setAnimationsEnabled(oldState)
+        }, completion: { (finished: Bool) -> () in
+        })
+        self.window?.makeKeyAndVisible()
     }
     func launchAdminDashboard(){
         

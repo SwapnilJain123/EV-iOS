@@ -26,6 +26,17 @@ struct ScreenTitle{
     static let TITLE_EVENTS = "Events"
     static let TITLE_EVENTS_USERS = "Event Participants"
     static let TITLE_SIGNATURE = "Signature"
+    
+    //Mark: User Screen
+     static let TITLE_DASHBOARD = "Dashboard"
+    
+    static let TITLE_UPCOMING_EVENTS = "Upcoming Events"
+    static let TITLE_PAST_EVENTS = "Past Events"
+    static let TITLE_ALL_EVENTS = "All Events"
+    
+    static let TITLE_CREDIT_HISTORY = "Credit History"
+    
+    
 }
 
 struct ScreenSize{

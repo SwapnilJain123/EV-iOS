@@ -49,6 +49,16 @@ extension UIViewController{
             
         }
         
+        func showNavbar(){
+            vc.navigationController?.isNavigationBarHidden = false
+            
+        }
+        
+        func hideNavbar(){
+            vc.navigationController?.isNavigationBarHidden = true
+            
+        }
+        
         static let ERROR_VIEW_TAG = -1
         func displayEmptyMessage(message: String){
             

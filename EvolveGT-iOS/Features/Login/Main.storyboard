@@ -49,7 +49,7 @@
                                             <constraint firstAttribute="width" constant="140" id="XUK-Br-uh1"/>
                                             <constraint firstAttribute="height" constant="140" id="rs7-g8-1VP"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ev_logo"/>
+                                        <state key="normal" image="ev_logo"/>
                                         <connections>
                                             <action selector="switchToEvApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="rWz-f0-q4j"/>
                                         </connections>
@@ -60,7 +60,7 @@
                                             <constraint firstAttribute="width" constant="140" id="91R-0B-v1U"/>
                                             <constraint firstAttribute="height" constant="140" id="mot-Tc-28S"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="moto_logo"/>
+                                        <state key="normal" image="moto_logo"/>
                                         <connections>
                                             <action selector="switchToMotoApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="leY-Os-t3n"/>
                                         </connections>

@@ -47,6 +47,7 @@ class EventParticipantsController : ETViewController{
         searchBar?.placeholder = "Search participants here"
         searchBar?.becomeFirstResponder()
         searchBar?.showsCancelButton = true
+        searchBar.resignFirstResponder()
         hideSearchbar()
     }
     func setNavbarControls(){

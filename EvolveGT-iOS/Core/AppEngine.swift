@@ -16,7 +16,14 @@ class AppEngine{
     }
     static let sharedInstance = AppEngine()
     
+    public var userID : String{
+        currentUser?.id ?? ""
+    }
+    
+    
     var currentUser : User?
+    var userDetails : UserDetails?
+    
     var authToken = ""
     private var userDefaultHelper = UserDefaultHelper.sharedInstance
     
