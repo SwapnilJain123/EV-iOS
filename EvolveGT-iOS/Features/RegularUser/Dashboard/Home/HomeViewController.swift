@@ -120,6 +120,10 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
         self.creditHistoryExpanded = !self.creditHistoryExpanded
         let indexPath = IndexPath(row: 3, section: 0)
         self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        
+        if self.creditHistoryExpanded{
+            scrollToBottom()
+        }
     }
     
     func toggleEventDetails(type: EventType) {
@@ -136,5 +140,10 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
         
     }
     
-    
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: 3, section: 0)
+            self.prifileView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
 }
