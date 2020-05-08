@@ -12,7 +12,7 @@ extension UIView {
     
     //For Card Style
     func setCardView(){
-        layer.cornerRadius = 5.0
+        layer.cornerRadius = 3.0
         layer.borderWidth = 0
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor

@@ -53,6 +53,8 @@ struct LoadingIndicatorMessages {
     static let loadingParticipants = "Loading participants..."
     static let loadingSignature = "Loading Signature..."
     
+    static let loadingProfileData = "Loading Profile..."
+    
     
     
     static let uploadingSignature = "Please wait, We're saving your signature."
@@ -63,6 +65,7 @@ struct ErrorMessages {
     static let genericError = "Sorry, something went wrong, please try again in a couple minutes."
     static let emptyCompletedEvents = "Sorry, there are currently no events available."
     static let emptyEventParticipants = "There are currently no users enrolled for this event."
+    static let emptyEnrolledEvents = "Sorry, no event has been found."
     
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."

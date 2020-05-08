@@ -49,7 +49,7 @@
                                             <constraint firstAttribute="width" constant="140" id="XUK-Br-uh1"/>
                                             <constraint firstAttribute="height" constant="140" id="rs7-g8-1VP"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ev_logo"/>
+                                        <state key="normal" image="ev_logo"/>
                                         <connections>
                                             <action selector="switchToEvApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="rWz-f0-q4j"/>
                                         </connections>
@@ -60,7 +60,7 @@
                                             <constraint firstAttribute="width" constant="140" id="91R-0B-v1U"/>
                                             <constraint firstAttribute="height" constant="140" id="mot-Tc-28S"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="moto_logo"/>
+                                        <state key="normal" image="moto_logo"/>
                                         <connections>
                                             <action selector="switchToMotoApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="leY-Os-t3n"/>
                                         </connections>
@@ -104,6 +104,9 @@
                                 <state key="normal" title="Continue as a Guest">
                                     <color key="titleColor" red="0.2274509804" green="0.23137254900000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressGuest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TGY-4m-YgY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vp0-cs-U7b">
                                 <rect key="frame" x="218" y="782" width="171" height="40"/>
