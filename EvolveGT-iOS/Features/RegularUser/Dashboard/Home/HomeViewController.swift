@@ -14,6 +14,11 @@ class HomeViewController: ETViewController{
     @IBOutlet weak var prifileView: UITableView!
     var profileData : ProfileData? = nil
     
+    
+    var upComingEventsExpanded = true
+    var pastEventsExpanded = false
+    var creditHistoryExpanded = false
+    
     let interactor = HomeDataInteractor()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +55,13 @@ extension HomeViewController: UITableViewDataSource{
             
             if self.profileData?.recentUpComingEvent == nil{
                 let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath) as! EmptyCell
-                Log.d("Empty Cell")
                 emptyInfoCell.showData(ScreenTitle.TITLE_UPCOMING_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
                 let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"EventCell",for: indexPath) as! EventInfoCell
                 
-                upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!)
+                upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!, expanded: upComingEventsExpanded)
+                upComingEventCell.delegate = self
                 return upComingEventCell;
             }
             
@@ -68,8 +73,8 @@ extension HomeViewController: UITableViewDataSource{
                 return emptyInfoCell
             }else{
                 let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"EventCell",for: indexPath) as! EventInfoCell
-                
-                pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!)
+                pastEventCell.delegate = self
+                pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!, expanded: pastEventsExpanded)
                 return pastEventCell;
             }
             
@@ -82,8 +87,8 @@ extension HomeViewController: UITableViewDataSource{
                 return emptyInfoCell
             }else{
                 let creditCell = tableView.dequeueReusableCell(withIdentifier:"RecentCreditCell",for: indexPath) as! CreditHistoryCell
-                
-                creditCell.showData(profileData!.recentCreditHistory!)
+                creditCell.delegate = self
+                creditCell.showData(profileData!.recentCreditHistory!, expanded: creditHistoryExpanded)
                 return creditCell;
             }
             
@@ -108,8 +113,28 @@ extension HomeViewController: HomeViewDelegate{
         self.profileData = profileData
         prifileView.reloadData()
     }
+   
+}
+extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
+    func toggleCreditDetailsView() {
+        self.creditHistoryExpanded = !self.creditHistoryExpanded
+        let indexPath = IndexPath(row: 3, section: 0)
+        self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+    }
     
-    
+    func toggleEventDetails(type: EventType) {
+        if type == .UPCOMING{
+            self.upComingEventsExpanded = !self.upComingEventsExpanded
+            let indexPath = IndexPath(row: 1, section: 0)
+            self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            
+        }else {
+            self.pastEventsExpanded = !self.pastEventsExpanded
+            let indexPath = IndexPath(row: 2, section: 0)
+            self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        }
+        
+    }
     
     
 }
