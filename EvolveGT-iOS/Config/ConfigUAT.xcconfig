@@ -1,0 +1,13 @@
+//
+//  ConfigUAT.xcconfig
+//  EvolveGT-iOS
+//
+//  Created by Subair Ariyil on 08/05/20.
+//  Copyright © 2020 YaraTech. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+APP_NAME=EvolveGT-UAT
+BASE_URL=evolvegt.com
+LOG_ENABLED=YES

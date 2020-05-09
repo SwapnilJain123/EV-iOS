@@ -18,9 +18,11 @@ struct UserDetailsRequest : Codable{
 
 struct EventHistoryRequest : Codable{
    var userID: String?
+    var isMotoevent : Int?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
+        case isMotoevent = "is_motoevent"
        
     }
 }

@@ -15,5 +15,12 @@ class ETTabViewController: UITabBarController{
         self.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
         self.ext.showNavbar()
         self.ext.hideBackButton()
+        
+        tabBar.barTintColor = UIColor.black
+        
+       
     }
+    
+    
+    
 }

@@ -66,11 +66,7 @@ class ETViewController : UIViewController{
         nil
     }
     
-    @objc func didPressLogout(){
-        Log.d("Logout !!")
-        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-        appDelegate?.doLogout()
-    }
+    
     
     func presentSelectionMenu( title: String, data: [String], dismissHandler :@escaping (_ selectedItems: DataSource<String>) -> Void){
         let selectionMenu = RSSelectionMenu(dataSource: data) { (cell, item, indexPath) in
@@ -84,8 +80,7 @@ class ETViewController : UIViewController{
         
         selectionMenu.show(style: .present, from: self)
     }
-    
-    
+   
 }
 
 extension ETViewController{
@@ -116,6 +111,38 @@ extension ETViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.ext.removeLoadingIndicatorImmediately()
+    }
+    
+}
+
+extension UIViewController{
+    @objc func didPressLogout(){
+        
+        self.ext.addLoadingIndicator(LoadingIndicatorMessages.loggingOut)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + AppConstants.LOGOUT_TIMEOUT, execute: {
+                      Log.d("Logout !!")
+                      let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+                        self.ext.removeLoadingIndicator()
+                      appDelegate?.doLogout()
+                   })
+        
+        
+    }
+    
+     @objc func switchAppMode(){
+        
+        Log.d("AppMode - Before - \(AppEngine.sharedInstance.isEvApp())")
+        let appMode = AppEngine.sharedInstance.isEvApp() ? AppEngine.AppMode.APP_MOTO : AppEngine.AppMode.APP_EV
+        AppEngine.sharedInstance.switchApp(appMode: appMode)
+        
+         Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
+        self.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
+        self.didChangeAppTheme()
+    }
+    
+    @objc  func didChangeAppTheme(){
+       
     }
     
 }

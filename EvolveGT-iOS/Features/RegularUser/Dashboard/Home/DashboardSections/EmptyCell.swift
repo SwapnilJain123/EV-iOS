@@ -11,6 +11,8 @@ import UIKit
 
 class EmptyCell: UITableViewCell{
     
+    
+    @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var typeTitle: UILabel!
     @IBOutlet weak var errorMessage: UILabel!
     
@@ -18,5 +20,7 @@ class EmptyCell: UITableViewCell{
     func showData(_ title: String, _ message: String){
         typeTitle.text = title
         errorMessage.text = message
+    
+        rootView.setCardView()
     }
 }

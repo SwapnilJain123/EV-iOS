@@ -19,6 +19,8 @@ struct AppConstants{
      static let ImageTag = "data:image/png;base64,"
     
      static let KEY_APP_MODE = "appMode"
+    
+    static let LOGOUT_TIMEOUT = 1.5
 }
 struct ScreenTitle{
     

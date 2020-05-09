@@ -33,6 +33,7 @@ class ProfileCell: UITableViewCell{
     
     @IBOutlet weak var userSkillLevel: UILabel!
     
+    @IBOutlet weak var personalInfoContainer: UIView!
     
     @IBOutlet weak var upcomingEventsContainer: UIView!
     
@@ -40,6 +41,15 @@ class ProfileCell: UITableViewCell{
     @IBOutlet weak var pastEventsContainer: UIView!
     
     @IBOutlet weak var allEventsContainer: UIView!
+   
+    @IBOutlet weak var iconUpcomingEvents: UIImageView!
+    
+    @IBOutlet weak var iconAllEvents: UIImageView!
+    
+    @IBOutlet weak var iconPastEvents: UIImageView!
+    
+    @IBOutlet weak var iconSkillLevel: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImage.showRoundCorner()
@@ -50,10 +60,33 @@ class ProfileCell: UITableViewCell{
         upcomingEventsContainer.setCardView()
         skillLevelContainer.setCardView()
         pastEventsContainer.setCardView()
-        // Initialization code
+        
+       
+        
     }
     
+    
+    func applyTheme(){
+        let appColor = UIColor.getAppThemeColor()
+        personalInfoContainer.backgroundColor = appColor
+        
+        
+        if AppEngine.sharedInstance.isEvApp(){
+          iconUpcomingEvents.image = UIImage(named: "upcoming_events")
+                     iconAllEvents.image = UIImage(named: "events_alltime")
+                     iconPastEvents.image = UIImage(named: "past_events")
+                     iconSkillLevel.image = UIImage(named: "skill_level")
+        }else{
+            iconUpcomingEvents.image = UIImage(named: "moto_upcoming_events")
+            iconAllEvents.image = UIImage(named: "moto_events_alltime")
+            iconPastEvents.image = UIImage(named: "moto_past_events")
+            iconSkillLevel.image = UIImage(named: "moto_skill_level")
+             // moto_events_alltime
+        }
+    }
     func showData(_ profileData : ProfileData){
+        
+        applyTheme()
         if let imgUrl = profileData.imageUrl{
             
             let placeHolder = UIImage(named: "avatar")

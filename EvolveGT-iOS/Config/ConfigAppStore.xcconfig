@@ -8,6 +8,6 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-APP_NAME=AppStore
+APP_NAME=EvolveGT
 BASE_URL=evolvegt.com
 LOG_ENABLED=NO
