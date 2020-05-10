@@ -1,0 +1,38 @@
+//
+//  UIButtonExtension.swift
+//  EvolveGT-iOS
+//
+//  Created by Subair Ariyil on 10/05/20.
+//  Copyright © 2020 YaraTech. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension UIButton{
+    func applyColorTheme(){
+        self.clipsToBounds = true  // add this to maintain corner radius
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setFillColor(UIColor.getAppThemeColor().cgColor)
+            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.setBackgroundImage(colorImage, for: .normal)
+        }
+        
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setFillColor(UIColor.getSecondaryColor().cgColor)
+            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.setBackgroundImage(colorImage, for: .selected)
+        }
+        
+        self.tintColor = UIColor.getSecondaryColor()
+        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(.lightGray, for: .selected)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    }
+}

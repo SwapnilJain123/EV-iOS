@@ -40,14 +40,17 @@ class HomeViewController: ETViewController{
        if !AppEngine.sharedInstance.isEvApp(){
            switcIcon = UIImage(named: "switch_ev")
        }
+        let logout = UIBarButtonItem(image: UIImage(named: "logout"),
+        style: .plain,
+        target: self,
+        action: #selector(self.didPressLogout))
+    
        let switchAppMode = UIBarButtonItem(image: switcIcon,
                                            style: .plain,
                                            target: self,
                                            action: #selector(self.switchAppMode))
        
-      
-       
-       self.navigationItem.rightBarButtonItems = [switchAppMode]
+       self.navigationItem.rightBarButtonItems = [switchAppMode, logout]
    }
     
     
