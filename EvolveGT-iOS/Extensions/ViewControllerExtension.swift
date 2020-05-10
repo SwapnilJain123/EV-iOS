@@ -29,7 +29,7 @@ extension UIViewController{
             vc.present(alerController, animated: true, completion: nil)
         }
         func addLoadingIndicator(_ message: String?){
-            DispatchQueue.main.async(execute: { () -> Void in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.150, execute: {
                 // MBProgressHUD.showAdded(to: self.view, animated: true)
                 SVProgressHUD.setDefaultMaskType(.black)
                 SVProgressHUD.show(withStatus: message)
@@ -75,7 +75,7 @@ extension UIViewController{
             errorView.textAlignment = .center
             vc.view.addSubview(errorView)
             
-            
+            self.removeLoadingIndicator()
         }
         
         func showSuccessToast(message: String, handler: (()->Void)? = nil){
@@ -102,8 +102,10 @@ extension UIViewController{
         }
         
         func setNavigationBackgroundColor(color: UIColor){
-            let navigationBarAppearace = UINavigationBar.appearance()
-            navigationBarAppearace.barTintColor = color
+//            let navigationBarAppearace = UINavigationBar.appearance()
+//            navigationBarAppearace.barTintColor = color
+            
+             vc.navigationController?.navigationBar.barTintColor = color
         }
         func setScreenTitle(title: String)
         {
@@ -114,6 +116,19 @@ extension UIViewController{
             //        navigationItem.leftItemsSupplementBackButton = needsDefaultBack
             //        navigationItem.leftBarButtonItem = barButtonItem
             vc.title = title
+        }
+        
+        
+        func pushViewController(storyBoard : String, VCIdentifier : String){
+            let storyBoard: UIStoryboard = UIStoryboard(name: storyBoard, bundle: nil)
+            let destination = storyBoard.instantiateViewController(withIdentifier: VCIdentifier)
+                   vc.navigationController?.pushViewController(destination, animated: true)
+        }
+        
+        func getViewController(storyBoard : String, VCIdentifier : String) -> UIViewController{
+            let storyBoard: UIStoryboard = UIStoryboard(name: storyBoard, bundle: nil)
+            let destination = storyBoard.instantiateViewController(withIdentifier: VCIdentifier)
+                  return destination
         }
         
     }

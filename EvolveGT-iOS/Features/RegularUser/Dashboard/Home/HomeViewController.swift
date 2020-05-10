@@ -11,7 +11,8 @@ import UIKit
 
 class HomeViewController: ETViewController{
     
-    @IBOutlet weak var prifileView: UITableView!
+    @IBOutlet weak var profileView: UITableView!
+    
     var profileData : ProfileData? = nil
     
     
@@ -23,16 +24,50 @@ class HomeViewController: ETViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prifileView.rowHeight = UITableView.automaticDimension
-        prifileView.estimatedRowHeight = 300
+        profileView.rowHeight = UITableView.automaticDimension
+        profileView.estimatedRowHeight = 300
         
         interactor.delegate = self
         interactor.fetchUserDetails()
         
+        setNavbarControls()
     }
     
+   func setNavbarControls(){
+       
+       
+       var switcIcon = UIImage(named: "switch_moto")
+       if !AppEngine.sharedInstance.isEvApp(){
+           switcIcon = UIImage(named: "switch_ev")
+       }
+       let switchAppMode = UIBarButtonItem(image: switcIcon,
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(self.switchAppMode))
+       
+      
+       
+       self.navigationItem.rightBarButtonItems = [switchAppMode]
+   }
+    
+    
+    override  func didChangeAppTheme() {
+        setNavbarControls()
+        self.profileView.reloadData()
+        interactor.fetchUserDetails()
+       
+    }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_DASHBOARD
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.ext.showBackButton()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.ext.hideBackButton()
     }
 }
 
@@ -83,7 +118,7 @@ extension HomeViewController: UITableViewDataSource{
             
             if self.profileData?.recentCreditHistory == nil{
                 let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath) as! EmptyCell
-                emptyInfoCell.showData(ScreenTitle.TITLE_CREDIT_HISTORY, ErrorMessages.emptyEnrolledEvents)
+                emptyInfoCell.showData(ScreenTitle.TITLE_CREDIT_HISTORY, ErrorMessages.emptyCreditList)
                 return emptyInfoCell
             }else{
                 let creditCell = tableView.dequeueReusableCell(withIdentifier:"RecentCreditCell",for: indexPath) as! CreditHistoryCell
@@ -102,8 +137,6 @@ extension HomeViewController: UITableViewDataSource{
         
     }
     
-
-    
 }
 
 extension HomeViewController: HomeViewDelegate{
@@ -111,18 +144,27 @@ extension HomeViewController: HomeViewDelegate{
         
         Log.d("Profile Data Fetched")
         self.profileData = profileData
-        prifileView.reloadData()
+        profileView.reloadData()
     }
    
 }
 extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
+    func showEnrolledEventList(type: EventType) {
+        //
+        self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventsTab")
+    }
+    
+    func showCreditLists() {
+        self.ext.pushViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
+    }
+    
     func toggleCreditDetailsView() {
         self.creditHistoryExpanded = !self.creditHistoryExpanded
         let indexPath = IndexPath(row: 3, section: 0)
-        self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         
         if self.creditHistoryExpanded{
-            scrollToBottom()
+            scrollToRow(row: 3)
         }
     }
     
@@ -130,20 +172,21 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
         if type == .UPCOMING{
             self.upComingEventsExpanded = !self.upComingEventsExpanded
             let indexPath = IndexPath(row: 1, section: 0)
-            self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
             
         }else {
             self.pastEventsExpanded = !self.pastEventsExpanded
             let indexPath = IndexPath(row: 2, section: 0)
-            self.prifileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            scrollToRow(row: 2)
         }
         
     }
     
-    func scrollToBottom(){
+    func scrollToRow(row: Int){
         DispatchQueue.main.async {
-            let indexPath = IndexPath(row: 3, section: 0)
-            self.prifileView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            let indexPath = IndexPath(row: row, section: 0)
+            self.profileView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
 }

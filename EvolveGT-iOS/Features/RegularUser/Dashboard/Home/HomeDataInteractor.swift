@@ -53,6 +53,13 @@ class HomeDataInteractor : BaseInteractor{
                 if let response = self.decodeFromJson(response!, modelType: EventsHistoryResponse.self){
                     
                     if response.enrolledEvents?.isEmpty ?? false{
+                        self.profileData.pastEventsCount =  0
+                        self.profileData.upComingEventsCount =  0
+                        self.profileData.allEventsCount =  0
+                        
+                        self.profileData.recentPastEvent = nil
+                        self.profileData.recentUpComingEvent = nil
+                        
                         self.fetchCreditHistory()
                     }else{
                         self.profileData.allEventsCount = response.enrolledEvents!.count
@@ -67,16 +74,24 @@ class HomeDataInteractor : BaseInteractor{
                         let pastEvents = sortedEvents?.filter({
                             ($0.eventDate?.isEalierThanToday() ?? false)
                         })
+                        
                         let upComingEvents = sortedEvents?.filter({
                             !($0.eventDate?.isEalierThanToday() ?? false)
                         })
                         
                         if !(pastEvents?.isEmpty ?? false){
                             self.profileData.recentPastEvent = pastEvents?.last
+                        }else{
+                            self.profileData.recentPastEvent = nil
                         }
                         if !(upComingEvents?.isEmpty ?? false){
                             self.profileData.recentUpComingEvent = upComingEvents?.last
+                        }else{
+                            self.profileData.recentUpComingEvent = nil
                         }
+                        
+                         self.profileData.pastEventsCount = pastEvents?.count ?? 0
+                         self.profileData.upComingEventsCount = upComingEvents?.count ?? 0
                         
                         self.fetchCreditHistory()
                     }
@@ -99,7 +114,7 @@ class HomeDataInteractor : BaseInteractor{
                 if let response = self.decodeFromJson(response!, modelType: CreditHistoryResponse.self){
                     
                     if response.creditHistoryList?.isEmpty ?? false{
-                        
+                        self.profileData.recentCreditHistory = nil
                     }else{
                         self.profileData.recentCreditHistory = response.creditHistoryList?.first
                     }

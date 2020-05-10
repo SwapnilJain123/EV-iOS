@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1039FDF8244F1A1800190088"
-               BuildableName = "EvolveGT-iOS.app"
+               BuildableName = "EvolveGT.app"
                BlueprintName = "EvolveGT-iOS"
                ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
             </BuildableReference>
@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "UAT"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "QA"
+      buildConfiguration = "UAT"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,14 +45,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1039FDF8244F1A1800190088"
-            BuildableName = "EvolveGT-iOS.app"
+            BuildableName = "EvolveGT.app"
             BlueprintName = "EvolveGT-iOS"
             ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "UAT"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1039FDF8244F1A1800190088"
-            BuildableName = "EvolveGT-iOS.app"
+            BuildableName = "EvolveGT.app"
             BlueprintName = "EvolveGT-iOS"
             ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "UAT"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

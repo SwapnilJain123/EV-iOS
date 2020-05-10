@@ -46,6 +46,9 @@ class AppEngine{
         return currentUser != nil
     }
     
+    var canCancelEvent : Bool{
+        userDetails?.eventCancel ?? false
+    }
     
     func saveUserInfo(user: User){
         self.currentUser = user

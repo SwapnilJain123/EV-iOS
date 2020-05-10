@@ -16,11 +16,13 @@ extension UIColor {
     
     
     static func getAppThemeColor() -> UIColor{
-        if(AppEngine.sharedInstance.appMode == .APP_EV){
-            return UIColor.init(hexFromString: UIColor.COLOR_EV)
-        }else{
-            return UIColor.init(hexFromString: UIColor.COLOR_MOTO)
+        var appColor = UIColor.init(hexFromString: UIColor.COLOR_EV)
+        if(AppEngine.sharedInstance.appMode != .APP_EV){
+            appColor = UIColor.init(hexFromString: UIColor.COLOR_MOTO)
         }
+        
+        return appColor
+        
     }
     
     static func getEvColor() -> UIColor{

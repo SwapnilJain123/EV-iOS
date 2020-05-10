@@ -22,7 +22,7 @@ class ProfileApi : BaseApiAdapter{
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_EVENT_HISTORY)"
         setUrl(url: url)
-        let request = EventHistoryRequest(userID: userId)
+        let request = EventHistoryRequest(userID: userId, isMotoevent: AppEngine.sharedInstance.appMode.rawValue)
         setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }

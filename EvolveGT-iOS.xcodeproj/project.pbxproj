@@ -33,6 +33,20 @@
 		103346162461C0B900D5EED0 /* EventInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346152461C0B900D5EED0 /* EventInfoCell.swift */; };
 		103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346172461D2CA00D5EED0 /* EmptyCell.swift */; };
 		1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346192461DB3400D5EED0 /* CreditHistoryCell.swift */; };
+		103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033461F2466882600D5EED0 /* CreditHistory.storyboard */; };
+		10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334621246689ED00D5EED0 /* CreditHistoryItemCell.swift */; };
+		1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462324668CC100D5EED0 /* CreditHistoryInteractor.swift */; };
+		1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462524668FD600D5EED0 /* CreditHistoryViewController.swift */; };
+		1033462924669A5F00D5EED0 /* EnrolledEventsTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462824669A5F00D5EED0 /* EnrolledEventsTabController.swift */; };
+		1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033462A24669B1300D5EED0 /* EnrolledEvents.storyboard */; };
+		1033462E2466A65F00D5EED0 /* TabLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1033462D2466A65F00D5EED0 /* TabLabelCell.xib */; };
+		103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462F2466A68200D5EED0 /* TabLabelCell.swift */; };
+		103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346312466A91300D5EED0 /* UpcomingEventsController.swift */; };
+		103346342466A92200D5EED0 /* PastEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346332466A92200D5EED0 /* PastEventsController.swift */; };
+		103346362466A93400D5EED0 /* AllEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346352466A93400D5EED0 /* AllEventsController.swift */; };
+		103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */; };
+		1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */; };
+		1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463C2466D98400D5EED0 /* TabProtocol.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -120,7 +134,22 @@
 		103346152461C0B900D5EED0 /* EventInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoCell.swift; sourceTree = "<group>"; };
 		103346172461D2CA00D5EED0 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		103346192461DB3400D5EED0 /* CreditHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistoryCell.swift; sourceTree = "<group>"; };
-		1039FDF9244F1A1800190088 /* EvolveGT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1033461B2465B22700D5EED0 /* ConfigUAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigUAT.xcconfig; sourceTree = "<group>"; };
+		1033461F2466882600D5EED0 /* CreditHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditHistory.storyboard; sourceTree = "<group>"; };
+		10334621246689ED00D5EED0 /* CreditHistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistoryItemCell.swift; sourceTree = "<group>"; };
+		1033462324668CC100D5EED0 /* CreditHistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistoryInteractor.swift; sourceTree = "<group>"; };
+		1033462524668FD600D5EED0 /* CreditHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistoryViewController.swift; sourceTree = "<group>"; };
+		1033462824669A5F00D5EED0 /* EnrolledEventsTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsTabController.swift; sourceTree = "<group>"; };
+		1033462A24669B1300D5EED0 /* EnrolledEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnrolledEvents.storyboard; sourceTree = "<group>"; };
+		1033462D2466A65F00D5EED0 /* TabLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabLabelCell.xib; sourceTree = "<group>"; };
+		1033462F2466A68200D5EED0 /* TabLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabLabelCell.swift; sourceTree = "<group>"; };
+		103346312466A91300D5EED0 /* UpcomingEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsController.swift; sourceTree = "<group>"; };
+		103346332466A92200D5EED0 /* PastEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventsController.swift; sourceTree = "<group>"; };
+		103346352466A93400D5EED0 /* AllEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsController.swift; sourceTree = "<group>"; };
+		103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventCell.swift; sourceTree = "<group>"; };
+		1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsInteractor.swift; sourceTree = "<group>"; };
+		1033463C2466D98400D5EED0 /* TabProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProtocol.swift; sourceTree = "<group>"; };
+		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1039FE05244F1A1A00190088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +210,7 @@
 		10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsInteractor.swift; sourceTree = "<group>"; };
 		10FCA256245212AD00EA95C0 /* StringDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDateExtension.swift; sourceTree = "<group>"; };
 		10FCA25824521E6300EA95C0 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
+		1C195867CC2329D3C4C614C9 /* Pods-EvolveGT-iOS.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.uat.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.uat.xcconfig"; sourceTree = "<group>"; };
 		1C85763EA134529E65BC648C /* Pods-EvolveGT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
 		73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.appstore.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +234,9 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				103345F124606C7000D5EED0 /* Reference.storyboard */,
+				1033462724669A3E00D5EED0 /* EnrolledEvents */,
+				1033461E246687C400D5EED0 /* CreditHistory */,
 				103345E924606BD700D5EED0 /* Dashboard */,
 			);
 			path = RegularUser;
@@ -212,7 +245,6 @@
 		103345E924606BD700D5EED0 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				103345F124606C7000D5EED0 /* Reference.storyboard */,
 				103345EE24606C2700D5EED0 /* Cart */,
 				103345ED24606C2000D5EED0 /* Shop */,
 				103345EC24606C1900D5EED0 /* Events */,
@@ -278,6 +310,49 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1033461E246687C400D5EED0 /* CreditHistory */ = {
+			isa = PBXGroup;
+			children = (
+				1033461F2466882600D5EED0 /* CreditHistory.storyboard */,
+				10334621246689ED00D5EED0 /* CreditHistoryItemCell.swift */,
+				1033462324668CC100D5EED0 /* CreditHistoryInteractor.swift */,
+				1033462524668FD600D5EED0 /* CreditHistoryViewController.swift */,
+			);
+			path = CreditHistory;
+			sourceTree = "<group>";
+		};
+		1033462724669A3E00D5EED0 /* EnrolledEvents */ = {
+			isa = PBXGroup;
+			children = (
+				103346392466CED600D5EED0 /* Tabs */,
+				1033462824669A5F00D5EED0 /* EnrolledEventsTabController.swift */,
+				1033462A24669B1300D5EED0 /* EnrolledEvents.storyboard */,
+				103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */,
+				1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */,
+				1033463C2466D98400D5EED0 /* TabProtocol.swift */,
+			);
+			path = EnrolledEvents;
+			sourceTree = "<group>";
+		};
+		1033462C2466A64900D5EED0 /* TabLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1033462F2466A68200D5EED0 /* TabLabelCell.swift */,
+				1033462D2466A65F00D5EED0 /* TabLabelCell.xib */,
+			);
+			path = TabLabel;
+			sourceTree = "<group>";
+		};
+		103346392466CED600D5EED0 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				103346312466A91300D5EED0 /* UpcomingEventsController.swift */,
+				103346332466A92200D5EED0 /* PastEventsController.swift */,
+				103346352466A93400D5EED0 /* AllEventsController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		1039FDF0244F1A1800190088 = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +366,7 @@
 		1039FDFA244F1A1800190088 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1039FDF9244F1A1800190088 /* EvolveGT-iOS.app */,
+				1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -422,6 +497,7 @@
 			children = (
 				1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */,
 				1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */,
+				1033461B2465B22700D5EED0 /* ConfigUAT.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -523,8 +599,6 @@
 			isa = PBXGroup;
 			children = (
 				1039FE762450877600190088 /* Admin.storyboard */,
-				1039FE7D24509A9A00190088 /* CompletedEventCell.swift */,
-				10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -532,6 +606,7 @@
 		1039FE782450886700190088 /* CompletedEvents */ = {
 			isa = PBXGroup;
 			children = (
+				1039FE7D24509A9A00190088 /* CompletedEventCell.swift */,
 				1039FE79245088F600190088 /* CompletedEventsViewController.swift */,
 				1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */,
 			);
@@ -578,6 +653,7 @@
 		10BDD024245B100700F05700 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				1033462C2466A64900D5EED0 /* TabLabel */,
 				10BDD025245B101700F05700 /* EVCheckBox.swift */,
 			);
 			path = CustomViews;
@@ -586,6 +662,7 @@
 		10FCA2492451CA5F00EA95C0 /* EventParticipants */ = {
 			isa = PBXGroup;
 			children = (
+				10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */,
 				10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */,
 				10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */,
 			);
@@ -608,6 +685,7 @@
 				AE86EE90B82E53ECE2138B49 /* Pods-EvolveGT-iOS.qa.xcconfig */,
 				73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */,
 				6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */,
+				1C195867CC2329D3C4C614C9 /* Pods-EvolveGT-iOS.uat.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -631,7 +709,7 @@
 			);
 			name = "EvolveGT-iOS";
 			productName = "EvolveGT-iOS";
-			productReference = 1039FDF9244F1A1800190088 /* EvolveGT-iOS.app */;
+			productReference = 1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -646,6 +724,7 @@
 				TargetAttributes = {
 					1039FDF8244F1A1800190088 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -672,6 +751,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1033462E2466A65F00D5EED0 /* TabLabelCell.xib in Resources */,
+				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
@@ -681,6 +762,7 @@
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				1039FE11244F20A900190088 /* Main.storyboard in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
+				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				103345F224606C7000D5EED0 /* Reference.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
@@ -750,14 +832,18 @@
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
+				1033462924669A5F00D5EED0 /* EnrolledEventsTabController.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				1033460224608C7500D5EED0 /* UserDataRequest.swift in Sources */,
 				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
+				103346362466A93400D5EED0 /* AllEventsController.swift in Sources */,
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
 				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
+				103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */,
+				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
 				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
@@ -768,21 +854,27 @@
 				10BDD026245B101700F05700 /* EVCheckBox.swift in Sources */,
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
+				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
+				1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */,
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
+				103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */,
+				1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
 				103346162461C0B900D5EED0 /* EventInfoCell.swift in Sources */,
 				10334610246146B700D5EED0 /* EnrolledEvent.swift in Sources */,
 				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
 				10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */,
+				103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
+				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
@@ -791,6 +883,7 @@
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
+				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
 				103345FC2460718F00D5EED0 /* ETTabViewController.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
@@ -824,8 +917,83 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1033461C2465B27A00D5EED0 /* UAT */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1033461B2465B22700D5EED0 /* ConfigUAT.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = UAT;
+		};
+		1033461D2465B27A00D5EED0 /* UAT */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C195867CC2329D3C4C614C9 /* Pods-EvolveGT-iOS.uat.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3P4BH4498;
+				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_NAME = "$(APP_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = UAT;
+		};
 		1039FE0B244F1A1A00190088 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -886,6 +1054,7 @@
 		};
 		1039FE0C244F1A1A00190088 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -944,14 +1113,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS.debug";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -963,14 +1132,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1043,14 +1212,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS.debug";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1117,14 +1286,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yaratech.EvolveGT-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eveolve.appstore;
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1139,6 +1308,7 @@
 				1039FE0B244F1A1A00190088 /* Debug */,
 				1039FE3D244F5D0000190088 /* QA */,
 				1039FE0C244F1A1A00190088 /* Release */,
+				1033461C2465B27A00D5EED0 /* UAT */,
 				1039FE3F244F5D0C00190088 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1150,6 +1320,7 @@
 				1039FE0E244F1A1A00190088 /* Debug */,
 				1039FE3E244F5D0000190088 /* QA */,
 				1039FE0F244F1A1A00190088 /* Release */,
+				1033461D2465B27A00D5EED0 /* UAT */,
 				1039FE40244F5D0C00190088 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
