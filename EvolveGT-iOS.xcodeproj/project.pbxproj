@@ -13,7 +13,6 @@
 		100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A23245607A300EF2B9F /* Sequence+Extension.swift */; };
 		100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */; };
 		103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345EF24606C4300D5EED0 /* Tabs.storyboard */; };
-		103345F224606C7000D5EED0 /* Reference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345F124606C7000D5EED0 /* Reference.storyboard */; };
 		103345F424606D2200D5EED0 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345F324606D2200D5EED0 /* Cart.storyboard */; };
 		103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345F524606D2D00D5EED0 /* Shop.storyboard */; };
 		103345F824606D3800D5EED0 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345F724606D3800D5EED0 /* Events.storyboard */; };
@@ -48,6 +47,12 @@
 		1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */; };
 		1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463C2466D98400D5EED0 /* TabProtocol.swift */; };
 		1033464824681B4B00D5EED0 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033464724681B4B00D5EED0 /* UIButtonExtension.swift */; };
+		1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346492468375500D5EED0 /* BuildScheme.swift */; };
+		1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */; };
+		1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033464E2468414500D5EED0 /* HambergerMenuController.swift */; };
+		103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346502468432500D5EED0 /* SlideMenuCell.swift */; };
+		103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346542468784C00D5EED0 /* SlideMenuItem.swift */; };
+		10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334656246884B500D5EED0 /* TabbedViewController.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -115,7 +120,6 @@
 		100A2A23245607A300EF2B9F /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeSkillRequest.swift; sourceTree = "<group>"; };
 		103345EF24606C4300D5EED0 /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
-		103345F124606C7000D5EED0 /* Reference.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reference.storyboard; sourceTree = "<group>"; };
 		103345F324606D2200D5EED0 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		103345F524606D2D00D5EED0 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		103345F724606D3800D5EED0 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,12 @@
 		1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsInteractor.swift; sourceTree = "<group>"; };
 		1033463C2466D98400D5EED0 /* TabProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProtocol.swift; sourceTree = "<group>"; };
 		1033464724681B4B00D5EED0 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		103346492468375500D5EED0 /* BuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildScheme.swift; sourceTree = "<group>"; };
+		1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
+		1033464E2468414500D5EED0 /* HambergerMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HambergerMenuController.swift; sourceTree = "<group>"; };
+		103346502468432500D5EED0 /* SlideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
+		103346542468784C00D5EED0 /* SlideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuItem.swift; sourceTree = "<group>"; };
+		10334656246884B500D5EED0 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -236,7 +246,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
-				103345F124606C7000D5EED0 /* Reference.storyboard */,
+				1033464D2468412700D5EED0 /* SlideMenu */,
 				1033462724669A3E00D5EED0 /* EnrolledEvents */,
 				1033461E246687C400D5EED0 /* CreditHistory */,
 				103345E924606BD700D5EED0 /* Dashboard */,
@@ -253,6 +263,7 @@
 				103345EB24606C1100D5EED0 /* Home */,
 				103345EF24606C4300D5EED0 /* Tabs.storyboard */,
 				103345FB2460718F00D5EED0 /* ETTabViewController.swift */,
+				10334656246884B500D5EED0 /* TabbedViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -353,6 +364,17 @@
 				103346352466A93400D5EED0 /* AllEventsController.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		1033464D2468412700D5EED0 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */,
+				1033464E2468414500D5EED0 /* HambergerMenuController.swift */,
+				103346502468432500D5EED0 /* SlideMenuCell.swift */,
+				103346542468784C00D5EED0 /* SlideMenuItem.swift */,
+			);
+			path = SlideMenu;
 			sourceTree = "<group>";
 		};
 		1039FDF0244F1A1800190088 = {
@@ -500,6 +522,7 @@
 				1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */,
 				1039FE3C244F5CEC00190088 /* ConfigAppStore.xcconfig */,
 				1033461B2465B22700D5EED0 /* ConfigUAT.xcconfig */,
+				103346492468375500D5EED0 /* BuildScheme.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -755,6 +778,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1033462E2466A65F00D5EED0 /* TabLabelCell.xib in Resources */,
+				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
@@ -766,7 +790,6 @@
 				1039FE11244F20A900190088 /* Main.storyboard in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
-				103345F224606C7000D5EED0 /* Reference.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
 			);
@@ -859,6 +882,7 @@
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
 				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
+				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
@@ -877,6 +901,7 @@
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
+				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
@@ -894,14 +919,17 @@
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,
 				103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
+				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,
 				1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */,
 				10FCA25924521E6300EA95C0 /* UiViewExtension.swift in Sources */,
 				10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */,
 				10334600246089C200D5EED0 /* UserDetails.swift in Sources */,
+				103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */,
 				10BDD01E2459C0F600F05700 /* SignatureIntercator.swift in Sources */,
 				1033460B24612CC100D5EED0 /* ProfileCell.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
+				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 				1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */,
 			);

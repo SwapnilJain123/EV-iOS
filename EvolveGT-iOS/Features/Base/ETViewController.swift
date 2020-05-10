@@ -80,7 +80,11 @@ class ETViewController : UIViewController{
         
         selectionMenu.show(style: .present, from: self)
     }
-   
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.ext.removeLoadingIndicatorImmediately()
+        super.viewWillDisappear(animated)
+    }
 }
 
 extension ETViewController{
@@ -106,11 +110,6 @@ extension ETViewController{
     
     @objc func showAlert(title: String, message: String) {
         self.ext.showAlert(title: title, message: message)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.ext.removeLoadingIndicatorImmediately()
     }
     
 }

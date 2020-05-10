@@ -31,10 +31,14 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tfEmail.text! = "geevar83@gmail.com"
-        tfPassword.text! = "geevar@123"
+        if BuildScheme.isBuildQA{
+            tfEmail.text! = "geevar83@gmail.com"
+            tfPassword.text! = "geevar@123"
+        }else{
+            tfEmail.text! = ""
+            tfPassword.text! = ""
+        }
         
-        loginButton.backgroundColor = UIColor.getAppThemeColor()
         loginButton.applyColorTheme()
         
         guestButton.isHidden = !AppEngine.sharedInstance.isEvApp()

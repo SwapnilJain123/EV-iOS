@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SideMenuSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -66,6 +67,10 @@ extension AppDelegate{
         self.window?.makeKeyAndVisible()
     }
     func launchUserDashboard(){
+        
+        let slideMenuStoryBoard = UIStoryboard.init(name: "SlideMenu", bundle: nil)
+               let sideMenuVC = slideMenuStoryBoard.instantiateViewController(withIdentifier: "SlideMenuVC") as! HambergerMenuController
+        
         let storboard = UIStoryboard.init(name: "Tabs", bundle: nil)
         
         let tabarCntlr = storboard.instantiateViewController(withIdentifier: "TabView") as! ETTabViewController
@@ -73,7 +78,15 @@ extension AppDelegate{
             , options: .transitionCrossDissolve, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
-                self.window?.rootViewController = tabarCntlr
+                
+                let sideMenuController = SideMenuController(contentViewController: tabarCntlr,
+                                                                           menuViewController: sideMenuVC)
+                let navigationController = UINavigationController(rootViewController: sideMenuController)
+            
+                navigationController.view.backgroundColor = UIColor.getAppThemeColor()
+                navigationController.isNavigationBarHidden = true
+                self.window?.rootViewController = navigationController
+                
                 UIView.setAnimationsEnabled(oldState)
         }, completion: { (finished: Bool) -> () in
         })

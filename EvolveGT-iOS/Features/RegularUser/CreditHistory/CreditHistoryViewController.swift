@@ -18,18 +18,30 @@ class CreditHistoryViewController: ETViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.ext.showNavbar()
         self.ext.showBackButton()
         
         creditListTableView.dataSource = self
         
         let interactor = CreditHistoryInteractor()
-        interactor.fetchCreditHistory()
         interactor.delegate = self
+        interactor.fetchCreditHistory()
+        
         
     }
     
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_CREDIT_HISTORY
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.ext.hideNavbar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.ext.showBackButton()
     }
 }
 
