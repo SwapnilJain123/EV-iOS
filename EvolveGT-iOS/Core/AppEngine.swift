@@ -10,6 +10,7 @@ import Foundation
 class AppEngine{
     
     
+    var buildMode = ""
     enum AppMode: Int{
         case APP_EV
         case APP_MOTO
@@ -90,4 +91,6 @@ class AppEngine{
         self.authToken = ""
         
     }
+    
+   
 }

@@ -36,12 +36,12 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
         settings.style.buttonBarRightContentInset = 0
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?,
             progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
-           
+            
             guard changeCurrentIndex == true else { return }
             
             oldCell?.label.textColor = .black
             newCell?.label.textColor = .white
-                     
+            
             self.title =  newCell?.label.text?.capitalized ?? ""
             
         }
@@ -53,10 +53,28 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.moveToViewController(at: selectedIndex)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = ScreenTitle.TITLE_UPCOMING_EVENTS.capitalized
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        if selectedIndex == EnrolledEventsTabController.TAB_UPCOMING {
+            self.title = ScreenTitle.TITLE_UPCOMING_EVENTS.capitalized
+        }else if selectedIndex == EnrolledEventsTabController.TAB_PAST {
+            self.title = ScreenTitle.TITLE_PAST_EVENTS.capitalized
+        }else{
+            self.title = ScreenTitle.TITLE_ALL_EVENTS.capitalized
+        }
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewWillDisappear(animated)
+    }
+    
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
@@ -103,28 +121,28 @@ extension EnrolledEventsTabController : EnrolledEventsViewDelegate{
     func eventsEmpty() {
         let upcomingEventsVC = self.viewControllers[0] as! UpcomingEventsController
         upcomingEventsVC.events = nil
-       
+        
         let pastEventsVC = self.viewControllers[1] as! PastEventsController
         pastEventsVC.events = nil
-       
+        
         let allEventsVC = self.viewControllers[2] as! AllEventsController
         allEventsVC.events = nil
     }
     func showEmptyPageError(message: String) {
-           
-       }
-       
-       func showSuccessToastMessage(message: String) {
-           
-       }
-       
-       func showErrorToastMessage(message: String) {
-           
-       }
-       
-       func showAlert(title: String, message: String) {
-           
-       }
-       
-       
+        
+    }
+    
+    func showSuccessToastMessage(message: String) {
+        
+    }
+    
+    func showErrorToastMessage(message: String) {
+        
+    }
+    
+    func showAlert(title: String, message: String) {
+        
+    }
+    
+    
 }
