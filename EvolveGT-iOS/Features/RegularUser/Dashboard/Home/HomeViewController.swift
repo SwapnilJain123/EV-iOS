@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import SideMenuSwift
 
-class HomeViewController: ETViewController{
+class HomeViewController: TabbedViewController{
     
     @IBOutlet weak var profileView: UITableView!
     
@@ -33,29 +34,31 @@ class HomeViewController: ETViewController{
         setNavbarControls()
     }
     
-   func setNavbarControls(){
-       
-       
-       var switcIcon = UIImage(named: "switch_moto")
-       if !AppEngine.sharedInstance.isEvApp(){
-           switcIcon = UIImage(named: "switch_ev")
-       }
-       let switchAppMode = UIBarButtonItem(image: switcIcon,
-                                           style: .plain,
-                                           target: self,
-                                           action: #selector(self.switchAppMode))
-       
-      
-       
-       self.navigationItem.rightBarButtonItems = [switchAppMode]
-   }
+    func setNavbarControls(){
+        
+        
+        var switcIcon = UIImage(named: "switch_moto")
+        if !AppEngine.sharedInstance.isEvApp(){
+            switcIcon = UIImage(named: "switch_ev")
+        }
+        
+        let switchAppMode = UIBarButtonItem(image: switcIcon,
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(self.switchAppMode))
+        
+        self.navigationItem.rightBarButtonItems = [switchAppMode]
+    
+        enableSlideMenu()
+        
+    }
     
     
     override  func didChangeAppTheme() {
         setNavbarControls()
         self.profileView.reloadData()
         interactor.fetchUserDetails()
-       
+        
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_DASHBOARD
@@ -67,6 +70,7 @@ class HomeViewController: ETViewController{
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.ext.showNavbar()
         self.ext.hideBackButton()
     }
 }
@@ -113,7 +117,7 @@ extension HomeViewController: UITableViewDataSource{
                 return pastEventCell;
             }
             
-           
+            
         }else if indexPath.row == 3 {
             
             if self.profileData?.recentCreditHistory == nil{
@@ -127,7 +131,7 @@ extension HomeViewController: UITableViewDataSource{
                 return creditCell;
             }
             
-           
+            
         }else {
             let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath)
             Log.d("Empty Cell")
@@ -146,7 +150,7 @@ extension HomeViewController: HomeViewDelegate{
         self.profileData = profileData
         profileView.reloadData()
     }
-   
+    
 }
 extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
     func showEnrolledEventList(type: EventType) {

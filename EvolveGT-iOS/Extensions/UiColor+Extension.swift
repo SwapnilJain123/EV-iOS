@@ -14,11 +14,24 @@ extension UIColor {
     static let COLOR_EV = "#08a53a"
     static let COLOR_MOTO = "#376cde"
     
+    static let COLOR_EV_LITE = "#00574B"
+    static let COLOR_MOTO_LITE = "#151E49"
+    
     
     static func getAppThemeColor() -> UIColor{
         var appColor = UIColor.init(hexFromString: UIColor.COLOR_EV)
         if(AppEngine.sharedInstance.appMode != .APP_EV){
             appColor = UIColor.init(hexFromString: UIColor.COLOR_MOTO)
+        }
+        
+        return appColor
+        
+    }
+    
+    static func getSecondaryColor() -> UIColor{
+        var appColor = UIColor.init(hexFromString: UIColor.COLOR_EV_LITE)
+        if(AppEngine.sharedInstance.appMode != .APP_EV){
+            appColor = UIColor.init(hexFromString: UIColor.COLOR_MOTO_LITE)
         }
         
         return appColor
