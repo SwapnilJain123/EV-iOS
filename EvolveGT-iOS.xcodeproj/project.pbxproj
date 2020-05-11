@@ -46,6 +46,7 @@
 		103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */; };
 		1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */; };
 		1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463C2466D98400D5EED0 /* TabProtocol.swift */; };
+<<<<<<< Updated upstream
 		1033464824681B4B00D5EED0 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033464724681B4B00D5EED0 /* UIButtonExtension.swift */; };
 		1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346492468375500D5EED0 /* BuildScheme.swift */; };
 		1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */; };
@@ -53,6 +54,13 @@
 		103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346502468432500D5EED0 /* SlideMenuCell.swift */; };
 		103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346542468784C00D5EED0 /* SlideMenuItem.swift */; };
 		10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334656246884B500D5EED0 /* TabbedViewController.swift */; };
+=======
+		103346402467DBA500D5EED0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463F2467DBA500D5EED0 /* ForgotPasswordController.swift */; };
+		103346422467FC6500D5EED0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346412467FC6500D5EED0 /* ForgotPasswordRequest.swift */; };
+		103346442467FE2D00D5EED0 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346432467FE2D00D5EED0 /* ForgotPasswordResponse.swift */; };
+		10334646246800D700D5EED0 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334645246800D700D5EED0 /* ForgotPasswordInteractor.swift */; };
+		10334659246934FB00D5EED0 /* PwdResetAckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334658246934FB00D5EED0 /* PwdResetAckController.swift */; };
+>>>>>>> Stashed changes
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -154,6 +162,7 @@
 		103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventCell.swift; sourceTree = "<group>"; };
 		1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsInteractor.swift; sourceTree = "<group>"; };
 		1033463C2466D98400D5EED0 /* TabProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProtocol.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		1033464724681B4B00D5EED0 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		103346492468375500D5EED0 /* BuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildScheme.swift; sourceTree = "<group>"; };
 		1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
@@ -161,6 +170,13 @@
 		103346502468432500D5EED0 /* SlideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
 		103346542468784C00D5EED0 /* SlideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuItem.swift; sourceTree = "<group>"; };
 		10334656246884B500D5EED0 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
+=======
+		1033463F2467DBA500D5EED0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		103346412467FC6500D5EED0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		103346432467FE2D00D5EED0 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
+		10334645246800D700D5EED0 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		10334658246934FB00D5EED0 /* PwdResetAckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwdResetAckController.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -369,10 +385,16 @@
 		1033464D2468412700D5EED0 /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */,
 				1033464E2468414500D5EED0 /* HambergerMenuController.swift */,
 				103346502468432500D5EED0 /* SlideMenuCell.swift */,
 				103346542468784C00D5EED0 /* SlideMenuItem.swift */,
+=======
+				1033463F2467DBA500D5EED0 /* ForgotPasswordController.swift */,
+				10334645246800D700D5EED0 /* ForgotPasswordInteractor.swift */,
+				10334658246934FB00D5EED0 /* PwdResetAckController.swift */,
+>>>>>>> Stashed changes
 			);
 			path = SlideMenu;
 			sourceTree = "<group>";
@@ -912,7 +934,12 @@
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
+<<<<<<< Updated upstream
 				1033464824681B4B00D5EED0 /* UIButtonExtension.swift in Sources */,
+=======
+				103346422467FC6500D5EED0 /* ForgotPasswordRequest.swift in Sources */,
+				10334659246934FB00D5EED0 /* PwdResetAckController.swift in Sources */,
+>>>>>>> Stashed changes
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
 				103345FC2460718F00D5EED0 /* ETTabViewController.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
