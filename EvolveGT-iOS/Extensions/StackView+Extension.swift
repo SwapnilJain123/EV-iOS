@@ -9,10 +9,22 @@
 import Foundation
 import UIKit
 extension UIStackView {
+    
+    static let TAG_BACKGROUND = 99
+    
     func setBackground(color: UIColor) {
-        let subView = UIView(frame: bounds)
-        subView.backgroundColor = color
-        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        insertSubview(subView, at: 0)
+        
+        let bgView = self.subviews[0]
+        if bgView.tag == UIStackView.TAG_BACKGROUND{
+             bgView.backgroundColor = color
+        }else{
+        
+            let subView = UIView(frame: bounds)
+            subView.backgroundColor = color
+            subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            subView.tag = UIStackView.TAG_BACKGROUND
+            insertSubview(subView, at: 0)
+        }
     }
 }
+

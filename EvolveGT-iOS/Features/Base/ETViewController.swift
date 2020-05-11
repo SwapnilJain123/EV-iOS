@@ -129,17 +129,7 @@ extension UIViewController{
         
     }
     
-     @objc func switchAppMode(){
-        
-        Log.d("AppMode - Before - \(AppEngine.sharedInstance.isEvApp())")
-        let appMode = AppEngine.sharedInstance.isEvApp() ? AppEngine.AppMode.APP_MOTO : AppEngine.AppMode.APP_EV
-        AppEngine.sharedInstance.switchApp(appMode: appMode)
-        
-         Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
-        self.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
-        self.didChangeAppTheme()
-    }
-    
+     
     @objc  func didChangeAppTheme(){
        
     }

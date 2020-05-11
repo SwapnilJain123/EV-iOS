@@ -24,8 +24,7 @@ class HambergerMenuController: ETViewController {
         super.viewDidLoad()
         
         if(!(AppEngine.sharedInstance.currentUser?.isAdminOrCoach() ?? false)){
-            menuItems.remove(at: SlideMenuItem.TAG_SWITCH_DASHBOARD)
-            
+            menuItems.removeAll{$0.tag == SlideMenuItem.TAG_SWITCH_DASHBOARD}
         }
         slidingMenuView.dataSource = self
         slidingMenuView.delegate = self
@@ -47,7 +46,7 @@ class HambergerMenuController: ETViewController {
     }
     
     func pushViewController(_ controller: UIViewController) {
-        guard let rootNavigationController = self.ext.getWindow()?.rootViewController as? UINavigationController else { return }
+        guard let rootNavigationController = self.ext.getAppWindow()?.rootViewController as? UINavigationController else { return }
         guard let sideMenuController = rootNavigationController.viewControllers.first as? SideMenuController else { return }
         sideMenuController.hideMenu { completed in
             guard completed else { return }
@@ -77,15 +76,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         self.sideMenuController?.hideMenu()
-        if menuItems[indexPath.row].tag == SlideMenuItem.TAG_LOG_OUT {
-            self.didPressLogout()
-        }else if menuItems[indexPath.row].tag == SlideMenuItem.TAG_HOME {
-            return
-        }else if menuItems[indexPath.row].tag == SlideMenuItem.TAG_SWITCH_DASHBOARD{
-            switchToAdminDashboard()
-        }else{
-            handleMenuItem(tag : menuItems[indexPath.row].tag)
-        }
+        
+        handleMenuItem(tag : menuItems[indexPath.row].tag)
+       
     }
     
     func switchToAdminDashboard(){
@@ -108,6 +101,8 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
                 vc.selectedIndex = EnrolledEventsTabController.TAB_UPCOMING
                 pushViewController(vc)
             }
+        case SlideMenuItem.TAG_SWITCH_DASHBOARD:
+            self.dashboardManager.switchToAdminDashboard()
             
             
         default:

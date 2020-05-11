@@ -15,8 +15,6 @@ class ApiClient{
     var header = [String : String]()
     var urlString: String = ""
     
-    
-    
     static let sharedInstance : ApiClient = ApiClient()
     let networkManager = NetworkReachabilityManager()!
     
@@ -34,7 +32,7 @@ class ApiClient{
                     completionHandler(response.data!, nil)
                 case .failure(let error):
                     var apiError = ApiError()
-                    apiError.errorMessage = error.localizedDescription
+                     apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
                     Log.d("Error - \(error.localizedDescription)")
                     completionHandler( nil, apiError)
                 }
@@ -57,14 +55,14 @@ class ApiClient{
                     completionHandler(response.data!, nil)
                 case .failure(let error):
                     var apiError = ApiError()
-                    apiError.errorMessage = error.localizedDescription
-                    Log.d("Error - \(error.localizedDescription)")
-                    completionHandler( nil, apiError)
+                    apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                           Log.d("Error - \(error.localizedDescription)")
+                           completionHandler( nil, apiError)
                 }
         }
     }
     
-    
+   
     
     func addAuthTokenHeader(token : String){
         header.updateValue("Bearer \(token)", forKey: "Authorization")

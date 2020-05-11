@@ -31,6 +31,7 @@ extension UIViewController{
         func addLoadingIndicator(_ message: String?){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.150, execute: {
                 // MBProgressHUD.showAdded(to: self.view, animated: true)
+                SVProgressHUD.setMinimumSize(CGSize(width: 250.0, height: 150.0))
                 SVProgressHUD.setDefaultMaskType(.black)
                 SVProgressHUD.show(withStatus: message)
             })
@@ -131,10 +132,12 @@ extension UIViewController{
             return destination
         }
         
-        func getWindow () -> UIWindow?{
+        func getAppWindow () -> UIWindow?{
             let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
             return appDelegate?.window
         }
+        
+        
         
     }
     var ext: Ext {
@@ -142,4 +145,41 @@ extension UIViewController{
         
     }
 }
-
+extension UIViewController{
+    public class DashboardManager {
+        init(vc : UIViewController){
+            self.vc = vc
+        }
+        var vc : UIViewController
+        
+        func switchToAdminDashboard () {
+            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.launchAdminDashboard()
+        }
+        
+        func switchToUserDashboard () {
+            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.launchUserDashboard()
+        }
+        
+        func logout () {
+            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.doLogout()
+        }
+        
+        @objc func switchAppMode(){
+            
+            Log.d("AppMode - Before - \(AppEngine.sharedInstance.isEvApp())")
+            let appMode = AppEngine.sharedInstance.isEvApp() ? AppEngine.AppMode.APP_MOTO : AppEngine.AppMode.APP_EV
+            AppEngine.sharedInstance.switchApp(appMode: appMode)
+            
+             Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
+            vc.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
+            vc.didChangeAppTheme()
+        }
+        
+    }
+    var dashboardManager: DashboardManager {
+        return  DashboardManager(vc: self)
+    }
+}

@@ -49,6 +49,11 @@ class EventParticipantCell: UITableViewCell{
 
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
     func updateUI() {
         userName.text = eventParticipant?.namewithRole ?? "-"
         skill.text = eventParticipant?.skillLevel
