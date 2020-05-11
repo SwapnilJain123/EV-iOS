@@ -77,6 +77,7 @@ struct ErrorMessages {
     static let signatureUploadError = "Sorry, Signature could not be saved."
     
     static let emptyCreditList = "Sorry, Signature could not be saved."
+    static let invalidEmail = "Please enter valid email"
 }
 
 struct SuccessMessages {

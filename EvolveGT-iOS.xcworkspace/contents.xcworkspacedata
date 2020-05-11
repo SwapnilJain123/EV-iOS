@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Test.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:EvolveGT-iOS.xcodeproj">
    </FileRef>
    <FileRef

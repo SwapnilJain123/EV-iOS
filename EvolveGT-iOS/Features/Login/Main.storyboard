@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3yT-CU-cId">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LoginNav" id="3yT-CU-cId" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hz1-jd-dTb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,11 +38,11 @@
             <objects>
                 <viewController storyboardIdentifier="AppModeSelector" id="UpC-NE-WFh" customClass="AppModeSelectionController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Adx-1z-PoB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rS3-Tc-OpA">
-                                <rect key="frame" x="137" y="305" width="140" height="340"/>
+                                <rect key="frame" x="117.5" y="185.5" width="140" height="340"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYF-Kh-lrW">
                                         <rect key="frame" x="12" y="-24" width="115" height="140"/>
@@ -92,11 +93,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46t-Hi-Gvu">
-                                <rect key="frame" x="25" y="782" width="173" height="40"/>
+                                <rect key="frame" x="25" y="587" width="173" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aJF-v5-ZgW"/>
                                     <constraint firstAttribute="width" constant="173" id="mxy-Uy-C71"/>
@@ -109,21 +110,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vp0-cs-U7b">
-                                <rect key="frame" x="218" y="782" width="171" height="40"/>
+                                <rect key="frame" x="218" y="587" width="132" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SbL-rS-SYt"/>
                                 </constraints>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.15684100989999999" green="0.1568752527" blue="0.15683883430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="b7N-2H-vIW" kind="show" id="Xnj-j1-OhB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-Pg-qW3">
-                                <rect key="frame" x="25" y="724" width="364" height="50"/>
-                                <color key="backgroundColor" red="0.1551988422870636" green="0.67314523458480835" blue="0.064172230660915375" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="25" y="529" width="325" height="50"/>
+                                <color key="backgroundColor" name="ColorEV"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="L4s-s3-NkM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -132,7 +136,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="evmaster@evolvegt.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PfD-6j-8uQ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="28" y="589" width="358" height="50"/>
+                                <rect key="frame" x="24" y="394" width="327" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cb7-oU-Xl8"/>
                                 </constraints>
@@ -167,7 +171,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EVGT2019!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-Mw-VoT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="28" y="649" width="358" height="50"/>
+                                <rect key="frame" x="24" y="454" width="327" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Afl-V7-X13"/>
                                 </constraints>
@@ -202,14 +206,14 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-EG-4mU">
-                                <rect key="frame" x="107" y="144" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="100" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1NJ-6p-bUB"/>
                                     <constraint firstAttribute="height" constant="200" id="xYD-5i-aRR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-gm-xeA">
-                                <rect key="frame" x="107" y="359" width="200" height="21"/>
+                                <rect key="frame" x="87.5" y="315" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7x8-YQ-IKa"/>
                                     <constraint firstAttribute="width" constant="200" id="FS0-EO-yKW"/>
@@ -256,23 +260,153 @@
             </objects>
             <point key="canvasLocation" x="835" y="108"/>
         </scene>
+        <!--Forgot Password Controller-->
+        <scene sceneID="gxH-Ei-Ap9">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="b7N-2H-vIW" customClass="ForgotPasswordController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pBr-Qt-JLW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g74-jO-CmE" userLabel="RootView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-Xj-Nx0">
+                                        <rect key="frame" x="137.5" y="83.5" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="hqa-Ge-say"/>
+                                            <constraint firstAttribute="width" constant="100" id="pPk-NI-dhs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWN-an-5Bc">
+                                        <rect key="frame" x="10" y="223.5" width="355" height="37"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please provide your registered email. We will send thie password reser link to this email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-aJ-3az">
+                                        <rect key="frame" x="10" y="310.5" width="355" height="68.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid email." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZn-Ob-Q0z">
+                                        <rect key="frame" x="10" y="429" width="355" height="21"/>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.1095090016" blue="0.096013926690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="evmaster@evolvegt.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V12-hx-wjy" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="10" y="480" width="355" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cMJ-yi-S36"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" red="0.086262829599999993" green="0.086281977590000003" blue="0.086258627470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.56530427930000005" green="0.56850588319999995" blue="0.5769347548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="0.8827405572" green="0.88623052840000005" blue="0.89037138220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                <color key="value" red="0.56530427930000005" green="0.56850588319999995" blue="0.5769347548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                <color key="value" red="0.56530427930000005" green="0.56850588319999995" blue="0.5769347548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                <color key="value" red="0.8827405572" green="0.88623052840000005" blue="0.89037138220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                                <color key="value" red="1" green="0.2105786204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
+                                                <color key="value" red="1" green="0.2105786204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-Y5-H9m">
+                                        <rect key="frame" x="15" y="577" width="345" height="50"/>
+                                        <color key="backgroundColor" name="ColorEV"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wud-Ec-oyw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                        <state key="normal" title="RESET PASSWORD">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressResetPassword:" destination="b7N-2H-vIW" eventType="touchUpInside" id="wg5-3M-PU9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HZn-Ob-Q0z" secondAttribute="trailing" constant="10" id="14c-lU-SGi"/>
+                                    <constraint firstItem="Nmv-aJ-3az" firstAttribute="leading" secondItem="g74-jO-CmE" secondAttribute="leading" constant="10" id="8SD-Eb-jeO"/>
+                                    <constraint firstItem="Nmv-aJ-3az" firstAttribute="top" secondItem="FWN-an-5Bc" secondAttribute="bottom" constant="50" id="BhA-KY-Txm"/>
+                                    <constraint firstAttribute="trailing" secondItem="FWN-an-5Bc" secondAttribute="trailing" constant="10" id="DLS-jT-YSx"/>
+                                    <constraint firstItem="HZn-Ob-Q0z" firstAttribute="top" secondItem="Nmv-aJ-3az" secondAttribute="bottom" constant="50" id="OFl-NX-kOF"/>
+                                    <constraint firstAttribute="bottom" secondItem="xGf-Y5-H9m" secondAttribute="bottom" constant="40" id="RKA-LM-dEL"/>
+                                    <constraint firstItem="EpB-Xj-Nx0" firstAttribute="centerX" secondItem="g74-jO-CmE" secondAttribute="centerX" id="Rnc-eV-bn5"/>
+                                    <constraint firstItem="EpB-Xj-Nx0" firstAttribute="centerY" secondItem="g74-jO-CmE" secondAttribute="centerY" constant="-200" id="XEs-nc-Inn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nmv-aJ-3az" secondAttribute="trailing" constant="10" id="YTp-BQ-xHU"/>
+                                    <constraint firstItem="V12-hx-wjy" firstAttribute="top" secondItem="HZn-Ob-Q0z" secondAttribute="bottom" constant="30" id="fK7-70-qOk"/>
+                                    <constraint firstAttribute="trailing" secondItem="xGf-Y5-H9m" secondAttribute="trailing" constant="15" id="iVa-ZW-brg"/>
+                                    <constraint firstItem="xGf-Y5-H9m" firstAttribute="leading" secondItem="g74-jO-CmE" secondAttribute="leading" constant="15" id="ilK-dC-phx"/>
+                                    <constraint firstItem="HZn-Ob-Q0z" firstAttribute="leading" secondItem="g74-jO-CmE" secondAttribute="leading" constant="10" id="qHC-oK-Eqo"/>
+                                    <constraint firstItem="V12-hx-wjy" firstAttribute="leading" secondItem="g74-jO-CmE" secondAttribute="leading" constant="10" id="qeM-To-j3x"/>
+                                    <constraint firstAttribute="trailing" secondItem="V12-hx-wjy" secondAttribute="trailing" constant="10" id="rRR-Pi-9lT"/>
+                                    <constraint firstItem="FWN-an-5Bc" firstAttribute="top" secondItem="EpB-Xj-Nx0" secondAttribute="bottom" constant="40" id="uza-g4-bcJ"/>
+                                    <constraint firstItem="FWN-an-5Bc" firstAttribute="leading" secondItem="g74-jO-CmE" secondAttribute="leading" constant="10" id="vZn-vL-2A2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="g74-jO-CmE" secondAttribute="bottom" id="JXS-cl-zWi"/>
+                            <constraint firstItem="g74-jO-CmE" firstAttribute="leading" secondItem="pBr-Qt-JLW" secondAttribute="leading" id="K0P-pD-ja0"/>
+                            <constraint firstAttribute="trailing" secondItem="g74-jO-CmE" secondAttribute="trailing" id="rpr-U0-9rV"/>
+                            <constraint firstItem="g74-jO-CmE" firstAttribute="top" secondItem="pBr-Qt-JLW" secondAttribute="top" id="sXP-P2-jIo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7wb-bc-wF4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="N7q-DS-x7A"/>
+                    <connections>
+                        <outlet property="btnResetPassword" destination="xGf-Y5-H9m" id="Ogd-qm-x1N"/>
+                        <outlet property="errorView" destination="HZn-Ob-Q0z" id="2X3-2J-jQR"/>
+                        <outlet property="iconForgotPassword" destination="EpB-Xj-Nx0" id="b18-YY-v8S"/>
+                        <outlet property="tfEmail" destination="V12-hx-wjy" id="9hl-zE-qHe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUm-qX-CCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558" y="108"/>
+        </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="snc-v2-5XK">
             <objects>
                 <viewController storyboardIdentifier="ForgotPasswordViewController" id="mDS-Of-7df" customClass="ForgotPasswordViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jZg-jn-f0q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="oM4-wM-XX3">
-                                <rect key="frame" x="157" y="79" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="35" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="9Qk-Ed-z2h"/>
                                     <constraint firstAttribute="width" constant="100" id="Qpc-xa-k1F"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-lv-TIz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="20" y="320.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="276.5" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="KBk-2B-Bq8"/>
                                 </constraints>
@@ -307,7 +441,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ds-1f-J4l">
-                                <rect key="frame" x="15" y="797" width="384" height="50"/>
+                                <rect key="frame" x="15" y="602" width="345" height="50"/>
                                 <color key="backgroundColor" red="0.1551988423" green="0.67314523459999998" blue="0.064172230659999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iWX-uM-J4u"/>
@@ -321,13 +455,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLi-Kr-qZX">
-                                <rect key="frame" x="15" y="199" width="384" height="26.5"/>
+                                <rect key="frame" x="15" y="155" width="345" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.31764705879999999" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please provide your registered email. We will send the password reset link to this email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8T-2l-ezW">
-                                <rect key="frame" x="15" y="245.5" width="384" height="50"/>
+                                <rect key="frame" x="15" y="201.5" width="345" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zc0-Bg-dAB"/>
                                 </constraints>
@@ -370,5 +504,8 @@
         <image name="forgot_password" width="135.5" height="135.5"/>
         <image name="moto_logo" width="106.33333587646484" height="106.33333587646484"/>
         <image name="splash_logo" width="780" height="1191"/>
+        <namedColor name="ColorEV">
+            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
