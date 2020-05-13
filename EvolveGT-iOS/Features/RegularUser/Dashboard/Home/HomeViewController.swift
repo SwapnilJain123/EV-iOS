@@ -45,14 +45,16 @@ class HomeViewController: TabbedViewController{
         let switchAppMode = UIBarButtonItem(image: switcIcon,
                                             style: .plain,
                                             target: self,
-                                            action: #selector(self.switchAppMode))
+                                            action: #selector(self.switchAppTheme))
         
         self.navigationItem.rightBarButtonItems = [switchAppMode]
     
         enableSlideMenu()
         
     }
-    
+    @objc func switchAppTheme(){
+        self.dashboardManager.switchAppMode()
+    }
     
     override  func didChangeAppTheme() {
         setNavbarControls()

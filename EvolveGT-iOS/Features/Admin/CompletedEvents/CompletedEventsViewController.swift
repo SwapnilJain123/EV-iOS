@@ -16,6 +16,9 @@ class CompletedEventViewController : ETViewController{
     var isSearchActive: Bool = false
     
     
+    @IBOutlet weak var switchAppMode: UIButton!
+    
+    
     @IBOutlet weak var popUpMenu: UIStackView!
     
     @IBOutlet weak var eventsTableView: UITableView!
@@ -28,9 +31,17 @@ class CompletedEventViewController : ETViewController{
         self.setUpTableView()
         self.setInteractor()
         self.setNavbarControls()
-        
+        changeSwitchAppIcon()
     }
     
+    func changeSwitchAppIcon(){
+        var switcIcon = UIImage(named: "switch_moto")
+              if !AppEngine.sharedInstance.isEvApp(){
+                  switcIcon = UIImage(named: "switch_ev")
+              }
+        switchAppMode.setImage(switcIcon, for: .normal)
+        popUpMenu.setBackground(color: UIColor.getAppThemeColor())
+    }
     func setInteractor(){
         interactor.delegate = self
         interactor.viewDidLoad()
@@ -61,17 +72,24 @@ class CompletedEventViewController : ETViewController{
     
     
     @IBAction func switchAppTapped(_ sender: UIButton) {
+        self.dashboardManager.switchAppMode()
+        changeSwitchAppIcon()
         popUpMenu.isHidden = true
+    }
+    override func didChangeAppTheme() {
+        super.didChangeAppTheme()
+        setNavbarControls()
+        interactor.fetchCompletedEvents()
     }
     
     @IBAction func switchDashboardTapped(_ sender: UIButton) {
         popUpMenu.isHidden = true
+        self.dashboardManager.switchToUserDashboard()
     }
     
     func setNavbarControls(){
         self.ext.hideBackButton()
         self.ext.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
-        popUpMenu.setBackground(color: UIColor.getAppThemeColor())
         popUpMenu.isHidden = true
         
         let logoutItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout_icon"),
