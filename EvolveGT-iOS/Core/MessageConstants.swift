@@ -57,6 +57,7 @@ struct LoadingIndicatorMessages {
     static let loadingProfileData = "Loading Profile..."
     static let loadingCreditHistory = "Loading your credit history..."
       static let loadingEventHistory = "Loading your event history..."
+    static let resettingPassword = "Resetting your password..."
     
     
     

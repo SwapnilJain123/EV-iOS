@@ -29,7 +29,7 @@ class ForgotPasswordInteractor:BaseInteractor{
         
         let forgotPwdApi = LoginApi()
         
-        delegate?.showProgressIndicator(message: "")
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.resettingPassword)
         
         forgotPwdApi.setCompletionHandler{ data, error in
             self.delegate?.hideProgressIndicator()

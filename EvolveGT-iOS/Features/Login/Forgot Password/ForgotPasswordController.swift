@@ -23,10 +23,16 @@ class ForgotPasswordController: ETViewController {
         super.viewDidLoad()
         self.ext.showNavbar()
         self.ext.showBackButton()
+        if AppEngine.sharedInstance.isEvApp() == false{
+            iconForgotPassword.image = UIImage(named: "moto_forgot_password")
+        }
         
         errorView.text! = ""
-
-          
+        btnResetPassword.applyColorTheme()
+        
+        if BuildScheme.isBuildQA{
+        tfEmail.text! = "geevar83@gmail.com"
+        }
     }
     
     override func getScreenTitle() -> String? {
@@ -47,7 +53,11 @@ extension ForgotPasswordController:ForgotPasswordDelegate{
     }
     
     func didResetPassword(message: String) {
-        self.ext.showAlert(title: "Success", message: "Password Reset")
+        
+       let VC =  self.ext.getViewController(storyBoard: "Main", VCIdentifier: "PasswordResetAckVC") as! PwdResetAckController
+        VC.message = message
+        self.navigationController?.pushViewController(VC, animated: false)
+       
     }
     
     
