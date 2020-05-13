@@ -19,5 +19,14 @@ class LoginApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func forgotPassword(email: String){
+           
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.FORGOT_PASSWORD)"
+           setUrl(url: url)
+           let forgotRequest = ForgotPasswordRequest(userEmail: email)
+           setParameters(parameters: makeDictionary(forgotRequest))
+           super.makeRequest(method: .POST)
+       }
+    
     
 }

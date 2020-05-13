@@ -57,6 +57,7 @@ struct LoadingIndicatorMessages {
     static let loadingProfileData = "Loading Profile..."
     static let loadingCreditHistory = "Loading your credit history..."
       static let loadingEventHistory = "Loading your event history..."
+    static let resettingPassword = "Resetting your password..."
     
     
     
@@ -77,6 +78,7 @@ struct ErrorMessages {
     static let signatureUploadError = "Sorry, Signature could not be saved."
     
     static let emptyCreditList = "Sorry, Signature could not be saved."
+    static let invalidEmail = "Please enter valid email"
 }
 
 struct SuccessMessages {

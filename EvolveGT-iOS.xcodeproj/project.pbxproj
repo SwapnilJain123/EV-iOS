@@ -53,11 +53,16 @@
 		103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346502468432500D5EED0 /* SlideMenuCell.swift */; };
 		103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346542468784C00D5EED0 /* SlideMenuItem.swift */; };
 		10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334656246884B500D5EED0 /* TabbedViewController.swift */; };
+		1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465B246944B200D5EED0 /* ForgotPasswordController.swift */; };
+		1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465C246944B200D5EED0 /* ForgotPasswordInteractor.swift */; };
+		10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465D246944B200D5EED0 /* PwdResetAckController.swift */; };
+		103346662469458000D5EED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103346652469458000D5EED0 /* Main.storyboard */; };
+		103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346702469461700D5EED0 /* ForgotPasswordRequest.swift */; };
+		103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346722469462900D5EED0 /* ForgotPasswordResponse.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
 		1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE07244F1A1A00190088 /* LaunchScreen.storyboard */; };
-		1039FE11244F20A900190088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE10244F20A900190088 /* Main.storyboard */; };
 		1039FE17244F25E100190088 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE16244F25E100190088 /* LoginViewController.swift */; };
 		1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE1F244F33A100190088 /* ApiConstsant.swift */; };
 		1039FE43244F608100190088 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE42244F608100190088 /* Logger.swift */; };
@@ -161,13 +166,18 @@
 		103346502468432500D5EED0 /* SlideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
 		103346542468784C00D5EED0 /* SlideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuItem.swift; sourceTree = "<group>"; };
 		10334656246884B500D5EED0 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
+		1033465B246944B200D5EED0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		1033465C246944B200D5EED0 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		1033465D246944B200D5EED0 /* PwdResetAckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwdResetAckController.swift; sourceTree = "<group>"; };
+		103346652469458000D5EED0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		103346702469461700D5EED0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		103346722469462900D5EED0 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1039FE05244F1A1A00190088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1039FE08244F1A1A00190088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1039FE0A244F1A1A00190088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1039FE10244F20A900190088 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1039FE16244F25E100190088 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1039FE1F244F33A100190088 /* ApiConstsant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstsant.swift; sourceTree = "<group>"; };
 		1039FE3B244F5CD100190088 /* ConfigQA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigQA.xcconfig; sourceTree = "<group>"; };
@@ -377,6 +387,16 @@
 			path = SlideMenu;
 			sourceTree = "<group>";
 		};
+		1033465A246944B200D5EED0 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				1033465B246944B200D5EED0 /* ForgotPasswordController.swift */,
+				1033465C246944B200D5EED0 /* ForgotPasswordInteractor.swift */,
+				1033465D246944B200D5EED0 /* PwdResetAckController.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
 		1039FDF0244F1A1800190088 = {
 			isa = PBXGroup;
 			children = (
@@ -430,9 +450,10 @@
 		1039FE13244F25AA00190088 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1033465A246944B200D5EED0 /* Forgot Password */,
 				1039FE16244F25E100190088 /* LoginViewController.swift */,
-				1039FE10244F20A900190088 /* Main.storyboard */,
 				1039FE6924506DE800190088 /* LoginInterator.swift */,
+				103346652469458000D5EED0 /* Main.storyboard */,
 				10BDD059245D4B7600F05700 /* AppModeSelector.swift */,
 			);
 			path = Login;
@@ -480,6 +501,7 @@
 				100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */,
 				10BDD01B2459BFC700F05700 /* SignatureRequest.swift */,
 				10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */,
+				103346702469461700D5EED0 /* ForgotPasswordRequest.swift */,
 				1033460124608C7500D5EED0 /* UserDataRequest.swift */,
 			);
 			path = Request;
@@ -489,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				1039FE5324500F4C00190088 /* ETResponse.swift */,
+				103346722469462900D5EED0 /* ForgotPasswordResponse.swift */,
 				1039FE5C2450429600190088 /* LoginResponse.swift */,
 				1039FE8124509F3100190088 /* CompletedEventsResponse.swift */,
 				10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */,
@@ -781,13 +804,13 @@
 				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
+				103346662469458000D5EED0 /* Main.storyboard in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				103345FA24606D4400D5EED0 /* Home.storyboard in Resources */,
 				103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */,
 				103345F824606D3800D5EED0 /* Events.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
-				1039FE11244F20A900190088 /* Main.storyboard in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
@@ -850,6 +873,7 @@
 				1039FE682450686E00190088 /* AppConstants.swift in Sources */,
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
+				10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */,
 				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
 				10BDD014245982ED00F05700 /* AlertService.swift in Sources */,
 				1033460E24613FAA00D5EED0 /* ProfileData.swift in Sources */,
@@ -872,6 +896,7 @@
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
 				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
+				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				1039FE8224509F3100190088 /* CompletedEventsResponse.swift in Sources */,
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
@@ -883,6 +908,7 @@
 				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
+				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
@@ -900,6 +926,7 @@
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
+				103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
@@ -911,6 +938,7 @@
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
+				103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */,
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
 				1033464824681B4B00D5EED0 /* UIButtonExtension.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,

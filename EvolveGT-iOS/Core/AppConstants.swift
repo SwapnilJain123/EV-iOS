@@ -37,7 +37,7 @@ struct ScreenTitle{
     static let TITLE_ALL_EVENTS = "All Events"
     
     static let TITLE_CREDIT_HISTORY = "Credit History"
-    
+    static let TITLE_FORGOT_PASSWORD = "Forgot Password"
     
 }
 
