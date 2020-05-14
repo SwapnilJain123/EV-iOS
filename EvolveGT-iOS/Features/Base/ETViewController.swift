@@ -19,9 +19,6 @@ class ETViewController : UIViewController{
         self.ext.setScreenTitle(title: getScreenTitle() ?? "")
     
     }
-    @objc func logout(){
-        
-    }
     func createMoreButton() -> UIBarButtonItem{
        
         let moreButton = UIBarButtonItem.menuButton(self, action: #selector(self.didPressMoreButton), imageName: "three_dots")
@@ -116,20 +113,13 @@ extension ETViewController{
 
 extension UIViewController{
     @objc func didPressLogout(){
-        
-        self.ext.addLoadingIndicator(LoadingIndicatorMessages.loggingOut)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + AppConstants.LOGOUT_TIMEOUT, execute: {
-                      Log.d("Logout !!")
-                      let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-                        self.ext.removeLoadingIndicator()
-                      appDelegate?.doLogout()
-                   })
-        
-        
+        self.dashboardManager.logout()
     }
     
      
+    /*
+     Override this method to handle app theme switch functionality
+     */
     @objc  func didChangeAppTheme(){
        
     }

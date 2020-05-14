@@ -169,8 +169,16 @@ extension UIViewController{
         }
         
         func logout () {
-            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-            appDelegate?.doLogout()
+            vc.ext.addLoadingIndicator(LoadingIndicatorMessages.loggingOut)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + AppConstants.LOGOUT_TIMEOUT, execute: {
+                Log.d("Logout !!")
+                let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+                self.vc.ext.removeLoadingIndicator()
+                appDelegate?.doLogout()
+            })
+            
+            
         }
         
         @objc func switchAppMode(){
@@ -179,7 +187,7 @@ extension UIViewController{
             let appMode = AppEngine.sharedInstance.isEvApp() ? AppEngine.AppMode.APP_MOTO : AppEngine.AppMode.APP_EV
             AppEngine.sharedInstance.switchApp(appMode: appMode)
             
-             Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
+            Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
             vc.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
             vc.didChangeAppTheme()
         }
