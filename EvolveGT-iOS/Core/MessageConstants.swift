@@ -54,6 +54,8 @@ struct LoadingIndicatorMessages {
     static let loadingParticipants = "Loading participants..."
     static let loadingSignature = "Loading Signature..."
     
+    static let loadingEvents = "Loading Events..."
+    
     static let loadingProfileData = "Loading Profile..."
     static let loadingCreditHistory = "Loading your credit history..."
       static let loadingEventHistory = "Loading your event history..."
@@ -77,8 +79,12 @@ struct ErrorMessages {
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
     
-    static let emptyCreditList = "Sorry, Signature could not be saved."
+
     static let invalidEmail = "Please enter valid email"
+
+    static let emptyCreditList = "Sorry, You have no credit history."
+    
+    static let emptyEventList = "Sorry, there is no events available right now."
 }
 
 struct SuccessMessages {

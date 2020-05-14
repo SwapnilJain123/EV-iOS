@@ -9,6 +9,8 @@
 import Foundation
 
 extension String{
+    
+    static let DEFAULT_AMOUNT = "$0.00"
     func formatToAmount() -> String{
         
         if self == "0"{

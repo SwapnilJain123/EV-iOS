@@ -11,7 +11,7 @@ target 'EvolveGT-iOS' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Kingfisher', '~> 4.2'
   pod 'AFDateHelper'
-pod 'SnapKit', '~> 5.0.0'
+  pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 4.6'
   pod 'SVProgressHUD'
   pod 'IQKeyboardManagerSwift','6.0.4'

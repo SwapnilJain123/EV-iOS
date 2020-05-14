@@ -11,6 +11,10 @@ import UIKit
 
 extension UIButton{
     func applyColorTheme(){
+        
+        self.backgroundColor = UIColor.getAppThemeColor()
+        
+        
         self.clipsToBounds = true  // add this to maintain corner radius
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         if let context = UIGraphicsGetCurrentContext() {
@@ -27,12 +31,13 @@ extension UIButton{
             context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
             let colorImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            self.setBackgroundImage(colorImage, for: .selected)
+            self.setBackgroundImage(colorImage, for: .highlighted)
         }
         
-        self.tintColor = UIColor.getSecondaryColor()
+        self.tintColor = .black
+       
         self.setTitleColor(.white, for: .normal)
-        self.setTitleColor(.lightGray, for: .selected)
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        self.setTitleColor(.lightGray, for: .highlighted)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
     }
 }

@@ -22,12 +22,7 @@ protocol CompletedEventsViewDelegate : BaseViewDelegate{
 
 class CompletedEventsInteractor : BaseInteractor{
     
-    enum FilterType {
-        case trainingType
-        case month
-        case eventType
-        case none
-    }
+    
     
     var delegate: CompletedEventsViewDelegate?
     var completedEvents = [CompletedEvent]()
