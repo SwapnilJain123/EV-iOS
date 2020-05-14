@@ -37,3 +37,22 @@ struct User: Codable {
         return role == User.ROLE_COACH || role == User.ROLE_ADMIN
     }
 }
+
+//Mark: Roles - User Roles
+
+enum UserRoles : String{
+    case guest
+    case grip
+    case military
+    case apex
+    case coach
+    case yg
+    case racer
+    case vip
+    case dealer
+    case motogirl
+    case ocp
+    case administrator
+    
+}
+

@@ -104,6 +104,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
         case SlideMenuItem.TAG_SWITCH_DASHBOARD:
             self.dashboardManager.switchToAdminDashboard()
             
+        case SlideMenuItem.TAG_LOG_OUT:
+            self.dashboardManager.logout()
+            
             
         default:
             break

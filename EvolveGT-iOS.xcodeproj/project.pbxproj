@@ -53,12 +53,23 @@
 		103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346502468432500D5EED0 /* SlideMenuCell.swift */; };
 		103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346542468784C00D5EED0 /* SlideMenuItem.swift */; };
 		10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334656246884B500D5EED0 /* TabbedViewController.swift */; };
+
 		1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465B246944B200D5EED0 /* ForgotPasswordController.swift */; };
 		1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465C246944B200D5EED0 /* ForgotPasswordInteractor.swift */; };
 		10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465D246944B200D5EED0 /* PwdResetAckController.swift */; };
 		103346662469458000D5EED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103346652469458000D5EED0 /* Main.storyboard */; };
 		103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346702469461700D5EED0 /* ForgotPasswordRequest.swift */; };
 		103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346722469462900D5EED0 /* ForgotPasswordResponse.swift */; };
+
+		10334675246980D800D5EED0 /* EventListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334674246980D800D5EED0 /* EventListController.swift */; };
+		1033467824699C4000D5EED0 /* EventGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033467724699C4000D5EED0 /* EventGridCell.swift */; };
+		1033467A24699C5700D5EED0 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033467924699C5700D5EED0 /* EventListCell.swift */; };
+		1033467C2469C72D00D5EED0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033467B2469C72D00D5EED0 /* Event.swift */; };
+		1033467E246AA84E00D5EED0 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033467D246AA84E00D5EED0 /* EventsInteractor.swift */; };
+		10334680246AAF4200D5EED0 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033467F246AAF4200D5EED0 /* EventResponse.swift */; };
+		10334682246AB01500D5EED0 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334681246AB01500D5EED0 /* EventsApi.swift */; };
+		10334684246AB06500D5EED0 /* ShopsApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10334683246AB06500D5EED0 /* ShopsApiConstants.swift */; };
+
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -166,12 +177,23 @@
 		103346502468432500D5EED0 /* SlideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
 		103346542468784C00D5EED0 /* SlideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuItem.swift; sourceTree = "<group>"; };
 		10334656246884B500D5EED0 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
+
 		1033465B246944B200D5EED0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		1033465C246944B200D5EED0 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
 		1033465D246944B200D5EED0 /* PwdResetAckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwdResetAckController.swift; sourceTree = "<group>"; };
 		103346652469458000D5EED0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		103346702469461700D5EED0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		103346722469462900D5EED0 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
+
+		10334674246980D800D5EED0 /* EventListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
+		1033467724699C4000D5EED0 /* EventGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGridCell.swift; sourceTree = "<group>"; };
+		1033467924699C5700D5EED0 /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		1033467B2469C72D00D5EED0 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1033467D246AA84E00D5EED0 /* EventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInteractor.swift; sourceTree = "<group>"; };
+		1033467F246AAF4200D5EED0 /* EventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
+		10334681246AB01500D5EED0 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
+		10334683246AB06500D5EED0 /* ShopsApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsApiConstants.swift; sourceTree = "<group>"; };
+
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -293,7 +315,10 @@
 		103345EC24606C1900D5EED0 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				1033467624699C1600D5EED0 /* Cell */,
 				103345F724606D3800D5EED0 /* Events.storyboard */,
+				10334674246980D800D5EED0 /* EventListController.swift */,
+				1033467D246AA84E00D5EED0 /* EventsInteractor.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -387,6 +412,7 @@
 			path = SlideMenu;
 			sourceTree = "<group>";
 		};
+
 		1033465A246944B200D5EED0 /* Forgot Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +421,15 @@
 				1033465D246944B200D5EED0 /* PwdResetAckController.swift */,
 			);
 			path = "Forgot Password";
+
+		1033467624699C1600D5EED0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1033467724699C4000D5EED0 /* EventGridCell.swift */,
+				1033467924699C5700D5EED0 /* EventListCell.swift */,
+			);
+			path = Cell;
+
 			sourceTree = "<group>";
 		};
 		1039FDF0244F1A1800190088 = {
@@ -468,6 +503,7 @@
 				103345FF246089C200D5EED0 /* UserDetails.swift */,
 				1033460F246146B700D5EED0 /* EnrolledEvent.swift */,
 				103346112461490600D5EED0 /* CreditHistory.swift */,
+				1033467B2469C72D00D5EED0 /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -516,6 +552,7 @@
 				1039FE8124509F3100190088 /* CompletedEventsResponse.swift */,
 				10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */,
 				1033460724608E3100D5EED0 /* UsreDataResponse.swift */,
+				1033467F246AAF4200D5EED0 /* EventResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -581,6 +618,7 @@
 				1039FE1F244F33A100190088 /* ApiConstsant.swift */,
 				1039FE4F2450076300190088 /* UserApiConstants.swift */,
 				1039FE862450A06C00190088 /* AdminApiConstants.swift */,
+				10334683246AB06500D5EED0 /* ShopsApiConstants.swift */,
 			);
 			path = UrlConstants;
 			sourceTree = "<group>";
@@ -590,6 +628,7 @@
 			children = (
 				1039FE5624501CB800190088 /* LoginApi.swift */,
 				1033460324608CDD00D5EED0 /* ProfileApi.swift */,
+				10334681246AB01500D5EED0 /* EventsApi.swift */,
 			);
 			path = UserApi;
 			sourceTree = "<group>";
@@ -876,6 +915,7 @@
 				10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */,
 				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
 				10BDD014245982ED00F05700 /* AlertService.swift in Sources */,
+				1033467C2469C72D00D5EED0 /* Event.swift in Sources */,
 				1033460E24613FAA00D5EED0 /* ProfileData.swift in Sources */,
 				100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */,
 				10FCA257245212AD00EA95C0 /* StringDateExtension.swift in Sources */,
@@ -886,6 +926,7 @@
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				1033460224608C7500D5EED0 /* UserDataRequest.swift in Sources */,
+				10334675246980D800D5EED0 /* EventListController.swift in Sources */,
 				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
 				103346362466A93400D5EED0 /* AllEventsController.swift in Sources */,
@@ -906,6 +947,7 @@
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
 				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
+				10334680246AAF4200D5EED0 /* EventResponse.swift in Sources */,
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
@@ -918,8 +960,10 @@
 				1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
 				103346162461C0B900D5EED0 /* EventInfoCell.swift in Sources */,
+				10334682246AB01500D5EED0 /* EventsApi.swift in Sources */,
 				10334610246146B700D5EED0 /* EnrolledEvent.swift in Sources */,
 				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
+				10334684246AB06500D5EED0 /* ShopsApiConstants.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
 				10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */,
 				103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */,
@@ -947,7 +991,10 @@
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,
 				103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
+				1033467824699C4000D5EED0 /* EventGridCell.swift in Sources */,
+				1033467A24699C5700D5EED0 /* EventListCell.swift in Sources */,
 				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,
+				1033467E246AA84E00D5EED0 /* EventsInteractor.swift in Sources */,
 				1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */,
 				10FCA25924521E6300EA95C0 /* UiViewExtension.swift in Sources */,
 				10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */,

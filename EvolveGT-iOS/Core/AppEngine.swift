@@ -21,6 +21,10 @@ class AppEngine{
         currentUser?.id ?? ""
     }
     
+    public var userRole : String{
+        currentUser?.role ?? "guest"
+    }
+    
     
     var currentUser : User?
     var userDetails : UserDetails?

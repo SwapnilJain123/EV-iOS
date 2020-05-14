@@ -8,6 +8,12 @@
 
 import Foundation
 class BaseInteractor{
+    enum FilterType {
+        case trainingType
+        case month
+        case eventType
+        case none
+    }
     
     func decodeFromJson<T: Decodable>(_ data: Data, modelType: T.Type) -> T? {
            

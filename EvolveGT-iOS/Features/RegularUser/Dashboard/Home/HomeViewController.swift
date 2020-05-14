@@ -31,33 +31,18 @@ class HomeViewController: TabbedViewController{
         interactor.delegate = self
         interactor.fetchUserDetails()
         
-        setNavbarControls()
-    }
-    
-    func setNavbarControls(){
         
-        
-        var switcIcon = UIImage(named: "switch_moto")
-        if !AppEngine.sharedInstance.isEvApp(){
-            switcIcon = UIImage(named: "switch_ev")
-        }
-        
-        let switchAppMode = UIBarButtonItem(image: switcIcon,
-                                            style: .plain,
-                                            target: self,
-                                            action: #selector(self.switchAppTheme))
-        
-        self.navigationItem.rightBarButtonItems = [switchAppMode]
-    
-        enableSlideMenu()
-        
-    }
-    @objc func switchAppTheme(){
-        self.dashboardManager.switchAppMode()
     }
     
     override  func didChangeAppTheme() {
-        setNavbarControls()
+        
+        profileData?.upComingEventsCount = 0
+        profileData?.pastEventsCount = 0
+        profileData?.allEventsCount = 0
+        profileData?.recentPastEvent = nil
+        profileData?.recentUpComingEvent = nil
+        profileData?.recentCreditHistory = nil
+        
         self.profileView.reloadData()
         interactor.fetchUserDetails()
         
@@ -66,15 +51,7 @@ class HomeViewController: TabbedViewController{
         ScreenTitle.TITLE_DASHBOARD
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.ext.showBackButton()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.ext.showNavbar()
-        self.ext.hideBackButton()
-    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource{
@@ -99,7 +76,7 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_UPCOMING_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
-                let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"EventCell",for: indexPath) as! EventInfoCell
+                let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EventInfoCell
                 
                 upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!, expanded: upComingEventsExpanded)
                 upComingEventCell.delegate = self
@@ -113,7 +90,7 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_PAST_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
-                let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"EventCell",for: indexPath) as! EventInfoCell
+                let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"PastEventCell",for: indexPath) as! EventInfoCell
                 pastEventCell.delegate = self
                 pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!, expanded: pastEventsExpanded)
                 return pastEventCell;
