@@ -21,6 +21,10 @@ class BaseInteractor{
         let decoder = JSONDecoder()
         do{
              decoded = try decoder.decode(modelType, from: data)
+        }catch let DecodingError.typeMismatch(type, context)  {
+            Log.e("Type '\(type)' mismatch: \(context.debugDescription)")
+            Log.e("codingPath: \(context.codingPath)")
+            
         }catch{
             Log.e("Json Decode error")
         }
