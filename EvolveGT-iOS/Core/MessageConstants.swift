@@ -96,4 +96,7 @@ struct SuccessMessages {
     
     static let eventAddedToCart = "Your event has been added to the cart successfully."
     
+    
+  static let latestVersion =  "The latest version is already installed."
+    static let oldVersion = "New version available in store. Please update."
 }

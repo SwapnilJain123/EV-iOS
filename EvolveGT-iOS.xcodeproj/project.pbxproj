@@ -312,6 +312,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10048F21246E69F300684A87 /* AboutUs */,
 				1033464D2468412700D5EED0 /* SlideMenu */,
 				1033462724669A3E00D5EED0 /* EnrolledEvents */,
 				1033461E246687C400D5EED0 /* CreditHistory */,
@@ -600,6 +601,7 @@
 				1039FE8324509FCB00190088 /* AdminApi */,
 				1039FE5524501C9C00190088 /* UserApi */,
 				1039FE5124500A4F00190088 /* BaseApiAdapter.swift */,
+				10048F2C246E7DC200684A87 /* GenericApi.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -881,6 +883,7 @@
 				103345F824606D3800D5EED0 /* Events.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
+				10048F23246E6A1D00684A87 /* AboutUs.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
@@ -936,6 +939,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10048F29246E7A3E00684A87 /* AppApiConstants.swift in Sources */,
 				1033460824608E3100D5EED0 /* UsreDataResponse.swift in Sources */,
 				1039FE6D24506ED600190088 /* BaseViewDelegate.swift in Sources */,
 				10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */,
@@ -963,6 +967,7 @@
 				103346362466A93400D5EED0 /* AllEventsController.swift in Sources */,
 				10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */,
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
+				10048F2B246E7B6E00684A87 /* AppVersion.swift in Sources */,
 				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
 				103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */,
@@ -983,6 +988,7 @@
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
+				10048F25246E6A4300684A87 /* AboutUsViewController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
@@ -990,6 +996,7 @@
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
 				103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */,
 				1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */,
+				10048F27246E72BD00684A87 /* AboutUsInteractor.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
 				10048F08246D013800684A87 /* EventListController.swift in Sources */,
 				103346162461C0B900D5EED0 /* SectionEventInfoCell.swift in Sources */,
