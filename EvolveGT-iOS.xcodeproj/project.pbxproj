@@ -15,6 +15,12 @@
 		10048F0F246D017400684A87 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F0E246D017300684A87 /* EventResponse.swift */; };
 		10048F11246D018F00684A87 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F10246D018F00684A87 /* EventsApi.swift */; };
 		10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F12246D01AF00684A87 /* ShopsApiConstants.swift */; };
+		10048F23246E6A1D00684A87 /* AboutUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10048F22246E6A1D00684A87 /* AboutUs.storyboard */; };
+		10048F25246E6A4300684A87 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F24246E6A4300684A87 /* AboutUsViewController.swift */; };
+		10048F27246E72BD00684A87 /* AboutUsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F26246E72BD00684A87 /* AboutUsInteractor.swift */; };
+		10048F29246E7A3E00684A87 /* AppApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F28246E7A3E00684A87 /* AppApiConstants.swift */; };
+		10048F2B246E7B6E00684A87 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F2A246E7B6E00684A87 /* AppVersion.swift */; };
+		10048F2D246E7DC200684A87 /* GenericApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F2C246E7DC200684A87 /* GenericApi.swift */; };
 		100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A15245319D800EF2B9F /* UiColor+Extension.swift */; };
 		100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */; };
 		100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */; };
@@ -135,6 +141,12 @@
 		10048F0E246D017300684A87 /* EventResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
 		10048F10246D018F00684A87 /* EventsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		10048F12246D01AF00684A87 /* ShopsApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsApiConstants.swift; sourceTree = "<group>"; };
+		10048F22246E6A1D00684A87 /* AboutUs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUs.storyboard; sourceTree = "<group>"; };
+		10048F24246E6A4300684A87 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		10048F26246E72BD00684A87 /* AboutUsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInteractor.swift; sourceTree = "<group>"; };
+		10048F28246E7A3E00684A87 /* AppApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApiConstants.swift; sourceTree = "<group>"; };
+		10048F2A246E7B6E00684A87 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		10048F2C246E7DC200684A87 /* GenericApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericApi.swift; sourceTree = "<group>"; };
 		100A2A15245319D800EF2B9F /* UiColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiColor+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UibarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
@@ -278,9 +290,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		10048F21246E69F300684A87 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				10048F22246E6A1D00684A87 /* AboutUs.storyboard */,
+				10048F24246E6A4300684A87 /* AboutUsViewController.swift */,
+				10048F26246E72BD00684A87 /* AboutUsInteractor.swift */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10048F21246E69F300684A87 /* AboutUs */,
 				1033464D2468412700D5EED0 /* SlideMenu */,
 				1033462724669A3E00D5EED0 /* EnrolledEvents */,
 				1033461E246687C400D5EED0 /* CreditHistory */,
@@ -497,6 +520,7 @@
 				103345FF246089C200D5EED0 /* UserDetails.swift */,
 				1033460F246146B700D5EED0 /* EnrolledEvent.swift */,
 				103346112461490600D5EED0 /* CreditHistory.swift */,
+				10048F2A246E7B6E00684A87 /* AppVersion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -565,6 +589,7 @@
 				1039FE8324509FCB00190088 /* AdminApi */,
 				1039FE5524501C9C00190088 /* UserApi */,
 				1039FE5124500A4F00190088 /* BaseApiAdapter.swift */,
+				10048F2C246E7DC200684A87 /* GenericApi.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -612,6 +637,7 @@
 				10048F12246D01AF00684A87 /* ShopsApiConstants.swift */,
 				1039FE4F2450076300190088 /* UserApiConstants.swift */,
 				1039FE862450A06C00190088 /* AdminApiConstants.swift */,
+				10048F28246E7A3E00684A87 /* AppApiConstants.swift */,
 			);
 			path = UrlConstants;
 			sourceTree = "<group>";
@@ -844,6 +870,7 @@
 				103345F824606D3800D5EED0 /* Events.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
+				10048F23246E6A1D00684A87 /* AboutUs.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
@@ -899,6 +926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10048F29246E7A3E00684A87 /* AppApiConstants.swift in Sources */,
 				1033460824608E3100D5EED0 /* UsreDataResponse.swift in Sources */,
 				1039FE6D24506ED600190088 /* BaseViewDelegate.swift in Sources */,
 				10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */,
@@ -925,6 +953,7 @@
 				103346362466A93400D5EED0 /* AllEventsController.swift in Sources */,
 				10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */,
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
+				10048F2B246E7B6E00684A87 /* AppVersion.swift in Sources */,
 				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
 				103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */,
@@ -945,6 +974,7 @@
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
+				10048F25246E6A4300684A87 /* AboutUsViewController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
@@ -952,6 +982,7 @@
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
 				103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */,
 				1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */,
+				10048F27246E72BD00684A87 /* AboutUsInteractor.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
 				10048F08246D013800684A87 /* EventListController.swift in Sources */,
 				103346162461C0B900D5EED0 /* EventInfoCell.swift in Sources */,
@@ -971,6 +1002,7 @@
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
 				1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */,
+				10048F2D246E7DC200684A87 /* GenericApi.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,

@@ -92,4 +92,7 @@ struct SuccessMessages {
     static let skillUpgraded = "Skill Level upgraded successfully"
     static let signatureSaved = "Your Signature has been saved."
     
+    
+  static let latestVersion =  "The latest version is already installed."
+    static let oldVersion = "New version available in store. Please update."
 }

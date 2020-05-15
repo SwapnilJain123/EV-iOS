@@ -22,4 +22,9 @@ class BuildScheme{
     static var isBuildQA : Bool {
         return "QA" == BuildScheme.buildMode
     }
+    
+    static func getBuildVersion() -> String{
+        let versionCode: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String? as AnyObject?
+        return versionCode as? String ?? "1.0"
+    }
 }
