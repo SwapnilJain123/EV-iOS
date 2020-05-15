@@ -9,7 +9,13 @@
 import UIKit
 import Kingfisher
 
+protocol EventGridCellDelegate {
+    func addEventToCart(_ event: Event)
+}
+
 class EventGridCell: UICollectionViewCell {
+    
+    var delegate : EventGridCellDelegate?
     
     @IBOutlet weak var hostingView: UIView!
     @IBOutlet weak var hostingHeight: NSLayoutConstraint!
@@ -81,5 +87,11 @@ class EventGridCell: UICollectionViewCell {
             }
         }
         rootView.setCardView()
+    }
+    
+    
+    @IBAction func didPressAddToCart(_ sender: Any) {
+        
+        self.delegate?.addEventToCart(event!)
     }
 }

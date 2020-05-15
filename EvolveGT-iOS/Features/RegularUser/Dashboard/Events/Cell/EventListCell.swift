@@ -8,7 +8,13 @@
 
 import UIKit
 import Kingfisher
+
+protocol EventListCellDelegate {
+    func addEventToCart(_ event: Event)
+}
 class EventListCell: UICollectionViewCell {
+    
+    var delegate : EventListCellDelegate?
     @IBOutlet weak var hostingView: UIView!
    
     @IBOutlet weak var rootView: UIView!
@@ -80,6 +86,12 @@ class EventListCell: UICollectionViewCell {
         }
         rootView.setCardView()
     }
+    
+    @IBAction func didPressAddToCart(_ sender: Any) {
+        
+        delegate?.addEventToCart(event!)
+    }
+    
 }
 
 

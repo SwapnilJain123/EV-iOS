@@ -61,6 +61,8 @@ struct LoadingIndicatorMessages {
       static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
     
+    static let addingEventToCart = "Adding this event to cart..."
+    
     
     
     static let uploadingSignature = "Please wait, We're saving your signature."
@@ -91,5 +93,7 @@ struct SuccessMessages {
     
     static let skillUpgraded = "Skill Level upgraded successfully"
     static let signatureSaved = "Your Signature has been saved."
+    
+    static let eventAddedToCart = "Your event has been added to the cart successfully."
     
 }

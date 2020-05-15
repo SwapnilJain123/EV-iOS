@@ -22,4 +22,11 @@ class EventsApi : BaseApiAdapter{
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
+    
+    func fetchEvolveEventDetails(){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.EVOVLE_EVENT_DETAILS)"
+        setUrl(url: url)
+        super.makeRequest(method: .POST)
+    }
 }

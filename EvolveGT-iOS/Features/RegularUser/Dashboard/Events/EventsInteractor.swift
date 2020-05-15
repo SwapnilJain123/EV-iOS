@@ -54,15 +54,9 @@ class EventsInteractor :BaseInteractor{
     
     func shouldEnableAddToCart(event: Event) -> Bool{
         
-        if event.isMotoEvent{
-            return false
-        }else{
-            if event.activeHostings?.count == 0{
-                return !(event.isCancelled ?? false)
-            }else{
-                return true
-            }
-        }
+        (event.activeHostings?.count ?? 0 > 0) || !(event.isMotoEvent ?? false && event.isCancelled ?? false)
+        
+       
         
     }
     func filterItems(with filterType: FilterType) {
@@ -117,4 +111,33 @@ class EventsInteractor :BaseInteractor{
         
     }
     
+    func addEventToCart(_ event: Event){
+        if event.isMotoEvent{
+            //Ignore adding moto events here
+           return
+        }
+        
+        eventListDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
+        var request = EventCartRequest()
+        request.eventSlug = event.slug
+        request.eventDate = event.eventDate;
+        request.eventSlug = event.slug;
+        request.eventPrice = event.price;
+        request.serial = AppEngine.sharedInstance.userID
+        request.role = AppEngine.sharedInstance.userRole
+        request.title = event.title;
+        request.eventCouponCode = event.couponCode;
+        
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler{ response, error in
+            self.eventListDelegate?.hideProgressIndicator()
+            if error == nil{
+                self.eventListDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+            }else{
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.eventListDelegate?.showErrorToastMessage(message: error!.errorMessage)
+            }
+        }
+        cartApi.addEvolveEventToCart(eventRequest: request)
+    }
 }
