@@ -582,12 +582,15 @@
                                 <state key="normal" title="Add To Cart">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressAddToCart:" destination="bk1-mB-Dxd" eventType="touchUpInside" id="wIs-O4-uin"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NJO-yZ-9Iz">
                                 <rect key="frame" x="0.0" y="52" width="414" height="744"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="v80-zQ-Hw3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventInfoCell" id="v80-zQ-Hw3" customClass="EventInfoCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="299"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v80-zQ-Hw3" id="K6v-5Z-njE">
@@ -644,8 +647,14 @@
                                                 <constraint firstAttribute="bottom" secondItem="Zgl-NB-hBM" secondAttribute="bottom" constant="8" id="zah-je-80G"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventBanner" destination="IfU-ZB-Fzp" id="2Hh-xb-dxi"/>
+                                            <outlet property="eventDate" destination="1Xh-to-oqS" id="WW3-NM-VGj"/>
+                                            <outlet property="roleBasedPrice" destination="Cdg-Js-rRL" id="AYQ-Qx-uMs"/>
+                                            <outlet property="totalPrice" destination="Zgl-NB-hBM" id="0Wi-VM-s23"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Zyd-O0-thL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutEvent" id="Zyd-O0-thL" customClass="AboutEventCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="327" width="414" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zyd-O0-thL" id="GVP-SE-WZV">
@@ -675,11 +684,15 @@
                                                 <constraint firstItem="2cJ-OC-6Yd" firstAttribute="top" secondItem="GVP-SE-WZV" secondAttribute="top" constant="10" id="cfU-BR-RIF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="RFa-r4-5Om" id="Xgb-TR-xWb"/>
+                                            <outlet property="title" destination="2cJ-OC-6Yd" id="oPg-RY-9Rv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EhI-qJ-Z35" firstAttribute="top" secondItem="NJO-yZ-9Iz" secondAttribute="bottom" constant="8" id="2so-EQ-Oa2"/>
                             <constraint firstItem="CBb-1r-x7c" firstAttribute="trailing" secondItem="NJO-yZ-9Iz" secondAttribute="trailing" id="OVx-cd-jwT"/>
@@ -691,6 +704,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CBb-1r-x7c"/>
                     </view>
+                    <connections>
+                        <outlet property="btnAddToCart" destination="EhI-qJ-Z35" id="Bys-nW-37Z"/>
+                        <outlet property="eventDetailsView" destination="NJO-yZ-9Iz" id="M85-zf-ipR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2m-lG-NKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

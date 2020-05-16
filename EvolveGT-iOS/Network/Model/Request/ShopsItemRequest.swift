@@ -8,7 +8,9 @@
 
 import Foundation
 struct EventDetailRequest: Codable {
-    var postStatus, slug, serial: String?
+    
+    var postStatus = "publish"
+    var slug, serial: String?
 
     enum CodingKeys: String, CodingKey {
         case postStatus = "post_status"

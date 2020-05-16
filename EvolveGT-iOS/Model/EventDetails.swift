@@ -17,14 +17,14 @@ struct EventDetails: Codable {
     var skillSet: [SkillSet]?
     var transponder: Transponder?
     var trackDays: [Event]?
-     var isPrivateEvent, isMotoEvent: Bool?
+    var isPrivateEvent: Bool?
     
-    var roleBasedPrice: RoleBasedPrice?
+    var roleBasedPrice: RoleBasedPrice? = RoleBasedPrice()
     var trainingData: [TrainingDatum]?
     var rentalData: [RentalDatum]?
     
-   
-
+    
+    
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"
         case title
@@ -41,10 +41,10 @@ struct EventDetails: Codable {
         case skillSet = "skill_set"
         case transponder, trackDays
         case trainingData, rentalData
-         case isMotoEvent = "is_moto_event"
         case isPrivateEvent = "is_private_event"
-         case roleBasedPrice
+        case roleBasedPrice
     }
+    
 }
 
 
@@ -61,7 +61,7 @@ struct Variation: Codable {
     var stockStatus: String?
     var attributeName: String?
     var attributeValue: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case price, stock
         case stockStatus = "stock_status"
@@ -77,7 +77,7 @@ struct EventClass: Codable {
     var id: Int?
     var classClass: String?
     var active, inCart: Bool?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case classClass = "class"
@@ -98,7 +98,7 @@ struct Transponder: Codable {
     var imageURL: String?
     var inCart: Bool?
     var number: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case price
         case imageURL = "image_url"
@@ -110,7 +110,7 @@ struct RentalDatum: Codable {
     var productID, title, slug: String?
     var variations: [Variation]?
     var image: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case productID = "product_id"
         case title, slug, variations,  image
@@ -120,7 +120,7 @@ struct RentalDatum: Codable {
 struct TrainingDatum: Codable {
     var trainingID, title, price, slug: String?
     var image: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case trainingID = "training_id"
         case title, price, slug, image

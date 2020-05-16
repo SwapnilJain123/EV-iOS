@@ -47,7 +47,7 @@ struct MessageConstants {
 
 //Mark: - Indicator Messages
 struct LoadingIndicatorMessages {
-    
+    static let loading = "Loading..."
     static let loggingIn = "Logging in..."
         static let loggingOut = "Logging out..."
     static let loadingCompletedEvents = "Loading events..."
@@ -62,6 +62,8 @@ struct LoadingIndicatorMessages {
     static let resettingPassword = "Resetting your password..."
     
     static let addingEventToCart = "Adding this event to cart..."
+    
+     static let loadingEventDetails = "Loading event details..."
     
     
     

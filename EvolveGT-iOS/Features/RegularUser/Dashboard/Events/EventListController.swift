@@ -129,8 +129,13 @@ extension EventListController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
-        self.ext.pushViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC")
-        Log.d("Event Selected - \(events?[indexPath.row].title ?? "")")
+        if let detailsVC = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as? EventDetailsController{
+            detailsVC.eventTitle = events?[indexPath.row].title ?? ""
+            detailsVC.eventSlug = events?[indexPath.row].slug ?? ""
+            detailsVC.isMotoEvent = events?[indexPath.row].isMotoEvent ?? false
+            Log.d("Event Selected - \(events?[indexPath.row].title ?? "")")
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
     }
 }
 
@@ -184,7 +189,7 @@ extension EventListController{
     
 }
 
-extension EventListController: EventGridCellDelegate, EventListCellDelegate{
+extension EventListController: EventListCellDelegate{
     func addEventToCart(_ event: Event) {
         
         
@@ -216,6 +221,7 @@ extension EventListController: EventGridCellDelegate, EventListCellDelegate{
             }
         }))
 
-        self.present(alert, animated: true)
+        
+        self.navigationController?.present(alert, animated: true)
     }
 }
