@@ -15,6 +15,8 @@
 		10048F0F246D017400684A87 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F0E246D017300684A87 /* EventResponse.swift */; };
 		10048F11246D018F00684A87 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F10246D018F00684A87 /* EventsApi.swift */; };
 		10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F12246D01AF00684A87 /* ShopsApiConstants.swift */; };
+		10048F39246ECC5200684A87 /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10048F38246ECC5200684A87 /* ChangePassword.storyboard */; };
+		10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F3A246ECC8400684A87 /* ChangePasswordViewController.swift */; };
 		100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A15245319D800EF2B9F /* UiColor+Extension.swift */; };
 		100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */; };
 		100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */; };
@@ -135,6 +137,8 @@
 		10048F0E246D017300684A87 /* EventResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
 		10048F10246D018F00684A87 /* EventsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		10048F12246D01AF00684A87 /* ShopsApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsApiConstants.swift; sourceTree = "<group>"; };
+		10048F38246ECC5200684A87 /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
+		10048F3A246ECC8400684A87 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		100A2A15245319D800EF2B9F /* UiColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiColor+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UibarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
@@ -278,9 +282,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		10048F37246ECC2400684A87 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				10048F38246ECC5200684A87 /* ChangePassword.storyboard */,
+				10048F3A246ECC8400684A87 /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10048F37246ECC2400684A87 /* ChangePassword */,
 				1033464D2468412700D5EED0 /* SlideMenu */,
 				1033462724669A3E00D5EED0 /* EnrolledEvents */,
 				1033461E246687C400D5EED0 /* CreditHistory */,
@@ -841,6 +855,7 @@
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				103345FA24606D4400D5EED0 /* Home.storyboard in Resources */,
 				103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */,
+				10048F39246ECC5200684A87 /* ChangePassword.storyboard in Resources */,
 				103345F824606D3800D5EED0 /* Events.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
@@ -962,6 +977,7 @@
 				103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
+				10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
 				103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,

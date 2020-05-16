@@ -107,6 +107,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
         case SlideMenuItem.TAG_LOG_OUT:
             self.dashboardManager.logout()
             
+        case SlideMenuItem.TAG_CHANGE_PASSWORD:
+            self.ext.pushViewController(storyBoard: "ChangePassword", VCIdentifier: "changePasswordVC")
+            
             
         default:
             break
