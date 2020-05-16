@@ -20,7 +20,7 @@ enum EventType{
     case UPCOMING
     case PAST
 }
-class EventInfoCell: UITableViewCell{
+class SectionEventInfoCell: UITableViewCell{
     
     
     var delegate : EventCellDelegate? = nil

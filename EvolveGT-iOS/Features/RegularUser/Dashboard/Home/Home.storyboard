@@ -549,7 +549,7 @@
                                             <outlet property="typeTitle" destination="0n3-PP-WMS" id="TGL-Qq-zNk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PastEventCell" rowHeight="200" id="0Ul-tm-Pil" userLabel="PastEvent" customClass="EventInfoCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PastEventCell" rowHeight="200" id="0Ul-tm-Pil" userLabel="PastEvent" customClass="SectionEventInfoCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="528" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ul-tm-Pil" id="V8d-wM-Tcr">
@@ -725,7 +725,7 @@
                                             <outlet property="orderDate" destination="Jeo-Dm-oNM" id="sRS-Vl-VDW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UpcomingEventCell" rowHeight="200" id="rOf-eN-ahr" userLabel="Upcoming" customClass="EventInfoCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UpcomingEventCell" rowHeight="200" id="rOf-eN-ahr" userLabel="Upcoming" customClass="SectionEventInfoCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="728" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rOf-eN-ahr" id="WnD-zd-43Y">
@@ -1065,7 +1065,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NPp-J7-3Za" firstAttribute="trailing" secondItem="xEr-sQ-VfP" secondAttribute="trailing" id="K8z-Cm-UPG"/>
                             <constraint firstItem="NPp-J7-3Za" firstAttribute="leading" secondItem="xEr-sQ-VfP" secondAttribute="leading" id="bAI-Sz-d6F"/>

@@ -22,6 +22,8 @@ struct Event: Codable {
     var eventLogo: String?
     var external: ExternalHost?
     
+    var couponCode: String?
+    
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"
         case title, price
@@ -36,6 +38,7 @@ struct Event: Codable {
         case rolePrice
         case eventLogo = "full_event_logo"
         case external
+        case couponCode = "coupon_code"
     }
     
     func getRoleBasedPrice(role : String?) -> String{

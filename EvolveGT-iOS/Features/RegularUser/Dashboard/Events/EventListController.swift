@@ -69,7 +69,9 @@ class EventListController : TabbedViewController{
         
     }
     @objc func didPressFilterOption(){
-        showFilterOptions()
+        if events?.count ?? 0 > 0{
+            showFilterOptions()
+        }
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_EVENTS
@@ -97,12 +99,14 @@ extension EventListController: UICollectionViewDataSource, UICollectionViewDeleg
             let reusableIdentifier = interactor.shouldEnableAddToCart(event: event) ? "EventGridCellWithCart" : "EventGridCell"
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath as IndexPath) as! EventGridCell
             cell.event = event
+            cell.delegate = self
             return cell
         }else{
             let event = events![indexPath.row]
             let reusableIdentifier = interactor.shouldEnableAddToCart(event: event) ? "EventListCellWithCart" : "EventListCell"
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath as IndexPath) as! EventListCell
             cell.event = event
+             cell.delegate = self
             return cell
         }
         
@@ -123,6 +127,16 @@ extension EventListController: UICollectionViewDataSource, UICollectionViewDeleg
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+        if let detailsVC = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as? EventDetailsController{
+            detailsVC.eventTitle = events?[indexPath.row].title ?? ""
+            detailsVC.eventSlug = events?[indexPath.row].slug ?? ""
+            detailsVC.isMotoEvent = events?[indexPath.row].isMotoEvent ?? false
+            Log.d("Event Selected - \(events?[indexPath.row].title ?? "")")
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
+    }
 }
 
 extension EventListController: EventListViewDelegate{
@@ -173,4 +187,41 @@ extension EventListController{
         present(filterActionSheet, animated: true, completion: nil)
     }
     
+}
+
+extension EventListController: EventListCellDelegate{
+    func addEventToCart(_ event: Event) {
+        
+        
+        if (event.isPrivateEvent ?? false) {
+            //Mark: get the private code
+            
+           addPrivateEventToCart(event)
+        }else if (event.external != nil){
+            self.ext.openLink(event.external?.url ?? "")
+        }else{
+            interactor.addEventToCart(event)
+        }
+    }
+    
+    func addPrivateEventToCart(_ event: Event){
+        var selectedEvent = event
+        let alert = UIAlertController(title: "Enter your secret code", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Secret Code"
+        })
+
+        alert.addAction(UIAlertAction(title: "Add To Cart", style: .default, handler: { action in
+
+            if let secretCode = alert.textFields?.first?.text {
+                selectedEvent.couponCode = secretCode
+                self.interactor.addEventToCart(selectedEvent)
+            }
+        }))
+
+        
+        self.navigationController?.present(alert, animated: true)
+    }
 }

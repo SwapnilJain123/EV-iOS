@@ -67,18 +67,28 @@ extension UIViewController{
                 existingView.removeFromSuperview()
             }
             
-            let errorView: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: vc.view.bounds.size.width, height: vc.view.bounds.size.height))
+            let containerView = UIView(frame: CGRect(x: 0, y: 0, width: vc.view.bounds.size.width, height: vc.view.bounds.size.height))
+            containerView.backgroundColor = .lightText
+            
+            let errorView: UILabel  = UILabel(frame: CGRect(x: 10, y: 0, width: vc.view.bounds.size.width - 30, height: vc.view.bounds.size.height))
             errorView.text          = message
             errorView.numberOfLines = 0
             errorView.tag = UIViewController.Ext.ERROR_VIEW_TAG
-            errorView.backgroundColor = UIColor.init(hexFromString: "#F9FAF7")
+            
             errorView.textColor     = UIColor.black
             errorView.textAlignment = .center
-            vc.view.addSubview(errorView)
+            containerView.addSubview(errorView)
+            vc.view.addSubview(containerView)
             
             self.removeLoadingIndicator()
         }
         
+        
+        func hideErrorView(){
+            if let existingView = vc.view.viewWithTag(UIViewController.Ext.ERROR_VIEW_TAG){
+                existingView.removeFromSuperview()
+            }
+        }
         func showSuccessToast(message: String, handler: (()->Void)? = nil){
             Loaf(message, state: .custom(.init(backgroundColor: UIColor.getAppThemeColor(), icon: Loaf.Icon.success, width: .screenPercentage(0.8))), sender: vc).show(){ dismissalType in
                 if handler != nil{
@@ -143,7 +153,10 @@ extension UIViewController{
             return appDelegate?.window
         }
         
-        
+        func openLink(_ url: String){
+            guard let url = URL(string: url) else { return }
+            UIApplication.shared.open(url)
+        }
         
     }
     var ext: Ext {

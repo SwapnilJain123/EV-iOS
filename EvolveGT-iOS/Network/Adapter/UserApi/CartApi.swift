@@ -1,0 +1,26 @@
+//
+//  CartApi.swift
+//  EvolveGT-iOS
+//
+//  Created by Subair Ariyil on 14/05/20.
+//  Copyright © 2020 YaraTech. All rights reserved.
+//
+
+import Foundation
+class CartApi : BaseApiAdapter{
+    
+    func addMotoEventToCart(eventRequest: EventCartRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_MOTO_EVENT_TO_CART)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(eventRequest))
+        super.makeRequest(method: .POST)
+    }
+    func addEvolveEventToCart(eventRequest: EventCartRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_EVOLVE_EVENT_TO_CART)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(eventRequest))
+        super.makeRequest(method: .POST)
+    }
+}
