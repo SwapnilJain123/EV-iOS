@@ -88,12 +88,18 @@ extension BaseApiAdapter{
                     }else{
                         
                         var error = ApiError()
-                        error.errorCode = etResponse.status
+                        error.errorCode = etResponse.status ?? 0
                         error.errorMessage = etResponse.msg ?? ApiError.ERROR_GENERIC_MESSAGE
                         didFail(error: error)
                     }
                     
-                }catch{
+                }catch let DecodingError.typeMismatch(type, context)  {
+                    Log.e("Type '\(type)' mismatch: \(context.debugDescription)")
+                    Log.e("codingPath: \(context.codingPath)")
+                    var error = ApiError()
+                    error.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                    didFail(error: error)
+                } catch{
                     var error = ApiError()
                     error.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
                     didFail(error: error)
@@ -119,6 +125,12 @@ extension BaseApiAdapter{
             print("Encoded Json - \(String(describing: dataText))")
             encodedData = dataText!.data(using: .utf8) ?? Data()
             
+        }catch let DecodingError.typeMismatch(type, context)  {
+            Log.e("Type '\(type)' mismatch: \(context.debugDescription)")
+            Log.e("codingPath: \(context.codingPath)")
+            var error = ApiError()
+            error.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+            didFail(error: error)
         }
         catch {
             Log.e("Json encode error")

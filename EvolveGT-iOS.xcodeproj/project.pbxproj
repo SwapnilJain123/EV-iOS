@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		10048F08246D013800684A87 /* EventListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F03246D013800684A87 /* EventListController.swift */; };
 		10048F09246D013800684A87 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F04246D013800684A87 /* EventsInteractor.swift */; };
-		10048F0A246D013800684A87 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F06246D013800684A87 /* EventListCell.swift */; };
-		10048F0B246D013800684A87 /* EventGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F07246D013800684A87 /* EventGridCell.swift */; };
 		10048F0D246D015400684A87 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F0C246D015400684A87 /* Event.swift */; };
-		10048F0F246D017400684A87 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F0E246D017300684A87 /* EventResponse.swift */; };
+		10048F0F246D017400684A87 /* ShopItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F0E246D017300684A87 /* ShopItemResponse.swift */; };
 		10048F11246D018F00684A87 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F10246D018F00684A87 /* EventsApi.swift */; };
 		10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F12246D01AF00684A87 /* ShopsApiConstants.swift */; };
+		10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F1B246DB24F00684A87 /* CartRequest.swift */; };
+		10048F1E246DB47700684A87 /* CartApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F1D246DB47700684A87 /* CartApiConstant.swift */; };
+		10048F20246DB7C000684A87 /* CartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F1F246DB7C000684A87 /* CartApi.swift */; };
+		10048F30246EB0CF00684A87 /* EventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F2F246EB0CF00684A87 /* EventDetailsController.swift */; };
+		10048F33246EB86B00684A87 /* EventInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F32246EB86B00684A87 /* EventInfoCell.swift */; };
+		10048F35246EC50D00684A87 /* ShopsItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F34246EC50D00684A87 /* ShopsItemRequest.swift */; };
+		10048F3D246EDCEE00684A87 /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F3C246EDCEE00684A87 /* EventDetails.swift */; };
+		10048F42246F094800684A87 /* AboutUsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F3F246F094800684A87 /* AboutUsInteractor.swift */; };
+		10048F43246F094800684A87 /* AboutUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10048F40246F094800684A87 /* AboutUs.storyboard */; };
+		10048F44246F094800684A87 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F41246F094800684A87 /* AboutUsViewController.swift */; };
+		10048F46246F0F3A00684A87 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F45246F0F3A00684A87 /* AppVersion.swift */; };
+		10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F47246F0F6600684A87 /* AppApiConstants.swift */; };
+		10048F4A246F0F7300684A87 /* GenericApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F49246F0F7300684A87 /* GenericApi.swift */; };
+		10048F4C246F149C00684A87 /* EventListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F4B246F149C00684A87 /* EventListCells.swift */; };
+		10048F4E246F2B6400684A87 /* JsonAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F4D246F2B6400684A87 /* JsonAny.swift */; };
+		10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F4F246FA63300684A87 /* String+Extenstion.swift */; };
 		10048F39246ECC5200684A87 /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10048F38246ECC5200684A87 /* ChangePassword.storyboard */; };
 		10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F3A246ECC8400684A87 /* ChangePasswordViewController.swift */; };
 		100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A15245319D800EF2B9F /* UiColor+Extension.swift */; };
@@ -39,7 +53,7 @@
 		10334610246146B700D5EED0 /* EnrolledEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033460F246146B700D5EED0 /* EnrolledEvent.swift */; };
 		103346122461490600D5EED0 /* CreditHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346112461490600D5EED0 /* CreditHistory.swift */; };
 		1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033461324614DA500D5EED0 /* String+CurrencyExtensio.swift */; };
-		103346162461C0B900D5EED0 /* EventInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346152461C0B900D5EED0 /* EventInfoCell.swift */; };
+		103346162461C0B900D5EED0 /* SectionEventInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346152461C0B900D5EED0 /* SectionEventInfoCell.swift */; };
 		103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346172461D2CA00D5EED0 /* EmptyCell.swift */; };
 		1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346192461DB3400D5EED0 /* CreditHistoryCell.swift */; };
 		103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033461F2466882600D5EED0 /* CreditHistory.storyboard */; };
@@ -56,7 +70,7 @@
 		103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */; };
 		1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */; };
 		1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033463C2466D98400D5EED0 /* TabProtocol.swift */; };
-		1033464824681B4B00D5EED0 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033464724681B4B00D5EED0 /* UIButtonExtension.swift */; };
+		1033464824681B4B00D5EED0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033464724681B4B00D5EED0 /* UIButton+Extension.swift */; };
 		1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346492468375500D5EED0 /* BuildScheme.swift */; };
 		1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */; };
 		1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033464E2468414500D5EED0 /* HambergerMenuController.swift */; };
@@ -86,7 +100,7 @@
 		1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5824501EAF00190088 /* LoginRequest.swift */; };
 		1039FE5B2450424800190088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5A2450424800190088 /* User.swift */; };
 		1039FE5D2450429600190088 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5C2450429600190088 /* LoginResponse.swift */; };
-		1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5F2450569F00190088 /* ViewControllerExtension.swift */; };
+		1039FE602450569F00190088 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE5F2450569F00190088 /* ViewController+Extension.swift */; };
 		1039FE642450632900190088 /* AppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE632450632900190088 /* AppEngine.swift */; };
 		1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE65245064D800190088 /* UserDefaultHelper.swift */; };
 		1039FE682450686E00190088 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE672450686E00190088 /* AppConstants.swift */; };
@@ -94,7 +108,7 @@
 		1039FE6D24506ED600190088 /* BaseViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE6C24506ED600190088 /* BaseViewDelegate.swift */; };
 		1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE6E24506F7000190088 /* BaseInteractor.swift */; };
 		1039FE712450706E00190088 /* MessageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE702450706E00190088 /* MessageConstants.swift */; };
-		1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE72245071A100190088 /* StringValidatorExtension.swift */; };
+		1039FE73245071A100190088 /* StringValidator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE72245071A100190088 /* StringValidator+Extension.swift */; };
 		1039FE772450877600190088 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE762450877600190088 /* Admin.storyboard */; };
 		1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE79245088F600190088 /* CompletedEventsViewController.swift */; };
 		1039FE7C2450895100190088 /* ETViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE7B2450895100190088 /* ETViewController.swift */; };
@@ -123,22 +137,36 @@
 		10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2502451CF9700EA95C0 /* EventParticipant.swift */; };
 		10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */; };
 		10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */; };
-		10FCA257245212AD00EA95C0 /* StringDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA256245212AD00EA95C0 /* StringDateExtension.swift */; };
-		10FCA25924521E6300EA95C0 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiViewExtension.swift */; };
+		10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA256245212AD00EA95C0 /* String+DateExtension.swift */; };
+		10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiView+Extension.swift */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10048F03246D013800684A87 /* EventListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
 		10048F04246D013800684A87 /* EventsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsInteractor.swift; sourceTree = "<group>"; };
-		10048F06246D013800684A87 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
-		10048F07246D013800684A87 /* EventGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventGridCell.swift; sourceTree = "<group>"; };
 		10048F0C246D015400684A87 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		10048F0E246D017300684A87 /* EventResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
+		10048F0E246D017300684A87 /* ShopItemResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItemResponse.swift; sourceTree = "<group>"; };
 		10048F10246D018F00684A87 /* EventsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		10048F12246D01AF00684A87 /* ShopsApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsApiConstants.swift; sourceTree = "<group>"; };
 		10048F38246ECC5200684A87 /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		10048F3A246ECC8400684A87 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		10048F1B246DB24F00684A87 /* CartRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRequest.swift; sourceTree = "<group>"; };
+		10048F1D246DB47700684A87 /* CartApiConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApiConstant.swift; sourceTree = "<group>"; };
+		10048F1F246DB7C000684A87 /* CartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApi.swift; sourceTree = "<group>"; };
+		10048F2F246EB0CF00684A87 /* EventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsController.swift; sourceTree = "<group>"; };
+		10048F32246EB86B00684A87 /* EventInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoCell.swift; sourceTree = "<group>"; };
+		10048F34246EC50D00684A87 /* ShopsItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsItemRequest.swift; sourceTree = "<group>"; };
+		10048F3C246EDCEE00684A87 /* EventDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
+		10048F3F246F094800684A87 /* AboutUsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsInteractor.swift; sourceTree = "<group>"; };
+		10048F40246F094800684A87 /* AboutUs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutUs.storyboard; sourceTree = "<group>"; };
+		10048F41246F094800684A87 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		10048F45246F0F3A00684A87 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		10048F47246F0F6600684A87 /* AppApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppApiConstants.swift; sourceTree = "<group>"; };
+		10048F49246F0F7300684A87 /* GenericApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericApi.swift; sourceTree = "<group>"; };
+		10048F4B246F149C00684A87 /* EventListCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCells.swift; sourceTree = "<group>"; };
+		10048F4D246F2B6400684A87 /* JsonAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAny.swift; sourceTree = "<group>"; };
+		10048F4F246FA63300684A87 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
 		100A2A15245319D800EF2B9F /* UiColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiColor+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UibarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
@@ -161,7 +189,7 @@
 		1033460F246146B700D5EED0 /* EnrolledEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEvent.swift; sourceTree = "<group>"; };
 		103346112461490600D5EED0 /* CreditHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistory.swift; sourceTree = "<group>"; };
 		1033461324614DA500D5EED0 /* String+CurrencyExtensio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CurrencyExtensio.swift"; sourceTree = "<group>"; };
-		103346152461C0B900D5EED0 /* EventInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoCell.swift; sourceTree = "<group>"; };
+		103346152461C0B900D5EED0 /* SectionEventInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEventInfoCell.swift; sourceTree = "<group>"; };
 		103346172461D2CA00D5EED0 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		103346192461DB3400D5EED0 /* CreditHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistoryCell.swift; sourceTree = "<group>"; };
 		1033461B2465B22700D5EED0 /* ConfigUAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigUAT.xcconfig; sourceTree = "<group>"; };
@@ -179,7 +207,7 @@
 		103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventCell.swift; sourceTree = "<group>"; };
 		1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsInteractor.swift; sourceTree = "<group>"; };
 		1033463C2466D98400D5EED0 /* TabProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProtocol.swift; sourceTree = "<group>"; };
-		1033464724681B4B00D5EED0 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		1033464724681B4B00D5EED0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		103346492468375500D5EED0 /* BuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildScheme.swift; sourceTree = "<group>"; };
 		1033464B24683F6B00D5EED0 /* SlideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
 		1033464E2468414500D5EED0 /* HambergerMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HambergerMenuController.swift; sourceTree = "<group>"; };
@@ -213,7 +241,7 @@
 		1039FE5824501EAF00190088 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		1039FE5A2450424800190088 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1039FE5C2450429600190088 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		1039FE5F2450569F00190088 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		1039FE5F2450569F00190088 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		1039FE632450632900190088 /* AppEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEngine.swift; sourceTree = "<group>"; };
 		1039FE65245064D800190088 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		1039FE672450686E00190088 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -221,7 +249,7 @@
 		1039FE6C24506ED600190088 /* BaseViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewDelegate.swift; sourceTree = "<group>"; };
 		1039FE6E24506F7000190088 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		1039FE702450706E00190088 /* MessageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageConstants.swift; sourceTree = "<group>"; };
-		1039FE72245071A100190088 /* StringValidatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidatorExtension.swift; sourceTree = "<group>"; };
+		1039FE72245071A100190088 /* StringValidator+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringValidator+Extension.swift"; sourceTree = "<group>"; };
 		1039FE762450877600190088 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		1039FE79245088F600190088 /* CompletedEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsViewController.swift; sourceTree = "<group>"; };
 		1039FE7B2450895100190088 /* ETViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETViewController.swift; sourceTree = "<group>"; };
@@ -250,8 +278,8 @@
 		10FCA2502451CF9700EA95C0 /* EventParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipant.swift; sourceTree = "<group>"; };
 		10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantResponse.swift; sourceTree = "<group>"; };
 		10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsInteractor.swift; sourceTree = "<group>"; };
-		10FCA256245212AD00EA95C0 /* StringDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDateExtension.swift; sourceTree = "<group>"; };
-		10FCA25824521E6300EA95C0 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
+		10FCA256245212AD00EA95C0 /* String+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension.swift"; sourceTree = "<group>"; };
+		10FCA25824521E6300EA95C0 /* UiView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extension.swift"; sourceTree = "<group>"; };
 		1C195867CC2329D3C4C614C9 /* Pods-EvolveGT-iOS.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.uat.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.uat.xcconfig"; sourceTree = "<group>"; };
 		1C85763EA134529E65BC648C /* Pods-EvolveGT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
@@ -273,13 +301,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10048F05246D013800684A87 /* Cell */ = {
+		10048F2E246EB0B400684A87 /* EventDetails */ = {
 			isa = PBXGroup;
 			children = (
-				10048F06246D013800684A87 /* EventListCell.swift */,
-				10048F07246D013800684A87 /* EventGridCell.swift */,
+				10048F32246EB86B00684A87 /* EventInfoCell.swift */,
+				10048F2F246EB0CF00684A87 /* EventDetailsController.swift */,
 			);
-			path = Cell;
+			path = EventDetails;
+			sourceTree = "<group>";
+		};
+		10048F3E246F094800684A87 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				10048F3F246F094800684A87 /* AboutUsInteractor.swift */,
+				10048F40246F094800684A87 /* AboutUs.storyboard */,
+				10048F41246F094800684A87 /* AboutUsViewController.swift */,
+			);
+			path = AboutUs;
 			sourceTree = "<group>";
 		};
 		10048F37246ECC2400684A87 /* ChangePassword */ = {
@@ -294,6 +332,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10048F3E246F094800684A87 /* AboutUs */,
 				10048F37246ECC2400684A87 /* ChangePassword */,
 				1033464D2468412700D5EED0 /* SlideMenu */,
 				1033462724669A3E00D5EED0 /* EnrolledEvents */,
@@ -332,10 +371,11 @@
 		103345EC24606C1900D5EED0 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				10048F05246D013800684A87 /* Cell */,
+				10048F2E246EB0B400684A87 /* EventDetails */,
 				10048F03246D013800684A87 /* EventListController.swift */,
 				10048F04246D013800684A87 /* EventsInteractor.swift */,
 				103345F724606D3800D5EED0 /* Events.storyboard */,
+				10048F4B246F149C00684A87 /* EventListCells.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -360,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				1033460A24612CC100D5EED0 /* ProfileCell.swift */,
-				103346152461C0B900D5EED0 /* EventInfoCell.swift */,
+				103346152461C0B900D5EED0 /* SectionEventInfoCell.swift */,
 				103346172461D2CA00D5EED0 /* EmptyCell.swift */,
 				103346192461DB3400D5EED0 /* CreditHistoryCell.swift */,
 			);
@@ -505,12 +545,15 @@
 			isa = PBXGroup;
 			children = (
 				10048F0C246D015400684A87 /* Event.swift */,
+				10048F45246F0F3A00684A87 /* AppVersion.swift */,
 				1039FE5A2450424800190088 /* User.swift */,
 				1039FE7F24509EE800190088 /* CompletedEvent.swift */,
 				10FCA2502451CF9700EA95C0 /* EventParticipant.swift */,
 				103345FF246089C200D5EED0 /* UserDetails.swift */,
 				1033460F246146B700D5EED0 /* EnrolledEvent.swift */,
 				103346112461490600D5EED0 /* CreditHistory.swift */,
+				10048F3C246EDCEE00684A87 /* EventDetails.swift */,
+				10048F4D246F2B6400684A87 /* JsonAny.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -546,6 +589,8 @@
 				10BDD027245B122F00F05700 /* SignatureUpdateRequest.swift */,
 				103346702469461700D5EED0 /* ForgotPasswordRequest.swift */,
 				1033460124608C7500D5EED0 /* UserDataRequest.swift */,
+				10048F1B246DB24F00684A87 /* CartRequest.swift */,
+				10048F34246EC50D00684A87 /* ShopsItemRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -554,7 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				1039FE5324500F4C00190088 /* ETResponse.swift */,
-				10048F0E246D017300684A87 /* EventResponse.swift */,
+				10048F0E246D017300684A87 /* ShopItemResponse.swift */,
 				103346722469462900D5EED0 /* ForgotPasswordResponse.swift */,
 				1039FE5C2450429600190088 /* LoginResponse.swift */,
 				1039FE8124509F3100190088 /* CompletedEventsResponse.swift */,
@@ -576,6 +621,7 @@
 		1039FE1E244F337B00190088 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				10048F49246F0F7300684A87 /* GenericApi.swift */,
 				1039FE8324509FCB00190088 /* AdminApi */,
 				1039FE5524501C9C00190088 /* UserApi */,
 				1039FE5124500A4F00190088 /* BaseApiAdapter.swift */,
@@ -623,9 +669,11 @@
 			isa = PBXGroup;
 			children = (
 				1039FE1F244F33A100190088 /* ApiConstsant.swift */,
+				10048F47246F0F6600684A87 /* AppApiConstants.swift */,
 				10048F12246D01AF00684A87 /* ShopsApiConstants.swift */,
 				1039FE4F2450076300190088 /* UserApiConstants.swift */,
 				1039FE862450A06C00190088 /* AdminApiConstants.swift */,
+				10048F1D246DB47700684A87 /* CartApiConstant.swift */,
 			);
 			path = UrlConstants;
 			sourceTree = "<group>";
@@ -636,6 +684,7 @@
 				10048F10246D018F00684A87 /* EventsApi.swift */,
 				1039FE5624501CB800190088 /* LoginApi.swift */,
 				1033460324608CDD00D5EED0 /* ProfileApi.swift */,
+				10048F1F246DB7C000684A87 /* CartApi.swift */,
 			);
 			path = UserApi;
 			sourceTree = "<group>";
@@ -643,17 +692,18 @@
 		1039FE5E2450568A00190088 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1039FE5F2450569F00190088 /* ViewControllerExtension.swift */,
-				1039FE72245071A100190088 /* StringValidatorExtension.swift */,
-				10FCA256245212AD00EA95C0 /* StringDateExtension.swift */,
-				10FCA25824521E6300EA95C0 /* UiViewExtension.swift */,
+				1039FE5F2450569F00190088 /* ViewController+Extension.swift */,
+				1039FE72245071A100190088 /* StringValidator+Extension.swift */,
+				10FCA256245212AD00EA95C0 /* String+DateExtension.swift */,
+				10FCA25824521E6300EA95C0 /* UiView+Extension.swift */,
 				100A2A15245319D800EF2B9F /* UiColor+Extension.swift */,
 				100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */,
 				100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */,
 				100A2A23245607A300EF2B9F /* Sequence+Extension.swift */,
 				10BDD052245C20DF00F05700 /* UITableViewCell+Extension.swift */,
 				1033461324614DA500D5EED0 /* String+CurrencyExtensio.swift */,
-				1033464724681B4B00D5EED0 /* UIButtonExtension.swift */,
+				1033464724681B4B00D5EED0 /* UIButton+Extension.swift */,
+				10048F4F246FA63300684A87 /* String+Extenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -859,6 +909,7 @@
 				103345F824606D3800D5EED0 /* Events.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
+				10048F43246F094800684A87 /* AboutUs.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
@@ -920,27 +971,31 @@
 				1039FE682450686E00190088 /* AppConstants.swift in Sources */,
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
+				10048F1E246DB47700684A87 /* CartApiConstant.swift in Sources */,
 				10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */,
 				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
 				10BDD014245982ED00F05700 /* AlertService.swift in Sources */,
 				1033460E24613FAA00D5EED0 /* ProfileData.swift in Sources */,
+				10048F4E246F2B6400684A87 /* JsonAny.swift in Sources */,
 				100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */,
-				10FCA257245212AD00EA95C0 /* StringDateExtension.swift in Sources */,
-				10048F0B246D013800684A87 /* EventGridCell.swift in Sources */,
+				10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */,
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
+				10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */,
 				1033462924669A5F00D5EED0 /* EnrolledEventsTabController.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
+				10048F44246F094800684A87 /* AboutUsViewController.swift in Sources */,
 				1033460224608C7500D5EED0 /* UserDataRequest.swift in Sources */,
 				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,
 				10048F11246D018F00684A87 /* EventsApi.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
 				103346362466A93400D5EED0 /* AllEventsController.swift in Sources */,
+				10048F42246F094800684A87 /* AboutUsInteractor.swift in Sources */,
 				10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */,
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
-				1039FE602450569F00190088 /* ViewControllerExtension.swift in Sources */,
+				1039FE602450569F00190088 /* ViewController+Extension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
 				103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */,
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
@@ -953,6 +1008,7 @@
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
 				1039FE43244F608100190088 /* Logger.swift in Sources */,
 				10BDD026245B101700F05700 /* EVCheckBox.swift in Sources */,
+				10048F46246F0F3A00684A87 /* AppVersion.swift in Sources */,
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
 				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
@@ -960,7 +1016,7 @@
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
-				1039FE73245071A100190088 /* StringValidatorExtension.swift in Sources */,
+				1039FE73245071A100190088 /* StringValidator+Extension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
 				1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */,
@@ -969,7 +1025,7 @@
 				1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
 				10048F08246D013800684A87 /* EventListController.swift in Sources */,
-				103346162461C0B900D5EED0 /* EventInfoCell.swift in Sources */,
+				103346162461C0B900D5EED0 /* SectionEventInfoCell.swift in Sources */,
 				10334610246146B700D5EED0 /* EnrolledEvent.swift in Sources */,
 				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
@@ -987,15 +1043,18 @@
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
 				1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */,
+				10048F3D246EDCEE00684A87 /* EventDetails.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
+				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
+				10048F35246EC50D00684A87 /* ShopsItemRequest.swift in Sources */,
+				10048F20246DB7C000684A87 /* CartApi.swift in Sources */,
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
 				103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */,
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
-				1033464824681B4B00D5EED0 /* UIButtonExtension.swift in Sources */,
+				1033464824681B4B00D5EED0 /* UIButton+Extension.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
-				10048F0A246D013800684A87 /* EventListCell.swift in Sources */,
 				103345FC2460718F00D5EED0 /* ETTabViewController.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,
@@ -1004,17 +1063,22 @@
 				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,
 				10048F09246D013800684A87 /* EventsInteractor.swift in Sources */,
 				1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */,
-				10FCA25924521E6300EA95C0 /* UiViewExtension.swift in Sources */,
+				10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */,
+				10048F33246EB86B00684A87 /* EventInfoCell.swift in Sources */,
 				10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */,
 				10334600246089C200D5EED0 /* UserDetails.swift in Sources */,
 				103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */,
+				10048F4A246F0F7300684A87 /* GenericApi.swift in Sources */,
 				10BDD01E2459C0F600F05700 /* SignatureIntercator.swift in Sources */,
 				1033460B24612CC100D5EED0 /* ProfileCell.swift in Sources */,
-				10048F0F246D017400684A87 /* EventResponse.swift in Sources */,
+				10048F0F246D017400684A87 /* ShopItemResponse.swift in Sources */,
+				10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
+				10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */,
 				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
+				10048F30246EB0CF00684A87 /* EventDetailsController.swift in Sources */,
 				1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

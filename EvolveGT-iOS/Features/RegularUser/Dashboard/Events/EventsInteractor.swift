@@ -12,15 +12,26 @@ protocol EventListViewDelegate : BaseViewDelegate{
     func presentEventTypeFilterOptions(options : [String])
     func presentMonthFilterOptions(options : [String])
 }
+
+protocol EventDetailsDelegate : BaseViewDelegate{
+    func didFetchEventDetails(_ eventDetails : EventDetails, sections :[EventsInteractor.EventDetailsSections] )
+}
 class EventsInteractor :BaseInteractor{
     
+    enum EventDetailsSections: Int{
+        case basic
+        case rentals
+        case trainings
+        case about
+    }
     var eventListDelegate : EventListViewDelegate?
+    var eventDetailsDelegate : EventDetailsDelegate?
     var events = [Event]()
     func fetchEventList(){
-   
+        
         eventListDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEvents)
         let eventsApi  = EventsApi()
-      
+        
         
         eventsApi.setCompletionHandler{ response, error in
             self.eventListDelegate?.hideProgressIndicator()
@@ -36,14 +47,14 @@ class EventsInteractor :BaseInteractor{
                     }
                     
                 }else{
-                     self.eventListDelegate?.showEmptyPageError(message: error!.errorMessage)
+                    self.eventListDelegate?.showEmptyPageError(message: error!.errorMessage)
                 }
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.eventListDelegate?.showEmptyPageError(message: error!.errorMessage)
             }
         }
-       
+        
         if AppEngine.sharedInstance.isEvApp(){
             eventsApi.fetchEvolveEventList()
         }else{
@@ -54,20 +65,14 @@ class EventsInteractor :BaseInteractor{
     
     func shouldEnableAddToCart(event: Event) -> Bool{
         
-        if event.isMotoEvent{
-            return false
-        }else{
-            if event.activeHostings?.count == 0{
-                return !(event.isCancelled ?? false)
-            }else{
-                return true
-            }
-        }
+        (event.activeHostings?.count ?? 0 > 0) || !(event.isMotoEvent ?? false && event.isCancelled ?? false)
+        
+        
         
     }
     func filterItems(with filterType: FilterType) {
         switch filterType {
-        
+            
         case .month:
             Log.d("Filter By Month")
             
@@ -77,7 +82,7 @@ class EventsInteractor :BaseInteractor{
             }.unique().sorted(by: <)
             eventMonths = eventMonths.map{
                 let dateString = "\($0) 15"
-                 return dateString.formattedDate(outputFormat: .FORMAT_MMM_YYYY)
+                return dateString.formattedDate(outputFormat: .FORMAT_MMM_YYYY)
             }
             self.eventListDelegate?.presentMonthFilterOptions(options: eventMonths)
         case .eventType:
@@ -88,7 +93,7 @@ class EventsInteractor :BaseInteractor{
             Log.d("Filter Clear")
             self.eventListDelegate?.didFetchEvents(events: events)
         case .trainingType:
-             Log.d("Ignored ")
+            Log.d("Ignored ")
         }
     }
     
@@ -117,4 +122,75 @@ class EventsInteractor :BaseInteractor{
         
     }
     
+    func addEventToCart(_ event: Event){
+        if event.isMotoEvent{
+            //Ignore adding moto events here
+            return
+        }
+        
+        eventListDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
+        var request = EventCartRequest()
+        request.eventSlug = event.slug
+        request.eventDate = event.eventDate;
+        request.eventSlug = event.slug;
+        request.eventPrice = event.price;
+        request.serial = AppEngine.sharedInstance.userID
+        request.role = AppEngine.sharedInstance.userRole
+        request.title = event.title;
+        request.eventCouponCode = event.couponCode;
+        
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler{ response, error in
+            self.eventListDelegate?.hideProgressIndicator()
+            if error == nil{
+                self.eventListDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+            }else{
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.eventListDelegate?.showErrorToastMessage(message: error!.errorMessage)
+            }
+        }
+        cartApi.addEvolveEventToCart(eventRequest: request)
+    }
+    
+    //Mark- Event Details
+    
+    func fetchEventDetails(slug: String, isMotoEvent: Bool = false){
+        eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEventDetails)
+        
+        var request = EventDetailRequest()
+        request.serial = AppEngine.sharedInstance.userID
+        request.slug = slug
+        let eventsApi = EventsApi()
+        eventsApi.setCompletionHandler{ response, error in
+            self.eventDetailsDelegate?.hideProgressIndicator()
+            if error == nil{
+                if let eventDetails = self.decodeFromJson(response!, modelType: EventDetails.self){
+                    var sections = [EventsInteractor.EventDetailsSections]()
+                    sections.append(.basic)
+                    
+                    if eventDetails.trainingData?.count ?? 0 > 0{
+                        sections.append(.trainings)
+                    }
+                    if eventDetails.rentalData?.count ?? 0 > 0{
+                        sections.append(.rentals)
+                    }
+                    if eventDetails.productInfo?.isEmpty ?? true == false{
+                        sections.append(.about)
+                    }
+                    
+                self.eventDetailsDelegate?.didFetchEventDetails(eventDetails, sections: sections)
+                }
+            }else{
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.eventDetailsDelegate?.showEmptyPageError(message: error!.errorMessage)
+            }
+        }
+        
+        if isMotoEvent{
+            eventsApi.fetchMotoEventDetails(request)
+        }else{
+            eventsApi.fetchEvolveEventDetails(request)
+        }
+        
+    }
 }

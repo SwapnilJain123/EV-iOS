@@ -76,7 +76,7 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_UPCOMING_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
-                let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EventInfoCell
+                let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! SectionEventInfoCell
                 
                 upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!, expanded: upComingEventsExpanded)
                 upComingEventCell.delegate = self
@@ -90,7 +90,7 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_PAST_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
-                let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"PastEventCell",for: indexPath) as! EventInfoCell
+                let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"PastEventCell",for: indexPath) as! SectionEventInfoCell
                 pastEventCell.delegate = self
                 pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!, expanded: pastEventsExpanded)
                 return pastEventCell;

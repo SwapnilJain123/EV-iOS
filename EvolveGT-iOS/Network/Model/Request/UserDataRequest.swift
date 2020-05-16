@@ -7,6 +7,25 @@
 //
 
 import Foundation
+
+struct UserDataUserIdRequest : Codable{
+   var userID: String?
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+       
+    }
+}
+
+struct UserDataSerialRequest : Codable{
+   var userID: String?
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "serial"
+       
+    }
+}
+
 struct UserDetailsRequest : Codable{
    var userID: String?
 

@@ -47,7 +47,7 @@ struct MessageConstants {
 
 //Mark: - Indicator Messages
 struct LoadingIndicatorMessages {
-    
+    static let loading = "Loading..."
     static let loggingIn = "Logging in..."
         static let loggingOut = "Logging out..."
     static let loadingCompletedEvents = "Loading events..."
@@ -60,6 +60,10 @@ struct LoadingIndicatorMessages {
     static let loadingCreditHistory = "Loading your credit history..."
       static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
+    
+    static let addingEventToCart = "Adding this event to cart..."
+    
+     static let loadingEventDetails = "Loading event details..."
     
     
     
@@ -92,4 +96,9 @@ struct SuccessMessages {
     static let skillUpgraded = "Skill Level upgraded successfully"
     static let signatureSaved = "Your Signature has been saved."
     
+    static let eventAddedToCart = "Your event has been added to the cart successfully."
+    
+    
+  static let latestVersion =  "The latest version is already installed."
+    static let oldVersion = "New version available in store. Please update."
 }
