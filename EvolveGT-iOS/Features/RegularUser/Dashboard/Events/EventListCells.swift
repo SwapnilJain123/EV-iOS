@@ -85,6 +85,8 @@ class EventListCell: UICollectionViewCell {
                 hostIcon3?.kf.setImage(with: URL(string: hostings?[2].url ?? ""), placeholder: nil, options:[.transition(ImageTransition.fade(1))])
             }
         }
+        
+        eventName.textColor = .getAppThemeColor()
         rootView.setCardView()
     }
     
@@ -168,6 +170,8 @@ class EventGridCell: UICollectionViewCell {
                 hostIcon3?.kf.setImage(with: URL(string: hostings?[2].url ?? ""), placeholder: nil, options:[.transition(ImageTransition.fade(1))])
             }
         }
+        
+        eventName.textColor = .getAppThemeColor()
         rootView.setCardView()
     }
     

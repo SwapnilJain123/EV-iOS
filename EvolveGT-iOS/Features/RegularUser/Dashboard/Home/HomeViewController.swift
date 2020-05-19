@@ -22,6 +22,7 @@ class HomeViewController: TabbedViewController{
     var creditHistoryExpanded = false
     
     let interactor = HomeDataInteractor()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,6 @@ class HomeViewController: TabbedViewController{
         profileView.estimatedRowHeight = 300
         
         interactor.delegate = self
-        interactor.fetchUserDetails()
         
         
     }
@@ -51,6 +51,10 @@ class HomeViewController: TabbedViewController{
         ScreenTitle.TITLE_DASHBOARD
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+          interactor.fetchUserDetails()
+    }
     
 }
 

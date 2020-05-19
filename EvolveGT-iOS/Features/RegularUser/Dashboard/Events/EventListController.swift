@@ -27,16 +27,24 @@ class EventListController : TabbedViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         eventsListView.delegate = self
         eventsListView.dataSource = self
         
         interactor.eventListDelegate = self
-        interactor.fetchEventList()
+        
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        interactor.resetEventList()
+        super.viewDidAppear(animated)
+        interactor.fetchEventList()
+    }
+    
+    override func didSwitchTab() {
+        interactor.resetEventList()
+        interactor.fetchEventList()
+    }
     override func addNavBarControls() -> [UIBarButtonItem]? {
         let button = UIButton(type: UIButton.ButtonType.custom)
         button.setImage(UIImage(named: "filter"), for: UIControl.State.normal)
@@ -81,6 +89,7 @@ class EventListController : TabbedViewController{
         super.didChangeAppTheme()
         events?.removeAll()
         eventsListView.reloadData()
+        interactor.resetEventList()
         interactor.fetchEventList()
     }
     

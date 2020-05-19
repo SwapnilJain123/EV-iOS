@@ -24,11 +24,15 @@ extension String{
     
     func formatToAmount(prefix: String) -> String{
         if self == "0"{
-            return "\(prefix): $0"
+            return "\(prefix) $0"
         }
         let price = Double(self) ?? 0
         let doubleStr = String(format: "%.2f", price)
         
         return "\(prefix): $\(doubleStr)"
+    }
+    
+    func toDouble() -> Double{
+        return Double(self) ?? 0.0
     }
 }

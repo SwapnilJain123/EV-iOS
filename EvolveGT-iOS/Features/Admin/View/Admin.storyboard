@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,7 +95,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="RootBackGround"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KAq-L3-ia3" secondAttribute="trailing" id="8RE-2w-D5L"/>
                                     <constraint firstItem="KAq-L3-ia3" firstAttribute="top" secondItem="0v1-IJ-CBK" secondAttribute="top" id="YqU-9C-Gfv"/>
@@ -507,7 +508,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="F9P-qt-4wp" firstAttribute="top" secondItem="Rzu-aT-1PB" secondAttribute="bottom" constant="8" id="2M6-B3-mF7"/>
                             <constraint firstItem="Rzu-aT-1PB" firstAttribute="trailing" secondItem="AiL-1K-48e" secondAttribute="trailing" constant="5" id="7fW-dc-k9N"/>
@@ -765,5 +766,8 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
         <image name="sign" width="24" height="24"/>
         <image name="star" width="48" height="48"/>
         <image name="upward_arrow" width="48" height="48"/>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

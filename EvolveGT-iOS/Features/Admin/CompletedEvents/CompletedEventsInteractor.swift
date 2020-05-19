@@ -36,6 +36,7 @@ class CompletedEventsInteractor : BaseInteractor{
         let adminApi = AdminApi()
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
+            self.delegate?.hideEmptyPageError()
             if error == nil{
                 Log.i("Completed Event Success - ")
                 if let completedeventResponse = self.decodeFromJson(response!, modelType: CompletedEventsResponse.self){

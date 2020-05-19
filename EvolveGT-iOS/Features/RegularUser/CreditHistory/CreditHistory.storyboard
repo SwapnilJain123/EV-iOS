@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -102,7 +103,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="Syd-fN-Oxe" firstAttribute="trailing" secondItem="47z-A5-cSo" secondAttribute="trailing" id="7Jo-W6-86q"/>
                             <constraint firstItem="47z-A5-cSo" firstAttribute="leading" secondItem="Syd-fN-Oxe" secondAttribute="leading" id="9uH-xf-F5r"/>
@@ -122,5 +123,8 @@
     </scenes>
     <resources>
         <image name="wallet" width="48" height="48"/>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

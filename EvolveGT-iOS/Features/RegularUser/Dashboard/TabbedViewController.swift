@@ -84,4 +84,8 @@ class TabbedViewController: ETViewController {
     func recreateNavbar(){
         setNavbarControls()
     }
+    
+    @objc func didSwitchTab(){
+        
+    }
 }

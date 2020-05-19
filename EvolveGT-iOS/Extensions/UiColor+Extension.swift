@@ -17,6 +17,17 @@ extension UIColor {
     static let COLOR_EV_LITE = "#00574B"
     static let COLOR_MOTO_LITE = "#151E49"
     
+    static let GREEN_EV_LITE = "#11C248"
+    static let GREEN_EV_DARK = "#08A43A"
+    
+    static let BLUE_MOTO_LITE = "#7189E7"
+    static let BLUE_MOTO_DARK = "#3853C2"
+    
+    static let BACKGROUND_GRAY = "#787878"
+    
+    static func getBackgroundGray() -> UIColor{
+        UIColor.init(hexFromString: UIColor.BACKGROUND_GRAY)
+    }
     
     static func getAppThemeColor() -> UIColor{
         var appColor = UIColor.init(hexFromString: UIColor.COLOR_EV)

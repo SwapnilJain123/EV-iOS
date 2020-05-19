@@ -88,6 +88,10 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
     }
 }
 extension EnrolledEventsTabController : EnrolledEventsViewDelegate{
+    func hideEmptyPageError() {
+        self.ext.hideErrorView()
+    }
+    
     
     func reloadCurrentIndex() {
         let childvc = self.viewControllers[currentIndex] as! TabProtocol

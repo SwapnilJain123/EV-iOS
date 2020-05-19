@@ -12,7 +12,9 @@ import SideMenuSwift
 
 
 
-class ETTabViewController: UITabBarController{
+class ETTabViewController: UITabBarController, UITabBarControllerDelegate{
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +23,7 @@ class ETTabViewController: UITabBarController{
         self.ext.hideBackButton()
         
         tabBar.barTintColor = UIColor.black
-        
-       
+        self.delegate = self
     }
     
     
@@ -46,5 +47,13 @@ class ETTabViewController: UITabBarController{
         }else{
             return nil
         }
+    }
+
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+            if let displayedVC = viewController.presentedViewController as? TabbedViewController{
+                displayedVC.didSwitchTab()
+            }
+        
     }
 }

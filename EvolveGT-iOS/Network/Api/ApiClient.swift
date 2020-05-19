@@ -44,7 +44,15 @@ class ApiClient{
     func doPost(completionHandler : @escaping (Data?, ApiError?) -> Void){
         
         Log.d(urlString)
-        Log.d("Params :\n \(parameters) \n")
+        
+        if BuildScheme.isBuildQA{
+            //print the params
+            if let theJSONData = try? JSONSerialization.data(
+                withJSONObject: parameters, options: [.prettyPrinted]) {
+                let theJSONText = String(data: theJSONData, encoding: .ascii)
+                 Log.d("Params :\n\n \(theJSONText!)\n\n")
+            }
+        }
         
         Alamofire.request(urlString, method: .post, parameters: parameters,  encoding: JSONEncoding.default, headers: header)
             .validate()

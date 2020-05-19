@@ -17,7 +17,12 @@ target 'EvolveGT-iOS' do
   pod 'IQKeyboardManagerSwift','6.0.4'
   pod 'RSSelectionMenu'
   pod 'Loaf'
-   pod 'ReachabilitySwift','4.2'
+  pod 'ReachabilitySwift','4.2'
+  pod 'DYAlertController', '3.1.1'
+  pod 'MBRadioCheckboxButton'
+   
+   
+   
 #pod 'SwiftyJSON','4.2'
 #  pod 'SideMenuSwift','1.0.2'
   pod 'SideMenuSwift'

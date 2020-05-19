@@ -25,7 +25,7 @@ class HomeDataInteractor : BaseInteractor{
             if error == nil{
                 Log.i("User details fetched Success - ")
                 if let userDetailsResponse = self.decodeFromJson(response!, modelType: UserDetailsResponse.self){
-                    
+                     self.delegate?.hideEmptyPageError()
                     if userDetailsResponse.userDetails == nil{
                         self.delegate?.hideProgressIndicator()
                         self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
