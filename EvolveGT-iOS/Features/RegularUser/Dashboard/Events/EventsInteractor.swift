@@ -142,6 +142,9 @@ class EventsInteractor :BaseInteractor{
         }
         
         eventListDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
+        
+        eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
+        
         var request = EventCartRequest()
         request.eventSlug = event.slug
         request.eventDate = event.eventDate;
@@ -155,11 +158,14 @@ class EventsInteractor :BaseInteractor{
         let cartApi = CartApi()
         cartApi.setCompletionHandler{ response, error in
             self.eventListDelegate?.hideProgressIndicator()
+            self.eventDetailsDelegate?.hideProgressIndicator()
             if error == nil{
                 self.eventListDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+                self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.eventListDelegate?.showErrorToastMessage(message: error!.errorMessage)
+                self.eventDetailsDelegate?.showErrorToastMessage(message: error!.errorMessage)
             }
         }
         cartApi.addEvolveEventToCart(eventRequest: request)

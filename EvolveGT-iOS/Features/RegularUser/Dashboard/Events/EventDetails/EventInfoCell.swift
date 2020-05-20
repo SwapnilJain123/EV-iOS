@@ -285,3 +285,48 @@ class TransponderCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDeleg
     
 }
 
+protocol TrackDayCellDelegate{
+    func didPressAddToCart(event: Event)
+}
+class TrackDayCell : UITableViewCell{
+    
+    static let identifier = "TrackDayCell"
+    var delegate : TrackDayCellDelegate?
+    @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var imageLogo: UIImageView!
+    
+    @IBOutlet weak var bannerCancelled: UIImageView!
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var hostedBy: UILabel!
+    
+    @IBAction func didPressAddToCart(_ sender: UIButton) {
+        delegate?.didPressAddToCart(event: trackDay!)
+    }
+    
+    var trackDay : Event?{
+        didSet{
+            showData()
+        }
+    }
+    
+    private func showData(){
+        if  let url = URL(string : trackDay?.eventLogo ?? ""){
+            let fallbackImage = UIImage(named: "et_fallback_image")
+            imageLogo.kf.setImage(with: url,
+                                   placeholder: fallbackImage,
+                                   options: [.transition(ImageTransition.fade(1))])
+            
+        }
+        bannerCancelled.isHidden = !(trackDay?.isCancelled ?? false)
+        addToCartButton.isHidden = trackDay?.isCancelled ?? false
+        eventName.text = trackDay?.title
+        
+        eventDate.text = "Date: \(trackDay?.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        price.text = trackDay?.price?.formatToAmount(prefix: "Price: ")
+        hostedBy.text = "Hosted By: \(trackDay?.eventType ?? "")"
+        rootView.setCardView()
+    }
+}

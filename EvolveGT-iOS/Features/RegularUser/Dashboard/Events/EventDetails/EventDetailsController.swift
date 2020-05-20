@@ -94,6 +94,26 @@ class EventDetailsController : ETViewController{
         self.navigationController?.present(alert, animated: true)
     }
     
+    func addPrivateEventToCart(_ event: Event){
+        var selectedEvent = event
+        let alert = UIAlertController(title: "Enter your secret code", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Secret Code"
+        })
+        
+        alert.addAction(UIAlertAction(title: "Add To Cart", style: .default, handler: { action in
+            
+            if let secretCode = alert.textFields?.first?.text {
+                selectedEvent.couponCode = secretCode
+                self.interactor.addEventToCart(selectedEvent)
+            }
+        }))
+        
+        self.navigationController?.present(alert, animated: true)
+    }
+    
 }
 
 extension EventDetailsController: EventDetailsDelegate{
@@ -120,10 +140,9 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         case .skillSelection:
             return 1
         case .trackDays:
-            return 1
+            return eventDetails?.trackDays?.count ?? 0
         case .transponder:
             return 1
-            
         case .basic:
             return 1
         case .rentals:
@@ -171,7 +190,13 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
             cell.showData(transponder: eventDetails!.transponder!, indexPath: indexPath)
             cell.delegate = self
             return cell
+        }else if self.sections[indexPath.section] == .trackDays{
+            let cell = tableView.dequeueReusableCell(withIdentifier: TrackDayCell.identifier, for: indexPath as IndexPath) as! TrackDayCell
+            cell.trackDay = eventDetails?.trackDays![indexPath.row]
+            cell.delegate = self
+            return cell
         }
+        
         
         return UITableViewCell()
         
@@ -203,7 +228,20 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         
     }
 }
-extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCellDelegate, SkillLevelCellDelegate, TransponderCellDelegate{
+extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCellDelegate, SkillLevelCellDelegate, TransponderCellDelegate, TrackDayCellDelegate{
+    func didPressAddToCart(event: Event) {
+        if(event.isPrivateEvent ?? false){
+            addPrivateEventToCart(event)
+        }else if(event.external != nil){
+            self.ext.confirmationAlert(title: AlertTitle.externalHost, message: MessageConstants.externalLink, btnText: "Open"){
+                self.ext.openLink(event.external!.url!)
+                return
+            }
+        }else{
+            interactor.addEventToCart(event)
+        }
+    }
+    
     func didChangeEventClassSelection(eventClass: EventClass, indexPath: IndexPath, checkedStatus: Bool) {
         eventClass.isSelected = checkedStatus
         var paths = [IndexPath]()
