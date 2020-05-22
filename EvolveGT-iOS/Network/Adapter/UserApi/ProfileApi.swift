@@ -28,11 +28,38 @@ class ProfileApi : BaseApiAdapter{
     }
     
     func fetchCreditHistory(userId: String){
-         
-         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_CREDIT_HISTORY)"
-         setUrl(url: url)
-         let request = CreditHistoryRequest(userID: userId)
-         setParameters(parameters: makeDictionary(request))
-         super.makeRequest(method: .POST)
-     }
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_CREDIT_HISTORY)"
+        setUrl(url: url)
+        let request = CreditHistoryRequest(userID: userId)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
+    
+    func changePassword(userId:String , newPasssword:String , currentPassword:String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CHANGE_PASSWORD)"
+        setUrl(url: url)
+        var request = PasswordChangeRequest()
+        request.userID = userId
+        
+        var passwordRequestBody = PasswordRequestBody()
+        
+        
+        passwordRequestBody.confirmPassword = newPasssword
+        passwordRequestBody.currentpassword = currentPassword
+        passwordRequestBody.password = newPasssword
+        
+        request.passwordRequestBody = passwordRequestBody
+        
+        setParameters(parameters: makeDictionary(request))
+        
+        super.makeRequest(method: .POST)
+        
+        
+    }
+    
+    
+    
+    
 }
