@@ -49,7 +49,7 @@ struct MessageConstants {
 struct LoadingIndicatorMessages {
     static let loading = "Loading..."
     static let loggingIn = "Logging in..."
-        static let loggingOut = "Logging out..."
+    static let loggingOut = "Logging out..."
     static let loadingCompletedEvents = "Loading events..."
     static let loadingParticipants = "Loading participants..."
     static let loadingSignature = "Loading Signature..."
@@ -58,12 +58,12 @@ struct LoadingIndicatorMessages {
     
     static let loadingProfileData = "Loading Profile..."
     static let loadingCreditHistory = "Loading your credit history..."
-      static let loadingEventHistory = "Loading your event history..."
+    static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
     
     static let addingEventToCart = "Adding this event to cart..."
     
-     static let loadingEventDetails = "Loading event details..."
+    static let loadingEventDetails = "Loading event details..."
     
     
     
@@ -76,29 +76,36 @@ struct ErrorMessages {
     static let emptyCompletedEvents = "Sorry, there are currently no events available."
     static let emptyEventParticipants = "There are currently no users enrolled for this event."
     static let emptyEnrolledEvents = "Sorry, no event has been found."
-     static let emptyCreditHistory = "Sorry, You have no credit history."
+    static let emptyCreditHistory = "Sorry, You have no credit history."
     
-   
+    
     
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
     
-
+    
     static let invalidEmail = "Please enter valid email"
-
+    
     static let emptyCreditList = "Sorry, You have no credit history."
     
     static let emptyEventList = "Sorry, there is no events available right now."
+    
+    static let error_confirm_password = "Your password and confirmation password do not match."
+    static let error_empty_password = "Please enter new password."
+    static let error_empty_current_password = "Please enter your current password."
+    
+    
 }
 
 struct SuccessMessages {
     
     static let skillUpgraded = "Skill Level upgraded successfully"
     static let signatureSaved = "Your Signature has been saved."
+     static let passwordChanged = "Your password has been changed successfully."
     
     static let eventAddedToCart = "Your event has been added to the cart successfully."
     
     
-  static let latestVersion =  "The latest version is already installed."
+    static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."
 }
