@@ -9,8 +9,8 @@
 import Foundation
 struct User: Codable {
     
-    private static let ROLE_ADMIN = "administrator";
-    private static let ROLE_COACH = "coach";
+    private static let ROLE_ADMIN = "administrator"
+    private static let ROLE_COACH = "coach"
     
     
     var id, email, firstName, lastName: String

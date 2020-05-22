@@ -44,6 +44,6 @@ class PastEventsController : ETViewController, TabProtocol, UITableViewDataSourc
         
         eventCell.populateViews(event: events![indexPath.row])
         
-        return eventCell;
+        return eventCell
     }
 }

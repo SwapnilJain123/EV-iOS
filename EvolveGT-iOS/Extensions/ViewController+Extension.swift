@@ -123,7 +123,7 @@ extension UIViewController{
         }
         
         func hideBackButton(){
-            vc.navigationItem.setHidesBackButton(true, animated: true);
+            vc.navigationItem.setHidesBackButton(true, animated: true)
         }
         
         func setNavigationBackgroundColor(color: UIColor){

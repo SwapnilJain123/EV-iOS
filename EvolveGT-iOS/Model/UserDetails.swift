@@ -114,18 +114,18 @@ struct UserDetails: Codable {
         case evDobDay = "ev_dob_day"
     }
     
-    public static let GENDER_MALE = "male";
-    public static let GENDER_FEMALE = "female";
+    public static let GENDER_MALE = "male"
+    public static let GENDER_FEMALE = "female"
     
     public  func isMale() -> Bool{
-        return UserDetails.GENDER_MALE == self.evGender;
+        return UserDetails.GENDER_MALE == self.evGender
     }
 
     public func isFeMale() -> Bool{
-       return UserDetails.GENDER_FEMALE == self.evGender;
+       return UserDetails.GENDER_FEMALE == self.evGender
     }
 
     public var fullName : String {
-        return "\(firstName ?? "") \(lastName ?? "")";
+        return "\(firstName ?? "") \(lastName ?? "")"
     }
 }

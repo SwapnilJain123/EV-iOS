@@ -47,6 +47,7 @@ class EventListCell: UICollectionViewCell {
         hostIcon1?.image = nil
         hostIcon2?.image = nil
         hostIcon3?.image = nil
+        btnAddToCart?.setImage(nil, for: .normal)
         
     }
     var event : Event? {
@@ -84,6 +85,17 @@ class EventListCell: UICollectionViewCell {
             if count > 2{
                 hostIcon3?.kf.setImage(with: URL(string: hostings?[2].url ?? ""), placeholder: nil, options:[.transition(ImageTransition.fade(1))])
             }
+        }
+        
+        if event?.isPrivateEvent ?? false{
+            if AppEngine.sharedInstance.isEvApp(){
+                btnAddToCart?.setImage(UIImage(named: "private-event-green"), for: .normal)
+            }else{
+                btnAddToCart?.setImage(UIImage(named: "private-event-blue"), for: .normal)
+                
+            }
+        }else{
+             btnAddToCart?.setImage(UIImage(named: "cart"), for: .normal)
         }
         
         eventName.textColor = .getAppThemeColor()

@@ -475,7 +475,7 @@
         <!--Forgot Password Controller-->
         <scene sceneID="BaM-jE-mkY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="4FL-Jt-HNS" customClass="ForgotPasswordController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPassword" modalPresentationStyle="fullScreen" id="4FL-Jt-HNS" customClass="ForgotPasswordController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LlD-kr-vnU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

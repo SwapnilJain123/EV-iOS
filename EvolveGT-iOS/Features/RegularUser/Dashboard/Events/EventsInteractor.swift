@@ -147,13 +147,13 @@ class EventsInteractor :BaseInteractor{
         
         var request = EventCartRequest()
         request.eventSlug = event.slug
-        request.eventDate = event.eventDate;
-        request.eventSlug = event.slug;
-        request.eventPrice = event.price;
+        request.eventDate = event.eventDate
+        request.eventSlug = event.slug
+        request.eventPrice = event.price
         request.serial = AppEngine.sharedInstance.userID
         request.role = AppEngine.sharedInstance.userRole
-        request.title = event.title;
-        request.eventCouponCode = event.couponCode;
+        request.title = event.title
+        request.eventCouponCode = event.couponCode
         
         let cartApi = CartApi()
         cartApi.setCompletionHandler{ response, error in
@@ -176,13 +176,13 @@ class EventsInteractor :BaseInteractor{
         eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
         var request = EventCartRequest()
         request.eventSlug = event.slug
-        request.eventDate = event.eventDate;
-        request.eventSlug = event.slug;
-        request.eventPrice = event.getRoleBasedPrice(role: AppEngine.sharedInstance.userRole);
+        request.eventDate = event.eventDate
+        request.eventSlug = event.slug
+        request.eventPrice = event.getRoleBasedPrice(role: AppEngine.sharedInstance.userRole)
         request.serial = AppEngine.sharedInstance.userID
         request.role = AppEngine.sharedInstance.userRole
-        request.title = event.title;
-        request.eventCouponCode = event.couponCode;
+        request.title = event.title
+        request.eventCouponCode = event.couponCode
         
         if let rentals = event.rentalData{
             request.rentalList = [RentalRequest]()

@@ -15,7 +15,7 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     
-    var titleHidden = false;
+    var titleHidden = false
     
     var alertTitle = String()
     

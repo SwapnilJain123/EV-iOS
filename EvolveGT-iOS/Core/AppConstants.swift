@@ -40,6 +40,8 @@ struct ScreenTitle{
     static let TITLE_FORGOT_PASSWORD = "Forgot Password"
     static let TITLE_ABOUT_US = "AboutUs"
     
+     static let TITLE_SHOPS = "Shop"
+    
 }
 
 struct ScreenSize{
