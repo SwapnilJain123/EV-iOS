@@ -44,8 +44,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rS3-Tc-OpA">
                                 <rect key="frame" x="117.5" y="185.5" width="140" height="340"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYF-Kh-lrW">
-                                        <rect key="frame" x="12" y="-24" width="115" height="140"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYF-Kh-lrW">
+                                        <rect key="frame" x="0.0" y="-24" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="XUK-Br-uh1"/>
                                             <constraint firstAttribute="height" constant="140" id="rs7-g8-1VP"/>
@@ -55,8 +55,8 @@
                                             <action selector="switchToEvApp:" destination="UpC-NE-WFh" eventType="touchUpInside" id="rWz-f0-q4j"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4Z-1U-avh">
-                                        <rect key="frame" x="12" y="200" width="115" height="140"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4Z-1U-avh">
+                                        <rect key="frame" x="0.0" y="200" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="91R-0B-v1U"/>
                                             <constraint firstAttribute="height" constant="140" id="mot-Tc-28S"/>
@@ -70,8 +70,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="6Jb-Tt-mPh"/>
+                                    <constraint firstItem="rYF-Kh-lrW" firstAttribute="leading" secondItem="x4Z-1U-avh" secondAttribute="leading" id="BzA-69-o5L"/>
+                                    <constraint firstItem="x4Z-1U-avh" firstAttribute="top" secondItem="rYF-Kh-lrW" secondAttribute="bottom" constant="84" id="Ipe-As-8Of"/>
                                     <constraint firstAttribute="bottom" secondItem="x4Z-1U-avh" secondAttribute="bottom" id="aKU-0e-Jac"/>
                                     <constraint firstAttribute="width" constant="140" id="nCW-T7-EzJ"/>
+                                    <constraint firstItem="rYF-Kh-lrW" firstAttribute="centerX" secondItem="rS3-Tc-OpA" secondAttribute="centerX" id="zoR-4T-mUi"/>
                                 </constraints>
                             </view>
                         </subviews>
