@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +48,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="TK5-42-b3a" firstAttribute="trailing" secondItem="amC-7M-f5k" secondAttribute="trailing" id="DtL-Y7-sNJ"/>
                             <constraint firstItem="2Cz-Bw-wx0" firstAttribute="centerY" secondItem="amC-7M-f5k" secondAttribute="centerY" id="Etz-bg-j3P"/>
@@ -74,5 +75,8 @@
     <resources>
         <image name="splash_bg" width="518" height="920"/>
         <image name="splash_logo" width="780" height="1191"/>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

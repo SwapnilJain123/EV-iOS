@@ -31,6 +31,9 @@
 		10048F4C246F149C00684A87 /* EventListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F4B246F149C00684A87 /* EventListCells.swift */; };
 		10048F4E246F2B6400684A87 /* JsonAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F4D246F2B6400684A87 /* JsonAny.swift */; };
 		10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F4F246FA63300684A87 /* String+Extenstion.swift */; };
+		10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F51246FE15800684A87 /* Encodable+Extension.swift */; };
+		10048F5424702CAC00684A87 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F5324702CAC00684A87 /* UICheckBox.swift */; };
+		10048F5624702D5D00684A87 /* CheckBox+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F5524702D5D00684A87 /* CheckBox+Extension.swift */; };
 		100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A15245319D800EF2B9F /* UiColor+Extension.swift */; };
 		100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */; };
 		100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */; };
@@ -62,8 +65,6 @@
 		1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462524668FD600D5EED0 /* CreditHistoryViewController.swift */; };
 		1033462924669A5F00D5EED0 /* EnrolledEventsTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462824669A5F00D5EED0 /* EnrolledEventsTabController.swift */; };
 		1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033462A24669B1300D5EED0 /* EnrolledEvents.storyboard */; };
-		1033462E2466A65F00D5EED0 /* TabLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1033462D2466A65F00D5EED0 /* TabLabelCell.xib */; };
-		103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033462F2466A68200D5EED0 /* TabLabelCell.swift */; };
 		103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346312466A91300D5EED0 /* UpcomingEventsController.swift */; };
 		103346342466A92200D5EED0 /* PastEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346332466A92200D5EED0 /* PastEventsController.swift */; };
 		103346362466A93400D5EED0 /* AllEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346352466A93400D5EED0 /* AllEventsController.swift */; };
@@ -119,6 +120,12 @@
 		1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE862450A06C00190088 /* AdminApiConstants.swift */; };
 		1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE882450A19600190088 /* CompletedEventRequest.swift */; };
 		1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */; };
+		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
+		10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */; };
+		10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAF2473130F0032C056 /* TextFieldExtension.swift */; };
+		10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FB124741EB90032C056 /* SimpleAlertController.swift */; };
+		10716FB42476C6B60032C056 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FB32476C6B60032C056 /* ShopViewController.swift */; };
+		10716FB82476E98E0032C056 /* ShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FB72476E98E0032C056 /* ShopsInteractor.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
@@ -168,6 +175,9 @@
 		10048F4B246F149C00684A87 /* EventListCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCells.swift; sourceTree = "<group>"; };
 		10048F4D246F2B6400684A87 /* JsonAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAny.swift; sourceTree = "<group>"; };
 		10048F4F246FA63300684A87 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
+		10048F51246FE15800684A87 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		10048F5324702CAC00684A87 /* UICheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
+		10048F5524702D5D00684A87 /* CheckBox+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckBox+Extension.swift"; sourceTree = "<group>"; };
 		100A2A15245319D800EF2B9F /* UiColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiColor+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1B2454925700EF2B9F /* UibarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UibarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
@@ -200,8 +210,6 @@
 		1033462524668FD600D5EED0 /* CreditHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditHistoryViewController.swift; sourceTree = "<group>"; };
 		1033462824669A5F00D5EED0 /* EnrolledEventsTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsTabController.swift; sourceTree = "<group>"; };
 		1033462A24669B1300D5EED0 /* EnrolledEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnrolledEvents.storyboard; sourceTree = "<group>"; };
-		1033462D2466A65F00D5EED0 /* TabLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabLabelCell.xib; sourceTree = "<group>"; };
-		1033462F2466A68200D5EED0 /* TabLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabLabelCell.swift; sourceTree = "<group>"; };
 		103346312466A91300D5EED0 /* UpcomingEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsController.swift; sourceTree = "<group>"; };
 		103346332466A92200D5EED0 /* PastEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventsController.swift; sourceTree = "<group>"; };
 		103346352466A93400D5EED0 /* AllEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsController.swift; sourceTree = "<group>"; };
@@ -261,6 +269,12 @@
 		1039FE862450A06C00190088 /* AdminApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApiConstants.swift; sourceTree = "<group>"; };
 		1039FE882450A19600190088 /* CompletedEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventRequest.swift; sourceTree = "<group>"; };
 		1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsInteractor.swift; sourceTree = "<group>"; };
+		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoEventDetailsController.swift; sourceTree = "<group>"; };
+		10716FAF2473130F0032C056 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		10716FB124741EB90032C056 /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
+		10716FB32476C6B60032C056 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		10716FB72476E98E0032C056 /* ShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsInteractor.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
@@ -308,6 +322,7 @@
 			children = (
 				10048F32246EB86B00684A87 /* EventInfoCell.swift */,
 				10048F2F246EB0CF00684A87 /* EventDetailsController.swift */,
+				10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -387,6 +402,8 @@
 			isa = PBXGroup;
 			children = (
 				103345F524606D2D00D5EED0 /* Shop.storyboard */,
+				10716FB32476C6B60032C056 /* ShopViewController.swift */,
+				10716FB72476E98E0032C056 /* ShopsInteractor.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -440,15 +457,6 @@
 				1033463C2466D98400D5EED0 /* TabProtocol.swift */,
 			);
 			path = EnrolledEvents;
-			sourceTree = "<group>";
-		};
-		1033462C2466A64900D5EED0 /* TabLabel */ = {
-			isa = PBXGroup;
-			children = (
-				1033462F2466A68200D5EED0 /* TabLabelCell.swift */,
-				1033462D2466A65F00D5EED0 /* TabLabelCell.xib */,
-			);
-			path = TabLabel;
 			sourceTree = "<group>";
 		};
 		103346392466CED600D5EED0 /* Tabs */ = {
@@ -707,6 +715,9 @@
 				1033461324614DA500D5EED0 /* String+CurrencyExtensio.swift */,
 				1033464724681B4B00D5EED0 /* UIButton+Extension.swift */,
 				10048F4F246FA63300684A87 /* String+Extenstion.swift */,
+				10048F51246FE15800684A87 /* Encodable+Extension.swift */,
+				10048F5524702D5D00684A87 /* CheckBox+Extension.swift */,
+				10716FAF2473130F0032C056 /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -794,6 +805,7 @@
 				10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */,
 				10BDD01724598AAF00F05700 /* AlertViewController.swift */,
 				10BDD011245982ED00F05700 /* AlertService.swift */,
+				10716FB124741EB90032C056 /* SimpleAlertController.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -801,8 +813,9 @@
 		10BDD024245B100700F05700 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				1033462C2466A64900D5EED0 /* TabLabel */,
 				10BDD025245B101700F05700 /* EVCheckBox.swift */,
+				10048F5324702CAC00684A87 /* UICheckBox.swift */,
+				10716FA924706B870032C056 /* DividerView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -899,7 +912,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1033462E2466A65F00D5EED0 /* TabLabelCell.xib in Resources */,
 				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
@@ -970,7 +982,9 @@
 			files = (
 				1033460824608E3100D5EED0 /* UsreDataResponse.swift in Sources */,
 				1039FE6D24506ED600190088 /* BaseViewDelegate.swift in Sources */,
+				10716FB42476C6B60032C056 /* ShopViewController.swift in Sources */,
 				10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */,
+				10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */,
 				1039FE682450686E00190088 /* AppConstants.swift in Sources */,
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
@@ -981,6 +995,7 @@
 				1033460E24613FAA00D5EED0 /* ProfileData.swift in Sources */,
 				10048F4E246F2B6400684A87 /* JsonAny.swift in Sources */,
 				100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */,
+				10048F5424702CAC00684A87 /* UICheckBox.swift in Sources */,
 				10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */,
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
@@ -1001,7 +1016,6 @@
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
 				1039FE602450569F00190088 /* ViewController+Extension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
-				103346302466A68200D5EED0 /* TabLabelCell.swift in Sources */,
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
 				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
@@ -1033,6 +1047,7 @@
 				10334610246146B700D5EED0 /* EnrolledEvent.swift in Sources */,
 				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
+				10716FAA24706B870032C056 /* DividerView.swift in Sources */,
 				10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */,
 				103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
@@ -1043,11 +1058,14 @@
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
+				10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */,
+				10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
 				1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */,
 				10048F3D246EDCEE00684A87 /* EventDetails.swift in Sources */,
+				10048F5624702D5D00684A87 /* CheckBox+Extension.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
@@ -1063,6 +1081,7 @@
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,
 				103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */,
+				10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
 				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,
 				10048F09246D013800684A87 /* EventsInteractor.swift in Sources */,
@@ -1075,6 +1094,7 @@
 				10048F4A246F0F7300684A87 /* GenericApi.swift in Sources */,
 				10BDD01E2459C0F600F05700 /* SignatureIntercator.swift in Sources */,
 				1033460B24612CC100D5EED0 /* ProfileCell.swift in Sources */,
+				10716FB82476E98E0032C056 /* ShopsInteractor.swift in Sources */,
 				10048F0F246D017400684A87 /* ShopItemResponse.swift in Sources */,
 				10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,

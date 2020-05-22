@@ -45,6 +45,6 @@ class AllEventsController : ETViewController, TabProtocol, UITableViewDataSource
         
         eventCell.populateViews(event: events![indexPath.row])
         
-        return eventCell;
+        return eventCell
     }
 }

@@ -34,10 +34,35 @@ extension UIButton{
             self.setBackgroundImage(colorImage, for: .highlighted)
         }
         
+        
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+               if let context = UIGraphicsGetCurrentContext() {
+                   context.setFillColor(UIColor.darkGray.cgColor)
+                   context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+                   let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+                   UIGraphicsEndImageContext()
+                   self.setBackgroundImage(colorImage, for: .disabled)
+               }
+        
         self.tintColor = .black
        
         self.setTitleColor(.white, for: .normal)
         self.setTitleColor(.lightGray, for: .highlighted)
+         self.setTitleColor(.white, for: .disabled)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        let text = self.title(for: .normal)
+        self.setTitle(text?.uppercased(), for: .normal)
+    }
+    
+    
+    func setBackgroundColor(color: UIColor, forState: UIControl.State) {
+
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        self.setBackgroundImage(colorImage, for: forState)
     }
 }

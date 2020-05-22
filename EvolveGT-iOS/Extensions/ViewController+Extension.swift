@@ -28,6 +28,20 @@ extension UIViewController{
             alerController.addAction(cancelAction)
             vc.present(alerController, animated: true, completion: nil)
         }
+        
+        func confirmationAlert(title: String?, message: String?, btnText : String, handler: @escaping (()->Void)) {
+            let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: btnText, style: .default){ alertAction in
+               // alerController.dismiss(animated: false, completion: nil)
+                handler()
+            }
+            alerController.addAction(confirmAction)
+            
+            alerController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            vc.present(alerController, animated: true, completion: nil)
+        }
+        
         func addLoadingIndicator(_ message: String?){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.150, execute: {
                 // MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -109,7 +123,7 @@ extension UIViewController{
         }
         
         func hideBackButton(){
-            vc.navigationItem.setHidesBackButton(true, animated: true);
+            vc.navigationItem.setHidesBackButton(true, animated: true)
         }
         
         func setNavigationBackgroundColor(color: UIColor){
@@ -158,6 +172,46 @@ extension UIViewController{
             UIApplication.shared.open(url)
         }
         
+        
+        func presentOptions(title: String, message: String, options: [String], selected : String?, completionHandler : @escaping (String)->Void){
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            for option in options{
+                let action = UIAlertAction(title: option, style: .default) {
+                    UIAlertAction in
+                    completionHandler(option)
+                }
+                alert.addAction(action)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+                UIAlertAction in
+                // It will dismiss action sheet
+            }
+            alert.addAction(cancelAction)
+            vc.present(alert, animated: false, completion: nil)
+        }
+        
+        func showAlertWithAttributedText(title: String, text: NSAttributedString, action : (() -> Void)?){
+            var alertData = AlertData()
+            alertData.title = title
+            alertData.attributedMessage = text
+            alertData.positiveBtnAction = action
+            let alertVC = AlertService.createAlertController(alertData: alertData)
+            vc.present(alertVC, animated: true, completion: nil)
+            
+            
+        }
+        
+        func showSimpleAlert(title: String, text: String){
+            var alertData = AlertData()
+            alertData.title = title
+            alertData.message = text
+            let alertVC = AlertService.createAlertController(alertData: alertData)
+            vc.present(alertVC, animated: true, completion: nil)
+            
+            
+        }
     }
     var ext: Ext {
         return  Ext(vc: self)

@@ -17,6 +17,7 @@ class ETViewController : UIViewController{
         self.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
         
         self.ext.setScreenTitle(title: getScreenTitle() ?? "")
+        self.ext.hideErrorView()
     
     }
     func createMoreButton() -> UIBarButtonItem{
@@ -109,6 +110,9 @@ extension ETViewController{
         self.ext.showAlert(title: title, message: message)
     }
     
+    @objc func hideEmptyPageError() {
+           self.ext.hideErrorView()
+    }
 }
 
 extension UIViewController{

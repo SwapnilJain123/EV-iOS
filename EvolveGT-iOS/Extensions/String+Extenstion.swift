@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension String {
     var htmlAttributed: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
@@ -18,5 +19,19 @@ extension String {
     }
     var htmlToString: String {
         return htmlAttributed?.string ?? ""
+    }
+    
+    func toAttributedText(with textSize : CGFloat) -> NSAttributedString? {
+        let textSizeAttribute = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: textSize) ]
+        
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            let richText = try NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue],documentAttributes: nil)
+            let textRangeForFont : NSRange = NSMakeRange(0, richText.length)
+            richText.addAttributes(textSizeAttribute, range: textRangeForFont)
+            return richText
+        } catch {
+            return NSAttributedString()
+        }
     }
 }

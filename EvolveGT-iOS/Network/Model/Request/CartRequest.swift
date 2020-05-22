@@ -11,18 +11,20 @@ struct EventCartRequest: Codable {
     
     var eventDate, eventPrice, eventSlug: String?
     
-    var rentalList: [Rentals]?
-    var trainingList: [Trainings]?
+    var rentalList: [RentalRequest]?
+    var trainingList: [TrainingRequest]?
     var serial, role, title: String?
     var eventCouponCode : String?
     
-    var classes: [String]?
+    var eventClasses: [String]?
     var eventID: String?
     var transponderRented: Bool?
     var transponderNo: String?
+    var eventClassTotal : String?
+    var skill : String?
     
     enum CodingKeys: String, CodingKey {
-        case classes
+        case eventClasses = "classes"
         case eventDate = "event_date"
         case eventPrice = "event_price"
         case eventSlug = "event"
@@ -35,13 +37,14 @@ struct EventCartRequest: Codable {
         case eventID = "event_id"
         
         case eventCouponCode = "secret_code"
+        case skill = "skill_class"
+        case eventClassTotal = "amount"
     }
-    
-    struct Trainings: Codable {
-        var price, slug, id, trainingName: String?
-    }
-    
-    struct Rentals: Codable {
-        var price, slug, id, rentalName: String?
-    }
+}
+struct TrainingRequest: Codable {
+    var price, slug, id, trainingName: String?
+}
+
+struct RentalRequest: Codable {
+    var price, slug, id, selectedSize, rentalName: String?
 }

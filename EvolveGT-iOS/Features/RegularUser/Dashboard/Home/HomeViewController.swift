@@ -22,6 +22,7 @@ class HomeViewController: TabbedViewController{
     var creditHistoryExpanded = false
     
     let interactor = HomeDataInteractor()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,6 @@ class HomeViewController: TabbedViewController{
         profileView.estimatedRowHeight = 300
         
         interactor.delegate = self
-        interactor.fetchUserDetails()
         
         
     }
@@ -51,6 +51,10 @@ class HomeViewController: TabbedViewController{
         ScreenTitle.TITLE_DASHBOARD
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+          interactor.fetchUserDetails()
+    }
     
 }
 
@@ -68,7 +72,7 @@ extension HomeViewController: UITableViewDataSource{
             let profileCell = tableView.dequeueReusableCell(withIdentifier:"HomeProfileCell",for: indexPath) as! ProfileCell
             
             profileCell.showData(self.profileData!)
-            return profileCell;
+            return profileCell
         }else if indexPath.row == 1 {
             
             if self.profileData?.recentUpComingEvent == nil{
@@ -80,7 +84,7 @@ extension HomeViewController: UITableViewDataSource{
                 
                 upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!, expanded: upComingEventsExpanded)
                 upComingEventCell.delegate = self
-                return upComingEventCell;
+                return upComingEventCell
             }
             
         }else if indexPath.row == 2 {
@@ -93,7 +97,7 @@ extension HomeViewController: UITableViewDataSource{
                 let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"PastEventCell",for: indexPath) as! SectionEventInfoCell
                 pastEventCell.delegate = self
                 pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!, expanded: pastEventsExpanded)
-                return pastEventCell;
+                return pastEventCell
             }
             
             
@@ -107,7 +111,7 @@ extension HomeViewController: UITableViewDataSource{
                 let creditCell = tableView.dequeueReusableCell(withIdentifier:"RecentCreditCell",for: indexPath) as! CreditHistoryCell
                 creditCell.delegate = self
                 creditCell.showData(profileData!.recentCreditHistory!, expanded: creditHistoryExpanded)
-                return creditCell;
+                return creditCell
             }
             
             

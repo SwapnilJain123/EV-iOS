@@ -23,6 +23,7 @@ class SignatureIntercator : BaseInteractor{
         
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
+             self.delegate?.hideEmptyPageError()
             if error == nil{
                 Log.i("Signature Request Success - ")
                 if let signatureResponse = self.decodeFromJson(response!, modelType: SignatureResponse.self), var signature = signatureResponse.signature{
@@ -50,6 +51,7 @@ class SignatureIntercator : BaseInteractor{
         
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
+             self.delegate?.hideEmptyPageError()
             if error == nil{
                 Log.i("Signature Saving Success - ")
                 self.delegate?.didUpdateSignature()

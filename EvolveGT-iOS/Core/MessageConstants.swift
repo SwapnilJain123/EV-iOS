@@ -37,9 +37,21 @@ struct MessageConstants {
     static let KPromptMsgEnterMessage = "Please enter the message"
     static let KPromptServerConectError = "Server connection error"
     
+    static let externalLink = "Would you like to open this event in browser?"
     
-    
-    
+    static let txtRaceLicenceRequired = """
+<p>
+      A race license is required to participate in Motogladiator racing. Please sign up for the Race Certification
+      training prior to registering for any racing. Participation in a Mock race and rental transponder are
+      included on the date you have training. You must be an intermediate or above group level rider to take the Race Certification
+      Training.
+    </p>
+
+    <p>
+      If you have prior race experience that you feel qualifies you to participate in the Motogladiator race
+      series, please contact support at <a href="tel: 702-602-2770">702-602-2770</a>  or support@evolvegt.com.
+</p>
+"""
     
     
     
@@ -77,6 +89,7 @@ struct ErrorMessages {
     static let emptyEventParticipants = "There are currently no users enrolled for this event."
     static let emptyEnrolledEvents = "Sorry, no event has been found."
     static let emptyCreditHistory = "Sorry, You have no credit history."
+    static let skillNotEligibleMessage = "GT1 and E1 are not eligible to participate in race."
     
     
     
@@ -95,6 +108,9 @@ struct ErrorMessages {
     static let error_empty_current_password = "Please enter your current password."
     
     
+    static let emptyEventClass = "Please select at least one class"
+    static let skillNotSelected = "Please select a skill set"
+    static let transponderNotSelected = "Please select transponder or enter your transponder number"
 }
 
 struct SuccessMessages {
@@ -108,4 +124,10 @@ struct SuccessMessages {
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."
+}
+
+struct AlertTitle{
+    static let raceLicenceRequired = "Race Licence is Required"
+    static let skillNotEligible = "Skill Not Eligible"
+    static let externalHost = "External Host"
 }

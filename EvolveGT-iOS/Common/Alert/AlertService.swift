@@ -7,6 +7,23 @@
 //
 
 import UIKit
+struct AlertData {
+    var title = ""
+    var message = ""
+    var btnPositive = "OK"
+    var attributedMessage : NSAttributedString? = nil
+    
+    var titleBackgroundColor : UIColor = .getBackgroundGray()
+    var titleTextColor : UIColor = .white
+    var alertBackgroundColor : UIColor = .white
+    var btnPositiveTextColor : UIColor = .white
+    var btnPositiveBackroundColor : UIColor = .getAppThemeColor()
+     var btnPositiveTintColor : UIColor = .getSecondaryColor()
+    var positiveBtnAction : (() -> Void)? = nil
+    
+    var messageAlignment : NSTextAlignment = .center
+}
+
 
 class AlertService {
     
@@ -23,4 +40,21 @@ class AlertService {
         
         return alertVC
     }
+    
+    static func createAlertController(alertData : AlertData) -> SimpleAlertController {
+        
+        let storyboard = UIStoryboard(name: "AlertStoryboard", bundle: .main)
+        
+        let alertVC = storyboard.instantiateViewController(withIdentifier: "SimpleAlertVC") as! SimpleAlertController
+        
+        alertVC.providesPresentationContextTransitionStyle = true
+               alertVC.definesPresentationContext = true
+               alertVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+               alertVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        
+        alertVC.alertData = alertData
+        
+        return alertVC
+    }
+    
 }

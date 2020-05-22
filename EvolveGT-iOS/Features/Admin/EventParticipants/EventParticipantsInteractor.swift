@@ -28,6 +28,7 @@ class EventParticipantIntercator : BaseInteractor{
             self.delegate?.hideProgressIndicator()
             if error == nil{
                 Log.i("Event Paticipants Request Success - ")
+                self.delegate?.hideEmptyPageError()
                 if let eventParticipantsResponse = self.decodeFromJson(response!, modelType: EventParticpantResponse.self){
                     
                     if eventParticipantsResponse.eventParticipants.count == 0{
@@ -66,9 +67,13 @@ class EventParticipantIntercator : BaseInteractor{
         delegate?.showProgressIndicator(message: "")
         let adminApi  = AdminApi()
         adminApi.setCompletionHandler{ response, error in
-            self.delegate?.hideProgressIndicator()
-            self.delegate?.showSuccessToastMessage(message: SuccessMessages.skillUpgraded)
-            self.getEventParticipants(self.eventId)
+            if error == nil{
+                self.delegate?.hideProgressIndicator()
+                self.delegate?.showSuccessToastMessage(message: SuccessMessages.skillUpgraded)
+                self.getEventParticipants(self.eventId)
+            }else{
+                self.delegate?.showAlert(title: "Error", message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
         }
         adminApi.upgradeSkill(skill: skill, userID: userID)
     }

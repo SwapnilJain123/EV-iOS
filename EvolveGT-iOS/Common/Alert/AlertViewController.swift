@@ -15,7 +15,7 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     
-    var titleHidden = false;
+    var titleHidden = false
     
     var alertTitle = String()
     
@@ -37,7 +37,7 @@ class AlertViewController: UIViewController {
         
         titleLabel.text = alertTitle
         actionButton.setTitle(actionButtonTitle, for: .normal)
-        actionButton.backgroundColor = UIColor.getAppThemeColor()
+        actionButton.applyColorTheme()
         //titleView.backgroundColor = UIColor.getAppThemeColor()
         if titleHidden{
             titleView.removeFromSuperview()

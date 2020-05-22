@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1065,7 +1066,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="NPp-J7-3Za" firstAttribute="trailing" secondItem="xEr-sQ-VfP" secondAttribute="trailing" id="K8z-Cm-UPG"/>
                             <constraint firstItem="NPp-J7-3Za" firstAttribute="leading" secondItem="xEr-sQ-VfP" secondAttribute="leading" id="bAI-Sz-d6F"/>
@@ -1092,5 +1093,8 @@
         <image name="plus_green" width="20" height="20"/>
         <image name="skill_level" width="128" height="128"/>
         <image name="upcoming_events" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

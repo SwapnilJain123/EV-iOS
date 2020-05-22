@@ -50,6 +50,6 @@ class UpcomingEventsController : ETViewController, TabProtocol, UITableViewDataS
         
         eventCell.populateViews(event: events![indexPath.row])
         
-        return eventCell;
+        return eventCell
     }
 }

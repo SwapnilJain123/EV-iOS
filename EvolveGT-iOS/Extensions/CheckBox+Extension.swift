@@ -1,0 +1,56 @@
+//
+//  UICheckBox+Extension.swift
+//  EvolveGT-iOS
+//
+//  Created by Subair Ariyil on 16/05/20.
+//  Copyright © 2020 YaraTech. All rights reserved.
+//
+
+import Foundation
+import MBRadioCheckboxButton
+extension CheckBox {
+    func applyColorTheme(){
+        
+        self.borderStyle = .roundedSquare(radius: 5.0)
+        self.borderWidth = 3.0
+        self.style = .tick
+        
+        self.uncheckedBorderColor = .gray
+        self.checkedBorderColor = .getAppThemeColor()
+        self.checkmarkColor = .getAppThemeColor()
+        self.checkboxBackgroundColor = .clear
+        self.checkmarkSize = 4.0
+    }
+}
+
+extension CheckboxButton {
+    func applyCheckboxTheme(){
+        
+        self.style = .rounded(radius: 3.0)
+        self.checkBoxColor = CheckBoxColor(activeColor: .getAppThemeColor(), inactiveColor: .clear, inactiveBorderColor: .gray, checkMarkColor: .white)
+        self.checkboxLine = CheckboxLineStyle( checkmarkLineWidth: 2, padding: 5)
+        self.backgroundColor = nil
+        
+        if self.isEnabled == false{
+            self.checkBoxColor = CheckBoxColor(activeColor: .gray, inactiveColor: .clear, inactiveBorderColor: .gray, checkMarkColor: .white)
+        }
+    }
+    
+    
+}
+extension RadioButton {
+    func applyRadioButtonTheme(){
+        
+       
+        self.radioButtonColor = RadioButtonColor(active: .getAppThemeColor(), inactive: .getSecondaryColor())
+       
+        self.backgroundColor = nil
+        
+        if self.isEnabled == false{
+             self.radioButtonColor = RadioButtonColor(active: .gray, inactive: .gray)
+            self.setTitleColor(.gray, for: .disabled)
+        }
+    }
+    
+    
+}

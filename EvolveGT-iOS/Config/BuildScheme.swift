@@ -13,7 +13,6 @@ class BuildScheme{
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
              nsDictionary = NSDictionary(contentsOfFile: path)
             let mode = nsDictionary!["BUILD_CONFIG"] as! String? ?? "QA"
-            Log.i("\nBUILD_CONFIG -  \(mode)")
            return  mode
         }
         return  "QA"

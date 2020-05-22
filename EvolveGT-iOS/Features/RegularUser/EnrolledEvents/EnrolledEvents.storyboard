@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -144,7 +145,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="hOA-sv-X13" firstAttribute="bottom" secondItem="CF5-KT-kSt" secondAttribute="bottom" id="7O5-AR-Jzy"/>
                             <constraint firstItem="hOA-sv-X13" firstAttribute="trailing" secondItem="CF5-KT-kSt" secondAttribute="trailing" id="hwy-al-1or"/>
@@ -270,7 +271,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="VsK-Yv-Q3A" firstAttribute="bottom" secondItem="LRC-zF-09r" secondAttribute="bottom" id="EJL-JV-hby"/>
                             <constraint firstItem="VsK-Yv-Q3A" firstAttribute="top" secondItem="LRC-zF-09r" secondAttribute="top" id="IaC-Cq-eDR"/>
@@ -377,7 +378,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="Lp8-do-Ayg" firstAttribute="bottom" secondItem="Bkt-aQ-iGo" secondAttribute="bottom" id="LNw-b4-td7"/>
                             <constraint firstItem="Lp8-do-Ayg" firstAttribute="top" secondItem="Bkt-aQ-iGo" secondAttribute="top" id="bFq-XM-tim"/>
@@ -395,4 +396,9 @@
             <point key="canvasLocation" x="1927" y="110"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

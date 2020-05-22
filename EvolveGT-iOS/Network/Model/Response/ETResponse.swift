@@ -25,5 +25,9 @@ struct ETResponse : Decodable {
         } else {
             status = try container.decode(Int.self, forKey: .status)
         }
+        
+        if let valueMsg = try? container.decode(String.self, forKey: .msg) {
+            msg = valueMsg
+        }
     }
 }

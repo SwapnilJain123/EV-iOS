@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct EventDetails: Codable {
+class EventDetails: Codable {
     var eventID, title, eventDate, productInfo: String?
     var logoIcon: String?
     var eventBanner: String?
@@ -18,13 +18,97 @@ struct EventDetails: Codable {
     var transponder: Transponder?
     var trackDays: [Event]?
     var isPrivateEvent: Bool?
-    
+    var isCancelled : Bool?
+    var slug : String? = ""
     var roleBasedPrice: RoleBasedPrice? = RoleBasedPrice()
     var trainingData: [TrainingDatum]?
     var rentalData: [RentalDatum]?
+     var external: ExternalHost?
     
+    var selectedSkill = ""
+    var isMotoEvent = false
     
+    var total : Double {
+        var totalPrice : Double = 0
+        
+        if !isMotoEvent{
+            totalPrice = getRoleBasedPrice(role: AppEngine.sharedInstance.userRole).toDouble()
+        }
+        if let trainings = trainingData{
+            for training in trainings where training.isSelected{
+                totalPrice = totalPrice + (training.price?.toDouble() ?? 0.0)!
+            }
+        }
+        
+        if let rentals = rentalData{
+            for rental in rentals where rental.selectedVariant != nil{
+                totalPrice = totalPrice + (rental.selectedVariant?.price?.toDouble() ?? 0.0)!
+            }
+        }
+        
+        if let allEventClasses = eventClasses{
+            for eventClass in allEventClasses where (eventClass.isSelected && !(eventClass.inCart ?? false)){
+                totalPrice = totalPrice + (price?.toDouble() ?? 0)
+            }
+        }
+        
+        if transponder?.isSelected ?? false{
+            totalPrice = totalPrice + Double(transponder?.price ?? 0)
+        }
+        
+        return totalPrice
+    }
     
+    var isOutofStock : Bool{
+        if let rentals = rentalData{
+            for rental in rentals where rental.selectedVariant != nil{
+                if rental.selectedVariant?.isOutOfStock ?? false{
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    var couponCode: String = ""
+    
+    var activeEventClasses: [EventClass]{
+        var activeEventClasses = [EventClass]()
+        if let allEventClasses : [EventClass] = eventClasses{
+            for eventClass in allEventClasses where eventClass.active ?? false{
+                activeEventClasses.append(eventClass)
+            }
+        }
+        return activeEventClasses
+    }
+    
+    var selectedEventClasses :[String]{
+        var eventClassList = [String]()
+         if let allEventClasses : [EventClass] = eventClasses{
+            for eventClass in allEventClasses where eventClass.isSelected || (eventClass.inCart ?? false){
+                eventClassList.append(eventClass.eventClassName!)
+            }
+        }
+        return eventClassList
+    }
+    
+    var selectedEventClassTotal :String{
+        var total: Double = 0.0
+         if let allEventClasses : [EventClass] = eventClasses{
+            for eventClass in allEventClasses where eventClass.isSelected{
+                total = total + (price?.toDouble() ?? 0.0)
+            }
+        }
+        return String(total)
+    }
+    
+    var hasSkillRegistered : Bool{
+        if let availableSkillSet: [SkillSet] = skillSet{
+            for skill in availableSkillSet where skill.active ?? false{
+                return true
+            }
+        }
+        return false
+    }
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"
         case title
@@ -33,6 +117,7 @@ struct EventDetails: Codable {
         case logoIcon = "logo_icon"
         case eventBanner = "event_banner"
         case price
+        case slug
         case eventType = "event_type"
         case stock
         case eventClasses = "classes"
@@ -43,19 +128,29 @@ struct EventDetails: Codable {
         case trainingData, rentalData
         case isPrivateEvent = "is_private_event"
         case roleBasedPrice
+        case isCancelled = "is_cancelled"
+        case external
+    }
+    
+    func  getRoleBasedPrice(role : String) -> String{
+        if roleBasedPrice?.hasKey(for: role) ?? false{
+            return roleBasedPrice.value(for: role) as! String
+        }else{
+            return price ?? String(0)
+        }
     }
     
 }
 
 
-struct RoleBasedPrice: Codable {
+class RoleBasedPrice: Codable {
     var guest, grip, military, apex: String?
     var coach, yg, racer, vip: String?
     var dealer, motogirl, ocp, administrator: String?
 }
 
 // MARK: - Variation
-struct Variation: Codable {
+class Variation: Codable {
     var price: String?
     var stock: String?
     var stockStatus: String?
@@ -68,36 +163,44 @@ struct Variation: Codable {
         case attributeName = "attribute_name"
         case attributeValue = "attribute_value"
     }
+    
+    var isOutOfStock: Bool{
+        stockStatus?.isOutOfStock() ?? false
+    }
 }
 
 
 
 // MARK: - Class
-struct EventClass: Codable {
+class EventClass: Codable {
     var id: Int?
-    var classClass: String?
+    var eventClassName: String?
     var active, inCart: Bool?
     
+    var isSelected = false
     enum CodingKeys: String, CodingKey {
         case id
-        case classClass = "class"
+        case eventClassName = "class"
         case active, inCart
     }
+    
+    
 }
 
 // MARK: - SkillSet
-struct SkillSet: Codable {
+class SkillSet: Codable {
     var id: Int?
     var skill: String?
     var active: Bool?
 }
 
 // MARK: - Transponder
-struct Transponder: Codable {
+class Transponder: Codable {
     var price: Int?
     var imageURL: String?
     var inCart: Bool?
     var number: String?
+    var isSelected = false
     
     enum CodingKeys: String, CodingKey {
         case price
@@ -106,23 +209,45 @@ struct Transponder: Codable {
     }
 }
 
-struct RentalDatum: Codable {
+class RentalDatum: Codable {
     var productID, title, slug: String?
     var variations: [Variation]?
     var image: String?
+    
+    var selectedVariant : Variation? = nil
     
     enum CodingKeys: String, CodingKey {
         case productID = "product_id"
         case title, slug, variations,  image
     }
+    
+    var variantOptions: [String]{
+        var variants = [String]()
+        if let rentalVariations = variations{
+            for rentVariant in rentalVariations{
+                variants.append(rentVariant.attributeValue ?? "")
+            }
+        }
+        return variants
+    }
+    
+    func findVariantByValue(value: String) -> Variation?{
+        return variations?.first{value == $0.attributeValue}
+    }
 }
 
-struct TrainingDatum: Codable {
+class TrainingDatum: Codable {
     var trainingID, title, price, slug: String?
     var image: String?
     
+    var isSelected = false
     enum CodingKeys: String, CodingKey {
         case trainingID = "training_id"
         case title, price, slug, image
+    }
+}
+extension String{
+    func isOutOfStock() -> Bool{
+        !("instock" == self.lowercased())
     }
 }

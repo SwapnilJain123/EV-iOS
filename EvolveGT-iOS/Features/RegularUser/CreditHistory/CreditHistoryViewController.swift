@@ -60,7 +60,7 @@ extension CreditHistoryViewController: UITableViewDataSource, CreditHistoryViewD
         let creditCell = tableView.dequeueReusableCell(withIdentifier:"CreditHistoryItemCell",for: indexPath) as! CreditHistoryItemCell
         
         creditCell.showData(creditItem: creditHistoryList[indexPath.row])
-        return creditCell;
+        return creditCell
     }
     
     
