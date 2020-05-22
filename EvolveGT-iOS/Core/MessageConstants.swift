@@ -92,6 +92,7 @@ struct ErrorMessages {
     static let skillNotEligibleMessage = "GT1 and E1 are not eligible to participate in race."
     
     
+    
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
     
@@ -102,6 +103,11 @@ struct ErrorMessages {
     
     static let emptyEventList = "Sorry, there is no events available right now."
     
+    static let error_confirm_password = "Your password and confirmation password do not match."
+    static let error_empty_password = "Please enter new password."
+    static let error_empty_current_password = "Please enter your current password."
+    
+    
     static let emptyEventClass = "Please select at least one class"
     static let skillNotSelected = "Please select a skill set"
     static let transponderNotSelected = "Please select transponder or enter your transponder number"
@@ -111,6 +117,7 @@ struct SuccessMessages {
     
     static let skillUpgraded = "Skill Level upgraded successfully"
     static let signatureSaved = "Your Signature has been saved."
+     static let passwordChanged = "Your password has been changed successfully."
     
     static let eventAddedToCart = "Your event has been added to the cart successfully."
     

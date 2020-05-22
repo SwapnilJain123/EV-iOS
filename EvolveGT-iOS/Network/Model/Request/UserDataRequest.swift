@@ -54,3 +54,22 @@ struct CreditHistoryRequest : Codable{
        
     }
 }
+struct PasswordChangeRequest: Codable {
+    var userID: String?
+    var passwordRequestBody: PasswordRequestBody?
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case passwordRequestBody = "data"
+    }
+}
+
+// MARK: - PasswordRequestBody
+struct PasswordRequestBody: Codable {
+    var currentpassword, password, confirmPassword: String?
+
+    enum CodingKeys: String, CodingKey {
+        case currentpassword, password
+        case confirmPassword = "confirm-password"
+    }
+}
