@@ -27,7 +27,6 @@ target 'EvolveGT-iOS' do
 #  pod 'SideMenuSwift','1.0.2'
   pod 'SideMenuSwift'
   pod 'XLPagerTabStrip', '~> 8.1'
-  pod 'NXDrawKit'
   pod 'SwiftSignatureView'
 #  pod 'Braintree'
   pod 'BraintreeDropIn'

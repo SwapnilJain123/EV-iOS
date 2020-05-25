@@ -78,7 +78,6 @@ class TrainingItemCell : UITableViewCell, CheckboxButtonDelegate{
     
     var delegate :TrainingDelegate?
     @IBOutlet weak var priceView: UILabel!
-    @IBOutlet weak var selectionView: CheckBox!
     
     @IBOutlet weak var seelctionCheckBox: CheckboxButton!
     @IBOutlet weak var titleView: UILabel!

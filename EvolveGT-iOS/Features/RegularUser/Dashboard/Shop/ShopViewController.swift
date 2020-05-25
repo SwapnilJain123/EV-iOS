@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class ShopViewController : TabbedViewController{
+class ShopViewController : TabbedViewController, BaseViewDelegate{
     
     @IBOutlet weak var shopsBanner: UIImageView!
     
@@ -34,9 +34,9 @@ class ShopViewController : TabbedViewController{
     
     
     
-    let interactor = ShopsInteractor()
+    var categoryList = [ProductCategory]()
     
-    var menuItems = [ShopsMenu]()
+    let interactor = ShopsInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,10 @@ class ShopViewController : TabbedViewController{
         menuRentalsBackground.setCardView()
         menuGiftsBackground.setCardView()
         menuGearBackground.setCardView()
+        
+        interactor.viewDelegate = self
+        interactor.categoryDelegate = self
+        interactor.fetchCategoryList()
     }
     
     override func getScreenTitle() -> String? {
@@ -88,11 +92,73 @@ class ShopViewController : TabbedViewController{
     }
     
     @IBAction func didPressRentals(_ sender: Any) {
+        
+        if categoryList.count == 0{
+            self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
+            self.interactor.fetchCategoryList()
+        }else{
+            let rentalsVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
+            
+            for category in categoryList where category.isRentals{
+                if category.children?.count ?? 0 > 0{
+                    rentalsVC.categories = category.children!
+                }
+            }
+            rentalsVC.source = "Rentals"
+            if rentalsVC.categories.count > 1{
+                self.ext.pushViewController(viewController: rentalsVC)
+            }else if rentalsVC.categories.count > 0{
+                openProductListController(category: rentalsVC.categories[0], source: rentalsVC.source)
+            }else{
+                self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
+            }
+           
+        }
     }
     
     @IBAction func didPressGift(_ sender: Any) {
     }
     
     @IBAction func didPressGear(_ sender: Any) {
+        if categoryList.count == 0{
+            self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
+            self.interactor.fetchCategoryList()
+        }else{
+            let gearVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
+            
+            for category in categoryList where category.isGear{
+                if category.children?.count ?? 0 > 0{
+                    gearVC.categories = category.children!
+                }
+            }
+            gearVC.source = "Gear"
+            
+            if gearVC.categories.count > 1{
+                self.ext.pushViewController(viewController: gearVC)
+            }else if gearVC.categories.count > 0{
+                openProductListController(category: gearVC.categories[0], source: gearVC.source)
+            }else{
+                self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
+            }
+            
+        }
     }
+    func openProductListController(category : ProductCategory, source: String){
+        let productListVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ProductList") as! ProductListController
+        productListVC.category = category
+        productListVC.source = source
+        self.ext.pushViewController(viewController: productListVC)
+        
+    }
+}
+extension ShopViewController : CategoryViewDelegate{
+    func didFetchCategories(categories: [ProductCategory]) {
+        categoryList = categories
+    }
+    
+    override func showEmptyPageError(message: String) {
+        //bypass full page error
+        self.ext.showErrorToast(message: message, handler: nil)
+    }
+    
 }
