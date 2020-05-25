@@ -23,4 +23,11 @@ class CartApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(eventRequest))
         super.makeRequest(method: .POST)
     }
+    func addProductToCart(request: ProductCartRequest){
+           
+           let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_PRODUCT_TO_CART)"
+           setUrl(url: url)
+           setParameters(parameters: makeDictionary(request))
+           super.makeRequest(method: .POST)
+       }
 }

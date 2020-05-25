@@ -150,6 +150,11 @@ extension UIViewController{
             vc.navigationController?.pushViewController(destination, animated: true)
         }
         
+        func pushViewController(viewController : UIViewController){
+            
+            vc.navigationController?.pushViewController(viewController, animated: true)
+        }
+        
         func presentViewController(storyBoard : String, VCIdentifier : String){
             let storyBoard: UIStoryboard = UIStoryboard(name: storyBoard, bundle: nil)
             let destination = storyBoard.instantiateViewController(withIdentifier: VCIdentifier)

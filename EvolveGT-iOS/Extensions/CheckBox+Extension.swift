@@ -8,20 +8,7 @@
 
 import Foundation
 import MBRadioCheckboxButton
-extension CheckBox {
-    func applyColorTheme(){
-        
-        self.borderStyle = .roundedSquare(radius: 5.0)
-        self.borderWidth = 3.0
-        self.style = .tick
-        
-        self.uncheckedBorderColor = .gray
-        self.checkedBorderColor = .getAppThemeColor()
-        self.checkmarkColor = .getAppThemeColor()
-        self.checkboxBackgroundColor = .clear
-        self.checkmarkSize = 4.0
-    }
-}
+
 
 extension CheckboxButton {
     func applyCheckboxTheme(){

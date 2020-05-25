@@ -11,11 +11,11 @@ import UIKit
 
 extension UIColor {
     
-    static let COLOR_EV = "#08a53a"
-    static let COLOR_MOTO = "#376cde"
+    private static let COLOR_EV = "#08a53a"
+    private static let COLOR_MOTO = "#376cde"
     
-    static let COLOR_EV_LITE = "#00574B"
-    static let COLOR_MOTO_LITE = "#151E49"
+    private static let COLOR_EV_LITE = "#00574B"
+    private static let COLOR_MOTO_LITE = "#151E49"
     
     static let GREEN_EV_LITE = "#11C248"
     static let GREEN_EV_DARK = "#08A43A"
@@ -23,7 +23,12 @@ extension UIColor {
     static let BLUE_MOTO_LITE = "#7189E7"
     static let BLUE_MOTO_DARK = "#3853C2"
     
-    static let BACKGROUND_GRAY = "#787878"
+    private static let BACKGROUND_GRAY = "#787878"
+    
+    private static let EVOLVE_LIGHT_BACKGROUND = "#b3f5c4"
+    private static let MOTO_LIGHT_BACKGROUND = "#94a2d1"
+    
+    //
     
     static func getBackgroundGray() -> UIColor{
         UIColor.init(hexFromString: UIColor.BACKGROUND_GRAY)
@@ -48,6 +53,16 @@ extension UIColor {
         return appColor
         
     }
+    
+    static func getLightBackgroundColor() -> UIColor{
+           var appColor = UIColor.init(hexFromString: UIColor.EVOLVE_LIGHT_BACKGROUND)
+           if(AppEngine.sharedInstance.appMode != .APP_EV){
+               appColor = UIColor.init(hexFromString: UIColor.MOTO_LIGHT_BACKGROUND)
+           }
+           
+           return appColor
+           
+       }
     
     static func getEvColor() -> UIColor{
         UIColor.init(hexFromString: UIColor.COLOR_EV)

@@ -15,3 +15,19 @@ struct EventListResponse : Decodable{
            case events = "results"
     }
 }
+struct CategoryListResponse: Codable {
+
+    var category: [ProductCategory]?
+    
+    enum CodingKeys: String, CodingKey {
+           case category = "data"
+    }
+}
+
+struct ProductListResponse: Codable {
+    var products: [Product]?
+    
+    enum CodingKeys: String, CodingKey {
+           case products = "results"
+    }
+}
