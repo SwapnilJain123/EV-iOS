@@ -84,6 +84,7 @@
 		103346662469458000D5EED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103346652469458000D5EED0 /* Main.storyboard */; };
 		103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346702469461700D5EED0 /* ForgotPasswordRequest.swift */; };
 		103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346722469462900D5EED0 /* ForgotPasswordResponse.swift */; };
+		103365FF247CFFCB009AF19A /* ArchieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103365FE247CFFCB009AF19A /* ArchieCard.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -122,11 +123,11 @@
 		1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */; };
+		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
 		10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAF2473130F0032C056 /* TextFieldExtension.swift */; };
 		10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FB124741EB90032C056 /* SimpleAlertController.swift */; };
 		10716FB42476C6B60032C056 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FB32476C6B60032C056 /* ShopViewController.swift */; };
 		10716FB82476E98E0032C056 /* ShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FB72476E98E0032C056 /* ShopsInteractor.swift */; };
-		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -229,6 +230,7 @@
 		103346652469458000D5EED0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		103346702469461700D5EED0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		103346722469462900D5EED0 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
+		103365FE247CFFCB009AF19A /* ArchieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchieCard.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -271,11 +273,11 @@
 		1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsInteractor.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoEventDetailsController.swift; sourceTree = "<group>"; };
+		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		10716FAF2473130F0032C056 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		10716FB124741EB90032C056 /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
 		10716FB32476C6B60032C056 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		10716FB72476E98E0032C056 /* ShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsInteractor.swift; sourceTree = "<group>"; };
-		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 		103345ED24606C2000D5EED0 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				10336600247D2033009AF19A /* ArchieCard */,
 				103345F524606D2D00D5EED0 /* Shop.storyboard */,
 				10716FB32476C6B60032C056 /* ShopViewController.swift */,
 				10716FB72476E98E0032C056 /* ShopsInteractor.swift */,
@@ -490,6 +493,13 @@
 			path = "Forgot Password";
 			sourceTree = "<group>";
 		};
+		10336600247D2033009AF19A /* ArchieCard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ArchieCard;
+			sourceTree = "<group>";
+		};
 		1039FDF0244F1A1800190088 = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +575,7 @@
 				103346112461490600D5EED0 /* CreditHistory.swift */,
 				10048F3C246EDCEE00684A87 /* EventDetails.swift */,
 				10048F4D246F2B6400684A87 /* JsonAny.swift */,
+				103365FE247CFFCB009AF19A /* ArchieCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1061,6 +1072,7 @@
 				10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */,
 				10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
+				103365FF247CFFCB009AF19A /* ArchieCard.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
 				1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */,
