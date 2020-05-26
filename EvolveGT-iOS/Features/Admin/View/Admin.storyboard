@@ -619,15 +619,12 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ue6-YP-5fI">
                                 <rect key="frame" x="20" y="563" width="374" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNG-iu-UsA" customClass="EVCheckBox" customModule="EvolveGT" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNG-iu-UsA" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uNG-iu-UsA" secondAttribute="height" multiplier="1:1" id="Hrk-Y1-bRp"/>
                                             <constraint firstAttribute="width" constant="30" id="t1h-sD-kId"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="termsCheckBoxAction:" destination="I6W-JR-Ofa" eventType="touchUpInside" id="00M-Tc-U8r"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the terms of this agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-Ub-u5v">
                                         <rect key="frame" x="38" y="0.0" width="336" height="30"/>
@@ -684,7 +681,7 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
                     <connections>
                         <outlet property="canvasView" destination="nlg-ws-N7y" id="LL7-YA-j9b"/>
                         <outlet property="saveButton" destination="IDE-1d-0pF" id="U6Q-cK-l84"/>
-                        <outlet property="termsCheckBox" destination="uNG-iu-UsA" id="kk1-Nd-gon"/>
+                        <outlet property="termsCheckBox" destination="uNG-iu-UsA" id="vUi-ol-uk2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaI-Nd-Ikl" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -73,9 +73,16 @@ struct LoadingIndicatorMessages {
     static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
     
-    static let addingEventToCart = "Adding this event to cart..."
+    
     
     static let loadingEventDetails = "Loading event details..."
+    
+    static let loadingProducts = "Loading products..."
+    static let loadingProductDetails = "Loading product details..."
+    
+    
+    static let addingEventToCart = "Adding this event to cart..."
+    static let addingProductToCart = "Adding this product to cart..."
     
     
     
@@ -111,6 +118,9 @@ struct ErrorMessages {
     static let emptyEventClass = "Please select at least one class"
     static let skillNotSelected = "Please select a skill set"
     static let transponderNotSelected = "Please select transponder or enter your transponder number"
+    
+    
+     static let emptyProducts = "Unfortunately, there is no products available right now."
 }
 
 struct SuccessMessages {
@@ -120,7 +130,7 @@ struct SuccessMessages {
      static let passwordChanged = "Your password has been changed successfully."
     
     static let eventAddedToCart = "Your event has been added to the cart successfully."
-    
+    static let productAddedToCart = "Your Product has been added to the cart successfully."
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."

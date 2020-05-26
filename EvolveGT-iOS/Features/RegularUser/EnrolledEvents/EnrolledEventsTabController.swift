@@ -39,7 +39,7 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
             
             guard changeCurrentIndex == true else { return }
             
-            oldCell?.label.textColor = .black
+            oldCell?.label.textColor = .darkGray
             newCell?.label.textColor = .white
             
             self.title =  newCell?.label.text?.capitalized ?? ""

@@ -48,3 +48,14 @@ struct TrainingRequest: Codable {
 struct RentalRequest: Codable {
     var price, slug, id, selectedSize, rentalName: String?
 }
+struct ProductCartRequest: Codable {
+    var selectedAttributes: [ProductCartAttribute]?
+    var price: String?
+    var quantity: Int?
+    var slug, serial: String?
+}
+
+// MARK: - SelectedAttribute
+struct ProductCartAttribute: Codable {
+    var name, value: String?
+}
