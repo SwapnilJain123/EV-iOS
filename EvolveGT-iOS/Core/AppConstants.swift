@@ -38,10 +38,11 @@ struct ScreenTitle{
     
     static let TITLE_CREDIT_HISTORY = "Credit History"
     static let TITLE_FORGOT_PASSWORD = "Forgot Password"
-    static let TITLE_ABOUT_US = "AboutUs"
-     static let TITLE_CHANGE_PASSWORD = "CHANGE Password"
+    static let TITLE_ABOUT_US = "About Us"
+     static let TITLE_CHANGE_PASSWORD = "Change Password"
     
      static let TITLE_SHOPS = "Shop"
+    static let TITLE_ARCHIE_CARDS = "Archie Cards"
     
 }
 

@@ -89,6 +89,8 @@ class ShopViewController : TabbedViewController, BaseViewDelegate{
     
     
     @IBAction func didPressArchieCards(_ sender: Any) {
+        
+        self.ext.pushViewController(storyBoard: "ArchieCard", VCIdentifier: "archieCardVC")
     }
     
     @IBAction func didPressRentals(_ sender: Any) {

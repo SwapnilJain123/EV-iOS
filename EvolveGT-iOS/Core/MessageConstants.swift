@@ -76,6 +76,7 @@ struct LoadingIndicatorMessages {
     
     
     static let loadingEventDetails = "Loading event details..."
+    static let loadingArchieCardList = "Loading archie cards..."
     
     static let loadingProducts = "Loading products..."
     static let loadingProductDetails = "Loading product details..."

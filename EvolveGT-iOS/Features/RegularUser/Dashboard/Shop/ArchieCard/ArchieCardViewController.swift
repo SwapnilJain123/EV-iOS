@@ -8,15 +8,55 @@
 
 import UIKit
 
-class ArchieCardViewController: UIViewController {
+class ArchieCardViewController: ETViewController, ArchieCardListDelegate , BaseViewDelegate {
+    func didFetchArchieCardList(archieCardList: [ArchieCard]) {
+        self.archieCardList = archieCardList
+        archieCardTableView.reloadData()
+    }
+    
+    
+     var archieCardList = [ArchieCard]()
 
+    @IBOutlet weak var archieCardTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       
+        
+        archieCardTableView.dataSource = self
+        archieCardTableView.delegate = self
+        
+       let archieCardInteractor = ArchieCardInteractor()
+        archieCardInteractor.archieCardListDelegate = self
+        archieCardInteractor.viewDelegate = self
+        archieCardInteractor.getArchieCards()
+   
 
+              
        
     }
     
+    override func getScreenTitle() -> String? {
+        ScreenTitle.TITLE_ARCHIE_CARDS
+    }
+    
+    
+    
 
     
 
+}
+extension ArchieCardViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        archieCardList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "archieCardCell", for: indexPath) as! ArchiCardCell
+        cell.showData(archieCard: archieCardList[indexPath.row])
+        return cell
+    }
+    
+    
 }
