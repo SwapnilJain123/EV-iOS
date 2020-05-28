@@ -25,6 +25,19 @@ struct ArchiCardListResponse: Codable {
 }
 
 
+struct ArchieCardDetailsResponse: Codable {
+    
+    var archieCards: ArchieCardDetails?
+    
+    enum CodingKeys: String, CodingKey {
+           case archieCards = "data"
+    }
+}
+
+
+
+
+
 
 
 struct CategoryListResponse: Codable {

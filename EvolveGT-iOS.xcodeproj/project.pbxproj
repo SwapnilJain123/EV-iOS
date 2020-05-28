@@ -89,6 +89,7 @@
 		10336606247D2229009AF19A /* ArchieCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10336605247D2229009AF19A /* ArchieCard.storyboard */; };
 		10336612247E55DE009AF19A /* ArchiCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336611247E55DE009AF19A /* ArchiCardCell.swift */; };
 		10336614247E8214009AF19A /* ArchiCardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336613247E8214009AF19A /* ArchiCardAPI.swift */; };
+		10336642247FA2CE009AF19A /* ArchieCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336641247FA2CD009AF19A /* ArchieCardDetailsViewController.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -247,6 +248,7 @@
 		10336605247D2229009AF19A /* ArchieCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArchieCard.storyboard; sourceTree = "<group>"; };
 		10336611247E55DE009AF19A /* ArchiCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiCardCell.swift; sourceTree = "<group>"; };
 		10336613247E8214009AF19A /* ArchiCardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiCardAPI.swift; sourceTree = "<group>"; };
+		10336641247FA2CD009AF19A /* ArchieCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchieCardDetailsViewController.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -523,12 +525,21 @@
 		10336600247D2033009AF19A /* ArchieCard */ = {
 			isa = PBXGroup;
 			children = (
+				1033663E247FA267009AF19A /* ArchieCardDetails */,
 				10336601247D21BF009AF19A /* ArchieCardViewController.swift */,
 				10336603247D21F1009AF19A /* ArchieCardInteractor.swift */,
 				10336605247D2229009AF19A /* ArchieCard.storyboard */,
 				10336611247E55DE009AF19A /* ArchiCardCell.swift */,
 			);
 			path = ArchieCard;
+			sourceTree = "<group>";
+		};
+		1033663E247FA267009AF19A /* ArchieCardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				10336641247FA2CD009AF19A /* ArchieCardDetailsViewController.swift */,
+			);
+			path = ArchieCardDetails;
 			sourceTree = "<group>";
 		};
 		1039FDF0244F1A1800190088 = {
@@ -1150,6 +1161,7 @@
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
 				1033464824681B4B00D5EED0 /* UIButton+Extension.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
+				10336642247FA2CE009AF19A /* ArchieCardDetailsViewController.swift in Sources */,
 				103345FC2460718F00D5EED0 /* ETTabViewController.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,

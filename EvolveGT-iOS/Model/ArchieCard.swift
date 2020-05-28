@@ -12,3 +12,13 @@ struct ArchieCard: Codable {
     var image: String?
     var price: String?
 }
+
+
+
+// MARK: - DataClass
+struct ArchieCardDetails: Codable {
+    var title, slug, content: String?
+    var image: String?
+    var price: String?
+}
+

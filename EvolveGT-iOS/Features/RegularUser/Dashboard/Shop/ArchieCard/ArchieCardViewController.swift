@@ -15,26 +15,26 @@ class ArchieCardViewController: ETViewController, ArchieCardListDelegate , BaseV
     }
     
     
-     var archieCardList = [ArchieCard]()
-
+    var archieCardList = [ArchieCard]()
+    
     @IBOutlet weak var archieCardTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-       
+        
         
         archieCardTableView.dataSource = self
         archieCardTableView.delegate = self
         
-       let archieCardInteractor = ArchieCardInteractor()
+        let archieCardInteractor = ArchieCardInteractor()
         archieCardInteractor.archieCardListDelegate = self
         archieCardInteractor.viewDelegate = self
         archieCardInteractor.getArchieCards()
-   
-
-              
-       
+        
+        
+        
+        
     }
     
     override func getScreenTitle() -> String? {
@@ -43,9 +43,9 @@ class ArchieCardViewController: ETViewController, ArchieCardListDelegate , BaseV
     
     
     
-
     
-
+    
+    
 }
 extension ArchieCardViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +56,20 @@ extension ArchieCardViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "archieCardCell", for: indexPath) as! ArchiCardCell
         cell.showData(archieCard: archieCardList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let VC = storyboard?.instantiateViewController(withIdentifier: "archieCardDetailsVC")as! ArchieCardDetailsViewController
+        
+        var selectedArchieCard = archieCardList[indexPath.row]
+        VC.slug = selectedArchieCard.slug ?? ""
+        VC.selectedArchieTitle = selectedArchieCard.title ?? ""
+        
+        
+        
+        navigationController?.pushViewController(VC, animated: true)
+        
     }
     
     
