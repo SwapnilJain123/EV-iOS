@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class ShopViewController : TabbedViewController, BaseViewDelegate{
+class ShopViewController : TabbedViewController{
     
     @IBOutlet weak var shopsBanner: UIImageView!
     

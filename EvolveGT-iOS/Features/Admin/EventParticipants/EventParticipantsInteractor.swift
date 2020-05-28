@@ -55,7 +55,7 @@ class EventParticipantIntercator : BaseInteractor{
     
     
     func filter(_ query: String){
-        if query.isEmpty{
+        if query.isEmpty(){
             self.delegate?.didFetchParticipants(participants:  participants)
         }else{
             let filteredList = self.participants.filter { ($0.displayName?.lowercased().contains(query.lowercased()) ?? false)}

@@ -59,3 +59,20 @@ struct ProductCartRequest: Codable {
 struct ProductCartAttribute: Codable {
     var name, value: String?
 }
+struct CartRemoveRequest: Codable{
+    var cartId, userId, itemId, method: String?
+    
+    init(cartItem : CartItem){
+        self.cartId = cartItem.cartID
+        self.userId = cartItem.userID
+        self.itemId = cartItem.objectID
+        self.method = cartItem.source?.rawValue
+    }
+    
+      enum CodingKeys: String, CodingKey {
+        case cartId = "cartid"
+        case itemId = "itemid"
+        case method
+        case userId = "id"
+    }
+}

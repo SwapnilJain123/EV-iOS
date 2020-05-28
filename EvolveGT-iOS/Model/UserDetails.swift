@@ -128,4 +128,33 @@ struct UserDetails: Codable {
     public var fullName : String {
         return "\(firstName ?? "") \(lastName ?? "")"
     }
+    
+    var billingAddress : String{
+        if billingAddress1?.isEmpty() ?? true{
+            return ""
+        }else{
+            var address = "\(fullName.capitalized)\n\(billingAddress1!)\n\(billingAddress2 ?? "")\n\(billingCompany ?? "")"
+            if billingCity?.isEmpty() ?? true == false{
+                address = "\(address)\n\(billingCity!), \(billingState ?? "")-\(billingPostcode ?? "")"
+            }
+            address = "\(address)\n\(billingCountry!)"
+             if billingPhone?.isEmpty() ?? true == false{
+                 address = "\(address)\n\(billingPhone!)"
+            }
+            return address
+        }
+    }
+    
+    var shippingAddress : String{
+        if shippingAddress1?.isEmpty() ?? true{
+            return ""
+        }else{
+            var address = "\(fullName.capitalized)\n\(shippingAddress1!)\n\(shippingAddress2 ?? "")\n\(shippingCompany ?? "")"
+            if shippingCity?.isEmpty() ?? true == false{
+                address = "\(address)\n\(shippingCity!), \(shippingState ?? "")-\(shippingPostcode ?? "")"
+            }
+            address = "\(address)\n\(shippingCountry!)"
+            return address
+        }
+    }
 }

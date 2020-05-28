@@ -90,6 +90,17 @@
 		10336612247E55DE009AF19A /* ArchiCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336611247E55DE009AF19A /* ArchiCardCell.swift */; };
 		10336614247E8214009AF19A /* ArchiCardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336613247E8214009AF19A /* ArchiCardAPI.swift */; };
 		10336642247FA2CE009AF19A /* ArchieCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336641247FA2CD009AF19A /* ArchieCardDetailsViewController.swift */; };
+		103365F9247C49B7009AF19A /* CartCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103365F8247C49B7009AF19A /* CartCells.swift */; };
+		103365FB247C5334009AF19A /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103365FA247C5334009AF19A /* CartItem.swift */; };
+		10336608247D3D99009AF19A /* CartListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336607247D3D99009AF19A /* CartListController.swift */; };
+		1033660A247D3E02009AF19A /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336609247D3E02009AF19A /* CartInteractor.swift */; };
+		1033660C247D3E7D009AF19A /* CheckoutApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033660B247D3E7D009AF19A /* CheckoutApi.swift */; };
+		1033660E247D3EC4009AF19A /* CheckoutApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033660D247D3EC4009AF19A /* CheckoutApiConstant.swift */; };
+		10336610247D3FED009AF19A /* CheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033660F247D3FED009AF19A /* CheckoutResponse.swift */; };
+		10336617247ECE18009AF19A /* ReviewCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336616247ECE18009AF19A /* ReviewCartController.swift */; };
+		10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10336644247FCE53009AF19A /* ShippingIndicator.xib */; };
+		10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336645247FCE53009AF19A /* ShippingIndicator.swift */; };
+		10336649247FF4BB009AF19A /* CartReviewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336648247FF4BB009AF19A /* CartReviewCells.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -249,6 +260,17 @@
 		10336611247E55DE009AF19A /* ArchiCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiCardCell.swift; sourceTree = "<group>"; };
 		10336613247E8214009AF19A /* ArchiCardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiCardAPI.swift; sourceTree = "<group>"; };
 		10336641247FA2CD009AF19A /* ArchieCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchieCardDetailsViewController.swift; sourceTree = "<group>"; };
+		103365F8247C49B7009AF19A /* CartCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCells.swift; sourceTree = "<group>"; };
+		103365FA247C5334009AF19A /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		10336607247D3D99009AF19A /* CartListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListController.swift; sourceTree = "<group>"; };
+		10336609247D3E02009AF19A /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		1033660B247D3E7D009AF19A /* CheckoutApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutApi.swift; sourceTree = "<group>"; };
+		1033660D247D3EC4009AF19A /* CheckoutApiConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutApiConstant.swift; sourceTree = "<group>"; };
+		1033660F247D3FED009AF19A /* CheckoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutResponse.swift; sourceTree = "<group>"; };
+		10336616247ECE18009AF19A /* ReviewCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCartController.swift; sourceTree = "<group>"; };
+		10336644247FCE53009AF19A /* ShippingIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShippingIndicator.xib; sourceTree = "<group>"; };
+		10336645247FCE53009AF19A /* ShippingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingIndicator.swift; sourceTree = "<group>"; };
+		10336648247FF4BB009AF19A /* CartReviewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartReviewCells.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -443,7 +465,11 @@
 		103345EE24606C2700D5EED0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				10336615247ECDF7009AF19A /* ReviewCart */,
 				103345F324606D2200D5EED0 /* Cart.storyboard */,
+				103365F8247C49B7009AF19A /* CartCells.swift */,
+				10336607247D3D99009AF19A /* CartListController.swift */,
+				10336609247D3E02009AF19A /* CartInteractor.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -523,6 +549,7 @@
 			sourceTree = "<group>";
 		};
 		10336600247D2033009AF19A /* ArchieCard */ = {
+		10336615247ECDF7009AF19A /* ReviewCart */ = {
 			isa = PBXGroup;
 			children = (
 				1033663E247FA267009AF19A /* ArchieCardDetails */,
@@ -530,16 +557,23 @@
 				10336603247D21F1009AF19A /* ArchieCardInteractor.swift */,
 				10336605247D2229009AF19A /* ArchieCard.storyboard */,
 				10336611247E55DE009AF19A /* ArchiCardCell.swift */,
+				10336616247ECE18009AF19A /* ReviewCartController.swift */,
+				10336648247FF4BB009AF19A /* CartReviewCells.swift */,
 			);
 			path = ArchieCard;
+			path = ReviewCart;
 			sourceTree = "<group>";
 		};
 		1033663E247FA267009AF19A /* ArchieCardDetails */ = {
+		10336643247FCE37009AF19A /* ShippingIndicator */ = {
 			isa = PBXGroup;
 			children = (
 				10336641247FA2CD009AF19A /* ArchieCardDetailsViewController.swift */,
+				10336645247FCE53009AF19A /* ShippingIndicator.swift */,
+				10336644247FCE53009AF19A /* ShippingIndicator.xib */,
 			);
 			path = ArchieCardDetails;
+			path = ShippingIndicator;
 			sourceTree = "<group>";
 		};
 		1039FDF0244F1A1800190088 = {
@@ -620,6 +654,7 @@
 				10048F4D246F2B6400684A87 /* JsonAny.swift */,
 				103365FE247CFFCB009AF19A /* ArchieCard.swift */,
 				10716FC12478290B0032C056 /* Product.swift */,
+				103365FA247C5334009AF19A /* CartItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -671,6 +706,7 @@
 				1039FE8124509F3100190088 /* CompletedEventsResponse.swift */,
 				10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */,
 				1033460724608E3100D5EED0 /* UsreDataResponse.swift */,
+				1033660F247D3FED009AF19A /* CheckoutResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -740,6 +776,7 @@
 				1039FE4F2450076300190088 /* UserApiConstants.swift */,
 				1039FE862450A06C00190088 /* AdminApiConstants.swift */,
 				10048F1D246DB47700684A87 /* CartApiConstant.swift */,
+				1033660D247D3EC4009AF19A /* CheckoutApiConstant.swift */,
 			);
 			path = UrlConstants;
 			sourceTree = "<group>";
@@ -753,6 +790,7 @@
 				10048F1F246DB7C000684A87 /* CartApi.swift */,
 				10716FC424782FE20032C056 /* ShopsApi.swift */,
 				10336613247E8214009AF19A /* ArchiCardAPI.swift */,
+				1033660B247D3E7D009AF19A /* CheckoutApi.swift */,
 			);
 			path = UserApi;
 			sourceTree = "<group>";
@@ -888,6 +926,7 @@
 		10BDD024245B100700F05700 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				10336643247FCE37009AF19A /* ShippingIndicator */,
 				10716FA924706B870032C056 /* DividerView.swift */,
 				10716FDA247BE20F0032C056 /* DropDownList.swift */,
 			);
@@ -988,6 +1027,7 @@
 			files = (
 				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
+				10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
 				103346662469458000D5EED0 /* Main.storyboard in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
@@ -1075,12 +1115,16 @@
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
 				10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */,
+				1033660C247D3E7D009AF19A /* CheckoutApi.swift in Sources */,
 				1033462924669A5F00D5EED0 /* EnrolledEventsTabController.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
+				10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				10048F44246F094800684A87 /* AboutUsViewController.swift in Sources */,
+				10336649247FF4BB009AF19A /* CartReviewCells.swift in Sources */,
 				1033460224608C7500D5EED0 /* UserDataRequest.swift in Sources */,
 				10716FBB247821840032C056 /* ShopTabViewController.swift in Sources */,
+				1033660A247D3E02009AF19A /* CartInteractor.swift in Sources */,
 				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,
 				10048F11246D018F00684A87 /* EventsApi.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
@@ -1090,6 +1134,7 @@
 				10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */,
 				10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */,
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
+				103365FB247C5334009AF19A /* CartItem.swift in Sources */,
 				1039FE602450569F00190088 /* ViewController+Extension.swift in Sources */,
 				1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */,
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
@@ -1104,10 +1149,12 @@
 				1039FE43244F608100190088 /* Logger.swift in Sources */,
 				10048F46246F0F3A00684A87 /* AppVersion.swift in Sources */,
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
+				103365F9247C49B7009AF19A /* CartCells.swift in Sources */,
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
 				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
 				10048F0D246D015400684A87 /* Event.swift in Sources */,
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
+				1033660E247D3EC4009AF19A /* CheckoutApiConstant.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidator+Extension.swift in Sources */,
@@ -1133,6 +1180,7 @@
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */,
 				10716FD52479A63C0032C056 /* ProductDetailsController.swift in Sources */,
+				10336617247ECE18009AF19A /* ReviewCartController.swift in Sources */,
 				10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
 				10716FBE247822AA0032C056 /* ProductListController.swift in Sources */,
@@ -1150,6 +1198,7 @@
 				10048F3D246EDCEE00684A87 /* EventDetails.swift in Sources */,
 				10048F5624702D5D00684A87 /* CheckBox+Extension.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
+				10336608247D3D99009AF19A /* CartListController.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
@@ -1166,6 +1215,7 @@
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,
 				103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */,
+				10336610247D3FED009AF19A /* CheckoutResponse.swift in Sources */,
 				10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
 				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,

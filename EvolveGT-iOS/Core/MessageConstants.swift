@@ -85,7 +85,8 @@ struct LoadingIndicatorMessages {
     static let addingEventToCart = "Adding this event to cart..."
     static let addingProductToCart = "Adding this product to cart..."
     
-    
+    static let loadingCartList = "Loading your cart list..."
+    static let deletingCartItem = "We are removing an item from your cart."
     
     static let uploadingSignature = "Please wait, We're saving your signature."
 }
@@ -121,20 +122,24 @@ struct ErrorMessages {
     static let transponderNotSelected = "Please select transponder or enter your transponder number"
     
     
-     static let emptyProducts = "Unfortunately, there is no products available right now."
+    static let emptyProducts = "Unfortunately, there is no products available right now."
+    static let emptyCartList = "Sorry, Your cart is empty."
+    static let hasOutOfStockItems = "Please delete out of stock items from your cart to continue."
 }
 
 struct SuccessMessages {
     
     static let skillUpgraded = "Skill Level upgraded successfully"
     static let signatureSaved = "Your Signature has been saved."
-     static let passwordChanged = "Your password has been changed successfully."
+    static let passwordChanged = "Your password has been changed successfully."
     
     static let eventAddedToCart = "Your event has been added to the cart successfully."
     static let productAddedToCart = "Your Product has been added to the cart successfully."
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."
+    static let cartItemDeleted = " Successfully deleted."
+    
 }
 
 struct AlertTitle{
