@@ -42,6 +42,8 @@ struct ScreenTitle{
      static let TITLE_CHANGE_PASSWORD = "CHANGE Password"
     
      static let TITLE_SHOPS = "Shop"
+     static let TITLE_CART = "Cart"
+    static let TITLE_REVIEW_CART = "Review Cart"
     
 }
 

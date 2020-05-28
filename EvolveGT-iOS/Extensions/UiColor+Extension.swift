@@ -28,6 +28,7 @@ extension UIColor {
     private static let EVOLVE_LIGHT_BACKGROUND = "#b3f5c4"
     private static let MOTO_LIGHT_BACKGROUND = "#94a2d1"
     
+    private static let INACTIVE_GRAY = "#E6E6E6"
     //
     
     static func getBackgroundGray() -> UIColor{
@@ -71,7 +72,9 @@ extension UIColor {
     static func getMotoColor() -> UIColor{
         UIColor.init(hexFromString: UIColor.COLOR_MOTO)
     }
-    
+    static func getInactiveGray() -> UIColor{
+        UIColor.init(hexFromString: UIColor.INACTIVE_GRAY)
+    }
     convenience init(hexFromString:String, alpha:CGFloat = 1.0) {
         var cString:String = hexFromString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         var rgbValue:UInt32 = 10066329 //color #999999 if string has wrong format

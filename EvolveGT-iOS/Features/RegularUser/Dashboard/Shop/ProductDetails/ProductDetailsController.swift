@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProductDetailsController : ETViewController , BaseViewDelegate, ProductDetailsDelegate{
+class ProductDetailsController : ETViewController, ProductDetailsDelegate{
    
     
     @IBOutlet weak var productDetailsView: UITableView!

@@ -36,7 +36,7 @@ class ProductDetails: Codable {
                 selectedVariants.append(productVariation.selectedVariant.variantID ?? "")
             }
         }
-        return selectedVariants.filter({$0.isEmpty == false})
+        return selectedVariants.filter({$0.isEmpty() == false})
     }
     func getItemStatus() -> ProductItemStatus?{
         if let allItemStatusList = itemStatusList{
@@ -125,7 +125,7 @@ class ProductVariation: Codable {
     var options: [String]{
         var optionsList = [String]()
         if let allVariants = variants{
-            for variant in allVariants where variant.value?.isEmpty ?? true == false{
+            for variant in allVariants where variant.value?.isEmpty() ?? true == false{
                 optionsList.append(variant.value!)
             }
         }

@@ -61,7 +61,7 @@ class CompletedEventsInteractor : BaseInteractor{
     
     func search(query: String) {
         
-        if query.isEmpty{
+        if query.isEmpty(){
             self.delegate?.didFetchCompletedEvents(events: completedEvents)
         }else{
             let filteredEvents =  completedEvents.filter{
@@ -72,7 +72,7 @@ class CompletedEventsInteractor : BaseInteractor{
     }
     
     func filterBy(_ query:String, _ filterType: FilterType){
-        if query.isEmpty && filterType != .none{
+        if query.isEmpty() && filterType != .none{
             return
         }
         

@@ -25,7 +25,7 @@ struct EventParticipant: Codable {
     var namewithRole : String{
         
         if let name = displayName{
-            if !(role?.isEmpty ?? false){
+            if !(role?.isEmpty() ?? false){
                 return "\(name)(\(role!))".uppercased()
             }else{
                 return name.uppercased()

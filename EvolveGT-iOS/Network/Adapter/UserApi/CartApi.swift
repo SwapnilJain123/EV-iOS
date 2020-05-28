@@ -30,4 +30,13 @@ class CartApi : BaseApiAdapter{
            setParameters(parameters: makeDictionary(request))
            super.makeRequest(method: .POST)
        }
+    
+    
+    func removeFromCart(cartItem: CartItem){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.REMOVE_FROM_CART)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(CartRemoveRequest(cartItem: cartItem)))
+        super.makeRequest(method: .POST)
+    }
 }
