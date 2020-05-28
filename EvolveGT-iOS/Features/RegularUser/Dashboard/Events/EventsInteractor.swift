@@ -111,7 +111,7 @@ class EventsInteractor :BaseInteractor{
     }
     
     func filterBy(_ query:String, _ filterType: FilterType){
-        if query.isEmpty && filterType != .none{
+        if query.isEmpty() && filterType != .none{
             return
         }
         
@@ -224,13 +224,13 @@ class EventsInteractor :BaseInteractor{
     
     func addMotoEventToCart(_ event: EventDetails){
         
-        if event.selectedSkill.isEmpty{
+        if event.selectedSkill.isEmpty(){
             self.eventDetailsDelegate?.validationError(ErrorMessages.skillNotSelected)
             return
         }else if event.selectedEventClasses.count == 0{
             self.eventDetailsDelegate?.validationError(ErrorMessages.emptyEventClass)
             return
-        }else if ((event.transponder?.isSelected ?? false) == false && ((event.transponder?.number ?? "").isEmpty)){
+        }else if ((event.transponder?.isSelected ?? false) == false && ((event.transponder?.number ?? "").isEmpty())){
             self.eventDetailsDelegate?.validationError(ErrorMessages.transponderNotSelected)
             return 
         }
@@ -311,7 +311,7 @@ class EventsInteractor :BaseInteractor{
                         sections.append(.transponder)
                         eventDetails.transponder!.isSelected = eventDetails.transponder!.inCart ?? false
                     }
-                    if eventDetails.productInfo?.isEmpty ?? true == false{
+                    if eventDetails.productInfo?.isEmpty() ?? true == false{
                         sections.append(.about)
                     }
                     

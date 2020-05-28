@@ -57,10 +57,10 @@ class LoginInteractor : BaseInteractor{
     
     func validate() -> Bool{
         
-        if email.isEmpty || !email.isValidEmail(){
+        if email.isEmpty() || !email.isValidEmail(){
             delegate?.showLoginError(errorMessage: MessageConstants.KPromptMsgEnterValidEmail)
             return false
-        }else if password.isEmpty{
+        }else if password.isEmpty(){
             delegate?.showLoginError(errorMessage: MessageConstants.KPromptMsgEnterPassword)
             return false
         }

@@ -85,7 +85,7 @@ class ETViewController : UIViewController{
     }
 }
 
-extension ETViewController{
+extension ETViewController: BaseViewDelegate{
     @objc func showSuccessToastMessage(message: String) {
         self.ext.showSuccessToast(message: message, handler: nil)
     }

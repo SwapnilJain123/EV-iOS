@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 
-class ProductListController : ETViewController, IndicatorInfoProvider, BaseViewDelegate{
+class ProductListController : ETViewController, IndicatorInfoProvider{
     
     @IBOutlet weak var productListView: UICollectionView!
     

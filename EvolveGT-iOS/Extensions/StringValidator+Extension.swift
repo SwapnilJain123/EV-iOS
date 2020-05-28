@@ -22,4 +22,8 @@ extension String {
             return "https://evolvegt.com/" + self
         }
     }
+    
+    func isEmpty() -> Bool{
+        self.count == 0
+    }
 }

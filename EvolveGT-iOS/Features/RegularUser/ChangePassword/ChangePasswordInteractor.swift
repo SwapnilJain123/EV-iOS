@@ -19,12 +19,12 @@ class ChangePasswordInteractor:BaseInteractor {
    
     func changePassword(_ currentPassword: String, _ newPassword: String, _ confirmPassword: String){
         
-        if currentPassword.isEmpty{
+        if currentPassword.isEmpty(){
             
             self.delegate?.changePasswordMessage(message: ErrorMessages.error_empty_current_password)
             
            
-        }else if newPassword.isEmpty{
+        }else if newPassword.isEmpty(){
             self.delegate?.changePasswordMessage(message: ErrorMessages.error_empty_password)
             
         }else if newPassword != confirmPassword{

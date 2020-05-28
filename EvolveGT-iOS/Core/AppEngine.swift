@@ -32,6 +32,14 @@ class AppEngine{
     var authToken = ""
     private var userDefaultHelper = UserDefaultHelper.sharedInstance
     
+    var walletEnabled = false
+    var walletBalance: Double = 0
+    var cartListCount = 0{
+        didSet{
+            
+        }
+    }
+    
     var appMode : AppMode = .APP_EV
     private init(){
         
@@ -93,7 +101,9 @@ class AppEngine{
         userDefaultHelper.delete(key: KEY_USER)
         self.currentUser = nil
         self.authToken = ""
-        
+        walletEnabled = false
+        walletBalance = 0
+        cartListCount = 0
     }
     
    
