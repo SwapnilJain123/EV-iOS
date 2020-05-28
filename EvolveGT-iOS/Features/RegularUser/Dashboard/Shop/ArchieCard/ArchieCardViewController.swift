@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArchieCardViewController: ETViewController, ArchieCardListDelegate , BaseViewDelegate {
+class ArchieCardViewController: ETViewController, ArchieCardListDelegate {
     func didFetchArchieCardList(archieCardList: [ArchieCard]) {
         self.archieCardList = archieCardList
         archieCardTableView.reloadData()
@@ -20,9 +20,7 @@ class ArchieCardViewController: ETViewController, ArchieCardListDelegate , BaseV
     @IBOutlet weak var archieCardTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        self.ext.showBackButton()
         
         archieCardTableView.dataSource = self
         archieCardTableView.delegate = self
@@ -62,7 +60,7 @@ extension ArchieCardViewController:UITableViewDelegate,UITableViewDataSource{
         
         let VC = storyboard?.instantiateViewController(withIdentifier: "archieCardDetailsVC")as! ArchieCardDetailsViewController
         
-        var selectedArchieCard = archieCardList[indexPath.row]
+        let selectedArchieCard = archieCardList[indexPath.row]
         VC.slug = selectedArchieCard.slug ?? ""
         VC.selectedArchieTitle = selectedArchieCard.title ?? ""
         

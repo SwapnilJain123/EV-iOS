@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegate,BaseViewDelegate {
+class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegate {
     func didFetchArchieCardDetails(archieCardDetails: ArchieCardDetails) {
         
         Log.d("got archieCard details")
