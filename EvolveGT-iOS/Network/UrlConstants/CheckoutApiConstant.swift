@@ -9,4 +9,8 @@
 import Foundation
 struct CheckoutApiConstants{
     static let CART_LIST = "cart/beforeOrder"
+    static let VALIDATE_COUPON = "checkout/validateCoupon"
+    
+    static let PLACE_ORDER = "checkout/placeOrder"
+     static let RESET_CART = "checkout/resetCart"
 }

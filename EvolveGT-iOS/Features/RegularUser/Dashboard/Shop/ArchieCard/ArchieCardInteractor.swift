@@ -21,7 +21,7 @@ class ArchieCardInteractor:BaseInteractor{
         
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingArchieCardList)
         
-        let archieCardApi = ArchieCardApi()
+        let archieCardApi = ShopsApi()
         archieCardApi.setCompletionHandler(){data , error in
             
             self.viewDelegate?.hideProgressIndicator()
@@ -46,7 +46,7 @@ class ArchieCardInteractor:BaseInteractor{
     func getArchieCardDetails(slug:String){
         
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingArchieCardList)
-        let archieCardApi = ArchieCardApi()
+        let archieCardApi = ShopsApi()
         archieCardApi.setCompletionHandler{data , error in
             if error == nil{
                 

@@ -24,14 +24,10 @@ extension UITableView{
     }
 }
 extension UITableViewCell{
-    func frameToCardView(backgroundView: UIView){
-        backgroundView.layer.cornerRadius = 5.0
-        backgroundView.layer.borderColor  =  UIColor.clear.cgColor
-        backgroundView.layer.borderWidth = 5.0
-        backgroundView.layer.shadowOpacity = 0.5
-        backgroundView.layer.shadowColor =  UIColor.black.cgColor
-        backgroundView.layer.shadowRadius = 5.0
-        backgroundView.layer.shadowOffset = CGSize(width:5, height: 5)
-        backgroundView.layer.masksToBounds = true
-    }
+    
+    func styleDividers(){
+           for divider in self.contentView.subviews where ((divider as? DividerView) != nil) {
+               divider.backgroundColor = .getAppThemeColor()
+           }
+       }
 }

@@ -83,6 +83,11 @@ class ETViewController : UIViewController{
         self.ext.removeLoadingIndicatorImmediately()
         super.viewWillDisappear(animated)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
+    }
 }
 
 extension ETViewController: BaseViewDelegate{

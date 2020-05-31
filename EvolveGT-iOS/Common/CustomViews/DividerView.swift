@@ -21,8 +21,13 @@ class DividerView : UIView{
       setupView()
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        setupView()
+    }
     
     private func setupView() {
       backgroundColor = .getAppThemeColor()
+        Log.d("Divider initialized")
     }
 }

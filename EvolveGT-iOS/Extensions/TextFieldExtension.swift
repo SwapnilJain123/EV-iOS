@@ -11,6 +11,10 @@ import SkyFloatingLabelTextField
 
 extension SkyFloatingLabelTextField{
     func applyColorTheme(){
-        self.selectedTitleColor = .getAppThemeColor()
+        let color = UIColor.getAppThemeColor()
+        self.selectedTitleColor = color
+        self.tintColor = color
+        self.selectedTitleColor = color
+        self.selectedLineColor = color
     }
 }

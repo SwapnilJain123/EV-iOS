@@ -15,6 +15,9 @@ class ChangePasswordViewController: ETViewController {
         super.viewDidLoad()
         
         changePassword.applyColorTheme()
+        currentPasswordTF.applyColorTheme()
+        newPasswordTF.applyColorTheme()
+        confirmPasswordTF.applyColorTheme()
         
     }
     override func viewWillAppear(_ animated: Bool) {

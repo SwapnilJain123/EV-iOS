@@ -10,22 +10,43 @@ import Foundation
 import UIKit
 class ReviewCartController : ETViewController{
     @IBOutlet weak var shippingIndicator: ShippingIndicator!
+    @IBOutlet weak var btnPayment: UIButton!
     
     @IBOutlet weak var cartSummaryView: UITableView!
     var interactor : CartInteractor? = nil
     var cartItems : [CartItem]?
     var sections : [CartReviewSections]? = nil
     
+    var hasOutOfStockItems = false
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_REVIEW_CART
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        btnPayment.applyColorTheme()
+       
+        DispatchQueue.main.async {
+            self.sections?.removeAll()
+            self.cartSummaryView.reloadData()
+            self.interactor?.computeCartReviewData()
+        }
+       
+        customizeShippingIndicator()
+       
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         btnPayment.applyColorTheme()
         cartSummaryView.dataSource = self
-        customizeShippingIndicator()
-        sections = interactor?.getCartReviewSections()
+        interactor?.cartReviewDelegate = self
+        
+    }
+    override func didChangeAppTheme() {
+        Log.d("Apply theme :-)")
+         interactor?.computeCartReviewData()
     }
     func customizeShippingIndicator(){
         shippingIndicator.leftCircleColor = .clear
@@ -36,7 +57,34 @@ class ReviewCartController : ETViewController{
         shippingIndicator.leftLineColor = .getInactiveGray()
         shippingIndicator.rightLineColor = .getInactiveGray()
         shippingIndicator.indicatorViewBackground = UIColor(hexFromString: "#F5F6F7")
+        
+        
+        if interactor?.total ?? 0 == 0{
+            shippingIndicator.leftCircleColor = .getAppThemeColor()
+            shippingIndicator.middleCircleBorderColor = .getAppThemeColor()
+            shippingIndicator.leftLineColor = .getAppThemeColor()
+        }else{
+            shippingIndicator.leftCircleColor = .getInactiveGray()
+                       shippingIndicator.middleCircleBorderColor = .getInactiveGray()
+                       shippingIndicator.leftLineColor = .getInactiveGray()
+        }
         shippingIndicator.redrawView()
+    }
+    
+    @IBAction func didPressProceedToPayment(_ sender: Any) {
+        
+        if AppEngine.sharedInstance.userDetails?.billingAddress.isEmpty ?? true{
+            self.ext.showAlert(title: "Checkout Error", message: "Please provide your billing address")
+        }else if hasOutOfStockItems{
+            self.ext.showAlert(title: "Cart Error", message: ErrorMessages.hasOutOfStockItems)
+        }else{
+            if interactor?.total ?? 0.0 > 0.0{
+                let paymentVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PaymentVC")
+                self.ext.pushViewController(viewController: paymentVC)
+            }else{
+                interactor?.completeTransaction()
+            }
+        }
     }
 }
 extension ReviewCartController: UITableViewDataSource{
@@ -55,27 +103,85 @@ extension ReviewCartController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch sections![indexPath.section] {
         case CartReviewSections.summaryHeader:
-            return tableView.dequeueReusableCell(withIdentifier: "CartSummaryTitle", for: indexPath)
+            let cell =  tableView.dequeueReusableCell(withIdentifier: CartReviewSummaryHeaderCell.identifier, for: indexPath) as! CartReviewSummaryHeaderCell
+            cell.showData()
+            return cell
+            
         case CartReviewSections.summaryItems:
             let cell =  tableView.dequeueReusableCell(withIdentifier: CartReviewItemCell.identifier, for: indexPath) as! CartReviewItemCell
             cell.showData(cartItem : cartItems![indexPath.row])
             return cell
         case CartReviewSections.total:
             let cell =  tableView.dequeueReusableCell(withIdentifier: CartTotalCell.identifier, for: indexPath) as! CartTotalCell
-            
-            let computedTotal = interactor!.computeTotals()
-            cell.showData(computedTotal.subTotal, computedTotal.total)
+            cell.showData(interactor!.subTotal, interactor!.total, interactor!.coupon.appliedCouponAmount)
+            return cell
+        case CartReviewSections.couponApplied:
+            let cell =  tableView.dequeueReusableCell(withIdentifier: CartCouponAppliedCell.identifier, for: indexPath) as! CartCouponAppliedCell
+            cell.showData(coupon: interactor!.coupon)
+            cell.delegate = self
             return cell
         case CartReviewSections.coupon:
             let cell =  tableView.dequeueReusableCell(withIdentifier: CartPromoCodeCell.identifier, for: indexPath) as! CartPromoCodeCell
-            
+            cell.showData(coupon: interactor!.coupon)
+            cell.delegate = self
             return cell
-        default:
-            return UITableViewCell()
+        case CartReviewSections.noBillingAddress, CartReviewSections.validBillingAddress:
+                       let cell =  tableView.dequeueReusableCell(withIdentifier: BillingAddressCell.identifier, for: indexPath) as! BillingAddressCell
+                       cell.showData(address: AppEngine.sharedInstance.userDetails?.billingAddress ?? "")
+                       cell.delegate = self
+                       return cell
+        case CartReviewSections.walletBalance:
+                       let cell =  tableView.dequeueReusableCell(withIdentifier: CartWalletCell.identifier, for: indexPath) as! CartWalletCell
+                       cell.showData(walletBalanceAmount: AppEngine.sharedInstance.walletBalance)
+                      
+                       return cell
+       
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         sections?.count ?? 0
+    }
+}
+extension ReviewCartController: CouponCellDelegate, CartCouponAppliedCellDelegate, BillingAddressCellDelegate{
+    func editBillingAddress() {
+        Log.d("Requested to Edit Address")
+    }
+    
+    func addBillingAddress() {
+        Log.d("Requested to Add new Address")
+    }
+    
+    func didRemoveCoupon() {
+        interactor?.deleteCoupon()
+    }
+    
+    func validateCoupon(coupon: String) {
+        interactor?.validateCoupon(coupon: coupon)
+    }
+}
+extension ReviewCartController : CartReviewDelegate{
+    func didFinishTransaction(transactionID: String) {
+        self.ext.showAlert(title: "Purchase Successful", message: "Transaction - \(transactionID)"){
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    func didChangeTotal() {
+        let indexPath = IndexPath(row: 0, section: 2)
+        cartSummaryView.reloadRows(at: [indexPath], with: .none)
+        
+        if interactor?.total ?? 0.0 > 0.0{
+            btnPayment.setTitle("Proceed To Payment".uppercased(), for: .normal)
+        }else{
+             btnPayment.setTitle("Place Order".uppercased(), for: .normal)
+        }
+        
+        self.customizeShippingIndicator()
+    }
+    
+    func availableSections(sections: [CartReviewSections]) {
+        self.sections = sections
+        cartSummaryView.reloadData()
     }
 }

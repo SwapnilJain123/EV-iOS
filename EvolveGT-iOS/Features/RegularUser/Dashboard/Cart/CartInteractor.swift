@@ -13,11 +13,18 @@ protocol CartListDelegate{
     func totalPrice(total: Double)
     func hasOutOfStockItems(outOfStock: Bool)
 }
+
+protocol CartReviewDelegate{
+    func availableSections(sections: [CartReviewSections])
+    func didChangeTotal()
+    func didFinishTransaction(transactionID: String)
+}
 enum CartReviewSections : Int{
     case summaryHeader
     case summaryItems
     case total
     case coupon
+    case couponApplied
     case validBillingAddress
     case noBillingAddress
     case walletBalance
@@ -26,8 +33,15 @@ class CartInteractor: BaseInteractor{
     
     var cartList = [CartItem]()
     var delegate: BaseViewDelegate? = nil
+    
     var cartListDelegate : CartListDelegate? = nil
+    var cartReviewDelegate: CartReviewDelegate? = nil
+    
     let coupon = Coupon()
+    
+    var subTotal: Double = 0
+    var total: Double = 0
+    var transactionId = ""
     
     func fetchCartList(){
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCartList)
@@ -42,10 +56,10 @@ class CartInteractor: BaseInteractor{
                     AppEngine.sharedInstance.walletBalance = cartListResponse.wallet?.toDouble() ?? 0
                     AppEngine.sharedInstance.cartListCount = cartListResponse.cartList?.count ?? 0
                     
-                    if let cartItems = cartListResponse.cartList{
+                    if cartListResponse.cartList?.count ?? 0 > 0{
                         //move racefee to top
-                        let regularItems = cartItems.filter({$0.source != CartSource.racefee})
-                        let raceFeeItems = cartItems.filter({$0.source == CartSource.racefee})
+                        let regularItems = cartListResponse.cartList!.filter({$0.source != CartSource.racefee})
+                        let raceFeeItems = cartListResponse.cartList!.filter({$0.source == CartSource.racefee})
                         var finalResults = [CartItem]()
                         finalResults.append(contentsOf: raceFeeItems)
                         finalResults.append(contentsOf: regularItems)
@@ -64,6 +78,8 @@ class CartInteractor: BaseInteractor{
                         self.cartListDelegate?.hasOutOfStockItems(outOfStock: hasOutOfStock)
                         self.cartListDelegate?.totalPrice(total: total)
                     }else{
+                        
+                        self.cartListDelegate?.didFetchCartList(cartItems: cartListResponse.cartList ?? [CartItem]())
                         self.delegate?.showEmptyPageError(message: ErrorMessages.emptyCartList)
                     }
                     
@@ -92,12 +108,22 @@ class CartInteractor: BaseInteractor{
         cartApi.removeFromCart(cartItem: cartItem)
     }
     
-    func getCartReviewSections() -> [CartReviewSections]{
+    func computeCartReviewData(){
+        getCartReviewSections()
+        computeTotals()
+    }
+    func getCartReviewSections(){
         var sections = [CartReviewSections]()
         sections.append(.summaryHeader)
         sections.append(.summaryItems)
         sections.append(.total)
-        sections.append(.coupon)
+        
+        if coupon.couponBalance > 0{
+            sections.append(.couponApplied)
+        }else{
+            sections.append(.coupon)
+        }
+        
         
         if AppEngine.sharedInstance.userDetails?.billingAddress.isEmpty() ?? true{
             sections.append(.noBillingAddress)
@@ -105,11 +131,11 @@ class CartInteractor: BaseInteractor{
             sections.append(.validBillingAddress)
         }
         sections.append(.walletBalance)
-        return sections
+        self.cartReviewDelegate?.availableSections(sections: sections)
     }
     
-    func computeTotals() -> (subTotal: Double, total: Double){
-        var subTotal: Double = 0
+    func computeTotals() {
+        subTotal = 0
         for cartItem in cartList{
             
             let qty = Double(cartItem.quantity ?? "1") ?? 1
@@ -118,14 +144,96 @@ class CartInteractor: BaseInteractor{
             subTotal += (qty * price) + fee
         }
         
-        var total = subTotal - coupon.couponBalance
+        total = subTotal - coupon.couponBalance
         if total <= 0 {
             total = 0
             coupon.appliedCouponAmount = subTotal;
         }else {
             coupon.appliedCouponAmount = subTotal - total;
         }
-        return (subTotal,total)
+        self.cartReviewDelegate?.didChangeTotal()
+    }
+    
+    func deleteCoupon(){
+        delegate?.showProgressIndicator(message: "")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.coupon.couponCode = ""
+            self.coupon.couponBalance = 0
+            self.coupon.appliedCouponAmount = 0
+            
+            self.computeCartReviewData()
+            self.delegate?.hideProgressIndicator()
+        }
+    }
+    func validateCoupon(coupon: String){
+        
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.validatingCoupon)
+               let checkoutApi = CheckoutApi()
+               checkoutApi.setCompletionHandler { (data, error) in
+                   self.delegate?.hideProgressIndicator()
+                   if error == nil{
+                    if let couponValidatedResponse = self.decodeFromJson(data!, modelType: CouponValidationResponse.self){
+                        self.coupon.couponBalance = couponValidatedResponse.couponBalance?.toDouble() ?? self.coupon.couponBalance
+                        self.computeTotals()
+                        
+                        if self.coupon.couponBalance > 0{
+                            self.getCartReviewSections()
+                        }
+                    }else{
+                         self.delegate?.showErrorToastMessage(message: ErrorMessages.genericError)
+                    }
+                   }else{
+                       self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+                   }
+               }
+        checkoutApi.validateCoupon(userId: AppEngine.sharedInstance.userID, couponCode: coupon)
+    }
+    
+    private func getPaymentMode() -> PaymentMode{
+        if total > 0.0{
+            return .couponPaypal
+        }else{
+            if coupon.appliedCouponAmount > 0{
+                return .coupon
+            }else{
+                return .wallet
+            }
+        }
+    }
+    func completeTransaction(){
+        
+         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.placingOrder)
+        
+        let placeOrderRequest = PlaceOrderRequest()
+        placeOrderRequest.coupon = coupon.couponCode
+        placeOrderRequest.payment = getPaymentMode().rawValue
+        placeOrderRequest.userId = AppEngine.sharedInstance.userID
+        let checkoutApi = CheckoutApi()
+        checkoutApi.setCompletionHandler{ data, error in
+            
+            if error == nil{
+                if let response = self.decodeFromJson(data!, modelType: PlaceOrderResponse.self){
+                    self.transactionId = response.transactionID ?? "0"
+                    self.resetCartList()
+                }else{
+                    self.delegate?.showSuccessToastMessage(message: ErrorMessages.genericError)
+                }
+            }else{
+                self.delegate?.hideProgressIndicator()
+                self.delegate?.showSuccessToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
+        }
+        
+        checkoutApi.placeOrder(placeOrderRequest: placeOrderRequest)
+    }
+    
+    func resetCartList(){
+        let checkoutApi = CheckoutApi()
+        checkoutApi.setCompletionHandler{ data, error in
+             self.delegate?.hideProgressIndicator()
+            self.cartReviewDelegate?.didFinishTransaction(transactionID: self.transactionId)
+        }
+        checkoutApi.resetCartList(userId: AppEngine.sharedInstance.userID)
     }
 }
 class Coupon{

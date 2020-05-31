@@ -264,7 +264,7 @@ class TransponderCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDeleg
         transponderRent.isOn = transponder.isSelected
         transponderTF.isEnabled = !(transponderRent.isOn)
         transponderTF.text = transponder.number
-        
+        transponderTF.applyColorTheme()
        
          transponderRent.delegate = self
         transponderRent.applyCheckboxTheme()

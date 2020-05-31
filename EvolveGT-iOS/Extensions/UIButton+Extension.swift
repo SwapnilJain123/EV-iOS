@@ -106,4 +106,33 @@ extension UIButton{
             
         }
     }
+    
+    func applyEditButtonTheme(){
+        if AppEngine.sharedInstance.isEvApp(){
+            
+            
+            let normalEditImage = UIImage(named: "ic_ev_edit")
+            let selectionEditImage = UIImage(named: "ic_ev_edit_lite")
+            
+            self.setImage(normalEditImage, for: .normal)
+            self.setImage(selectionEditImage, for: .highlighted)
+            self.setImage(selectionEditImage, for: .selected)
+        }else{
+            
+            let normalEditImage = UIImage(named: "ic_moto_edit")
+            let selectionEditImage = UIImage(named: "ic_moto_edit_lite")
+            self.setImage(normalEditImage, for: .normal)
+            self.setImage(selectionEditImage, for: .highlighted)
+            self.setImage(selectionEditImage, for: .selected)
+            
+        }
+    }
+    
+    func applyBoarderColorTheme(){
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.getAppThemeColor().cgColor
+        self.setTitleColor(.getAppThemeColor(), for: .normal)
+    }
 }

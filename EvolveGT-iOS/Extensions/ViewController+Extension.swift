@@ -32,7 +32,7 @@ extension UIViewController{
         func confirmationAlert(title: String?, message: String?, btnText : String, handler: @escaping (()->Void)) {
             let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: btnText, style: .default){ alertAction in
-               // alerController.dismiss(animated: false, completion: nil)
+                // alerController.dismiss(animated: false, completion: nil)
                 handler()
             }
             alerController.addAction(confirmAction)
@@ -74,33 +74,45 @@ extension UIViewController{
             
         }
         
-        static let ERROR_VIEW_TAG = -1
+        private static let ERROR_VIEW_TAG = -1
+        private static let ERROR_MESSAGE_VIEW_TAG = -2
         func displayEmptyMessage(message: String){
             
             if let existingView = vc.view.viewWithTag(UIViewController.Ext.ERROR_VIEW_TAG){
-                existingView.removeFromSuperview()
+                
+                if let labelView = existingView.viewWithTag(UIViewController.Ext.ERROR_MESSAGE_VIEW_TAG) as? UILabel{
+                    labelView.text          = message
+                    existingView.isHidden = false
+                }
+                
+            }else{
+                
+                let containerView = UIView(frame: CGRect(x: 0, y: 0, width: vc.view.bounds.size.width, height: vc.view.bounds.size.height))
+                containerView.backgroundColor = .lightText
+                containerView.tag = UIViewController.Ext.ERROR_VIEW_TAG
+                
+                let errorView: UILabel  = UILabel(frame: CGRect(x: 10, y: 0, width: vc.view.bounds.size.width - 30, height: vc.view.bounds.size.height))
+                errorView.text          = message
+                errorView.numberOfLines = 0
+                errorView.tag = UIViewController.Ext.ERROR_MESSAGE_VIEW_TAG
+                
+                
+                errorView.textColor     = UIColor.black
+                errorView.textAlignment = .center
+                containerView.addSubview(errorView)
+                vc.view.addSubview(containerView)
+                
+                self.removeLoadingIndicator()
             }
-            
-            let containerView = UIView(frame: CGRect(x: 0, y: 0, width: vc.view.bounds.size.width, height: vc.view.bounds.size.height))
-            containerView.backgroundColor = .lightText
-            
-            let errorView: UILabel  = UILabel(frame: CGRect(x: 10, y: 0, width: vc.view.bounds.size.width - 30, height: vc.view.bounds.size.height))
-            errorView.text          = message
-            errorView.numberOfLines = 0
-            errorView.tag = UIViewController.Ext.ERROR_VIEW_TAG
-            
-            errorView.textColor     = UIColor.black
-            errorView.textAlignment = .center
-            containerView.addSubview(errorView)
-            vc.view.addSubview(containerView)
-            
-            self.removeLoadingIndicator()
         }
         
         
         func hideErrorView(){
             if let existingView = vc.view.viewWithTag(UIViewController.Ext.ERROR_VIEW_TAG){
-                existingView.removeFromSuperview()
+                existingView.isHidden = true
+                Log.i("Error View Hidden")
+            }else{
+                Log.e("Error View Not Found")
             }
         }
         func showSuccessToast(message: String, handler: (()->Void)? = nil){
@@ -261,7 +273,30 @@ extension UIViewController{
             
             Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
             vc.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
+            self.applyThemeToDividers()
             vc.didChangeAppTheme()
+        }
+        func applyThemeToDividers(){
+            func getDividersInView(view: UIView) -> [DividerView] {
+                var results = [DividerView]()
+                
+                for subview in view.subviews as [UIView] {
+                    
+                    if let labelView = subview as? DividerView {
+                        results += [labelView]
+                    } else {
+                        results += getDividersInView(view: subview)
+                    }
+                }
+                return results
+            }
+            
+            let dividers = getDividersInView(view: vc.view)
+            
+            let appColor = UIColor.getAppThemeColor()
+            for divider in dividers{
+                divider.backgroundColor = appColor
+            }
         }
         
     }

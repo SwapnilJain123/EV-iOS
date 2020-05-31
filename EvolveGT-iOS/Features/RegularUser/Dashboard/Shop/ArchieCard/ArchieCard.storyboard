@@ -245,6 +245,8 @@
                     <connections>
                         <outlet property="archieCardImage" destination="eAh-OJ-b7p" id="i3Q-zh-HCk"/>
                         <outlet property="btnAddToCart" destination="M0P-GJ-MQk" id="j69-jf-70A"/>
+                        <outlet property="btnMinus" destination="KWk-8w-TyS" id="4ve-fP-HiG"/>
+                        <outlet property="btnPlus" destination="iqU-r0-Ho8" id="xlM-B8-aAL"/>
                         <outlet property="priceLabel" destination="30n-7z-Xmp" id="YOE-WC-JHs"/>
                         <outlet property="quantityLabel" destination="XjT-vv-j6C" id="abq-Tf-SIs"/>
                         <outlet property="titleLabel" destination="OMi-C9-bwM" id="zKu-5M-h9m"/>

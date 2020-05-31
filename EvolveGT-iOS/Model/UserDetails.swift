@@ -133,11 +133,21 @@ struct UserDetails: Codable {
         if billingAddress1?.isEmpty() ?? true{
             return ""
         }else{
-            var address = "\(fullName.capitalized)\n\(billingAddress1!)\n\(billingAddress2 ?? "")\n\(billingCompany ?? "")"
+            var address = "\(fullName.capitalized)\n\(billingAddress1!)"
+            
+            if billingAddress2?.isEmpty() ?? true == false{
+                           address = "\(address)\n\(billingAddress2!)"
+            }
+            if billingCompany?.isEmpty() ?? true == false{
+                           address = "\(address)\n\(billingCompany!)"
+            }
+            
             if billingCity?.isEmpty() ?? true == false{
                 address = "\(address)\n\(billingCity!), \(billingState ?? "")-\(billingPostcode ?? "")"
             }
-            address = "\(address)\n\(billingCountry!)"
+            if billingCountry?.isEmpty() ?? true == false{
+                           address = "\(address)\n\(billingCountry!)"
+            }
              if billingPhone?.isEmpty() ?? true == false{
                  address = "\(address)\n\(billingPhone!)"
             }

@@ -88,8 +88,10 @@ struct LoadingIndicatorMessages {
     
     static let loadingCartList = "Loading your cart list..."
     static let deletingCartItem = "We are removing an item from your cart."
+    static let validatingCoupon = "We're currently validating your coupon code, please wait..."
     
     static let uploadingSignature = "Please wait, We're saving your signature."
+    static let placingOrder = "Please wait, Placing your order..."
 }
 
 struct ErrorMessages {
@@ -101,7 +103,7 @@ struct ErrorMessages {
     static let emptyCreditHistory = "Sorry, You have no credit history."
     static let skillNotEligibleMessage = "GT1 and E1 are not eligible to participate in race."
     
-    
+    static let invalidCoupon = "Please enter a valid coupon"
     
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
@@ -126,6 +128,8 @@ struct ErrorMessages {
     static let emptyProducts = "Unfortunately, there is no products available right now."
     static let emptyCartList = "Sorry, Your cart is empty."
     static let hasOutOfStockItems = "Please delete out of stock items from your cart to continue."
+    
+    static let checkoutNoBillingAddress = "Unfortunately, no billing address has been found. Please add your billing address."
 }
 
 struct SuccessMessages {
