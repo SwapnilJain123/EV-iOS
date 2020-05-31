@@ -853,6 +853,46 @@
             </objects>
             <point key="canvasLocation" x="402.89855072463769" y="101.78571428571428"/>
         </scene>
+        <!--Payment View Controller-->
+        <scene sceneID="VUg-bn-1pL">
+            <objects>
+                <viewController storyboardIdentifier="PaymentVC" id="f15-md-yeG" customClass="PaymentViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C6C-Gh-0Tc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-4z-Zeb">
+                                <rect key="frame" x="25" y="797" width="364" height="45"/>
+                                <color key="backgroundColor" name="ColorEV"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YCm-H6-qAR"/>
+                                </constraints>
+                                <state key="normal" title="Place Order">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AWG-VD-zw6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="745"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="RootBackGround"/>
+                        <constraints>
+                            <constraint firstItem="AWG-VD-zw6" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" id="44E-mG-iT2"/>
+                            <constraint firstItem="AWG-VD-zw6" firstAttribute="top" secondItem="tVH-6Q-rAY" secondAttribute="top" id="7X4-YA-Up3"/>
+                            <constraint firstItem="Pst-4z-Zeb" firstAttribute="top" secondItem="AWG-VD-zw6" secondAttribute="bottom" constant="8" id="Mm2-X6-tdC"/>
+                            <constraint firstItem="Pst-4z-Zeb" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" constant="25" id="RBh-ek-Qfq"/>
+                            <constraint firstItem="tVH-6Q-rAY" firstAttribute="bottom" secondItem="Pst-4z-Zeb" secondAttribute="bottom" constant="20" id="hxq-hn-hCg"/>
+                            <constraint firstItem="AWG-VD-zw6" firstAttribute="trailing" secondItem="tVH-6Q-rAY" secondAttribute="trailing" id="jY1-fy-QJQ"/>
+                            <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="Pst-4z-Zeb" secondAttribute="trailing" constant="25" id="tH3-Lm-jQO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tVH-6Q-rAY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nu-6a-QHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313.0434782608697" y="56.919642857142854"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cartTab" width="32" height="32"/>

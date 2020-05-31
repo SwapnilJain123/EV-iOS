@@ -79,7 +79,8 @@ class ReviewCartController : ETViewController{
             self.ext.showAlert(title: "Cart Error", message: ErrorMessages.hasOutOfStockItems)
         }else{
             if interactor?.total ?? 0.0 > 0.0{
-                
+                let paymentVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PaymentVC")
+                self.ext.pushViewController(viewController: paymentVC)
             }else{
                 interactor?.completeTransaction()
             }
