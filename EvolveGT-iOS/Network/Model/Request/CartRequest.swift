@@ -75,4 +75,13 @@ struct CartRemoveRequest: Codable{
         case method
         case userId = "id"
     }
+    
+    
 }
+
+struct AddArchieCardToCartRequest: Codable {
+    var serial, title, slug, image: String?
+    var price: String?
+    var quantity: Int?
+}
+

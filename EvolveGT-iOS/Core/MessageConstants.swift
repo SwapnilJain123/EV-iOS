@@ -76,6 +76,8 @@ struct LoadingIndicatorMessages {
     
     
     static let loadingEventDetails = "Loading event details..."
+    static let loadingArchieCardList = "Loading archie cards..."
+    static let addingArchieCardToCart = "Adding Archie Card to cart..."
     
     static let loadingProducts = "Loading products..."
     static let loadingProductDetails = "Loading product details..."
@@ -138,6 +140,8 @@ struct SuccessMessages {
     
     static let eventAddedToCart = "Your event has been added to the cart successfully."
     static let productAddedToCart = "Your Product has been added to the cart successfully."
+    static let archieCardtAddedToCart = "Your Archie Card has been added to the cart successfully."
+    
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."
