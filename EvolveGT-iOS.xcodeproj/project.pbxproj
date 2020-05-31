@@ -94,6 +94,13 @@
 		10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10336644247FCE53009AF19A /* ShippingIndicator.xib */; };
 		10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336645247FCE53009AF19A /* ShippingIndicator.swift */; };
 		10336649247FF4BB009AF19A /* CartReviewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336648247FF4BB009AF19A /* CartReviewCells.swift */; };
+		1033665124804450009AF19A /* ArchieCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033664B24804450009AF19A /* ArchieCardInteractor.swift */; };
+		1033665224804450009AF19A /* ArchieCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1033664C24804450009AF19A /* ArchieCard.storyboard */; };
+		1033665324804450009AF19A /* ArchieCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033664E24804450009AF19A /* ArchieCardDetailsViewController.swift */; };
+		1033665424804450009AF19A /* ArchieCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033664F24804450009AF19A /* ArchieCardViewController.swift */; };
+		1033665524804450009AF19A /* ArchiCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033665024804450009AF19A /* ArchiCardCell.swift */; };
+		103366572480447D009AF19A /* ArchieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103366562480447D009AF19A /* ArchieCard.swift */; };
+		10336659248044BB009AF19A /* ArchiCardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336658248044BB009AF19A /* ArchiCardAPI.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -257,6 +264,13 @@
 		10336644247FCE53009AF19A /* ShippingIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShippingIndicator.xib; sourceTree = "<group>"; };
 		10336645247FCE53009AF19A /* ShippingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingIndicator.swift; sourceTree = "<group>"; };
 		10336648247FF4BB009AF19A /* CartReviewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartReviewCells.swift; sourceTree = "<group>"; };
+		1033664B24804450009AF19A /* ArchieCardInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCardInteractor.swift; sourceTree = "<group>"; };
+		1033664C24804450009AF19A /* ArchieCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArchieCard.storyboard; sourceTree = "<group>"; };
+		1033664E24804450009AF19A /* ArchieCardDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCardDetailsViewController.swift; sourceTree = "<group>"; };
+		1033664F24804450009AF19A /* ArchieCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCardViewController.swift; sourceTree = "<group>"; };
+		1033665024804450009AF19A /* ArchiCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiCardCell.swift; sourceTree = "<group>"; };
+		103366562480447D009AF19A /* ArchieCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCard.swift; sourceTree = "<group>"; };
+		10336658248044BB009AF19A /* ArchiCardAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiCardAPI.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +451,7 @@
 		103345ED24606C2000D5EED0 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				1033664A24804450009AF19A /* ArchieCard */,
 				10716FD124799CC50032C056 /* ProductDetails */,
 				10716FBC2478228C0032C056 /* Product */,
 				103345F524606D2D00D5EED0 /* Shop.storyboard */,
@@ -551,6 +566,26 @@
 			path = ShippingIndicator;
 			sourceTree = "<group>";
 		};
+		1033664A24804450009AF19A /* ArchieCard */ = {
+			isa = PBXGroup;
+			children = (
+				1033664B24804450009AF19A /* ArchieCardInteractor.swift */,
+				1033664C24804450009AF19A /* ArchieCard.storyboard */,
+				1033664D24804450009AF19A /* ArchieCardDetails */,
+				1033664F24804450009AF19A /* ArchieCardViewController.swift */,
+				1033665024804450009AF19A /* ArchiCardCell.swift */,
+			);
+			path = ArchieCard;
+			sourceTree = "<group>";
+		};
+		1033664D24804450009AF19A /* ArchieCardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1033664E24804450009AF19A /* ArchieCardDetailsViewController.swift */,
+			);
+			path = ArchieCardDetails;
+			sourceTree = "<group>";
+		};
 		1039FDF0244F1A1800190088 = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +651,7 @@
 		1039FE18244F332700190088 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				103366562480447D009AF19A /* ArchieCard.swift */,
 				10716FD8247AF8AF0032C056 /* ProductDetails.swift */,
 				10048F0C246D015400684A87 /* Event.swift */,
 				10048F45246F0F3A00684A87 /* AppVersion.swift */,
@@ -758,6 +794,7 @@
 		1039FE5524501C9C00190088 /* UserApi */ = {
 			isa = PBXGroup;
 			children = (
+				10336658248044BB009AF19A /* ArchiCardAPI.swift */,
 				10048F10246D018F00684A87 /* EventsApi.swift */,
 				1039FE5624501CB800190088 /* LoginApi.swift */,
 				1033460324608CDD00D5EED0 /* ProfileApi.swift */,
@@ -998,6 +1035,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1033665224804450009AF19A /* ArchieCard.storyboard in Resources */,
 				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */,
@@ -1092,11 +1130,13 @@
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
 				10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
+				103366572480447D009AF19A /* ArchieCard.swift in Sources */,
 				10048F44246F094800684A87 /* AboutUsViewController.swift in Sources */,
 				10336649247FF4BB009AF19A /* CartReviewCells.swift in Sources */,
 				1033460224608C7500D5EED0 /* UserDataRequest.swift in Sources */,
 				10716FBB247821840032C056 /* ShopTabViewController.swift in Sources */,
 				1033660A247D3E02009AF19A /* CartInteractor.swift in Sources */,
+				1033665424804450009AF19A /* ArchieCardViewController.swift in Sources */,
 				10BDD053245C20DF00F05700 /* UITableViewCell+Extension.swift in Sources */,
 				10048F11246D018F00684A87 /* EventsApi.swift in Sources */,
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
@@ -1157,6 +1197,7 @@
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
+				10336659248044BB009AF19A /* ArchiCardAPI.swift in Sources */,
 				10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */,
 				10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
@@ -1167,6 +1208,7 @@
 				10048F5624702D5D00684A87 /* CheckBox+Extension.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				10336608247D3D99009AF19A /* CartListController.swift in Sources */,
+				1033665124804450009AF19A /* ArchieCardInteractor.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
@@ -1175,6 +1217,8 @@
 				10048F20246DB7C000684A87 /* CartApi.swift in Sources */,
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
 				103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */,
+				1033665524804450009AF19A /* ArchiCardCell.swift in Sources */,
+				1033665324804450009AF19A /* ArchieCardDetailsViewController.swift in Sources */,
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
 				1033464824681B4B00D5EED0 /* UIButton+Extension.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
