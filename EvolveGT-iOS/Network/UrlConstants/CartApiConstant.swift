@@ -12,7 +12,7 @@ struct CartApiConstants {
     static let ADD_EVOLVE_EVENT_TO_CART = "evolveEvents/addToCart"
     static let ADD_MOTO_EVENT_TO_CART = "motoEvents/addToCart"
     
-    static let ADD_PRODUCT_TO_CART = "product/addToCart"
+    static let ADD_PRODUCT_TO_CART = "products/addToCart"
     
     static let REMOVE_FROM_CART = "cart/removeCartItem"
     

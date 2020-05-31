@@ -33,7 +33,12 @@ class CartListController : TabbedViewController, CartListDelegate{
    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        labelTotal.textColor = .getAppThemeColor()
+        totalPrice(total: 0)
+        cartItems.removeAll()
+        cartListView.reloadData()
         interactor.fetchCartList()
+        
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_CART

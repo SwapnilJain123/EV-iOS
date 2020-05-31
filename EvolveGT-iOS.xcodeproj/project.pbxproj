@@ -94,6 +94,8 @@
 		10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10336644247FCE53009AF19A /* ShippingIndicator.xib */; };
 		10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336645247FCE53009AF19A /* ShippingIndicator.swift */; };
 		10336649247FF4BB009AF19A /* CartReviewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336648247FF4BB009AF19A /* CartReviewCells.swift */; };
+		1033665B24814F65009AF19A /* CheckoutRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033665A24814F65009AF19A /* CheckoutRequests.swift */; };
+		1033665D2482F524009AF19A /* PaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033665C2482F524009AF19A /* PaymentMode.swift */; };
 		1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FDFC244F1A1800190088 /* AppDelegate.swift */; };
 		1039FE01244F1A1800190088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE00244F1A1800190088 /* ViewController.swift */; };
 		1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039FE05244F1A1A00190088 /* Assets.xcassets */; };
@@ -257,6 +259,8 @@
 		10336644247FCE53009AF19A /* ShippingIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShippingIndicator.xib; sourceTree = "<group>"; };
 		10336645247FCE53009AF19A /* ShippingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingIndicator.swift; sourceTree = "<group>"; };
 		10336648247FF4BB009AF19A /* CartReviewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartReviewCells.swift; sourceTree = "<group>"; };
+		1033665A24814F65009AF19A /* CheckoutRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutRequests.swift; sourceTree = "<group>"; };
+		1033665C2482F524009AF19A /* PaymentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMode.swift; sourceTree = "<group>"; };
 		1039FDF9244F1A1800190088 /* EvolveGT-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EvolveGT-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -629,6 +633,7 @@
 				10048F4D246F2B6400684A87 /* JsonAny.swift */,
 				10716FC12478290B0032C056 /* Product.swift */,
 				103365FA247C5334009AF19A /* CartItem.swift */,
+				1033665C2482F524009AF19A /* PaymentMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -666,6 +671,7 @@
 				1033460124608C7500D5EED0 /* UserDataRequest.swift */,
 				10048F1B246DB24F00684A87 /* CartRequest.swift */,
 				10048F34246EC50D00684A87 /* ShopsItemRequest.swift */,
+				1033665A24814F65009AF19A /* CheckoutRequests.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1186,6 +1192,7 @@
 				10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
 				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,
+				1033665B24814F65009AF19A /* CheckoutRequests.swift in Sources */,
 				10048F09246D013800684A87 /* EventsInteractor.swift in Sources */,
 				1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */,
 				10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */,
@@ -1193,6 +1200,7 @@
 				10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */,
 				10334600246089C200D5EED0 /* UserDetails.swift in Sources */,
 				103346512468432500D5EED0 /* SlideMenuCell.swift in Sources */,
+				1033665D2482F524009AF19A /* PaymentMode.swift in Sources */,
 				10716FC524782FE20032C056 /* ShopsApi.swift in Sources */,
 				10048F4A246F0F7300684A87 /* GenericApi.swift in Sources */,
 				10BDD01E2459C0F600F05700 /* SignatureIntercator.swift in Sources */,

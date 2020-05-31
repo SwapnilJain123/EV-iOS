@@ -77,7 +77,7 @@ class CartItem: Codable {
         case .product, .event, .rentals:
             if let attributes = itemAttributes{
                 for attribute in attributes{
-                    property = "\(property) \(attribute.name ?? "") : \(attribute.value ?? "") |"
+                    property = "\(property)\(attribute.name ?? "") : \(attribute.value ?? "") |"
                 }
                 property.removeLast(1)
             }

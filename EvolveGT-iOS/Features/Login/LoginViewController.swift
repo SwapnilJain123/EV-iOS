@@ -38,8 +38,9 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
             tfEmail.text! = ""
             tfPassword.text! = ""
         }
-        
+        tfEmail.applyColorTheme()
         loginButton.applyColorTheme()
+        tfPassword.applyColorTheme()
         
         guestButton.isHidden = !AppEngine.sharedInstance.isEvApp()
         

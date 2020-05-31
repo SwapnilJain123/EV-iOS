@@ -24,6 +24,11 @@ extension String {
     }
     
     func isEmpty() -> Bool{
-        self.count == 0
+        allSatisfy({ $0.isWhitespace })
     }
+}
+extension Optional where Wrapped == String {
+  var isBlank: Bool {
+    return self?.isEmpty() ?? true
+  }
 }

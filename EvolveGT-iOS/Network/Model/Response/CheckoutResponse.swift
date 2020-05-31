@@ -18,3 +18,19 @@ class CartListResponse : Codable{
         case walletEnabled, wallet
     }
 }
+
+struct CouponValidationResponse: Codable {
+    var couponBalance : String?
+    enum CodingKeys: String, CodingKey {
+           case couponBalance = "remain"
+       }
+    
+}
+
+struct PlaceOrderResponse: Codable {
+    var transactionID : String?
+    enum CodingKeys: String, CodingKey {
+           case transactionID = "ack_id"
+       }
+    
+}
