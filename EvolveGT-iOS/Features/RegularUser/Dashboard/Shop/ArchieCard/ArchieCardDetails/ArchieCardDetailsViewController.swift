@@ -19,6 +19,10 @@ class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegat
     
     @IBOutlet weak var btnAddToCart: UIButton!
     
+    @IBOutlet weak var btnMinus: UIButton!
+
+    
+    @IBOutlet weak var btnPlus: UIButton!
     @IBAction func addToCartButtonPressed(_ sender: UIButton) {
         
         archieCardInteractor.addArchieCardToCart(archieCard: archieCardDetails, quantity: quantity)
@@ -35,8 +39,16 @@ class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegat
         archieCardInteractor.viewDelegate = self
         
         archieCardInteractor.getArchieCardDetails(slug: slug)
-        btnAddToCart.applyColorTheme()
+       
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        btnAddToCart.applyColorTheme()
+        btnPlus.applyPlusButtonTheme()
+        btnMinus.applyMinusButtonTheme()
+        priceLabel.textColor = .getAppThemeColor()
     }
     
     func computeTotal(){
@@ -65,7 +77,6 @@ class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegat
         self.archieCardDetails = archieCardDetails
         titleLabel.text = archieCardDetails.content
         priceLabel.text = archieCardDetails.price?.formatToAmount(prefix: "Price: ")
-        priceLabel.textColor = .getAppThemeColor()
         computeTotal()
         
         if  let url = URL(string :archieCardDetails.image?.toValidatedImageUrl() ?? ""){

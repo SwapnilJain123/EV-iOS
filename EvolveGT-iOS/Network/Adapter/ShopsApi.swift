@@ -33,4 +33,23 @@ class ShopsApi : BaseApiAdapter{
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
+    
+    //Mark:- Archie Cards
+    func fetchArchieCardList(){
+           
+           let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.ARCHIE_CARD_LIST)"
+           setUrl(url: url)
+           super.makeRequest(method: .GET)
+       }
+       
+       
+       func fetchArchieCardDetails(slug:String){
+           
+           let request = ItemDetailRequest(slug: slug)
+           setParameters(parameters: makeDictionary(request))
+              
+           let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.ARCHIE_CARD_DETAILS)"
+              setUrl(url: url)
+           super.makeRequest(method: .POST)
+          }
 }
