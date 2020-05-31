@@ -31,6 +31,14 @@ class CartApi : BaseApiAdapter{
            super.makeRequest(method: .POST)
        }
     
+    func addArchieCardToCart(request: AddArchieCardToCartRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_ARCHIE_CARD_TO_CART)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
+    
     
     func removeFromCart(cartItem: CartItem){
         
@@ -39,4 +47,6 @@ class CartApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(CartRemoveRequest(cartItem: cartItem)))
         super.makeRequest(method: .POST)
     }
+    
+    
 }

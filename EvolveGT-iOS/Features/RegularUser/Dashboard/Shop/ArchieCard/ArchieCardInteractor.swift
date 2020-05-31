@@ -16,7 +16,7 @@ protocol ArchieCardDetailsDelegate {
 class ArchieCardInteractor:BaseInteractor{
     var viewDelegate : BaseViewDelegate?
     var archieCardListDelegate: ArchieCardListDelegate?
-     var archieCardDetailsDelegate: ArchieCardDetailsDelegate?
+    var archieCardDetailsDelegate: ArchieCardDetailsDelegate?
     func getArchieCards(){
         
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingArchieCardList)
@@ -45,7 +45,7 @@ class ArchieCardInteractor:BaseInteractor{
     
     func getArchieCardDetails(slug:String){
         
-         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingArchieCardList)
+        self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingArchieCardList)
         let archieCardApi = ArchieCardApi()
         archieCardApi.setCompletionHandler{data , error in
             if error == nil{
@@ -66,6 +66,32 @@ class ArchieCardInteractor:BaseInteractor{
         
     }
     
+    func addArchieCardToCart(archieCard:ArchieCardDetails , quantity:Int){
+        
+        self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingArchieCardToCart)
+        
+        var request = AddArchieCardToCartRequest()
+        request.image = archieCard.image
+        request.price = archieCard.price
+        request.quantity = quantity
+        request.title = archieCard.title
+        request.slug = archieCard.slug
+        request.serial = AppEngine.sharedInstance.userID
+        
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler {data , error in
+            
+            self.viewDelegate?.hideProgressIndicator()
+            
+            if error == nil{
+                
+                self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.archieCardtAddedToCart)
+            }else{
+                self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
+        }
+        cartApi.addArchieCardToCart(request: request)
+    }
     
 }
 
