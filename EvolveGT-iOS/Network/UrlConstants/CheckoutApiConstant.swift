@@ -12,5 +12,10 @@ struct CheckoutApiConstants{
     static let VALIDATE_COUPON = "checkout/validateCoupon"
     
     static let PLACE_ORDER = "checkout/placeOrder"
-     static let RESET_CART = "checkout/resetCart"
+    static let RESET_CART = "checkout/resetCart"
+    
+    //Mark:- BrainTree
+    
+    static let CHECKOUT_TOKEN = "braintree/token"
+     static let BRAINTREE_TRANSACTION = "braintree/transaction"
 }

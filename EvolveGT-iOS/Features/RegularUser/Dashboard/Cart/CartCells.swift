@@ -15,6 +15,7 @@ protocol CartCellDelegate {
 }
 class BaseCartCell : UITableViewCell{
     
+    @IBOutlet weak var imgOutOfStock: UIImageView!
     @IBOutlet weak var cartImage: UIImageView!
     @IBOutlet weak var cartTitle: UILabel!
     @IBOutlet weak var cartPrice: UILabel!
@@ -31,6 +32,7 @@ class BaseCartCell : UITableViewCell{
                                   options: [.transition(ImageTransition.fade(1))])
             
         }
+        imgOutOfStock.isHidden = !(cartItem?.isOutOfStock ?? false)
         cartTitle.text = cartItem?.title
         cartPrice.text = cartItem?.price?.formatToAmount(prefix: "Price: ")
         cartPrice.textColor = .getAppThemeColor()

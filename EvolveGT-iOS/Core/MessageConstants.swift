@@ -130,6 +130,8 @@ struct ErrorMessages {
     static let hasOutOfStockItems = "Please delete out of stock items from your cart to continue."
     
     static let checkoutNoBillingAddress = "Unfortunately, no billing address has been found. Please add your billing address."
+    
+    static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
 }
 
 struct SuccessMessages {

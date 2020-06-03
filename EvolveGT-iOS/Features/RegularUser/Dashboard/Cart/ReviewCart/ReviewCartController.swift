@@ -42,11 +42,16 @@ class ReviewCartController : ETViewController{
          btnPayment.applyColorTheme()
         cartSummaryView.dataSource = self
         interactor?.cartReviewDelegate = self
+        interactor?.paymentDelegate = self
         
     }
     override func didChangeAppTheme() {
-        Log.d("Apply theme :-)")
-         interactor?.computeCartReviewData()
+        interactor?.computeCartReviewData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.ext.showBackButton()
     }
     func customizeShippingIndicator(){
         shippingIndicator.leftCircleColor = .clear
@@ -76,15 +81,19 @@ class ReviewCartController : ETViewController{
         if AppEngine.sharedInstance.userDetails?.billingAddress.isEmpty ?? true{
             self.ext.showAlert(title: "Checkout Error", message: "Please provide your billing address")
         }else if hasOutOfStockItems{
-            self.ext.showAlert(title: "Cart Error", message: ErrorMessages.hasOutOfStockItems)
+            self.ext.showAlert(title: "Cart Error", message: ErrorMessages.hasOutOfStockItems){
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }else{
             if interactor?.total ?? 0.0 > 0.0{
-                let paymentVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PaymentVC")
+                let paymentVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PaymentVC") as! PaymentViewController
+                paymentVC.interactor = self.interactor
                 self.ext.pushViewController(viewController: paymentVC)
             }else{
                 interactor?.completeTransaction()
             }
         }
+ 
     }
 }
 extension ReviewCartController: UITableViewDataSource{
@@ -160,11 +169,27 @@ extension ReviewCartController: CouponCellDelegate, CartCouponAppliedCellDelegat
         interactor?.validateCoupon(coupon: coupon)
     }
 }
-extension ReviewCartController : CartReviewDelegate{
+extension ReviewCartController : CartReviewDelegate, PaymentDelegate{
+    func cartClearedError(message: String) {
+         self.ext.showAlert(title: "Transaction Error", message: message)
+    }
+    
+    func transactionError(message: String) {
+        self.ext.showAlert(title: "Transaction Error", message: message)
+    }
+    
+    func presentDropInPayment(token: String) {
+        //Ignored
+    }
+    
     func didFinishTransaction(transactionID: String) {
-        self.ext.showAlert(title: "Purchase Successful", message: "Transaction - \(transactionID)"){
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        let postPurchaseVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PostPurchase") as! PostPurchaseController
+        postPurchaseVC.interactor = self.interactor
+        self.ext.pushViewController(viewController: postPurchaseVC)
+//        self.present(postPurchaseVC, animated: true){
+//            self.navigationController?.popToRootViewController(animated: true)
+//        }
+        
     }
     
     func didChangeTotal() {

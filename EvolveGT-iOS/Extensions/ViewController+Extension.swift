@@ -134,6 +134,16 @@ extension UIViewController{
             vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
         
+        func backButtonToRootViewController(){
+            
+                vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.didPressBackButton))
+            
+        }
+        
+        @objc func didPressBackButton(){
+            vc.navigationController?.popViewController(animated: true)
+        }
+        
         func hideBackButton(){
             vc.navigationItem.setHidesBackButton(true, animated: true)
         }

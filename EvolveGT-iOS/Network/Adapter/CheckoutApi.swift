@@ -42,4 +42,25 @@ class CheckoutApi : BaseApiAdapter{
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
+    
+    func getCheckoutToken(userId: String, email: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.CHECKOUT_TOKEN)"
+        let request = CheckoutTokenRequest()
+        request.email = email
+        request.userId = userId
+        request.mode = BuildScheme.paymentMode
+        
+        setParameters(parameters: makeDictionary(request))
+        setUrl(url: url)
+        super.makeRequest(method: .POST)
+    }
+    func completeBrainTreeTransaction(request: BrainTreeTransactionRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.BRAINTREE_TRANSACTION)"
+        
+        setParameters(parameters: makeDictionary(request))
+        setUrl(url: url)
+        super.makeRequest(method: .POST)
+    }
 }
