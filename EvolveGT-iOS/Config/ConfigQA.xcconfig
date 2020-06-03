@@ -13,3 +13,5 @@ BASE_URL=evolvegt.webeteerprojects.com
 LOG_ENABLED=YES
 BUILD_CONFIG=QA
 CHECKOUT_MODE=sandbox
+BUNDLE_ID=com.evolve.developer.qa
+BRAINTREE_RETURN_URL=com.evolve.developer.qa.payments

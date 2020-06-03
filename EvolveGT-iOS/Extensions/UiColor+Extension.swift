@@ -29,10 +29,17 @@ extension UIColor {
     private static let MOTO_LIGHT_BACKGROUND = "#94a2d1"
     
     private static let INACTIVE_GRAY = "#E6E6E6"
+    private static let EV_TAB_BACKGROUND = "#333333"
+    
+    
     //
     
     static func getBackgroundGray() -> UIColor{
         UIColor.init(hexFromString: UIColor.BACKGROUND_GRAY)
+    }
+    
+    static func getEVTabBackgroundGray() -> UIColor{
+        UIColor.init(hexFromString: UIColor.EV_TAB_BACKGROUND)
     }
     
     static func getAppThemeColor() -> UIColor{

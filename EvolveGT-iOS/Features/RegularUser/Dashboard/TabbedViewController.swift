@@ -79,12 +79,16 @@ class TabbedViewController: ETViewController {
     
     override  func didChangeAppTheme() {
         setNavbarControls()
+        getTabBarController().didChangeAppTheme()
     }
     
     func recreateNavbar(){
         setNavbarControls()
     }
     
+    func getTabBarController() -> ETTabViewController{
+        self.navigationController?.tabBarController as! ETTabViewController
+    }
     @objc func didSwitchTab(){
         
     }

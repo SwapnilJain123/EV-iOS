@@ -13,3 +13,5 @@ BASE_URL=evolvegt.com
 LOG_ENABLED=YES
 BUILD_CONFIG=UAT
 CHECKOUT_MODE=sandbox
+BUNDLE_ID=com.evolve.developer.uat
+BRAINTREE_RETURN_URL=com.evolve.developer.uat.payments

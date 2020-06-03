@@ -35,7 +35,7 @@ class HomeViewController: TabbedViewController{
     }
     
     override  func didChangeAppTheme() {
-        
+         super.didChangeAppTheme()
         profileData?.upComingEventsCount = 0
         profileData?.pastEventsCount = 0
         profileData?.allEventsCount = 0
