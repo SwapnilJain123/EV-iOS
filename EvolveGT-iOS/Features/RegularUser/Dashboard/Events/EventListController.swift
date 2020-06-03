@@ -207,7 +207,10 @@ extension EventListController: EventListCellDelegate{
             
            addPrivateEventToCart(event)
         }else if (event.external != nil){
-            self.ext.openLink(event.external?.url ?? "")
+            self.ext.confirmationAlert(title: AlertTitle.externalHost, message: MessageConstants.externalLink, btnText: "Open"){
+                self.ext.openLink(event.external!.url ?? "")
+                return
+            }
         }else{
             interactor.addEventToCart(event)
         }

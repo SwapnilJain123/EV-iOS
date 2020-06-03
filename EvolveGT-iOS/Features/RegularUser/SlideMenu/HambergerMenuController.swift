@@ -28,7 +28,6 @@ class HambergerMenuController: ETViewController {
         }
         slidingMenuView.dataSource = self
         slidingMenuView.delegate = self
-        
         self.ext.hideNavbar()
     }
     
