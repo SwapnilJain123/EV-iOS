@@ -64,6 +64,7 @@ class ShopViewController : TabbedViewController{
     }
     
     override func didChangeAppTheme() {
+        super.didChangeAppTheme()
         let appColor = UIColor.getAppThemeColor()
         
         labelArchieCard.textColor = appColor

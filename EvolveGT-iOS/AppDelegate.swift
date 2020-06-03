@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import SideMenuSwift
+import Braintree
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,13 +22,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         initiApp()
+        setUpBrainTreeUrlScheme()
+        
+        Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")
         return true
     }
+    
     
 }
 
 extension AppDelegate{
     
+    func setUpBrainTreeUrlScheme(){
+        BTAppSwitch.setReturnURLScheme(BuildScheme.brainTreeReturnUrl)
+        Log.d("Brain Tree Return URl = \(BuildScheme.brainTreeReturnUrl)")
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.scheme?.localizedCaseInsensitiveCompare(BuildScheme.brainTreeReturnUrl) == .orderedSame {
+            return BTAppSwitch.handleOpen(url, options: options)
+        }
+        return false
+    }
     
     func initiApp(){
         AppEngine.sharedInstance.restoreData()
