@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 import Kingfisher
+
+protocol EnrolledEventCellDelegate{
+    func cancelEvent(event : EnrolledEvent)
+}
 class EnrolledEventCell : UITableViewCell{
     
-    
+    var event : EnrolledEvent?
+    var delegate : EnrolledEventCellDelegate?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var eventImage: UIImageView!
     
@@ -31,24 +36,24 @@ class EnrolledEventCell : UITableViewCell{
         eventTitle.textColor = UIColor.getAppThemeColor()
     }
     
-    override func awakeFromNib() {
-           super.awakeFromNib()
-        eventTitle.textColor = UIColor.getAppThemeColor()
-    }
     
     @IBAction func didPressCancel(_ sender: Any) {
+        delegate?.cancelEvent(event: event!)
     }
     
     func populateViews(event : EnrolledEvent){
+        
+        self.event = event
+        eventTitle.textColor = UIColor.getAppThemeColor()
         
         if AppEngine.sharedInstance.canCancelEvent{
             cancelButton?.isHidden = false
         }else{
              cancelButton?.isHidden = true
         }
-        eventTitle.text = "Event: \(event.productName ?? "")"
-        eventDate.text = "Event Date: \(event.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
-        orderDate.text = "Order Date: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        eventTitle.text = event.productName
+        eventDate.text = "Date: \(event.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        orderDate.text = "Ordered On: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         if let imgUrl = event.eventImage{
             
             let placeHolder = UIImage(named: "et_fallback_image")
@@ -56,6 +61,7 @@ class EnrolledEventCell : UITableViewCell{
             
         }
         
+        cancelButton?.setBorderColor(color: .red)
         self.containerView.setCardView()
         
     }

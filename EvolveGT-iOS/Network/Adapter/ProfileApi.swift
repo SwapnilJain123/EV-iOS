@@ -36,6 +36,14 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func cancelEvent(request: CancelEventRequest){
+           
+           let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CANCEL_EVENT)"
+           setUrl(url: url)
+           setParameters(parameters: makeDictionary(request))
+           super.makeRequest(method: .POST)
+       }
+    
     func changePassword(userId:String , newPasssword:String , currentPassword:String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CHANGE_PASSWORD)"

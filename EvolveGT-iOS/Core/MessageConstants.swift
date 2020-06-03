@@ -92,6 +92,8 @@ struct LoadingIndicatorMessages {
     
     static let uploadingSignature = "Please wait, We're saving your signature."
     static let placingOrder = "Please wait, Placing your order..."
+    
+     static let cancellingEvent = "Please wait, we are cancelling your event"
 }
 
 struct ErrorMessages {
@@ -147,7 +149,9 @@ struct SuccessMessages {
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."
-    static let cartItemDeleted = " Successfully deleted."
+    static let cartItemDeleted = "Successfully deleted."
+    static let eventCancelled = "Event Cancelled successfully."
+    
     
 }
 

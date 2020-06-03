@@ -9,55 +9,55 @@
 import Foundation
 
 struct UserDataUserIdRequest : Codable{
-   var userID: String?
-
+    var userID: String?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
-       
+        
     }
 }
 
 struct UserDataSerialRequest : Codable{
-   var userID: String?
-
+    var userID: String?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "serial"
-       
+        
     }
 }
 
 struct UserDetailsRequest : Codable{
-   var userID: String?
-
+    var userID: String?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
-       
+        
     }
 }
 
 struct EventHistoryRequest : Codable{
-   var userID: String?
+    var userID: String?
     var isMotoevent : Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case isMotoevent = "is_motoevent"
-       
+        
     }
 }
 
 struct CreditHistoryRequest : Codable{
-   var userID: String?
-
+    var userID: String?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
-       
+        
     }
 }
 struct PasswordChangeRequest: Codable {
     var userID: String?
     var passwordRequestBody: PasswordRequestBody?
-
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case passwordRequestBody = "data"
@@ -67,9 +67,19 @@ struct PasswordChangeRequest: Codable {
 // MARK: - PasswordRequestBody
 struct PasswordRequestBody: Codable {
     var currentpassword, password, confirmPassword: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case currentpassword, password
         case confirmPassword = "confirm-password"
+    }
+}
+struct CancelEventRequest: Codable{
+    
+    var orderItemId, userId, skillLevel: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case orderItemId = "order_item_id"
+        case userId = "user_id"
+        case skillLevel = "skill_level"
     }
 }
