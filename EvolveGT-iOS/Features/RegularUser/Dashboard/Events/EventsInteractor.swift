@@ -241,7 +241,7 @@ class EventsInteractor :BaseInteractor{
         request.eventSlug = event.slug
         request.eventDate = event.eventDate;
         request.eventSlug = event.slug;
-         request.eventID = event.eventID
+        request.eventID = event.eventID
         request.eventPrice = event.getRoleBasedPrice(role: AppEngine.sharedInstance.userRole);
         request.serial = AppEngine.sharedInstance.userID
         request.role = AppEngine.sharedInstance.userRole
@@ -316,6 +316,8 @@ class EventsInteractor :BaseInteractor{
                     }
                     
                     self.eventDetailsDelegate?.didFetchEventDetails(eventDetails, sections: sections)
+                }else{
+                    self.eventDetailsDelegate?.showEmptyPageError(message: ErrorMessages.genericError)
                 }
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")

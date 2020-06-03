@@ -35,10 +35,15 @@ class CartListController : TabbedViewController, CartListDelegate{
         super.viewDidAppear(animated)
         labelTotal.textColor = .getAppThemeColor()
         totalPrice(total: 0)
-        cartItems.removeAll()
-        cartListView.reloadData()
+        outOfStockLabel.isHidden = true
+        
         interactor.fetchCartList()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cartItems.removeAll()
+        cartListView.reloadData()
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_CART

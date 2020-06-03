@@ -27,8 +27,6 @@ extension CheckboxButton {
 }
 extension RadioButton {
     func applyRadioButtonTheme(){
-        
-       
         self.radioButtonColor = RadioButtonColor(active: .getAppThemeColor(), inactive: .getSecondaryColor())
        
         self.backgroundColor = nil

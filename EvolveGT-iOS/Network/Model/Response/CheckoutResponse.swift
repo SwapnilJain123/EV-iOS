@@ -12,7 +12,7 @@ class CartListResponse : Codable{
     var cartList: [CartItem]?
     var walletEnabled: Int?
     var wallet: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case cartList = "data"
         case walletEnabled, wallet
@@ -22,15 +22,33 @@ class CartListResponse : Codable{
 struct CouponValidationResponse: Codable {
     var couponBalance : String?
     enum CodingKeys: String, CodingKey {
-           case couponBalance = "remain"
-       }
+        case couponBalance = "remain"
+    }
     
 }
 
 struct PlaceOrderResponse: Codable {
     var transactionID : String?
     enum CodingKeys: String, CodingKey {
-           case transactionID = "ack_id"
-       }
+        case transactionID = "ack_id"
+    }
     
+}
+struct CheckoutTokenResponse: Codable {
+    var checkoutToken : String?
+    enum CodingKeys: String, CodingKey {
+        case checkoutToken = "client_token"
+    }
+    
+}
+struct BrainTreeTransactionResponse : Codable{
+    var orderId, message : String?
+    var cartStatus, paymentStatus: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case paymentStatus = "payment_status"
+        case cartStatus = "cart_status"
+        case orderId = "order_id"
+        case message = "msg"
+    }
 }

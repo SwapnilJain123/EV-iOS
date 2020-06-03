@@ -36,3 +36,19 @@ class PlaceOrderRequest : Codable{
     }
    
 }
+class CheckoutTokenRequest : Codable{
+    var mode, email, userId: String?
+}
+class BrainTreeTransactionRequest: Codable{
+     var mode, amount, userId, brainTreeNonce, paymentType, coupon: String?
+    enum CodingKeys: String, CodingKey {
+        case mode
+        case amount
+        case brainTreeNonce = "nonce"
+        case userId = "serial"
+        case paymentType = "payment"
+        case coupon = "coupon"
+        
+    }
+   
+}

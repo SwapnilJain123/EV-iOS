@@ -45,6 +45,8 @@ struct ScreenTitle{
     static let TITLE_ARCHIE_CARDS = "Archie Cards"
      static let TITLE_CART = "Cart"
     static let TITLE_REVIEW_CART = "Review Cart"
+     static let TITLE_CART_PAYMENT = "Payment"
+     static let TITLE_PAYMENT_SUCCESS = "Transaction Receipt"
     
 }
 
