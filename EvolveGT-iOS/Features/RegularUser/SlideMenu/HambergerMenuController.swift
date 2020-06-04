@@ -28,7 +28,6 @@ class HambergerMenuController: ETViewController {
         }
         slidingMenuView.dataSource = self
         slidingMenuView.delegate = self
-        
         self.ext.hideNavbar()
     }
     
@@ -113,6 +112,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(storyBoard: "ChangePassword", VCIdentifier: "changePasswordVC")
         case SlideMenuItem.TAG_ABOUT_US:
             self.ext.pushViewController(storyBoard: "AboutUs", VCIdentifier: "aboutUsVC")
+            
+        case SlideMenuItem.TAG_MEMBERSHIP:
+                       self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
             
             
         default:

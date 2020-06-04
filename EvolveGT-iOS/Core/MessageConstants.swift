@@ -65,6 +65,7 @@ struct LoadingIndicatorMessages {
     static let loadingCompletedEvents = "Loading events..."
     static let loadingParticipants = "Loading participants..."
     static let loadingSignature = "Loading Signature..."
+     static let loadingMembershipList = "Loading available membership packages..."
     
     static let loadingEvents = "Loading Events..."
     
@@ -92,6 +93,9 @@ struct LoadingIndicatorMessages {
     
     static let uploadingSignature = "Please wait, We're saving your signature."
     static let placingOrder = "Please wait, Placing your order..."
+    
+     static let cancellingEvent = "Please wait, we are cancelling your event"
+    static let addingMembershipToCart = "Adding this membership to cart..."
 }
 
 struct ErrorMessages {
@@ -132,6 +136,7 @@ struct ErrorMessages {
     static let checkoutNoBillingAddress = "Unfortunately, no billing address has been found. Please add your billing address."
     
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
+     static let emptyMemberships = "Unfortunately, there is no memberships available right now."
 }
 
 struct SuccessMessages {
@@ -147,7 +152,12 @@ struct SuccessMessages {
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."
-    static let cartItemDeleted = " Successfully deleted."
+    static let cartItemDeleted = "Successfully deleted."
+    static let eventCancelled = "Event Cancelled successfully."
+     static let membershipAddedToCart = "Your membership has been added to the cart successfully."
+    
+    
+    
     
 }
 

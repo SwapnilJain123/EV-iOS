@@ -139,6 +139,10 @@
 		1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE862450A06C00190088 /* AdminApiConstants.swift */; };
 		1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE882450A19600190088 /* CompletedEventRequest.swift */; };
 		1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */; };
+		104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC42488FC0F008BE5DA /* MembershipController.swift */; };
+		104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104B8DC62488FC3C008BE5DA /* Membership.storyboard */; };
+		104B8DC9248903CD008BE5DA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC8248903CD008BE5DA /* Membership.swift */; };
+		104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
@@ -316,6 +320,10 @@
 		1039FE862450A06C00190088 /* AdminApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApiConstants.swift; sourceTree = "<group>"; };
 		1039FE882450A19600190088 /* CompletedEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventRequest.swift; sourceTree = "<group>"; };
 		1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsInteractor.swift; sourceTree = "<group>"; };
+		104B8DC42488FC0F008BE5DA /* MembershipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipController.swift; sourceTree = "<group>"; };
+		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
+		104B8DC8248903CD008BE5DA /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
+		104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipInteractor.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoEventDetailsController.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
@@ -406,6 +414,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				104B8DC32488FBF4008BE5DA /* Membership */,
 				10048F3E246F094800684A87 /* AboutUs */,
 				10048F37246ECC2400684A87 /* ChangePassword */,
 				1033464D2468412700D5EED0 /* SlideMenu */,
@@ -682,6 +691,7 @@
 				10716FC12478290B0032C056 /* Product.swift */,
 				103365FA247C5334009AF19A /* CartItem.swift */,
 				1033665C2482F524009AF19A /* PaymentMode.swift */,
+				104B8DC8248903CD008BE5DA /* Membership.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -886,6 +896,16 @@
 			path = CompletedEvents;
 			sourceTree = "<group>";
 		};
+		104B8DC32488FBF4008BE5DA /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				104B8DC42488FC0F008BE5DA /* MembershipController.swift */,
+				104B8DC62488FC3C008BE5DA /* Membership.storyboard */,
+				104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */,
+			);
+			path = Membership;
+			sourceTree = "<group>";
+		};
 		10716FBC2478228C0032C056 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -1004,7 +1024,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = YaraTech;
 				TargetAttributes = {
 					1039FDF8244F1A1800190088 = {
@@ -1051,6 +1071,7 @@
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
 				10048F43246F094800684A87 /* AboutUs.storyboard in Resources */,
+				104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
@@ -1153,6 +1174,7 @@
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
 				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
+				104B8DC9248903CD008BE5DA /* Membership.swift in Sources */,
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				1039FE8224509F3100190088 /* CompletedEventsResponse.swift in Sources */,
@@ -1250,6 +1272,8 @@
 				10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
+				104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */,
+				104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */,
 				10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */,
 				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
@@ -1342,6 +1366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.developer.uat;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1477,6 +1502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1496,6 +1522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1576,6 +1603,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.developer.qa;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1650,6 +1678,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eveolve.appstore;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

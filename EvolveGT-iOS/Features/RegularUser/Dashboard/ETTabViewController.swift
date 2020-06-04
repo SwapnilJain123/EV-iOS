@@ -67,6 +67,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate{
             self.tabBar.unselectedItemTintColor = .lightGray
             self.tabBar.tintColor = .white
         }
+        self.tabBar.isTranslucent = false
     }
     override func didChangeAppTheme() {
         Log.d("App Theme Changed")

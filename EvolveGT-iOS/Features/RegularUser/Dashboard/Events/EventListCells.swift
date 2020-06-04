@@ -94,6 +94,13 @@ class EventListCell: UICollectionViewCell {
                 btnAddToCart?.setImage(UIImage(named: "private-event-blue"), for: .normal)
                 
             }
+        }else if event?.external != nil{
+            if AppEngine.sharedInstance.isEvApp(){
+                btnAddToCart?.setImage(UIImage(named: "cart-globe-ev"), for: .normal)
+            }else{
+                btnAddToCart?.setImage(UIImage(named: "cart-globe-moto"), for: .normal)
+                
+            }
         }else{
              btnAddToCart?.setImage(UIImage(named: "cart"), for: .normal)
         }

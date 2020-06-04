@@ -45,7 +45,7 @@ struct SlideMenuItem{
         let pastEvents = SlideMenuItem("Past Events", "past_events_a","moto_past_events", TAG_PAST_EVENTS)
         let creditHistory = SlideMenuItem("Credit History", "credit_history","moto_slider_credit_hitory", TAG_CREDIT_HISTORY)
         
-        let membership = SlideMenuItem("Membership", "membership","moto_slider_membership", TAG_UPCOMING_EVENTS)
+        let membership = SlideMenuItem("Membership", "membership","moto_slider_membership", TAG_MEMBERSHIP)
         let myProfile = SlideMenuItem("My Profile", "my_profile", "moto_slider_profile",TAG_MY_PROFILE)
         
         let changePassword = SlideMenuItem("Change Password", "change password", "moto_slider_change_password",TAG_CHANGE_PASSWORD)

@@ -84,4 +84,11 @@ struct AddArchieCardToCartRequest: Codable {
     var price: String?
     var quantity: Int?
 }
-
+struct AddMembershipToCartRequest: Codable{
+   
+     var image, membership, price, userId, title: String?
+      enum CodingKeys: String, CodingKey {
+        case image, membership, price, title
+        case userId = "serial"
+    }
+}

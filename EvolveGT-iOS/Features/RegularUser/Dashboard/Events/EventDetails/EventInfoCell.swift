@@ -327,5 +327,23 @@ class TrackDayCell : UITableViewCell{
         price.text = trackDay?.price?.formatToAmount(prefix: "Price: ")
         hostedBy.text = "Hosted By: \(trackDay?.eventType ?? "")"
         rootView.setCardView()
+        
+        if trackDay?.isPrivateEvent ?? false{
+                   if AppEngine.sharedInstance.isEvApp(){
+                       addToCartButton?.setImage(UIImage(named: "private-event-green"), for: .normal)
+                   }else{
+                       addToCartButton?.setImage(UIImage(named: "private-event-blue"), for: .normal)
+                       
+                   }
+               }else if trackDay?.external != nil{
+                   if AppEngine.sharedInstance.isEvApp(){
+                       addToCartButton?.setImage(UIImage(named: "cart-globe-ev"), for: .normal)
+                   }else{
+                       addToCartButton?.setImage(UIImage(named: "cart-globe-moto"), for: .normal)
+                       
+                   }
+               }else{
+                    addToCartButton?.setImage(UIImage(named: "cart"), for: .normal)
+               }
     }
 }

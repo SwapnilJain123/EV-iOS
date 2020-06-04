@@ -7,7 +7,8 @@
 //
 
 import Foundation
-protocol EnrolledEventsViewDelegate : BaseViewDelegate{
+
+protocol EnrolledEventsViewDelegate{
     func didFetchAllEvents(events : [EnrolledEvent])
     func didFetchPastEvents(events : [EnrolledEvent]?)
     func didFetchUpcomingEvents(events : [EnrolledEvent]?)
@@ -18,7 +19,8 @@ protocol EnrolledEventsViewDelegate : BaseViewDelegate{
 
 class EnrolledEventsInteractor: BaseInteractor {
     
-    var delegate: EnrolledEventsViewDelegate?
+    var enrolledEventsDelegate: EnrolledEventsViewDelegate?
+     var delegate: BaseViewDelegate?
     
     func fetchEventHistory() {
         
@@ -32,7 +34,7 @@ class EnrolledEventsInteractor: BaseInteractor {
                 if let response = self.decodeFromJson(response!, modelType: EventsHistoryResponse.self){
                     
                     if response.enrolledEvents?.isEmpty ?? false{
-                        self.delegate?.eventsEmpty()
+                        self.enrolledEventsDelegate?.eventsEmpty()
                     }else{
                        let sortedEvents = response.enrolledEvents?.sorted(by:
                         {
@@ -49,19 +51,38 @@ class EnrolledEventsInteractor: BaseInteractor {
                             !($0.eventDate?.isEalierThanToday() ?? false)
                         })
                         
-                        self.delegate?.didFetchAllEvents(events: sortedEvents!)
-                        self.delegate?.didFetchPastEvents(events: pastEvents)
-                        self.delegate?.didFetchUpcomingEvents(events: upComingEvents!)
+                        self.enrolledEventsDelegate?.didFetchAllEvents(events: sortedEvents!)
+                        self.enrolledEventsDelegate?.didFetchPastEvents(events: pastEvents)
+                        self.enrolledEventsDelegate?.didFetchUpcomingEvents(events: upComingEvents!)
                         
                     }
                     
                 }
             }else{
-                self.delegate?.eventsEmpty()
+                self.enrolledEventsDelegate?.eventsEmpty()
             }
             
-            self.delegate?.reloadCurrentIndex()
+            self.enrolledEventsDelegate?.reloadCurrentIndex()
         }
         profileApi.fetchEventHistory(userId: AppEngine.sharedInstance.userID)
+    }
+    
+    func cancelEvent(itemID: String){
+         self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.cancellingEvent)
+        let profileApi = ProfileApi()
+        var request = CancelEventRequest()
+        request.userId = AppEngine.sharedInstance.userID
+        request.skillLevel = AppEngine.sharedInstance.currentUser?.skillLevel
+        request.orderItemId = itemID
+        
+        profileApi.setCompletionHandler{data, error in
+            self.delegate?.hideProgressIndicator()
+            if error == nil{
+                self.delegate?.showSuccessToastMessage(message: SuccessMessages.eventCancelled)
+            }else{
+                self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
+        }
+        profileApi.cancelEvent(request: request)
     }
 }
