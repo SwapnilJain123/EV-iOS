@@ -83,3 +83,13 @@ struct CancelEventRequest: Codable{
         case skillLevel = "skill_level"
     }
 }
+struct UserMemberShipRequest: Codable{
+    
+    var userId: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id"
+      
+    }
+}
+

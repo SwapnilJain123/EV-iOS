@@ -66,8 +66,14 @@ class ProfileApi : BaseApiAdapter{
         
         
     }
-    
-    
-    
+   
+    func fetchEnrolledMembership(userId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_MEMBERSHIP)"
+        let request = UserMemberShipRequest(userId: userId)
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
     
 }

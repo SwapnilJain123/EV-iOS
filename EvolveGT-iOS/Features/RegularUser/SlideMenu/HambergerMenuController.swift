@@ -113,6 +113,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
         case SlideMenuItem.TAG_ABOUT_US:
             self.ext.pushViewController(storyBoard: "AboutUs", VCIdentifier: "aboutUsVC")
             
+        case SlideMenuItem.TAG_MEMBERSHIP:
+                       self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
+            
             
         default:
             break
