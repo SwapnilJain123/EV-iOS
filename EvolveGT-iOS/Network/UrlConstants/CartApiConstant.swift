@@ -18,6 +18,8 @@ struct CartApiConstants {
     
     static let ADD_ARCHIE_CARD_TO_CART = "archieCard/addToCart"
     
+     static let ADD_GIFT_CARD_TO_CART = "giftCard/addToCart"
+    
     
     
 }

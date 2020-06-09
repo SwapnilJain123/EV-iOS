@@ -10,6 +10,7 @@ import Foundation
 
 struct ItemDetailRequest: Codable {
     var slug: String?
+    var postStatus = "publish"
 }
 
 

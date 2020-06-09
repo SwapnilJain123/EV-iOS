@@ -119,6 +119,9 @@ class ShopViewController : TabbedViewController{
     }
     
     @IBAction func didPressGift(_ sender: Any) {
+        
+          self.ext.pushViewController(storyBoard: "GiftCard", VCIdentifier: "giftCardVC")
+        
     }
     
     @IBAction func didPressGear(_ sender: Any) {

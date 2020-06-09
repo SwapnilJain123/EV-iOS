@@ -85,3 +85,10 @@ struct AddArchieCardToCartRequest: Codable {
     var quantity: Int?
 }
 
+struct AddGiftCardToCartRequest: Codable {
+    var email, name: String?
+    var image: String?
+    var serial, price, quantity, slug: String?
+    var title: String?
+}
+

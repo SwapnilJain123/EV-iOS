@@ -39,6 +39,15 @@ class CartApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func addGiftCardToCart(request: AddGiftCardToCartRequest){
+           
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_GIFT_CARD_TO_CART)"
+           setUrl(url: url)
+           setParameters(parameters: makeDictionary(request))
+           super.makeRequest(method: .POST)
+       }
+       
+    
     
     func removeFromCart(cartItem: CartItem){
         
