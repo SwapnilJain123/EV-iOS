@@ -159,6 +159,12 @@
 		10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD62479A9920032C056 /* ProductDetailsCells.swift */; };
 		10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD8247AF8AF0032C056 /* ProductDetails.swift */; };
 		10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FDA247BE20F0032C056 /* DropDownList.swift */; };
+		109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */; };
+		109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E812484EEA4009446A0 /* GiftCardViewController.swift */; };
+		109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */; };
+		109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E85248635F1009446A0 /* GiftCardCell.swift */; };
+		109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8724863D5B009446A0 /* GiftCard.swift */; };
+		109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */; };
 		109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
@@ -340,6 +346,12 @@
 		10716FD62479A9920032C056 /* ProductDetailsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCells.swift; sourceTree = "<group>"; };
 		10716FD8247AF8AF0032C056 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		10716FDA247BE20F0032C056 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftCard.storyboard; sourceTree = "<group>"; };
+		109D6E812484EEA4009446A0 /* GiftCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardViewController.swift; sourceTree = "<group>"; };
+		109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardInteractor.swift; sourceTree = "<group>"; };
+		109D6E85248635F1009446A0 /* GiftCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardCell.swift; sourceTree = "<group>"; };
+		109D6E8724863D5B009446A0 /* GiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCard.swift; sourceTree = "<group>"; };
+		109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardDetailsViewController.swift; sourceTree = "<group>"; };
 		109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAcknowledgementController.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
@@ -466,6 +478,7 @@
 		103345ED24606C2000D5EED0 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				109D6E7E2484EE01009446A0 /* GiftCardList */,
 				103366612483AE72009AF19A /* ArchieCard */,
 				10716FD124799CC50032C056 /* ProductDetails */,
 				10716FBC2478228C0032C056 /* Product */,
@@ -596,19 +609,11 @@
 			children = (
 				103366622483AE72009AF19A /* ArchieCardInteractor.swift */,
 				103366632483AE72009AF19A /* ArchieCard.storyboard */,
-				103366642483AE72009AF19A /* ArchieCardDetails */,
+				103366652483AE72009AF19A /* ArchieCardDetailsViewController.swift */,
 				103366662483AE72009AF19A /* ArchieCardViewController.swift */,
 				103366672483AE72009AF19A /* ArchiCardCell.swift */,
 			);
 			path = ArchieCard;
-			sourceTree = "<group>";
-		};
-		103366642483AE72009AF19A /* ArchieCardDetails */ = {
-			isa = PBXGroup;
-			children = (
-				103366652483AE72009AF19A /* ArchieCardDetailsViewController.swift */,
-			);
-			path = ArchieCardDetails;
 			sourceTree = "<group>";
 		};
 		1039FDF0244F1A1800190088 = {
@@ -691,6 +696,7 @@
 				10716FC12478290B0032C056 /* Product.swift */,
 				103365FA247C5334009AF19A /* CartItem.swift */,
 				1033665C2482F524009AF19A /* PaymentMode.swift */,
+				109D6E8724863D5B009446A0 /* GiftCard.swift */,
 				104B8DC8248903CD008BE5DA /* Membership.swift */,
 			);
 			path = Model;
@@ -924,6 +930,18 @@
 			path = ProductDetails;
 			sourceTree = "<group>";
 		};
+		109D6E7E2484EE01009446A0 /* GiftCardList */ = {
+			isa = PBXGroup;
+			children = (
+				109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */,
+				109D6E812484EEA4009446A0 /* GiftCardViewController.swift */,
+				109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */,
+				109D6E85248635F1009446A0 /* GiftCardCell.swift */,
+				109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */,
+			);
+			path = GiftCardList;
+			sourceTree = "<group>";
+		};
 		10BDD00F245982CA00F05700 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,6 +1084,7 @@
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				103345FA24606D4400D5EED0 /* Home.storyboard in Resources */,
 				103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */,
+				109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */,
 				10048F39246ECC5200684A87 /* ChangePassword.storyboard in Resources */,
 				103345F824606D3800D5EED0 /* Events.storyboard in Resources */,
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
@@ -1129,6 +1148,7 @@
 			files = (
 				1033460824608E3100D5EED0 /* UsreDataResponse.swift in Sources */,
 				1039FE6D24506ED600190088 /* BaseViewDelegate.swift in Sources */,
+				109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */,
 				103366682483AE72009AF19A /* ArchieCardInteractor.swift in Sources */,
 				10716FB42476C6B60032C056 /* ShopViewController.swift in Sources */,
 				10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */,
@@ -1177,6 +1197,7 @@
 				104B8DC9248903CD008BE5DA /* Membership.swift in Sources */,
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
+				109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */,
 				1039FE8224509F3100190088 /* CompletedEventsResponse.swift in Sources */,
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
@@ -1233,6 +1254,8 @@
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				10336608247D3D99009AF19A /* CartListController.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
+				109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */,
+				109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */,
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
@@ -1270,6 +1293,7 @@
 				10716FB82476E98E0032C056 /* ShopsInteractor.swift in Sources */,
 				10048F0F246D017400684A87 /* ShopItemResponse.swift in Sources */,
 				10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */,
+				109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
 				104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */,

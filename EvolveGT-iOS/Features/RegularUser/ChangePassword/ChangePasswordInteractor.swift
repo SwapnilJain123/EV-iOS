@@ -21,14 +21,14 @@ class ChangePasswordInteractor:BaseInteractor {
         
         if currentPassword.isEmpty(){
             
-            self.delegate?.changePasswordMessage(message: ErrorMessages.error_empty_current_password)
+            self.delegate?.changePasswordMessage(message: ErrorMessages.errorEmptyCurrentPassword)
             
            
         }else if newPassword.isEmpty(){
-            self.delegate?.changePasswordMessage(message: ErrorMessages.error_empty_password)
+            self.delegate?.changePasswordMessage(message: ErrorMessages.errorEmptyPassword)
             
         }else if newPassword != confirmPassword{
-            self.delegate?.changePasswordMessage(message: ErrorMessages.error_confirm_password)
+            self.delegate?.changePasswordMessage(message: ErrorMessages.errorConfirmPassword)
             
             
         }else{
