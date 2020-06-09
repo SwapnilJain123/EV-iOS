@@ -13,7 +13,9 @@ extension UIButton{
     func applyColorTheme(){
         
         self.backgroundColor = UIColor.getAppThemeColor()
-        
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.clear.cgColor
         
         self.clipsToBounds = true  // add this to maintain corner radius
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
@@ -135,4 +137,12 @@ extension UIButton{
         self.layer.borderColor = UIColor.getAppThemeColor().cgColor
         self.setTitleColor(.getAppThemeColor(), for: .normal)
     }
+    
+    func setBorderColor(color: UIColor){
+           self.backgroundColor = .clear
+           self.layer.cornerRadius = 5
+           self.layer.borderWidth = 2
+           self.layer.borderColor = color.cgColor
+           self.setTitleColor(color, for: .normal)
+       }
 }

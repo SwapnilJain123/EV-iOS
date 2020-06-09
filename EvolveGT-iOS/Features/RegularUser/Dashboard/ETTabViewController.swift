@@ -15,14 +15,14 @@ import SideMenuSwift
 class ETTabViewController: UITabBarController, UITabBarControllerDelegate{
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
         self.ext.showNavbar()
         self.ext.hideBackButton()
-        
-        tabBar.barTintColor = UIColor.black
+        styleTabBar()
         self.delegate = self
     }
     
@@ -48,12 +48,29 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate{
             return nil
         }
     }
-
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
-            if let displayedVC = viewController.presentedViewController as? TabbedViewController{
-                displayedVC.didSwitchTab()
-            }
+        if let displayedVC = viewController.presentedViewController as? TabbedViewController{
+            displayedVC.didSwitchTab()
+        }
         
+    }
+    
+    func styleTabBar(){
+        if AppEngine.sharedInstance.isEvApp(){
+            self.tabBar.barTintColor = .getEVTabBackgroundGray()
+             self.tabBar.tintColor = .getEvColor()
+            self.tabBar.unselectedItemTintColor = .lightText
+        }else{
+            self.tabBar.barTintColor = .getMotoColor()
+            self.tabBar.unselectedItemTintColor = .lightGray
+            self.tabBar.tintColor = .white
+        }
+        self.tabBar.isTranslucent = false
+    }
+    override func didChangeAppTheme() {
+        Log.d("App Theme Changed")
+        styleTabBar()
     }
 }

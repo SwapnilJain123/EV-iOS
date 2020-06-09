@@ -30,6 +30,12 @@ extension String{
         return date
     }
     
+    static func getCurrentDate(format: String) -> String{
+        let today = Date()
+        let formattedToday = today.toString(format: .custom(format))
+        return formattedToday
+    }
+    
     func formattedDate(inputPattern: String, outputFormat: String) -> String {
        
         let date = Date(fromString: self, format: .custom(inputPattern))

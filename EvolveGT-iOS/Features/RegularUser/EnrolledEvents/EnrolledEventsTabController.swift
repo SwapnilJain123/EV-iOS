@@ -48,11 +48,15 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
         super.viewDidLoad()
         
         interactor.delegate = self
-        interactor.fetchEventHistory()
-        
+        interactor.enrolledEventsDelegate = self
+       
+        fetchEventHistory()
         
     }
     
+    func fetchEventHistory(){
+         interactor.fetchEventHistory()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.moveToViewController(at: selectedIndex)
@@ -87,7 +91,7 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
         return [upcomingEvents, pastEvents, allEvents]
     }
 }
-extension EnrolledEventsTabController : EnrolledEventsViewDelegate{
+extension EnrolledEventsTabController : EnrolledEventsViewDelegate, BaseViewDelegate{
     func hideEmptyPageError() {
         self.ext.hideErrorView()
     }

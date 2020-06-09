@@ -48,13 +48,12 @@ class EventDetailsController : ETViewController{
                 self.ext.openLink(self.eventDetails!.external!.url!)
                 return
             }
-        }
-        if isMotoEvent{
-            addMotoEventToCart()
-            
         }else if (eventDetails?.isPrivateEvent ?? false) {
             //Mark: get the private code
             addPrivateEventToCart(eventDetails!)
+        }else  if isMotoEvent{
+            addMotoEventToCart()
+            
         }else{
             interactor.addEvolveEventToCart(eventDetails!)
         }
@@ -234,7 +233,7 @@ extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCe
             addPrivateEventToCart(event)
         }else if(event.external != nil){
             self.ext.confirmationAlert(title: AlertTitle.externalHost, message: MessageConstants.externalLink, btnText: "Open"){
-                self.ext.openLink(event.external!.url!)
+                self.ext.openLink(event.external!.url ?? "")
                 return
             }
         }else{

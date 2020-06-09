@@ -41,6 +41,18 @@ extension UIViewController{
             
             vc.present(alerController, animated: true, completion: nil)
         }
+        func confirmationAlert(title: String?, message: String?, btnText : String, btnDismiss : String, handler: @escaping (()->Void)) {
+            let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: btnText, style: .default){ alertAction in
+                // alerController.dismiss(animated: false, completion: nil)
+                handler()
+            }
+            alerController.addAction(confirmAction)
+            
+            alerController.addAction(UIAlertAction(title: btnDismiss, style: .cancel, handler: nil))
+            
+            vc.present(alerController, animated: true, completion: nil)
+        }
         
         func addLoadingIndicator(_ message: String?){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.150, execute: {
@@ -132,6 +144,16 @@ extension UIViewController{
         
         func showBackButton(){
             vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        
+        func backButtonToRootViewController(){
+            
+                vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.didPressBackButton))
+            
+        }
+        
+        @objc func didPressBackButton(){
+            vc.navigationController?.popViewController(animated: true)
         }
         
         func hideBackButton(){

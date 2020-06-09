@@ -11,4 +11,5 @@ import XLPagerTabStrip
 
 protocol  TabProtocol: IndicatorInfoProvider {
     func reload()
+    
 }

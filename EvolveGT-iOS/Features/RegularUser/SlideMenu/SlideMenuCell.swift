@@ -28,7 +28,7 @@ class SlideMenuCell: UITableViewCell {
         if selected {
             contentView.backgroundColor = UIColor.lightGray
         } else {
-            contentView.backgroundColor = UIColor.white
+            contentView.backgroundColor = UIColor.clear
         }
     }
 }

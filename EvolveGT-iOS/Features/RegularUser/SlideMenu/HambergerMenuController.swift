@@ -28,7 +28,6 @@ class HambergerMenuController: ETViewController {
         }
         slidingMenuView.dataSource = self
         slidingMenuView.delegate = self
-        
         self.ext.hideNavbar()
     }
     
@@ -39,6 +38,7 @@ class HambergerMenuController: ETViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
          self.setNeedsStatusBarAppearanceUpdate()
+        self.refreshSideMenu()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -67,7 +67,8 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"SideMenuCell",for: indexPath) as! SlideMenuCell
         cell.titleLbl.text = menuItems[indexPath.row].title
-        cell.iconImgView.image =  UIImage(named:menuItems[indexPath.row].icon)
+        let icon = AppEngine.sharedInstance.isEvApp() ? menuItems[indexPath.row].evIcon : menuItems[indexPath.row].motoIcon
+        cell.iconImgView.image =  UIImage(named:icon)
         
         return cell
         
@@ -111,6 +112,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(storyBoard: "ChangePassword", VCIdentifier: "changePasswordVC")
         case SlideMenuItem.TAG_ABOUT_US:
             self.ext.pushViewController(storyBoard: "AboutUs", VCIdentifier: "aboutUsVC")
+            
+        case SlideMenuItem.TAG_MEMBERSHIP:
+                       self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
             
             
         default:

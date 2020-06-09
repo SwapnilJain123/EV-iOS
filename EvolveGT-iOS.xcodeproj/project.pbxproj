@@ -139,6 +139,10 @@
 		1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE862450A06C00190088 /* AdminApiConstants.swift */; };
 		1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE882450A19600190088 /* CompletedEventRequest.swift */; };
 		1039FE8B2450AB4E00190088 /* CompletedEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */; };
+		104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC42488FC0F008BE5DA /* MembershipController.swift */; };
+		104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104B8DC62488FC3C008BE5DA /* Membership.storyboard */; };
+		104B8DC9248903CD008BE5DA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC8248903CD008BE5DA /* Membership.swift */; };
+		104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
@@ -161,6 +165,7 @@
 		109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E85248635F1009446A0 /* GiftCardCell.swift */; };
 		109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8724863D5B009446A0 /* GiftCard.swift */; };
 		109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */; };
+		109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -321,6 +326,10 @@
 		1039FE862450A06C00190088 /* AdminApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApiConstants.swift; sourceTree = "<group>"; };
 		1039FE882450A19600190088 /* CompletedEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventRequest.swift; sourceTree = "<group>"; };
 		1039FE8A2450AB4E00190088 /* CompletedEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsInteractor.swift; sourceTree = "<group>"; };
+		104B8DC42488FC0F008BE5DA /* MembershipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipController.swift; sourceTree = "<group>"; };
+		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
+		104B8DC8248903CD008BE5DA /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
+		104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipInteractor.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoEventDetailsController.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
@@ -343,6 +352,7 @@
 		109D6E85248635F1009446A0 /* GiftCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardCell.swift; sourceTree = "<group>"; };
 		109D6E8724863D5B009446A0 /* GiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCard.swift; sourceTree = "<group>"; };
 		109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardDetailsViewController.swift; sourceTree = "<group>"; };
+		109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAcknowledgementController.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +426,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				104B8DC32488FBF4008BE5DA /* Membership */,
 				10048F3E246F094800684A87 /* AboutUs */,
 				10048F37246ECC2400684A87 /* ChangePassword */,
 				1033464D2468412700D5EED0 /* SlideMenu */,
@@ -588,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				1033665F248389BF009AF19A /* PaymentViewController.swift */,
+				109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -685,6 +697,7 @@
 				103365FA247C5334009AF19A /* CartItem.swift */,
 				1033665C2482F524009AF19A /* PaymentMode.swift */,
 				109D6E8724863D5B009446A0 /* GiftCard.swift */,
+				104B8DC8248903CD008BE5DA /* Membership.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -889,6 +902,16 @@
 			path = CompletedEvents;
 			sourceTree = "<group>";
 		};
+		104B8DC32488FBF4008BE5DA /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				104B8DC42488FC0F008BE5DA /* MembershipController.swift */,
+				104B8DC62488FC3C008BE5DA /* Membership.storyboard */,
+				104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */,
+			);
+			path = Membership;
+			sourceTree = "<group>";
+		};
 		10716FBC2478228C0032C056 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,7 +1042,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = YaraTech;
 				TargetAttributes = {
 					1039FDF8244F1A1800190088 = {
@@ -1067,6 +1090,7 @@
 				1039FE06244F1A1A00190088 /* Assets.xcassets in Resources */,
 				103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */,
 				10048F43246F094800684A87 /* AboutUs.storyboard in Resources */,
+				104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */,
 				103346202466882600D5EED0 /* CreditHistory.storyboard in Resources */,
 				10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */,
 				1039FE45244F6C1F00190088 /* Guest.storyboard in Resources */,
@@ -1142,6 +1166,7 @@
 				10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */,
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
+				109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */,
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
 				10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */,
 				1033660C247D3E7D009AF19A /* CheckoutApi.swift in Sources */,
@@ -1169,6 +1194,7 @@
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
 				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
+				104B8DC9248903CD008BE5DA /* Membership.swift in Sources */,
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */,
@@ -1270,6 +1296,8 @@
 				109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
+				104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */,
+				104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */,
 				10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */,
 				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
@@ -1354,14 +1382,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3P4BH4498;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.developer.uat;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1497,6 +1526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1516,6 +1546,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1588,14 +1619,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3P4BH4498;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.developer.qa;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1670,6 +1702,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eveolve.appstore;
 				PRODUCT_NAME = "$(APP_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

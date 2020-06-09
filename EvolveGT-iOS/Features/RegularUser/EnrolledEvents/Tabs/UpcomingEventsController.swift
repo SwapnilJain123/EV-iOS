@@ -49,7 +49,22 @@ class UpcomingEventsController : ETViewController, TabProtocol, UITableViewDataS
         let eventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EnrolledEventCell
         
         eventCell.populateViews(event: events![indexPath.row])
-        
+        eventCell.delegate = self
         return eventCell
+    }
+}
+extension UpcomingEventsController: EnrolledEventCellDelegate{
+    
+    func cancelEvent(event: EnrolledEvent) {
+        self.ext.confirmationAlert(title: "Cancel Event", message: "You are about to cancel the event - \(event.productName ?? ""). Do you really want to proceed?", btnText: "Yes", btnDismiss: "No"){
+            let interactor = EnrolledEventsInteractor()
+            interactor.delegate = self
+            interactor.cancelEvent(itemID: event.orderItemID ?? "")
+        }
+    }
+    
+    override func showSuccessToastMessage(message: String) {
+        super.showSuccessToastMessage(message: message)
+        (self.parent as! EnrolledEventsTabController).fetchEventHistory()
     }
 }

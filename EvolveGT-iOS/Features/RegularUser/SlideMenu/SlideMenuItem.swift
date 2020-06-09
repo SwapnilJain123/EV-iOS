@@ -23,32 +23,37 @@ struct SlideMenuItem{
     static let TAG_LOG_OUT = 11
     
     var title = ""
-    var  icon = ""
+    var evIcon = ""
+    var motoIcon = ""
     var tag = 0
     
     init(){
         
     }
-    init(_ title: String, _ icon : String, _ tag: Int ){
+    init(_ title: String, _ evIcon : String, _ motoIcon : String, _ tag: Int ){
         self.title = title
-        self.icon = icon
+        self.evIcon = evIcon
+        self.motoIcon = motoIcon
         self.tag = tag
     }
     public static func getllItems() -> [SlideMenuItem]{
         let empty = SlideMenuItem()
         
-        let home = SlideMenuItem("Home", "homesideMenu", TAG_HOME)
-        let upcomingEvents = SlideMenuItem("Upcoming Events", "upcoming_events_a", TAG_UPCOMING_EVENTS)
+        let home = SlideMenuItem("Home", "homesideMenu", "mato_slider_home", TAG_HOME)
         
-        let pastEvents = SlideMenuItem("Past Events", "past_events_a", TAG_PAST_EVENTS)
-        let creditHistory = SlideMenuItem("Credit History", "credit_history", TAG_CREDIT_HISTORY)
-        let membership = SlideMenuItem("Membership", "membership", TAG_UPCOMING_EVENTS)
-        let myProfile = SlideMenuItem("My Profile", "my_profile", TAG_MY_PROFILE)
-        let changePassword = SlideMenuItem("Change Password", "change password", TAG_CHANGE_PASSWORD)
-        let settings = SlideMenuItem("Settings", "settings", TAG_SETTINGS)
-        let aboutUs = SlideMenuItem("About Us", "aboutUs", TAG_ABOUT_US)
-        let switchDashboard = SlideMenuItem("Switch Dashboard", "SwictUserGreen", TAG_SWITCH_DASHBOARD)
-        let logout = SlideMenuItem("Logout", "logoutGreen", TAG_LOG_OUT)
+        let upcomingEvents = SlideMenuItem("Upcoming Events", "upcoming_events_a", "moto_upcoming_events",TAG_UPCOMING_EVENTS)
+        let pastEvents = SlideMenuItem("Past Events", "past_events_a","moto_past_events", TAG_PAST_EVENTS)
+        let creditHistory = SlideMenuItem("Credit History", "credit_history","moto_slider_credit_hitory", TAG_CREDIT_HISTORY)
+        
+        let membership = SlideMenuItem("Membership", "membership","moto_slider_membership", TAG_MEMBERSHIP)
+        let myProfile = SlideMenuItem("My Profile", "my_profile", "moto_slider_profile",TAG_MY_PROFILE)
+        
+        let changePassword = SlideMenuItem("Change Password", "change password", "moto_slider_change_password",TAG_CHANGE_PASSWORD)
+        let settings = SlideMenuItem("Settings", "settings", "moto_slider_settings",TAG_SETTINGS)
+        let aboutUs = SlideMenuItem("About Us", "aboutUs", "mato_slider_about_us",TAG_ABOUT_US)
+        
+        let switchDashboard = SlideMenuItem("Switch Dashboard", "SwictUserGreen","moto_slider_switch_dashboard", TAG_SWITCH_DASHBOARD)
+        let logout = SlideMenuItem("Logout", "logoutGreen", "mato_slider_logout",TAG_LOG_OUT)
         
         return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, logout]
     }

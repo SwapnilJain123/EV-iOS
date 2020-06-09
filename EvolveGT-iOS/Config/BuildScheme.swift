@@ -18,6 +18,26 @@ class BuildScheme{
         return  "QA"
     }
     
+    static var brainTreeReturnUrl :String {
+        var nsDictionary : NSDictionary?
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
+             nsDictionary = NSDictionary(contentsOfFile: path)
+            let mode = nsDictionary!["BRAINTREE_RETURN_URL"] as! String? ?? ""
+           return  mode
+        }
+        return  ""
+    }
+    
+    static var paymentMode :String {
+        var nsDictionary : NSDictionary?
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
+             nsDictionary = NSDictionary(contentsOfFile: path)
+            let mode = nsDictionary!["CHECKOUT_MODE"] as! String? ?? "sandbox"
+           return  mode
+        }
+        return  "sandbox"
+    }
+    
     static var isBuildQA : Bool {
         return "QA" == BuildScheme.buildMode
     }

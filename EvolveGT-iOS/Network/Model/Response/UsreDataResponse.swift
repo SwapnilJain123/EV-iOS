@@ -31,3 +31,26 @@ struct CreditHistoryResponse : Decodable{
            case creditHistoryList = "result"
     }
 }
+struct MembershipListResponse: Codable {
+    var memberships: [Membership]?
+    var season: String?
+}
+
+struct UserMembershipResponse: Codable {
+  
+    var membershipId: String?
+    enum CodingKeys: String, CodingKey {
+           case membershipId = "membership_id"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+       
+        if let value = try? container.decode(Int.self, forKey: .membershipId) {
+            membershipId = String(value)
+        } else {
+            membershipId = try container.decode(String.self, forKey: .membershipId)
+        }
+    }
+}
+

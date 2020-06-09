@@ -12,3 +12,6 @@ APP_NAME=EvolveGT
 BASE_URL=evolvegt.com
 LOG_ENABLED=NO
 BUILD_CONFIG=APPSTORE
+CHECKOUT_MODE=production
+BUNDLE_ID=com.evolve.appstore
+BRAINTREE_RETURN_URL=com.evolve.appstore.payments

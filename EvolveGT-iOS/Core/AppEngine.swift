@@ -28,6 +28,7 @@ class AppEngine{
     
     var currentUser : User?
     var userDetails : UserDetails?
+    var membership : String?
     
     var authToken = ""
     private var userDefaultHelper = UserDefaultHelper.sharedInstance
@@ -104,6 +105,7 @@ class AppEngine{
         walletEnabled = false
         walletBalance = 0
         cartListCount = 0
+        membership = ""
     }
     
    
