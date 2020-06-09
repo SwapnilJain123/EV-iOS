@@ -56,7 +56,9 @@ class ShopsApi : BaseApiAdapter{
     func fetchGiftCardList(){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.GIFT_CARD_LIST)"
-    
+        setUrl(url: url)
+        super.makeRequest(method: .GET)
+    }
     func fetchMembershipList(){
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.MEMBERSHIP_LIST)"
         setUrl(url: url)

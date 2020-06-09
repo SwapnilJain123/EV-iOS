@@ -138,7 +138,7 @@ struct ErrorMessages {
     static let emptyArchieCards = "There are no Archie Cards available right now."
     static let emptyGiftCards = "There are no Gift Cards available."
     
-    static let checkoutNoBillingAddress = "Unfortunately, no billing address has been found. Please add your billing address."
+    
     
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
      static let emptyMemberships = "Unfortunately, there is no memberships available right now."

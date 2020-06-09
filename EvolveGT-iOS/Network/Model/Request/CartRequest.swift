@@ -69,7 +69,7 @@ struct CartRemoveRequest: Codable{
         self.method = cartItem.source?.rawValue
     }
     
-      enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case cartId = "cartid"
         case itemId = "itemid"
         case method
@@ -90,12 +90,12 @@ struct AddGiftCardToCartRequest: Codable {
     var image: String?
     var serial, price, quantity, slug: String?
     var title: String?
+}
 struct AddMembershipToCartRequest: Codable{
-   
-     var image, membership, price, userId, title: String?
-      enum CodingKeys: String, CodingKey {
+    
+    var image, membership, price, userId, title: String?
+    enum CodingKeys: String, CodingKey {
         case image, membership, price, title
         case userId = "serial"
     }
 }
-
