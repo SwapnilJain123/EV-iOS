@@ -36,6 +36,7 @@ struct MembershipListResponse: Codable {
     var season: String?
 }
 
+
 struct UserMembershipResponse: Codable {
   
     var membershipId: String?

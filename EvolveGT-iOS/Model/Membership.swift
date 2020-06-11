@@ -38,3 +38,36 @@ class Membership: Codable {
         AppEngine.sharedInstance.userRole.lowercased() == title?.lowercased()
     }
 }
+struct MembershipDetails: Codable {
+    var membershipID, oldPostID, title, slug: String?
+    var image: String?
+    var price, stockStatus, description, packages: String?
+    var postStatus, postAuthor, postDate, postModified: String?
+    var status: Int?
+    var msg: String?
+
+    enum CodingKeys: String, CodingKey {
+        case membershipID = "membership_id"
+        case oldPostID = "old_post_id"
+        case title, slug, image, price
+        case stockStatus = "stock_status"
+        case description = "description"
+        case packages
+        case postStatus = "post_status"
+        case postAuthor = "post_author"
+        case postDate = "post_date"
+        case postModified = "post_modified"
+        case status, msg
+    }
+    
+    func canPurchase(currentMembership: String?) -> Bool{
+        let currentId = Int(currentMembership ?? "") ?? 0
+        let membershipId = Int(membershipID ?? "") ?? 0
+        return !isGuest && (currentMembership == nil || currentId < membershipId)
+        
+    }
+    var isGuest : Bool{
+        "guest" == title?.lowercased()
+    }
+    
+}

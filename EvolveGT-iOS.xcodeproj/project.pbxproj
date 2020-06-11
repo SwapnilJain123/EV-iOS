@@ -143,6 +143,7 @@
 		104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104B8DC62488FC3C008BE5DA /* Membership.storyboard */; };
 		104B8DC9248903CD008BE5DA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC8248903CD008BE5DA /* Membership.swift */; };
 		104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */; };
+		104B8DD824901E8E008BE5DA /* MembershipDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DD724901E8E008BE5DA /* MembershipDetailsViewController.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
@@ -164,8 +165,8 @@
 		109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */; };
 		109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E85248635F1009446A0 /* GiftCardCell.swift */; };
 		109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8724863D5B009446A0 /* GiftCard.swift */; };
-		109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */; };
 		109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */; };
+		109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -330,6 +331,7 @@
 		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		104B8DC8248903CD008BE5DA /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipInteractor.swift; sourceTree = "<group>"; };
+		104B8DD724901E8E008BE5DA /* MembershipDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailsViewController.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoEventDetailsController.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
@@ -351,8 +353,8 @@
 		109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardInteractor.swift; sourceTree = "<group>"; };
 		109D6E85248635F1009446A0 /* GiftCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardCell.swift; sourceTree = "<group>"; };
 		109D6E8724863D5B009446A0 /* GiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCard.swift; sourceTree = "<group>"; };
-		109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardDetailsViewController.swift; sourceTree = "<group>"; };
 		109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAcknowledgementController.swift; sourceTree = "<group>"; };
+		109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardDetailsViewController.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -905,9 +907,10 @@
 		104B8DC32488FBF4008BE5DA /* Membership */ = {
 			isa = PBXGroup;
 			children = (
-				104B8DC42488FC0F008BE5DA /* MembershipController.swift */,
 				104B8DC62488FC3C008BE5DA /* Membership.storyboard */,
+				104B8DC42488FC0F008BE5DA /* MembershipController.swift */,
 				104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */,
+				104B8DD724901E8E008BE5DA /* MembershipDetailsViewController.swift */,
 			);
 			path = Membership;
 			sourceTree = "<group>";
@@ -1147,6 +1150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1033460824608E3100D5EED0 /* UsreDataResponse.swift in Sources */,
+				104B8DD824901E8E008BE5DA /* MembershipDetailsViewController.swift in Sources */,
 				1039FE6D24506ED600190088 /* BaseViewDelegate.swift in Sources */,
 				109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */,
 				103366682483AE72009AF19A /* ArchieCardInteractor.swift in Sources */,

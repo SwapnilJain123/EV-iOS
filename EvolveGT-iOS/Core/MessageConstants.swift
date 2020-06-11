@@ -98,6 +98,7 @@ struct LoadingIndicatorMessages {
     
      static let cancellingEvent = "Please wait, we are cancelling your event"
     static let addingMembershipToCart = "Adding this membership to cart..."
+       static let loadingMembershipDetails = "Loading Membership details..."
 }
 
 struct ErrorMessages {
