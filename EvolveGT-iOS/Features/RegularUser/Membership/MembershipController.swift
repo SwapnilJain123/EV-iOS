@@ -41,6 +41,13 @@ class MembershipController : ETViewController{
 }
 extension MembershipController : MembershipCellDelegate{
     func showMembershipDetails(membership: Membership) {
+         
+        let VC = self.ext.getViewController(storyBoard: "Membership", VCIdentifier: "membershipDetailsVC") as! MembershipDetailsViewController
+        
+        VC.slug = membership.slug
+        VC.membershipTitle = membership.title
+        
+        self.ext.pushViewController(viewController: VC)
         
     }
     
@@ -110,6 +117,8 @@ class MembershipCell : UICollectionViewCell{
     
     @IBAction func didPressViewMoreButton(_ sender: UIButton) {
         delegate?.showMembershipDetails(membership: membership)
+        
+        
     }
     
     func showData(membership: Membership){

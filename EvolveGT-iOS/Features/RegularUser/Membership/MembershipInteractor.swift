@@ -10,10 +10,16 @@ import Foundation
 protocol MembershipListDelegate{
     func didFetchMembershipList(memberships : [Membership])
 }
+ protocol MembershipDetailsDelegate{
+    func didFetchMembershipDetails(membershipDetails:MembershipDetails)
+}
+    
+   
 class MembershipInteractor : BaseInteractor{
     
     var delegate : BaseViewDelegate?
     var membershipDelegate : MembershipListDelegate?
+    var membershipDetailsDelegate : MembershipDetailsDelegate?
     
     
     func fetchAvailableMemberships(){
@@ -96,6 +102,56 @@ class MembershipInteractor : BaseInteractor{
             }
         }
         cartApi.addMembershipToCart(request: request)
+        
+    }
+    
+    func addMembershipToCart(membership: MembershipDetails){
+           
+           delegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingMembershipToCart)
+           
+           var request = AddMembershipToCartRequest()
+           request.image = membership.image
+           request.membership = membership.slug
+           request.price = membership.price
+           request.title = membership.title
+           request.userId = AppEngine.sharedInstance.userID
+           
+           let cartApi = CartApi()
+           cartApi.setCompletionHandler{data, error in
+               self.delegate?.hideProgressIndicator()
+               if error == nil{
+                   self.delegate?.showSuccessToastMessage(message: SuccessMessages.membershipAddedToCart)
+               }else{
+                   self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+               }
+           }
+           cartApi.addMembershipToCart(request: request)
+           
+       }
+       
+    
+    func getMembershipDetails(slug:String) {
+        
+        self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingMembershipDetails)
+        let shopApi = ShopsApi()
+        shopApi.setCompletionHandler{data,error in
+            
+            self.delegate?.hideProgressIndicator()
+            
+            if error == nil{
+                
+                let membershipDetailsResponse = self.decodeFromJson(data!, modelType: MembershipDetails.self)
+                self.membershipDetailsDelegate?.didFetchMembershipDetails(membershipDetails: membershipDetailsResponse!)
+               
+            }else{
+                
+                self.delegate?.showEmptyPageError(message: error?.errorMessage ?? ErrorMessages.genericError)
+               
+            }
+            
+        }
+        
+        shopApi.fetchMembershipDetails(slug: slug)
         
     }
 }

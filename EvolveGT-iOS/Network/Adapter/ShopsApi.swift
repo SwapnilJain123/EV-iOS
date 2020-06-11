@@ -74,4 +74,18 @@ class ShopsApi : BaseApiAdapter{
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
+    
+    
+    func fetchMembershipDetails(slug:String){
+        
+        //let request = ItemDetailRequest(slug: slug)
+        var request = ItemDetailRequest()
+        request.slug = slug
+        
+        setParameters(parameters: makeDictionary(request))
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.MEMBERSHIP_DETAILS)"
+        setUrl(url: url)
+        super.makeRequest(method: .POST)
+    }
 }
