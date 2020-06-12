@@ -9,4 +9,6 @@
 import Foundation
 struct AppApiConstants {
     static let APP_VERSION_CHECK = "store/checkForUpdates"
+     static let SUPPORTED_COUNTRIES = "common/countries"
+     static let SUPPORTED_STATES = "common/states"
 }

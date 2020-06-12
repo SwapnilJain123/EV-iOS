@@ -17,3 +17,9 @@ struct LoginRequest : Encodable {
         case remember
     }
 }
+struct SupportedStateRequest: Codable {
+    var countryCode: String?
+     enum CodingKeys: String, CodingKey {
+        case countryCode = "country_code"
+    }
+}

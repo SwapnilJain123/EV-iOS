@@ -78,7 +78,7 @@ class ProfileInteractor : BaseInteractor{
             request.requestBody?.teamnames = user.teamnames
             
             request.requestBody?.firstName = user.firstName
-            request.requestBody?.lastName = user.firstName
+            request.requestBody?.lastName = user.lastName
             request.requestBody?.email = user.email
             request.requestBody?.evGender = user.evGender
             request.requestBody?.evDob = user.evDob

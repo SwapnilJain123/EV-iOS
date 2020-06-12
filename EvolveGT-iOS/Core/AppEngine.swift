@@ -25,6 +25,8 @@ class AppEngine{
         currentUser?.role ?? "guest"
     }
     
+    var countries = [Country]()
+    var states = [SupportedState]()
     
     var currentUser : User?
     var userDetails : UserDetails?

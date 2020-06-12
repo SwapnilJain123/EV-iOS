@@ -267,12 +267,18 @@ class MotorCycleInfoCell: UITableViewCell, UITextFieldDelegate{
 class AddressCell : UITableViewCell{
     static let identifier = "AddressCell"
     
+    var hasAddress = false
     @IBOutlet weak var labelAddress: UILabel!
     @IBOutlet weak var addressType: UILabel!
     @IBOutlet weak var btnAddressAction: UIButton!
+    private var action :((_ hasAddress: Bool) -> Void)? = nil
+    
+    func setAction(action: ((_ hasAddress: Bool)->Void)?){
+        self.action = action
+    }
     
     func showData(type: String, addressContent:String, hasAddress: Bool){
-        
+        self.hasAddress = hasAddress
         self.addressType.text = "  \(type)  "
         self.labelAddress.text = addressContent
         
@@ -283,6 +289,13 @@ class AddressCell : UITableViewCell{
         }
         self.labelAddress.superview?.drawBorder(width: 2.0, borderColor: .lightGray)
     }
+    
+    @IBAction func didPressActionButton(_ sender: Any) {
+        if self.action != nil{
+            self.action!(self.hasAddress)
+        }
+    }
+    
 }
 class SkillInfo: UITableViewCell, RadioButtonDelegate{
     
