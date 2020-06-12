@@ -143,6 +143,11 @@
 		104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104B8DC62488FC3C008BE5DA /* Membership.storyboard */; };
 		104B8DC9248903CD008BE5DA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC8248903CD008BE5DA /* Membership.swift */; };
 		104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */; };
+		104B8DCE2489329A008BE5DA /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DCD2489329A008BE5DA /* ProfileController.swift */; };
+		104B8DD0248932BF008BE5DA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104B8DCF248932BF008BE5DA /* Profile.storyboard */; };
+		104B8DD2248ABE5D008BE5DA /* ProfileViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DD1248ABE5D008BE5DA /* ProfileViewCells.swift */; };
+		104B8DD4248ABF5B008BE5DA /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DD3248ABF5B008BE5DA /* ProfileInteractor.swift */; };
+		104B8DD6248ACA87008BE5DA /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DD5248ACA87008BE5DA /* ImageViewExtension.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
@@ -324,6 +329,11 @@
 		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		104B8DC8248903CD008BE5DA /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipInteractor.swift; sourceTree = "<group>"; };
+		104B8DCD2489329A008BE5DA /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		104B8DCF248932BF008BE5DA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		104B8DD1248ABE5D008BE5DA /* ProfileViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCells.swift; sourceTree = "<group>"; };
+		104B8DD3248ABF5B008BE5DA /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		104B8DD5248ACA87008BE5DA /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAB24725FA40032C056 /* MotoEventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoEventDetailsController.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
@@ -414,6 +424,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				104B8DCC2489327D008BE5DA /* Profile */,
 				104B8DC32488FBF4008BE5DA /* Membership */,
 				10048F3E246F094800684A87 /* AboutUs */,
 				10048F37246ECC2400684A87 /* ChangePassword */,
@@ -842,6 +853,7 @@
 				10048F51246FE15800684A87 /* Encodable+Extension.swift */,
 				10048F5524702D5D00684A87 /* CheckBox+Extension.swift */,
 				10716FAF2473130F0032C056 /* TextFieldExtension.swift */,
+				104B8DD5248ACA87008BE5DA /* ImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -904,6 +916,17 @@
 				104B8DCA2489048B008BE5DA /* MembershipInteractor.swift */,
 			);
 			path = Membership;
+			sourceTree = "<group>";
+		};
+		104B8DCC2489327D008BE5DA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				104B8DCD2489329A008BE5DA /* ProfileController.swift */,
+				104B8DCF248932BF008BE5DA /* Profile.storyboard */,
+				104B8DD1248ABE5D008BE5DA /* ProfileViewCells.swift */,
+				104B8DD3248ABF5B008BE5DA /* ProfileInteractor.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		10716FBC2478228C0032C056 /* Product */ = {
@@ -1058,6 +1081,7 @@
 			files = (
 				103366692483AE72009AF19A /* ArchieCard.storyboard in Resources */,
 				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
+				104B8DD0248932BF008BE5DA /* Profile.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
@@ -1134,9 +1158,12 @@
 				10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */,
 				10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */,
 				1039FE682450686E00190088 /* AppConstants.swift in Sources */,
+				104B8DCE2489329A008BE5DA /* ProfileController.swift in Sources */,
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
+				104B8DD4248ABF5B008BE5DA /* ProfileInteractor.swift in Sources */,
 				10048F1E246DB47700684A87 /* CartApiConstant.swift in Sources */,
+				104B8DD2248ABE5D008BE5DA /* ProfileViewCells.swift in Sources */,
 				10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */,
 				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
 				10BDD014245982ED00F05700 /* AlertService.swift in Sources */,
@@ -1273,6 +1300,7 @@
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
 				104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */,
+				104B8DD6248ACA87008BE5DA /* ImageViewExtension.swift in Sources */,
 				104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */,
 				10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */,
 				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,

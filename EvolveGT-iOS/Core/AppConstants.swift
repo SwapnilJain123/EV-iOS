@@ -16,6 +16,7 @@ let KEY_AUTH_TOKEN = "auth_token"
 
 struct AppConstants{
      static let SkillLevels = ["GT1","E1","E2","E3","E4","COACHES"]
+    static let emergencyRelationShips = ["Friend","Parent", "Local Guardian", "Other"]
      static let ImageTag = "data:image/png;base64,"
     
      static let KEY_APP_MODE = "appMode"
@@ -48,6 +49,7 @@ struct ScreenTitle{
      static let TITLE_CART_PAYMENT = "Payment"
      static let TITLE_PAYMENT_SUCCESS = "Transaction Receipt"
      static let TITLE_MEMBERSHIP = "Membership"
+     static let TITLE_PROFILE = "Edit Profile"
     
 }
 

@@ -47,7 +47,12 @@ class BaseApiAdapter{
     
     
     private func doPost(){
-        apiClient.doPost(completionHandler: didFinishTask(data:error:))
+        if apiClient.uploadData.count > 0{
+            apiClient.doUpload(completionHandler: didFinishTask(data:error:))
+        }else{
+             apiClient.doPost(completionHandler: didFinishTask(data:error:))
+        }
+       
     }
     
     private func doGet(){
@@ -162,4 +167,10 @@ extension BaseApiAdapter{
         
     }
     
+    func clearUploadItems(){
+        apiClient.uploadData.removeAll()
+    }
+    func appendUploadItem(uploadItem: UploadItem){
+        apiClient.uploadData.append(uploadItem)
+    }
 }

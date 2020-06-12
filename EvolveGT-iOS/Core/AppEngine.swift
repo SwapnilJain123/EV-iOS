@@ -106,6 +106,7 @@ class AppEngine{
         walletBalance = 0
         cartListCount = 0
         membership = ""
+        userDetails = nil
     }
     
    

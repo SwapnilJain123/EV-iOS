@@ -29,7 +29,7 @@ extension String{
         let price = Double(self) ?? 0
         let doubleStr = String(format: "%.2f", price)
         
-        return "\(prefix): $\(doubleStr)"
+        return "\(prefix) $\(doubleStr)"
     }
     
     func toDouble() -> Double{

@@ -101,13 +101,12 @@ class ProductVariantsCell : UITableViewCell{
         self.productVariation = productVariation
         self.indexPath = indexPath
         
-        attributeDropDown.borderColor = .getAppThemeColor()
-        attributeDropDown.arrowColor = .getAppThemeColor()
+        attributeDropDown.applyDropDwonTheme()
+        
+        
         variantTitle.text = "Select \(productVariation.variantName ?? "")"
-        attributeDropDown.text = productVariation.selectedVariant.value
         attributeDropDown.optionArray = productVariation.options
-        attributeDropDown.selectedRowColor = .getLightBackgroundColor()
-        attributeDropDown.checkMarkEnabled = false
+        attributeDropDown.text = productVariation.selectedVariant.value
         attributeDropDown.selectedIndex = self.productVariation!.variants!.firstIndex(where: {$0.value == self.productVariation?.selectedVariant.value})
         attributeDropDown.didSelect{(selectedText , index ,id) in
             self.productVariation!.selectedVariant = self.productVariation!.variants![index]

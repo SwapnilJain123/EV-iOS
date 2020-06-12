@@ -92,4 +92,45 @@ struct UserMemberShipRequest: Codable{
       
     }
 }
+class ProfileUpdateRequest: Codable {
+    var requestBody: ProfileRequestInfo?
+    var userID: String?
 
+    enum CodingKeys: String, CodingKey {
+        case requestBody = "data"
+        case userID = "user_id"
+    }
+}
+
+
+class ProfileRequestInfo: Codable {
+    var evDob, evEmergencyFirstName, evEmergencyLastName, evEmergencyPhone: String?
+    var evEmergencyRelationship, everBeenTrack, firstName, evGender: String?
+    var lastName, amaExpires, amaNo,email, asraNo: String?
+    var ccsNo, raceNo, sponsors, teamnames: String?
+    var evMotorcycle, evMotorcycleNumber, nationality, phone: String?
+    var evRaceLicence: String?
+
+    enum CodingKeys: String, CodingKey {
+        case evDob = "ev_dob"
+        case email
+        case evEmergencyFirstName = "ev_emergency_first_name"
+        case evEmergencyLastName = "ev_emergency_last_name"
+        case evEmergencyPhone = "ev_emergency_phone"
+        case evEmergencyRelationship = "ev_emergency_relationship"
+        case everBeenTrack = "ever_been_track"
+        case firstName = "first_name"
+        case evGender = "ev_gender"
+        case lastName = "last_name"
+        case amaExpires = "ama_expires"
+        case amaNo = "ama_no"
+        case asraNo = "asra_no"
+        case ccsNo = "ccs_no"
+        case raceNo = "race_no"
+        case sponsors, teamnames
+        case evMotorcycle = "ev_motorcycle"
+        case evMotorcycleNumber = "ev_motorcycle_number"
+        case nationality, phone
+        case evRaceLicence = "ev_race_licence"
+    }
+}

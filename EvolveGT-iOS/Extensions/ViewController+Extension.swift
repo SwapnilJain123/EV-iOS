@@ -230,6 +230,24 @@ extension UIViewController{
             alert.addAction(cancelAction)
             vc.present(alert, animated: false, completion: nil)
         }
+        func presentOptions(title: String, message: String, options: [String], selected : String?, preferredStyle :UIAlertController.Style, completionHandler : @escaping (String)->Void){
+            let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+            
+            for option in options{
+                let action = UIAlertAction(title: option, style: .default) {
+                    UIAlertAction in
+                    completionHandler(option)
+                }
+                alert.addAction(action)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+                UIAlertAction in
+                // It will dismiss action sheet
+            }
+            alert.addAction(cancelAction)
+            vc.present(alert, animated: false, completion: nil)
+        }
         
         func showAlertWithAttributedText(title: String, text: NSAttributedString, action : (() -> Void)?){
             var alertData = AlertData()
