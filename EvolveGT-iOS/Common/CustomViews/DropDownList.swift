@@ -35,7 +35,7 @@ open class DropDownList : UITextField{
             layer.borderColor = borderColor.cgColor
         }
     }
-    @IBInspectable public var listHeight: CGFloat = 150{
+    @IBInspectable public var listHeight: CGFloat = 200{
         didSet {
 
         }
@@ -524,3 +524,11 @@ extension UIView {
     }
 }
 
+extension DropDownList{
+    func applyDropDwonTheme(){
+        self.borderColor = .getAppThemeColor()
+               self.arrowColor = .getAppThemeColor()
+                self.selectedRowColor = .getLightBackgroundColor()
+               self.checkMarkEnabled = false
+    }
+}

@@ -114,7 +114,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(storyBoard: "AboutUs", VCIdentifier: "aboutUsVC")
             
         case SlideMenuItem.TAG_MEMBERSHIP:
-                       self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
+                self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
+            case SlideMenuItem.TAG_MY_PROFILE:
+                           self.ext.pushViewController(storyBoard: "Profile", VCIdentifier: "ProfileController")
             
             
         default:

@@ -35,8 +35,13 @@ class HomeDataInteractor : BaseInteractor{
                         self.fetchEventHistory()
                     }
                     
+                }else{
+                    self.delegate?.hideProgressIndicator()
+                    Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                    self.delegate?.showEmptyPageError(message: error!.errorMessage)
                 }
             }else{
+                self.delegate?.hideProgressIndicator()
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.delegate?.showEmptyPageError(message: error!.errorMessage)
             }

@@ -15,6 +15,7 @@ extension String{
     static let FORMAT_MM_YYYY = "MM YYYY"
      static let FORMAT_YYYY_MM = "YYYY MM"
     static let FORMAT_YYYY_MM_DD = "yyyyMMdd"
+    static let FORMAT_YYYY_MM_DD_HIPHEN = "yyyy-MM-dd"
     
     func formattedDate(outputFormat: String) -> String {
        

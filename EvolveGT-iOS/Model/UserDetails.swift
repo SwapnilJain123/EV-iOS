@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserDetails: Codable {
+class UserDetails: Codable {
     var userID, oldID, username, password: String?
     var nicename, email, url, registered: String?
     var activationKey, hashCode, status, displayName: String?
@@ -26,13 +26,12 @@ struct UserDetails: Codable {
     var membershipExpDate, newsletter, everBeenTrack, adminNotes: String?
     var adminKey, motoCount, raceNumber: String?
     var eventCancel: Bool?
-    var hasRCT, evDobYear, evDobMonth, transponderNo: String?
+    var hasRCT,transponderNo: String?
     var motoSkill, raceNo, amaNo, amaExpires: String?
     var amaExpiry, ccsNo, asraNo, nationality: String?
     var sponsors, teamnames, shippingCountryName, billingCountryName: String?
     var shippingStateName, billingStateName: String?
     var fullProfileImage: String?
-    var evDobDay: String?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -95,8 +94,6 @@ struct UserDetails: Codable {
         case raceNumber = "race_number"
         case eventCancel = "event_cancel"
         case hasRCT
-        case evDobYear = "ev_dob_year"
-        case evDobMonth = "ev_dob_month"
         case transponderNo = "transponder_no"
         case motoSkill = "moto_skill"
         case raceNo = "race_no"
@@ -111,7 +108,7 @@ struct UserDetails: Codable {
         case shippingStateName = "shipping_state_name"
         case billingStateName = "billing_state_name"
         case fullProfileImage = "full_profile_image"
-        case evDobDay = "ev_dob_day"
+       
     }
     
     public static let GENDER_MALE = "male"
@@ -159,12 +156,26 @@ struct UserDetails: Codable {
         if shippingAddress1?.isEmpty() ?? true{
             return ""
         }else{
-            var address = "\(fullName.capitalized)\n\(shippingAddress1!)\n\(shippingAddress2 ?? "")\n\(shippingCompany ?? "")"
+            var address = "\(fullName.capitalized)\n\(shippingAddress1!)"
+            
+            if shippingAddress2?.isEmpty() ?? true == false{
+                           address = "\(address)\n\(shippingAddress2!)"
+            }
+            if shippingCompany?.isEmpty() ?? true == false{
+                           address = "\(address)\n\(shippingCompany!)"
+            }
+            
             if shippingCity?.isEmpty() ?? true == false{
                 address = "\(address)\n\(shippingCity!), \(shippingState ?? "")-\(shippingPostcode ?? "")"
             }
-            address = "\(address)\n\(shippingCountry!)"
+            if shippingCountry?.isEmpty() ?? true == false{
+                           address = "\(address)\n\(shippingCountry!)"
+            }
             return address
         }
+    }
+    
+    var hasEverBeenOnTrack :Bool{
+        "1" == everBeenTrack
     }
 }

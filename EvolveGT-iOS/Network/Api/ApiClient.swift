@@ -14,7 +14,7 @@ class ApiClient{
     var parameters = [String: Any]()
     var header = [String : String]()
     var urlString: String = ""
-    
+    var uploadData = [UploadItem]()
     static let sharedInstance : ApiClient = ApiClient()
     let networkManager = NetworkReachabilityManager()!
     
@@ -32,7 +32,7 @@ class ApiClient{
                     completionHandler(response.data!, nil)
                 case .failure(let error):
                     var apiError = ApiError()
-                     apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                    apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
                     Log.d("Error - \(error.localizedDescription)")
                     completionHandler( nil, apiError)
                 }
@@ -50,7 +50,7 @@ class ApiClient{
             if let theJSONData = try? JSONSerialization.data(
                 withJSONObject: parameters, options: [.prettyPrinted]) {
                 let theJSONText = String(data: theJSONData, encoding: .ascii)
-                 Log.d("Params :\n\n \(theJSONText!)\n\n")
+                Log.d("Params :\n\n \(theJSONText!)\n\n")
             }
         }
         
@@ -64,13 +64,58 @@ class ApiClient{
                 case .failure(let error):
                     var apiError = ApiError()
                     apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
-                           Log.d("Error - \(error.localizedDescription)")
-                           completionHandler( nil, apiError)
+                    Log.d("Error - \(error.localizedDescription)")
+                    completionHandler( nil, apiError)
                 }
         }
     }
     
-   
+    
+    func doUpload(completionHandler : @escaping (Data?, ApiError?) -> Void){
+        
+        if uploadData.count == 0{
+            var apiError = ApiError()
+            apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+            completionHandler( nil, apiError)
+            return
+        }
+        Log.d(urlString)
+        
+        header.updateValue("multipart/form-data", forKey: "Content-type")
+        
+        if BuildScheme.isBuildQA{
+            //print the params
+            if let theJSONData = try? JSONSerialization.data(
+                withJSONObject: parameters, options: [.prettyPrinted]) {
+                let theJSONText = String(data: theJSONData, encoding: .ascii)
+                Log.d("Params :\n\n \(theJSONText!)\n\n")
+            }
+        }
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key,value) in self.parameters {
+                multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+            }
+            for uploadItem in self.uploadData{
+                multipartFormData.append(uploadItem.data, withName: uploadItem.name, fileName: uploadItem.fileName, mimeType: uploadItem.mimeType)
+            }
+            
+        }, usingThreshold: UInt64.init(), to: urlString, method: .post, headers: header) { result in
+            self.uploadData.removeAll()
+            switch result{
+             case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    completionHandler(response.data!, nil)
+                }
+            case .failure(let error):
+                var apiError = ApiError()
+                apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                Log.d("Error - \(error.localizedDescription)")
+                completionHandler( nil, apiError)
+            }
+        }
+        
+    }
     
     func addAuthTokenHeader(token : String){
         header.updateValue("Bearer \(token)", forKey: "Authorization")
@@ -91,4 +136,19 @@ class ApiClient{
     var isConnectedToInternet:Bool {
         return self.networkManager.isReachable
     }
+}
+class UploadItem {
+    var data: Data
+    var name: String
+    var fileName: String
+    var mimeType: String
+    
+    init(data: Data, name: String, fileName: String, mimeType: String) {
+        self.data = data
+        self.name = name
+        self.fileName = fileName
+        self.mimeType = mimeType
+    }
+    
+    
 }

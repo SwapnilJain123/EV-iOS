@@ -9,15 +9,7 @@
 import Foundation
 struct MessageConstants {
     
-    
-    static let KPromptSomeThingWentWrong = "Something went wrong"
-    
-    static let KPromptMsgEnterWishlistName = "Please Enter Wishlist Name"
-    static let KPromptMsgEnterEmployeeCode = "Please Enter Employee Code"
-    static let KPromptMsgEnterAreaCode = "Please Enter Area Code"
-    static let KPromptMsgEnterAreaName = "Please Enter Area Name"
-    static let KPromptMsgEnterAreaManagerName = "Please Enter Area Manager Name"
-    
+   
     static let KPromptMsgEnterEmail = "Please Enter Email"
     static let KPromptMsgEnterValidEmail = "Please Enter Valid Email"
     static let KPromptMsgEnterPassword = "Please Enter Password"
@@ -54,6 +46,28 @@ struct MessageConstants {
 """
     
     
+    
+}
+
+struct ValidationErrors{
+    static let emptyFirstName = "Please provide first name"
+    static let emptyLastName = "Please provide last name"
+    static let invalidPhoneNumber = "Please provide a valid phone number"
+    static let invalidEmail = "Please provide a valid email"
+    static let invalidDoB = "Please select date of birth"
+    static let invalidMotorCycleName = "Please provide a valid motorcycle name"
+    static let invalidMotorCycleNumber = "Please provide a valid motorcycle number"
+    static let invalidRelationship = "Please select the relationship"
+    static let invalidRaceNumber = "Please provide a valid race number"
+    static let invalidAMANumber = "Please provide a valid AMA number"
+    static let invalidASRANumber = "Please provide a valid ASRA number"
+    static let invalidCCSNumber = "Please provide a valid CCS number"
+    static let invalidNationality = "Please provide your nationality"
+    static let teammateRequired = "Please provide at least one team mate"
+    static let sponsorRequired = "Please provide at least one sponsor"
+    static let amaExpiryRequired = "Please select your AMA expiry date"
+    static let mailingAddressRequired = "No mailing address found. Please add a new address"
+    static let billingAddressRequired = "No billing address found. Please add a new address"
     
 }
 
@@ -99,6 +113,7 @@ struct LoadingIndicatorMessages {
      static let cancellingEvent = "Please wait, we are cancelling your event"
     static let addingMembershipToCart = "Adding this membership to cart..."
        static let loadingMembershipDetails = "Loading Membership details..."
+    static let updatingProfile = "Please wait, we are updating your profile"
 }
 
 struct ErrorMessages {
@@ -163,7 +178,7 @@ struct SuccessMessages {
     static let eventCancelled = "Event Cancelled successfully."
      static let membershipAddedToCart = "Your membership has been added to the cart successfully."
     
-    
+    static let profileUpdated = "Profile updated successfully."
     
     
 }

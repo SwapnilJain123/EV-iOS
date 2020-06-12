@@ -76,4 +76,22 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func updateProfile(request: ProfileUpdateRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_PROFILE)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
+    
+    func updateProfilePicture(userId: String, imageUploadItem: UploadItem){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_PROFILE_IMAGE)"
+        setUrl(url: url)
+        setParameters(parameters: ["user_id":userId])
+        clearUploadItems()
+        appendUploadItem(uploadItem: imageUploadItem)
+        super.makeRequest(method: .POST)
+    }
+    
 }
