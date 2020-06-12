@@ -88,12 +88,14 @@ struct LoadingIndicatorMessages {
     static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
     
-    
-    
     static let loadingEventDetails = "Loading event details..."
     static let loadingArchieCardList = "Loading archie cards..."
+     static let loadingArchieCardDetails = "Loading archie cards details..."
     static let addingArchieCardToCart = "Adding Archie Card to cart..."
-    
+    static let loadingGiftCardList = "Loading Gift cards..."
+     static let loadingGiftCardDetails = "Loading gift cards details..."
+     
+    static let addingGiftCardToCart = "Adding Gift Card to cart..."
     static let loadingProducts = "Loading products..."
     static let loadingProductDetails = "Loading product details..."
     
@@ -110,49 +112,54 @@ struct LoadingIndicatorMessages {
     
      static let cancellingEvent = "Please wait, we are cancelling your event"
     static let addingMembershipToCart = "Adding this membership to cart..."
+       static let loadingMembershipDetails = "Loading Membership details..."
     static let updatingProfile = "Please wait, we are updating your profile"
 }
 
 struct ErrorMessages {
     
     static let genericError = "Sorry, something went wrong, please try again in a couple minutes."
-    static let emptyCompletedEvents = "Sorry, there are currently no events available."
-    static let emptyEventParticipants = "There are currently no users enrolled for this event."
-    static let emptyEnrolledEvents = "Sorry, no event has been found."
-    static let emptyCreditHistory = "Sorry, You have no credit history."
+    
     static let skillNotEligibleMessage = "GT1 and E1 are not eligible to participate in race."
     
     static let invalidCoupon = "Please enter a valid coupon"
     
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
-    
-    
     static let invalidEmail = "Please enter valid email"
+     static let emptyReceiverName = "Please enter receiver name"
+    static let emptyReceiverEmail = "Please enter receiver email"
+
+    static let errorConfirmPassword = "Your password and confirmation password do not match."
+    static let errorEmptyPassword = "Please enter new password."
+    static let errorEmptyCurrentPassword = "Please enter your current password."
     
-    static let emptyCreditList = "Sorry, You have no credit history."
-    
-    static let emptyEventList = "Sorry, there is no events available right now."
-    
-    static let error_confirm_password = "Your password and confirmation password do not match."
-    static let error_empty_password = "Please enter new password."
-    static let error_empty_current_password = "Please enter your current password."
-    
-    
-    static let emptyEventClass = "Please select at least one class"
     static let skillNotSelected = "Please select a skill set"
     static let transponderNotSelected = "Please select transponder or enter your transponder number"
     
-    
-    static let emptyProducts = "Unfortunately, there is no products available right now."
-    static let emptyCartList = "Sorry, Your cart is empty."
     static let hasOutOfStockItems = "Please delete out of stock items from your cart to continue."
     
     static let checkoutNoBillingAddress = "Unfortunately, no billing address has been found. Please add your billing address."
     
+    //Mark:- Empty Items
+    static let emptyCompletedEvents = "Sorry, there are currently no events available."
+    static let emptyEventParticipants = "There are currently no users enrolled for this event."
+    static let emptyEnrolledEvents = "Sorry, no event has been found."
+    static let emptyCreditHistory = "Sorry, You have no credit history."
+    static let emptyCreditList = "Sorry, You have no credit history."
+    static let emptyEventList = "Sorry, there is no events available right now."
+    static let emptyEventClass = "Please select at least one class"
+    static let emptyProducts = "Unfortunately, there is no products available right now."
+    static let emptyCartList = "Sorry, Your cart is empty."
+    static let emptyArchieCards = "There are no Archie Cards available right now."
+    static let emptyGiftCards = "There are no Gift Cards available."
+    
+    
+    
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
      static let emptyMemberships = "Unfortunately, there is no memberships available right now."
 }
+
 
 struct SuccessMessages {
     
@@ -163,7 +170,7 @@ struct SuccessMessages {
     static let eventAddedToCart = "Your event has been added to the cart successfully."
     static let productAddedToCart = "Your Product has been added to the cart successfully."
     static let archieCardtAddedToCart = "Your Archie Card has been added to the cart successfully."
-    
+    static let giftCardtAddedToCart = "Your Gift Card has been added to the cart successfully."
     
     static let latestVersion =  "The latest version is already installed."
     static let oldVersion = "New version available in store. Please update."

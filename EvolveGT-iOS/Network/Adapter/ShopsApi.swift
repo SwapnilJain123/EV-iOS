@@ -52,11 +52,40 @@ class ShopsApi : BaseApiAdapter{
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
-    
+    //GiftCard
+    func fetchGiftCardList(){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.GIFT_CARD_LIST)"
+        setUrl(url: url)
+        super.makeRequest(method: .GET)
+    }
     func fetchMembershipList(){
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.MEMBERSHIP_LIST)"
         setUrl(url: url)
         super.makeRequest(method: .GET)
     }
     
+    func fetchGiftCardDetails(slug:String){
+        
+        let request = ItemDetailRequest(slug: slug)
+        setParameters(parameters: makeDictionary(request))
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.GIFT_CARD_DETAILS)"
+        setUrl(url: url)
+        super.makeRequest(method: .POST)
+    }
+    
+    
+    func fetchMembershipDetails(slug:String){
+        
+        //let request = ItemDetailRequest(slug: slug)
+        var request = ItemDetailRequest()
+        request.slug = slug
+        
+        setParameters(parameters: makeDictionary(request))
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.MEMBERSHIP_DETAILS)"
+        setUrl(url: url)
+        super.makeRequest(method: .POST)
+    }
 }
