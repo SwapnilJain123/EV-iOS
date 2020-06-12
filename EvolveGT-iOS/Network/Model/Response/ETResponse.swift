@@ -31,3 +31,20 @@ struct ETResponse : Decodable {
         }
     }
 }
+class CountryListResponse : Codable{
+    var supportedCountries: [Country]?
+    enum CodingKeys: String, CodingKey {
+            case supportedCountries = "result"
+           
+    }
+    
+}
+class StateListResponse : Codable{
+    var supportedStates: [SupportedState]?
+    
+    enum CodingKeys: String, CodingKey {
+            case supportedStates = "result"
+           
+    }
+    
+}

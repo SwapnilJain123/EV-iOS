@@ -26,6 +26,7 @@ class ProfileController : ETViewController{
         interactor.profileViewDelegate = self
         
         interactor.computeProfileSections()
+        self.navigationController?.title = getScreenTitle()
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_PROFILE
@@ -77,6 +78,12 @@ extension ProfileController: UITableViewDataSource{
             let hasAddress = !address.isEmpty
             address = address.isEmpty ? ValidationErrors.mailingAddressRequired : address
             cell.showData(type: "Mailing Address", addressContent: address, hasAddress: hasAddress)
+            cell.setAction{ hasAddress in
+                let addressVC = self.ext.getViewController(storyBoard: "Address", VCIdentifier: "AddressVC") as! AddressViewController
+                addressVC.hasAddress = hasAddress
+                addressVC.addressType = .shipping
+                self.ext.pushViewController(viewController: addressVC)
+            }
             return cell
         case .billingAddress:
             let cell = tableView.dequeueReusableCell(withIdentifier: AddressCell.identifier, for: indexPath) as! AddressCell
@@ -84,6 +91,12 @@ extension ProfileController: UITableViewDataSource{
             let hasAddress = !address.isEmpty
             address = address.isEmpty ? ValidationErrors.billingAddressRequired : address
             cell.showData(type: "Billing Address", addressContent: address, hasAddress: hasAddress)
+            cell.setAction{ hasAddress in
+                           let addressVC = self.ext.getViewController(storyBoard: "Address", VCIdentifier: "AddressVC") as! AddressViewController
+                           addressVC.hasAddress = hasAddress
+                           addressVC.addressType = .billing
+                           self.ext.pushViewController(viewController: addressVC)
+                       }
             return cell
         case .skillLevel:
             let cell = tableView.dequeueReusableCell(withIdentifier: SkillInfo.identifier, for: indexPath) as! SkillInfo

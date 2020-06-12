@@ -68,7 +68,11 @@ struct ValidationErrors{
     static let amaExpiryRequired = "Please select your AMA expiry date"
     static let mailingAddressRequired = "No mailing address found. Please add a new address"
     static let billingAddressRequired = "No billing address found. Please add a new address"
-    
+     static let countryRequired = "Please select your country"
+     static let stateRequired = "Please select your state"
+    static let cityRequired = "Please provide your city"
+     static let addressRequired = "Please provide your address"
+    static let postalCodeRequired = "Please provide your postal code"
 }
 
 //Mark: - Indicator Messages

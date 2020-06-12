@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-import RSSelectionMenu
 
 class CompletedEventViewController : ETViewController{
     var searchBar: UISearchBar?
