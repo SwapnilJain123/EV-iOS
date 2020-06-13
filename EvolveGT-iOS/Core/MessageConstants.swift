@@ -118,6 +118,7 @@ struct LoadingIndicatorMessages {
     static let addingMembershipToCart = "Adding this membership to cart..."
        static let loadingMembershipDetails = "Loading Membership details..."
     static let updatingProfile = "Please wait, we are updating your profile"
+    static let loadingCoachDuties = "Loading duties assigned to you."
 }
 
 struct ErrorMessages {
@@ -159,7 +160,7 @@ struct ErrorMessages {
     static let emptyGiftCards = "There are no Gift Cards available."
     
     
-    
+     static let eventsNotAssigned = "Sorry. There are no events assigned to you."
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
      static let emptyMemberships = "Unfortunately, there is no memberships available right now."
 }
