@@ -19,3 +19,10 @@ struct SignatureResponse: Codable {
     var signed: Int?
     var signature: String?
 }
+struct CoachDutyRequest: Codable {
+    var userId: String?
+
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id"
+    }
+}

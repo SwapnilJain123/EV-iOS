@@ -10,7 +10,8 @@ import Foundation
 
 protocol HomeViewDelegate : BaseViewDelegate{
 
-    func didFetchDetails(profileData : ProfileData?)
+    func didFetchDetails(profileData : ProfileData?, sections : [HomeSection])
+    func didFetchCoachDuties(assignedEvents : [AssignedEvent])
 }
 class HomeDataInteractor : BaseInteractor{
     var delegate : HomeViewDelegate?
@@ -126,8 +127,48 @@ class HomeDataInteractor : BaseInteractor{
                     
                 }
             }
-            self.delegate?.didFetchDetails(profileData: self.profileData)
+            var sections = [HomeSection]()
+            for section in HomeSection.allCases{
+                sections.append(section)
+            }
+            
+            if !(AppEngine.sharedInstance.currentUser?.isCoach() ?? false){
+                sections = sections.filter({$0 != .coachDuties})
+            }
+            self.delegate?.didFetchDetails(profileData: self.profileData, sections: sections)
         }
         profileApi.fetchCreditHistory(userId: AppEngine.sharedInstance.userID)
     }
+    
+    func fetchCoachDuties(){
+        let adminApi = AdminApi()
+        self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCoachDuties)
+        adminApi.setCompletionHandler{ data, error in
+            self.delegate?.hideProgressIndicator()
+            if error == nil{
+                if let response = self.decodeFromJson(data!, modelType: CoachDutyResponse.self){
+                    
+                    if response.assignedEvents?.count ?? 0 == 0{
+                        self.delegate?.showAlert(title: "", message: ErrorMessages.eventsNotAssigned)
+                    }else{
+                        self.delegate?.didFetchCoachDuties(assignedEvents: response.assignedEvents!)
+                    }
+                }else{
+                    self.delegate?.showAlert(title: "", message: ErrorMessages.genericError)
+                }
+            }else{
+                self.delegate?.showAlert(title: "", message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
+        }
+        adminApi.getCoachDuties(userId: AppEngine.sharedInstance.userID)
+        
+        
+    }
+}
+enum HomeSection: Int, CaseIterable{
+    case profile
+    case coachDuties
+    case upcomingEvents
+    case pastEvents
+    case creditHistory
 }

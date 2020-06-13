@@ -26,6 +26,7 @@ struct ProfileData{
     var recentPastEvent : EnrolledEvent? = nil
     var recentCreditHistory : CreditHistory? = nil
     
+    var componentCount = 4
     
     mutating func create(with userDetails: UserDetails){
         self.imageUrl = userDetails.fullProfileImage

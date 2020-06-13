@@ -54,4 +54,12 @@ class AdminApi: BaseApiAdapter{
         setParameters(parameters: makeDictionary(signatueRequest))
         super.makeRequest(method: .POST)
     }
+    
+    func getCoachDuties(userId: String){
+        let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.COACH_DUTIES)"
+        setUrl(url: url)
+        let request = CoachDutyRequest(userId: userId)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
 }

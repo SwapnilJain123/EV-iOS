@@ -15,6 +15,7 @@ class HomeViewController: TabbedViewController{
     @IBOutlet weak var profileView: UITableView!
     
     var profileData : ProfileData? = nil
+    var sections = [HomeSection]()
     
     
     var upComingEventsExpanded = true
@@ -22,20 +23,18 @@ class HomeViewController: TabbedViewController{
     var creditHistoryExpanded = false
     
     let interactor = HomeDataInteractor()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
-        
         interactor.delegate = self
-        
         
     }
     
     override  func didChangeAppTheme() {
-         super.didChangeAppTheme()
+        super.didChangeAppTheme()
         profileData?.upComingEventsCount = 0
         profileData?.pastEventsCount = 0
         profileData?.allEventsCount = 0
@@ -53,28 +52,36 @@ class HomeViewController: TabbedViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-          interactor.fetchUserDetails()
+        interactor.fetchUserDetails()
     }
     
+    func launchCoachDutiesController(){
+        interactor.fetchCoachDuties()
+    }
 }
 
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Log.d("Profile Data - \(self.profileData == nil)")
-        return self.profileData == nil ? 0 : 4
+        sections.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        if indexPath.row == 0 {
+        switch self.sections[indexPath.row] {
+        case .profile:
             let profileCell = tableView.dequeueReusableCell(withIdentifier:"HomeProfileCell",for: indexPath) as! ProfileCell
             
             profileCell.showData(self.profileData!)
             return profileCell
-        }else if indexPath.row == 1 {
+        case .coachDuties:
+            let cell = tableView.dequeueReusableCell(withIdentifier:CoachDutyCell.identifier,for: indexPath) as! CoachDutyCell
             
+            cell.setUp{
+                self.launchCoachDutiesController()
+            }
+            return cell
+        case .upcomingEvents:
             if self.profileData?.recentUpComingEvent == nil{
                 let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath) as! EmptyCell
                 emptyInfoCell.showData(ScreenTitle.TITLE_UPCOMING_EVENTS, ErrorMessages.emptyEnrolledEvents)
@@ -86,9 +93,7 @@ extension HomeViewController: UITableViewDataSource{
                 upComingEventCell.delegate = self
                 return upComingEventCell
             }
-            
-        }else if indexPath.row == 2 {
-            
+        case .pastEvents:
             if self.profileData?.recentPastEvent == nil{
                 let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath) as! EmptyCell
                 emptyInfoCell.showData(ScreenTitle.TITLE_PAST_EVENTS, ErrorMessages.emptyEnrolledEvents)
@@ -99,10 +104,7 @@ extension HomeViewController: UITableViewDataSource{
                 pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!, expanded: pastEventsExpanded)
                 return pastEventCell
             }
-            
-            
-        }else if indexPath.row == 3 {
-            
+        case .creditHistory:
             if self.profileData?.recentCreditHistory == nil{
                 let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath) as! EmptyCell
                 emptyInfoCell.showData(ScreenTitle.TITLE_CREDIT_HISTORY, ErrorMessages.emptyCreditList)
@@ -114,23 +116,28 @@ extension HomeViewController: UITableViewDataSource{
                 return creditCell
             }
             
-            
-        }else {
-            let emptyInfoCell = tableView.dequeueReusableCell(withIdentifier:"HomeEmptyCell",for: indexPath)
-            Log.d("Empty Cell")
-            return emptyInfoCell
         }
-        
         
     }
     
 }
 
 extension HomeViewController: HomeViewDelegate{
-    func didFetchDetails(profileData: ProfileData?) {
-        
-        Log.d("Profile Data Fetched")
+    func didFetchCoachDuties(assignedEvents: [AssignedEvent]) {
+        if assignedEvents.count == 1{
+            let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "CoachDutiesVC") as! CoachDutiesController
+            vc.assignedEvent = assignedEvents.first
+            self.ext.pushViewController(viewController: vc)
+        }else{
+            let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "TabbedCoachDutiesVC") as! TabbedCoachDutiesController
+            vc.assignedEvents = assignedEvents
+            self.ext.pushViewController(viewController: vc)
+        }
+    }
+    
+    func didFetchDetails(profileData: ProfileData?, sections: [HomeSection]) {
         self.profileData = profileData
+        self.sections = sections
         profileView.reloadData()
     }
     
@@ -147,25 +154,33 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
     
     func toggleCreditDetailsView() {
         self.creditHistoryExpanded = !self.creditHistoryExpanded
-        let indexPath = IndexPath(row: 3, section: 0)
+        let index = self.sections.index(of: .creditHistory) ?? sections.count - 1
+        let indexPath = IndexPath(row: index, section: 0)
         self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         
         if self.creditHistoryExpanded{
-            scrollToRow(row: 3)
+            scrollToRow(row: index)
         }
     }
     
     func toggleEventDetails(type: EventType) {
+        
         if type == .UPCOMING{
+            
             self.upComingEventsExpanded = !self.upComingEventsExpanded
-            let indexPath = IndexPath(row: 1, section: 0)
+            let defaultIndex = sections.contains(.coachDuties) ? 2 : 1
+            let index = self.sections.index(of: .upcomingEvents) ?? defaultIndex
+            let indexPath = IndexPath(row: index, section: 0)
             self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
             
         }else {
             self.pastEventsExpanded = !self.pastEventsExpanded
-            let indexPath = IndexPath(row: 2, section: 0)
+            
+            let defaultIndex = sections.contains(.coachDuties) ? 3 : 2
+            let index = self.sections.index(of: .pastEvents) ?? defaultIndex
+            let indexPath = IndexPath(row: index, section: 0)
             self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
-            scrollToRow(row: 2)
+            scrollToRow(row: index)
         }
         
     }

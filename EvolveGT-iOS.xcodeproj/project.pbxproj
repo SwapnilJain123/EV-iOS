@@ -82,7 +82,6 @@
 		10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033465D246944B200D5EED0 /* PwdResetAckController.swift */; };
 		103346662469458000D5EED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103346652469458000D5EED0 /* Main.storyboard */; };
 		103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346702469461700D5EED0 /* ForgotPasswordRequest.swift */; };
-		103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346722469462900D5EED0 /* ForgotPasswordResponse.swift */; };
 		103365F9247C49B7009AF19A /* CartCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103365F8247C49B7009AF19A /* CartCells.swift */; };
 		103365FB247C5334009AF19A /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103365FA247C5334009AF19A /* CartItem.swift */; };
 		10336608247D3D99009AF19A /* CartListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336607247D3D99009AF19A /* CartListController.swift */; };
@@ -134,7 +133,7 @@
 		1039FE7C2450895100190088 /* ETViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE7B2450895100190088 /* ETViewController.swift */; };
 		1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE7D24509A9A00190088 /* CompletedEventCell.swift */; };
 		1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE7F24509EE800190088 /* CompletedEvent.swift */; };
-		1039FE8224509F3100190088 /* CompletedEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8124509F3100190088 /* CompletedEventsResponse.swift */; };
+		1039FE8224509F3100190088 /* AdminResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8124509F3100190088 /* AdminResponses.swift */; };
 		1039FE8524509FE600190088 /* AdminApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE8424509FE600190088 /* AdminApi.swift */; };
 		1039FE872450A06C00190088 /* AdminApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE862450A06C00190088 /* AdminApiConstants.swift */; };
 		1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE882450A19600190088 /* CompletedEventRequest.swift */; };
@@ -176,6 +175,11 @@
 		10A06ACE24937BFF0051FF56 /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ACD24937BFF0051FF56 /* Address.storyboard */; };
 		10A06AD02493911B0051FF56 /* AddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ACF2493911B0051FF56 /* AddressInteractor.swift */; };
 		10A06AD22493C9A10051FF56 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD12493C9A10051FF56 /* Country.swift */; };
+		10A06AD42494BBC40051FF56 /* CoachDutyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD32494BBC40051FF56 /* CoachDutyCell.swift */; };
+		10A06AD62494C6340051FF56 /* CoachDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD52494C6340051FF56 /* CoachDuty.swift */; };
+		10A06AD92494C9B60051FF56 /* TabbedCoachDutiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD82494C9B60051FF56 /* TabbedCoachDutiesController.swift */; };
+		10A06ADB2494CA7E0051FF56 /* CoachDutiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */; };
+		10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -191,7 +195,6 @@
 		10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */; };
 		10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */; };
 		10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2502451CF9700EA95C0 /* EventParticipant.swift */; };
-		10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */; };
 		10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */; };
 		10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA256245212AD00EA95C0 /* String+DateExtension.swift */; };
 		10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiView+Extension.swift */; };
@@ -275,7 +278,6 @@
 		1033465D246944B200D5EED0 /* PwdResetAckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwdResetAckController.swift; sourceTree = "<group>"; };
 		103346652469458000D5EED0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		103346702469461700D5EED0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
-		103346722469462900D5EED0 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
 		103365F8247C49B7009AF19A /* CartCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCells.swift; sourceTree = "<group>"; };
 		103365FA247C5334009AF19A /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		10336607247D3D99009AF19A /* CartListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListController.swift; sourceTree = "<group>"; };
@@ -331,7 +333,7 @@
 		1039FE7B2450895100190088 /* ETViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETViewController.swift; sourceTree = "<group>"; };
 		1039FE7D24509A9A00190088 /* CompletedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventCell.swift; sourceTree = "<group>"; };
 		1039FE7F24509EE800190088 /* CompletedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEvent.swift; sourceTree = "<group>"; };
-		1039FE8124509F3100190088 /* CompletedEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventsResponse.swift; sourceTree = "<group>"; };
+		1039FE8124509F3100190088 /* AdminResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminResponses.swift; sourceTree = "<group>"; };
 		1039FE8424509FE600190088 /* AdminApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApi.swift; sourceTree = "<group>"; };
 		1039FE862450A06C00190088 /* AdminApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApiConstants.swift; sourceTree = "<group>"; };
 		1039FE882450A19600190088 /* CompletedEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedEventRequest.swift; sourceTree = "<group>"; };
@@ -373,6 +375,11 @@
 		10A06ACD24937BFF0051FF56 /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
 		10A06ACF2493911B0051FF56 /* AddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractor.swift; sourceTree = "<group>"; };
 		10A06AD12493C9A10051FF56 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		10A06AD32494BBC40051FF56 /* CoachDutyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutyCell.swift; sourceTree = "<group>"; };
+		10A06AD52494C6340051FF56 /* CoachDuty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDuty.swift; sourceTree = "<group>"; };
+		10A06AD82494C9B60051FF56 /* TabbedCoachDutiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedCoachDutiesController.swift; sourceTree = "<group>"; };
+		10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutiesController.swift; sourceTree = "<group>"; };
+		10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoachDuties.storyboard; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -388,7 +395,6 @@
 		10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantCell.swift; sourceTree = "<group>"; };
 		10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantRequest.swift; sourceTree = "<group>"; };
 		10FCA2502451CF9700EA95C0 /* EventParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipant.swift; sourceTree = "<group>"; };
-		10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantResponse.swift; sourceTree = "<group>"; };
 		10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsInteractor.swift; sourceTree = "<group>"; };
 		10FCA256245212AD00EA95C0 /* String+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension.swift"; sourceTree = "<group>"; };
 		10FCA25824521E6300EA95C0 /* UiView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extension.swift"; sourceTree = "<group>"; };
@@ -446,6 +452,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10A06AD72494C9590051FF56 /* CoachDuties */,
 				10A06ACA24937AB40051FF56 /* Address */,
 				104B8DCC2489327D008BE5DA /* Profile */,
 				104B8DC32488FBF4008BE5DA /* Membership */,
@@ -532,6 +539,7 @@
 				103346152461C0B900D5EED0 /* SectionEventInfoCell.swift */,
 				103346172461D2CA00D5EED0 /* EmptyCell.swift */,
 				103346192461DB3400D5EED0 /* CreditHistoryCell.swift */,
+				10A06AD32494BBC40051FF56 /* CoachDutyCell.swift */,
 			);
 			path = DashboardSections;
 			sourceTree = "<group>";
@@ -721,6 +729,7 @@
 				109D6E8724863D5B009446A0 /* GiftCard.swift */,
 				104B8DC8248903CD008BE5DA /* Membership.swift */,
 				10A06AD12493C9A10051FF56 /* Country.swift */,
+				10A06AD52494C6340051FF56 /* CoachDuty.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -768,10 +777,8 @@
 			children = (
 				1039FE5324500F4C00190088 /* ETResponse.swift */,
 				10048F0E246D017300684A87 /* ShopItemResponse.swift */,
-				103346722469462900D5EED0 /* ForgotPasswordResponse.swift */,
 				1039FE5C2450429600190088 /* LoginResponse.swift */,
-				1039FE8124509F3100190088 /* CompletedEventsResponse.swift */,
-				10FCA2522451D06900EA95C0 /* EventParticipantResponse.swift */,
+				1039FE8124509F3100190088 /* AdminResponses.swift */,
 				1033460724608E3100D5EED0 /* UsreDataResponse.swift */,
 				1033660F247D3FED009AF19A /* CheckoutResponse.swift */,
 			);
@@ -988,6 +995,16 @@
 			path = Address;
 			sourceTree = "<group>";
 		};
+		10A06AD72494C9590051FF56 /* CoachDuties */ = {
+			isa = PBXGroup;
+			children = (
+				10A06AD82494C9B60051FF56 /* TabbedCoachDutiesController.swift */,
+				10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */,
+				10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */,
+			);
+			path = CoachDuties;
+			sourceTree = "<group>";
+		};
 		10BDD00F245982CA00F05700 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1143,7 @@
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
+				10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */,
 				103346662469458000D5EED0 /* Main.storyboard in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
@@ -1252,9 +1270,10 @@
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */,
-				1039FE8224509F3100190088 /* CompletedEventsResponse.swift in Sources */,
+				1039FE8224509F3100190088 /* AdminResponses.swift in Sources */,
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
+				10A06AD42494BBC40051FF56 /* CoachDutyCell.swift in Sources */,
 				1039FE43244F608100190088 /* Logger.swift in Sources */,
 				10048F46246F0F3A00684A87 /* AppVersion.swift in Sources */,
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
@@ -1268,10 +1287,10 @@
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidator+Extension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
-				10FCA2532451D06900EA95C0 /* EventParticipantResponse.swift in Sources */,
 				1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */,
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
 				10A06AD02493911B0051FF56 /* AddressInteractor.swift in Sources */,
+				10A06ADB2494CA7E0051FF56 /* CoachDutiesController.swift in Sources */,
 				103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */,
 				1033462424668CC100D5EED0 /* CreditHistoryInteractor.swift in Sources */,
 				1039FE5B2450424800190088 /* User.swift in Sources */,
@@ -1290,6 +1309,7 @@
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */,
 				10716FD52479A63C0032C056 /* ProductDetailsController.swift in Sources */,
+				10A06AD92494C9B60051FF56 /* TabbedCoachDutiesController.swift in Sources */,
 				10336617247ECE18009AF19A /* ReviewCartController.swift in Sources */,
 				10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
@@ -1318,7 +1338,6 @@
 				10048F20246DB7C000684A87 /* CartApi.swift in Sources */,
 				1033666A2483AE72009AF19A /* ArchieCardDetailsViewController.swift in Sources */,
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
-				103346732469462900D5EED0 /* ForgotPasswordResponse.swift in Sources */,
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
 				1033464824681B4B00D5EED0 /* UIButton+Extension.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
@@ -1327,6 +1346,7 @@
 				10FCA2512451CF9700EA95C0 /* EventParticipant.swift in Sources */,
 				103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */,
 				10336660248389BF009AF19A /* PaymentViewController.swift in Sources */,
+				10A06AD62494C6340051FF56 /* CoachDuty.swift in Sources */,
 				10336610247D3FED009AF19A /* CheckoutResponse.swift in Sources */,
 				10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,

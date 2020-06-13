@@ -1060,6 +1060,48 @@
                                             <outlet property="seeMoreButton" destination="pol-6t-M4q" id="bLO-tH-cNV"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoachDutyCell" rowHeight="185" id="4em-96-6iN" customClass="CoachDutyCell" customModule="EvolveGT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1128" width="414" height="185"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4em-96-6iN" id="90X-UA-bCi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8OM-uB-fmi">
+                                                    <rect key="frame" x="10" y="10" width="394" height="165"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtv-RI-lFk">
+                                                            <rect key="frame" x="10" y="10" width="374" height="145"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="I8v-4E-bbr"/>
+                                                            </constraints>
+                                                            <state key="normal" title="My Duties"/>
+                                                            <connections>
+                                                                <action selector="didPressCoachDutiesButton:" destination="4em-96-6iN" eventType="touchUpInside" id="SJo-G8-Dtk"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Gtv-RI-lFk" secondAttribute="bottom" constant="10" id="UWP-t8-Wn5"/>
+                                                        <constraint firstItem="Gtv-RI-lFk" firstAttribute="leading" secondItem="8OM-uB-fmi" secondAttribute="leading" constant="10" id="X6J-5A-Aqh"/>
+                                                        <constraint firstItem="Gtv-RI-lFk" firstAttribute="top" secondItem="8OM-uB-fmi" secondAttribute="top" constant="10" id="dY6-iD-zem"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Gtv-RI-lFk" secondAttribute="trailing" constant="10" id="eMA-xy-kqc"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" name="RootBackGround"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="8OM-uB-fmi" secondAttribute="bottom" constant="10" id="8lS-5L-Fk1"/>
+                                                <constraint firstItem="8OM-uB-fmi" firstAttribute="top" secondItem="90X-UA-bCi" secondAttribute="top" constant="10" id="EpI-9E-Ui8"/>
+                                                <constraint firstAttribute="trailing" secondItem="8OM-uB-fmi" secondAttribute="trailing" constant="10" id="Mdb-dk-vAV"/>
+                                                <constraint firstItem="8OM-uB-fmi" firstAttribute="leading" secondItem="90X-UA-bCi" secondAttribute="leading" constant="10" id="utR-Qb-cz6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnCochDuties" destination="Gtv-RI-lFk" id="OgO-ob-DuK"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="h8S-hB-tj4" id="sV6-xJ-UF3"/>

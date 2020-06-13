@@ -52,6 +52,8 @@ struct ScreenTitle{
      static let TITLE_MEMBERSHIP = "Membership"
      static let TITLE_PROFILE = "Edit Profile"
     
+     static let TITLE_COACH_DUTIES = "Coach Duties"
+    
 }
 
 struct ScreenSize{
