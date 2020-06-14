@@ -119,6 +119,7 @@ struct LoadingIndicatorMessages {
        static let loadingMembershipDetails = "Loading Membership details..."
     static let updatingProfile = "Please wait, we are updating your profile"
     static let loadingCoachDuties = "Loading duties assigned to you."
+     static let savingAgreement = "Saving policy agreement..."
 }
 
 struct ErrorMessages {

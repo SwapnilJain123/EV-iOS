@@ -1127,6 +1127,76 @@
             </objects>
             <point key="canvasLocation" x="-221.73913043478262" y="99.107142857142847"/>
         </scene>
+        <!--Policy Agreement Controller-->
+        <scene sceneID="fzo-9S-UlJ">
+            <objects>
+                <viewController storyboardIdentifier="PolicyVC" id="Gm1-K4-vnF" customClass="PolicyAgreementController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ice-iD-ju7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="318-DA-7FQ">
+                                <rect key="frame" x="25" y="787" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Rud-cH-I2c"/>
+                                </constraints>
+                                <state key="normal" title="Save Agreement"/>
+                                <connections>
+                                    <action selector="didPressSaveButton:" destination="Gm1-K4-vnF" eventType="touchUpInside" id="RcJ-qa-PbV"/>
+                                </connections>
+                            </button>
+                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STd-Vg-muf">
+                                <rect key="frame" x="10" y="64" width="394" height="665"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NsU-Sp-q2t">
+                                <rect key="frame" x="5" y="54" width="404" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2E-fP-WEq" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
+                                <rect key="frame" x="10" y="737" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nfO-i6-9jf"/>
+                                </constraints>
+                                <state key="normal" title="I agree to the terms and conditions"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="STd-Vg-muf" firstAttribute="top" secondItem="Rtq-ZY-ktk" secondAttribute="top" constant="20" id="D36-Zc-NCf"/>
+                            <constraint firstItem="STd-Vg-muf" firstAttribute="trailing" secondItem="Rtq-ZY-ktk" secondAttribute="trailing" constant="-10" id="FAs-4u-ryU"/>
+                            <constraint firstItem="318-DA-7FQ" firstAttribute="top" secondItem="Z2E-fP-WEq" secondAttribute="bottom" constant="10" id="Gf7-8K-Brv"/>
+                            <constraint firstItem="NsU-Sp-q2t" firstAttribute="top" secondItem="Rtq-ZY-ktk" secondAttribute="top" constant="10" id="JEs-mb-Rhq"/>
+                            <constraint firstItem="Rtq-ZY-ktk" firstAttribute="bottom" secondItem="318-DA-7FQ" secondAttribute="bottom" constant="30" id="OVT-53-2LR"/>
+                            <constraint firstItem="318-DA-7FQ" firstAttribute="leading" secondItem="Rtq-ZY-ktk" secondAttribute="leading" constant="25" id="PVp-tk-Yak"/>
+                            <constraint firstItem="Rtq-ZY-ktk" firstAttribute="trailing" secondItem="NsU-Sp-q2t" secondAttribute="trailing" constant="5" id="QY9-5a-qd3"/>
+                            <constraint firstItem="Z2E-fP-WEq" firstAttribute="trailing" secondItem="STd-Vg-muf" secondAttribute="trailing" id="Saq-CY-b5W"/>
+                            <constraint firstItem="Z2E-fP-WEq" firstAttribute="leading" secondItem="STd-Vg-muf" secondAttribute="leading" id="Xql-fi-yxo"/>
+                            <constraint firstItem="Rtq-ZY-ktk" firstAttribute="trailing" secondItem="318-DA-7FQ" secondAttribute="trailing" constant="25" id="a9Q-eD-WBl"/>
+                            <constraint firstItem="Z2E-fP-WEq" firstAttribute="top" secondItem="STd-Vg-muf" secondAttribute="bottom" constant="8" id="k3R-Kr-qxE"/>
+                            <constraint firstItem="NsU-Sp-q2t" firstAttribute="leading" secondItem="Rtq-ZY-ktk" secondAttribute="leading" constant="5" id="s3E-YR-sPl"/>
+                            <constraint firstItem="STd-Vg-muf" firstAttribute="leading" secondItem="Rtq-ZY-ktk" secondAttribute="leading" constant="10" id="tPU-9y-yNh"/>
+                            <constraint firstItem="Z2E-fP-WEq" firstAttribute="top" secondItem="NsU-Sp-q2t" secondAttribute="bottom" constant="8" id="xhN-D1-c8H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rtq-ZY-ktk"/>
+                    </view>
+                    <connections>
+                        <outlet property="agreementText" destination="NsU-Sp-q2t" id="5vr-nn-X1X"/>
+                        <outlet property="btnAgreement" destination="318-DA-7FQ" id="Fax-Xc-WcV"/>
+                        <outlet property="cbTermsAccepted" destination="Z2E-fP-WEq" id="yBb-3b-WQ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2g7-cS-bhP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513.04347826086962" y="102.45535714285714"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatar" width="300" height="300"/>

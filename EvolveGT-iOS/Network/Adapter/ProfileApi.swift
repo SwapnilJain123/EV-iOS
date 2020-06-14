@@ -93,5 +93,18 @@ class ProfileApi : BaseApiAdapter{
         appendUploadItem(uploadItem: imageUploadItem)
         super.makeRequest(method: .POST)
     }
-    
+    func checkTermsAGreementStatus(userId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CHECK_TnC_STATUS)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(UserDataSerialRequest(userID: userId)))
+        super.makeRequest(method: .POST)
+    }
+    func saveAgreementStatus(userId: String, status: Bool){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SAVE_TnC_STATUS)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(SaveUserAgreementRequest(userID: userId, agreementStatus: status)))
+        super.makeRequest(method: .POST)
+    }
 }

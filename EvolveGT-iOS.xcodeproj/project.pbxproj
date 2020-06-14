@@ -180,6 +180,8 @@
 		10A06AD92494C9B60051FF56 /* TabbedCoachDutiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD82494C9B60051FF56 /* TabbedCoachDutiesController.swift */; };
 		10A06ADB2494CA7E0051FF56 /* CoachDutiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */; };
 		10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */; };
+		10A06ADF249550E70051FF56 /* UserAcceptanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */; };
+		10A06AE1249557520051FF56 /* PolicyAgreementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AE0249557520051FF56 /* PolicyAgreementController.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -380,6 +382,8 @@
 		10A06AD82494C9B60051FF56 /* TabbedCoachDutiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedCoachDutiesController.swift; sourceTree = "<group>"; };
 		10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutiesController.swift; sourceTree = "<group>"; };
 		10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoachDuties.storyboard; sourceTree = "<group>"; };
+		10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAcceptanceStatus.swift; sourceTree = "<group>"; };
+		10A06AE0249557520051FF56 /* PolicyAgreementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAgreementController.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 				103345F924606D4400D5EED0 /* Home.storyboard */,
 				103345FD2460886100D5EED0 /* HomeViewController.swift */,
 				1033460524608D6400D5EED0 /* HomeDataInteractor.swift */,
+				10A06AE0249557520051FF56 /* PolicyAgreementController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -730,6 +735,7 @@
 				104B8DC8248903CD008BE5DA /* Membership.swift */,
 				10A06AD12493C9A10051FF56 /* Country.swift */,
 				10A06AD52494C6340051FF56 /* CoachDuty.swift */,
+				10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1289,6 +1295,7 @@
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				1033463D2466D98400D5EED0 /* TabProtocol.swift in Sources */,
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
+				10A06ADF249550E70051FF56 /* UserAcceptanceStatus.swift in Sources */,
 				10A06AD02493911B0051FF56 /* AddressInteractor.swift in Sources */,
 				10A06ADB2494CA7E0051FF56 /* CoachDutiesController.swift in Sources */,
 				103346382466BA7E00D5EED0 /* EnrolledEventCell.swift in Sources */,
@@ -1315,6 +1322,7 @@
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
 				10716FBE247822AA0032C056 /* ProductListController.swift in Sources */,
 				103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */,
+				10A06AE1249557520051FF56 /* PolicyAgreementController.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,

@@ -21,6 +21,7 @@ extension CheckboxButton {
         if self.isEnabled == false{
             self.checkBoxColor = CheckBoxColor(activeColor: .gray, inactiveColor: .clear, inactiveBorderColor: .gray, checkMarkColor: .white)
         }
+        self.setTitleColor(.darkText, for: .normal)
     }
     
     

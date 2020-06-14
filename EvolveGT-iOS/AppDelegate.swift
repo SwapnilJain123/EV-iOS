@@ -124,6 +124,21 @@ extension AppDelegate{
         
         self.window?.makeKeyAndVisible()
     }
+    
+    func pushToNewNavigationController(viewController: UIViewController){
+        
+        let nav =  UINavigationController(rootViewController: viewController)
+        UIView.transition(with: self.window!, duration: 0.1
+            , options: .transitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                self.window?.rootViewController = nav
+                UIView.setAnimationsEnabled(oldState)
+        }, completion: { (finished: Bool) -> () in
+        })
+        
+        self.window?.makeKeyAndVisible()
+    }
     func setNavBarStyle(){
         UINavigationBar.appearance().isTranslucent = false
         let navigationBarAppearace = UINavigationBar.appearance()
