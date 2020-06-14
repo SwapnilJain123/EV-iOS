@@ -12,7 +12,16 @@ import SideMenuSwift
 
 
 
-class ETTabViewController: UITabBarController, UITabBarControllerDelegate{
+class ETTabViewController: UITabBarController, UITabBarControllerDelegate, AgreementAcceptanceDelegate{
+    func requestToAcceptPolicies(agreement: AgreementStatus) {
+        let vc = self.ext.getViewController(storyBoard: "Home", VCIdentifier: "PolicyVC")
+        self.dashboardManager.pushToNewNavigationController(viewController: vc)
+    }
+    
+    func userHasAcceptedConditions() {
+        //ignored
+    }
+    
     
     
     
@@ -24,6 +33,10 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate{
         self.ext.hideBackButton()
         styleTabBar()
         self.delegate = self
+        
+        let interactor = HomeDataInteractor()
+        interactor.agreementStatusDelegate = self
+        interactor.verifyUserAgreedTerms()
     }
     
     

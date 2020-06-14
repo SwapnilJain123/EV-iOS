@@ -30,4 +30,8 @@ struct UserApiConstants{
     static let UPDATE_PROFILE = "user/updateProfile"
     static let UPDATE_PROFILE_IMAGE = "user/profilepic"
     
+    static let CHECK_TnC_STATUS = "user/checkTermsPolicy"
+    static let SAVE_TnC_STATUS = "user/saveTermsPolicy"
+    
+    
 }

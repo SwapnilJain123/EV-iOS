@@ -291,6 +291,10 @@ extension UIViewController{
             let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
             appDelegate?.launchUserDashboard()
         }
+        func pushToNewNavigationController (viewController: UIViewController) {
+            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.pushToNewNavigationController(viewController: viewController)
+        }
         
         func logout () {
             vc.ext.addLoadingIndicator(LoadingIndicatorMessages.loggingOut)

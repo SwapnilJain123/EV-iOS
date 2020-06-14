@@ -30,7 +30,7 @@ class HomeViewController: TabbedViewController{
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
-        
+        interactor.viewDelegate = self
     }
     
     override  func didChangeAppTheme() {
@@ -123,6 +123,7 @@ extension HomeViewController: UITableViewDataSource{
 }
 
 extension HomeViewController: HomeViewDelegate{
+    
     func didFetchCoachDuties(assignedEvents: [AssignedEvent]) {
         if assignedEvents.count == 1{
             let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "CoachDutiesVC") as! CoachDutiesController

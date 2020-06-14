@@ -101,7 +101,15 @@ class ProfileUpdateRequest: Codable {
         case userID = "user_id"
     }
 }
-
+struct SaveUserAgreementRequest: Codable {
+   
+    var userID: String?
+    var agreementStatus: Bool?
+    enum CodingKeys: String, CodingKey {
+        case agreementStatus = "has_agreed"
+        case userID = "serial"
+    }
+}
 
 class ProfileRequestInfo: Codable {
     var evDob, evEmergencyFirstName, evEmergencyLastName, evEmergencyPhone: String?
