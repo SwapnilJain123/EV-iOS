@@ -63,6 +63,14 @@ class AddressViewController : ETViewController{
         super.viewWillDisappear(animated)
         self.ext.hideNavbar()
     }
+    
+    @IBAction func didPressSaveButton(_ sender: UIButton) {
+        if addressType == .billing{
+        interactor.updateBillingAdress(selectedCountry: self.selectedCountry!, selectedState: self.selectedState!)
+        }else{
+            interactor.updateShippingAdress(selectedCountry: self.selectedCountry!, selectedState: self.selectedState!)
+        }
+    }
 }
 
 extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
@@ -84,7 +92,7 @@ extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
                     self.user?.shippingFirstName = text
                 }
             }
-            cell.setData(value: user?.firstName)
+            cell.setData(value: addressType == .billing ? user?.billingFirstName : user?.shippingFirstName)
             
         case .lastName:
             cell.errorMessage = ValidationErrors.emptyLastName
@@ -96,7 +104,7 @@ extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
                     self.user?.shippingLastName = text
                 }
             }
-            cell.setData(value: user?.lastName)
+            cell.setData(value: addressType == .billing ? user?.billingLastName : user?.shippingLastName)
         case .companyName:
             cell.errorMessage = ""
             cell.placeHolder = "Company"
@@ -190,7 +198,7 @@ extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
         switch addressFields[indexPath.row] {
         case .country:
             
-            if self.countries.count > 0{
+            if self.countries.count > 1{
                 self.presentSelectionMenu(title: "Select Country", data: countries){ selectedItems in
                     self.selectedCountry = self.interactor.getSelectedCountry(selectedCountry: selectedItems.first ?? "")
                     self.interactor.fetchSupportedStates(countryCode:  self.selectedCountry?.countryID ?? "")
@@ -199,7 +207,7 @@ extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
             }
             
         case .state:
-            if self.states.count > 0{
+            if self.states.count > 1{
                 self.presentSelectionMenu(title: "Select State", data: states){ selectedItems in
                     self.selectedState = self.interactor.getSelectedState(selectedState: selectedItems.first ?? "")
                     self.addressFormContainer.reloadData()

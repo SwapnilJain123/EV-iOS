@@ -25,7 +25,7 @@ class ProfileController : ETViewController{
         interactor.viewDelegate = self
         interactor.profileViewDelegate = self
         
-        interactor.computeProfileSections()
+        
         self.navigationController?.title = getScreenTitle()
     }
     override func getScreenTitle() -> String? {
@@ -41,6 +41,11 @@ class ProfileController : ETViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.ext.hideNavbar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        interactor.computeProfileSections()
     }
     @IBAction func didPressSaveButton(_ sender: Any) {
         saveProfile()
