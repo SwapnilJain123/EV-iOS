@@ -37,7 +37,7 @@ class HambergerMenuController: ETViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         self.setNeedsStatusBarAppearanceUpdate()
+        self.setNeedsStatusBarAppearanceUpdate()
         self.refreshSideMenu()
     }
     
@@ -79,7 +79,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
         self.sideMenuController?.hideMenu()
         
         handleMenuItem(tag : menuItems[indexPath.row].tag)
-       
+        
     }
     
     func switchToAdminDashboard(){
@@ -107,16 +107,17 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             
         case SlideMenuItem.TAG_LOG_OUT:
             self.dashboardManager.logout()
-            
+        case SlideMenuItem.TAG_SETTINGS:
+            self.ext.pushViewController(storyBoard: "Settings", VCIdentifier: "SettingsVC")
         case SlideMenuItem.TAG_CHANGE_PASSWORD:
             self.ext.pushViewController(storyBoard: "ChangePassword", VCIdentifier: "changePasswordVC")
         case SlideMenuItem.TAG_ABOUT_US:
             self.ext.pushViewController(storyBoard: "AboutUs", VCIdentifier: "aboutUsVC")
             
         case SlideMenuItem.TAG_MEMBERSHIP:
-                self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
-            case SlideMenuItem.TAG_MY_PROFILE:
-                           self.ext.pushViewController(storyBoard: "Profile", VCIdentifier: "ProfileController")
+            self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
+        case SlideMenuItem.TAG_MY_PROFILE:
+            self.ext.pushViewController(storyBoard: "Profile", VCIdentifier: "ProfileController")
             
             
         default:

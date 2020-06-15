@@ -30,7 +30,7 @@ class CartListController : TabbedViewController, CartListDelegate{
         btnCheckout.applyColorTheme()
         labelTotal.textColor = .getAppThemeColor()
     }
-   
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         labelTotal.textColor = .getAppThemeColor()
@@ -73,7 +73,7 @@ class CartListController : TabbedViewController, CartListDelegate{
         }
     }
     @IBAction func didPressCheckoutButton(_ sender: Any) {
-       let vc =  self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "ReviewCartVC") as! ReviewCartController
+        let vc =  self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "ReviewCartVC") as! ReviewCartController
         vc.interactor = self.interactor
         vc.cartItems = self.cartItems
         self.ext.pushViewController(viewController: vc)
@@ -89,11 +89,11 @@ extension CartListController: UITableViewDataSource, UITableViewDelegate{
         let cartItem = cartItems[indexPath.row]
         
         if !cartItem.tertiaryProperty.isEmpty(){
-             cell = tableView.dequeueReusableCell(withIdentifier: CartAllPropertiesCell.identifier, for: indexPath) as! CartAllPropertiesCell
+            cell = tableView.dequeueReusableCell(withIdentifier: CartAllPropertiesCell.identifier, for: indexPath) as! CartAllPropertiesCell
         }else  if !cartItem.secondaryProperty.isEmpty(){
-             cell = tableView.dequeueReusableCell(withIdentifier: Cart3PropertiesCell.identifier, for: indexPath) as! Cart3PropertiesCell
+            cell = tableView.dequeueReusableCell(withIdentifier: Cart3PropertiesCell.identifier, for: indexPath) as! Cart3PropertiesCell
         }else{
-             cell = tableView.dequeueReusableCell(withIdentifier: Cart2PropertiesCell.identifier, for: indexPath) as! Cart2PropertiesCell
+            cell = tableView.dequeueReusableCell(withIdentifier: Cart2PropertiesCell.identifier, for: indexPath) as! Cart2PropertiesCell
         }
         
         cell.cartItem = cartItem
@@ -102,7 +102,64 @@ extension CartListController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCart = cartItems[indexPath.row]
+        switch selectedCart.source {
+        case .archie:
+            let vc = self.ext.getViewController(storyBoard: "ArchieCard", VCIdentifier: "archieCardDetailsVC") as! ArchieCardDetailsViewController
+            vc.slug = selectedCart.slug ?? ""
+            vc.selectedArchieTitle = selectedCart.title ?? ""
+            self.ext.pushViewController(viewController: vc)
+            
+        case .event:
+            let vc = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as! EventDetailsController
+            vc.eventSlug = selectedCart.slug ?? ""
+            vc.eventTitle = selectedCart.title ?? ""
+            if selectedCart.isMotoEvent && !AppEngine.sharedInstance.isEvApp(){
+                vc.isMotoEvent = false
+                self.ext.pushViewController(viewController: vc)
+                
+            }else if !selectedCart.isMotoEvent && AppEngine.sharedInstance.isEvApp(){
+                vc.isMotoEvent = true
+                self.ext.pushViewController(viewController: vc)
+            }
+        case .giftcard:
+            let vc = self.ext.getViewController(storyBoard: "GiftCard", VCIdentifier: "giftCardDetailsVC") as! GiftCardDetailsViewController
+            vc.slug = selectedCart.slug ?? ""
+            vc.screenTitle = selectedCart.title ?? ""
+            self.ext.pushViewController(viewController: vc)
+        case .rentals, .training:
+            if AppEngine.sharedInstance.isEvApp(){
+                let vc = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as! EventDetailsController
+                vc.eventSlug = selectedCart.parentSlug ?? ""
+                vc.eventTitle = selectedCart.parentTitle ?? ""
+                vc.isMotoEvent = false
+                self.ext.pushViewController(viewController: vc)
+            }
+        case .transponder:
+            if !AppEngine.sharedInstance.isEvApp(){
+                let vc = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as! EventDetailsController
+                vc.eventSlug = selectedCart.parentSlug ?? ""
+                vc.eventTitle = selectedCart.parentTitle ?? ""
+                vc.isMotoEvent = true
+                self.ext.pushViewController(viewController: vc)
+            }
+        case .membership:
+            let vc = self.ext.getViewController(storyBoard: "Membership", VCIdentifier: "membershipDetailsVC") as! MembershipDetailsViewController
+            vc.slug = selectedCart.slug ?? ""
+            vc.membershipTitle = selectedCart.title ?? ""
+            self.ext.pushViewController(viewController: vc)
+        case .product:
+            let vc = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ProductDetailsVC") as! ProductDetailsController
+            vc.productSlug = selectedCart.slug ?? ""
+            vc.productName = selectedCart.title ?? ""
+            self.ext.pushViewController(viewController: vc)
+        default:
+            Log.d("Item Click ignored")
+        }
+        
+        
+    }
 }
 extension CartListController: CartCellDelegate{
     func deleteCartItem(cartItem: CartItem) {

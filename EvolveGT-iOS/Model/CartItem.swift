@@ -18,7 +18,8 @@ class CartItem: Codable {
     var canRemove: Bool?
     var evtype: String?
     var itemAttributes: [CartItemAttribute]?
-    var parentTitle: String?
+    var parentTitle, parentSlug: String?
+    
     
     var isMotoEvent : Bool{
         "motogladiator" == evtype?.lowercased()
@@ -109,6 +110,7 @@ class CartItem: Codable {
         case stockStatus = "stock_status"
         case canRemove = "can_remove"
         case evtype
+        case parentSlug = "parent_slug"
         case itemAttributes = "item_attributes"
         case parentTitle = "parent_title"
     }

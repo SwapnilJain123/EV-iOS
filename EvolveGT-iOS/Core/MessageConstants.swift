@@ -121,6 +121,10 @@ struct LoadingIndicatorMessages {
      static let updatingBillingAdress = "Please wait, we are updating your billing address"
     static let updatingShippingAdress = "Please wait, we are updating your shipping address"
     static let loadingCoachDuties = "Loading duties assigned to you."
+     static let savingAgreement = "Saving policy agreement..."
+    
+     static let readingPrefernces = "Please wait, reading your preferences..."
+    
 }
 
 struct ErrorMessages {
@@ -165,6 +169,7 @@ struct ErrorMessages {
      static let eventsNotAssigned = "Sorry. There are no events assigned to you."
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
      static let emptyMemberships = "Unfortunately, there is no memberships available right now."
+    static let updatingPreferenceFailed = "Your notification preferences could not be updated."
 }
 
 
@@ -187,6 +192,7 @@ struct SuccessMessages {
     
     static let profileUpdated = "Profile updated successfully."
      static let billingAdressUpdated = "Billing address updated successfully."
+    static let preferencesUpdated = "Your notification preferences updated."
     
     
 }

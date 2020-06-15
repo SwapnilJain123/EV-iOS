@@ -18,11 +18,11 @@ class CoachDutiesController: ETViewController, IndicatorInfoProvider{
     @IBOutlet weak var dutyListView: UICollectionView!
     var assignedEvent: AssignedEvent?
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-         IndicatorInfo(title: getScreenTitle()?.capitalized)
+         IndicatorInfo(title: assignedEvent?.event?.capitalized)
     }
     
     override func getScreenTitle() -> String? {
-        assignedEvent?.event
+        ScreenTitle.TITLE_COACH_DUTIES
     }
     
     override func viewDidLoad() {

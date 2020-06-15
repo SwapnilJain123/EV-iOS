@@ -103,7 +103,15 @@ class ProfileUpdateRequest: Codable {
         case userID = "user_id"
     }
 }
-
+struct SaveUserAgreementRequest: Codable {
+   
+    var userID: String?
+    var agreementStatus: Bool?
+    enum CodingKeys: String, CodingKey {
+        case agreementStatus = "has_agreed"
+        case userID = "serial"
+    }
+}
 
 class ProfileRequestInfo: Codable {
     var evDob, evEmergencyFirstName, evEmergencyLastName, evEmergencyPhone: String?
@@ -136,6 +144,9 @@ class ProfileRequestInfo: Codable {
         case evRaceLicence = "ev_race_licence"
     }
 }
+struct NotificationPreferenceUpdateRequest: Codable{
+    var userId: String?
+    var preferences: [NotificationTypeUpdate]?
 
 
 
@@ -225,3 +236,15 @@ struct ShippingAddressRequest:Codable {
 
 
 
+        case userId = "user_id"
+        case preferences
+    }
+}
+struct NotificationTypeUpdate: Codable{
+    var notificationType, notificationId, notificationStatus : String?
+    enum CodingKeys: String, CodingKey {
+        case notificationType = "notification_type"
+         case notificationId = "notification_id"
+         case notificationStatus = "notificationStatus"
+    }
+}
