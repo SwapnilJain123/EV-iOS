@@ -107,4 +107,20 @@ class ProfileApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(SaveUserAgreementRequest(userID: userId, agreementStatus: status)))
         super.makeRequest(method: .POST)
     }
+    
+    func fetchNotificationPreferences(userId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.NOTIFICATION_TYPES)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(UserDataUserIdRequest(userID: userId)))
+        super.makeRequest(method: .POST)
+    }
+    
+    func updateNotificationSettings(request: NotificationPreferenceUpdateRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_NOTIFICATION_PREF)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
 }
