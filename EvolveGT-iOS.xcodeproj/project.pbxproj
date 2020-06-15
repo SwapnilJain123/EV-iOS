@@ -182,6 +182,12 @@
 		10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */; };
 		10A06ADF249550E70051FF56 /* UserAcceptanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */; };
 		10A06AE1249557520051FF56 /* PolicyAgreementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AE0249557520051FF56 /* PolicyAgreementController.swift */; };
+		10A06AE4249697DD0051FF56 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06AE3249697DD0051FF56 /* Settings.storyboard */; };
+		10A06AE624969A150051FF56 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AE524969A150051FF56 /* SettingsViewController.swift */; };
+		10A06AE824969A480051FF56 /* SettingsTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AE724969A480051FF56 /* SettingsTableViewCells.swift */; };
+		10A06AEA2496A1140051FF56 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AE92496A1140051FF56 /* SettingsInteractor.swift */; };
+		10A06AEC2496A48A0051FF56 /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AEB2496A48A0051FF56 /* UserPreference.swift */; };
+		10A06AEE2496B4930051FF56 /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AED2496B4930051FF56 /* UISwitchExtension.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -384,6 +390,12 @@
 		10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoachDuties.storyboard; sourceTree = "<group>"; };
 		10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAcceptanceStatus.swift; sourceTree = "<group>"; };
 		10A06AE0249557520051FF56 /* PolicyAgreementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAgreementController.swift; sourceTree = "<group>"; };
+		10A06AE3249697DD0051FF56 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		10A06AE524969A150051FF56 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		10A06AE724969A480051FF56 /* SettingsTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCells.swift; sourceTree = "<group>"; };
+		10A06AE92496A1140051FF56 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		10A06AEB2496A48A0051FF56 /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
+		10A06AED2496B4930051FF56 /* UISwitchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -456,6 +468,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10A06AE2249697C40051FF56 /* Settings */,
 				10A06AD72494C9590051FF56 /* CoachDuties */,
 				10A06ACA24937AB40051FF56 /* Address */,
 				104B8DCC2489327D008BE5DA /* Profile */,
@@ -736,6 +749,7 @@
 				10A06AD12493C9A10051FF56 /* Country.swift */,
 				10A06AD52494C6340051FF56 /* CoachDuty.swift */,
 				10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */,
+				10A06AEB2496A48A0051FF56 /* UserPreference.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -885,6 +899,7 @@
 				10048F5524702D5D00684A87 /* CheckBox+Extension.swift */,
 				10716FAF2473130F0032C056 /* TextFieldExtension.swift */,
 				104B8DD5248ACA87008BE5DA /* ImageViewExtension.swift */,
+				10A06AED2496B4930051FF56 /* UISwitchExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1009,6 +1024,17 @@
 				10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */,
 			);
 			path = CoachDuties;
+			sourceTree = "<group>";
+		};
+		10A06AE2249697C40051FF56 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				10A06AE3249697DD0051FF56 /* Settings.storyboard */,
+				10A06AE524969A150051FF56 /* SettingsViewController.swift */,
+				10A06AE724969A480051FF56 /* SettingsTableViewCells.swift */,
+				10A06AE92496A1140051FF56 /* SettingsInteractor.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		10BDD00F245982CA00F05700 /* Common */ = {
@@ -1146,6 +1172,7 @@
 				103366692483AE72009AF19A /* ArchieCard.storyboard in Resources */,
 				1033464C24683F6B00D5EED0 /* SlideMenu.storyboard in Resources */,
 				104B8DD0248932BF008BE5DA /* Profile.storyboard in Resources */,
+				10A06AE4249697DD0051FF56 /* Settings.storyboard in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
@@ -1280,6 +1307,8 @@
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
 				10A06AD42494BBC40051FF56 /* CoachDutyCell.swift in Sources */,
+				10A06AE824969A480051FF56 /* SettingsTableViewCells.swift in Sources */,
+				10A06AE624969A150051FF56 /* SettingsViewController.swift in Sources */,
 				1039FE43244F608100190088 /* Logger.swift in Sources */,
 				10048F46246F0F3A00684A87 /* AppVersion.swift in Sources */,
 				1039FE5724501CB800190088 /* LoginApi.swift in Sources */,
@@ -1287,6 +1316,7 @@
 				1039FE8524509FE600190088 /* AdminApi.swift in Sources */,
 				1033462624668FD600D5EED0 /* CreditHistoryViewController.swift in Sources */,
 				10048F0D246D015400684A87 /* Event.swift in Sources */,
+				10A06AEE2496B4930051FF56 /* UISwitchExtension.swift in Sources */,
 				10BDD022245B0C6400F05700 /* SignatureReaderController.swift in Sources */,
 				1033660E247D3EC4009AF19A /* CheckoutApiConstant.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
@@ -1325,6 +1355,7 @@
 				10A06AE1249557520051FF56 /* PolicyAgreementController.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
+				10A06AEA2496A1140051FF56 /* SettingsInteractor.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
 				10716FAC24725FA40032C056 /* MotoEventDetailsController.swift in Sources */,
 				10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */,
@@ -1336,6 +1367,7 @@
 				10048F5624702D5D00684A87 /* CheckBox+Extension.swift in Sources */,
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				10336608247D3D99009AF19A /* CartListController.swift in Sources */,
+				10A06AEC2496A48A0051FF56 /* UserPreference.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */,
 				109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */,

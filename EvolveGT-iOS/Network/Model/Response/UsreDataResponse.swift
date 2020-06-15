@@ -63,3 +63,10 @@ struct UserTermsAcceptanceResponse: Codable {
         case agrreementStatus = "data"
     }
 }
+struct NotificationTypesResponse: Codable {
+    var preferences: [UserPreference]?
+    
+    enum CodingKeys: String, CodingKey {
+        case preferences = "result"
+    }
+}
