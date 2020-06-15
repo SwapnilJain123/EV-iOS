@@ -17,6 +17,8 @@ struct UserDataUserIdRequest : Codable{
     }
 }
 
+
+
 struct UserDataSerialRequest : Codable{
     var userID: String?
     
@@ -89,20 +91,20 @@ struct UserMemberShipRequest: Codable{
     
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
-      
+        
     }
 }
 class ProfileUpdateRequest: Codable {
     var requestBody: ProfileRequestInfo?
     var userID: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case requestBody = "data"
         case userID = "user_id"
     }
 }
 struct SaveUserAgreementRequest: Codable {
-   
+    
     var userID: String?
     var agreementStatus: Bool?
     enum CodingKeys: String, CodingKey {
@@ -118,7 +120,7 @@ class ProfileRequestInfo: Codable {
     var ccsNo, raceNo, sponsors, teamnames: String?
     var evMotorcycle, evMotorcycleNumber, nationality, phone: String?
     var evRaceLicence: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case evDob = "ev_dob"
         case email
@@ -142,19 +144,105 @@ class ProfileRequestInfo: Codable {
         case evRaceLicence = "ev_race_licence"
     }
 }
+struct BillingAdressUpdateRequest:Codable {
+    var userId:String?
+    var billingRequest:BillingAdressRequest?
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id"
+        case billingRequest = "data"
+        
+    }
+    
+}
+
+struct BillingAdressRequest:Codable {
+    var billingAdress1:String?
+    var billingAdress2:String?
+    var billingCity:String?
+    var billingCountry:String?
+    var billingEmail:String?
+    var billingFirstName:String?
+    var billingLastName:String?
+    var billingPhone:String?
+    var billingPostCode:String?
+    var billingState:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case  billingAdress1 = "billing_address_1"
+        case billingAdress2 = "billing_address_2"
+        case billingCity = "billing_city"
+        case billingCountry = "billing_country"
+        case billingEmail = "billing_email"
+        case billingFirstName = "billing_first_name"
+        case billingLastName = "billing_last_name"
+        case billingPhone = "billing_phone"
+        case billingPostCode = "billing_postcode"
+        case billingState = "billing_state"
+        
+    }
+    
+}
+
+struct ShippingAdressUpdateRequest:Codable {
+    
+    var userID:String?
+    var shippingRequest:ShippingAddressRequest?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case userID = "user_id"
+        case shippingRequest = "data"
+        
+        
+    }
+}
+
+struct ShippingAddressRequest:Codable {
+    
+    var shippingAddress1:String?
+    var shippingCity:String?
+    var shippingCountry:String?
+    var shippingFirstName:String?
+    var shippingLastName:String?
+    var shippingPostCode:String?
+    var shippingState:String?
+    
+    init(){
+        
+    }
+    enum CodingKeys: String, CodingKey {
+        
+        case shippingAddress1 = "shipping_address_1"
+        case shippingCity = "shipping_city"
+        case shippingCountry = "shipping_country"
+        case shippingFirstName = "shipping_first_name"
+        case shippingLastName = "shipping_last_name"
+        case shippingPostCode = "shipping_postcode"
+        case shippingState = "shipping_state"
+        
+        
+        
+    }
+}
+
+
+
 struct NotificationPreferenceUpdateRequest: Codable{
     var userId: String?
     var preferences: [NotificationTypeUpdate]?
-     enum CodingKeys: String, CodingKey {
+    
+    enum CodingKeys: String, CodingKey {
         case userId = "user_id"
         case preferences
     }
 }
+
 struct NotificationTypeUpdate: Codable{
     var notificationType, notificationId, notificationStatus : String?
     enum CodingKeys: String, CodingKey {
         case notificationType = "notification_type"
-         case notificationId = "notification_id"
-         case notificationStatus = "notificationStatus"
+        case notificationId = "notification_id"
+        case notificationStatus = "notificationStatus"
     }
 }

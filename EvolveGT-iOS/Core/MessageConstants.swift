@@ -118,6 +118,8 @@ struct LoadingIndicatorMessages {
     static let addingMembershipToCart = "Adding this membership to cart..."
        static let loadingMembershipDetails = "Loading Membership details..."
     static let updatingProfile = "Please wait, we are updating your profile"
+     static let updatingBillingAdress = "Please wait, we are updating your billing address"
+    static let updatingShippingAdress = "Please wait, we are updating your shipping address"
     static let loadingCoachDuties = "Loading duties assigned to you."
      static let savingAgreement = "Saving policy agreement..."
     
@@ -189,6 +191,7 @@ struct SuccessMessages {
      static let membershipAddedToCart = "Your membership has been added to the cart successfully."
     
     static let profileUpdated = "Profile updated successfully."
+     static let billingAdressUpdated = "Billing address updated successfully."
     static let preferencesUpdated = "Your notification preferences updated."
     
     
