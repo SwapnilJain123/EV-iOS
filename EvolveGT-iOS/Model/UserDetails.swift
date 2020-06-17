@@ -127,6 +127,7 @@ class UserDetails: Codable {
     }
     
     var billingAddress : String{
+        let fullName = "\(billingFirstName ?? firstName ?? "") \(billingLastName ?? lastName ?? "")"
         if billingAddress1?.isEmpty() ?? true{
             return ""
         }else{
@@ -138,21 +139,22 @@ class UserDetails: Codable {
             if billingCompany?.isEmpty() ?? true == false{
                            address = "\(address)\n\(billingCompany!)"
             }
-            
+            let state = billingState?.isEmpty ?? true ? "" : "\(billingState!) - "
             if billingCity?.isEmpty() ?? true == false{
-                address = "\(address)\n\(billingCity!), \(billingState ?? "")-\(billingPostcode ?? "")"
+                address = "\(address)\n\(billingCity!), \(state)\(billingPostcode ?? "")"
             }
             if billingCountry?.isEmpty() ?? true == false{
                            address = "\(address)\n\(billingCountry!)"
             }
              if billingPhone?.isEmpty() ?? true == false{
-                 address = "\(address)\n\(billingPhone!)"
+                 address = "\(address)\nCell: \(billingPhone!)"
             }
             return address
         }
     }
     
     var shippingAddress : String{
+        let fullName = "\(shippingFirstName ?? firstName ?? "") \(shippingLastName ?? lastName ?? "")"
         if shippingAddress1?.isEmpty() ?? true{
             return ""
         }else{

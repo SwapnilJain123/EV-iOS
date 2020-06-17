@@ -33,6 +33,85 @@ class AddressInteractor : BaseInteractor{
         return fields
     }
     
+    func updateBillingAdress(selectedCountry:Country , selectedState:SupportedState){
+        
+        self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.updatingBillingAdress)
+        let api = ProfileApi()
+        api.setCompletionHandler{data , error in
+            
+            
+            if error == nil{
+                self.syncUserDetails()
+                self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.profileUpdated)
+            }else{
+                self.viewDelegate?.hideProgressIndicator()
+                self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+                
+            }
+           
+        }
+        var request = BillingAdressUpdateRequest()
+        request.userId = AppEngine.sharedInstance.userID
+        
+        
+        var billingrequest = BillingAdressRequest()
+        let user = AppEngine.sharedInstance.userDetails
+        billingrequest.billingAdress1 = user!.billingAddress1
+        billingrequest.billingAdress2 = user!.billingAddress2
+        billingrequest.billingCity = user!.billingCity
+        billingrequest.billingCountry = selectedCountry.value
+        billingrequest.billingEmail = user!.billingEmail
+        billingrequest.billingFirstName = user?.billingFirstName
+        billingrequest.billingLastName = user?.billingLastName
+        billingrequest.billingPhone = user?.billingPhone
+        billingrequest.billingPostCode = user?.billingPostcode
+        billingrequest.billingState = selectedState.sortName
+        
+        request.billingRequest = billingrequest
+        
+        api.updateBilllingAdress(request: request)
+ 
+        
+        
+    }
+    
+    func updateShippingAdress(selectedCountry:Country , selectedState:SupportedState) {
+        
+        self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.updatingShippingAdress)
+        let api = ProfileApi()
+        api.setCompletionHandler{ data, error in
+            
+            if error == nil{
+            
+                self.syncUserDetails()
+                self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.profileUpdated)
+            }else{
+                self.viewDelegate?.hideProgressIndicator()
+                self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
+            
+        }
+        
+        var request = ShippingAdressUpdateRequest()
+        request.userID = AppEngine.sharedInstance.userID
+        
+        var shippingRequest = ShippingAddressRequest()
+        
+        let user = AppEngine.sharedInstance.userDetails
+        shippingRequest.shippingAddress1 = user?.shippingAddress1
+        shippingRequest.shippingFirstName = user?.shippingFirstName ?? user?.firstName
+        shippingRequest.shippingCity  = user?.shippingCity
+        shippingRequest.shippingLastName = user?.shippingLastName ?? user?.lastName
+        shippingRequest.shippingPostCode = user?.shippingPostcode
+        shippingRequest.shippingCountry  = selectedCountry.value
+        shippingRequest.shippingState = selectedState.sortName
+        
+        request.shippingRequest = shippingRequest
+        api.updateShippingAdress(request: request)
+    
+        
+    }
+    
     
     func fetchSupportedCountryList(){
         
@@ -115,6 +194,25 @@ class AddressInteractor : BaseInteractor{
          let stateIndex = AppEngine.sharedInstance.states.firstIndex(where: { $0.name == selectedState || $0.sortName == selectedState}) ?? 0
         return AppEngine.sharedInstance.states[stateIndex]
         
+    }
+    private func syncUserDetails() {
+        
+        let profileApi = ProfileApi()
+        profileApi.setCompletionHandler{ response, error in
+            
+             self.viewDelegate?.hideProgressIndicator()
+            if error == nil{
+               
+                if let userDetailsResponse = self.decodeFromJson(response!, modelType: UserDetailsResponse.self){
+                    
+                    if userDetailsResponse.userDetails == nil{
+                        AppEngine.sharedInstance.userDetails = userDetailsResponse.userDetails
+                    }
+                }
+            }
+            
+        }
+        profileApi.fetchUserDetails(userId: AppEngine.sharedInstance.userID)
     }
 }
 enum AddressField: Int, CaseIterable{

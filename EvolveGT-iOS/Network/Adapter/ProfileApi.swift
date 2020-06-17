@@ -84,6 +84,22 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func updateBilllingAdress(request: BillingAdressUpdateRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_PROFILE)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
+    
+    func updateShippingAdress(request: ShippingAdressUpdateRequest){
+           
+           let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_PROFILE)"
+           setUrl(url: url)
+           setParameters(parameters: makeDictionary(request))
+           super.makeRequest(method: .POST)
+       }
+    
     func updateProfilePicture(userId: String, imageUploadItem: UploadItem){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_PROFILE_IMAGE)"
