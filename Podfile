@@ -1,13 +1,7 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
 
-target 'EvolveGT-iOS' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-#  pod 'SlideMenuControllerSwift'
 
-#  pod 'Firebase/Core'
-#  pod 'Firebase/Messaging'
+
+def default_pods
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Kingfisher', '~> 4.2'
   pod 'AFDateHelper'
@@ -21,19 +15,28 @@ target 'EvolveGT-iOS' do
   pod 'DYAlertController', '3.1.1'
   pod 'MBRadioCheckboxButton'
   pod 'DatePickerDialog'
-   
-   
-   
-#pod 'SwiftyJSON','4.2'
-#  pod 'SideMenuSwift','1.0.2'
   pod 'SideMenuSwift'
   pod 'XLPagerTabStrip', '~> 8.1'
   pod 'SwiftSignatureView'
-#  pod 'Braintree'
   pod 'BraintreeDropIn'
-#  pod 'SwiftEntryKit'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Core'
 
+end
 
-  # Pods for EvolveGT
-
+target 'EvolveGT-iOS' do
+  use_frameworks!
+  default_pods
+  
+end
+target 'EvolveGT-QA' do
+  use_frameworks!
+  default_pods
+ 
+end
+target 'EvolveGT-UAT' do
+  use_frameworks!
+  default_pods
+  
 end

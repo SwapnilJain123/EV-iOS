@@ -210,6 +210,26 @@ class HomeDataInteractor : BaseInteractor{
         }
         profileApi.saveAgreementStatus(userId: AppEngine.sharedInstance.userID, status: status)
     }
+    
+    func updateDeviceToken(){
+        
+        if UserDefaultHelper.sharedInstance.getData(key: AppConstants.KEY_DEVICE_TOKEN_STATUS) as? Bool ?? false{
+            Log.i("Device Token already Updated!")
+            return
+        }
+        let token = UserDefaultHelper.sharedInstance.getData(key: AppConstants.DEVICE_TOKEN) as? String
+        let profileApi = ProfileApi()
+        
+        profileApi.setCompletionHandler{ data, error in
+            if error == nil{
+                Log.i("Device Token Updated!")
+                UserDefaultHelper.sharedInstance.saveData(key: AppConstants.KEY_DEVICE_TOKEN_STATUS, value: true)
+            }else{
+                Log.e("Device Token updating failed")
+            }
+        }
+        profileApi.updateDeviceToken(userId: AppEngine.sharedInstance.userID, deviceToken: token)
+    }
 }
 enum HomeSection: Int, CaseIterable{
     case profile

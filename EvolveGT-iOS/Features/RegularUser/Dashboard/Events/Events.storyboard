@@ -31,7 +31,7 @@
         <!--Event List Controller-->
         <scene sceneID="qMF-fP-ctB">
             <objects>
-                <viewController storyboardIdentifier="EventListVC" id="cwb-0R-pTZ" customClass="EventListController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventListVC" id="cwb-0R-pTZ" customClass="EventListController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Xq-pm-ttK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventGridCellWithCart" id="YcC-eD-Fid" userLabel="GridCellWithCart" customClass="EventGridCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventGridCellWithCart" id="YcC-eD-Fid" userLabel="GridCellWithCart" customClass="EventGridCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="53" y="0.0" width="288" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UOD-yt-21v">
@@ -198,7 +198,7 @@
                                             <outlet property="rootView" destination="4kL-Vh-qYW" id="JGD-9v-CMP"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventGridCell" id="sVa-Vw-hUS" userLabel="GridCell" customClass="EventGridCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventGridCell" id="sVa-Vw-hUS" userLabel="GridCell" customClass="EventGridCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="53" y="266" width="288" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="y3l-ww-iDq">
@@ -298,7 +298,7 @@
                                             <outlet property="rootView" destination="uly-ce-bBg" id="goe-fs-MEB"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventListCellWithCart" id="vuQ-nH-kTf" userLabel="ListCellWithCart" customClass="EventListCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventListCellWithCart" id="vuQ-nH-kTf" userLabel="ListCellWithCart" customClass="EventListCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="7" y="532" width="380" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3T7-YL-CWl">
@@ -450,7 +450,7 @@
                                             <outlet property="rootView" destination="8gS-nT-dbC" id="rwj-uh-7h4"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventListCell" id="W5L-R5-XnR" userLabel="ListCellWithoutCart" customClass="EventListCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EventListCell" id="W5L-R5-XnR" userLabel="ListCellWithoutCart" customClass="EventListCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="7" y="698" width="380" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JP5-bW-p3U">
@@ -567,9 +567,9 @@
         <!--Event Details Controller-->
         <scene sceneID="Cyt-pO-KxC">
             <objects>
-                <viewController storyboardIdentifier="EventDetailsVC" id="bk1-mB-Dxd" customClass="EventDetailsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailsVC" id="bk1-mB-Dxd" customClass="EventDetailsController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAy-RP-ZMy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhI-qJ-Z35">
@@ -590,7 +590,7 @@
                                 <rect key="frame" x="0.0" y="8" width="414" height="1131"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventInfoCell" id="v80-zQ-Hw3" customClass="EventInfoCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventInfoCell" id="v80-zQ-Hw3" customClass="EventInfoCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="236"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v80-zQ-Hw3" id="K6v-5Z-njE">
@@ -664,7 +664,7 @@
                                             <outlet property="totalPrice" destination="Zgl-NB-hBM" id="0Wi-VM-s23"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutEvent" rowHeight="100" id="Zyd-O0-thL" customClass="AboutEventCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutEvent" rowHeight="100" id="Zyd-O0-thL" customClass="AboutEventCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="264" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zyd-O0-thL" id="GVP-SE-WZV">
@@ -709,7 +709,7 @@
                                             <outlet property="title" destination="2cJ-OC-6Yd" id="oPg-RY-9Rv"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TrainingItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingItem" id="Wrj-0e-epO" customClass="TrainingItemCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TrainingItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingItem" id="Wrj-0e-epO" customClass="TrainingItemCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="364" width="414" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wrj-0e-epO" id="7ej-18-jKE">
@@ -754,7 +754,7 @@
                                             <outlet property="titleView" destination="4Bn-dh-vIO" id="wmZ-Y7-482"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventClassCell" id="fb6-Pc-oxG" userLabel="ClassCell" customClass="EventClassCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventClassCell" id="fb6-Pc-oxG" userLabel="ClassCell" customClass="EventClassCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="404" width="414" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fb6-Pc-oxG" id="TSh-t3-Y36">
@@ -792,7 +792,7 @@
                                             <outlet property="selectionBox" destination="VNv-EO-O1n" id="MRt-qD-bkD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RentalItem" id="kXX-Jx-Mzv" userLabel="RentalItemCell" customClass="RentItemCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RentalItem" id="kXX-Jx-Mzv" userLabel="RentalItemCell" customClass="RentItemCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="444" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kXX-Jx-Mzv" id="qg1-Es-fIq">
@@ -863,7 +863,7 @@
                                             <outlet property="selectionCheckBox" destination="d8g-nd-Cj2" id="s5z-4V-UPm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkillLevelCell" id="bTk-uw-yfU" userLabel="UserSkill" customClass="SkillLevelCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkillLevelCell" id="bTk-uw-yfU" userLabel="UserSkill" customClass="SkillLevelCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="499" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bTk-uw-yfU" id="wJh-2p-kTK">
@@ -926,7 +926,7 @@
                                             <outlet property="radio2" destination="m1l-1H-p55" id="dYP-tp-Dfa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransponderCell" rowHeight="159" id="tcc-et-hW7" customClass="TransponderCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransponderCell" rowHeight="159" id="tcc-et-hW7" customClass="TransponderCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="559" width="414" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcc-et-hW7" id="oHa-PP-p6P">
@@ -973,7 +973,7 @@
                                             <outlet property="transponderTF" destination="oaI-Yf-WZL" id="5he-8U-HUF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackDayCell" id="5Dw-gT-21K" customClass="TrackDayCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackDayCell" id="5Dw-gT-21K" customClass="TrackDayCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="718" width="414" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Dw-gT-21K" id="R1d-7K-fXW">

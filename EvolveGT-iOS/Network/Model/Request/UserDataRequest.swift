@@ -17,8 +17,6 @@ struct UserDataUserIdRequest : Codable{
     }
 }
 
-
-
 struct UserDataSerialRequest : Codable{
     var userID: String?
     
@@ -232,7 +230,9 @@ struct NotificationPreferenceUpdateRequest: Codable{
     var userId: String?
     var preferences: [NotificationTypeUpdate]?
     
-    enum CodingKeys: String, CodingKey {
+
+     enum CodingKeys: String, CodingKey {
+
         case userId = "user_id"
         case preferences
     }
@@ -240,9 +240,21 @@ struct NotificationPreferenceUpdateRequest: Codable{
 
 struct NotificationTypeUpdate: Codable{
     var notificationType, notificationId, notificationStatus : String?
+    
     enum CodingKeys: String, CodingKey {
         case notificationType = "notification_type"
-        case notificationId = "notification_id"
-        case notificationStatus = "notificationStatus"
+         case notificationId = "notification_id"
+         case notificationStatus = "status"
+    }
+}
+struct DeviceTokenRequest: Codable{
+    var userId: String?
+    var token: String?
+    var deviceType = "iOS";
+    enum CodingKeys: String, CodingKey {
+         case userId = "user_id"
+         case token
+         case deviceType = "device_type"
+
     }
 }

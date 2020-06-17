@@ -13,6 +13,9 @@ import SideMenuSwift
 
 
 class ETTabViewController: UITabBarController, UITabBarControllerDelegate, AgreementAcceptanceDelegate{
+    
+    var notificationPayload : [AnyHashable: Any]?
+    
     func requestToAcceptPolicies(agreement: AgreementStatus) {
         let vc = self.ext.getViewController(storyBoard: "Home", VCIdentifier: "PolicyVC")
         self.dashboardManager.pushToNewNavigationController(viewController: vc)
@@ -37,9 +40,37 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         let interactor = HomeDataInteractor()
         interactor.agreementStatusDelegate = self
         interactor.verifyUserAgreedTerms()
+        interactor.updateDeviceToken()
+        
+        if notificationPayload != nil{
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                self.processNotficationPayload()
+            })
+        }
     }
     
-    
+    func processNotficationPayload(){
+        let pushType = notificationPayload!["type"] as! String
+        
+        if pushType == "event"{
+             let eventSlug = notificationPayload!["event_slug"] as? String
+            let eventTitle = notificationPayload!["event_title"] as? String
+            let isMotoEvent = notificationPayload!["isMotoEvent"] as? Bool
+            
+            let eventDetailsVC = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as! EventDetailsController
+            eventDetailsVC.eventSlug = eventSlug ?? ""
+            eventDetailsVC.eventTitle = eventTitle ?? ""
+             eventDetailsVC.isMotoEvent = isMotoEvent ?? false
+            
+            let eventTabNavController = self.viewControllers?[1] as! UINavigationController
+            eventTabNavController.pushViewController(eventDetailsVC, animated: false)
+            self.selectedViewController = self.viewControllers?[1]
+          
+        }else if pushType == "web"{
+             let url = notificationPayload!["url"] as! String
+            self.ext.openLink(url)
+        }
+    }
     func enableSlideMenu(){
         let button = UIButton(type: UIButton.ButtonType.custom)
         button.setImage(UIImage(named: "HMenu"), for: UIControl.State.normal)
@@ -73,7 +104,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     func styleTabBar(){
         if AppEngine.sharedInstance.isEvApp(){
             self.tabBar.barTintColor = .getEVTabBackgroundGray()
-             self.tabBar.tintColor = .getEvColor()
+            self.tabBar.tintColor = .getEvColor()
             self.tabBar.unselectedItemTintColor = .lightText
         }else{
             self.tabBar.barTintColor = .getMotoColor()

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1039FDF8244F1A1800190088"
-               BuildableName = "EvolveGT.app"
+               BuildableName = ".app"
                BlueprintName = "EvolveGT-iOS"
                ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1039FDF8244F1A1800190088"
-            BuildableName = "EvolveGT.app"
+            BuildableName = ".app"
             BlueprintName = "EvolveGT-iOS"
             ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1039FDF8244F1A1800190088"
-            BuildableName = "EvolveGT.app"
+            BuildableName = ".app"
             BlueprintName = "EvolveGT-iOS"
             ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
          </BuildableReference>

@@ -102,6 +102,8 @@ class AppEngine{
     func reset(){
         userDefaultHelper.delete(key: KEY_AUTH_TOKEN)
         userDefaultHelper.delete(key: KEY_USER)
+        userDefaultHelper.delete(key: AppConstants.DEVICE_TOKEN)
+        userDefaultHelper.delete(key: AppConstants.KEY_DEVICE_TOKEN_STATUS)
         self.currentUser = nil
         self.authToken = ""
         walletEnabled = false

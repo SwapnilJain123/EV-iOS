@@ -51,11 +51,7 @@ class Log {
     }
     
     private static var isLoggingEnabled: Bool {
-        #if DEBUG
-        return true
-        #else
-        return false
-        #endif
+        Config.LOG_ENABLED
     }
     
     // MARK: - Loging methods
