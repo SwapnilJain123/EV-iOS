@@ -9,33 +9,17 @@
 import Foundation
 class BuildScheme{
     private static var buildMode :String {
-        var nsDictionary : NSDictionary?
-        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
-             nsDictionary = NSDictionary(contentsOfFile: path)
-            let mode = nsDictionary!["BUILD_CONFIG"] as! String? ?? "QA"
-           return  mode
-        }
-        return  "QA"
+        
+        return  Config.BUILD_CONFIG
     }
     
     static var brainTreeReturnUrl :String {
-        var nsDictionary : NSDictionary?
-        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
-             nsDictionary = NSDictionary(contentsOfFile: path)
-            let mode = nsDictionary!["BRAINTREE_RETURN_URL"] as! String? ?? ""
-           return  mode
-        }
-        return  ""
+        
+        return  Config.BRAINTREE_RETURN_URL
     }
     
     static var paymentMode :String {
-        var nsDictionary : NSDictionary?
-        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"){
-             nsDictionary = NSDictionary(contentsOfFile: path)
-            let mode = nsDictionary!["CHECKOUT_MODE"] as! String? ?? "sandbox"
-           return  mode
-        }
-        return  "sandbox"
+        Config.CHECKOUT_MODE
     }
     
     static var isBuildQA : Bool {

@@ -31,6 +31,9 @@ class CompletedEventViewController : ETViewController{
         self.setInteractor()
         self.setNavbarControls()
         changeSwitchAppIcon()
+        
+        let homeInteractor = HomeDataInteractor()
+        homeInteractor.updateDeviceToken()
     }
     
     func changeSwitchAppIcon(){

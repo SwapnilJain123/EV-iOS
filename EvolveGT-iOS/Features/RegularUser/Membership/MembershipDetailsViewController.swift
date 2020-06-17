@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+
 class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegate {
     
     var membershipDetails = MembershipDetails()

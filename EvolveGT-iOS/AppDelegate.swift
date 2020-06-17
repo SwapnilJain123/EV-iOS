@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import SideMenuSwift
 import Braintree
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,13 +23,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         initiApp()
+        initFirebase()
+        registerForPushNotification(application)
         setUpBrainTreeUrlScheme()
+        
+        //handle notification if launch option is from remote notification
+        
+        if launchOptions?[.remoteNotification] == nil {
+           launchDashboard(payload: nil)
+            // Log.d("Launching Via Push!  - Remote options available")
+        }
         
         Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")
         return true
     }
     
+    func initFirebase(){
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+    }
     
+    func registerForPushNotification(_ application: UIApplication){
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        
+        //Solicit permission from user to receive notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (_, error) in
+            guard error == nil else{
+                print(error!.localizedDescription)
+                return
+            }
+        }
+        
+        //get application instance ID
+        InstanceID.instanceID().instanceID { (result, error) in
+            if let error = error {
+                print("Error fetching remote instance ID: \(error)")
+            } else if let result = result {
+                print("Remote instance ID token: \(result.token)")
+            }
+        }
+        
+        application.registerForRemoteNotifications()
+    }
 }
 
 extension AppDelegate{
@@ -51,17 +88,16 @@ extension AppDelegate{
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
-        launchDashboard()
         setNavBarStyle()
     }
-    func launchDashboard(){
+    func launchDashboard(payload: [AnyHashable: Any]?){
         if AppEngine.sharedInstance.isUserLoggedIn(){
             if AppEngine.sharedInstance.currentUser?.isAdmin() ?? false{
                 //launch Admin Dashboard
                 launchAdminDashboard()
             }else{
                 //launch User Dashboard
-                launchUserDashboard()
+                launchUserDashboard(payload: payload)
             }
         }else{
             //launch Login View Controller
@@ -82,23 +118,25 @@ extension AppDelegate{
         
         self.window?.makeKeyAndVisible()
     }
-    func launchUserDashboard(){
+    func launchUserDashboard(payload: [AnyHashable: Any]?){
         
         let slideMenuStoryBoard = UIStoryboard.init(name: "SlideMenu", bundle: nil)
-               let sideMenuVC = slideMenuStoryBoard.instantiateViewController(withIdentifier: "SlideMenuVC") as! HambergerMenuController
+        let sideMenuVC = slideMenuStoryBoard.instantiateViewController(withIdentifier: "SlideMenuVC") as! HambergerMenuController
         
         let storboard = UIStoryboard.init(name: "Tabs", bundle: nil)
         
-        let tabarCntlr = storboard.instantiateViewController(withIdentifier: "TabView") as! ETTabViewController
+        let tabbarCntlr = storboard.instantiateViewController(withIdentifier: "TabView") as! ETTabViewController
+        tabbarCntlr.notificationPayload = payload
+        
         UIView.transition(with: self.window!, duration: 0.1
             , options: .transitionCrossDissolve, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 
-                let sideMenuController = SideMenuController(contentViewController: tabarCntlr,
-                                                                           menuViewController: sideMenuVC)
+                let sideMenuController = SideMenuController(contentViewController: tabbarCntlr,
+                                                            menuViewController: sideMenuVC)
                 let navigationController = UINavigationController(rootViewController: sideMenuController)
-            
+                
                 navigationController.view.backgroundColor = UIColor.getAppThemeColor()
                 navigationController.isNavigationBarHidden = true
                 self.window?.rootViewController = navigationController
@@ -156,4 +194,50 @@ extension AppDelegate{
     
     
 }
-
+extension AppDelegate: UNUserNotificationCenterDelegate{
+    
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        print(userInfo)
+        
+        // Change this to your preferred presentation option
+        completionHandler([.alert,.sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        let userInfo = response.notification.request.content.userInfo
+        
+        
+        // Print full message.
+        print("Push Payload:\(userInfo)")
+        
+        Log.i("Type: \(userInfo["type"] ?? "No Type Found")")
+         Log.i("Type: \(userInfo["url"] ?? "No URL Found")")
+        
+         Log.d("Launching Via Push!  - NotificationCenter")
+        self.launchDashboard(payload: userInfo)
+        
+        completionHandler()
+    }
+    
+}
+extension AppDelegate:MessagingDelegate{
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        UserDefaults.standard.set(fcmToken, forKey: AppConstants.DEVICE_TOKEN)
+        UserDefaults.standard.synchronize()
+        
+    }
+    
+    
+}

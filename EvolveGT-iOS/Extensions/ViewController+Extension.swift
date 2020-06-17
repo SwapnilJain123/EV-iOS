@@ -206,8 +206,8 @@ extension UIViewController{
             return appDelegate?.window
         }
         
-        func openLink(_ url: String){
-            guard let url = URL(string: url) else { return }
+        func openLink(_ urlString: String){
+            guard let url = URL(string: urlString) else { return }
             UIApplication.shared.open(url)
         }
         
@@ -289,7 +289,7 @@ extension UIViewController{
         
         func switchToUserDashboard () {
             let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-            appDelegate?.launchUserDashboard()
+            appDelegate?.launchUserDashboard(payload: nil)
         }
         func pushToNewNavigationController (viewController: UIViewController) {
             let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate

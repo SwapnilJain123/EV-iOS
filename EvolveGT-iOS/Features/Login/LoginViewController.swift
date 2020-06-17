@@ -103,7 +103,7 @@ extension LoginViewController : LoginViewDelegate{
     func launchUserPage() {
         Log.i("\n\n Should Launch User Dashboard \n\n")
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-        appDelegate?.launchUserDashboard()
+        appDelegate?.launchUserDashboard(payload: nil)
     }
     
     func launchGuestPage() {

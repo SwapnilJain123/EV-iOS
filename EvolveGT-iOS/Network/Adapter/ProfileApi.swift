@@ -37,12 +37,12 @@ class ProfileApi : BaseApiAdapter{
     }
     
     func cancelEvent(request: CancelEventRequest){
-           
-           let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CANCEL_EVENT)"
-           setUrl(url: url)
-           setParameters(parameters: makeDictionary(request))
-           super.makeRequest(method: .POST)
-       }
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CANCEL_EVENT)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
     
     func changePassword(userId:String , newPasssword:String , currentPassword:String){
         
@@ -66,7 +66,7 @@ class ProfileApi : BaseApiAdapter{
         
         
     }
-   
+    
     func fetchEnrolledMembership(userId: String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_MEMBERSHIP)"
@@ -120,6 +120,14 @@ class ProfileApi : BaseApiAdapter{
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_NOTIFICATION_PREF)"
         setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
+    func updateDeviceToken(userId: String?, deviceToken: String? ){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_DEVICE_TOKEN)"
+        setUrl(url: url)
+        let request = DeviceTokenRequest(userId: userId, token: deviceToken, deviceType: "iOS")
         setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }

@@ -145,6 +145,7 @@ class ProfileRequestInfo: Codable {
 struct NotificationPreferenceUpdateRequest: Codable{
     var userId: String?
     var preferences: [NotificationTypeUpdate]?
+    
      enum CodingKeys: String, CodingKey {
         case userId = "user_id"
         case preferences
@@ -155,6 +156,16 @@ struct NotificationTypeUpdate: Codable{
     enum CodingKeys: String, CodingKey {
         case notificationType = "notification_type"
          case notificationId = "notification_id"
-         case notificationStatus = "notificationStatus"
+         case notificationStatus = "status"
+    }
+}
+struct DeviceTokenRequest: Codable{
+    var userId: String?
+    var token: String?
+    var deviceType = "iOS";
+    enum CodingKeys: String, CodingKey {
+         case userId = "user_id"
+         case token
+         case deviceType = "device_type"
     }
 }

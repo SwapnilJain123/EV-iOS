@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="VTC-ez-1rS">
-                                <rect key="frame" x="164" y="44" width="240" height="818"/>
+                                <rect key="frame" x="124" y="44" width="240" height="818"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="0MV-Ku-TaT"/>
@@ -39,14 +39,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6GO-zR-HZu">
-                                                    <rect key="frame" x="15" y="20" width="20" height="20"/>
+                                                    <rect key="frame" x="0.0" y="15" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="Znf-KT-pZp"/>
-                                                        <constraint firstAttribute="height" constant="20" id="nKu-Rs-drT"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Znf-KT-pZp"/>
+                                                        <constraint firstAttribute="height" constant="30" id="nKu-Rs-drT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fi-c5-kvo">
-                                                    <rect key="frame" x="50" y="8" width="175" height="44"/>
+                                                    <rect key="frame" x="45" y="8" width="180" height="44"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                                 <constraint firstItem="6fi-c5-kvo" firstAttribute="top" secondItem="5As-Qm-Rx3" secondAttribute="top" constant="8" id="YZr-ut-KF2"/>
                                                 <constraint firstItem="6GO-zR-HZu" firstAttribute="centerY" secondItem="5As-Qm-Rx3" secondAttribute="centerY" id="Yae-l6-Uvv"/>
                                                 <constraint firstAttribute="bottom" secondItem="aUb-vY-IWt" secondAttribute="bottom" constant="3" id="qTm-UD-MwQ"/>
-                                                <constraint firstItem="6GO-zR-HZu" firstAttribute="leading" secondItem="5As-Qm-Rx3" secondAttribute="leading" constant="15" id="sjM-Gc-MQm"/>
+                                                <constraint firstItem="6GO-zR-HZu" firstAttribute="leading" secondItem="5As-Qm-Rx3" secondAttribute="leading" id="sjM-Gc-MQm"/>
                                                 <constraint firstItem="aUb-vY-IWt" firstAttribute="leading" secondItem="5As-Qm-Rx3" secondAttribute="leading" constant="50" id="wnr-41-LsS"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -87,7 +87,7 @@
                         </subviews>
                         <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
-                            <constraint firstItem="3V6-5N-CQu" firstAttribute="trailing" secondItem="VTC-ez-1rS" secondAttribute="trailing" constant="10" id="WAR-r3-5Nr"/>
+                            <constraint firstItem="3V6-5N-CQu" firstAttribute="trailing" secondItem="VTC-ez-1rS" secondAttribute="trailing" constant="50" id="WAR-r3-5Nr"/>
                             <constraint firstItem="VTC-ez-1rS" firstAttribute="top" secondItem="3V6-5N-CQu" secondAttribute="top" id="pGX-94-XLM"/>
                             <constraint firstItem="3V6-5N-CQu" firstAttribute="bottom" secondItem="VTC-ez-1rS" secondAttribute="bottom" id="vL5-RU-87y"/>
                         </constraints>

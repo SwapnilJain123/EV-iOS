@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct UserDefaultHelper{
+class UserDefaultHelper{
     
     static let sharedInstance = UserDefaultHelper()
     
