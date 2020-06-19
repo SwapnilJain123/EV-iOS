@@ -83,7 +83,7 @@ class GiftCardInteractor:BaseInteractor{
     }
     
     func addGiftCardToCart(name:String ,email:String , giftCardDetails:GiftCardDetails) {
-        
+        super.delegate = viewDelegate
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingGiftCardToCart)
         
         var request = AddGiftCardToCartRequest()
@@ -104,7 +104,7 @@ class GiftCardInteractor:BaseInteractor{
             if error == nil{
                 
                 self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.giftCardtAddedToCart)
-                
+                self.syncCartBadgeCount()
             }else{
                 
                self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)

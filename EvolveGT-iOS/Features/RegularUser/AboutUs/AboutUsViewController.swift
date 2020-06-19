@@ -19,7 +19,7 @@ class AboutUsViewController: ETViewController, AboutUsInteractorDelegate{
         
         updateLabel.text! = ""
         let aboutUsInteractor = AboutUsInteractor()
-        aboutUsInteractor.delegate = self
+        aboutUsInteractor.aboutUselegate = self
         aboutUsInteractor.checkAppVersionUpdate()
         
        

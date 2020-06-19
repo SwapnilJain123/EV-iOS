@@ -16,5 +16,6 @@ import Foundation
     func showSuccessToastMessage(message: String)
     func showErrorToastMessage(message: String)
     func showAlert(title: String, message: String)
+    func updateCartBadge(count: Int)
    
 }

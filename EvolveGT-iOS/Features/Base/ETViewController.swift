@@ -82,6 +82,7 @@ class ETViewController : UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         self.ext.removeLoadingIndicatorImmediately()
         super.viewWillDisappear(animated)
+        self.ext.showNavbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -117,6 +118,15 @@ extension ETViewController: BaseViewDelegate{
     
     @objc func hideEmptyPageError() {
            self.ext.hideErrorView()
+    }
+    
+    @objc func updateCartBadge(count: Int) {
+        if let tabbarVC = self.navigationController?.tabBarController as? ETTabViewController{
+            tabbarVC.updateCartBadgeCount(count: count)
+            Log.i("Updating Badge - \(count)")
+        }else{
+            Log.i("Updating Badge request failed - \(count)")
+        }
     }
 }
 

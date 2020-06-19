@@ -24,6 +24,10 @@ class BaseApiAdapter{
     
     init(){
         apiClient.addHeader(key: "Content-Type", value: "application/json")
+        if AppEngine.sharedInstance.isUserLoggedIn(){
+            apiClient.addHeader (key: "Authorization", value: "Bearer \(AppEngine.sharedInstance.authToken)")
+            
+        }
     }
     
     func setCompletionHandler( completionHandler : @escaping (Data?, ApiError? )-> Void){

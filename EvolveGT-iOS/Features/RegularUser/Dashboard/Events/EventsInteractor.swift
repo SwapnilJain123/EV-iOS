@@ -136,6 +136,7 @@ class EventsInteractor :BaseInteractor{
     }
     
     func addEventToCart(_ event: Event){
+        super.delegate = eventListDelegate
         if event.isMotoEvent{
             //Ignore adding moto events here
             return
@@ -162,6 +163,7 @@ class EventsInteractor :BaseInteractor{
             if error == nil{
                 self.eventListDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
                 self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+                self.syncCartBadgeCount()
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.eventListDelegate?.showErrorToastMessage(message: error!.errorMessage)
@@ -172,7 +174,7 @@ class EventsInteractor :BaseInteractor{
     }
     
     func addEvolveEventToCart(_ event: EventDetails){
-        
+         super.delegate = eventDetailsDelegate
         eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
         var request = EventCartRequest()
         request.eventSlug = event.slug
@@ -214,6 +216,7 @@ class EventsInteractor :BaseInteractor{
             self.eventDetailsDelegate?.hideProgressIndicator()
             if error == nil{
                 self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+                self.syncCartBadgeCount()
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.eventDetailsDelegate?.showErrorToastMessage(message: error!.errorMessage)
@@ -223,7 +226,7 @@ class EventsInteractor :BaseInteractor{
     }
     
     func addMotoEventToCart(_ event: EventDetails){
-        
+        super.delegate = eventDetailsDelegate
         if event.selectedSkill.isEmpty(){
             self.eventDetailsDelegate?.validationError(ErrorMessages.skillNotSelected)
             return
@@ -258,6 +261,7 @@ class EventsInteractor :BaseInteractor{
             self.eventDetailsDelegate?.hideProgressIndicator()
             if error == nil{
                 self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+                self.syncCartBadgeCount()
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.eventDetailsDelegate?.showErrorToastMessage(message: error!.errorMessage)

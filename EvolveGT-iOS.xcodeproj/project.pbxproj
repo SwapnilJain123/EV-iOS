@@ -545,6 +545,9 @@
 		103B26A5249A02ED00BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */; };
 		103B26AF249A04E000BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */; };
 		103B26B1249A054F00BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */; };
+		103B26B3249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
+		103B26B4249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
+		103B26B5249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
 		104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC42488FC0F008BE5DA /* MembershipController.swift */; };
 		104B8DC72488FC3C008BE5DA /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104B8DC62488FC3C008BE5DA /* Membership.storyboard */; };
 		104B8DC9248903CD008BE5DA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B8DC8248903CD008BE5DA /* Membership.swift */; };
@@ -716,7 +719,7 @@
 		103366662483AE72009AF19A /* ArchieCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCardViewController.swift; sourceTree = "<group>"; };
 		103366672483AE72009AF19A /* ArchiCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiCardCell.swift; sourceTree = "<group>"; };
 		1033666D2483AE98009AF19A /* ArchieCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCard.swift; sourceTree = "<group>"; };
-		1039FDF9244F1A1800190088 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1039FDF9244F1A1800190088 /* Evolve GT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evolve GT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1039FE05244F1A1A00190088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -767,6 +770,7 @@
 		103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplayController.swift; sourceTree = "<group>"; };
 		104B8DC42488FC0F008BE5DA /* MembershipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipController.swift; sourceTree = "<group>"; };
 		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		104B8DC8248903CD008BE5DA /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
@@ -1123,7 +1127,7 @@
 		1039FDFA244F1A1800190088 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1039FDF9244F1A1800190088 /* .app */,
+				1039FDF9244F1A1800190088 /* Evolve GT.app */,
 				103B25B4249940BE00BB8CB9 /* EvolveGT-QA.app */,
 				103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */,
 			);
@@ -1496,6 +1500,7 @@
 				10A06AE524969A150051FF56 /* SettingsViewController.swift */,
 				10A06AE724969A480051FF56 /* SettingsTableViewCells.swift */,
 				10A06AE92496A1140051FF56 /* SettingsInteractor.swift */,
+				103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1596,7 +1601,7 @@
 			);
 			name = "EvolveGT-iOS";
 			productName = "EvolveGT-iOS";
-			productReference = 1039FDF9244F1A1800190088 /* .app */;
+			productReference = 1039FDF9244F1A1800190088 /* Evolve GT.app */;
 			productType = "com.apple.product-type.application";
 		};
 		103B24E0249940BE00BB8CB9 /* EvolveGT-QA */ = {
@@ -2030,6 +2035,7 @@
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
+				103B26B3249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */,
 				10048F35246EC50D00684A87 /* ShopsItemRequest.swift in Sources */,
 				10048F20246DB7C000684A87 /* CartApi.swift in Sources */,
 				1033666A2483AE72009AF19A /* ArchieCardDetailsViewController.swift in Sources */,
@@ -2213,6 +2219,7 @@
 				103B2561249940BE00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2562249940BE00BB8CB9 /* ApiConstsant.swift in Sources */,
 				103B2563249940BE00BB8CB9 /* UpgradeSkillRequest.swift in Sources */,
+				103B26B4249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */,
 				103B2564249940BE00BB8CB9 /* ShopsItemRequest.swift in Sources */,
 				103B2565249940BE00BB8CB9 /* CartApi.swift in Sources */,
 				103B2566249940BE00BB8CB9 /* ArchieCardDetailsViewController.swift in Sources */,
@@ -2396,6 +2403,7 @@
 				103B2637249940CC00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2638249940CC00BB8CB9 /* ApiConstsant.swift in Sources */,
 				103B2639249940CC00BB8CB9 /* UpgradeSkillRequest.swift in Sources */,
+				103B26B5249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */,
 				103B263A249940CC00BB8CB9 /* ShopsItemRequest.swift in Sources */,
 				103B263B249940CC00BB8CB9 /* CartApi.swift in Sources */,
 				103B263C249940CC00BB8CB9 /* ArchieCardDetailsViewController.swift in Sources */,
@@ -2582,14 +2590,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_NAME = "Evolve GT";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2603,14 +2613,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_NAME = "Evolve GT";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2624,12 +2636,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -2645,12 +2659,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -2666,12 +2682,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-Dev copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -2687,12 +2705,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-Dev copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

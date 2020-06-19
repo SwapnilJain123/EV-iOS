@@ -11,6 +11,7 @@ import SkyFloatingLabelTextField
 
 class ChangePasswordViewController: ETViewController {
 
+    @IBOutlet weak var iconPasswordChange: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +20,11 @@ class ChangePasswordViewController: ETViewController {
         newPasswordTF.applyColorTheme()
         confirmPasswordTF.applyColorTheme()
         
+        var image = UIImage(named: "reset_password")
+        if !AppEngine.sharedInstance.isEvApp(){
+            image = UIImage(named: "moto_change_password")
+        }
+        iconPasswordChange.image = image
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,7 +42,7 @@ class ChangePasswordViewController: ETViewController {
     }
     @IBAction func changePasswordButton(_ sender: UIButton) {
          let changePasswordIndicator = ChangePasswordInteractor()
-        changePasswordIndicator.delegate = self
+        changePasswordIndicator.changePwdDelegate = self
 
         changePasswordIndicator.changePassword(currentPasswordTF.text!, newPasswordTF.text!, confirmPasswordTF.text!)
         

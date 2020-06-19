@@ -14,10 +14,11 @@ protocol CreditHistoryViewDelegate : BaseViewDelegate{
 }
 
 class CreditHistoryInteractor : BaseInteractor{
-    var delegate : CreditHistoryViewDelegate?
+    var creditViewDelegate : CreditHistoryViewDelegate?
     
     
     func fetchCreditHistory() {
+        super.delegate = creditViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCreditHistory)
         let profileApi = ProfileApi()
         profileApi.setCompletionHandler{ response, error in
@@ -29,7 +30,7 @@ class CreditHistoryInteractor : BaseInteractor{
                     if creditResponse.creditHistoryList == nil{
                         self.delegate?.showEmptyPageError(message: ErrorMessages.emptyCreditList)
                     }else{
-                        self.delegate?.didFetchCreditHistory(creditHistory: creditResponse.creditHistoryList!)
+                        self.creditViewDelegate?.didFetchCreditHistory(creditHistory: creditResponse.creditHistoryList!)
                     }
                     
                 }

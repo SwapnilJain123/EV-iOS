@@ -14,9 +14,10 @@ protocol SignatureViewDelegate : BaseViewDelegate {
     
 }
 class SignatureIntercator : BaseInteractor{
-    var delegate: SignatureViewDelegate?
+    var signatureViewDelegate: SignatureViewDelegate?
     
     func getSignature(signatureId: String){
+        super.delegate = signatureViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingSignature)
         let adminApi  = AdminApi()
         
@@ -33,7 +34,7 @@ class SignatureIntercator : BaseInteractor{
                     guard let signatureData = Data(base64Encoded: signature) else {
                         self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
                         return }
-                    self.delegate?.didFetchSignature(signature: signatureData)
+                    self.signatureViewDelegate?.didFetchSignature(signature: signatureData)
                     
                 }
             }else{
@@ -54,7 +55,7 @@ class SignatureIntercator : BaseInteractor{
              self.delegate?.hideEmptyPageError()
             if error == nil{
                 Log.i("Signature Saving Success - ")
-                self.delegate?.didUpdateSignature()
+                self.signatureViewDelegate?.didUpdateSignature()
                 
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")

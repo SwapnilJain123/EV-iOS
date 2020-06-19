@@ -45,7 +45,7 @@ class CompletedEventViewController : ETViewController{
         popUpMenu.setBackground(color: UIColor.getAppThemeColor())
     }
     func setInteractor(){
-        interactor.delegate = self
+        interactor.adminDelegate = self
         interactor.viewDidLoad()
     }
     func setUpTableView(){

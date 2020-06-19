@@ -61,14 +61,14 @@ class AddressViewController : ETViewController{
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.ext.hideNavbar()
+        //self.ext.hideNavbar()
     }
     
     @IBAction func didPressSaveButton(_ sender: UIButton) {
         if addressType == .billing{
-        interactor.updateBillingAdress(selectedCountry: self.selectedCountry!, selectedState: self.selectedState!)
+        interactor.updateBillingAdress(selectedCountry: self.selectedCountry, selectedState: self.selectedState)
         }else{
-            interactor.updateShippingAdress(selectedCountry: self.selectedCountry!, selectedState: self.selectedState!)
+            interactor.updateShippingAdress(selectedCountry: self.selectedCountry, selectedState: self.selectedState)
         }
     }
 }
@@ -181,7 +181,7 @@ extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
             }
             cell.setData(value: user?.billingPhone)
         case .email:
-            cell.errorMessage = ValidationErrors.postalCodeRequired
+            cell.errorMessage = ValidationErrors.invalidEmail
             cell.placeHolder = "Email*"
             cell.setAction{ text in
                 if self.addressType == .billing{
@@ -225,6 +225,13 @@ enum AddressType {
 }
 
 extension AddressViewController: AddressViewDelegate{
+    func validationError(message: String, addressField: AddressField) {
+        let index = addressFields.index(of: addressField) ?? 0
+        let indexPath = IndexPath(row: index, section: 0)
+        addressFormContainer.reloadRows(at: [indexPath], with: .automatic)
+        addressFormContainer.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
     func didFetchSupportedCountries(coutries: [Country]) {
         self.countries.removeAll()
         self.countries.append(contentsOf: coutries.map({

@@ -30,7 +30,7 @@ class HomeViewController: TabbedViewController{
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
-        interactor.viewDelegate = self
+        interactor.homeViewDelegate = self
     }
     
     override  func didChangeAppTheme() {
@@ -53,6 +53,7 @@ class HomeViewController: TabbedViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         interactor.fetchUserDetails()
+        interactor.syncCartBadgeCount()
     }
     
     func launchCoachDutiesController(){
@@ -87,11 +88,23 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_UPCOMING_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
-                let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! SectionEventInfoCell
                 
-                upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!, expanded: upComingEventsExpanded)
-                upComingEventCell.delegate = self
-                return upComingEventCell
+                if upComingEventsExpanded{
+                    let upComingEventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! SectionEventInfoCell
+                    
+                    upComingEventCell.populateViews(type: .UPCOMING, profileData!.recentUpComingEvent!)
+                    upComingEventCell.delegate = self
+                    return upComingEventCell
+                }else{
+                    let collaspedCell = tableView.dequeueReusableCell(withIdentifier:CollapsedCell.identifier,for: indexPath) as! CollapsedCell
+                    collaspedCell.populateUi(title: ScreenTitle.TITLE_UPCOMING_EVENTS){
+                        self.upComingEventsExpanded = true
+                        self.profileView.reloadRows(at: [indexPath], with: .automatic)
+                        self.scrollToRow(row: indexPath.row)
+                    }
+                    return collaspedCell
+                }
+                
             }
         case .pastEvents:
             if self.profileData?.recentPastEvent == nil{
@@ -99,10 +112,22 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_PAST_EVENTS, ErrorMessages.emptyEnrolledEvents)
                 return emptyInfoCell
             }else{
-                let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"PastEventCell",for: indexPath) as! SectionEventInfoCell
-                pastEventCell.delegate = self
-                pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!, expanded: pastEventsExpanded)
-                return pastEventCell
+                
+                if(pastEventsExpanded){
+                    let pastEventCell = tableView.dequeueReusableCell(withIdentifier:"PastEventCell",for: indexPath) as! SectionEventInfoCell
+                    pastEventCell.delegate = self
+                    pastEventCell.populateViews(type: .PAST, profileData!.recentPastEvent!)
+                    return pastEventCell
+                }else{
+                    let collaspedCell = tableView.dequeueReusableCell(withIdentifier:CollapsedCell.identifier,for: indexPath) as! CollapsedCell
+                    collaspedCell.populateUi(title: ScreenTitle.TITLE_PAST_EVENTS){
+                        self.pastEventsExpanded = true
+                        self.profileView.reloadRows(at: [indexPath], with: .automatic)
+                       self.scrollToRow(row: indexPath.row)
+                    }
+                     return collaspedCell
+                }
+                
             }
         case .creditHistory:
             if self.profileData?.recentCreditHistory == nil{
@@ -110,10 +135,22 @@ extension HomeViewController: UITableViewDataSource{
                 emptyInfoCell.showData(ScreenTitle.TITLE_CREDIT_HISTORY, ErrorMessages.emptyCreditList)
                 return emptyInfoCell
             }else{
-                let creditCell = tableView.dequeueReusableCell(withIdentifier:"RecentCreditCell",for: indexPath) as! CreditHistoryCell
-                creditCell.delegate = self
-                creditCell.showData(profileData!.recentCreditHistory!, expanded: creditHistoryExpanded)
-                return creditCell
+                
+                if creditHistoryExpanded{
+                    let creditCell = tableView.dequeueReusableCell(withIdentifier:"RecentCreditCell",for: indexPath) as! CreditHistoryCell
+                    creditCell.delegate = self
+                    creditCell.showData(profileData!.recentCreditHistory!, expanded: creditHistoryExpanded)
+                    return creditCell
+                }else{
+                    let collaspedCell = tableView.dequeueReusableCell(withIdentifier:CollapsedCell.identifier,for: indexPath) as! CollapsedCell
+                    collaspedCell.populateUi(title:ScreenTitle.TITLE_CREDIT_HISTORY){
+                        self.creditHistoryExpanded = true
+                        self.profileView.reloadRows(at: [indexPath], with: .automatic)
+                        self.scrollToRow(row: indexPath.row)
+                    }
+                    return collaspedCell
+                }
+                
             }
             
         }

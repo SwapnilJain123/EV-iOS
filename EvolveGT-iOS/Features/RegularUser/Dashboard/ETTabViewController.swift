@@ -27,7 +27,10 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +38,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         self.ext.showNavbar()
         self.ext.hideBackButton()
         styleTabBar()
+        
         self.delegate = self
         
         let interactor = HomeDataInteractor()
@@ -49,6 +53,10 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateCartBadgeCount(count: AppEngine.sharedInstance.cartListCount)
+    }
     func processNotficationPayload(){
         let pushType = notificationPayload!["type"] as! String
         
@@ -116,5 +124,17 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     override func didChangeAppTheme() {
         Log.d("App Theme Changed")
         styleTabBar()
+    }
+    
+    func updateCartBadgeCount(count: Int){
+        if let tabItems = self.tabBar.items{
+            // In this case we want to modify the badge number of the third tab:
+            let tabItem = tabItems[3]
+            if count > 0{
+                tabItem.badgeValue = String(count)
+            }else{
+                tabItem.badgeValue = nil
+            }
+        }
     }
 }

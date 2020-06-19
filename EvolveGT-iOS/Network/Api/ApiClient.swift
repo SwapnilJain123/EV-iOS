@@ -21,8 +21,14 @@ class ApiClient{
     private init(){
         
     }
+    
+    private func printHeaders(){
+        for headerItem in header{
+            Log.i("Key: \(headerItem.key) - Value:\(headerItem.value)")
+        }
+    }
     func doGet(completionHandler : @escaping (Data?, ApiError?) -> Void){
-        
+        printHeaders()
         Alamofire.request(urlString, parameters: parameters, headers:header)
             .validate()
             .responseJSON {response in
@@ -42,7 +48,7 @@ class ApiClient{
     
     
     func doPost(completionHandler : @escaping (Data?, ApiError?) -> Void){
-        
+        printHeaders()
         Log.d(urlString)
         
         if BuildScheme.isBuildQA{
@@ -72,7 +78,7 @@ class ApiClient{
     
     
     func doUpload(completionHandler : @escaping (Data?, ApiError?) -> Void){
-        
+        printHeaders()
         if uploadData.count == 0{
             var apiError = ApiError()
             apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE

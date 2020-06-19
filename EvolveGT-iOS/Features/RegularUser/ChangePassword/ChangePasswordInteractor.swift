@@ -15,20 +15,21 @@ protocol ChangePasswordDelehate:BaseViewDelegate {
 }
 class ChangePasswordInteractor:BaseInteractor {
    
-    var delegate : ChangePasswordDelehate?
+    var changePwdDelegate : ChangePasswordDelehate?
    
     func changePassword(_ currentPassword: String, _ newPassword: String, _ confirmPassword: String){
+        super.delegate = changePwdDelegate
         
         if currentPassword.isEmpty(){
             
-            self.delegate?.changePasswordMessage(message: ErrorMessages.errorEmptyCurrentPassword)
+            self.changePwdDelegate?.changePasswordMessage(message: ErrorMessages.errorEmptyCurrentPassword)
             
            
         }else if newPassword.isEmpty(){
-            self.delegate?.changePasswordMessage(message: ErrorMessages.errorEmptyPassword)
+            self.changePwdDelegate?.changePasswordMessage(message: ErrorMessages.errorEmptyPassword)
             
         }else if newPassword != confirmPassword{
-            self.delegate?.changePasswordMessage(message: ErrorMessages.errorConfirmPassword)
+            self.changePwdDelegate?.changePasswordMessage(message: ErrorMessages.errorConfirmPassword)
             
             
         }else{

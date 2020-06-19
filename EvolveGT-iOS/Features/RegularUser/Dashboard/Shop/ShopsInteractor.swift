@@ -113,6 +113,7 @@ class ShopsInteractor : BaseInteractor{
         return sections
     }
     func addProductToCart(productDetails: ProductDetails){
+        super.delegate = viewDelegate
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingProductToCart)
         let cartApi = CartApi()
         
@@ -138,6 +139,7 @@ class ShopsInteractor : BaseInteractor{
                 
                    if error == nil{
                     self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.productAddedToCart)
+                    self.syncCartBadgeCount()
                    }else{
                        self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
                    }

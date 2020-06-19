@@ -76,19 +76,39 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
         switch settings[indexPath.section].settingsType {
         case .language:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingsLanguageCell.identifier, for: indexPath) as! SettingsLanguageCell
+            cell.selectionStyle = .none
             return cell
         case .notification:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingsNotificationCell.identifier, for: indexPath) as! SettingsNotificationCell
             cell.populateUi(preference: settings[indexPath.section].menuItems[indexPath.row])
+            cell.selectionStyle = .none
             return cell
         case .more:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingsMoreActions.identifier, for: indexPath) as! SettingsMoreActions
             cell.populateUi(preference: settings[indexPath.section].menuItems[indexPath.row])
+            cell.selectionStyle = .none
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return settings[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if settings[indexPath.section].settingsType == .more{
+             let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
+            
+            vc.contentTitle = settings[indexPath.section].menuItems[indexPath.row].title ?? ""
+            if indexPath.row == 0{
+                vc.text = AppConstants.TERMS_OF_USE
+            }else if indexPath.row == 1{
+                vc.text = AppConstants.PRIVACY_POLICY
+            }else{
+                vc.text = AppConstants.REFUND_POLICY
+            }
+            self.ext.pushViewController(viewController: vc)
+        }
     }
 }

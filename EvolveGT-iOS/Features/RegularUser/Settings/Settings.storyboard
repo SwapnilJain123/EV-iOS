@@ -12,7 +12,7 @@
         <!--Settings View Controller-->
         <scene sceneID="3pb-9D-4LD">
             <objects>
-                <viewController storyboardIdentifier="SettingsVC" id="qe3-T1-ldu" customClass="SettingsViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVC" id="qe3-T1-ldu" customClass="SettingsViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MX6-Ro-NQ9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,11 +28,11 @@
                                     <action selector="didPressSaveButton:" destination="qe3-T1-ldu" eventType="touchUpInside" id="OWo-Ql-Z3Q"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KPR-9O-336">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KPR-9O-336">
                                 <rect key="frame" x="0.0" y="54" width="414" height="730"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsLanguageCell" id="Wca-xn-hZf" customClass="SettingsLanguageCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsLanguageCell" id="Wca-xn-hZf" customClass="SettingsLanguageCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wca-xn-hZf" id="XPk-83-pDC">
@@ -65,7 +65,7 @@
                                                         <constraint firstItem="zUF-fH-t6I" firstAttribute="leading" secondItem="xwZ-uz-zH4" secondAttribute="leading" constant="10" id="sZs-Dv-XNz"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-BP-MDE" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-BP-MDE" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="40.5" width="414" height="0.5"/>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -87,7 +87,7 @@
                                             <outlet property="labelPreferredLanguage" destination="3Zf-r0-9oE" id="wNm-Cy-SHV"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsNotificationCell" id="psa-gY-Vga" customClass="SettingsNotificationCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsNotificationCell" id="psa-gY-Vga" customClass="SettingsNotificationCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="69" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="psa-gY-Vga" id="3RE-93-Okn">
@@ -120,7 +120,7 @@
                                                         <constraint firstItem="8GG-JZ-aQM" firstAttribute="top" secondItem="H8e-oJ-dst" secondAttribute="top" id="tg9-Vd-m1Z"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-Ld-ttg" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-Ld-ttg" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="70.5" width="414" height="0.5"/>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -143,7 +143,7 @@
                                             <outlet property="switchNotificationSettings" destination="H8e-oJ-dst" id="78Y-de-SYA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsMoreActions" id="kc6-Zp-oM4" customClass="SettingsMoreActions" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsMoreActions" id="kc6-Zp-oM4" customClass="SettingsMoreActions" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="414" height="60.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kc6-Zp-oM4" id="KXZ-xF-5P4">
@@ -168,7 +168,7 @@
                                                         <constraint firstItem="4GD-tT-wut" firstAttribute="leading" secondItem="TIq-jQ-cu0" secondAttribute="leading" constant="10" id="uW6-Ud-23D"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXj-Su-cEP" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXj-Su-cEP" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="60" width="414" height="0.5"/>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -213,6 +213,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20B-mx-9Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="76.339285714285708"/>
+        </scene>
+        <!--Info Display Controller-->
+        <scene sceneID="Hpy-Uk-cTP">
+            <objects>
+                <viewController storyboardIdentifier="InfoDisplayVC" id="IdS-bL-2aO" customClass="InfoDisplayController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lrI-5K-piK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4E-IN-RZB">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="V4a-R9-r9m" firstAttribute="trailing" secondItem="f4E-IN-RZB" secondAttribute="trailing" constant="20" id="Cf7-0z-rAJ"/>
+                            <constraint firstItem="V4a-R9-r9m" firstAttribute="bottom" secondItem="f4E-IN-RZB" secondAttribute="bottom" constant="20" id="Kwd-hN-YlL"/>
+                            <constraint firstItem="f4E-IN-RZB" firstAttribute="top" secondItem="V4a-R9-r9m" secondAttribute="top" constant="20" id="Xim-bK-mlD"/>
+                            <constraint firstItem="f4E-IN-RZB" firstAttribute="leading" secondItem="V4a-R9-r9m" secondAttribute="leading" constant="20" id="Xlx-Uy-UJG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V4a-R9-r9m"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentText" destination="f4E-IN-RZB" id="0Mz-Lj-4Oz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVu-sh-Hp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842.02898550724649" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>

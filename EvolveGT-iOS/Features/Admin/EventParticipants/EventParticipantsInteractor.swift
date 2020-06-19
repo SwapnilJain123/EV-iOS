@@ -15,11 +15,12 @@ protocol EventParticipantsViewDelegate : BaseViewDelegate {
 }
 class EventParticipantIntercator : BaseInteractor{
     
-    var delegate: EventParticipantsViewDelegate?
+    var adminViewDelegate: EventParticipantsViewDelegate?
     var participants = [EventParticipant]()
     var eventId = ""
     
     func getEventParticipants(_ eventId: String){
+        super.delegate = adminViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingParticipants)
         let adminApi  = AdminApi()
         self.eventId = eventId
@@ -41,7 +42,7 @@ class EventParticipantIntercator : BaseInteractor{
                                 }
                                 return false
                             })
-                        self.delegate?.didFetchParticipants(participants:  self.participants)
+                        self.adminViewDelegate?.didFetchParticipants(participants:  self.participants)
                     }
                     
                 }
@@ -56,10 +57,10 @@ class EventParticipantIntercator : BaseInteractor{
     
     func filter(_ query: String){
         if query.isEmpty(){
-            self.delegate?.didFetchParticipants(participants:  participants)
+            self.adminViewDelegate?.didFetchParticipants(participants:  participants)
         }else{
             let filteredList = self.participants.filter { ($0.displayName?.lowercased().contains(query.lowercased()) ?? false)}
-            self.delegate?.filteredParticipants(participants: filteredList, query: query)
+            self.adminViewDelegate?.filteredParticipants(participants: filteredList, query: query)
         }
     }
     
