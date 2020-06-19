@@ -92,6 +92,11 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
     }
 }
 extension EnrolledEventsTabController : EnrolledEventsViewDelegate, BaseViewDelegate{
+    func updateCartBadge(count: Int) {
+        
+    }
+    
+    
     func hideEmptyPageError() {
         self.ext.hideErrorView()
     }

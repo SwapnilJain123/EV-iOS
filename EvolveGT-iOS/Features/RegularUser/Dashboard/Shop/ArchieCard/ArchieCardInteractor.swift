@@ -67,7 +67,7 @@ class ArchieCardInteractor:BaseInteractor{
     }
     
     func addArchieCardToCart(archieCard:ArchieCardDetails , quantity:Int){
-        
+        super.delegate = viewDelegate
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingArchieCardToCart)
         
         var request = AddArchieCardToCartRequest()
@@ -86,6 +86,7 @@ class ArchieCardInteractor:BaseInteractor{
             if error == nil{
                 
                 self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.archieCardtAddedToCart)
+                self.syncCartBadgeCount()
             }else{
                 self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
             }

@@ -54,7 +54,7 @@ class PolicyAgreementController: ETViewController, CheckboxButtonDelegate, Agree
         
         let content = agreement?.termsHTML ?? AppConstants.APP_TERMS_CONDITIONS
         //contentWebView.loadHTMLString(content, baseURL: nil)
-        interactor.viewDelegate = self
+        interactor.delegate = self
         interactor.agreementStatusDelegate = self
         
         agreementText.attributedText = content.toAttributedText(with: 17.0)

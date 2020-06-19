@@ -38,7 +38,7 @@ class CartInteractor: BaseInteractor{
     
     let ERROR_CART_CLEARED = 3
     var cartList = [CartItem]()
-    var delegate: BaseViewDelegate? = nil
+   
     
     var cartListDelegate : CartListDelegate? = nil
     var cartReviewDelegate: CartReviewDelegate? = nil
@@ -66,6 +66,8 @@ class CartInteractor: BaseInteractor{
                     AppEngine.sharedInstance.walletBalance = cartListResponse.wallet?.toDouble() ?? 0
                     AppEngine.sharedInstance.cartListCount = cartListResponse.cartList?.count ?? 0
                     
+                     self.delegate?.updateCartBadge(count: AppEngine.sharedInstance.cartListCount )
+                    
                     if cartListResponse.cartList?.count ?? 0 > 0{
                         //move racefee to top
                         let regularItems = cartListResponse.cartList!.filter({$0.source != CartSource.racefee})
@@ -90,14 +92,17 @@ class CartInteractor: BaseInteractor{
                     }else{
                         
                         self.cartListDelegate?.didFetchCartList(cartItems: cartListResponse.cartList ?? [CartItem]())
+                        self.cartListDelegate?.totalPrice(total: 0.0)
                         self.delegate?.showEmptyPageError(message: ErrorMessages.emptyCartList)
                     }
                     
                 }else{
                     self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
+                    self.cartListDelegate?.totalPrice(total: 0.0)
                 }
             }else{
                 self.delegate?.showEmptyPageError(message: error?.errorMessage ?? ErrorMessages.genericError)
+                self.cartListDelegate?.totalPrice(total: 0.0)
             }
         }
         checkoutApi.fetchCartList(userId: AppEngine.sharedInstance.userID)
@@ -339,6 +344,8 @@ class CartInteractor: BaseInteractor{
         }
         checkoutApi.completeBrainTreeTransaction(request: request)
     }
+    
+    
 }
 class Coupon{
     var couponCode = ""

@@ -154,11 +154,18 @@ extension ReviewCartController: UITableViewDataSource{
 }
 extension ReviewCartController: CouponCellDelegate, CartCouponAppliedCellDelegate, BillingAddressCellDelegate{
     func editBillingAddress() {
-        Log.d("Requested to Edit Address")
+         let addressVC = self.ext.getViewController(storyBoard: "Address", VCIdentifier: "AddressVC") as! AddressViewController
+                                  addressVC.hasAddress = true
+                                  addressVC.addressType = .billing
+                                  self.ext.pushViewController(viewController: addressVC)
+        
     }
     
     func addBillingAddress() {
-        Log.d("Requested to Add new Address")
+        let addressVC = self.ext.getViewController(storyBoard: "Address", VCIdentifier: "AddressVC") as! AddressViewController
+        addressVC.hasAddress = false
+        addressVC.addressType = .billing
+        self.ext.pushViewController(viewController: addressVC)
     }
     
     func didRemoveCoupon() {

@@ -15,13 +15,15 @@ protocol ForgotPasswordDelegate:BaseViewDelegate {
 
 class ForgotPasswordInteractor:BaseInteractor{
     
-    var delegate:ForgotPasswordDelegate?
+    var forgotPwdDelegate:ForgotPasswordDelegate?
     
     
     func resetPassword(email:String){
         
+        super.delegate = forgotPwdDelegate
+        
         if !email.isValidEmail(){
-            self.delegate?.showValidationError(errorMessage: ErrorMessages.invalidEmail)
+            self.forgotPwdDelegate?.showValidationError(errorMessage: ErrorMessages.invalidEmail)
             return
         }
         
@@ -35,12 +37,12 @@ class ForgotPasswordInteractor:BaseInteractor{
             self.delegate?.hideProgressIndicator()
             if error == nil{
                 if let response = self.decodeFromJson(data!, modelType: ForgotPasswordResponse.self){
-                    self.delegate?.didResetPassword(message: response.msg ?? "")
+                    self.forgotPwdDelegate?.didResetPassword(message: response.msg ?? "")
                 }else{
-                    self.delegate?.showValidationError( errorMessage: ErrorMessages.genericError)
+                    self.forgotPwdDelegate?.showValidationError( errorMessage: ErrorMessages.genericError)
                 }
             }else{
-                self.delegate?.showValidationError(errorMessage: error!.errorMessage)
+                self.forgotPwdDelegate?.showValidationError(errorMessage: error!.errorMessage)
             }
         }
         

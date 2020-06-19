@@ -58,33 +58,16 @@ class SectionEventInfoCell: UITableViewCell{
     }
     
     func applyTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
-            
-            normalPlusImage = UIImage(named: "ic_btn_plus_green")
-            selectionPlusImage = UIImage(named: "ic_btn_plus_green_lite")
-            
-            normalMinusImage = UIImage(named: "ic_btn_minus_green")
-            selectionMinusImage = UIImage(named: "ic_btn_minus_green_lite")
-            
-        }else{
-            normalPlusImage = UIImage(named: "ic_btn_plus_blue")
-            selectionPlusImage = UIImage(named: "plus_blue_lite")
-            
-            normalMinusImage = UIImage(named: "ic_btn_minus_blue")
-            selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
-            
-        }
         
-   
+        
         let appColor = UIColor.getAppThemeColor()
         eventName?.textColor = appColor
         buttonSeeMore?.setTitleColor(appColor, for: .normal)
         
         
-        eventRightButton.setImage(normalPlusImage, for: .normal)
-        eventRightButton.setImage(selectionPlusImage, for: .selected)
+        eventRightButton.applyMinusButtonTheme()
     }
-    func populateViews(type: EventType, _ event : EnrolledEvent, expanded: Bool){
+    func populateViews(type: EventType, _ event : EnrolledEvent){
         
         applyTheme()
         
@@ -95,31 +78,17 @@ class SectionEventInfoCell: UITableViewCell{
             eventType.text = ScreenTitle.TITLE_UPCOMING_EVENTS
         }
         
-        if expanded == false{
+       
+        eventName?.text = "Event: \(event.productName ?? "")"
+        eventDate.text = "Event Date: \(event.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        orderDate.text = "Order Date: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        if let imgUrl = event.eventImage{
             
-            if eventDetailView != nil {
-                eventDetailView.removeFromSuperview()
-            }
-            eventRightButton.setImage(normalPlusImage, for: .normal)
-            eventRightButton.setImage(selectionPlusImage, for: .selected)
+            let placeHolder = UIImage(named: "et_fallback_image")
+            self.eventImage.kf.setImage(with: URL(string : imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
             
-            
-            
-        }else{
-            
-            eventRightButton.setImage(normalMinusImage, for: .normal)
-            eventRightButton.setImage(selectionMinusImage, for: .selected)
-            
-            eventName?.text = "Event: \(event.productName ?? "")"
-            eventDate.text = "Event Date: \(event.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
-            orderDate.text = "Order Date: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
-            if let imgUrl = event.eventImage{
-                
-                let placeHolder = UIImage(named: "et_fallback_image")
-                self.eventImage.kf.setImage(with: URL(string : imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
-                
-            }
         }
+        
         containerView.setCardView()
         
     }
@@ -135,4 +104,26 @@ class SectionEventInfoCell: UITableViewCell{
     }
     
 }
-
+class CollapsedCell: UITableViewCell{
+    static let identifier = "CollapsedCell"
+    
+    var action: (()->Void)? = nil
+    
+    @IBOutlet weak var btnExpand: UIButton!
+    
+    @IBOutlet weak var labelTitle: UILabel!
+    
+    
+    
+    func populateUi(title: String, action: (()->Void)?){
+        self.action = action
+        labelTitle.text = title
+        btnExpand.applyPlusButtonTheme()
+        
+    }
+    
+    @IBAction func didPressExpandButton(_ sender: Any) {
+        self.action?()
+    }
+    
+}

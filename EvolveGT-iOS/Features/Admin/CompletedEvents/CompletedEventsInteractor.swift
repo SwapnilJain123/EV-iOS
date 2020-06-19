@@ -24,7 +24,7 @@ class CompletedEventsInteractor : BaseInteractor{
     
     
     
-    var delegate: CompletedEventsViewDelegate?
+    var adminDelegate: CompletedEventsViewDelegate?
     var completedEvents = [CompletedEvent]()
     
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class CompletedEventsInteractor : BaseInteractor{
     }
     
     func fetchCompletedEvents() {
+        super.delegate = adminDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCompletedEvents)
         let adminApi = AdminApi()
         adminApi.setCompletionHandler{ response, error in
@@ -46,7 +47,7 @@ class CompletedEventsInteractor : BaseInteractor{
                     }else{
                         self.completedEvents.removeAll()
                         self.completedEvents.append(contentsOf: completedeventResponse.completedEvents)
-                        self.delegate?.didFetchCompletedEvents(events: completedeventResponse.completedEvents)
+                        self.adminDelegate?.didFetchCompletedEvents(events: completedeventResponse.completedEvents)
                     }
                     
                 }
@@ -62,12 +63,12 @@ class CompletedEventsInteractor : BaseInteractor{
     func search(query: String) {
         
         if query.isEmpty(){
-            self.delegate?.didFetchCompletedEvents(events: completedEvents)
+            self.adminDelegate?.didFetchCompletedEvents(events: completedEvents)
         }else{
             let filteredEvents =  completedEvents.filter{
                 $0.title.lowercased().starts(with: query.lowercased())
             }
-            self.delegate?.didFetchCompletedEvents(events: filteredEvents)
+            self.adminDelegate?.didFetchCompletedEvents(events: filteredEvents)
         }
     }
     
@@ -93,7 +94,7 @@ class CompletedEventsInteractor : BaseInteractor{
             filteredList = self.completedEvents.filter { _ in true
             }
         }
-        self.delegate?.didFetchCompletedEvents(events: filteredList)
+        self.adminDelegate?.didFetchCompletedEvents(events: filteredList)
         
     }
     func filterItems(with filterType: FilterType) {
@@ -103,7 +104,7 @@ class CompletedEventsInteractor : BaseInteractor{
             //get unique trinings from the completed event list
             let trainingsArray = completedEvents.compactMap { $0.trainingType }
             let trainings = Array(Set(trainingsArray.flatMap { $0 })).sorted(by: <)
-            self.delegate?.presentTrainingFilterOptions(options: trainings)
+            self.adminDelegate?.presentTrainingFilterOptions(options: trainings)
         case .month:
             Log.d("Filter By Month")
             
@@ -115,14 +116,14 @@ class CompletedEventsInteractor : BaseInteractor{
                 let dateString = "\($0) 15"
                  return dateString.formattedDate(outputFormat: .FORMAT_MMM_YYYY)
             }
-            self.delegate?.presentMonthFilterOptions(options: eventMonths)
+            self.adminDelegate?.presentMonthFilterOptions(options: eventMonths)
         case .eventType:
             Log.d("Filter By Event")
             let eventTypes = completedEvents.compactMap { $0.eventType }.unique().sorted(by: <)
-            self.delegate?.presentEventTypeFilterOptions(options: eventTypes)
+            self.adminDelegate?.presentEventTypeFilterOptions(options: eventTypes)
         case .none:
             Log.d("Filter Clear")
-            self.delegate?.didFetchCompletedEvents(events: completedEvents)
+            self.adminDelegate?.didFetchCompletedEvents(events: completedEvents)
         }
     }
 }

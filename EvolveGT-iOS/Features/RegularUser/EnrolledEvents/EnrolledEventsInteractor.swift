@@ -20,10 +20,10 @@ protocol EnrolledEventsViewDelegate{
 class EnrolledEventsInteractor: BaseInteractor {
     
     var enrolledEventsDelegate: EnrolledEventsViewDelegate?
-     var delegate: BaseViewDelegate?
+    
     
     func fetchEventHistory() {
-        
+       
         let profileApi = ProfileApi()
         self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEventHistory)
         profileApi.setCompletionHandler{ response, error in

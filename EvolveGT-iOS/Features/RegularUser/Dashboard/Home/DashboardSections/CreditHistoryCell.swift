@@ -32,13 +32,13 @@ class CreditHistoryCell: UITableViewCell{
     @IBOutlet weak var seeMoreButton: UIButton?
     
     var normalPlusImage : UIImage? = nil
-       var selectionPlusImage : UIImage? = nil
-       
-       var normalMinusImage : UIImage? = nil
-       var selectionMinusImage : UIImage? = nil
+    var selectionPlusImage : UIImage? = nil
+    
+    var normalMinusImage : UIImage? = nil
+    var selectionMinusImage : UIImage? = nil
     
     override func awakeFromNib() {
-           super.awakeFromNib()
+        super.awakeFromNib()
         
         
     }
@@ -71,29 +71,18 @@ class CreditHistoryCell: UITableViewCell{
     }
     func showData(_ credit: CreditHistory, expanded: Bool){
         applyTheme()
-        if expanded == false{
-            
-            if containerView != nil {
-                containerView.removeFromSuperview()
-            }
-            //plus button
-           creditRightButton.setImage(normalPlusImage, for: .normal)
-           creditRightButton.setImage(selectionPlusImage, for: .selected)
-           
-            
-            
-        }else{
-           creditRightButton.setImage(normalMinusImage, for: .normal)
-            creditRightButton.setImage(selectionMinusImage, for: .selected)
-           
-            
-            creditAmount?.text = credit.amount?.formatToAmount()
-            postedDate.text = "Posted on: \(credit.postDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
-            creditDescription.text = credit.creditHistoryDescription
-        }
-            
+        
+        creditRightButton.setImage(normalMinusImage, for: .normal)
+        creditRightButton.setImage(selectionMinusImage, for: .selected)
+        
+        
+        creditAmount?.text = credit.amount?.formatToAmount()
+        postedDate.text = "Posted on: \(credit.postDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        creditDescription.text = credit.creditHistoryDescription
+        
+        
         rootView.setCardView()
-       
+        
     }
     
     @IBAction func didPressExpandButton(_ sender: Any) {

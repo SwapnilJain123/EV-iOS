@@ -92,4 +92,9 @@ class TabbedViewController: ETViewController {
     @objc func didSwitchTab(){
         
     }
+    
+    override func updateCartBadge(count: Int) {
+        Log.i("Updating Badge - \(count)")
+        getTabBarController().updateCartBadgeCount(count: count)
+    }
 }

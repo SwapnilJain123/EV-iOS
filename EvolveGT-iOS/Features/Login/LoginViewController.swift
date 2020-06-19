@@ -32,8 +32,8 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         super.viewDidLoad()
         
         if BuildScheme.isBuildQA{
-            tfEmail.text! = "geevar83@gmail.com"
-            tfPassword.text! = "geevar@123"
+            tfEmail.text! = ""//geevar83@gmail.com"
+            tfPassword.text! = ""//geevar@123"
         }else{
             tfEmail.text! = ""
             tfPassword.text! = ""
@@ -77,7 +77,7 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
 
     
     @IBAction func didPressLogin(_ sender: Any) {
-       loginInteractor.delegate = self
+       loginInteractor.loginViwelegate = self
         loginInteractor.doLogin(email: tfEmail.text ?? "", password: tfPassword.text ?? "")
     }
     

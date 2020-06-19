@@ -24,7 +24,7 @@ class CreditHistoryViewController: ETViewController{
         creditListTableView.dataSource = self
         
         let interactor = CreditHistoryInteractor()
-        interactor.delegate = self
+        interactor.creditViewDelegate = self
         interactor.fetchCreditHistory()
         
         

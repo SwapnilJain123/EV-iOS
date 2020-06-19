@@ -35,7 +35,7 @@ class EventParticipantCell: UITableViewCell{
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var btnTraining: UIButton!
-    @IBOutlet weak var btnSign: UIButton!
+    @IBOutlet weak var btnSign: UIButton?
     @IBOutlet weak var btnSkillUpgrade: UIButton!
     
     @IBOutlet weak var backroundView: UIView!
@@ -44,7 +44,7 @@ class EventParticipantCell: UITableViewCell{
     override func prepareForReuse() {
         
         super.prepareForReuse()
-        btnSign.isHidden = false
+        btnSign?.isHidden = false
         btnTraining.isHidden = false
 
     }
@@ -64,14 +64,7 @@ class EventParticipantCell: UITableViewCell{
         orderId.text = "#"
         orderId.text?.append(eventParticipant?.orderID ?? "-")
         
-        //btnTraining.isHidden = !(eventParticipant?.hasTrainingOrRentals ?? false)
-        // btnSign.isHidden = eventParticipant?.signEnabled == 1 ? false : true
-        if eventParticipant?.signEnabled != 1 {
-            if btnSign != nil &&  btnSign.isHidden == false{
-                btnSign.removeFromSuperview()
-            }
-            
-        }else{
+      if eventParticipant?.isSignEnabled ?? false{
             var image = UIImage(named: "sign_green") as UIImage?
             if eventParticipant?.hasSignature ?? false{
                 if !AppEngine.sharedInstance.isEvApp(){
@@ -81,13 +74,13 @@ class EventParticipantCell: UITableViewCell{
                 image = UIImage(named: "sign") as UIImage?
                 
             }
-            if btnSign != nil{
-                btnSign.setImage(image, for: .normal)
-            }
+           
+            btnSign?.setImage(image, for: .normal)
+            
         }
         if (eventParticipant?.hasTrainingOrRentals ?? false) == false{
             if btnTraining != nil && btnTraining.isHidden == false{
-                btnTraining.isHidden = true// removeFromSuperview()
+                btnTraining.isHidden = true
             }
         }else{
             var image = UIImage(named: "star") as UIImage?

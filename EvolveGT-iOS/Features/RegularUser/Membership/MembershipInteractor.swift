@@ -17,7 +17,7 @@ protocol MembershipListDelegate{
    
 class MembershipInteractor : BaseInteractor{
     
-    var delegate : BaseViewDelegate?
+   
     var membershipDelegate : MembershipListDelegate?
     var membershipDetailsDelegate : MembershipDetailsDelegate?
     
@@ -97,6 +97,7 @@ class MembershipInteractor : BaseInteractor{
             self.delegate?.hideProgressIndicator()
             if error == nil{
                 self.delegate?.showSuccessToastMessage(message: SuccessMessages.membershipAddedToCart)
+                self.syncCartBadgeCount()
             }else{
                 self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
             }
@@ -121,6 +122,7 @@ class MembershipInteractor : BaseInteractor{
                self.delegate?.hideProgressIndicator()
                if error == nil{
                    self.delegate?.showSuccessToastMessage(message: SuccessMessages.membershipAddedToCart)
+                self.syncCartBadgeCount()
                }else{
                    self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
                }

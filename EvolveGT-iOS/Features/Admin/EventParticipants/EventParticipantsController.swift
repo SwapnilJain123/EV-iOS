@@ -28,7 +28,7 @@ class EventParticipantsController : ETViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor.delegate = self
+        interactor.adminViewDelegate = self
         particiapntTable.dataSource = self
         
         
@@ -138,9 +138,14 @@ extension EventParticipantsController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventParticipantCell",
+        let eventParticipant = participants[indexPath.row]
+        var identifier = "EventParticipantCellSignDisabled"
+        if eventParticipant.isSignEnabled{
+            identifier = "EventParticipantCell"
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                  for: indexPath) as! EventParticipantCell
-        cell.eventParticipant = participants[indexPath.row]
+        cell.eventParticipant = eventParticipant
         cell.delegate = self
         return cell
         

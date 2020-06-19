@@ -18,11 +18,13 @@ protocol LoginViewDelegate : BaseViewDelegate{
 
 class LoginInteractor : BaseInteractor{
     
-    var delegate: LoginViewDelegate?
+    var loginViwelegate: LoginViewDelegate?
     
     var email = ""
     var password = ""
     func doLogin(email: String, password: String){
+        super.delegate = loginViwelegate
+        
         self.email = email
         self.password = password
         
@@ -40,15 +42,15 @@ class LoginInteractor : BaseInteractor{
                         AppEngine.sharedInstance.saveAuthToken(token: loginResponse.token)
                         
                         if loginResponse.currentUser.isAdmin(){
-                            self.delegate?.launchAdminPage()
+                            self.loginViwelegate?.launchAdminPage()
                         }else {
-                            self.delegate?.launchUserPage()
+                            self.loginViwelegate?.launchUserPage()
                         }
                     }
                 }else{
                     self.delegate?.hideProgressIndicator()
                     Log.i("Login Error - \(String(describing: error?.errorMessage)) ")
-                    self.delegate?.showLoginError(errorMessage: error!.errorMessage)
+                    self.loginViwelegate?.showLoginError(errorMessage: error!.errorMessage)
                 }
             }
             loginApi.doLogin(email: email, password: password)
@@ -58,10 +60,10 @@ class LoginInteractor : BaseInteractor{
     func validate() -> Bool{
         
         if email.isEmpty() || !email.isValidEmail(){
-            delegate?.showLoginError(errorMessage: MessageConstants.KPromptMsgEnterValidEmail)
+            loginViwelegate?.showLoginError(errorMessage: MessageConstants.KPromptMsgEnterValidEmail)
             return false
         }else if password.isEmpty(){
-            delegate?.showLoginError(errorMessage: MessageConstants.KPromptMsgEnterPassword)
+            loginViwelegate?.showLoginError(errorMessage: MessageConstants.KPromptMsgEnterPassword)
             return false
         }
         

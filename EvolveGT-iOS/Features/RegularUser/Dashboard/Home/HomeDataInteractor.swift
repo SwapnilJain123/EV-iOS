@@ -19,24 +19,24 @@ protocol AgreementAcceptanceDelegate{
     func userHasAcceptedConditions()
 }
 class HomeDataInteractor : BaseInteractor{
-    var viewDelegate : BaseViewDelegate?
-    var delegate : HomeViewDelegate?
+   
+    var homeViewDelegate : HomeViewDelegate?
     var agreementStatusDelegate : AgreementAcceptanceDelegate?
     
     var profileData = ProfileData()
     
     func fetchUserDetails() {
-        viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingProfileData)
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingProfileData)
         let profileApi = ProfileApi()
         profileApi.setCompletionHandler{ response, error in
             
             if error == nil{
                 Log.i("User details fetched Success - ")
                 if let userDetailsResponse = self.decodeFromJson(response!, modelType: UserDetailsResponse.self){
-                    self.viewDelegate?.hideEmptyPageError()
+                    self.delegate?.hideEmptyPageError()
                     if userDetailsResponse.userDetails == nil{
-                        self.viewDelegate?.hideProgressIndicator()
-                        self.viewDelegate?.showEmptyPageError(message: ErrorMessages.genericError)
+                        self.delegate?.hideProgressIndicator()
+                        self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
                     }else{
                         self.profileData.create(with: userDetailsResponse.userDetails!)
                         AppEngine.sharedInstance.userDetails = userDetailsResponse.userDetails
@@ -44,14 +44,14 @@ class HomeDataInteractor : BaseInteractor{
                     }
                     
                 }else{
-                    self.viewDelegate?.hideProgressIndicator()
+                    self.delegate?.hideProgressIndicator()
                     Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
-                    self.viewDelegate?.showEmptyPageError(message: error!.errorMessage)
+                    self.delegate?.showEmptyPageError(message: error!.errorMessage)
                 }
             }else{
-                self.viewDelegate?.hideProgressIndicator()
+                self.delegate?.hideProgressIndicator()
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
-                self.viewDelegate?.showEmptyPageError(message: error!.errorMessage)
+                self.delegate?.showEmptyPageError(message: error!.errorMessage)
             }
         }
         profileApi.fetchUserDetails(userId: AppEngine.sharedInstance.userID)
@@ -121,7 +121,7 @@ class HomeDataInteractor : BaseInteractor{
         
         let profileApi = ProfileApi()
         profileApi.setCompletionHandler{ response, error in
-            self.viewDelegate?.hideProgressIndicator()
+            self.delegate?.hideProgressIndicator()
             if error == nil{
                 Log.i("User details fetched Success - ")
                 if let response = self.decodeFromJson(response!, modelType: CreditHistoryResponse.self){
@@ -142,29 +142,29 @@ class HomeDataInteractor : BaseInteractor{
             if !(AppEngine.sharedInstance.currentUser?.isCoach() ?? false){
                 sections = sections.filter({$0 != .coachDuties})
             }
-            self.delegate?.didFetchDetails(profileData: self.profileData, sections: sections)
+            self.homeViewDelegate?.didFetchDetails(profileData: self.profileData, sections: sections)
         }
         profileApi.fetchCreditHistory(userId: AppEngine.sharedInstance.userID)
     }
     
     func fetchCoachDuties(){
         let adminApi = AdminApi()
-        self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCoachDuties)
+        self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCoachDuties)
         adminApi.setCompletionHandler{ data, error in
-            self.viewDelegate?.hideProgressIndicator()
+            self.delegate?.hideProgressIndicator()
             if error == nil{
                 if let response = self.decodeFromJson(data!, modelType: CoachDutyResponse.self){
                     
                     if response.assignedEvents?.count ?? 0 == 0{
-                        self.viewDelegate?.showAlert(title: "", message: ErrorMessages.eventsNotAssigned)
+                        self.delegate?.showAlert(title: "", message: ErrorMessages.eventsNotAssigned)
                     }else{
-                        self.delegate?.didFetchCoachDuties(assignedEvents: response.assignedEvents!)
+                        self.homeViewDelegate?.didFetchCoachDuties(assignedEvents: response.assignedEvents!)
                     }
                 }else{
-                    self.viewDelegate?.showAlert(title: "", message: ErrorMessages.genericError)
+                    self.delegate?.showAlert(title: "", message: ErrorMessages.genericError)
                 }
             }else{
-                self.viewDelegate?.showAlert(title: "", message: error?.errorMessage ?? ErrorMessages.genericError)
+                self.delegate?.showAlert(title: "", message: error?.errorMessage ?? ErrorMessages.genericError)
             }
         }
         adminApi.getCoachDuties(userId: AppEngine.sharedInstance.userID)
@@ -199,13 +199,13 @@ class HomeDataInteractor : BaseInteractor{
     
     func saveUserAcceptanceStatus(status: Bool){
         let profileApi = ProfileApi()
-        self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.savingAgreement)
+        self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.savingAgreement)
         profileApi.setCompletionHandler{ data, error in
-            self.viewDelegate?.hideProgressIndicator()
+            self.delegate?.hideProgressIndicator()
             if error == nil{
                 self.agreementStatusDelegate?.userHasAcceptedConditions()
             }else{
-                self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+                self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
             }
         }
         profileApi.saveAgreementStatus(userId: AppEngine.sharedInstance.userID, status: status)

@@ -11,10 +11,11 @@ import Foundation
 protocol AddressViewDelegate{
     func didFetchSupportedCountries(coutries: [Country])
     func didFetchSupportedStates(states: [SupportedState])
+    func validationError(message: String, addressField: AddressField)
 }
 class AddressInteractor : BaseInteractor{
     
-  
+    
     var viewDelegate : BaseViewDelegate? = nil
     var addressViewDelegate: AddressViewDelegate? = nil
     
@@ -29,11 +30,42 @@ class AddressInteractor : BaseInteractor{
                 $0 != .email && $0 != .phone
             })
         }
-    
+        
         return fields
     }
     
-    func updateBillingAdress(selectedCountry:Country , selectedState:SupportedState){
+    func updateBillingAdress(selectedCountry:Country? , selectedState:SupportedState?){
+        
+        let user = AppEngine.sharedInstance.userDetails
+        
+        if user?.billingFirstName?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, addressField: .firstName)
+            return
+        }else if user?.billingLastName?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.emptyLastName, addressField: .lastName)
+            return
+        }else if selectedCountry == nil{
+            addressViewDelegate?.validationError(message: ValidationErrors.countryRequired, addressField: .country)
+            return
+        }else if user?.billingAddress1?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.addressRequired, addressField: .address1)
+            return
+        } else if user?.billingCity?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.cityRequired, addressField: .city)
+            return
+        } else if selectedState == nil{
+            addressViewDelegate?.validationError(message: ValidationErrors.stateRequired, addressField: .state)
+            return
+        } else if user?.billingPostcode?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.postalCodeRequired, addressField: .postalCode)
+            return
+        } else if user?.billingPhone?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.invalidPhoneNumber, addressField: .phone)
+            return
+        } else if user?.billingEmail?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.invalidEmail, addressField: .email)
+            return
+        }
         
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.updatingBillingAdress)
         let api = ProfileApi()
@@ -48,41 +80,67 @@ class AddressInteractor : BaseInteractor{
                 self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
                 
             }
-           
+            
         }
         var request = BillingAdressUpdateRequest()
         request.userId = AppEngine.sharedInstance.userID
         
         
         var billingrequest = BillingAdressRequest()
-        let user = AppEngine.sharedInstance.userDetails
+        
         billingrequest.billingAdress1 = user!.billingAddress1
         billingrequest.billingAdress2 = user!.billingAddress2
         billingrequest.billingCity = user!.billingCity
-        billingrequest.billingCountry = selectedCountry.value
+        billingrequest.billingCountry = selectedCountry?.value
         billingrequest.billingEmail = user!.billingEmail
         billingrequest.billingFirstName = user?.billingFirstName
         billingrequest.billingLastName = user?.billingLastName
         billingrequest.billingPhone = user?.billingPhone
         billingrequest.billingPostCode = user?.billingPostcode
-        billingrequest.billingState = selectedState.sortName
+        billingrequest.billingState = selectedState?.sortName
         
         request.billingRequest = billingrequest
         
         api.updateBilllingAdress(request: request)
- 
+        
         
         
     }
     
-    func updateShippingAdress(selectedCountry:Country , selectedState:SupportedState) {
+    func updateShippingAdress(selectedCountry:Country? , selectedState:SupportedState?) {
+        
+        let user = AppEngine.sharedInstance.userDetails
+        
+        if user?.shippingFirstName?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, addressField: .firstName)
+            return
+        }else if user?.shippingLastName?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.emptyLastName, addressField: .lastName)
+            return
+        }else if selectedCountry == nil{
+            addressViewDelegate?.validationError(message: ValidationErrors.countryRequired, addressField: .country)
+            return
+        }else if user?.shippingAddress1?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.addressRequired, addressField: .address1)
+            return
+        } else if user?.shippingCity?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.cityRequired, addressField: .city)
+            return
+        } else if selectedState == nil{
+            addressViewDelegate?.validationError(message: ValidationErrors.stateRequired, addressField: .state)
+            return
+        } else if user?.shippingPostcode?.isEmpty ?? true{
+            addressViewDelegate?.validationError(message: ValidationErrors.postalCodeRequired, addressField: .postalCode)
+            return
+        } 
+        
         
         self.viewDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.updatingShippingAdress)
         let api = ProfileApi()
         api.setCompletionHandler{ data, error in
             
             if error == nil{
-            
+                
                 self.syncUserDetails()
                 self.viewDelegate?.showSuccessToastMessage(message: SuccessMessages.profileUpdated)
             }else{
@@ -97,18 +155,18 @@ class AddressInteractor : BaseInteractor{
         
         var shippingRequest = ShippingAddressRequest()
         
-        let user = AppEngine.sharedInstance.userDetails
+        
         shippingRequest.shippingAddress1 = user?.shippingAddress1
         shippingRequest.shippingFirstName = user?.shippingFirstName ?? user?.firstName
         shippingRequest.shippingCity  = user?.shippingCity
         shippingRequest.shippingLastName = user?.shippingLastName ?? user?.lastName
         shippingRequest.shippingPostCode = user?.shippingPostcode
-        shippingRequest.shippingCountry  = selectedCountry.value
-        shippingRequest.shippingState = selectedState.sortName
+        shippingRequest.shippingCountry  = selectedCountry?.value
+        shippingRequest.shippingState = selectedState?.sortName
         
         request.shippingRequest = shippingRequest
         api.updateShippingAdress(request: request)
-    
+        
         
     }
     
@@ -182,7 +240,7 @@ class AddressInteractor : BaseInteractor{
     }
     
     func getSelectedCountry(selectedCountry: String) -> Country{
-         let countryIndex = AppEngine.sharedInstance.countries
+        let countryIndex = AppEngine.sharedInstance.countries
             .firstIndex(where: {
                 $0.value == selectedCountry || $0.country == selectedCountry
                 
@@ -191,7 +249,7 @@ class AddressInteractor : BaseInteractor{
         
     }
     func getSelectedState(selectedState: String) -> SupportedState{
-         let stateIndex = AppEngine.sharedInstance.states.firstIndex(where: { $0.name == selectedState || $0.sortName == selectedState}) ?? 0
+        let stateIndex = AppEngine.sharedInstance.states.firstIndex(where: { $0.name == selectedState || $0.sortName == selectedState}) ?? 0
         return AppEngine.sharedInstance.states[stateIndex]
         
     }
@@ -200,9 +258,9 @@ class AddressInteractor : BaseInteractor{
         let profileApi = ProfileApi()
         profileApi.setCompletionHandler{ response, error in
             
-             self.viewDelegate?.hideProgressIndicator()
+            self.viewDelegate?.hideProgressIndicator()
             if error == nil{
-               
+                
                 if let userDetailsResponse = self.decodeFromJson(response!, modelType: UserDetailsResponse.self){
                     
                     if userDetailsResponse.userDetails == nil{

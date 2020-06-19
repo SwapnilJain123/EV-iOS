@@ -44,6 +44,9 @@ struct EventParticipant: Codable {
         ((trainings?.count ?? 0) + (rentals?.count ?? 0)) > 0
     }
 
+    var isSignEnabled: Bool{
+        signEnabled == 1
+    }
     enum CodingKeys: String, CodingKey {
         case signatureID = "signature_id"
         case signature

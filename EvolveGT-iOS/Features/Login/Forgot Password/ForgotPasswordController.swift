@@ -42,7 +42,7 @@ class ForgotPasswordController: ETViewController {
 
     @IBAction func didPressResetPassword(_ sender: Any) {
         let interactor = ForgotPasswordInteractor()
-        interactor.delegate = self
+        interactor.forgotPwdDelegate = self
         interactor.resetPassword(email: tfEmail.text!)
        
     }

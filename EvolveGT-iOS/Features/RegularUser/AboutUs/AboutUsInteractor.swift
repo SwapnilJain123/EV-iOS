@@ -12,9 +12,10 @@ protocol AboutUsInteractorDelegate:BaseViewDelegate {
 }
 class AboutUsInteractor:BaseInteractor{
     
-    var delegate: AboutUsInteractorDelegate?
+    var aboutUselegate: AboutUsInteractorDelegate?
     
     func checkAppVersionUpdate(){
+        super.delegate = aboutUselegate
         self.delegate?.showProgressIndicator(message: "")
         let genericApi = GenericApi()
         genericApi.setCompletionHandler{data,error in
@@ -23,16 +24,16 @@ class AboutUsInteractor:BaseInteractor{
                 
                 if let appVersion = self.decodeFromJson(data! , modelType: AppVersion.self){
                     if appVersion.iosVersionCode ?? "1.0" > BuildScheme.getBuildVersion(){
-                        self.delegate?.getAppVersionUpdateMessage(message: SuccessMessages.latestVersion)
+                        self.aboutUselegate?.getAppVersionUpdateMessage(message: SuccessMessages.latestVersion)
                     }else{
-                        self.delegate?.getAppVersionUpdateMessage(message: SuccessMessages.oldVersion)
+                        self.aboutUselegate?.getAppVersionUpdateMessage(message: SuccessMessages.oldVersion)
                     }
                 }else{
-                    self.delegate?.getAppVersionUpdateMessage(message: "")
+                    self.aboutUselegate?.getAppVersionUpdateMessage(message: "")
                 }
                 
             }else{
-                self.delegate?.getAppVersionUpdateMessage(message: "")
+                self.aboutUselegate?.getAppVersionUpdateMessage(message: "")
             }
         }
         genericApi.checkForAppUpdate()

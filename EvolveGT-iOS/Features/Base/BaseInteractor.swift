@@ -8,6 +8,9 @@
 
 import Foundation
 class BaseInteractor{
+    
+     var delegate : BaseViewDelegate?
+    
     enum FilterType {
         case trainingType
         case month
@@ -39,4 +42,26 @@ class BaseInteractor{
     func viewDidLoad(){
         
     }
+    
+    func syncCartBadgeCount(){
+           let checkoutApi = CheckoutApi()
+           checkoutApi.setCompletionHandler{ data, error in
+               
+              
+               if error == nil{
+                   if let cartListResponse = self.decodeFromJson(data!, modelType: CartListResponse.self){
+                       
+                       AppEngine.sharedInstance.cartListCount = cartListResponse.cartList?.count ?? AppEngine.sharedInstance.cartListCount
+                       
+                       self.delegate?.updateCartBadge(count: AppEngine.sharedInstance.cartListCount )
+                       
+                   }else{
+                       Log.e("Could not sync the Cart Badge")
+                   }
+               }else{
+                   Log.e("Could not sync the Cart Badge")
+               }
+           }
+           checkoutApi.fetchCartList(userId: AppEngine.sharedInstance.userID)
+       }
 }
