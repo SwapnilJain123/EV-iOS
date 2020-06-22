@@ -88,7 +88,7 @@ class CartPromoCodeCell : UITableViewCell, UITextFieldDelegate{
         tfCouponCode.text = coupon.couponCode
         
         if BuildScheme.isBuildQA{
-            self.tfCouponCode.text = "FW9L-GHLT-US18"
+            self.tfCouponCode.text = ""//FW9L-GHLT-US18"
         }
         btnApply.applyBoarderColorTheme()
         tfCouponCode.applyColorTheme()

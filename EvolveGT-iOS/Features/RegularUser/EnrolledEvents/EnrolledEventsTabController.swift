@@ -77,6 +77,7 @@ class EnrolledEventsTabController : ButtonBarPagerTabStripViewController{
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillDisappear(animated)
+        self.ext.hideNavbar()
     }
     
     
