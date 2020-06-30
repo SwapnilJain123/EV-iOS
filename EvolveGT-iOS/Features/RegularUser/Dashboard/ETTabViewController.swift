@@ -116,8 +116,9 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
             self.tabBar.unselectedItemTintColor = .lightText
         }else{
             self.tabBar.barTintColor = .getMotoColor()
-            self.tabBar.unselectedItemTintColor = .lightGray
             self.tabBar.tintColor = .white
+            self.tabBar.unselectedItemTintColor = .lightGray
+            
         }
         self.tabBar.isTranslucent = false
     }

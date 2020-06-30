@@ -25,7 +25,7 @@ class EventDetailsController : ETViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ext.showBackButton()
-        btnAddToCart.applyColorTheme()
+        
         
         eventDetailsView.rowHeight = UITableView.automaticDimension
         eventDetailsView.dataSource = self
@@ -34,13 +34,19 @@ class EventDetailsController : ETViewController{
         eventDetails?.slug = self.eventSlug
         
         interactor.eventDetailsDelegate = self
-        interactor.fetchEventDetails(slug: eventSlug, isMotoEvent: isMotoEvent)
+       
     }
     
     override func getScreenTitle() -> String? {
         eventTitle
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         interactor.fetchEventDetails(slug: eventSlug, isMotoEvent: isMotoEvent)
+        btnAddToCart.applyColorTheme()
+        
+    }
     @IBAction func didPressAddToCart(_ sender: Any) {
         eventDetails?.slug = self.eventSlug
         if eventDetails?.external != nil{

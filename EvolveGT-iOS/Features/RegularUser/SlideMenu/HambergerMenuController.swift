@@ -92,16 +92,14 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             let vc = self.ext.getViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
             pushViewController(vc)
         case SlideMenuItem.TAG_PAST_EVENTS:
-            if let vc : EnrolledEventsTabController = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventsTab") as? EnrolledEventsTabController{
-                vc.selectedIndex = EnrolledEventsTabController.TAB_PAST
-                pushViewController(vc)
-            }
+            let vc = EnrolledEventsSlidingTabController()
+            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_PAST
+            self.ext.pushViewController(viewController: vc)
             
         case SlideMenuItem.TAG_UPCOMING_EVENTS:
-            if let vc : EnrolledEventsTabController = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventsTab") as? EnrolledEventsTabController{
-                vc.selectedIndex = EnrolledEventsTabController.TAB_UPCOMING
-                pushViewController(vc)
-            }
+            let vc = EnrolledEventsSlidingTabController()
+            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_UPCOMING
+            self.ext.pushViewController(viewController: vc)
         case SlideMenuItem.TAG_SWITCH_DASHBOARD:
             self.dashboardManager.switchToAdminDashboard()
             

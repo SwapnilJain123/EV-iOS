@@ -83,12 +83,16 @@ class GiftCardDetailsViewController: ETViewController,GiftCardDetailsDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        addToCartButton.applyColorTheme()
+       
         receiverNameTF.applyColorTheme()
         receiverEmailTF.applyColorTheme()
         giftPriceLabel.textColor = .getAppThemeColor()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         addToCartButton.applyColorTheme()
+    }
     override func getScreenTitle() -> String? {
         
         return screenTitle

@@ -9,56 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Enrolled Events Tab Controller-->
-        <scene sceneID="WML-TW-dpI">
-            <objects>
-                <viewController storyboardIdentifier="EventsTab" id="Xv8-fI-4ON" customClass="EnrolledEventsTabController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="50J-HQ-Nex">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XC7-c3-5Hd" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="2pQ-en-i6C"/>
-                                </constraints>
-                                <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J8h-Wq-jBZ">
-                                    <size key="itemSize" width="40" height="40"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOx-AJ-FFd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="UdA-oJ-wAO" firstAttribute="trailing" secondItem="XC7-c3-5Hd" secondAttribute="trailing" id="Blv-XG-EmV"/>
-                            <constraint firstItem="XC7-c3-5Hd" firstAttribute="top" secondItem="UdA-oJ-wAO" secondAttribute="top" id="aQU-t6-MJj"/>
-                            <constraint firstItem="kOx-AJ-FFd" firstAttribute="top" secondItem="XC7-c3-5Hd" secondAttribute="bottom" constant="-6" id="fHj-kf-MCU"/>
-                            <constraint firstItem="XC7-c3-5Hd" firstAttribute="leading" secondItem="UdA-oJ-wAO" secondAttribute="leading" id="jNd-bz-eoX"/>
-                            <constraint firstItem="UdA-oJ-wAO" firstAttribute="bottom" secondItem="kOx-AJ-FFd" secondAttribute="bottom" id="ja0-jg-Ijx"/>
-                            <constraint firstItem="kOx-AJ-FFd" firstAttribute="leading" secondItem="UdA-oJ-wAO" secondAttribute="leading" id="ljS-CK-2Iw"/>
-                            <constraint firstItem="UdA-oJ-wAO" firstAttribute="trailing" secondItem="kOx-AJ-FFd" secondAttribute="trailing" id="xCl-Bp-jJF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="UdA-oJ-wAO"/>
-                    </view>
-                    <connections>
-                        <outlet property="containerView" destination="kOx-AJ-FFd" id="lHQ-G5-Pp1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BtU-Ng-nKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-28.985507246376812" y="108.48214285714285"/>
-        </scene>
         <!--All Events Controller-->
         <scene sceneID="2YI-Eq-F07">
             <objects>
-                <viewController storyboardIdentifier="AllEvents" id="HEe-CL-Rcz" customClass="AllEventsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllEvents" id="HEe-CL-Rcz" customClass="AllEventsController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4me-wk-GUH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllEventCell" id="SuM-ON-Fc9" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllEventCell" id="SuM-ON-Fc9" customClass="EnrolledEventCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SuM-ON-Fc9" id="2Sb-zJ-OTT">
@@ -165,7 +119,7 @@
         <!--Upcoming Events Controller-->
         <scene sceneID="WhY-f2-62T">
             <objects>
-                <viewController storyboardIdentifier="UpcomingEvents" id="ySf-PI-39g" customClass="UpcomingEventsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpcomingEvents" id="ySf-PI-39g" customClass="UpcomingEventsController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vu7-3G-oUe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCell" id="b9d-BD-1ft" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCell" id="b9d-BD-1ft" customClass="EnrolledEventCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b9d-BD-1ft" id="jOE-Zx-mxa">
@@ -291,7 +245,7 @@
         <!--Past Events Controller-->
         <scene sceneID="Ju3-Cm-DNP">
             <objects>
-                <viewController storyboardIdentifier="PastEvents" id="yCF-Qq-Gzv" customClass="PastEventsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PastEvents" id="yCF-Qq-Gzv" customClass="PastEventsController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ba0-hr-Idk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +254,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastEventCell" id="bov-Br-zVN" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastEventCell" id="bov-Br-zVN" customClass="EnrolledEventCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bov-Br-zVN" id="BA9-uf-cah">

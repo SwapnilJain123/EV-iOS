@@ -38,33 +38,42 @@ extension UIButton{
         
         
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-               if let context = UIGraphicsGetCurrentContext() {
-                   context.setFillColor(UIColor.darkGray.cgColor)
-                   context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-                   let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-                   UIGraphicsEndImageContext()
-                   self.setBackgroundImage(colorImage, for: .disabled)
-               }
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setFillColor(UIColor.darkGray.cgColor)
+            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.setBackgroundImage(colorImage, for: .disabled)
+        }
         
         self.tintColor = .black
-       
+        
         self.setTitleColor(.white, for: .normal)
         self.setTitleColor(.lightGray, for: .highlighted)
-         self.setTitleColor(.white, for: .disabled)
+        self.setTitleColor(.white, for: .disabled)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         let text = self.title(for: .normal)
         self.setTitle(text?.uppercased(), for: .normal)
     }
     
-    
+    func setBackgroundColor(color: UIColor){
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setFillColor(color.cgColor)
+            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.setBackgroundImage(colorImage, for: .normal)
+        }
+    }
     func setBackgroundColor(color: UIColor, forState: UIControl.State) {
-
+        
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
         UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
         let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
+        
         self.setBackgroundImage(colorImage, for: forState)
     }
     
@@ -136,13 +145,15 @@ extension UIButton{
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.getAppThemeColor().cgColor
         self.setTitleColor(.getAppThemeColor(), for: .normal)
+        setBackgroundColor(color: .clear)
     }
     
     func setBorderColor(color: UIColor){
-           self.backgroundColor = .clear
-           self.layer.cornerRadius = 5
-           self.layer.borderWidth = 2
-           self.layer.borderColor = color.cgColor
-           self.setTitleColor(color, for: .normal)
-       }
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+        self.layer.borderColor = color.cgColor
+        self.setTitleColor(color, for: .normal)
+        setBackgroundColor(color: .clear)
+    }
 }

@@ -27,12 +27,13 @@ class CartListController : TabbedViewController, CartListDelegate{
         cartListView.dataSource = self
         cartListView.delegate = self
         
-        btnCheckout.applyColorTheme()
+       
         labelTotal.textColor = .getAppThemeColor()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+         btnCheckout.applyColorTheme()
         labelTotal.textColor = .getAppThemeColor()
         totalPrice(total: 0)
         outOfStockLabel.isHidden = true

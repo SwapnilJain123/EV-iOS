@@ -8,18 +8,26 @@
 
 import Foundation
 import UIKit
-import XLPagerTabStrip
-class UpcomingEventsController : ETViewController, TabProtocol, UITableViewDataSource{
+class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableViewDataSource{
     
     
     
     @IBOutlet weak var eventsTableView: UITableView!
     var events : [EnrolledEvent]?
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        IndicatorInfo(title: ScreenTitle.TITLE_UPCOMING_EVENTS.uppercased())
-    }
     
+    
+    func reloadPage() {
+        eventsTableView?.reloadData()
+        
+        if events == nil{
+            eventsTableView?.isHidden = true
+            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
+        }else{
+            self.ext.hideErrorView()
+            eventsTableView?.isHidden = false
+        }
+    }
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -27,17 +35,12 @@ class UpcomingEventsController : ETViewController, TabProtocol, UITableViewDataS
         eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.estimatedRowHeight = 120
     }
-    
-    func reload() {
-        eventsTableView.reloadData()
-        
-        if events == nil{
-            eventsTableView.isHidden = true
-            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
-        }else{
-            eventsTableView.isHidden = false
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Log.d("Event Count :\(events?.count ?? 0)")
+        reloadPage()
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = events?.count ?? 0
@@ -65,6 +68,6 @@ extension UpcomingEventsController: EnrolledEventCellDelegate{
     
     override func showSuccessToastMessage(message: String) {
         super.showSuccessToastMessage(message: message)
-        (self.parent as! EnrolledEventsTabController).fetchEventHistory()
+        (self.parent as! EnrolledEventsSlidingTabController).fetchEventHistory()
     }
 }

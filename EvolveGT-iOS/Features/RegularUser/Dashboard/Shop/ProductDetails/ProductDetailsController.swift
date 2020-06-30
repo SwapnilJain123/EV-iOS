@@ -25,7 +25,7 @@ class ProductDetailsController : ETViewController, ProductDetailsDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnAddToCart.applyColorTheme()
+        
         productDetailsView.dataSource = self
         productDetailsView.delegate = self
         btnAddToCart.isEnabled = false
@@ -35,6 +35,13 @@ class ProductDetailsController : ETViewController, ProductDetailsDelegate{
               interactor.fetchProductDetails(slug: productSlug)
        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        btnAddToCart.applyColorTheme()
+        productDetailsView.reloadData()
+    }
+    
     
     override func getScreenTitle() -> String? {
         productName.capitalized

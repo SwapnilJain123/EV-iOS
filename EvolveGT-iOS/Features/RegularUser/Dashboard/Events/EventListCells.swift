@@ -72,7 +72,7 @@ class EventListCell: UICollectionViewCell {
         
         bannerCancelled.isHidden = !(event?.isCancelled ?? false)
         
-        btnAddToCart?.isHidden = event!.isMotoEvent || (event?.isCancelled ?? false)
+        btnAddToCart?.isHidden = !AppEngine.sharedInstance.isEvApp() || (event?.isCancelled ?? false)
         
         let hostings = event?.activeHostings
         if let count = hostings?.count {

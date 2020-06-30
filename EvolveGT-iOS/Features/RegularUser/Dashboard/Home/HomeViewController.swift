@@ -35,16 +35,20 @@ class HomeViewController: TabbedViewController{
     
     override  func didChangeAppTheme() {
         super.didChangeAppTheme()
+        
+        resetProfileData()
+    
+        interactor.fetchUserDetails()
+        
+    }
+    func resetProfileData(){
         profileData?.upComingEventsCount = 0
         profileData?.pastEventsCount = 0
         profileData?.allEventsCount = 0
         profileData?.recentPastEvent = nil
         profileData?.recentUpComingEvent = nil
         profileData?.recentCreditHistory = nil
-        
         self.profileView.reloadData()
-        interactor.fetchUserDetails()
-        
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_DASHBOARD
@@ -52,12 +56,19 @@ class HomeViewController: TabbedViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        resetProfileData()
         interactor.fetchUserDetails()
         interactor.syncCartBadgeCount()
     }
     
     func launchCoachDutiesController(){
         interactor.fetchCoachDuties()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 }
 
@@ -167,10 +178,11 @@ extension HomeViewController: HomeViewDelegate{
             vc.assignedEvent = assignedEvents.first
             self.ext.pushViewController(viewController: vc)
         }else{
-            let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "TabbedCoachDutiesVC") as! TabbedCoachDutiesController
+            let vc = CoachDutiesSlidingTabController()
             vc.assignedEvents = assignedEvents
             self.ext.pushViewController(viewController: vc)
         }
+       
     }
     
     func didFetchDetails(profileData: ProfileData?, sections: [HomeSection]) {
@@ -182,8 +194,9 @@ extension HomeViewController: HomeViewDelegate{
 }
 extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
     func showEnrolledEventList(type: EventType) {
-        //
-        self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventsTab")
+         let vc = EnrolledEventsSlidingTabController()
+        vc.selectedIndex = type == EventType.PAST ? EnrolledEventsSlidingTabController.TAB_PAST: EnrolledEventsSlidingTabController.TAB_UPCOMING
+        self.ext.pushViewController(viewController: vc)
     }
     
     func showCreditLists() {

@@ -245,7 +245,14 @@ extension UIViewController{
                 UIAlertAction in
                 // It will dismiss action sheet
             }
+            
             alert.addAction(cancelAction)
+            
+            if let popoverController = alert.popoverPresentationController {
+                popoverController.sourceView = self.vc.view
+                popoverController.sourceRect = CGRect(x: self.vc.view.bounds.midX, y: self.vc.view.bounds.midY, width: 0, height: 0)
+                popoverController.permittedArrowDirections = []
+            }
             vc.present(alert, animated: false, completion: nil)
         }
         

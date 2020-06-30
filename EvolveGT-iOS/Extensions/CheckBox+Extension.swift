@@ -17,6 +17,7 @@ extension CheckboxButton {
         self.checkBoxColor = CheckBoxColor(activeColor: .getAppThemeColor(), inactiveColor: .clear, inactiveBorderColor: .gray, checkMarkColor: .white)
         self.checkboxLine = CheckboxLineStyle( checkmarkLineWidth: 2, padding: 5)
         self.backgroundColor = nil
+        self.setBackgroundColor(color: .clear)
         
         if self.isEnabled == false{
             self.checkBoxColor = CheckBoxColor(activeColor: .gray, inactiveColor: .clear, inactiveBorderColor: .gray, checkMarkColor: .white)
