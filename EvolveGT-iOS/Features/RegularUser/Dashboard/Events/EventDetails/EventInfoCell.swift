@@ -260,7 +260,7 @@ class TransponderCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDeleg
             
         }
         transponderRent.delegate = nil
-        transponderRent.setTitle("Transponder Rent \(String(transponder.price ?? 0).formatToAmount())", for: .normal)
+        transponderRent.setTitle("Transponder Rent \(transponder.price?.formatToAmount() ?? "")", for: .normal)
         transponderRent.isOn = transponder.isSelected
         transponderTF.isEnabled = !(transponderRent.isOn)
         transponderTF.text = transponder.number

@@ -118,7 +118,6 @@ class MembershipCell : UICollectionViewCell{
     @IBAction func didPressViewMoreButton(_ sender: UIButton) {
         delegate?.showMembershipDetails(membership: membership)
         
-        
     }
     
     func showData(membership: Membership){
@@ -126,15 +125,14 @@ class MembershipCell : UICollectionViewCell{
         
         rootView.setCardView()
         btnPurchase.isHidden = !(membership.canPurchase(currentMembership: AppEngine.sharedInstance.membership))
-        
        
-        
         btnPurchase.isEnabled = !membership.isOutOfStock
         btnPurchase.setTitle(membership.isOutOfStock ? "Sold Out" : "Purchase", for: .normal)
         
-        labelPrice.text = membership.price?.formatToAmount(prefix: "Price: ")
+        labelPrice.text = membership.price?.formatToAmount()
         LabelRole.text = membership.title?.capitalized
         season.text = membership.season
+        
         if membership.isCurrentMembership{
             topView.backgroundColor = .getAppThemeColor()
             labelPrice.textColor = .white

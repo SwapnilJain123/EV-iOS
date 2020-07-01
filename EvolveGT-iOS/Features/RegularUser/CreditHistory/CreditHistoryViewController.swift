@@ -37,11 +37,14 @@ class CreditHistoryViewController: ETViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.ext.hideNavbar()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.ext.showNavbar()
         self.ext.showBackButton()
+        creditListTableView.reloadData()
     }
 }
 

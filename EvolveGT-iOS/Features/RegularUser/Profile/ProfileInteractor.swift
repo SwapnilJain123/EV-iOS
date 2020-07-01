@@ -119,6 +119,7 @@ class ProfileInteractor : BaseInteractor{
     }
     func validatePofile() -> Bool{
         var isValid = false;
+        let isEvApp = AppEngine.sharedInstance.isEvApp()
         if let user = AppEngine.sharedInstance.userDetails{
             if user.firstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .info)
@@ -132,24 +133,8 @@ class ProfileInteractor : BaseInteractor{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleName, section: .motorcycle)
             }else if user.evMotorcycleNumber?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleNumber, section: .motorcycle)
-            }
-                //Moto Gladiator
-            else if user.raceNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRaceNumber, section: .moto)
-            }else if user.amaNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidAMANumber, section: .moto)
-            } else if user.amaExpires?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.amaExpiryRequired, section: .moto)
-            } else if user.ccsNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidCCSNumber, section: .moto)
-            } else if user.asraNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidASRANumber, section: .moto)
-            }else if user.nationality?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidNationality, section: .moto)
-            }else if user.sponsors?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.sponsorRequired, section: .moto)
-            }else if user.teamnames?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.teammateRequired, section: .moto)
+            }else if validateMotoInfo() == false{
+                 self.profileViewDelegate?.validationError(message: "Moto Info missing", section: .moto)
             }else if user.evEmergencyFirstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .emergency)
             }else if user.evEmergencyLastName?.isEmpty ?? true{
@@ -168,6 +153,37 @@ class ProfileInteractor : BaseInteractor{
         return isValid;
     }
     
+    private func validateMotoInfo() -> Bool{
+        var isValid = false
+        if !AppEngine.sharedInstance.isEvApp(){
+            if let user = AppEngine.sharedInstance.userDetails{
+                if user.raceNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRaceNumber, section: .moto)
+                }else if user.amaNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidAMANumber, section: .moto)
+                } else if user.amaExpires?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.amaExpiryRequired, section: .moto)
+                } else if user.ccsNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidCCSNumber, section: .moto)
+                } else if user.asraNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidASRANumber, section: .moto)
+                }else if user.nationality?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidNationality, section: .moto)
+                }else if user.sponsors?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.sponsorRequired, section: .moto)
+                }else if user.teamnames?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.teammateRequired, section: .moto)
+                }else{
+                    isValid = true
+                }
+            }else{
+                isValid = false
+            }
+        }else{
+            isValid = true
+        }
+        return isValid
+    }
     private func fetchUserDetails() {
         
         let profileApi = ProfileApi()

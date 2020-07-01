@@ -38,14 +38,17 @@ struct ProfileData{
         }
         
         self.walletBalance = userDetails.walletAmount?.formatToAmount()
-        let status =  userDetails.status == "0" ? "INACTIVE" : "ACTIVE"
-        
-        self.membershipStatus = "\(status) (\(userDetails.evRole ?? ""))"
-        
+         
         if let expiryDate = userDetails.membershipExpDate{
             self.membershipExpiryDate = expiryDate.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY)
+            if expiryDate.isEalierThanToday(dateFormat: .FORMAT_API_DATE){
+                self.membershipStatus = "INACTIVE"
+            }else{
+                self.membershipStatus = "ACTIVE (\(userDetails.evRole?.capitalized ?? ""))"
+            }
         }else{
             self.membershipExpiryDate = ""
+            self.membershipStatus = "INACTIVE"
         }
         
         self.skillLevel = userDetails.skillLevel

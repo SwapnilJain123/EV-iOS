@@ -20,7 +20,7 @@ extension UIViewController{
         
         func showAlert(title: String?, message: String?, handler: (()->Void)? = nil) {
             let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Ok", style: .cancel){ alertAction in
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel){ alertAction in
                 if let safeHandler = handler{
                     safeHandler()
                 }

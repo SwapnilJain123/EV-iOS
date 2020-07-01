@@ -22,8 +22,8 @@ class ReviewCartController : ETViewController{
         ScreenTitle.TITLE_REVIEW_CART
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         btnPayment.applyColorTheme()
        
@@ -34,7 +34,7 @@ class ReviewCartController : ETViewController{
         }
        
         customizeShippingIndicator()
-       
+        //btnPayment.isEnabled = AppEngine.sharedInstance.userDetails?.hasValidBillingAddress ?? false
         
     }
     override func viewDidLoad() {
@@ -78,8 +78,8 @@ class ReviewCartController : ETViewController{
     
     @IBAction func didPressProceedToPayment(_ sender: Any) {
         
-        if AppEngine.sharedInstance.userDetails?.billingAddress.isEmpty ?? true{
-            self.ext.showAlert(title: "Checkout Error", message: "Please provide your billing address")
+        if AppEngine.sharedInstance.userDetails?.hasValidBillingAddress ?? false == false{
+            self.ext.showAlert(title: "Checkout Error", message: "Please provide your valid billing address")
         }else if hasOutOfStockItems{
             self.ext.showAlert(title: "Cart Error", message: ErrorMessages.hasOutOfStockItems){
                 self.navigationController?.popToRootViewController(animated: true)
@@ -136,7 +136,7 @@ extension ReviewCartController: UITableViewDataSource{
             return cell
         case CartReviewSections.noBillingAddress, CartReviewSections.validBillingAddress:
                        let cell =  tableView.dequeueReusableCell(withIdentifier: BillingAddressCell.identifier, for: indexPath) as! BillingAddressCell
-                       cell.showData(address: AppEngine.sharedInstance.userDetails?.billingAddress ?? "")
+                       cell.showData(address: AppEngine.sharedInstance.userDetails?.billingAddress ?? "", hasValidAddress: AppEngine.sharedInstance.userDetails?.hasValidBillingAddress ?? false)
                        cell.delegate = self
                        return cell
         case CartReviewSections.walletBalance:

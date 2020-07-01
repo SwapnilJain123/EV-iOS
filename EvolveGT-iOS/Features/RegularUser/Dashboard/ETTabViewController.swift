@@ -29,7 +29,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        styleTabBar()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         self.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
         self.ext.showNavbar()
         self.ext.hideBackButton()
-        styleTabBar()
+        
         
         self.delegate = self
         

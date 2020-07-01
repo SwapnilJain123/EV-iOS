@@ -53,7 +53,8 @@ class EventDetails: Codable {
         }
         
         if transponder?.isSelected ?? false{
-            totalPrice = totalPrice + Double(transponder?.price ?? 0)
+            let transponderPrice : Double = Double(transponder?.price ?? "0") ?? 0
+            totalPrice = totalPrice + transponderPrice
         }
         
         return totalPrice
@@ -152,13 +153,13 @@ class RoleBasedPrice: Codable {
 // MARK: - Variation
 class Variation: Codable {
     var price: String?
-    var stock: String?
+    //var stock: String?
     var stockStatus: String?
     var attributeName: String?
     var attributeValue: String?
     
     enum CodingKeys: String, CodingKey {
-        case price, stock
+        case price //, stock
         case stockStatus = "stock_status"
         case attributeName = "attribute_name"
         case attributeValue = "attribute_value"
@@ -196,7 +197,7 @@ class SkillSet: Codable {
 
 // MARK: - Transponder
 class Transponder: Codable {
-    var price: Int?
+    var price: String?
     var imageURL: String?
     var inCart: Bool?
     var number: String?

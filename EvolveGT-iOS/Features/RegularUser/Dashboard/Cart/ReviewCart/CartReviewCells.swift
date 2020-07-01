@@ -132,14 +132,20 @@ protocol BillingAddressCellDelegate{
 class BillingAddressCell : UITableViewCell{
     static let identifier = "BillingAddressCell"
     
+    @IBOutlet weak var errorBillingAddress: UILabel!
     var delegate: BillingAddressCellDelegate? = nil
     
     @IBOutlet weak var btnAddressAction: UIButton!
     @IBOutlet weak var labelAddress: UILabel!
     
     var address = ""
-    func showData(address : String){
+    func showData(address : String, hasValidAddress:Bool){
         self.address = address
+        errorBillingAddress.isHidden = hasValidAddress
+        if hasValidAddress{
+            errorBillingAddress.text = ""
+        }
+        
         if address.isEmpty(){
             btnAddressAction.applyPlusButtonTheme()
             labelAddress.text = ErrorMessages.checkoutNoBillingAddress

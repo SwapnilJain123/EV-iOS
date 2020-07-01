@@ -111,6 +111,12 @@ class UserDetails: Codable {
        
     }
     
+    var hasValidBillingAddress : Bool{
+        !(billingFirstName?.isEmpty ?? true || billingLastName?.isEmpty ?? true
+        || billingAddress1?.isEmpty() ?? true || billingState?.isEmpty ?? true
+        || billingCity?.isEmpty() ?? true || billingCountry?.isEmpty() ?? true
+        || billingPhone?.isEmpty() ?? true)
+    }
     public static let GENDER_MALE = "male"
     public static let GENDER_FEMALE = "female"
     
