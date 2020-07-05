@@ -54,7 +54,6 @@ class EventParticipantsController : ETViewController{
         self.ext.showBackButton()
         self.ext.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
         
-        
         let logoutItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout_icon"),
                                          style: .plain,
                                          target: self,
@@ -224,10 +223,10 @@ extension EventParticipantsController: EventParticipantCellDelegate{
     func clickedOnAccessories(_ cell: EventParticipantCell, participant: EventParticipant?) {
         Log.i("Training Tap identified")
         //self.interactor.onAccessoriesClicked(participant: participant!)
-        showListAlert(title: "Sample", btnText: "ok", eventParticiapnt: participant!)
+        showListAlert(eventParticiapnt: participant!)
     }
     
-    func showListAlert(title: String, btnText: String, eventParticiapnt: EventParticipant){
+    func showListAlert(eventParticiapnt: EventParticipant){
     
         let alertService = AlertService()
         let alertVC = alertService.alert(title: "Accessories", buttonTitle: "OK")

@@ -29,7 +29,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        styleTabBar()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         self.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
         self.ext.showNavbar()
         self.ext.hideBackButton()
-        styleTabBar()
+        
         
         self.delegate = self
         
@@ -63,17 +63,19 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         if pushType == "event"{
              let eventSlug = notificationPayload!["event_slug"] as? String
             let eventTitle = notificationPayload!["event_title"] as? String
-            let isMotoEvent = notificationPayload!["isMotoEvent"] as? Bool
+            let isMotoEvent = notificationPayload!["isMotoEvent"] as? String
             
             let eventDetailsVC = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as! EventDetailsController
             eventDetailsVC.eventSlug = eventSlug ?? ""
             eventDetailsVC.eventTitle = eventTitle ?? ""
-             eventDetailsVC.isMotoEvent = isMotoEvent ?? false
+            eventDetailsVC.isMotoEvent = "true" == isMotoEvent?.lowercased()
             
-            let eventTabNavController = self.viewControllers?[1] as! UINavigationController
-            eventTabNavController.pushViewController(eventDetailsVC, animated: false)
-            self.selectedViewController = self.viewControllers?[1]
-          
+            if eventDetailsVC.isMotoEvent != AppEngine.sharedInstance.isEvApp(){
+                let eventTabNavController = self.viewControllers?[1] as! UINavigationController
+                eventTabNavController.pushViewController(eventDetailsVC, animated: false)
+                self.selectedViewController = self.viewControllers?[1]
+            }
+            
         }else if pushType == "web"{
              let url = notificationPayload!["url"] as! String
             self.ext.openLink(url)
@@ -116,8 +118,9 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
             self.tabBar.unselectedItemTintColor = .lightText
         }else{
             self.tabBar.barTintColor = .getMotoColor()
-            self.tabBar.unselectedItemTintColor = .lightGray
             self.tabBar.tintColor = .white
+            self.tabBar.unselectedItemTintColor = .lightGray
+            
         }
         self.tabBar.isTranslucent = false
     }

@@ -138,20 +138,9 @@ extension  ProfileController: ProfileViewDelegate{
     
     func validationError(message: String, section: ProfileSections) {
         let sectionIndex = sections.index(of: section) ?? 0
+        profileViewContainer.reloadData()
+        profileViewContainer.scrollToRow(at: IndexPath(row: 0, section: sectionIndex), at: .bottom, animated: true)
         
-        if section == .info{
-            profileViewContainer.scrollToRow(at: IndexPath(row: 0, section: sectionIndex), at: .bottom, animated: true)
-            profileViewContainer.reloadData()
-        }else if section == .motorcycle{
-            profileViewContainer.scrollToRow(at: IndexPath(row: 0, section: sectionIndex), at: .bottom, animated: true)
-            profileViewContainer.reloadData()
-        } else if section == .moto{
-            profileViewContainer.scrollToRow(at: IndexPath(row: 0, section: sectionIndex), at: .bottom, animated: true)
-            profileViewContainer.reloadData()
-        } else if section == .emergency{
-            profileViewContainer.scrollToRow(at: IndexPath(row: 0, section: sectionIndex), at: .bottom, animated: true)
-            profileViewContainer.reloadData()
-        }
     }
     
     func availableSections(sections: [ProfileSections]) {

@@ -45,15 +45,12 @@ class ProductQuantityCell : UITableViewCell{
     
     @IBOutlet weak var labelQuantity: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        buttonMinus.applyMinusButtonTheme()
-        btnPlus.applyPlusButtonTheme()
-    }
     
     var productDetails: ProductDetails? = nil
     func showData(productDetails: ProductDetails){
+        
+        buttonMinus.applyMinusButtonTheme()
+        btnPlus.applyPlusButtonTheme()
         
         self.productDetails = productDetails
         
@@ -72,7 +69,7 @@ class ProductQuantityCell : UITableViewCell{
     }
     
     @IBAction func didPressMinusButton(_ sender: Any) {
-        if self.productDetails?.quantity ?? 1 > 0{
+        if self.productDetails?.quantity ?? 1 > 1{
             self.productDetails?.quantity -= 1
         }
         showData(productDetails: productDetails!)

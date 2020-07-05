@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-import XLPagerTabStrip
 
-class ProductListController : ETViewController, IndicatorInfoProvider{
+class ProductListController : ETViewController{
     
     @IBOutlet weak var productListView: UICollectionView!
     
@@ -21,9 +20,7 @@ class ProductListController : ETViewController, IndicatorInfoProvider{
     
     var productList = [Product]()
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        IndicatorInfo(title: category?.title?.capitalized)
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

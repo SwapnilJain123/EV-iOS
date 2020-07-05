@@ -42,7 +42,7 @@ class CartItem: Codable {
         
     }
     var priceInfoText : String{
-        var text = "Qty: \(quantity ?? "1")"
+        var text = "Qty: \(validatedQty)"
         let fee = feeAmount?.toDouble() ?? 0
         if fee > 0 {
             text = "\(text) | Fee: \(feeAmount!.formatToAmount())"
@@ -50,11 +50,16 @@ class CartItem: Codable {
         text = "\(text) | Price: \(price?.formatToAmount() ?? String.DEFAULT_AMOUNT)"
         return text
     }
+    var validatedQty: Int{
+       var qty = Int(quantity ?? "1") ?? 1
+        qty = qty > 0 ? qty : 1
+        return qty
+    }
     var secondaryProperty : String{
         var property = ""
         switch source {
         case .product, .archie:
-            property = "Quantity: \(quantity ?? "1")"
+            property = "Quantity: \(validatedQty)"
         case .giftcard:
             if let attributes = itemAttributes{
                 for attribute in attributes {

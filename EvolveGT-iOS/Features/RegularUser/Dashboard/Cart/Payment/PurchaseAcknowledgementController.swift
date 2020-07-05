@@ -53,8 +53,8 @@ class PostPurchaseController : ETViewController{
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_PAYMENT_SUCCESS
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         btnContinue.applyColorTheme()
         let appColor = UIColor.getAppThemeColor()

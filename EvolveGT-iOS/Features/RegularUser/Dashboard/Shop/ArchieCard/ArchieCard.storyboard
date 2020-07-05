@@ -12,7 +12,7 @@
         <!--Archie Card View Controller-->
         <scene sceneID="qIS-zy-AWL">
             <objects>
-                <viewController storyboardIdentifier="archieCardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1Z-mg-nL5" customClass="ArchieCardViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="archieCardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1Z-mg-nL5" customClass="ArchieCardViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Inu-6A-1q2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="5" width="375" height="662"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="archieCardCell" rowHeight="120" id="L2V-HO-8gQ" customClass="ArchiCardCell" customModule="EvolveGT" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="archieCardCell" rowHeight="120" id="L2V-HO-8gQ" customClass="ArchiCardCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L2V-HO-8gQ" id="Kf9-eV-ZO4">
@@ -103,7 +103,7 @@
         <!--Archie Card Details View Controller-->
         <scene sceneID="dRP-9d-gQg">
             <objects>
-                <viewController storyboardIdentifier="archieCardDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CJL-UF-5Jg" customClass="ArchieCardDetailsViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="archieCardDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CJL-UF-5Jg" customClass="ArchieCardDetailsViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7XE-WL-ifR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
                                                 </constraints>
                                                 <state key="normal" image="ic_btn_plus_green"/>
                                                 <connections>
-                                                    <action selector="plusButtonPressed:" destination="CJL-UF-5Jg" eventType="touchUpInside" id="qTA-2G-9NQ"/>
+                                                    <action selector="minusButtonPressed:" destination="CJL-UF-5Jg" eventType="touchUpInside" id="PEf-8A-V9N"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjT-vv-j6C">
@@ -176,7 +176,7 @@
                                                 </constraints>
                                                 <state key="normal" image="ic_btn_minus_green"/>
                                                 <connections>
-                                                    <action selector="minusButtonPressed:" destination="CJL-UF-5Jg" eventType="touchUpInside" id="qrB-SR-4TO"/>
+                                                    <action selector="plusButtonPressed:" destination="CJL-UF-5Jg" eventType="touchUpInside" id="hrC-CP-Jqv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -245,8 +245,8 @@
                     <connections>
                         <outlet property="archieCardImage" destination="eAh-OJ-b7p" id="i3Q-zh-HCk"/>
                         <outlet property="btnAddToCart" destination="M0P-GJ-MQk" id="j69-jf-70A"/>
-                        <outlet property="btnMinus" destination="KWk-8w-TyS" id="4ve-fP-HiG"/>
-                        <outlet property="btnPlus" destination="iqU-r0-Ho8" id="xlM-B8-aAL"/>
+                        <outlet property="btnMinus" destination="iqU-r0-Ho8" id="tAi-BG-gZ8"/>
+                        <outlet property="btnPlus" destination="KWk-8w-TyS" id="J1y-j5-adN"/>
                         <outlet property="priceLabel" destination="30n-7z-Xmp" id="YOE-WC-JHs"/>
                         <outlet property="quantityLabel" destination="XjT-vv-j6C" id="abq-Tf-SIs"/>
                         <outlet property="titleLabel" destination="OMi-C9-bwM" id="zKu-5M-h9m"/>

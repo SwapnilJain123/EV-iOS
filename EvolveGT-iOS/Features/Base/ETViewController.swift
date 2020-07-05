@@ -18,7 +18,7 @@ class ETViewController : UIViewController{
         
         self.ext.setScreenTitle(title: getScreenTitle() ?? "")
         self.ext.hideErrorView()
-    
+       
     }
     func createMoreButton() -> UIBarButtonItem{
        

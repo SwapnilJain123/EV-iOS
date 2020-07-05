@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 import Kingfisher
 
+protocol ProfileCellDelegate{
+    func openEventHistory(eventType: Int)
+}
 class ProfileCell: UITableViewCell{
     
-    
+    var delegate: ProfileCellDelegate?
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var fullName: UILabel!
@@ -49,6 +52,7 @@ class ProfileCell: UITableViewCell{
     @IBOutlet weak var iconPastEvents: UIImageView!
     
     @IBOutlet weak var iconSkillLevel: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -105,4 +109,17 @@ class ProfileCell: UITableViewCell{
         userSkillLevel.text = profileData.skillLevel
         
     }
+    
+    @IBAction func didPressUpComingEvents(_ sender: Any) {
+        delegate?.openEventHistory(eventType: EnrolledEventsSlidingTabController.TAB_UPCOMING)
+    }
+    
+    @IBAction func didPressPastEvents(_ sender: Any) {
+        delegate?.openEventHistory(eventType: EnrolledEventsSlidingTabController.TAB_PAST)
+    }
+    
+    @IBAction func didPressAllEvents(_ sender: Any) {
+        delegate?.openEventHistory(eventType: EnrolledEventsSlidingTabController.TAB_ALL_EVENTS)
+    }
+    
 }

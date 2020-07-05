@@ -8,14 +8,27 @@
 
 import Foundation
 import UIKit
-import XLPagerTabStrip
-class PastEventsController : ETViewController, TabProtocol, UITableViewDataSource{
+class PastEventsController : ETViewController,  SlidingTabDelegate, UITableViewDataSource{
     
     @IBOutlet weak var eventsTableView: UITableView!
     var events : [EnrolledEvent]?
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        IndicatorInfo(title: ScreenTitle.TITLE_PAST_EVENTS.uppercased())
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         Log.d("Event Count :\(events?.count ?? 0)")
+        reloadPage()
+    }
+    
+    func reloadPage() {
+        eventsTableView?.reloadData()
+        
+        if events?.count ?? 0 == 0{
+            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
+        }else{
+            self.ext.hideErrorView()
+        }
     }
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -23,19 +36,14 @@ class PastEventsController : ETViewController, TabProtocol, UITableViewDataSourc
         eventsTableView.dataSource = self
         eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.estimatedRowHeight = 120
+        eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
     }
     
-    func reload() {
-        eventsTableView.reloadData()
-        
-        if events == nil{
-            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
-        }
-    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = events?.count ?? 0
-        eventsTableView.setEmptyBackground(rowCount: count, message: ErrorMessages.emptyEnrolledEvents)
+       
         return count
     }
     

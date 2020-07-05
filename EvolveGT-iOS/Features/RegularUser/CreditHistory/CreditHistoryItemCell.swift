@@ -17,10 +17,16 @@ class CreditHistoryItemCell : UITableViewCell{
     @IBOutlet weak var creditDescription: UILabel!
     
     func showData(creditItem: CreditHistory){
+        creditAmount.textColor = .getAppThemeColor()
         creditAmount.text = creditItem.amount?.formatToAmount() ?? ""
         postedDate.text = "Posted on: \(creditItem.postDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         creditDescription.text = creditItem.creditHistoryDescription
         
+        if AppEngine.sharedInstance.isEvApp(){
+            creditIcon.image = UIImage(named: "wallet")
+        }else{
+            creditIcon.image = UIImage(named: "moto_wallet")
+        }
         containerView.setCardView()
     }
     

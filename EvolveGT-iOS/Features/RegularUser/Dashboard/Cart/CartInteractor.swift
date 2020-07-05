@@ -244,11 +244,11 @@ class CartInteractor: BaseInteractor{
                     self.transactionId = response.transactionID ?? "0"
                     self.resetCartList()
                 }else{
-                    self.delegate?.showSuccessToastMessage(message: ErrorMessages.genericError)
+                    self.delegate?.showErrorToastMessage(message: ErrorMessages.genericError)
                 }
             }else{
                 self.delegate?.hideProgressIndicator()
-                self.delegate?.showSuccessToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+                self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
             }
         }
         

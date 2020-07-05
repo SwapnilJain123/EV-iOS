@@ -100,8 +100,9 @@ class ShopViewController : TabbedViewController{
             self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
             self.interactor.fetchCategoryList()
         }else{
-            let rentalsVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
+//            let rentalsVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
             
+            let rentalsVC = ShopSlidingTabController()
             for category in categoryList where category.isRentals{
                 if category.children?.count ?? 0 > 0{
                     rentalsVC.categories = category.children!
@@ -130,8 +131,8 @@ class ShopViewController : TabbedViewController{
             self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
             self.interactor.fetchCategoryList()
         }else{
-            let gearVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
-            
+//            let gearVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
+           let gearVC = ShopSlidingTabController()
             for category in categoryList where category.isGear{
                 if category.children?.count ?? 0 > 0{
                     gearVC.categories = category.children!

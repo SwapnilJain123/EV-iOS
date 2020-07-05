@@ -18,15 +18,20 @@ class ProfileInteractor : BaseInteractor{
     var viewDelegate : BaseViewDelegate?
     
     func computeProfileSections(){
-        var sections = [ProfileSections]()
-        for value in ProfileSections.allCases {
-            sections.append(value)
-        }
         
-        if AppEngine.sharedInstance.isEvApp(){
-            sections.removeAll(where: {$0 == .moto})
+        if AppEngine.sharedInstance.userDetails == nil{
+            viewDelegate?.showEmptyPageError(message: ErrorMessages.genericError)
+        }else{
+            var sections = [ProfileSections]()
+            for value in ProfileSections.allCases {
+                sections.append(value)
+            }
+            
+            if AppEngine.sharedInstance.isEvApp(){
+                sections.removeAll(where: {$0 == .moto})
+            }
+            self.profileViewDelegate?.availableSections(sections: sections)
         }
-        self.profileViewDelegate?.availableSections(sections: sections)
     }
     
     private func uploadProfilePic(profileImage: Data){
@@ -55,65 +60,66 @@ class ProfileInteractor : BaseInteractor{
                 uploadProfilePic(profileImage: profileImage!)
             }
         }
-         
+        
     }
     private func updateUserProfile(){
         
         
-            Log.i("Data Validated")
-            let user = AppEngine.sharedInstance.userDetails!
-           
-            let request = ProfileUpdateRequest()
-            request.requestBody = ProfileRequestInfo()
-            request.userID = user.userID
+        Log.i("Data Validated")
+        let user = AppEngine.sharedInstance.userDetails!
+        
+        let request = ProfileUpdateRequest()
+        request.requestBody = ProfileRequestInfo()
+        request.userID = user.userID
+        
+        //moto
+        request.requestBody?.raceNo = user.raceNo
+        request.requestBody?.amaExpires = user.amaExpires
+        request.requestBody?.ccsNo = user.ccsNo
+        request.requestBody?.amaNo = user.amaNo
+        request.requestBody?.asraNo = user.asraNo
+        request.requestBody?.sponsors = user.sponsors
+        request.requestBody?.nationality = user.nationality
+        request.requestBody?.teamnames = user.teamnames
+        
+        request.requestBody?.firstName = user.firstName
+        request.requestBody?.lastName = user.lastName
+        request.requestBody?.email = user.email
+        request.requestBody?.evGender = user.evGender
+        request.requestBody?.evDob = user.evDob
+        request.requestBody?.evRaceLicence = user.evRaceLicence
+        
+        request.requestBody?.evMotorcycle = user.evMotorcycle
+        request.requestBody?.evMotorcycleNumber = user.evMotorcycleNumber
+        
+        request.requestBody?.everBeenTrack = user.everBeenTrack
+        
+        
+        //Emergency Contact
+        request.requestBody?.evEmergencyFirstName = user.evEmergencyFirstName
+        request.requestBody?.evEmergencyLastName = user.evEmergencyLastName
+        request.requestBody?.evEmergencyPhone = user.evEmergencyPhone
+        request.requestBody?.evEmergencyRelationship = user.evEmergencyRelationship
+        
+        let profileApi = ProfileApi()
+        profileApi.setCompletionHandler{data, error in
             
-            //moto
-            request.requestBody?.raceNo = user.raceNo
-            request.requestBody?.amaExpires = user.amaExpires
-            request.requestBody?.ccsNo = user.ccsNo
-            request.requestBody?.amaNo = user.amaNo
-            request.requestBody?.asraNo = user.asraNo
-            request.requestBody?.sponsors = user.sponsors
-            request.requestBody?.nationality = user.nationality
-            request.requestBody?.teamnames = user.teamnames
             
-            request.requestBody?.firstName = user.firstName
-            request.requestBody?.lastName = user.lastName
-            request.requestBody?.email = user.email
-            request.requestBody?.evGender = user.evGender
-            request.requestBody?.evDob = user.evDob
-            request.requestBody?.evRaceLicence = user.evRaceLicence
-            
-            request.requestBody?.evMotorcycle = user.evMotorcycle
-            request.requestBody?.evMotorcycleNumber = user.evMotorcycleNumber
-            
-            request.requestBody?.everBeenTrack = user.everBeenTrack
-            
-            
-            //Emergency Contact
-            request.requestBody?.evEmergencyFirstName = user.evEmergencyFirstName
-            request.requestBody?.evEmergencyLastName = user.evEmergencyLastName
-            request.requestBody?.evEmergencyPhone = user.evEmergencyPhone
-            request.requestBody?.evEmergencyRelationship = user.evEmergencyRelationship
-            
-            let profileApi = ProfileApi()
-            profileApi.setCompletionHandler{data, error in
-                
-               
-                if error == nil{
-                    self.fetchUserDetails()
-                }else{
-                     self.viewDelegate?.hideProgressIndicator()
-                    self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
-                }
+            if error == nil{
+                self.fetchUserDetails()
+            }else{
+                self.viewDelegate?.hideProgressIndicator()
+                self.viewDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
             }
-            profileApi.updateProfile(request: request)
-            
-            
+        }
+        profileApi.updateProfile(request: request)
+        
+        
         
     }
     func validatePofile() -> Bool{
         var isValid = false;
+        let isEvApp = AppEngine.sharedInstance.isEvApp()
         if let user = AppEngine.sharedInstance.userDetails{
             if user.firstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .info)
@@ -127,24 +133,8 @@ class ProfileInteractor : BaseInteractor{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleName, section: .motorcycle)
             }else if user.evMotorcycleNumber?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleNumber, section: .motorcycle)
-            }
-                //Moto Gladiator
-            else if user.raceNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRaceNumber, section: .moto)
-            }else if user.amaNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidAMANumber, section: .moto)
-            } else if user.amaExpires?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.amaExpiryRequired, section: .moto)
-            } else if user.ccsNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidCCSNumber, section: .moto)
-            } else if user.asraNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidASRANumber, section: .moto)
-            }else if user.nationality?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidNationality, section: .moto)
-            }else if user.sponsors?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.sponsorRequired, section: .moto)
-            }else if user.teamnames?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.teammateRequired, section: .moto)
+            }else if validateMotoInfo() == false{
+                 self.profileViewDelegate?.validationError(message: "Moto Info missing", section: .moto)
             }else if user.evEmergencyFirstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .emergency)
             }else if user.evEmergencyLastName?.isEmpty ?? true{
@@ -163,14 +153,45 @@ class ProfileInteractor : BaseInteractor{
         return isValid;
     }
     
+    private func validateMotoInfo() -> Bool{
+        var isValid = false
+        if !AppEngine.sharedInstance.isEvApp(){
+            if let user = AppEngine.sharedInstance.userDetails{
+                if user.raceNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRaceNumber, section: .moto)
+                }else if user.amaNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidAMANumber, section: .moto)
+                } else if user.amaExpires?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.amaExpiryRequired, section: .moto)
+                } else if user.ccsNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidCCSNumber, section: .moto)
+                } else if user.asraNo?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidASRANumber, section: .moto)
+                }else if user.nationality?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.invalidNationality, section: .moto)
+                }else if user.sponsors?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.sponsorRequired, section: .moto)
+                }else if user.teamnames?.isEmpty ?? true{
+                    self.profileViewDelegate?.validationError(message: ValidationErrors.teammateRequired, section: .moto)
+                }else{
+                    isValid = true
+                }
+            }else{
+                isValid = false
+            }
+        }else{
+            isValid = true
+        }
+        return isValid
+    }
     private func fetchUserDetails() {
         
         let profileApi = ProfileApi()
         profileApi.setCompletionHandler{ response, error in
             
-             self.viewDelegate?.hideProgressIndicator()
+            self.viewDelegate?.hideProgressIndicator()
             if error == nil{
-               
+                
                 if let userDetailsResponse = self.decodeFromJson(response!, modelType: UserDetailsResponse.self){
                     
                     if userDetailsResponse.userDetails == nil{

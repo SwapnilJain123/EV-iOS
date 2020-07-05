@@ -19,10 +19,9 @@ class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegat
     
     @IBOutlet weak var btnAddToCart: UIButton!
     
-    @IBOutlet weak var btnMinus: UIButton!
-
-    
     @IBOutlet weak var btnPlus: UIButton!
+    @IBOutlet weak var btnMinus: UIButton!
+    
     @IBAction func addToCartButtonPressed(_ sender: UIButton) {
         
         archieCardInteractor.addArchieCardToCart(archieCard: archieCardDetails, quantity: quantity)
@@ -45,12 +44,16 @@ class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        btnAddToCart.applyColorTheme()
+        
         btnPlus.applyPlusButtonTheme()
         btnMinus.applyMinusButtonTheme()
         priceLabel.textColor = .getAppThemeColor()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        btnAddToCart.applyColorTheme()
+    }
     func computeTotal(){
         let selectedPrice = archieCardDetails.price?.toDouble() ?? 0
         let total = Double(quantity) * selectedPrice

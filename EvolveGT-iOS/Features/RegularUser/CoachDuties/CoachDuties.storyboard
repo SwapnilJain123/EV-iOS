@@ -4,55 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tabbed Coach Duties Controller-->
-        <scene sceneID="rXm-LK-UhK">
-            <objects>
-                <viewController storyboardIdentifier="TabbedCoachDutiesVC" id="A3m-EA-OcH" customClass="TabbedCoachDutiesController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TDz-U0-AAZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-9P-n3O" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="S5g-ug-qyX"/>
-                                </constraints>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGV-gC-Lqz">
-                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" name="RootBackGround"/>
-                        <constraints>
-                            <constraint firstItem="NGV-gC-Lqz" firstAttribute="leading" secondItem="Kif-D0-8pA" secondAttribute="leading" id="ENZ-7T-l01"/>
-                            <constraint firstItem="UY1-9P-n3O" firstAttribute="top" secondItem="Kif-D0-8pA" secondAttribute="top" id="WQm-Pp-Usg"/>
-                            <constraint firstItem="UY1-9P-n3O" firstAttribute="leading" secondItem="Kif-D0-8pA" secondAttribute="leading" id="lBk-ER-iFL"/>
-                            <constraint firstItem="Kif-D0-8pA" firstAttribute="bottom" secondItem="NGV-gC-Lqz" secondAttribute="bottom" id="ri1-1H-3F3"/>
-                            <constraint firstItem="NGV-gC-Lqz" firstAttribute="top" secondItem="UY1-9P-n3O" secondAttribute="bottom" constant="8" id="wBB-b0-FwE"/>
-                            <constraint firstItem="Kif-D0-8pA" firstAttribute="trailing" secondItem="UY1-9P-n3O" secondAttribute="trailing" id="zuY-3D-1u2"/>
-                            <constraint firstItem="Kif-D0-8pA" firstAttribute="trailing" secondItem="NGV-gC-Lqz" secondAttribute="trailing" id="zxa-VZ-LiD"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Kif-D0-8pA"/>
-                    </view>
-                    <connections>
-                        <outlet property="containerView" destination="NGV-gC-Lqz" id="Kj0-pT-YMq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SM4-BQ-1ER" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
-        </scene>
         <!--Coach Duties Controller-->
         <scene sceneID="f2V-jX-9YK">
             <objects>
-                <viewController storyboardIdentifier="CoachDutiesVC" id="00g-n2-o2r" customClass="CoachDutiesController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoachDutiesVC" id="00g-n2-o2r" customClass="CoachDutiesController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cp6-dP-eU3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +71,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DutyCell" id="CeN-hP-zdE" customClass="DutyCell" customModule="EvolveGT" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DutyCell" id="CeN-hP-zdE" customClass="DutyCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E5G-jz-OCE">
@@ -197,8 +157,5 @@
     </scenes>
     <resources>
         <image name="ic_moto_tik" width="64" height="64"/>
-        <namedColor name="RootBackGround">
-            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

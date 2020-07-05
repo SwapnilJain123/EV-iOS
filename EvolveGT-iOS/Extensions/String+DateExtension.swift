@@ -51,4 +51,10 @@ extension String{
         
         return self.formattedDate(outputFormat: .FORMAT_YYYY_MM_DD) < formattedToday
     }
+    func isEalierThanToday(dateFormat: String) -> Bool{
+        let today = Date()
+        let formattedToday = today.toString(format: .custom(.FORMAT_YYYY_MM_DD))
+        
+        return self.formattedDate(inputPattern: dateFormat, outputFormat: .FORMAT_YYYY_MM_DD) < formattedToday
+    }
 }

@@ -8,36 +8,40 @@
 
 import Foundation
 import UIKit
-import XLPagerTabStrip
-class UpcomingEventsController : ETViewController, TabProtocol, UITableViewDataSource{
+class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableViewDataSource{
     
     
     
     @IBOutlet weak var eventsTableView: UITableView!
     var events : [EnrolledEvent]?
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        IndicatorInfo(title: ScreenTitle.TITLE_UPCOMING_EVENTS.uppercased())
-    }
+    weak var tabHolderController: EnrolledEventsSlidingTabController?
     
+    func reloadPage() {
+        eventsTableView?.reloadData()
+        
+        if events == nil{
+            eventsTableView?.isHidden = true
+            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
+        }else{
+            self.ext.hideErrorView()
+            eventsTableView?.isHidden = false
+        }
+    }
     override func viewDidLoad(){
         super.viewDidLoad()
         
         eventsTableView.dataSource = self
         eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.estimatedRowHeight = 120
+        eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Log.d("Event Count :\(events?.count ?? 0)")
+        reloadPage()
     }
     
-    func reload() {
-        eventsTableView.reloadData()
-        
-        if events == nil{
-            eventsTableView.isHidden = true
-            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
-        }else{
-            eventsTableView.isHidden = false
-        }
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = events?.count ?? 0
@@ -65,6 +69,6 @@ extension UpcomingEventsController: EnrolledEventCellDelegate{
     
     override func showSuccessToastMessage(message: String) {
         super.showSuccessToastMessage(message: message)
-        (self.parent as! EnrolledEventsTabController).fetchEventHistory()
+        tabHolderController?.fetchEventHistory()
     }
 }

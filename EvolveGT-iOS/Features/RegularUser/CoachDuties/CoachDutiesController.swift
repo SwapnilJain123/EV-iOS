@@ -8,18 +8,15 @@
 
 import Foundation
 import UIKit
-import XLPagerTabStrip
 
-class CoachDutiesController: ETViewController, IndicatorInfoProvider{
+class CoachDutiesController: ETViewController{
     @IBOutlet weak var lblEventName: UILabel!
     @IBOutlet weak var lblEventDate: UILabel!
     
     @IBOutlet weak var lblHostedBy: UILabel!
     @IBOutlet weak var dutyListView: UICollectionView!
     var assignedEvent: AssignedEvent?
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-         IndicatorInfo(title: assignedEvent?.event?.capitalized)
-    }
+    
     
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_COACH_DUTIES
@@ -33,10 +30,15 @@ class CoachDutiesController: ETViewController, IndicatorInfoProvider{
         dutyListView.dataSource = self
         dutyListView.delegate = self
         
-        lblEventName.textColor = .getAppThemeColor()
+       
         lblEventName.text = "Event: \(assignedEvent?.event ?? "")"
         lblEventDate.text = "Date: \(assignedEvent?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         lblHostedBy.text = "Hosted By: \(assignedEvent?.eventType ?? "")"
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         lblEventName.textColor = .getAppThemeColor()
+        dutyListView.reloadData()
     }
 }
 extension CoachDutiesController: UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
