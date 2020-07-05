@@ -36,6 +36,7 @@ class PastEventsController : ETViewController,  SlidingTabDelegate, UITableViewD
         eventsTableView.dataSource = self
         eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.estimatedRowHeight = 120
+        eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
     }
     
    

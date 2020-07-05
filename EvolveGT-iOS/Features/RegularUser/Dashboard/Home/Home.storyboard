@@ -313,6 +313,9 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoF-oa-Ewu">
                                                             <rect key="frame" x="0.0" y="0.0" width="191.5" height="60"/>
+                                                            <connections>
+                                                                <action selector="didPressUpComingEvents:" destination="9sT-xC-bxn" eventType="touchUpInside" id="TbH-NZ-gxh"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,6 +367,9 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSJ-6t-aI3">
                                                             <rect key="frame" x="0.0" y="0.0" width="191.5" height="60"/>
+                                                            <connections>
+                                                                <action selector="didPressPastEvents:" destination="9sT-xC-bxn" eventType="touchUpInside" id="jnH-4V-vcq"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -425,6 +431,9 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-ha-rsu">
                                                             <rect key="frame" x="0.0" y="0.0" width="191.5" height="60"/>
+                                                            <connections>
+                                                                <action selector="didPressAllEvents:" destination="9sT-xC-bxn" eventType="touchUpInside" id="g3A-b6-TKR"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

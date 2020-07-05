@@ -23,7 +23,7 @@ class ShopSlidingTabController: ETViewController{
         // navigation
         navigationItem.title = getScreenTitle()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         view.addSubview(slidingTabController.view)
         
         provideViewControllers()

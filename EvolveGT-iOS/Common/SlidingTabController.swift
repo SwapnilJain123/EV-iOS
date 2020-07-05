@@ -21,7 +21,7 @@ class UISimpleSlidingTabController: UIViewController {
     private var colorHeaderBackground = UIColor.white
     private var currentPosition = 0
     private var tabStyle = SlidingTabStyle.fixed
-    private let heightHeader = 57
+    private let heightHeader = 50
     
     private static let titleFont = UIFont.boldSystemFont(ofSize: 16)
     
@@ -42,6 +42,10 @@ class UISimpleSlidingTabController: UIViewController {
         colorHeaderInActive = color
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     func setCurrentPosition(position: Int){
         currentPosition = position
         let path = IndexPath(item: currentPosition, section: 0)
@@ -94,7 +98,7 @@ class UISimpleSlidingTabController: UIViewController {
         collectionPage.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collectionPage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionPage.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionPage.backgroundColor = .white
+        collectionPage.backgroundColor = .clear
         collectionPage.showsHorizontalScrollIndicator = false
         (collectionPage.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
         collectionPage.isPagingEnabled = true
@@ -154,6 +158,8 @@ class UISimpleSlidingTabController: UIViewController {
             indicator.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             indicator.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
             indicator.heightAnchor.constraint(equalToConstant: 4).isActive = true
+            
+        
         }
         
     }
@@ -210,7 +216,7 @@ extension UISimpleSlidingTabController: UICollectionViewDataSource{
         cell.addSubview(vc.view)
         
         vc.view.translatesAutoresizingMaskIntoConstraints = false
-        vc.view.topAnchor.constraint(equalTo: cell.topAnchor, constant: 28).isActive = true
+        vc.view.topAnchor.constraint(equalTo: cell.topAnchor, constant: CGFloat(25)).isActive = true
         vc.view.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
         vc.view.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
         vc.view.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true

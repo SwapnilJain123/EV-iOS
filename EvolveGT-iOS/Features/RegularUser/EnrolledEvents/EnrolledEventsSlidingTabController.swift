@@ -26,36 +26,36 @@ class EnrolledEventsSlidingTabController: ETViewController{
         
         interactor.delegate = self
         interactor.enrolledEventsDelegate = self
-       
+        
     }
     
     func fetchEventHistory(){
-         interactor.fetchEventHistory()
+        interactor.fetchEventHistory()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-      self.fetchEventHistory()
+        self.fetchEventHistory()
     }
     private func setupUI(){
         
         // navigation
         navigationItem.title = "Event History"
-       
-        view.backgroundColor = .white
+        
+        view.backgroundColor = .clear
         view.addSubview(slidingTabController.view)
         
-        let upcomingEvents = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "UpcomingEvents")
-               
-               let pastEvents = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "PastEvents")
-               
-               let allEvents = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "AllEvents")
+        let upcomingEvents = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "UpcomingEvents") as! UpcomingEventsController
+        upcomingEvents.tabHolderController = self
+        let pastEvents = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "PastEvents")
+        
+        let allEvents = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "AllEvents")
         
         // MARK: slidingTabController
         slidingTabController.addItem(item: upcomingEvents, title: ScreenTitle.TITLE_UPCOMING_EVENTS.uppercased())
         slidingTabController.addItem(item: pastEvents, title: ScreenTitle.TITLE_PAST_EVENTS.uppercased())
         slidingTabController.addItem(item: allEvents, title: ScreenTitle.TITLE_ALL_EVENTS.uppercased())
-       
+        
         slidingTabController.setHeaderActiveColor(color: .white)
         slidingTabController.setHeaderInActiveColor(color: .lightText)
         slidingTabController.setHeaderBackgroundColor(color: .getAppThemeColor())

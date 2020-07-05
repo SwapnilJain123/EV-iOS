@@ -32,13 +32,17 @@ class EventListController : TabbedViewController{
         
         interactor.eventListDelegate = self
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        interactor.resetEventList()
         super.viewDidAppear(animated)
         interactor.fetchEventList()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         interactor.resetEventList()
+        eventsListView.reloadData()
     }
     
     override func didSwitchTab() {

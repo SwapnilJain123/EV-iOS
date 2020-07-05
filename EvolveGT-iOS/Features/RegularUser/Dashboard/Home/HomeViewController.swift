@@ -26,7 +26,7 @@ class HomeViewController: TabbedViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
@@ -37,7 +37,7 @@ class HomeViewController: TabbedViewController{
         super.didChangeAppTheme()
         
         resetProfileData()
-    
+        
         interactor.fetchUserDetails()
         
     }
@@ -83,7 +83,7 @@ extension HomeViewController: UITableViewDataSource{
         switch self.sections[indexPath.row] {
         case .profile:
             let profileCell = tableView.dequeueReusableCell(withIdentifier:"HomeProfileCell",for: indexPath) as! ProfileCell
-            
+            profileCell.delegate = self
             profileCell.showData(self.profileData!)
             return profileCell
         case .coachDuties:
@@ -134,9 +134,9 @@ extension HomeViewController: UITableViewDataSource{
                     collaspedCell.populateUi(title: ScreenTitle.TITLE_PAST_EVENTS){
                         self.pastEventsExpanded = true
                         self.profileView.reloadRows(at: [indexPath], with: .automatic)
-                       self.scrollToRow(row: indexPath.row)
+                        self.scrollToRow(row: indexPath.row)
                     }
-                     return collaspedCell
+                    return collaspedCell
                 }
                 
             }
@@ -182,7 +182,7 @@ extension HomeViewController: HomeViewDelegate{
             vc.assignedEvents = assignedEvents
             self.ext.pushViewController(viewController: vc)
         }
-       
+        
     }
     
     func didFetchDetails(profileData: ProfileData?, sections: [HomeSection]) {
@@ -194,7 +194,7 @@ extension HomeViewController: HomeViewDelegate{
 }
 extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
     func showEnrolledEventList(type: EventType) {
-         let vc = EnrolledEventsSlidingTabController()
+        let vc = EnrolledEventsSlidingTabController()
         vc.selectedIndex = type == EventType.PAST ? EnrolledEventsSlidingTabController.TAB_PAST: EnrolledEventsSlidingTabController.TAB_UPCOMING
         self.ext.pushViewController(viewController: vc)
     }
@@ -242,4 +242,12 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
             self.profileView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
+}
+extension HomeViewController: ProfileCellDelegate{
+    func openEventHistory(eventType: Int) {
+        let vc = EnrolledEventsSlidingTabController()
+        vc.selectedIndex = eventType
+        self.ext.pushViewController(viewController: vc)
+    }
+ 
 }

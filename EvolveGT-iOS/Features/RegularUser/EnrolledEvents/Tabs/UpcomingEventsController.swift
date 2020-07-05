@@ -15,7 +15,7 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
     @IBOutlet weak var eventsTableView: UITableView!
     var events : [EnrolledEvent]?
     
-    
+    weak var tabHolderController: EnrolledEventsSlidingTabController?
     
     func reloadPage() {
         eventsTableView?.reloadData()
@@ -34,6 +34,7 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
         eventsTableView.dataSource = self
         eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.estimatedRowHeight = 120
+        eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -68,6 +69,6 @@ extension UpcomingEventsController: EnrolledEventCellDelegate{
     
     override func showSuccessToastMessage(message: String) {
         super.showSuccessToastMessage(message: message)
-        (self.parent as! EnrolledEventsSlidingTabController).fetchEventHistory()
+        tabHolderController?.fetchEventHistory()
     }
 }

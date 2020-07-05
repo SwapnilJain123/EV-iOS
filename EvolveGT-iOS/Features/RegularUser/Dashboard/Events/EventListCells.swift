@@ -48,6 +48,7 @@ class EventListCell: UICollectionViewCell {
         hostIcon2?.image = nil
         hostIcon3?.image = nil
         btnAddToCart?.setImage(nil, for: .normal)
+        eventName.textColor = .darkText
         
     }
     var event : Event? {
