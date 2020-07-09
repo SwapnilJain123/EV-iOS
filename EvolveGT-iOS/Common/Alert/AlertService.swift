@@ -27,6 +27,20 @@ struct AlertData {
 
 class AlertService {
     
+    func createListAlertController(title: String, buttonTitle: String, completion: @escaping () -> Void = {}) -> AlertListController {
+        
+        let storyboard = UIStoryboard(name: "AlertStoryboard", bundle: .main)
+        
+        let alertVC = storyboard.instantiateViewController(withIdentifier: "AlertListController") as! AlertListController
+        
+       
+        alertVC.buttonTitle = buttonTitle
+        alertVC.alertTitleText = title
+        alertVC.buttonAction = completion
+        
+        return alertVC
+    }
+    
     func alert(title: String, buttonTitle: String, completion: @escaping () -> Void = {}) -> AlertViewController {
         
         let storyboard = UIStoryboard(name: "AlertStoryboard", bundle: .main)

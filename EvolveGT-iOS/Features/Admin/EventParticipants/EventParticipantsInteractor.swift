@@ -65,7 +65,7 @@ class EventParticipantIntercator : BaseInteractor{
     }
     
     func upgradeSkill(skill: String, userID: String){
-        delegate?.showProgressIndicator(message: "")
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.upgradingSkill)
         let adminApi  = AdminApi()
         adminApi.setCompletionHandler{ response, error in
             if error == nil{
@@ -80,7 +80,5 @@ class EventParticipantIntercator : BaseInteractor{
     }
     
     
-    func onAccessoriesClicked(participant : EventParticipant){
-        
-    }
+    
 }

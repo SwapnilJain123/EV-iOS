@@ -124,6 +124,7 @@ struct LoadingIndicatorMessages {
      static let savingAgreement = "Saving policy agreement..."
     
      static let readingPrefernces = "Please wait, reading your preferences..."
+     static let upgradingSkill = "Upgrading skill..."
     
 }
 
