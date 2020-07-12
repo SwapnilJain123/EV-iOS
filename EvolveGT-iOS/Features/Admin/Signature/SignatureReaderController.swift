@@ -33,7 +33,7 @@ class SignatureReaderController: ETViewController {
         saveButton.isEnabled = false
         saveButton.applyColorTheme()
         termsCheckBox.applyCheckboxTheme()
-        interactor.delegate = self
+        interactor.signatureViewDelegate = self
         
         canvasView.layer.borderColor = UIColor.getAppThemeColor().cgColor
     }

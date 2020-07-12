@@ -24,7 +24,7 @@ class SignaturePreviewViewController : ETViewController{
         
     }
     func getSignature(){
-        interactor.delegate = self
+        interactor.signatureViewDelegate = self
         interactor.getSignature(signatureId: signatureId)
     }
     
