@@ -578,6 +578,7 @@
 		1098831524B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
 		1098831624B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
 		1098831724B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
+		1098832224BC48BE001F217C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098832124BC48BE001F217C /* Tests.swift */; };
 		109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */; };
 		109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E812484EEA4009446A0 /* GiftCardViewController.swift */; };
 		109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */; };
@@ -624,6 +625,16 @@
 		E2596048FB3FBD0D2CD866D9 /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E539CFEE9BD57A1C5B21BC98 /* Pods_EvolveGT_QA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1098832424BC48BE001F217C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1039FDF1244F1A1800190088 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 103B24E0249940BE00BB8CB9;
+			remoteInfo = "EvolveGT-QA";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		10048F03246D013800684A87 /* EventListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
@@ -802,6 +813,9 @@
 		10716FDA247BE20F0032C056 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
 		1098831024B5C899001F217C /* SelfSizeableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizeableTableView.swift; sourceTree = "<group>"; };
 		1098831424B5D21A001F217C /* AlertListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListController.swift; sourceTree = "<group>"; };
+		1098831F24BC48BE001F217C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1098832124BC48BE001F217C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		1098832324BC48BE001F217C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftCard.storyboard; sourceTree = "<group>"; };
 		109D6E812484EEA4009446A0 /* GiftCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardViewController.swift; sourceTree = "<group>"; };
 		109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardInteractor.swift; sourceTree = "<group>"; };
@@ -881,6 +895,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1098831C24BC48BE001F217C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,6 +1139,7 @@
 			isa = PBXGroup;
 			children = (
 				1039FDFB244F1A1800190088 /* EvolveGT-iOS */,
+				1098832024BC48BE001F217C /* Tests */,
 				1039FDFA244F1A1800190088 /* Products */,
 				B25958DA9322864B0E791DD4 /* Pods */,
 				9618B72B430B35C33B2F4B05 /* Frameworks */,
@@ -1132,6 +1154,7 @@
 				1039FDF9244F1A1800190088 /* Evolve GT.app */,
 				103B25B4249940BE00BB8CB9 /* EvolveGT-QA.app */,
 				103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */,
+				1098831F24BC48BE001F217C /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1463,6 +1486,15 @@
 			path = ProductDetails;
 			sourceTree = "<group>";
 		};
+		1098832024BC48BE001F217C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1098832124BC48BE001F217C /* Tests.swift */,
+				1098832324BC48BE001F217C /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		109D6E7E2484EE01009446A0 /* GiftCardList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1647,19 +1679,41 @@
 			productReference = 103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1098831E24BC48BE001F217C /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1098832624BC48BE001F217C /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				1098831B24BC48BE001F217C /* Sources */,
+				1098831C24BC48BE001F217C /* Frameworks */,
+				1098831D24BC48BE001F217C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1098832524BC48BE001F217C /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 1098831F24BC48BE001F217C /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1039FDF1244F1A1800190088 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = YaraTech;
 				TargetAttributes = {
 					1039FDF8244F1A1800190088 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
+					};
+					1098831E24BC48BE001F217C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 103B24E0249940BE00BB8CB9;
 					};
 				};
 			};
@@ -1679,6 +1733,7 @@
 				1039FDF8244F1A1800190088 /* EvolveGT-iOS */,
 				103B24E0249940BE00BB8CB9 /* EvolveGT-QA */,
 				103B25B6249940CC00BB8CB9 /* EvolveGT-UAT */,
+				1098831E24BC48BE001F217C /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -1780,6 +1835,13 @@
 				103B2680249940CC00BB8CB9 /* CreditHistory.storyboard in Resources */,
 				103B2681249940CC00BB8CB9 /* AlertStoryboard.storyboard in Resources */,
 				103B2682249940CC00BB8CB9 /* Guest.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1098831D24BC48BE001F217C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2461,7 +2523,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1098831B24BC48BE001F217C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1098832224BC48BE001F217C /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1098832524BC48BE001F217C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 103B24E0249940BE00BB8CB9 /* EvolveGT-QA */;
+			targetProxy = 1098832424BC48BE001F217C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1039FE07244F1A1A00190088 /* LaunchScreen.storyboard */ = {
@@ -2598,7 +2676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2621,7 +2699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2729,6 +2807,48 @@
 			};
 			name = Release;
 		};
+		1098832724BC48BE001F217C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaratech.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvolveGT-QA.app/EvolveGT-QA";
+			};
+			name = Debug;
+		};
+		1098832824BC48BE001F217C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaratech.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvolveGT-QA.app/EvolveGT-QA";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2764,6 +2884,15 @@
 			buildConfigurations = (
 				103B2685249940CC00BB8CB9 /* Debug */,
 				103B2687249940CC00BB8CB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1098832624BC48BE001F217C /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1098832724BC48BE001F217C /* Debug */,
+				1098832824BC48BE001F217C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
