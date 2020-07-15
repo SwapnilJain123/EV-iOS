@@ -16,7 +16,10 @@ class TabbedViewController: ETViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavbarControls()
-        enableSlideMenu()
+        
+        if AppEngine.sharedInstance.isUserLoggedIn(){
+            enableSlideMenu()
+        }
         
     }
     
@@ -37,7 +40,9 @@ class TabbedViewController: ETViewController {
                                                action: #selector(self.switchAppTheme))
            
         var navbarControls = [UIBarButtonItem]()
-        navbarControls.append(switchAppMode)
+        if AppEngine.sharedInstance.isUserLoggedIn(){
+            navbarControls.append(switchAppMode)
+        }
         let additionalControls = addNavBarControls()
         if additionalControls == nil{
             self.navigationItem.rightBarButtonItems = navbarControls
@@ -69,7 +74,12 @@ class TabbedViewController: ETViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.ext.showNavbar()
-        self.ext.hideBackButton()
+        
+        if AppEngine.sharedInstance.isUserLoggedIn(){
+            self.ext.hideBackButton()
+        }else{
+             self.ext.showBackButton()
+        }
     }
     
    

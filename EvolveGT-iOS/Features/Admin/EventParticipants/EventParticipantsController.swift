@@ -224,65 +224,44 @@ extension EventParticipantsController: EventParticipantCellDelegate{
         Log.i("Training Tap identified")
         //self.interactor.onAccessoriesClicked(participant: participant!)
         showListAlert(eventParticiapnt: participant!)
+        
     }
     
     func showListAlert(eventParticiapnt: EventParticipant){
     
         let alertService = AlertService()
-        let alertVC = alertService.alert(title: "Accessories", buttonTitle: "OK")
-        alertVC.titleHidden = true
+        let alertVC = alertService.createListAlertController(title: "Accessories", buttonTitle: "OK")
         
         Log.d("Training Count \(eventParticiapnt.trainings?.count ?? 0)")
         Log.d("Rental Count \(eventParticiapnt.rentals?.count ?? 0)")
+        
+        let alertData = AlertListData()
+       
+        
         if let trainings = eventParticiapnt.trainings{
-            let trainingTitle = createHeaderLabel(title: "Trainings")
-            alertVC.addView(child: trainingTitle)
-            trainingTitle.backgroundColor = UIColor.lightGray
-            
+           
+            alertData.simpleItemsTitle = "Trainings"
+            alertData.simpleItems = [String]()
             for training in trainings{
-                let trainingLabel = UILabel()
-                trainingLabel.text = training
-                alertVC.addView(child: trainingLabel)
+                alertData.simpleItems?.append(training)
             }
         }
         
         if let rentals = eventParticiapnt.rentals{
-            let rentalTitle  = createHeaderLabel(title: "Rentals")
-            alertVC.addView(child: rentalTitle)
-            rentalTitle.backgroundColor = UIColor.lightGray
+             alertData.keyValueItemsTitle = "Rentals"
+             alertData.keyValueItems = [AlertKeyValue]()
             
             for rental in rentals{
+                let keyValue = AlertKeyValue()
+                keyValue.key = rental.name.capitalized
+                keyValue.value = "\(rental.attribute.capitalized) - \(rental.value.capitalized)" 
+                alertData.keyValueItems!.append(keyValue)
                 
-                let stackView = UIStackView()
-                stackView.axis = .horizontal
-                stackView.alignment = .fill // .leading .firstBaseline .center .trailing .lastBaseline
-                stackView.distribution = .fillEqually
-                stackView.spacing = 10
-                
-                let rentalLabel = UILabel()
-                rentalLabel.text = rental.name
-                
-                let rentalValue = UILabel()
-                rentalValue.text = "\(rental.attribute.capitalized) : \(rental.value)"
-                
-                stackView.addArrangedSubview(rentalLabel)
-                stackView.addArrangedSubview(rentalValue)
-                
-                alertVC.addView(child: stackView)
             }
         }
-        
+        alertVC.alertDataList = alertData
         present(alertVC, animated: true)
     }
     
-    func createHeaderLabel(title: String)->UIView{
-        let label = UIButton()
-                   
-       label.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-       label.setTitle(title, for: .normal)
-       label.tintColor = .black // this will be the textColor
-       label.isUserInteractionEnabled = false
-        
-        return label
-    }
+    
 }

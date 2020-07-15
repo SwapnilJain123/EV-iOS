@@ -30,7 +30,9 @@ struct MessageConstants {
     static let KPromptServerConectError = "Server connection error"
     
     static let externalLink = "Would you like to open this event in browser?"
+    static let loginRequired = "Only logged in users can add items to cart. Would you like to login?"
     
+     static let guestCart = "You must be logged in to complete the checkout. \n\nWould you like to login?"
     static let txtRaceLicenceRequired = """
 <p>
       A race license is required to participate in Motogladiator racing. Please sign up for the Race Certification
@@ -124,6 +126,7 @@ struct LoadingIndicatorMessages {
      static let savingAgreement = "Saving policy agreement..."
     
      static let readingPrefernces = "Please wait, reading your preferences..."
+     static let upgradingSkill = "Upgrading skill..."
     
 }
 
@@ -201,4 +204,5 @@ struct AlertTitle{
     static let raceLicenceRequired = "Race Licence is Required"
     static let skillNotEligible = "Skill Not Eligible"
     static let externalHost = "External Host"
+     static let loginRequired = "Login Required"
 }

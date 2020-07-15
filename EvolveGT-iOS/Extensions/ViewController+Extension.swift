@@ -293,6 +293,10 @@ extension UIViewController{
             let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
             appDelegate?.launchAdminDashboard()
         }
+        func switchToLoginPage () {
+            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.launchLoginScreen()
+        }
         
         func switchToUserDashboard () {
             let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate

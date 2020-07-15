@@ -85,6 +85,12 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         let controller = UIStoryboard.init(name: "Guest", bundle: nil).instantiateViewController(withIdentifier: "GuestVC") as! GuestViewController
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    
+    @IBAction func didPressForgotPassword(_ sender: Any) {
+        
+        self.ext.pushViewController(storyBoard: "Main", VCIdentifier: "ForgotPasswordVC")
+    }
 }
 
 extension LoginViewController : LoginViewDelegate{

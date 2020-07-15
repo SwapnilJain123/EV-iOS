@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class CartListController : TabbedViewController, CartListDelegate{
     
+    @IBOutlet weak var guestMessage: UILabel!
     let interactor = CartInteractor()
     var cartItems = [CartItem]()
     
@@ -38,7 +39,14 @@ class CartListController : TabbedViewController, CartListDelegate{
         totalPrice(total: 0)
         outOfStockLabel.isHidden = true
         
-        interactor.fetchCartList()
+        if AppEngine.sharedInstance.isUserLoggedIn(){
+            guestMessage.isHidden = true
+            interactor.fetchCartList()
+        }else{
+            guestMessage.isHidden = false
+            guestMessage.text = MessageConstants.guestCart
+            btnCheckout.setTitle("Login", for: .normal)
+        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -74,10 +82,14 @@ class CartListController : TabbedViewController, CartListDelegate{
         }
     }
     @IBAction func didPressCheckoutButton(_ sender: Any) {
-        let vc =  self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "ReviewCartVC") as! ReviewCartController
-        vc.interactor = self.interactor
-        vc.cartItems = self.cartItems
-        self.ext.pushViewController(viewController: vc)
+        if !AppEngine.sharedInstance.isUserLoggedIn(){
+            self.dashboardManager.switchToLoginPage()
+        }else{
+            let vc =  self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "ReviewCartVC") as! ReviewCartController
+            vc.interactor = self.interactor
+            vc.cartItems = self.cartItems
+            self.ext.pushViewController(viewController: vc)
+        }
     }
 }
 extension CartListController: UITableViewDataSource, UITableViewDelegate{

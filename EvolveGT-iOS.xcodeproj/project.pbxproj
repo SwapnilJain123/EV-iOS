@@ -572,6 +572,13 @@
 		10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD62479A9920032C056 /* ProductDetailsCells.swift */; };
 		10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD8247AF8AF0032C056 /* ProductDetails.swift */; };
 		10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FDA247BE20F0032C056 /* DropDownList.swift */; };
+		1098831124B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
+		1098831224B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
+		1098831324B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
+		1098831524B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
+		1098831624B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
+		1098831724B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
+		1098832224BC48BE001F217C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098832124BC48BE001F217C /* Tests.swift */; };
 		109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */; };
 		109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E812484EEA4009446A0 /* GiftCardViewController.swift */; };
 		109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */; };
@@ -618,6 +625,16 @@
 		E2596048FB3FBD0D2CD866D9 /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E539CFEE9BD57A1C5B21BC98 /* Pods_EvolveGT_QA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1098832424BC48BE001F217C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1039FDF1244F1A1800190088 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 103B24E0249940BE00BB8CB9;
+			remoteInfo = "EvolveGT-QA";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		10048F03246D013800684A87 /* EventListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
@@ -794,6 +811,11 @@
 		10716FD62479A9920032C056 /* ProductDetailsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCells.swift; sourceTree = "<group>"; };
 		10716FD8247AF8AF0032C056 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		10716FDA247BE20F0032C056 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		1098831024B5C899001F217C /* SelfSizeableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizeableTableView.swift; sourceTree = "<group>"; };
+		1098831424B5D21A001F217C /* AlertListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListController.swift; sourceTree = "<group>"; };
+		1098831F24BC48BE001F217C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1098832124BC48BE001F217C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		1098832324BC48BE001F217C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftCard.storyboard; sourceTree = "<group>"; };
 		109D6E812484EEA4009446A0 /* GiftCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardViewController.swift; sourceTree = "<group>"; };
 		109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardInteractor.swift; sourceTree = "<group>"; };
@@ -873,6 +895,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1098831C24BC48BE001F217C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1139,7 @@
 			isa = PBXGroup;
 			children = (
 				1039FDFB244F1A1800190088 /* EvolveGT-iOS */,
+				1098832024BC48BE001F217C /* Tests */,
 				1039FDFA244F1A1800190088 /* Products */,
 				B25958DA9322864B0E791DD4 /* Pods */,
 				9618B72B430B35C33B2F4B05 /* Frameworks */,
@@ -1124,6 +1154,7 @@
 				1039FDF9244F1A1800190088 /* Evolve GT.app */,
 				103B25B4249940BE00BB8CB9 /* EvolveGT-QA.app */,
 				103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */,
+				1098831F24BC48BE001F217C /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1455,6 +1486,15 @@
 			path = ProductDetails;
 			sourceTree = "<group>";
 		};
+		1098832024BC48BE001F217C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1098832124BC48BE001F217C /* Tests.swift */,
+				1098832324BC48BE001F217C /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		109D6E7E2484EE01009446A0 /* GiftCardList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1505,6 +1545,7 @@
 				10BDD024245B100700F05700 /* CustomViews */,
 				10BDD023245B0FF300F05700 /* Alert */,
 				104BDFCD24A9202D00E198FF /* SlidingTabController.swift */,
+				1098831024B5C899001F217C /* SelfSizeableTableView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1526,6 +1567,7 @@
 				10BDD01724598AAF00F05700 /* AlertViewController.swift */,
 				10BDD011245982ED00F05700 /* AlertService.swift */,
 				10716FB124741EB90032C056 /* SimpleAlertController.swift */,
+				1098831424B5D21A001F217C /* AlertListController.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1637,19 +1679,41 @@
 			productReference = 103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1098831E24BC48BE001F217C /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1098832624BC48BE001F217C /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				1098831B24BC48BE001F217C /* Sources */,
+				1098831C24BC48BE001F217C /* Frameworks */,
+				1098831D24BC48BE001F217C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1098832524BC48BE001F217C /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 1098831F24BC48BE001F217C /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1039FDF1244F1A1800190088 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = YaraTech;
 				TargetAttributes = {
 					1039FDF8244F1A1800190088 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
+					};
+					1098831E24BC48BE001F217C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 103B24E0249940BE00BB8CB9;
 					};
 				};
 			};
@@ -1669,6 +1733,7 @@
 				1039FDF8244F1A1800190088 /* EvolveGT-iOS */,
 				103B24E0249940BE00BB8CB9 /* EvolveGT-QA */,
 				103B25B6249940CC00BB8CB9 /* EvolveGT-UAT */,
+				1098831E24BC48BE001F217C /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -1770,6 +1835,13 @@
 				103B2680249940CC00BB8CB9 /* CreditHistory.storyboard in Resources */,
 				103B2681249940CC00BB8CB9 /* AlertStoryboard.storyboard in Resources */,
 				103B2682249940CC00BB8CB9 /* Guest.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1098831D24BC48BE001F217C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1934,6 +2006,7 @@
 				10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				10048F44246F094800684A87 /* AboutUsViewController.swift in Sources */,
+				1098831124B5C899001F217C /* SelfSizeableTableView.swift in Sources */,
 				10336649247FF4BB009AF19A /* CartReviewCells.swift in Sources */,
 				1033460224608C7500D5EED0 /* UserDataRequest.swift in Sources */,
 				1033666E2483AE98009AF19A /* ArchieCard.swift in Sources */,
@@ -1997,6 +2070,7 @@
 				103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
 				10716FC22478290B0032C056 /* Product.swift in Sources */,
+				1098831524B5D21A001F217C /* AlertListController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
 				10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */,
 				10716FD52479A63C0032C056 /* ProductDetailsController.swift in Sources */,
@@ -2117,6 +2191,7 @@
 				103B2503249940BE00BB8CB9 /* ShippingIndicator.swift in Sources */,
 				103B2504249940BE00BB8CB9 /* UserApiConstants.swift in Sources */,
 				103B2505249940BE00BB8CB9 /* AboutUsViewController.swift in Sources */,
+				1098831224B5C899001F217C /* SelfSizeableTableView.swift in Sources */,
 				103B2506249940BE00BB8CB9 /* CartReviewCells.swift in Sources */,
 				103B2507249940BE00BB8CB9 /* UserDataRequest.swift in Sources */,
 				103B2509249940BE00BB8CB9 /* ArchieCard.swift in Sources */,
@@ -2180,6 +2255,7 @@
 				103B2542249940BE00BB8CB9 /* UpcomingEventsController.swift in Sources */,
 				103B2543249940BE00BB8CB9 /* ETViewController.swift in Sources */,
 				103B2544249940BE00BB8CB9 /* Product.swift in Sources */,
+				1098831624B5D21A001F217C /* AlertListController.swift in Sources */,
 				103B2545249940BE00BB8CB9 /* BaseApiAdapter.swift in Sources */,
 				103B2546249940BE00BB8CB9 /* ChangePasswordViewController.swift in Sources */,
 				103B2547249940BE00BB8CB9 /* ProductDetailsController.swift in Sources */,
@@ -2300,6 +2376,7 @@
 				103B25D9249940CC00BB8CB9 /* ShippingIndicator.swift in Sources */,
 				103B25DA249940CC00BB8CB9 /* UserApiConstants.swift in Sources */,
 				103B25DB249940CC00BB8CB9 /* AboutUsViewController.swift in Sources */,
+				1098831324B5C899001F217C /* SelfSizeableTableView.swift in Sources */,
 				103B25DC249940CC00BB8CB9 /* CartReviewCells.swift in Sources */,
 				103B25DD249940CC00BB8CB9 /* UserDataRequest.swift in Sources */,
 				103B25DF249940CC00BB8CB9 /* ArchieCard.swift in Sources */,
@@ -2363,6 +2440,7 @@
 				103B2618249940CC00BB8CB9 /* UpcomingEventsController.swift in Sources */,
 				103B2619249940CC00BB8CB9 /* ETViewController.swift in Sources */,
 				103B261A249940CC00BB8CB9 /* Product.swift in Sources */,
+				1098831724B5D21A001F217C /* AlertListController.swift in Sources */,
 				103B261B249940CC00BB8CB9 /* BaseApiAdapter.swift in Sources */,
 				103B261C249940CC00BB8CB9 /* ChangePasswordViewController.swift in Sources */,
 				103B261D249940CC00BB8CB9 /* ProductDetailsController.swift in Sources */,
@@ -2445,7 +2523,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1098831B24BC48BE001F217C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1098832224BC48BE001F217C /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1098832524BC48BE001F217C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 103B24E0249940BE00BB8CB9 /* EvolveGT-QA */;
+			targetProxy = 1098832424BC48BE001F217C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1039FE07244F1A1A00190088 /* LaunchScreen.storyboard */ = {
@@ -2582,14 +2676,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.2;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = "Evolve GT";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -2605,14 +2699,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.2;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = "Evolve GT";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -2674,7 +2768,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.3;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-Dev copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2697,7 +2791,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.3;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-Dev copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2710,6 +2804,48 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1098832724BC48BE001F217C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaratech.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvolveGT-QA.app/EvolveGT-QA";
+			};
+			name = Debug;
+		};
+		1098832824BC48BE001F217C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMHPJG5Y5N;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaratech.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvolveGT-QA.app/EvolveGT-QA";
 			};
 			name = Release;
 		};
@@ -2748,6 +2884,15 @@
 			buildConfigurations = (
 				103B2685249940CC00BB8CB9 /* Debug */,
 				103B2687249940CC00BB8CB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1098832624BC48BE001F217C /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1098832724BC48BE001F217C /* Debug */,
+				1098832824BC48BE001F217C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
