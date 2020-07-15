@@ -34,7 +34,7 @@ class EventDetailsController : ETViewController{
         eventDetails?.slug = self.eventSlug
         
         interactor.eventDetailsDelegate = self
-       
+        
     }
     
     override func getScreenTitle() -> String? {
@@ -43,25 +43,33 @@ class EventDetailsController : ETViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         interactor.fetchEventDetails(slug: eventSlug, isMotoEvent: isMotoEvent)
+        interactor.fetchEventDetails(slug: eventSlug, isMotoEvent: isMotoEvent)
         btnAddToCart.applyColorTheme()
         
     }
     @IBAction func didPressAddToCart(_ sender: Any) {
-        eventDetails?.slug = self.eventSlug
-        if eventDetails?.external != nil{
-            self.ext.confirmationAlert(title: AlertTitle.externalHost, message: MessageConstants.externalLink, btnText: "Open"){
-                self.ext.openLink(self.eventDetails!.external!.url!)
+        
+        if !AppEngine.sharedInstance.isUserLoggedIn(){
+            self.ext.confirmationAlert(title: AlertTitle.loginRequired, message: MessageConstants.loginRequired, btnText: "Login"){
+                self.dashboardManager.switchToLoginPage()
                 return
             }
-        }else if (eventDetails?.isPrivateEvent ?? false) {
-            //Mark: get the private code
-            addPrivateEventToCart(eventDetails!)
-        }else  if isMotoEvent{
-            addMotoEventToCart()
-            
         }else{
-            interactor.addEvolveEventToCart(eventDetails!)
+            eventDetails?.slug = self.eventSlug
+            if eventDetails?.external != nil{
+                self.ext.confirmationAlert(title: AlertTitle.externalHost, message: MessageConstants.externalLink, btnText: "Open"){
+                    self.ext.openLink(self.eventDetails!.external!.url!)
+                    return
+                }
+            }else if (eventDetails?.isPrivateEvent ?? false) {
+                //Mark: get the private code
+                addPrivateEventToCart(eventDetails!)
+            }else  if isMotoEvent{
+                addMotoEventToCart()
+                
+            }else{
+                interactor.addEvolveEventToCart(eventDetails!)
+            }
         }
     }
     
@@ -81,6 +89,7 @@ class EventDetailsController : ETViewController{
         }
     }
     func addPrivateEventToCart(_ event: EventDetails){
+        
         let alert = UIAlertController(title: "Enter your secret code", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
@@ -97,6 +106,7 @@ class EventDetailsController : ETViewController{
         }))
         
         self.navigationController?.present(alert, animated: true)
+        
     }
     
     func addPrivateEventToCart(_ event: Event){

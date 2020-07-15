@@ -11,6 +11,7 @@ import SkyFloatingLabelTextField
 class ForgotPasswordController: ETViewController {
 
     
+    @IBOutlet weak var lblEmailDisclaimer: UILabel!
     @IBOutlet weak var iconForgotPassword: UIImageView!
     
     @IBOutlet weak var errorView: UILabel!
@@ -32,7 +33,11 @@ class ForgotPasswordController: ETViewController {
         
         if BuildScheme.isBuildQA{
         tfEmail.text! = "geevar83@gmail.com"
+        }else{
+            tfEmail.text! = ""
         }
+        
+        lblEmailDisclaimer.text = "Please provide your registered email. We will send the password reset link to this email."
     }
     
     override func getScreenTitle() -> String? {

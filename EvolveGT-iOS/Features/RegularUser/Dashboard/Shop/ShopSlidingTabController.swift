@@ -48,6 +48,7 @@ class ShopSlidingTabController: ETViewController{
             let productListVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ProductList") as! ProductListController
             productListVC.category = category
             productListVC.source = source
+            productListVC.holderVC = self
             slidingTabController.addItem(item: productListVC, title: category.title ?? "")
         }
     }

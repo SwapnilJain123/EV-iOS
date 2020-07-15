@@ -24,7 +24,14 @@ class ArchieCardDetailsViewController: ETViewController,ArchieCardDetailsDelegat
     
     @IBAction func addToCartButtonPressed(_ sender: UIButton) {
         
-        archieCardInteractor.addArchieCardToCart(archieCard: archieCardDetails, quantity: quantity)
+        if !AppEngine.sharedInstance.isUserLoggedIn(){
+            self.ext.confirmationAlert(title: AlertTitle.loginRequired, message: MessageConstants.loginRequired, btnText: "Login"){
+                self.dashboardManager.switchToLoginPage()
+                return
+            }
+        }else{
+            archieCardInteractor.addArchieCardToCart(archieCard: archieCardDetails, quantity: quantity)
+        }
         
         
     }

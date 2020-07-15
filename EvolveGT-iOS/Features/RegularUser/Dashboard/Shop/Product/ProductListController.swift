@@ -19,7 +19,7 @@ class ProductListController : ETViewController{
     let interactor = ShopsInteractor()
     
     var productList = [Product]()
-    
+    var holderVC : UIViewController?
     
     
     override func viewDidLoad() {
@@ -78,7 +78,12 @@ extension ProductListController : UICollectionViewDataSource, UICollectionViewDe
         let detailsVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ProductDetailsVC") as! ProductDetailsController
         detailsVC.productSlug = productList[indexPath.row].slug ?? ""
         detailsVC.productName = productList[indexPath.row].title ?? ""
-        self.ext.pushViewController(viewController: detailsVC)
+        
+        if holderVC == nil{
+            self.ext.pushViewController(viewController: detailsVC)
+        }else{
+            holderVC?.navigationController?.pushViewController(detailsVC, animated: true)
+        }
     }
     
 }

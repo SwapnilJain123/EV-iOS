@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ProductDetailsController : ETViewController, ProductDetailsDelegate{
-   
+    
     
     @IBOutlet weak var productDetailsView: UITableView!
     
@@ -31,9 +31,9 @@ class ProductDetailsController : ETViewController, ProductDetailsDelegate{
         btnAddToCart.isEnabled = false
         
         interactor.viewDelegate = self
-              interactor.productDetailsDelegate = self
-              interactor.fetchProductDetails(slug: productSlug)
-       
+        interactor.productDetailsDelegate = self
+        interactor.fetchProductDetails(slug: productSlug)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,14 +53,22 @@ class ProductDetailsController : ETViewController, ProductDetailsDelegate{
         sections = interactor.getProductDetailsSections(details: productDetails)
         productDetailsView.reloadData()
         enableAddToCart(enabled: !productDetails.isOutOfStock)
-       }
+    }
     func enableAddToCart(enabled : Bool){
         btnAddToCart.isEnabled = enabled
     }
     
     
     @IBAction func didPressAddToCart(_ sender: Any) {
-        interactor.addProductToCart(productDetails: self.productDetails)
+        
+        if !AppEngine.sharedInstance.isUserLoggedIn(){
+            self.ext.confirmationAlert(title: AlertTitle.loginRequired, message: MessageConstants.loginRequired, btnText: "Login"){
+                self.dashboardManager.switchToLoginPage()
+                return
+            }
+        }else{
+            interactor.addProductToCart(productDetails: self.productDetails)
+        }
     }
 }
 extension ProductDetailsController: UITableViewDelegate, UITableViewDataSource{
@@ -110,10 +118,10 @@ extension ProductDetailsController: UITableViewDelegate, UITableViewDataSource{
 }
 extension ProductDetailsController: ProductVariantsCellDelegate{
     func didChangeVariantSelection(indexPath: IndexPath) {
-       
+        
         enableAddToCart(enabled: !productDetails.isOutOfStock)
         sections = interactor.getProductDetailsSections(details: self.productDetails)
-         productDetailsView.reloadData()
+        productDetailsView.reloadData()
     }
     
     

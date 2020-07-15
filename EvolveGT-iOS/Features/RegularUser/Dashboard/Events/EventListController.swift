@@ -205,8 +205,12 @@ extension EventListController{
 extension EventListController: EventListCellDelegate{
     func addEventToCart(_ event: Event) {
         
-        
-        if (event.isPrivateEvent ?? false) {
+        if !AppEngine.sharedInstance.isUserLoggedIn(){
+            self.ext.confirmationAlert(title: AlertTitle.loginRequired, message: MessageConstants.loginRequired, btnText: "Login"){
+                self.dashboardManager.switchToLoginPage()
+                return
+            }
+        }else if (event.isPrivateEvent ?? false) {
             //Mark: get the private code
             
            addPrivateEventToCart(event)
