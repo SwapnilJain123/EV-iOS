@@ -212,10 +212,11 @@ open class DropDownList : UITextField{
         if height < (keyboardHeight+tableheightX){
             y = self.pointToParent.y - tableheightX
         }
-        UIView.animate(withDuration: 0.9,
+        
+        UIView.animate(withDuration: 0.1,
                        delay: 0,
-                       usingSpringWithDamping: 0.4,
-                       initialSpringVelocity: 0.1,
+                       usingSpringWithDamping: 0.1,
+                       initialSpringVelocity: 0.05,
                        options: .curveEaseInOut,
                        animations: { () -> Void in
 
