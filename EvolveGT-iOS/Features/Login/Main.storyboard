@@ -121,7 +121,7 @@
                                     <color key="titleColor" red="0.15684100989999999" green="0.1568752527" blue="0.15683883430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="O4f-Wy-Suh" kind="presentation" id="Iwf-7v-HUJ"/>
+                                    <action selector="didPressForgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3cA-ts-Mzb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-Pg-qW3">

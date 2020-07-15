@@ -61,6 +61,7 @@ extension ForgotPasswordController:ForgotPasswordDelegate{
         
        let VC =  self.ext.getViewController(storyBoard: "Main", VCIdentifier: "PasswordResetAckVC") as! PwdResetAckController
         VC.message = message
+        //self.present(VC, animated: true, completion: nil)
         self.navigationController?.pushViewController(VC, animated: false)
        
     }
