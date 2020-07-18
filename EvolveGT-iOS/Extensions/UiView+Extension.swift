@@ -48,4 +48,16 @@ extension UIView {
         self.layer.borderWidth = width
         self.layer.borderColor = borderColor.cgColor
     }
+    
+    func setGradientBackground(startColor: UIColor, endColor:UIColor){
+        
+        let colorTop =  startColor.cgColor
+        let colorBottom = endColor.cgColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, at:0)
+        
+    }
 }

@@ -80,7 +80,7 @@ class SectionEventInfoCell: UITableViewCell{
         
        
         eventName?.text = "Event: \(event.productName ?? "")"
-        eventDate.text = "Event Date: \(event.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        eventDate.text = "Event Date: \(event.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         orderDate.text = "Order Date: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         if let imgUrl = event.eventImage{
             

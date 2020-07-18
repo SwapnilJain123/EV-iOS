@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import AFDateHelper
+
 extension String{
     static let FORMAT_DD_MMM_YYYY = "dd MMM YYYY"
     static let FORMAT_API_DATE = "yyyy-MM-dd HH:mm:ss"
@@ -17,44 +17,57 @@ extension String{
     static let FORMAT_YYYY_MM_DD = "yyyyMMdd"
     static let FORMAT_YYYY_MM_DD_HIPHEN = "yyyy-MM-dd"
     
-    func formattedDate(outputFormat: String) -> String {
-       
-        let date = Date(fromString: self, format: .isoDate)
-        let formattedDate = date?.toString(format: .custom(outputFormat)) ?? self
-        
-        return formattedDate
-    }
     
-    func convertToDate() -> Date? {
-       
-        let date = Date(fromString: self, format: .isoDate)
-        return date
+    private func convert(fromDateFormat: String, toDateFormat: String) -> String {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = fromDateFormat
+
+        if let fromDateObject = dateFormatter.date(from: self) {
+            dateFormatter.dateFormat = toDateFormat
+            let newDateString = dateFormatter.string(from: fromDateObject)
+            return newDateString
+        }
+
+        return self
+    }
+
+    
+    
+    func createDate(inPattern: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = inPattern
+
+        return dateFormatter.date(from: self) ?? Date()
     }
     
     static func getCurrentDate(format: String) -> String{
         let today = Date()
-        let formattedToday = today.toString(format: .custom(format))
+        let formattedToday = today.toString(outputPattern: format)
         return formattedToday
     }
     
     func formattedDate(inputPattern: String, outputFormat: String) -> String {
-       
-        let date = Date(fromString: self, format: .custom(inputPattern))
-        let formattedDate = date?.toString(format: .custom(outputFormat)) ?? self
-        
-        return formattedDate
+        return convert(fromDateFormat: inputPattern, toDateFormat: outputFormat)
     }
     
-    func isEalierThanToday() -> Bool{
-        let today = Date()
-        let formattedToday = today.toString(format: .custom(.FORMAT_YYYY_MM_DD))
-        
-        return self.formattedDate(outputFormat: .FORMAT_YYYY_MM_DD) < formattedToday
-    }
+   
     func isEalierThanToday(dateFormat: String) -> Bool{
-        let today = Date()
-        let formattedToday = today.toString(format: .custom(.FORMAT_YYYY_MM_DD))
+       let today = Date().toString(outputPattern: .FORMAT_YYYY_MM_DD)
+        let date = createDate(inPattern: dateFormat).toString(outputPattern: .FORMAT_YYYY_MM_DD)
         
-        return self.formattedDate(inputPattern: dateFormat, outputFormat: .FORMAT_YYYY_MM_DD) < formattedToday
+        return today > date
     }
+}
+extension Date{
+     
+    func toString(outputPattern: String) -> String{
+        let dateFormatter = DateFormatter()
+       dateFormatter.dateFormat = outputPattern
+       let newDateString = dateFormatter.string(from: self)
+       return newDateString
+               
+    }
+    
+    
 }

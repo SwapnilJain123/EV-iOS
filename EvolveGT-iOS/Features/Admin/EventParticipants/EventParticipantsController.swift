@@ -98,7 +98,7 @@ class EventParticipantsController : ETViewController{
             eventBanner.kf.setImage(with: url,placeholder: fallbackImage,  options: [.transition(ImageTransition.fade(1))])
         }
         eventTitle.text = completedEvent?.title ?? ""
-        eventDate.text = completedEvent?.eventDate.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? ""
+        eventDate.text = completedEvent?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? ""
     }
 }
 extension EventParticipantsController : EventParticipantsViewDelegate, SignatureRefreshDelegate{

@@ -45,10 +45,10 @@ class EnrolledEventsInteractor: BaseInteractor {
                         })
                         
                         let pastEvents = sortedEvents?.filter({
-                            ($0.eventDate?.isEalierThanToday() ?? false)
+                            ($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
                         })
                         let upComingEvents = sortedEvents?.filter({
-                            !($0.eventDate?.isEalierThanToday() ?? false)
+                            !($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
                         })
                         
                         self.enrolledEventsDelegate?.didFetchAllEvents(events: sortedEvents!)

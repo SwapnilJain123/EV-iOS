@@ -9,9 +9,9 @@
 import Foundation
 struct CompletedEvent: Decodable {
    
-        var eventID, title, eventDate: String
-        var eventLogo: String
-        var eventType: String
+        var eventID, title, eventDate: String?
+        var eventLogo: String?
+        var eventType: String?
         var trainingType: [String]?
 
         enum CodingKeys: String, CodingKey {
@@ -23,6 +23,8 @@ struct CompletedEvent: Decodable {
             case trainingType = "training_type"
         }
    
-
+    var eventMonthYear: String{
+        eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_MMM_YYYY) ?? ""
+    }
     
 }

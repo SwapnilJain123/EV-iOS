@@ -67,7 +67,7 @@ class EventListCell: UICollectionViewCell {
             
         }
         eventName.text! = event?.title ?? ""
-        eventDate.text = "Event Date: \(event?.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        eventDate.text = "Event Date: \(event?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         hostedBy.text = "Hosted By \(event?.eventType ?? "")"
         price.text = "Starting From: \((event?.getRoleBasedPrice(role: AppEngine.sharedInstance.userRole) ?? String.DEFAULT_AMOUNT).formatToAmount())"
         
@@ -170,7 +170,7 @@ class EventGridCell: UICollectionViewCell {
             
         }
         eventName.text! = event?.title ?? ""
-        eventDate.text = "Event Date: \(event?.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        eventDate.text = "Event Date: \(event?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         hostedBy.text = "Hosted By \(event?.eventType ?? "")"
         price.text = "Starting From: \((event?.getRoleBasedPrice(role: AppEngine.sharedInstance.userRole) ?? String.DEFAULT_AMOUNT).formatToAmount())"
         

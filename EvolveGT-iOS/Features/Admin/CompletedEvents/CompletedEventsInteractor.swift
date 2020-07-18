@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import  AFDateHelper
 protocol CompletedEventsViewDelegate : BaseViewDelegate{
     
     func didFetchCompletedEvents(events : [CompletedEvent])
@@ -66,7 +65,7 @@ class CompletedEventsInteractor : BaseInteractor{
             self.adminDelegate?.didFetchCompletedEvents(events: completedEvents)
         }else{
             let filteredEvents =  completedEvents.filter{
-                $0.title.lowercased().starts(with: query.lowercased())
+                ($0.title?.lowercased().starts(with: query.lowercased()) ?? false)
             }
             self.adminDelegate?.didFetchCompletedEvents(events: filteredEvents)
         }
@@ -81,11 +80,11 @@ class CompletedEventsInteractor : BaseInteractor{
         switch filterType {
         case .eventType:
             filteredList = self.completedEvents.filter {
-                $0.eventType.lowercased() == query.lowercased()
+                $0.eventType?.lowercased() ?? "" == query.lowercased()
                 
             }
         case .month:
-            filteredList = self.completedEvents.filter { $0.eventDate.formattedDate(outputFormat: .FORMAT_MMM_YYYY).lowercased() == query.lowercased()
+            filteredList = self.completedEvents.filter { $0.eventMonthYear.lowercased() == query.lowercased()
             }
         case .trainingType:
             filteredList = self.completedEvents.filter { ($0.trainingType?.contains(query) ?? false)
@@ -107,15 +106,8 @@ class CompletedEventsInteractor : BaseInteractor{
             self.adminDelegate?.presentTrainingFilterOptions(options: trainings)
         case .month:
             Log.d("Filter By Month")
-            
-            let sortedEvents = completedEvents.sorted(by: { $0.eventDate < $1.eventDate })
-            var eventMonths = sortedEvents.compactMap { $0.eventDate }.map{
-                $0.formattedDate(outputFormat: .FORMAT_YYYY_MM)
-            }.unique().sorted(by: <)
-            eventMonths = eventMonths.map{
-                let dateString = "\($0) 15"
-                 return dateString.formattedDate(outputFormat: .FORMAT_MMM_YYYY)
-            }
+            let eventMonths = completedEvents.compactMap { $0.eventMonthYear }.unique().sorted(by: <)
+           
             self.adminDelegate?.presentMonthFilterOptions(options: eventMonths)
         case .eventType:
             Log.d("Filter By Event")

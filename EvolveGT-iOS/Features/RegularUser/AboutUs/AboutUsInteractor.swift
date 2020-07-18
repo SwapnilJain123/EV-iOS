@@ -24,9 +24,9 @@ class AboutUsInteractor:BaseInteractor{
                 
                 if let appVersion = self.decodeFromJson(data! , modelType: AppVersion.self){
                     if appVersion.iosVersionCode ?? "1.0" > BuildScheme.getBuildVersion(){
-                        self.aboutUselegate?.getAppVersionUpdateMessage(message: SuccessMessages.latestVersion)
+                        self.aboutUselegate?.getAppVersionUpdateMessage(message: SuccessMessages.newVersionAvailable)
                     }else{
-                        self.aboutUselegate?.getAppVersionUpdateMessage(message: SuccessMessages.oldVersion)
+                        self.aboutUselegate?.getAppVersionUpdateMessage(message: SuccessMessages.latestVersionInstalled)
                     }
                 }else{
                     self.aboutUselegate?.getAppVersionUpdateMessage(message: "")

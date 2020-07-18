@@ -9,6 +9,8 @@
 import UIKit
 
 class AboutUsViewController: ETViewController, AboutUsInteractorDelegate{
+    
+    @IBOutlet weak var aboutUsLogo: UIImageView!
     func getAppVersionUpdateMessage(message: String) {
         updateLabel.text! = message
     }
@@ -35,6 +37,17 @@ class AboutUsViewController: ETViewController, AboutUsInteractorDelegate{
         super.viewWillAppear(animated)
         self.ext.showNavbar()
         self.ext.showBackButton()
+        
+        if AppEngine.sharedInstance.isEvApp(){
+            let bgImage = UIImage(named: "splash_logo")
+            aboutUsLogo.image = bgImage
+            self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientEVEnd())
+        }else{
+            
+            //let bgImage = nil//UIImage(named: "moto_shop_background")
+            aboutUsLogo.image = nil
+            self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientMotoEnd())
+        }
         
     }
     

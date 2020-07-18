@@ -187,8 +187,8 @@ struct SuccessMessages {
     static let archieCardtAddedToCart = "Your Archie Card has been added to the cart successfully."
     static let giftCardtAddedToCart = "Your Gift Card has been added to the cart successfully."
     
-    static let latestVersion =  "The latest version is already installed."
-    static let oldVersion = "New version available in store. Please update."
+    static let latestVersionInstalled =  "The latest version is already installed."
+    static let newVersionAvailable = "New version available in store. Please update."
     static let cartItemDeleted = "Successfully deleted."
     static let eventCancelled = "Event Cancelled successfully."
      static let membershipAddedToCart = "Your membership has been added to the cart successfully."

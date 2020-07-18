@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,14 +12,11 @@
         <!--About Us View Controller-->
         <scene sceneID="DMM-x0-fB6">
             <objects>
-                <viewController storyboardIdentifier="aboutUsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mOI-b3-G6A" customClass="AboutUsViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutUsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mOI-b3-G6A" customClass="AboutUsViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dMb-lQ-oRr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg" translatesAutoresizingMaskIntoConstraints="NO" id="TK5-42-b3a">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Cz-Bw-wx0">
                                 <rect key="frame" x="107" y="343" width="200" height="220"/>
                                 <constraints>
@@ -50,19 +47,16 @@
                         </subviews>
                         <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
-                            <constraint firstItem="TK5-42-b3a" firstAttribute="trailing" secondItem="amC-7M-f5k" secondAttribute="trailing" id="DtL-Y7-sNJ"/>
                             <constraint firstItem="2Cz-Bw-wx0" firstAttribute="centerY" secondItem="amC-7M-f5k" secondAttribute="centerY" id="Etz-bg-j3P"/>
                             <constraint firstItem="2Cz-Bw-wx0" firstAttribute="centerX" secondItem="amC-7M-f5k" secondAttribute="centerX" id="KTg-tw-Qb1"/>
-                            <constraint firstAttribute="bottom" secondItem="TK5-42-b3a" secondAttribute="bottom" id="WEf-oy-rlK"/>
                             <constraint firstItem="u9x-Jb-7SM" firstAttribute="leading" secondItem="dMb-lQ-oRr" secondAttribute="leadingMargin" constant="10" id="amM-Wa-q7F"/>
                             <constraint firstItem="amC-7M-f5k" firstAttribute="bottom" secondItem="u9x-Jb-7SM" secondAttribute="bottom" constant="50" id="goh-xO-W4v"/>
-                            <constraint firstItem="TK5-42-b3a" firstAttribute="leading" secondItem="amC-7M-f5k" secondAttribute="leading" id="grp-bI-lZA"/>
-                            <constraint firstItem="TK5-42-b3a" firstAttribute="top" secondItem="dMb-lQ-oRr" secondAttribute="top" id="k7n-lx-MqF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u9x-Jb-7SM" secondAttribute="trailing" constant="10" id="knv-7Z-w4a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="amC-7M-f5k"/>
                     </view>
                     <connections>
+                        <outlet property="aboutUsLogo" destination="2Cz-Bw-wx0" id="amE-Rm-sGD"/>
                         <outlet property="updateLabel" destination="kkR-hz-cJf" id="Bdn-HV-zO5"/>
                         <outlet property="versionLabel" destination="9DW-Jt-lgV" id="oIc-2G-37O"/>
                     </connections>
@@ -73,7 +67,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash_bg" width="518" height="920"/>
         <image name="splash_logo" width="780" height="1191"/>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

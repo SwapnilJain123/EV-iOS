@@ -31,8 +31,23 @@ extension UIColor {
     private static let INACTIVE_GRAY = "#E6E6E6"
     private static let EV_TAB_BACKGROUND = "#333333"
     
+     private static let GRADIENT_START = "#FAFEFD"
+     private static let GRADIENT_EV_END = "#96CDA6"
+     private static let GRADIENT_MOTO_END = "#3853C2"
     
-    //
+    
+    // - EV Start, 96CDA6 end
+    //FAFEFD - Moto Start, 4763d1 end
+    
+    static func getGradientStart() -> UIColor{
+        UIColor.init(hexFromString: UIColor.GRADIENT_START)
+    }
+    static func getGradientEVEnd() -> UIColor{
+        UIColor.init(hexFromString: UIColor.GRADIENT_EV_END)
+    }
+    static func getGradientMotoEnd() -> UIColor{
+        UIColor.init(hexFromString: UIColor.GRADIENT_MOTO_END)
+    }
     
     static func getBackgroundGray() -> UIColor{
         UIColor.init(hexFromString: UIColor.BACKGROUND_GRAY)
