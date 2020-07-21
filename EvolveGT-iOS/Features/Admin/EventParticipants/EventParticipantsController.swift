@@ -63,9 +63,43 @@ class EventParticipantsController : ETViewController{
                                            style: .plain,
                                            target: self,
                                            action: #selector(self.searchUsers))
-        self.navigationItem.rightBarButtonItems = [logoutItem, searchButton]
+        let filter = UIBarButtonItem(image: #imageLiteral(resourceName: "filter"),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(self.didPressFilterOption))
+        self.navigationItem.rightBarButtonItems = [logoutItem, searchButton, filter]
     }
     
+     @objc func didPressFilterOption(){
+        let options = interactor.getAvailableFilterOptions()
+        self.ext.presentOptions(title: "Select Filter", message: "", cancelText: "Clear", options: options, selected: nil, preferredStyle: .alert, completionHandler: { selected in
+            switch selected{
+            case "By Skill Level":
+                let skillList = self.interactor.getAvailableSkillLevels()
+                self.presentSelectionMenu(title: "Select Skill Level", data: skillList, dismissHandler: { selectedSkill in
+                    if(selectedSkill.first != nil){
+                    self.interactor.filterBySkillLevel(skill: selectedSkill.first!)
+                    }
+                })
+            case "By Training":
+                let trainings = self.interactor.getAvailableTrainings()
+                self.presentSelectionMenu(title: "Select Training", data: trainings, dismissHandler: { selectedTraining in
+                    if(selectedTraining.first != nil){
+                        self.interactor.filterByTraining(training: selectedTraining.first!)
+                    }
+                })
+            case "By Rentals":
+                let rentals = self.interactor.getAvailableRentals()
+                self.presentSelectionMenu(title: "Select Rental", data: rentals, dismissHandler: { selectedRental in
+                    if(selectedRental.first != nil){
+                        self.interactor.filterByRentals(selectedRental: selectedRental.first!)
+                    }
+                })
+            default:
+                self.interactor.clearFilter()
+            }
+        })
+    }
     @objc func searchUsers(){
         if(searchBar.isHidden){
             searchBar.isHidden = false

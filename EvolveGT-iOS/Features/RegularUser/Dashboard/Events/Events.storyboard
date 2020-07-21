@@ -941,13 +941,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b95-mj-Rvx" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
-                                                    <rect key="frame" x="110" y="39.5" width="284" height="30"/>
+                                                    <rect key="frame" x="110" y="45.5" width="284" height="18"/>
                                                     <state key="normal" title="Transponder Rent : $20.00">
                                                         <color key="titleColor" name="PrimaryTextColor"/>
                                                     </state>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-Yf-WZL" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                    <rect key="frame" x="110" y="81.5" width="284" height="34"/>
+                                                    <rect key="frame" x="110" y="75.5" width="284" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
@@ -990,19 +990,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J80-ST-BQp">
-                                                            <rect key="frame" x="136" y="3" width="252" height="20.5"/>
+                                                            <rect key="frame" x="136" y="24.5" width="252" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="ColorEV"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Date: 10 Sep 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-CT-abd">
-                                                            <rect key="frame" x="136" y="28.5" width="252" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-nE-sso" userLabel="AddToCart">
-                                                            <rect key="frame" x="353" y="81.5" width="40" height="40"/>
+                                                            <rect key="frame" x="353" y="83.5" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="kXN-BE-Jpo"/>
                                                                 <constraint firstAttribute="height" constant="40" id="pFo-pY-ehp"/>
@@ -1012,14 +1006,14 @@
                                                                 <action selector="didPressAddToCart:" destination="5Dw-gT-21K" eventType="touchUpInside" id="DFN-nq-9WS"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hosted By Evolve GT Black Panthers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYf-fA-sKm">
-                                                            <rect key="frame" x="136" y="54.5" width="209" height="41"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYf-fA-sKm">
+                                                            <rect key="frame" x="133" y="53" width="260" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Price :  $199.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-mX-ggB">
-                                                            <rect key="frame" x="136" y="102" width="209" height="19.5"/>
+                                                            <rect key="frame" x="133" y="83.5" width="165" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1035,26 +1029,24 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="4kc-KT-p2z" firstAttribute="top" secondItem="qeh-9y-Bem" secondAttribute="top" constant="3" id="2OT-1A-Wwb"/>
-                                                        <constraint firstItem="Oit-mX-ggB" firstAttribute="trailing" secondItem="wYf-fA-sKm" secondAttribute="trailing" id="2T3-LO-eZK"/>
-                                                        <constraint firstItem="Oit-mX-ggB" firstAttribute="leading" secondItem="wYf-fA-sKm" secondAttribute="leading" id="4Xv-Hj-e4S"/>
-                                                        <constraint firstItem="wYf-fA-sKm" firstAttribute="top" secondItem="deu-CT-abd" secondAttribute="bottom" constant="5" id="844-uY-t0Q"/>
+                                                        <constraint firstItem="Oit-mX-ggB" firstAttribute="top" secondItem="wYf-fA-sKm" secondAttribute="bottom" constant="10" id="2lu-NY-DbM"/>
+                                                        <constraint firstItem="wYf-fA-sKm" firstAttribute="centerY" secondItem="qeh-9y-Bem" secondAttribute="centerY" id="3VG-hT-yvQ"/>
                                                         <constraint firstAttribute="trailing" secondItem="0eg-nE-sso" secondAttribute="trailing" constant="5" id="8hx-Fq-uUW"/>
                                                         <constraint firstAttribute="trailing" secondItem="J80-ST-BQp" secondAttribute="trailing" constant="10" id="9c0-eH-rJU"/>
-                                                        <constraint firstItem="deu-CT-abd" firstAttribute="trailing" secondItem="J80-ST-BQp" secondAttribute="trailing" id="9uk-MQ-j8h"/>
-                                                        <constraint firstItem="deu-CT-abd" firstAttribute="leading" secondItem="J80-ST-BQp" secondAttribute="leading" id="B5J-yQ-YYK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Oit-mX-ggB" secondAttribute="trailing" constant="100" id="E9e-9p-Nrv"/>
                                                         <constraint firstItem="J80-ST-BQp" firstAttribute="leading" secondItem="4kc-KT-p2z" secondAttribute="trailing" constant="8" id="EFW-F9-yj9"/>
-                                                        <constraint firstItem="Oit-mX-ggB" firstAttribute="top" secondItem="wYf-fA-sKm" secondAttribute="bottom" constant="6.5" id="IIn-Xk-jeF"/>
+                                                        <constraint firstItem="wYf-fA-sKm" firstAttribute="leading" secondItem="G4y-Af-sAH" secondAttribute="trailing" constant="5" id="HSY-XM-oN6"/>
                                                         <constraint firstItem="4kc-KT-p2z" firstAttribute="leading" secondItem="qeh-9y-Bem" secondAttribute="leading" constant="8" id="Lzd-et-25T"/>
-                                                        <constraint firstItem="0eg-nE-sso" firstAttribute="leading" secondItem="wYf-fA-sKm" secondAttribute="trailing" constant="8" id="OcN-ST-Mt9"/>
                                                         <constraint firstItem="G4y-Af-sAH" firstAttribute="top" secondItem="4kc-KT-p2z" secondAttribute="top" id="Pyp-bU-VTY"/>
                                                         <constraint firstItem="4kc-KT-p2z" firstAttribute="centerY" secondItem="qeh-9y-Bem" secondAttribute="centerY" id="X75-B8-e5F"/>
-                                                        <constraint firstItem="deu-CT-abd" firstAttribute="top" secondItem="J80-ST-BQp" secondAttribute="bottom" constant="5" id="dhL-iU-29N"/>
-                                                        <constraint firstItem="wYf-fA-sKm" firstAttribute="leading" secondItem="deu-CT-abd" secondAttribute="leading" id="h8O-4V-KAX"/>
+                                                        <constraint firstItem="J80-ST-BQp" firstAttribute="leading" secondItem="G4y-Af-sAH" secondAttribute="trailing" constant="8" id="aNk-0c-eaS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wYf-fA-sKm" secondAttribute="trailing" constant="5" id="dIM-vD-Iko"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0eg-nE-sso" secondAttribute="bottom" constant="2.5" id="fUo-kF-XQ7"/>
+                                                        <constraint firstItem="Oit-mX-ggB" firstAttribute="leading" secondItem="4kc-KT-p2z" secondAttribute="trailing" constant="5" id="ks7-wh-WlU"/>
                                                         <constraint firstItem="G4y-Af-sAH" firstAttribute="bottom" secondItem="4kc-KT-p2z" secondAttribute="bottom" id="olr-Xy-6TK"/>
+                                                        <constraint firstItem="wYf-fA-sKm" firstAttribute="top" secondItem="J80-ST-BQp" secondAttribute="bottom" constant="8" id="pNb-yA-xF7"/>
                                                         <constraint firstAttribute="bottom" secondItem="4kc-KT-p2z" secondAttribute="bottom" constant="3" id="rEy-Bv-ySL"/>
-                                                        <constraint firstItem="J80-ST-BQp" firstAttribute="top" secondItem="4kc-KT-p2z" secondAttribute="top" id="rQx-SE-WOb"/>
                                                         <constraint firstItem="G4y-Af-sAH" firstAttribute="leading" secondItem="4kc-KT-p2z" secondAttribute="leading" id="rpC-5p-uwc"/>
-                                                        <constraint firstItem="0eg-nE-sso" firstAttribute="bottom" secondItem="Oit-mX-ggB" secondAttribute="bottom" id="yeL-fs-UJZ"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1069,7 +1061,6 @@
                                         <connections>
                                             <outlet property="addToCartButton" destination="0eg-nE-sso" id="4O3-Bo-8d3"/>
                                             <outlet property="bannerCancelled" destination="G4y-Af-sAH" id="ewV-2t-xZW"/>
-                                            <outlet property="eventDate" destination="deu-CT-abd" id="8vc-DR-5b7"/>
                                             <outlet property="eventName" destination="J80-ST-BQp" id="gwU-TX-KEH"/>
                                             <outlet property="hostedBy" destination="wYf-fA-sKm" id="aRG-Da-g3g"/>
                                             <outlet property="imageLogo" destination="4kc-KT-p2z" id="vMS-SQ-5lf"/>
