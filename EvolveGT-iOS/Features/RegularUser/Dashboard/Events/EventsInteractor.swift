@@ -89,14 +89,7 @@ class EventsInteractor :BaseInteractor{
         case .month:
             Log.d("Filter By Month")
             
-            let sortedEvents = events.sorted(by: { $0.eventDate! < $1.eventDate ?? "" })
-            var eventMonths = sortedEvents.compactMap { $0.eventDate }.map{
-                $0.formattedDate(outputFormat: .FORMAT_YYYY_MM)
-            }.unique().sorted(by: <)
-            eventMonths = eventMonths.map{
-                let dateString = "\($0) 15"
-                return dateString.formattedDate(outputFormat: .FORMAT_MMM_YYYY)
-            }
+             let eventMonths = events.compactMap { $0.eventMonthYear }.unique().sorted(by: <)
             self.eventListDelegate?.presentMonthFilterOptions(options: eventMonths)
         case .eventType:
             Log.d("Filter By Event")
@@ -123,7 +116,7 @@ class EventsInteractor :BaseInteractor{
                 
             }
         case .month:
-            filteredList = self.events.filter { $0.eventDate?.formattedDate(outputFormat: .FORMAT_MMM_YYYY).lowercased() == query.lowercased()
+            filteredList = self.events.filter { $0.eventMonthYear.lowercased() == query.lowercased()
             }
         case .none:
             filteredList = self.events.filter { _ in true

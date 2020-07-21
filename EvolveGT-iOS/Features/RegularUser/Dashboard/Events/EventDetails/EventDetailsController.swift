@@ -262,7 +262,8 @@ extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCe
         var paths = [IndexPath]()
         paths.append(IndexPath(row: 0, section: 0))
         paths.append(indexPath)
-        self.eventDetailsView.reloadRows(at: paths, with: .none)
+       // self.eventDetailsView.reloadRows(at: paths, with: .automatic)
+        self.eventDetailsView.reloadData()
     }
     
     func didChangeSkillSet(skill: String) {
@@ -275,7 +276,8 @@ extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCe
         paths.append(IndexPath(row: 0, section: 0))
         paths.append(indexPath)
         
-        self.eventDetailsView.reloadRows(at: paths, with: .none)
+        //self.eventDetailsView.reloadRows(at: paths, with: .none)
+         self.eventDetailsView.reloadData()
     }
     
     func didEnterTransponderNumber(transponderNumber: String, transponder: Transponder, indexPath: IndexPath) {

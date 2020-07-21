@@ -52,6 +52,10 @@ struct Event: Codable {
     var activeHostings : [EventHost]?{
         hostings?.filter{$0.status ?? false} ?? nil
     }
+    
+    var eventMonthYear : String{
+        eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_MMM_YYYY) ?? ""
+    }
 }
 
 

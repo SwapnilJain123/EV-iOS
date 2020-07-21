@@ -59,7 +59,7 @@ class EventParticipantCell: UITableViewCell{
         skill.text = eventParticipant?.skillLevel
         userID.text! = "#"
         userID.text?.append(eventParticipant?.userID ?? "-")
-        dateOfBirth.text = eventParticipant?.evDob?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "-"
+        dateOfBirth.text = eventParticipant?.evDob?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "-"
         email.text = eventParticipant?.email ?? "-"
         orderId.text = "#"
         orderId.text?.append(eventParticipant?.orderID ?? "-")

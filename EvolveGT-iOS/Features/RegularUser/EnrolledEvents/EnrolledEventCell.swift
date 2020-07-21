@@ -52,7 +52,7 @@ class EnrolledEventCell : UITableViewCell{
              cancelButton?.isHidden = true
         }
         eventTitle.text = event.productName
-        eventDate.text = "Date: \(event.eventDate?.formattedDate(outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        eventDate.text = "Date: \(event.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         orderDate.text = "Ordered On: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         if let imgUrl = event.eventImage{
             
