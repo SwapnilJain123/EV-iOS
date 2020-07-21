@@ -65,6 +65,11 @@ class BaseApiAdapter{
     
     func makeRequest(method: Method){
         
+        if BuildScheme.uiTestingOn{
+            didFinishTask(data: MockResponseProvider.provideResponse(endPoint: apiClient.urlString), error: nil)
+            
+            return
+        }
         Log.i(apiClient.urlString)
         if(!apiClient.isConnectedToInternet){
             var error = ApiError()

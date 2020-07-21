@@ -14,7 +14,7 @@
 		<key>EvolveGT-AppStore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>43</integer>
+			<integer>4</integer>
 		</dict>
 		<key>EvolveGT-Dev copy.xcscheme_^#shared#^_</key>
 		<dict>
@@ -24,12 +24,12 @@
 		<key>EvolveGT-QA.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>42</integer>
+			<integer>3</integer>
 		</dict>
 		<key>EvolveGT-UAT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>41</integer>
+			<integer>2</integer>
 		</dict>
 		<key>EvolveGT-iOS copy.xcscheme_^#shared#^_</key>
 		<dict>
@@ -43,9 +43,19 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>UITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>39</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1009E83E24C3835400AD2DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1039FDF8244F1A1800190088</key>
 		<dict>
 			<key>primary</key>
