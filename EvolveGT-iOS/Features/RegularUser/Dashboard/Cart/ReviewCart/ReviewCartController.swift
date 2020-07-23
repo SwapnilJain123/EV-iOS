@@ -8,7 +8,22 @@
 
 import Foundation
 import UIKit
-class ReviewCartController : ETViewController{
+class ReviewCartController : ETViewController, CartListDelegate{
+    func didFetchCartList(cartItems: [CartItem]) {
+        
+        self.cartItems = cartItems
+        
+        interactor?.computeCartReviewData()
+    }
+    
+    func totalPrice(total: Double) {
+        
+    }
+    
+    func hasOutOfStockItems(outOfStock: Bool) {
+        
+    }
+    
     @IBOutlet weak var shippingIndicator: ShippingIndicator!
     @IBOutlet weak var btnPayment: UIButton!
     
@@ -24,13 +39,15 @@ class ReviewCartController : ETViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        interactor?.cartReviewDelegate = self
+        interactor?.paymentDelegate = self
+        interactor?.cartListDelegate = self
         
         btnPayment.applyColorTheme()
-       
         DispatchQueue.main.async {
             self.sections?.removeAll()
             self.cartSummaryView.reloadData()
-            self.interactor?.computeCartReviewData()
+            self.interactor?.fetchCartList()
         }
        
         customizeShippingIndicator()
@@ -39,10 +56,9 @@ class ReviewCartController : ETViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-         btnPayment.applyColorTheme()
+        
         cartSummaryView.dataSource = self
-        interactor?.cartReviewDelegate = self
-        interactor?.paymentDelegate = self
+       
         
     }
     override func didChangeAppTheme() {
@@ -95,6 +111,8 @@ class ReviewCartController : ETViewController{
         }
  
     }
+    
+    
 }
 extension ReviewCartController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -200,8 +218,8 @@ extension ReviewCartController : CartReviewDelegate, PaymentDelegate{
     }
     
     func didChangeTotal() {
-        let indexPath = IndexPath(row: 0, section: 2)
-        cartSummaryView.reloadRows(at: [indexPath], with: .none)
+        
+        cartSummaryView.reloadData()
         
         if interactor?.total ?? 0.0 > 0.0{
             btnPayment.setTitle("Proceed To Payment".uppercased(), for: .normal)
@@ -215,5 +233,9 @@ extension ReviewCartController : CartReviewDelegate, PaymentDelegate{
     func availableSections(sections: [CartReviewSections]) {
         self.sections = sections
         cartSummaryView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.100, execute: {
+            self.interactor?.computeTotals()
+        })
+       
     }
 }

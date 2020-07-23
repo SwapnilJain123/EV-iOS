@@ -28,6 +28,9 @@ class EventDetailsController : ETViewController{
         
         
         eventDetailsView.rowHeight = UITableView.automaticDimension
+        eventDetailsView.sectionHeaderHeight = UITableView.automaticDimension
+        eventDetailsView.estimatedSectionHeaderHeight = 0
+        
         eventDetailsView.dataSource = self
         eventDetailsView.delegate = self
         
@@ -242,6 +245,8 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         }
         
     }
+    
+   
 }
 extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCellDelegate, SkillLevelCellDelegate, TransponderCellDelegate, TrackDayCellDelegate{
     func didPressAddToCart(event: Event) {

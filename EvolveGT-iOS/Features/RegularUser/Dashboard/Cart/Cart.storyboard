@@ -1133,9 +1133,11 @@
                         <outlet property="btnPlaceOrder" destination="Pst-4z-Zeb" id="waV-HW-vqU"/>
                         <outlet property="btnReview" destination="hDM-Xe-AF9" id="hf8-5K-PEu"/>
                         <outlet property="btnWallet" destination="AV4-SQ-Nh0" id="PZx-TX-Vsx"/>
+                        <outlet property="labelCoupon" destination="dXl-IK-ezd" id="hfQ-Fr-oGv"/>
                         <outlet property="labelCouponApplied" destination="ILf-aE-I1Y" id="Xo2-dG-oVS"/>
                         <outlet property="labelTotal" destination="eL6-50-HRW" id="trg-Sz-v2Y"/>
-                        <outlet property="labelWalletApplied" destination="JBf-9h-Pww" id="FQD-nY-O3V"/>
+                        <outlet property="labelWalletApplied" destination="JBf-9h-Pww" id="fZ6-Fz-IBe"/>
+                        <outlet property="labelWalletText" destination="aNO-Nr-Adi" id="UND-O9-EPg"/>
                         <outlet property="labelsubTotal" destination="79j-bN-p4c" id="xHZ-iq-fAT"/>
                         <outlet property="radioButtonGroup" destination="e8k-Hz-Rxv" id="Tha-ZD-zEa"/>
                         <outlet property="shippingIndicator" destination="09n-1h-w3p" id="sef-CK-yea"/>

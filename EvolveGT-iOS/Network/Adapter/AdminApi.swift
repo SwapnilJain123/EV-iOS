@@ -49,7 +49,8 @@ class AdminApi: BaseApiAdapter{
     func uploadSignature(signatureId: String, signature: Data){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.UPDATE_SIGNATURE)"
         setUrl(url: url)
-        let encodedSignature = signature.base64EncodedString() 
+        var encodedSignature = signature.base64EncodedString()
+        encodedSignature = "\(AppConstants.ImageTag)\(encodedSignature)"
         let signatueRequest = SignatureUpdateRequest(signatureID: signatureId, signature: encodedSignature)
         setParameters(parameters: makeDictionary(signatueRequest))
         super.makeRequest(method: .POST)

@@ -48,10 +48,13 @@ class CartInteractor: BaseInteractor{
     
     var subTotal: Double = 0
     var total: Double = 0
-    var walletApplied: Double = 0
+    
     var transactionId = ""
     var paymentMethod = PaymentMethod.paypal
     var nonce = ""
+    
+    
+    var walletApplied: Double  = 0
     
     func fetchCartList(){
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingCartList)
@@ -125,7 +128,7 @@ class CartInteractor: BaseInteractor{
     
     func computeCartReviewData(){
         getCartReviewSections()
-        computeTotals()
+        
     }
     func getCartReviewSections(){
         var sections = [CartReviewSections]()
@@ -169,6 +172,21 @@ class CartInteractor: BaseInteractor{
         self.cartReviewDelegate?.didChangeTotal()
     }
     
+    
+    func computeFinalPayment() -> Double{
+        computeTotals()
+        let walletBalance = AppEngine.sharedInstance.walletBalance
+        var dueAmount = subTotal - coupon.appliedCouponAmount
+        if walletBalance > 0 && walletBalance < dueAmount{
+            walletApplied = walletBalance
+            dueAmount = dueAmount - walletBalance
+            
+        }else{
+            walletApplied = 0
+        }
+        return dueAmount
+    }
+    
     func deleteCoupon(){
         delegate?.showProgressIndicator(message: "")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -180,6 +198,7 @@ class CartInteractor: BaseInteractor{
             self.delegate?.hideProgressIndicator()
         }
     }
+    
     func validateCoupon(coupon: String){
         
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.validatingCoupon)
@@ -204,29 +223,29 @@ class CartInteractor: BaseInteractor{
         checkoutApi.validateCoupon(userId: AppEngine.sharedInstance.userID, couponCode: coupon)
     }
     
-    private func getPaymentMode() -> PaymentMode{
-        if total > 0.0{
-            if paymentMethod == .wallet{
-                if coupon.appliedCouponAmount > 0{
-                    return .couponWallet
-                }else{
-                    return .wallet
-                }
-            }else{
-                if coupon.appliedCouponAmount > 0{
-                    return .couponPaypal
-                }else{
-                    return .paypal
-                }
-            }
-            
-        }else{
-            if coupon.appliedCouponAmount > 0{
-                return .coupon
-            }else{
-                return .wallet
-            }
+    private func getPaymentMode() -> String{
+        var paymentType = ""
+        
+        if(coupon.appliedCouponAmount > 0){
+            paymentType = "coupon-"
         }
+        if(walletApplied > 0.0){
+            paymentType +=  "wallet-"
+        }
+        if total > 0 && paymentMethod == .paypal{
+            paymentType +=  "paypal-"
+        }
+        if paymentType.isEmpty{
+            paymentType +=  "wallet"
+        }
+        
+        let lastChar = paymentType.last!
+        if lastChar == "-"{
+            return String(paymentType.dropLast())
+        }
+        return paymentType
+        
+        
     }
     func completeTransaction(){
         
@@ -234,7 +253,7 @@ class CartInteractor: BaseInteractor{
         
         let placeOrderRequest = PlaceOrderRequest()
         placeOrderRequest.coupon = coupon.couponCode
-        placeOrderRequest.payment = getPaymentMode().rawValue
+        placeOrderRequest.payment = getPaymentMode()
         placeOrderRequest.userId = AppEngine.sharedInstance.userID
         let checkoutApi = CheckoutApi()
         checkoutApi.setCompletionHandler{ data, error in
@@ -312,7 +331,7 @@ class CartInteractor: BaseInteractor{
         request.coupon = coupon.couponCode
         request.mode = BuildScheme.paymentMode
         request.userId = AppEngine.sharedInstance.userID
-        request.paymentType = getPaymentMode().rawValue
+        request.paymentType = getPaymentMode()
         
         let checkoutApi = CheckoutApi()
         checkoutApi.setCompletionHandler{ data, error in

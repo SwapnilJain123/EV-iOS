@@ -11,8 +11,23 @@ import UIKit
 import MBRadioCheckboxButton
 import BraintreeDropIn
 import Braintree
+import SnapKit
 
-class PaymentViewController : ETViewController{
+class PaymentViewController : ETViewController, CartListDelegate{
+    func didFetchCartList(cartItems: [CartItem]) {
+       
+        
+    }
+    
+    func totalPrice(total: Double) {
+        Log.d("New Total : \(total)")
+         populateUi()
+    }
+    
+    func hasOutOfStockItems(outOfStock: Bool) {
+        
+    }
+    
     
     @IBOutlet weak var walletBalance: UILabel!
     @IBOutlet weak var btnReview: UIButton!
@@ -23,14 +38,21 @@ class PaymentViewController : ETViewController{
     @IBOutlet weak var radioButtonGroup: RadioButtonContainerView!
     @IBOutlet weak var labelsubTotal: UILabel!
     @IBOutlet weak var labelCouponApplied: UILabel!
-    @IBOutlet weak var labelWalletApplied: UILabel!
+
     @IBOutlet weak var labelTotal: UILabel!
     
     @IBOutlet weak var btnPaypal: RadioButton!
     
     @IBOutlet weak var btnWallet: RadioButton!
     
+    @IBOutlet weak var labelCoupon: UILabel!
+    
+    @IBOutlet weak var labelWalletApplied: UILabel!
+    
+    @IBOutlet weak var labelWalletText: UILabel!
+    
     var interactor: CartInteractor?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +64,33 @@ class PaymentViewController : ETViewController{
         interactor?.paymentDelegate = self
         
         radioButtonGroup.buttonContainer.delegate = self
-        labelsubTotal.text = String(interactor?.subTotal ?? 0).formatToAmount()
-        labelCouponApplied.text = String(interactor?.coupon.appliedCouponAmount ?? 0).formatToAmount()
-        labelWalletApplied.text = String(interactor?.walletApplied ?? 0).formatToAmount()
-        labelTotal.text = String(interactor?.total ?? 0).formatToAmount()
         
-        btnWallet.isEnabled = interactor?.isWalletPaymentAllowed() ?? true
-        walletBalance.text = "Your Wallet Balance: \(String(interactor?.getWalletBalance() ?? 0).formatToAmount())"
-        btnPaypal.isOn = true
     }
     
+    func populateUi(){
+        let dueAmount = interactor?.computeFinalPayment()
+         
+         labelsubTotal.text = String(interactor?.subTotal ?? 0).formatToAmount()
+         
+         
+         labelTotal.text = String(dueAmount ?? 0).formatToAmount()
+         
+          btnWallet.isEnabled = interactor?.isWalletPaymentAllowed() ?? true
+         
+         labelCouponApplied.text = String(interactor?.coupon.appliedCouponAmount ?? 0).formatToAmount()
+         
+         labelWalletApplied.text = String(interactor?.walletApplied ?? 0).formatToAmount()
+         if interactor?.walletApplied ?? 0 > 0{
+             
+              walletBalance.text = ""
+         }else{
+             walletBalance.text = "Your Wallet Balance: \(String(interactor?.getWalletBalance() ?? 0).formatToAmount())"
+         }
+         
+        
+         
+         btnPaypal.isOn = true
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         btnPlaceOrder.applyColorTheme()
@@ -62,6 +101,19 @@ class PaymentViewController : ETViewController{
         btnReview.applyBoarderColorTheme()
         btnPaypal.applyRadioButtonTheme()
         btnWallet.applyRadioButtonTheme()
+        
+        populateUi()
+        interactor?.cartListDelegate = self
+        
+       
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.100, execute: {
+                       self.interactor?.fetchCartList()
+               })
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_CART_PAYMENT
@@ -90,6 +142,10 @@ class PaymentViewController : ETViewController{
         interactor?.initiatePayment()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //self.navigationController?.popToRootViewController(animated: false)
+    }
 }
 extension PaymentViewController: PaymentDelegate{
     func cartClearedError(message: String) {

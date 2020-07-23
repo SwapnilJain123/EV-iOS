@@ -28,6 +28,10 @@ class MockResponseProvider{
         switch path {
         case "user/auth":
             return readFromMockResponse(fileName: "LoginResponse")
+        case "user/checkTermsPolicy":
+                return readFromMockResponse(fileName: "UserAGreementFailed")
+        case "user/saveTermsPolicy":
+            return readFromMockResponse(fileName: "Success")
         default:
             return readFromMockResponse(fileName: "Success")
         }

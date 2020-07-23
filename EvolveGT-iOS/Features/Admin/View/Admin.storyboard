@@ -128,7 +128,7 @@
                                             <action selector="filterButtonTapped:" destination="pZg-79-Aw5" eventType="touchUpInside" id="pev-J8-Q2x"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-Fe-AaY" userLabel="Switch Dashboard">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-Fe-AaY" userLabel="Switch App Mode">
                                         <rect key="frame" x="0.0" y="96" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Sn8-cw-9wK"/>
@@ -136,18 +136,18 @@
                                         </constraints>
                                         <state key="normal" image="SwictUserWhite"/>
                                         <connections>
-                                            <action selector="switchDashboardTapped:" destination="pZg-79-Aw5" eventType="touchUpInside" id="4kX-3V-RF3"/>
+                                            <action selector="didPressAppSwitchMode:" destination="pZg-79-Aw5" eventType="touchUpInside" id="Y71-Jf-jqR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFu-Yn-2BX" userLabel="Sswitch App Mode">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFu-Yn-2BX" userLabel="Logout">
                                         <rect key="frame" x="0.0" y="144" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="UVE-ge-pWj"/>
                                             <constraint firstAttribute="width" constant="40" id="mFW-K3-VjJ"/>
                                         </constraints>
-                                        <state key="normal" image="SwictUserWhite"/>
+                                        <state key="normal" image="logout"/>
                                         <connections>
-                                            <action selector="switchAppTapped:" destination="pZg-79-Aw5" eventType="touchUpInside" id="UV1-m9-Jha"/>
+                                            <action selector="didPressLogout:" destination="pZg-79-Aw5" eventType="touchUpInside" id="aK9-c5-nYG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -179,8 +179,9 @@
                     <navigationItem key="navigationItem" id="ipC-N0-9zo"/>
                     <connections>
                         <outlet property="eventsTableView" destination="KAq-L3-ia3" id="shH-cK-Idd"/>
+                        <outlet property="menuLogout" destination="hFu-Yn-2BX" id="LKv-AB-coF"/>
+                        <outlet property="menuSwitchAppMode" destination="TSw-Fe-AaY" id="BXf-oJ-cFb"/>
                         <outlet property="popUpMenu" destination="0hx-69-s14" id="Tbs-hf-tiv"/>
-                        <outlet property="switchAppMode" destination="hFu-Yn-2BX" id="B6U-qV-LJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvr-cT-b8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -967,6 +968,7 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
         <image name="Search" width="30" height="30"/>
         <image name="SwictUserWhite" width="28" height="28"/>
         <image name="filter" width="24" height="24"/>
+        <image name="logout" width="35" height="35"/>
         <image name="sign" width="24" height="24"/>
         <image name="star" width="48" height="48"/>
         <image name="upward_arrow" width="48" height="48"/>
