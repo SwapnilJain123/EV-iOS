@@ -48,6 +48,16 @@
                ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "104BCDB724CB585F0095EE48"
+               BuildableName = "UIAutomation.xctest"
+               BlueprintName = "UIAutomation"
+               ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
