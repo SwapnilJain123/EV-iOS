@@ -89,7 +89,7 @@ class EventsInteractor :BaseInteractor{
         case .month:
             Log.d("Filter By Month")
             
-             let eventMonths = events.compactMap { $0.eventMonthYear }.unique().sorted(by: <)
+             let eventMonths = events.compactMap { $0.eventMonthYear }.unique()
             self.eventListDelegate?.presentMonthFilterOptions(options: eventMonths)
         case .eventType:
             Log.d("Filter By Event")
