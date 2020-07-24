@@ -119,7 +119,6 @@ class ProfileInteractor : BaseInteractor{
     }
     func validatePofile() -> Bool{
         var isValid = false;
-        let isEvApp = AppEngine.sharedInstance.isEvApp()
         if let user = AppEngine.sharedInstance.userDetails{
             if user.firstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .info)

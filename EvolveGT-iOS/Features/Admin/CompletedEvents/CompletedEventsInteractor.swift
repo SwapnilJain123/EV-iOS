@@ -106,7 +106,7 @@ class CompletedEventsInteractor : BaseInteractor{
             self.adminDelegate?.presentTrainingFilterOptions(options: trainings)
         case .month:
             Log.d("Filter By Month")
-            let eventMonths = completedEvents.compactMap { $0.eventMonthYear }.unique().sorted(by: <)
+            let eventMonths = completedEvents.compactMap { $0.eventMonthYear }.unique()
            
             self.adminDelegate?.presentMonthFilterOptions(options: eventMonths)
         case .eventType:
