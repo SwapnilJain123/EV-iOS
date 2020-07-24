@@ -40,10 +40,5 @@ target 'EvolveGT-UAT' do
   default_pods
   
 end
-target 'UITests' do
-  use_frameworks!
-  default_pods
- 
-  
-end
+
 

@@ -89,15 +89,15 @@ class TabbedViewController: ETViewController {
     
     override  func didChangeAppTheme() {
         setNavbarControls()
-        getTabBarController().didChangeAppTheme()
+        getTabBarController()?.didChangeAppTheme()
     }
     
     func recreateNavbar(){
         setNavbarControls()
     }
     
-    func getTabBarController() -> ETTabViewController{
-        self.navigationController?.tabBarController as! ETTabViewController
+    func getTabBarController() -> ETTabViewController?{
+        self.navigationController?.tabBarController as? ETTabViewController
     }
     @objc func didSwitchTab(){
         
@@ -105,6 +105,6 @@ class TabbedViewController: ETViewController {
     
     override func updateCartBadge(count: Int) {
         Log.i("Updating Badge - \(count)")
-        getTabBarController().updateCartBadgeCount(count: count)
+        getTabBarController()?.updateCartBadgeCount(count: count)
     }
 }
