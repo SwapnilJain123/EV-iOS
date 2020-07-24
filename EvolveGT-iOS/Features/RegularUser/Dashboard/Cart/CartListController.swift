@@ -24,7 +24,7 @@ class CartListController : TabbedViewController, CartListDelegate{
         super.viewDidLoad()
         
         interactor.delegate = self
-        interactor.cartListDelegate = self
+       
         cartListView.dataSource = self
         cartListView.delegate = self
         
@@ -53,6 +53,7 @@ class CartListController : TabbedViewController, CartListDelegate{
         super.viewWillAppear(animated)
         cartItems.removeAll()
         cartListView.reloadData()
+         interactor.cartListDelegate = self
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_CART

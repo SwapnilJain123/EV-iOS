@@ -18,6 +18,10 @@ def default_pods
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'Firebase/Core'
+  
+  #pod 'SBTUITestTunnelServer'
+  #pod 'GCDWebServer', :inhibit_warnings => true
+  #pod 'SBTUITestTunnelClient'
 
 end
 
@@ -36,3 +40,10 @@ target 'EvolveGT-UAT' do
   default_pods
   
 end
+target 'UITests' do
+  use_frameworks!
+  default_pods
+ 
+  
+end
+

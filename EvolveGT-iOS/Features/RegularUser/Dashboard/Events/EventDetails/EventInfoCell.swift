@@ -323,7 +323,7 @@ class TrackDayCell : UITableViewCell{
         addToCartButton.isHidden = trackDay?.isCancelled ?? false
         eventName.text = trackDay?.title
         
-        eventDate.text = "Date: \(trackDay?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+//        eventDate.text = "Date: \(trackDay?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         price.text = trackDay?.price?.formatToAmount(prefix: "Price: ")
         hostedBy.text = "Hosted By: \(trackDay?.eventType ?? "")"
         rootView.setCardView()

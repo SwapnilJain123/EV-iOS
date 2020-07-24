@@ -8,6 +8,8 @@
 
 import Foundation
 class BuildScheme{
+    
+    static var uiTestingOn = false
     private static var buildMode :String {
         
         return  Config.BUILD_CONFIG

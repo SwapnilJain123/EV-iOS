@@ -79,6 +79,65 @@ class EventParticipantIntercator : BaseInteractor{
         adminApi.upgradeSkill(skill: skill, userID: userID)
     }
     
+    func getAvailableFilterOptions() -> [String]{
+        var options = [String]()
+        
+        for participant in participants where participant.skillLevel != nil{
+            options.append("By Skill Level")
+            break
+        }
+        for participant in participants where participant.trainings?.count ?? 0 > 0{
+            options.append("By Training")
+            break
+        }
+        for participant in participants where participant.rentals?.count ?? 0 > 0{
+            options.append("By Rentals")
+            break
+        }
+        
+        
+        return options
+    }
     
+    func getAvailableSkillLevels() ->[String]{
+        let skillLevels = participants.compactMap { $0.skillLevel }.unique().sorted(by: <)
+        return skillLevels
+    }
     
+    func filterBySkillLevel(skill : String){
+        let newList = participants.filter({$0.skillLevel == skill})
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
+    
+    func getAvailableTrainings() ->[String]{
+        var trainings = [String]()
+        for participnt in participants where participnt.trainings?.count ?? 0 > 0{
+            trainings.append(contentsOf: participnt.trainings!)
+        }
+        return trainings.unique().sorted(by: <)
+    }
+    func filterByTraining(training : String){
+        let newList = participants.filter({$0.trainings?.contains(training) ?? false})
+           adminViewDelegate?.didFetchParticipants(participants: newList)
+       }
+    func clearFilter(){
+         adminViewDelegate?.didFetchParticipants(participants: participants)
+    }
+    func getAvailableRentals() ->[String]{
+           var rentals = [String]()
+           for participnt in participants where participnt.rentals?.count ?? 0 > 0{
+            rentals.append(contentsOf: participnt.rentals!.compactMap({ $0.name }))
+           }
+           return rentals.unique().sorted(by: <)
+       }
+    func filterByRentals(selectedRental : String){
+           var newList = [EventParticipant]()
+        for participant in participants where participant.rentals?.count ?? 0 > 0{
+            for rental in participant.rentals! where rental.name == selectedRental{
+                newList.append(participant)
+                break
+            }
+        }
+              adminViewDelegate?.didFetchParticipants(participants: newList)
+          }
 }

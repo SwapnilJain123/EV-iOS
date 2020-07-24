@@ -31,8 +31,17 @@ class GuestViewController : ETViewController{
         interactor.fetchCategoryList()
         
         actionsTableView.dataSource = self
+        
+        let login = UIBarButtonItem(title: "Login",
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(self.didPressLogin))
+              
+               self.navigationItem.rightBarButtonItems = [login]
     }
-    
+    @objc func didPressLogin(){
+        self.dashboardManager.switchToLoginPage()
+    }
     
 }
 

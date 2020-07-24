@@ -45,7 +45,7 @@ class AboutUsViewController: ETViewController, AboutUsInteractorDelegate{
         }else{
             
             //let bgImage = nil//UIImage(named: "moto_shop_background")
-            aboutUsLogo.image = nil
+            aboutUsLogo.image = UIImage(named: "splash_logo_moto")
             self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientMotoEnd())
         }
         

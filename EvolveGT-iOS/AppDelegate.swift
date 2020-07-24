@@ -12,6 +12,8 @@ import SideMenuSwift
 import Braintree
 import Firebase
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -37,8 +39,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            launchDashboard(payload: nil)
             // Log.d("Launching Via Push!  - Remote options available")
         }
+       
+        if ProcessInfo.processInfo.arguments.contains("UI-Testing"){
+            BuildScheme.uiTestingOn = true
+            UserDefaultHelper.sharedInstance.clear()
+            Log.d("UI Testing - clear user defaults")
+        }
         
+        //
         Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")
+        
+        
         return true
     }
     

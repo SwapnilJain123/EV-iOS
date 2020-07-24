@@ -14,8 +14,9 @@ class CompletedEventViewController : ETViewController{
     var searchBar: UISearchBar?
     var isSearchActive: Bool = false
     
+    @IBOutlet weak var menuSwitchAppMode: UIButton!
     
-    @IBOutlet weak var switchAppMode: UIButton!
+    @IBOutlet weak var menuLogout: UIButton!
     
     
     @IBOutlet weak var popUpMenu: UIStackView!
@@ -41,7 +42,7 @@ class CompletedEventViewController : ETViewController{
               if !AppEngine.sharedInstance.isEvApp(){
                   switcIcon = UIImage(named: "switch_ev")
               }
-        switchAppMode.setImage(switcIcon, for: .normal)
+        menuSwitchAppMode.setImage(switcIcon, for: .normal)
         popUpMenu.setBackground(color: UIColor.getAppThemeColor())
     }
     func setInteractor(){
@@ -72,19 +73,13 @@ class CompletedEventViewController : ETViewController{
         showFilterOptions()
     }
     
-    
-    @IBAction func switchAppTapped(_ sender: UIButton) {
-        self.dashboardManager.switchAppMode()
-        changeSwitchAppIcon()
-        popUpMenu.isHidden = true
-    }
     override func didChangeAppTheme() {
         super.didChangeAppTheme()
         setNavbarControls()
         interactor.fetchCompletedEvents()
     }
     
-    @IBAction func switchDashboardTapped(_ sender: UIButton) {
+    @objc func switchDashboardTapped() {
         popUpMenu.isHidden = true
         self.dashboardManager.switchToUserDashboard()
     }
@@ -94,15 +89,23 @@ class CompletedEventViewController : ETViewController{
         self.ext.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
         popUpMenu.isHidden = true
         
-        let logoutItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout_icon"),
+        let switchDashboard = UIBarButtonItem(image: #imageLiteral(resourceName: "SwictUserWhite"),
                                          style: .plain,
                                          target: self,
-                                         action: #selector(self.didPressLogout))
+                                         action: #selector(self.switchDashboardTapped))
         let morebutton = createMoreButton()
-        self.navigationItem.rightBarButtonItems = [logoutItem, morebutton]
+        self.navigationItem.rightBarButtonItems = [switchDashboard, morebutton]
     }
     
+    @IBAction func didPressAppSwitchMode(_ sender: Any) {
+        self.dashboardManager.switchAppMode()
+        changeSwitchAppIcon()
+        popUpMenu.isHidden = true
+    }
     
+    @IBAction func didPressLogout(_ sender: Any) {
+        self.didPressLogout()
+    }
     //Mark: More Button
     override func didPressMoreButton() {
         

@@ -33,4 +33,8 @@ class UserDefaultHelper{
         userDefaults.synchronize()
     }
 
+    func clear(){
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+
+    }
 }
