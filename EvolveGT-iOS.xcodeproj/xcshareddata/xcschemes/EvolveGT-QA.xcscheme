@@ -57,6 +57,11 @@
                BlueprintName = "UIAutomation"
                ReferencedContainer = "container:EvolveGT-iOS.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "T4AdminUiTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

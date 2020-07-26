@@ -24,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        if ProcessInfo.processInfo.arguments.contains("UI-Testing"){
+            BuildScheme.uiTestingOn = true
+            UserDefaultHelper.sharedInstance.clear()
+            Log.d("UI Testing - clear user defaults")
+            
+            MockResponseProvider.processTestSetup(data: ProcessInfo.processInfo.environment)
+        }
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
@@ -40,11 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Log.d("Launching Via Push!  - Remote options available")
         }
        
-        if ProcessInfo.processInfo.arguments.contains("UI-Testing"){
-            BuildScheme.uiTestingOn = true
-            UserDefaultHelper.sharedInstance.clear()
-            Log.d("UI Testing - clear user defaults")
-        }
+        
         
         //
         Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")

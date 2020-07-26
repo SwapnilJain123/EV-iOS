@@ -75,6 +75,7 @@ class ETViewController : UIViewController{
         selectionMenu.maxSelectionLimit = 1
         selectionMenu.cellSelectionStyle = .checkbox
         selectionMenu.title = title
+        selectionMenu.tableView?.accessibilityIdentifier = "SelectionMenuTableView"
         
         selectionMenu.show(style: .present, from: self)
     }

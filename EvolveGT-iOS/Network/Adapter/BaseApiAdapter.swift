@@ -54,9 +54,9 @@ class BaseApiAdapter{
         if apiClient.uploadData.count > 0{
             apiClient.doUpload(completionHandler: didFinishTask(data:error:))
         }else{
-             apiClient.doPost(completionHandler: didFinishTask(data:error:))
+            apiClient.doPost(completionHandler: didFinishTask(data:error:))
         }
-       
+        
     }
     
     private func doGet(){
@@ -66,22 +66,22 @@ class BaseApiAdapter{
     func makeRequest(method: Method){
         
         if BuildScheme.uiTestingOn{
-            didFinishTask(data: MockResponseProvider.provideResponse(endPoint: apiClient.urlString), error: nil)
+            self.didFinishTask(data: MockResponseProvider.provideResponse(endPoint: self.apiClient.urlString, isEvApp: AppEngine.sharedInstance.isEvApp()), error: nil)
             
-            return
-        }
-        Log.i(apiClient.urlString)
-        if(!apiClient.isConnectedToInternet){
-            var error = ApiError()
-            error.errorMessage = ApiError.ERROR_OFFLINE
-            didFail(error: error)
-            return
-        }
-        switch method {
-        case .GET:
-            doGet()
-        case .POST:
-            doPost()
+        }else{
+            Log.i(apiClient.urlString)
+            if(!apiClient.isConnectedToInternet){
+                var error = ApiError()
+                error.errorMessage = ApiError.ERROR_OFFLINE
+                didFail(error: error)
+                return
+            }
+            switch method {
+            case .GET:
+                doGet()
+            case .POST:
+                doPost()
+            }
         }
     }
 }
