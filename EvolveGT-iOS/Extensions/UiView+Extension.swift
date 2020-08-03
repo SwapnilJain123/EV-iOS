@@ -45,8 +45,10 @@ extension UIView {
     }
     
     func drawBorder(width: CGFloat, borderColor: UIColor){
+         self.clipsToBounds = true
         self.layer.borderWidth = width
         self.layer.borderColor = borderColor.cgColor
+        self.layer.cornerRadius = 3.0
     }
     
     func setGradientBackground(startColor: UIColor, endColor:UIColor){

@@ -82,7 +82,7 @@ class EventParticipantIntercator : BaseInteractor{
     func getAvailableFilterOptions() -> [String]{
         var options = [String]()
         
-        for participant in participants where participant.skillLevel != nil{
+        for participant in participants where participant.skillLevel?.isNotEmpty ?? false{
             options.append("By Skill Level")
             break
         }

@@ -9,10 +9,10 @@
 import Foundation
 import XCTest
 
-class LoginUITest: BaseUITests {
+class T2LoginUITest: BaseUITests {
     
-    func testInvalidEmail(){
-        
+    func testT2S1InvalidEmail(){
+         app.launch()
         
         app.buttons["ev logo"].tap()
         app.buttons["SIGN IN"].tap()
@@ -41,7 +41,10 @@ class LoginUITest: BaseUITests {
         
     }
     
-    func testValidCredentials(){
+    func testT2S2ValidCredentials(){
+        let testData = ["user_terms_agreed" : "true"]
+        app.launchEnvironment = testData
+        app.launch()
         
         app.buttons["ev logo"].tap()
         app.textFields["Email"].tap()
@@ -53,10 +56,9 @@ class LoginUITest: BaseUITests {
         hideKeyboard()
         app.buttons["SIGN IN"].tap()
                
-         hideKeyboard()
-       
-                        
-                
-                        
+        let dashboard = app.staticTexts["Dashboard"]
+        waitForElementToAppear(element: dashboard)
+        XCTAssertTrue(dashboard.exists)
+                      
     }
 }

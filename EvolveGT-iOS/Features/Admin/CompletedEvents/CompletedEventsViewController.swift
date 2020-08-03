@@ -14,6 +14,8 @@ class CompletedEventViewController : ETViewController{
     var searchBar: UISearchBar?
     var isSearchActive: Bool = false
     
+    @IBOutlet weak var emptySearchResult: UILabel!
+    
     @IBOutlet weak var menuSwitchAppMode: UIButton!
     
     @IBOutlet weak var menuLogout: UIButton!
@@ -33,15 +35,16 @@ class CompletedEventViewController : ETViewController{
         self.setNavbarControls()
         changeSwitchAppIcon()
         
+        emptySearchResult.isHidden = true
         let homeInteractor = HomeDataInteractor()
         homeInteractor.updateDeviceToken()
     }
     
     func changeSwitchAppIcon(){
         var switcIcon = UIImage(named: "switch_moto")
-              if !AppEngine.sharedInstance.isEvApp(){
-                  switcIcon = UIImage(named: "switch_ev")
-              }
+        if !AppEngine.sharedInstance.isEvApp(){
+            switcIcon = UIImage(named: "switch_ev")
+        }
         menuSwitchAppMode.setImage(switcIcon, for: .normal)
         popUpMenu.setBackground(color: UIColor.getAppThemeColor())
     }
@@ -56,21 +59,27 @@ class CompletedEventViewController : ETViewController{
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         popUpMenu.isHidden = true
-        isSearchActive = !isSearchActive
-        if isSearchActive{
+        if completedEvents.count > 0{
+            isSearchActive = !isSearchActive
             
-        }else{
-            self.searchBar?.resignFirstResponder()
-            //eventList = initialArrayOfEvents
-            //interactor.
+            if isSearchActive{
+                
+            }else{
+                self.searchBar?.resignFirstResponder()
+                //eventList = initialArrayOfEvents
+                //interactor.
+            }
+            eventsTableView.reloadData()
         }
-        eventsTableView.reloadData()
     }
     
     
     @IBAction func filterButtonTapped(_ sender: UIButton) {
         popUpMenu.isHidden = true
-        showFilterOptions()
+        
+        if completedEvents.count > 0{
+            showFilterOptions()
+        }
     }
     
     override func didChangeAppTheme() {
@@ -90,9 +99,9 @@ class CompletedEventViewController : ETViewController{
         popUpMenu.isHidden = true
         
         let switchDashboard = UIBarButtonItem(image: #imageLiteral(resourceName: "SwictUserWhite"),
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(self.switchDashboardTapped))
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(self.switchDashboardTapped))
         let morebutton = createMoreButton()
         self.navigationItem.rightBarButtonItems = [switchDashboard, morebutton]
     }
@@ -158,6 +167,8 @@ extension CompletedEventViewController : UITableViewDataSource{
         if isSearchActive {
             searchBar = UISearchBar()
             searchBar?.delegate = self
+            searchBar?.accessibilityActivate()
+            searchBar?.accessibilityIdentifier = "EventSearch"
             searchBar?.placeholder = "Search events here"
             searchBar?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60)
             searchBar?.becomeFirstResponder()
@@ -183,10 +194,20 @@ extension CompletedEventViewController:UISearchBarDelegate{
         isSearchActive = false
         searchBar.text = ""
         self.searchBar?.resignFirstResponder()
-        eventsTableView.reloadData()
+        interactor.search(query: "")
+        //eventsTableView.reloadData()
     }
 }
 extension CompletedEventViewController: CompletedEventsViewDelegate{
+    func searchReturnedEmpty(message: String) {
+        if message.isEmpty{
+            emptySearchResult.isHidden = true
+        }else{
+            emptySearchResult.isHidden = false
+            emptySearchResult.text = message
+        }
+    }
+    
     
     
     func presentEventTypeFilterOptions(options: [String]) {
@@ -219,13 +240,13 @@ extension CompletedEventViewController: CompletedEventsViewDelegate{
             self!.interactor.filterBy(selectedTraining, .trainingType)
         }
     }
-     
+    
     func didFetchCompletedEvents(events: [CompletedEvent]) {
         completedEvents.removeAll()
         completedEvents.append(contentsOf: events)
         eventsTableView.reloadData()
     }
-
+    
 }
 
 //Mark: Toolbar Actions
@@ -246,9 +267,12 @@ extension CompletedEventViewController{
         })
         filterActionSheet.addAction(month)
         filterActionSheet.addAction(eventType)
-        filterActionSheet.addAction(trainingType)
+        
+        if interactor.hasFilterOptions{
+            filterActionSheet.addAction(trainingType)
+        }
         filterActionSheet.addAction(clear)
-
+        
         present(filterActionSheet, animated: true, completion: nil)
     }
     

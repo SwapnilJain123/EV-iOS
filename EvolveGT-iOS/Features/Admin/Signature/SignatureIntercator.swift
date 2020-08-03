@@ -46,6 +46,7 @@ class SignatureIntercator : BaseInteractor{
     }
     
     func saveSignature(signatureId: String, signature: Data){
+        super.delegate = signatureViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.uploadingSignature)
         let adminApi  = AdminApi()
         

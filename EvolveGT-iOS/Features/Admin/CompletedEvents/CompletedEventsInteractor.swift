@@ -17,6 +17,8 @@ protocol CompletedEventsViewDelegate : BaseViewDelegate{
     
     func presentMonthFilterOptions(options : [String])
     
+    func searchReturnedEmpty(message: String)
+    
 }
 
 class CompletedEventsInteractor : BaseInteractor{
@@ -67,7 +69,13 @@ class CompletedEventsInteractor : BaseInteractor{
             let filteredEvents =  completedEvents.filter{
                 ($0.title?.lowercased().starts(with: query.lowercased()) ?? false)
             }
+            
             self.adminDelegate?.didFetchCompletedEvents(events: filteredEvents)
+            if filteredEvents.count == 0{
+                self.adminDelegate?.searchReturnedEmpty(message: "\(ErrorMessages.emptySearchEvents) \(query)")
+            }else{
+                self.adminDelegate?.searchReturnedEmpty(message: "")
+            }
         }
     }
     
@@ -95,6 +103,11 @@ class CompletedEventsInteractor : BaseInteractor{
         }
         self.adminDelegate?.didFetchCompletedEvents(events: filteredList)
         
+    }
+    
+    var hasFilterOptions : Bool{
+        let trainingsArray = completedEvents.compactMap { $0.trainingType }.unique()
+        return trainingsArray.count > 0
     }
     func filterItems(with filterType: FilterType) {
         switch filterType {

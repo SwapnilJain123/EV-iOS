@@ -107,7 +107,7 @@ extension UIViewController{
                 errorView.text          = message
                 errorView.numberOfLines = 0
                 errorView.tag = UIViewController.Ext.ERROR_MESSAGE_VIEW_TAG
-                
+                errorView.accessibilityIdentifier = "VCErrorView"
                 
                 errorView.textColor     = UIColor.black
                 errorView.textAlignment = .center

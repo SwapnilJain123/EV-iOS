@@ -8,9 +8,10 @@
 
 import Foundation
 import XCTest
-class AppSelectorTest: BaseUITests {
+class T1AppSelectorTest: BaseUITests {
     
-    func testAppSelection(){
+    func testT1S1AppSelection(){
+         app.launch()
         let notificationAlert = app.alerts["“Evolve GT” Would Like to Send You Notifications"]
         if notificationAlert.exists{
             notificationAlert.scrollViews.otherElements.buttons["Allow"].tap()
@@ -23,16 +24,16 @@ class AppSelectorTest: BaseUITests {
         
     }
     
-    func testSelectEvMode(){
-        
+    func testT1S2SelectEvMode(){
+         app.launch()
         app.buttons["ev logo"].tap()
         
         //Login Screen Launched
         XCTAssertTrue(app.buttons["SIGN IN"].exists)
         
     }
-    func testSelectMotoMode(){
-        
+    func testT1S3SelectMotoMode(){
+         app.launch()
         app.buttons["moto logo"].tap()
         
         //Login Screen Launched

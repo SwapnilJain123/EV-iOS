@@ -20,6 +20,8 @@ class SignaturePreviewViewController : ETViewController{
         
         self.ext.showBackButton()
         self.ext.setScreenTitle(title: ScreenTitle.TITLE_SIGNATURE)
+        signatureImage.accessibilityIdentifier = "SignatureImage"
+        closeButton.drawBorder(width: 2.0, borderColor: .clear)
         getSignature()
         
     }

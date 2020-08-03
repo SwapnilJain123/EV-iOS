@@ -41,4 +41,8 @@ target 'EvolveGT-UAT' do
   
 end
 
-
+target 'UIAutomation' do
+  use_frameworks!
+  default_pods
+  
+end

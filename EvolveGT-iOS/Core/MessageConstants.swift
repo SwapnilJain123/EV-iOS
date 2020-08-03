@@ -139,6 +139,7 @@ struct ErrorMessages {
     static let invalidCoupon = "Please enter a valid coupon"
     
     static let emptySearchParticipants = "Sorry, we couldn't find any user matching the search"
+    static let emptySearchEvents = "Sorry, we couldn't find any event matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
     static let invalidEmail = "Please enter valid email"
      static let emptyReceiverName = "Please enter receiver name"
