@@ -12,7 +12,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
      Test Admin landing page
      */
     func test_T4S1_AdminLandingPage(){
-        testData = ["user_terms_agreed" : "true", "user_type": "admin"]
+        testData = ["user_terms_agreed" : "true", "user_type": "admin", "has_trainings" : "0"]
         loginAdminUser()
         let eventsPage = app.staticTexts["Events"]
         waitForElementToAppear(element: eventsPage)
@@ -29,7 +29,10 @@ class T4AdminCompletedEventsTests: BaseUITests {
         let eventsPage = app.staticTexts["Events"]
         waitForElementToAppear(element: eventsPage)
         XCTAssertTrue(eventsPage.exists)
-        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
     }
     
     /**
@@ -41,7 +44,10 @@ class T4AdminCompletedEventsTests: BaseUITests {
         let eventsPage = app.staticTexts["Events"]
         waitForElementToAppear(element: eventsPage)
         XCTAssertTrue(eventsPage.exists)
-        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
     }
     
     /**
@@ -53,7 +59,10 @@ class T4AdminCompletedEventsTests: BaseUITests {
         let eventsPage = app.staticTexts["Events"]
         waitForElementToAppear(element: eventsPage)
         XCTAssertTrue(eventsPage.exists)
-        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
     }
     
     /**
@@ -66,6 +75,11 @@ class T4AdminCompletedEventsTests: BaseUITests {
         
         let eventsPage = app.staticTexts["Events"]
         waitForElementToAppear(element: eventsPage)
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        
+        waitForElementToAppear(element: app.tables.firstMatch)
         
         app.navigationBars["Events"].buttons["three dots"].tap()
         let search = app.buttons["Search"]
@@ -107,6 +121,8 @@ class T4AdminCompletedEventsTests: BaseUITests {
         let eventsPage = app.navigationBars["Events"]
         waitForElementToAppear(element: eventsPage)
         
+        verifyExistence(element: app.tables.firstMatch)
+        
         app.navigationBars["Events"].buttons["three dots"].tap()
         let search = app.buttons["Search"]
         waitForElementToAppear(element: search)
@@ -146,6 +162,9 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        verifyExistence(element: app.tables.firstMatch)
         XCTAssert(app.tables.cells.count == 3)
         
         
@@ -154,6 +173,8 @@ class T4AdminCompletedEventsTests: BaseUITests {
         waitForElementToAppear(element: switchButton)
         switchButton.tap()
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
         waitForElementToAppear(element: app.tables.firstMatch)
         
         XCTAssert(app.tables.cells.count == 4)
@@ -170,6 +191,10 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: false)
         verifyPageTitle(title: "Events")
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        
+        verifyExistence(element: app.tables.firstMatch)
         XCTAssert(app.tables.cells.count == 4)
         
         
@@ -177,6 +202,9 @@ class T4AdminCompletedEventsTests: BaseUITests {
         let switchButton = app.buttons["switch ev"]
         waitForElementToAppear(element: switchButton)
         switchButton.tap()
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
         
         waitForElementToAppear(element: app.tables.firstMatch)
         
@@ -194,6 +222,10 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        
+        verifyExistence(element: app.tables.firstMatch)
         XCTAssert(app.tables.cells.count == 3)
         
         
@@ -238,6 +270,10 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: false)
         verifyPageTitle(title: "Events")
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        
+        verifyExistence(element: app.tables.firstMatch)
         XCTAssert(app.tables.cells.count == 4)
         
         
@@ -281,7 +317,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
         
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
-        
+        verifyExistence(element: app.tables.firstMatch)
         XCTAssert(app.tables.cells.count == 3)
         
         let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
@@ -303,6 +339,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: false)
         verifyPageTitle(title: "Events")
         
+        verifyExistence(element: app.tables.firstMatch)
         
         let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
         threeDotsButton.tap()
@@ -323,7 +360,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
         
-       
+        
         
         let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
         threeDotsButton.tap()
@@ -345,7 +382,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
         
-       
+        verifyExistence(element: app.tables.firstMatch)
         
         let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
         threeDotsButton.tap()
@@ -354,7 +391,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
         waitForElementToAppear(element: filterButton)
         filterButton.tap()
         
-       
+        
         let byMonthButton = app.alerts["Select filter"].scrollViews.otherElements.buttons["By Month"]
         waitForElementToAppear(element: byMonthButton)
         byMonthButton.tap()
@@ -371,15 +408,15 @@ class T4AdminCompletedEventsTests: BaseUITests {
     }
     
     /**
-    Test tapping cancel button when the filter items are presented
-    */
+     Test tapping cancel button when the filter items are presented
+     */
     func test_T4S15_TestFilterOptionCancelButtonInMoto(){
         testData = ["user_terms_agreed" : "true", "user_type": "admin", "has_trainings" : "0" ]
         
         loginAdminUser(isEvApp: false)
         verifyPageTitle(title: "Events")
         
-       
+        verifyExistence(element: app.tables.firstMatch)
         
         let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
         threeDotsButton.tap()
@@ -388,7 +425,7 @@ class T4AdminCompletedEventsTests: BaseUITests {
         waitForElementToAppear(element: filterButton)
         filterButton.tap()
         
-       
+        
         let byMonthButton = app.alerts["Select filter"].scrollViews.otherElements.buttons["By Month"]
         waitForElementToAppear(element: byMonthButton)
         byMonthButton.tap()
@@ -412,6 +449,8 @@ class T4AdminCompletedEventsTests: BaseUITests {
         
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
+        
+        verifyExistence(element: app.tables.firstMatch)
         
         app.navigationBars["Events"].buttons["SwictUserWhite"].tap()
         verifyPageTitle(title: "Dashboard")
@@ -438,17 +477,20 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: true)
         verifyPageTitle(title: "Events")
         
+        verifyExistence(element: app.tables.firstMatch)
         
-       
         app.navigationBars["Events"].buttons["three dots"].tap()
         let logout =  app.buttons["logout"]
         waitForElementToAppear(element: logout)
         logout.tap()
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        
         let itemInAppSelection = app.buttons["ev logo"]
         waitForElementToAppear(element: itemInAppSelection)
-       
-                
+        
+        
     }
     /**
      Test tapping Logout in Moto
@@ -459,17 +501,188 @@ class T4AdminCompletedEventsTests: BaseUITests {
         loginAdminUser(isEvApp: false)
         verifyPageTitle(title: "Events")
         
+        verifyExistence(element: app.tables.firstMatch)
         
-       
         app.navigationBars["Events"].buttons["three dots"].tap()
         let logout =  app.buttons["logout"]
         waitForElementToAppear(element: logout)
         logout.tap()
         
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        
         let itemInAppSelection = app.buttons["ev logo"]
         waitForElementToAppear(element: itemInAppSelection)
-       
-                
+        
+        
     }
+    /**
+     Test verify empty Events In EV
+     */
+    func test_T4S20_TestEmptyList(){
+        testData = ["user_terms_agreed" : "true", "user_type": "admin", "empty_result" : "true" ]
+        
+        loginAdminUser(isEvApp: true)
+        verifyPageTitle(title: "Events")
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
+        XCTAssertTrue(app.tables.firstMatch.cells.count == 0)
+        
+        verifyErrorViewIsShown()
+        
+        let message = "Sorry, there are currently no events available."
+        XCTAssertTrue(app.staticTexts[message].exists)
+    }
+    /**
+     Test verify empty Events In Moto
+     */
+    func test_T4S21_TestEmptyListInMoto(){
+        testData = ["user_terms_agreed" : "true", "user_type": "admin", "empty_result" : "true" ]
+        
+        loginAdminUser(isEvApp: false)
+        verifyPageTitle(title: "Events")
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
+        XCTAssertTrue(app.tables.firstMatch.cells.count == 0)
+        
+        verifyErrorViewIsShown()
+        
+        let message = "Sorry, there are currently no events available."
+        XCTAssertTrue(app.staticTexts[message].exists)
+    }
+    
+    /**
+     Test verify empty Events In EV
+     */
+    func test_T4S22_TestFilterInEmptyList(){
+        testData = ["user_terms_agreed" : "true", "user_type": "admin", "empty_result" : "true" ]
+        
+        loginAdminUser(isEvApp: true)
+        verifyPageTitle(title: "Events")
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
+        XCTAssertTrue(app.tables.firstMatch.cells.count == 0)
+        
+        verifyErrorViewIsShown()
+        
+        let message = "Sorry, there are currently no events available."
+        XCTAssertTrue(app.staticTexts[message].exists)
+        
+        let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
+        threeDotsButton.tap()
+        
+        let filterButton = app.buttons["filter"]
+        waitForElementToAppear(element: filterButton)
+        filterButton.tap()
+        
+        let alert = app.alerts["Select filter"]
+        XCTAssertFalse(alert.exists)
+    }
+    
+    /**
+     Test verify empty Events In EV
+     */
+    func test_T4S23_TestSearchInEmptyList(){
+        testData = ["user_terms_agreed" : "true", "user_type": "admin", "empty_result" : "true" ]
+        
+        loginAdminUser(isEvApp: true)
+        verifyPageTitle(title: "Events")
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        XCTAssertTrue(app.tables.firstMatch.exists)
+        XCTAssertTrue(app.tables.firstMatch.cells.count == 0)
+        
+        verifyErrorViewIsShown()
+        
+        let message = "Sorry, there are currently no events available."
+        XCTAssertTrue(app.staticTexts[message].exists)
+        
+        let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
+        threeDotsButton.tap()
+        
+       let search = app.buttons["Search"]
+       waitForElementToAppear(element: search)
+       search.tap()
+       
+       let searchFiled = app.tables.otherElements["EventSearch"]
+       XCTAssertFalse(searchFiled.exists)
+        
+    
+    }
+    
+    /**
+        Test Filter In EmptyList In Moto
+        */
+       func test_T4S24_TestFilterInEmptyListInMoto(){
+           testData = ["user_terms_agreed" : "true", "user_type": "admin", "empty_result" : "true" ]
+           
+           loginAdminUser(isEvApp: false)
+           verifyPageTitle(title: "Events")
+           
+           verifyActivityIndicatorIsShown()
+           waitForActivityIndicatorToDisAppear()
+           waitForElementToAppear(element: app.tables.firstMatch)
+           XCTAssertTrue(app.tables.firstMatch.exists)
+           XCTAssertTrue(app.tables.firstMatch.cells.count == 0)
+           
+           verifyErrorViewIsShown()
+           
+           let message = "Sorry, there are currently no events available."
+           XCTAssertTrue(app.staticTexts[message].exists)
+           
+           let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
+           threeDotsButton.tap()
+           
+           let filterButton = app.buttons["filter"]
+           waitForElementToAppear(element: filterButton)
+           filterButton.tap()
+           
+           let alert = app.alerts["Select filter"]
+           XCTAssertFalse(alert.exists)
+       }
+       
+       /**
+        Test Search In EmptyList In Moto
+        */
+       func test_T4S25_TestSearchInEmptyListInMoto(){
+           testData = ["user_terms_agreed" : "true", "user_type": "admin", "empty_result" : "true" ]
+           
+           loginAdminUser(isEvApp: false)
+           verifyPageTitle(title: "Events")
+           
+           verifyActivityIndicatorIsShown()
+           waitForActivityIndicatorToDisAppear()
+           waitForElementToAppear(element: app.tables.firstMatch)
+           XCTAssertTrue(app.tables.firstMatch.exists)
+           XCTAssertTrue(app.tables.firstMatch.cells.count == 0)
+           
+           verifyErrorViewIsShown()
+           
+           let message = "Sorry, there are currently no events available."
+           XCTAssertTrue(app.staticTexts[message].exists)
+           
+           let threeDotsButton = app.navigationBars["Events"].buttons["three dots"]
+           threeDotsButton.tap()
+           
+          let search = app.buttons["Search"]
+          waitForElementToAppear(element: search)
+          search.tap()
+          
+          let searchFiled = app.tables.otherElements["EventSearch"]
+          XCTAssertFalse(searchFiled.exists)
+           
+       
+       }
     
 }

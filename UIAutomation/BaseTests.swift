@@ -37,13 +37,46 @@ class BaseUITests: XCTestCase {
         app.keyboards.buttons[returnKey].tap()
     }
     
+    func moveToParticipantPage(evApp: Bool = true){
+        loginAdminUser(isEvApp: evApp)
+        let eventsPage = app.staticTexts["Events"]
+        waitForElementToAppear(element: eventsPage)
+        XCTAssertTrue(eventsPage.exists)
+        
+        let tablesQuery = app.tables
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        if evApp{
+            tablesQuery.staticTexts["NYST 07-18"].tap()
+        }else{
+            tablesQuery.staticTexts["CMC 07-21 Moto"].tap()
+        }
+        
+        verifyActivityIndicatorIsShown()
+        waitForActivityIndicatorToDisAppear()
+        waitForElementToAppear(element: app.tables.firstMatch)
+        
+        let pageLabel = app.staticTexts["Indicates the user not signed the disclaimer yet."]
+        verifyExistence(element: pageLabel)
+        
+        let text = "Showing \(tablesQuery.cells.count) users"
+        let usersCount = app.staticTexts[text]
+        
+        if tablesQuery.cells.count > 0{
+            XCTAssertTrue(usersCount.exists)
+        }
+        
+    }
+    
     func waitForElementToAppear(element: XCUIElement, file: String = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
         
-        waitForExpectations(timeout: 5) { (error) -> Void in
+        waitForExpectations(timeout: 1.5) { (error) -> Void in
             if (error != nil) {
-                let message = "Failed to find \(element) after 5 seconds."
+                let message = "Failed to find \(element) after 1.5 seconds."
                 self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
             }
         }
@@ -62,7 +95,7 @@ class BaseUITests: XCTestCase {
     }
     
     func verifyExistence(element: XCUIElement){
-        let exists = element.waitForExistence(timeout: 3.0)
+        let exists = element.waitForExistence(timeout: 1.0)
         XCTAssertTrue(exists,"Missing Element - \(element)")
     }
     
@@ -86,4 +119,53 @@ class BaseUITests: XCTestCase {
           app.buttons["SIGN IN"].tap()
           
       }
+    
+    func verifyVisibility(element: XCUIElement){
+        let window = app.windows.element(boundBy: 0)
+        XCTAssert(window.frame.contains(element.frame))
+    }
+    
+    func verifyActivityIndicatorIsShown(){
+        let element = app/*@START_MENU_TOKEN@*/.otherElements["SVProgressHUD"]/*[[".otherElements[\"Loading participants...\"]",".otherElements[\"SVProgressHUD\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        verifyExistence(element: element)
+    }
+    
+    func waitForElementToDisAppear(element: XCUIElement, file: String = #file, line: UInt = #line) {
+        let existsPredicate = NSPredicate(format: "exists == false")
+        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+        
+        waitForExpectations(timeout: 3) { (error) -> Void in
+            if (error != nil) {
+                let message = "Failed to find \(element) after 3 seconds."
+                self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
+            }
+        }
+    }
+    func waitForActivityIndicatorToDisAppear(file: String = #file, line: UInt = #line) {
+        let element = app/*@START_MENU_TOKEN@*/.otherElements["SVProgressHUD"]/*[[".otherElements[\"Loading participants...\"]",".otherElements[\"SVProgressHUD\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let existsPredicate = NSPredicate(format: "exists == false")
+        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+        
+        waitForExpectations(timeout: 3) { (error) -> Void in
+            if (error != nil) {
+                let message = "Failed to find \(element) after 3 seconds."
+                self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
+            }
+        }
+    }
+    
+    func verifyErrorViewIsShown(){
+        let element = app.staticTexts["VCErrorView"]
+        verifyVisibility(element: element)
+    }
+    
+    func getErrorViewText() -> String{
+        app.staticTexts["VCErrorView"].value as! String
+    }
+    
+    
+    func verifyLoginPage(){
+        let itemInAppSelection = app.buttons["ev logo"]
+        waitForElementToAppear(element: itemInAppSelection)
+    }
 }

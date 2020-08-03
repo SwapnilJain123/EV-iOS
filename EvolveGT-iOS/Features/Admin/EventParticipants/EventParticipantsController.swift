@@ -71,7 +71,14 @@ class EventParticipantsController : ETViewController{
     }
     
      @objc func didPressFilterOption(){
+        
+        if participants.count < 1{
+            return
+        }
         let options = interactor.getAvailableFilterOptions()
+        if options.count < 1 {
+            return
+        }
         self.ext.presentOptions(title: "Select Filter", message: "", cancelText: "Clear", options: options, selected: nil, preferredStyle: .alert, completionHandler: { selected in
             switch selected{
             case "By Skill Level":
@@ -101,11 +108,15 @@ class EventParticipantsController : ETViewController{
         })
     }
     @objc func searchUsers(){
+        if participants.count > 0{
         if(searchBar.isHidden){
             searchBar.isHidden = false
             searchBar.snp.remakeConstraints{ make in
                 make.height.equalTo(50)
             }
+        }else{
+            hideSearchbar()
+        }
         }else{
             hideSearchbar()
         }
@@ -127,7 +138,7 @@ class EventParticipantsController : ETViewController{
     func setupUI(){
         
         searchBar.showsCancelButton = true
-        if let url = URL(string: completedEvent?.eventLogo ?? ""){
+        if let url = URL(string: completedEvent?.eventLogo?.toValidatedImageUrl().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""){
             let fallbackImage = UIImage(named: "et_fallback_image")
             eventBanner.kf.setImage(with: url,placeholder: fallbackImage,  options: [.transition(ImageTransition.fade(1))])
         }

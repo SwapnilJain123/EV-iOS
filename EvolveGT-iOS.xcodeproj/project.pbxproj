@@ -50,6 +50,15 @@
 		100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A23245607A300EF2B9F /* Sequence+Extension.swift */; };
 		100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */; };
 		1020F4D124CD707B0059DED9 /* AdminCompletedEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020F4D024CD707B0059DED9 /* AdminCompletedEventsTests.swift */; };
+		1020F4D324CE86940059DED9 /* AdminEventParticipantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020F4D224CE86940059DED9 /* AdminEventParticipantTests.swift */; };
+		1020F4D724CE8A290059DED9 /* EventParticipantsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4D624CE8A290059DED9 /* EventParticipantsResponse.json */; };
+		1020F4D924D183180059DED9 /* EmptyResultList.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4D824D183180059DED9 /* EmptyResultList.json */; };
+		1020F4DB24D1834E0059DED9 /* EmptyDataList.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4DA24D1834E0059DED9 /* EmptyDataList.json */; };
+		1020F4DD24D197510059DED9 /* EmptyParticipants.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4DC24D197510059DED9 /* EmptyParticipants.json */; };
+		1020F4DF24D1D2A10059DED9 /* ParticipantsWithNoTraining.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4DE24D1D2A10059DED9 /* ParticipantsWithNoTraining.json */; };
+		1020F4E124D1D3F90059DED9 /* ParticipantsWithNoRentals.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4E024D1D3F90059DED9 /* ParticipantsWithNoRentals.json */; };
+		1020F4E324D1D62C0059DED9 /* ParticipantsWithNoAccessories.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4E224D1D62C0059DED9 /* ParticipantsWithNoAccessories.json */; };
+		1020F4E524D1D7880059DED9 /* ParticipantsWithNonFilterable.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4E424D1D7880059DED9 /* ParticipantsWithNonFilterable.json */; };
 		103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345EF24606C4300D5EED0 /* Tabs.storyboard */; };
 		103345F424606D2200D5EED0 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345F324606D2200D5EED0 /* Cart.storyboard */; };
 		103345F624606D2D00D5EED0 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103345F524606D2D00D5EED0 /* Shop.storyboard */; };
@@ -580,6 +589,10 @@
 		104BDFDA24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */; };
 		104BDFDB24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */; };
 		104BDFDC24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */; };
+		10581B0724D283820053126C /* GetSignatureResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10581B0624D283820053126C /* GetSignatureResponse.json */; };
+		10581B0924D51FBC0053126C /* SignUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = 10581B0824D51FBC0053126C /* SignUpdated.json */; };
+		10581B0B24D529740053126C /* AdminSignatureViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10581B0A24D529740053126C /* AdminSignatureViewTests.swift */; };
+		10581B0D24D52A3F0053126C /* AdminSignatureInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10581B0C24D52A3F0053126C /* AdminSignatureInputTests.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
 		10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAF2473130F0032C056 /* TextFieldExtension.swift */; };
@@ -724,6 +737,15 @@
 		100A2A23245607A300EF2B9F /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeSkillRequest.swift; sourceTree = "<group>"; };
 		1020F4D024CD707B0059DED9 /* AdminCompletedEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCompletedEventsTests.swift; sourceTree = "<group>"; };
+		1020F4D224CE86940059DED9 /* AdminEventParticipantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventParticipantTests.swift; sourceTree = "<group>"; };
+		1020F4D624CE8A290059DED9 /* EventParticipantsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventParticipantsResponse.json; sourceTree = "<group>"; };
+		1020F4D824D183180059DED9 /* EmptyResultList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyResultList.json; sourceTree = "<group>"; };
+		1020F4DA24D1834E0059DED9 /* EmptyDataList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyDataList.json; sourceTree = "<group>"; };
+		1020F4DC24D197510059DED9 /* EmptyParticipants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyParticipants.json; sourceTree = "<group>"; };
+		1020F4DE24D1D2A10059DED9 /* ParticipantsWithNoTraining.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ParticipantsWithNoTraining.json; sourceTree = "<group>"; };
+		1020F4E024D1D3F90059DED9 /* ParticipantsWithNoRentals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ParticipantsWithNoRentals.json; sourceTree = "<group>"; };
+		1020F4E224D1D62C0059DED9 /* ParticipantsWithNoAccessories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ParticipantsWithNoAccessories.json; sourceTree = "<group>"; };
+		1020F4E424D1D7880059DED9 /* ParticipantsWithNonFilterable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ParticipantsWithNonFilterable.json; sourceTree = "<group>"; };
 		103345EF24606C4300D5EED0 /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
 		103345F324606D2200D5EED0 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		103345F524606D2D00D5EED0 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
@@ -858,6 +880,10 @@
 		104BDFD124A920FE00E198FF /* EnrolledEventsSlidingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsSlidingTabController.swift; sourceTree = "<group>"; };
 		104BDFD524AA68E400E198FF /* CoachDutiesSlidingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutiesSlidingTabController.swift; sourceTree = "<group>"; };
 		104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSlidingTabController.swift; sourceTree = "<group>"; };
+		10581B0624D283820053126C /* GetSignatureResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSignatureResponse.json; sourceTree = "<group>"; };
+		10581B0824D51FBC0053126C /* SignUpdated.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SignUpdated.json; sourceTree = "<group>"; };
+		10581B0A24D529740053126C /* AdminSignatureViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignatureViewTests.swift; sourceTree = "<group>"; };
+		10581B0C24D52A3F0053126C /* AdminSignatureInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignatureInputTests.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		10716FAF2473130F0032C056 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -1026,6 +1052,16 @@
 				10CB6F8E24CC188D002F730C /* CompletedEvEventsWithTraining.json */,
 				10CB6F9A24CC3A5E002F730C /* CompletedEventsNoTraining.json */,
 				10CB6F9C24CC3C56002F730C /* CompletedMotoEvents.json */,
+				1020F4D624CE8A290059DED9 /* EventParticipantsResponse.json */,
+				1020F4D824D183180059DED9 /* EmptyResultList.json */,
+				1020F4DA24D1834E0059DED9 /* EmptyDataList.json */,
+				1020F4DC24D197510059DED9 /* EmptyParticipants.json */,
+				1020F4DE24D1D2A10059DED9 /* ParticipantsWithNoTraining.json */,
+				1020F4E024D1D3F90059DED9 /* ParticipantsWithNoRentals.json */,
+				1020F4E224D1D62C0059DED9 /* ParticipantsWithNoAccessories.json */,
+				1020F4E424D1D7880059DED9 /* ParticipantsWithNonFilterable.json */,
+				10581B0624D283820053126C /* GetSignatureResponse.json */,
+				10581B0824D51FBC0053126C /* SignUpdated.json */,
 			);
 			path = mockedResponses;
 			sourceTree = "<group>";
@@ -1034,6 +1070,9 @@
 			isa = PBXGroup;
 			children = (
 				1020F4D024CD707B0059DED9 /* AdminCompletedEventsTests.swift */,
+				1020F4D224CE86940059DED9 /* AdminEventParticipantTests.swift */,
+				10581B0A24D529740053126C /* AdminSignatureViewTests.swift */,
+				10581B0C24D52A3F0053126C /* AdminSignatureInputTests.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -1936,10 +1975,12 @@
 				103B2595249940BE00BB8CB9 /* ArchieCard.storyboard in Resources */,
 				103B2596249940BE00BB8CB9 /* SlideMenu.storyboard in Resources */,
 				103B2597249940BE00BB8CB9 /* Profile.storyboard in Resources */,
+				1020F4E524D1D7880059DED9 /* ParticipantsWithNonFilterable.json in Resources */,
 				10CB6F8D24CC1559002F730C /* LoginAdminUserResponse.json in Resources */,
 				103B2598249940BE00BB8CB9 /* Settings.storyboard in Resources */,
 				104BCDCB24CBEEB20095EE48 /* UserTermsNotAgareed.json in Resources */,
 				103B2599249940BE00BB8CB9 /* EnrolledEvents.storyboard in Resources */,
+				10581B0724D283820053126C /* GetSignatureResponse.json in Resources */,
 				103B259A249940BE00BB8CB9 /* ShippingIndicator.xib in Resources */,
 				10CB6F9B24CC3A5E002F730C /* CompletedEventsNoTraining.json in Resources */,
 				1009E86024C4D93800AD2DCF /* LoginResponse.json in Resources */,
@@ -1951,7 +1992,11 @@
 				103B259E249940BE00BB8CB9 /* Cart.storyboard in Resources */,
 				103B259F249940BE00BB8CB9 /* Admin.storyboard in Resources */,
 				103B25A0249940BE00BB8CB9 /* Home.storyboard in Resources */,
+				1020F4DF24D1D2A10059DED9 /* ParticipantsWithNoTraining.json in Resources */,
 				103B25A1249940BE00BB8CB9 /* Tabs.storyboard in Resources */,
+				1020F4DD24D197510059DED9 /* EmptyParticipants.json in Resources */,
+				1020F4E124D1D3F90059DED9 /* ParticipantsWithNoRentals.json in Resources */,
+				1020F4E324D1D62C0059DED9 /* ParticipantsWithNoAccessories.json in Resources */,
 				103B26AF249A04E000BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B25A2249940BE00BB8CB9 /* GiftCard.storyboard in Resources */,
 				103B25A3249940BE00BB8CB9 /* ChangePassword.storyboard in Resources */,
@@ -1959,9 +2004,13 @@
 				103B25A4249940BE00BB8CB9 /* Events.storyboard in Resources */,
 				103B25A5249940BE00BB8CB9 /* Assets.xcassets in Resources */,
 				103B25A6249940BE00BB8CB9 /* Address.storyboard in Resources */,
+				1020F4D924D183180059DED9 /* EmptyResultList.json in Resources */,
 				103B25A7249940BE00BB8CB9 /* Shop.storyboard in Resources */,
 				103B25A8249940BE00BB8CB9 /* AboutUs.storyboard in Resources */,
+				1020F4DB24D1834E0059DED9 /* EmptyDataList.json in Resources */,
+				10581B0924D51FBC0053126C /* SignUpdated.json in Resources */,
 				103B25A9249940BE00BB8CB9 /* Membership.storyboard in Resources */,
+				1020F4D724CE8A290059DED9 /* EventParticipantsResponse.json in Resources */,
 				103B25AA249940BE00BB8CB9 /* CreditHistory.storyboard in Resources */,
 				10CB6F9D24CC3C56002F730C /* CompletedMotoEvents.json in Resources */,
 				103B25AB249940BE00BB8CB9 /* AlertStoryboard.storyboard in Resources */,
@@ -2759,9 +2808,12 @@
 			files = (
 				104BCDC224CB58880095EE48 /* BaseTests.swift in Sources */,
 				104BCDBB24CB585F0095EE48 /* UIAutomation.swift in Sources */,
+				10581B0B24D529740053126C /* AdminSignatureViewTests.swift in Sources */,
 				104BCDC324CB588B0095EE48 /* AppSelectorTest.swift in Sources */,
 				1020F4D124CD707B0059DED9 /* AdminCompletedEventsTests.swift in Sources */,
+				1020F4D324CE86940059DED9 /* AdminEventParticipantTests.swift in Sources */,
 				104BCDC424CB588D0095EE48 /* LoginTests.swift in Sources */,
+				10581B0D24D52A3F0053126C /* AdminSignatureInputTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

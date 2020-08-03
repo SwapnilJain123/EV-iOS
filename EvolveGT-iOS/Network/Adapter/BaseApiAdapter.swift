@@ -66,7 +66,7 @@ class BaseApiAdapter{
     func makeRequest(method: Method){
         
         if BuildScheme.uiTestingOn{
-            self.didFinishTask(data: MockResponseProvider.provideResponse(endPoint: self.apiClient.urlString, isEvApp: AppEngine.sharedInstance.isEvApp()), error: nil)
+            MockResponseProvider.provideResponse(endPoint: self.apiClient.urlString, isEvApp: AppEngine.sharedInstance.isEvApp(), completionHandler: self.didFinishTask(data:error:))
             
         }else{
             Log.i(apiClient.urlString)
