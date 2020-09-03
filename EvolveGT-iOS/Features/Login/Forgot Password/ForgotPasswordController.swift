@@ -31,12 +31,8 @@ class ForgotPasswordController: ETViewController {
         errorView.text! = ""
         btnResetPassword.applyColorTheme()
         
-        if BuildScheme.isBuildQA{
-        tfEmail.text! = "geevar83@gmail.com"
-        }else{
-            tfEmail.text! = ""
-        }
-        
+       
+        tfEmail.text! = ""
         lblEmailDisclaimer.text = "Please provide your registered email. We will send the password reset link to this email."
     }
     
