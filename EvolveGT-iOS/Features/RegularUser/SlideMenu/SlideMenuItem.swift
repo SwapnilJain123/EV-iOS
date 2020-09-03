@@ -21,7 +21,7 @@ struct SlideMenuItem{
     static let TAG_ABOUT_US = 9
     static let TAG_SWITCH_DASHBOARD = 10
     static let TAG_LOG_OUT = 11
-    
+    static let TAG_E_WAIVER = 12
     var title = ""
     var evIcon = ""
     var motoIcon = ""
@@ -55,6 +55,8 @@ struct SlideMenuItem{
         let switchDashboard = SlideMenuItem("Switch Dashboard", "SwictUserGreen","moto_slider_switch_dashboard", TAG_SWITCH_DASHBOARD)
         let logout = SlideMenuItem("Logout", "logoutGreen", "mato_slider_logout",TAG_LOG_OUT)
         
-        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, logout]
+         let waiver = SlideMenuItem("E-Wavier", "logoutGreen", "mato_slider_logout",TAG_E_WAIVER)
+        
+        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, logout , waiver]
     }
 }

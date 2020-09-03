@@ -607,6 +607,11 @@
 		10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD62479A9920032C056 /* ProductDetailsCells.swift */; };
 		10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD8247AF8AF0032C056 /* ProductDetails.swift */; };
 		10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FDA247BE20F0032C056 /* DropDownList.swift */; };
+		1085A6FD24FF8D8400A7B4A8 /* ReferFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */; };
+		1085A6FF24FF8DE600A7B4A8 /* ReferFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */; };
+		1085A70224FFB15A00A7B4A8 /* E-Waiver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */; };
+		1085A70424FFB18000A7B4A8 /* E-WaiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70324FFB18000A7B4A8 /* E-WaiverViewController.swift */; };
+		1085A70624FFC41800A7B4A8 /* wavierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70524FFC41800A7B4A8 /* wavierCell.swift */; };
 		1098831124B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
 		1098831224B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
 		1098831324B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
@@ -898,6 +903,11 @@
 		10716FD62479A9920032C056 /* ProductDetailsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCells.swift; sourceTree = "<group>"; };
 		10716FD8247AF8AF0032C056 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		10716FDA247BE20F0032C056 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReferFriend.storyboard; sourceTree = "<group>"; };
+		1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferFriendViewController.swift; sourceTree = "<group>"; };
+		1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "E-Waiver.storyboard"; sourceTree = "<group>"; };
+		1085A70324FFB18000A7B4A8 /* E-WaiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-WaiverViewController.swift"; sourceTree = "<group>"; };
+		1085A70524FFC41800A7B4A8 /* wavierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wavierCell.swift; sourceTree = "<group>"; };
 		1098831024B5C899001F217C /* SelfSizeableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizeableTableView.swift; sourceTree = "<group>"; };
 		1098831424B5D21A001F217C /* AlertListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListController.swift; sourceTree = "<group>"; };
 		1098831F24BC48BE001F217C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1080,6 +1090,8 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				1085A70024FFB10800A7B4A8 /* E-Waiver */,
+				1085A6FB24FF8D5900A7B4A8 /* ReferFriend */,
 				10A06AE2249697C40051FF56 /* Settings */,
 				10A06AD72494C9590051FF56 /* CoachDuties */,
 				10A06ACA24937AB40051FF56 /* Address */,
@@ -1643,6 +1655,25 @@
 			path = ProductDetails;
 			sourceTree = "<group>";
 		};
+		1085A6FB24FF8D5900A7B4A8 /* ReferFriend */ = {
+			isa = PBXGroup;
+			children = (
+				1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */,
+				1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */,
+			);
+			path = ReferFriend;
+			sourceTree = "<group>";
+		};
+		1085A70024FFB10800A7B4A8 /* E-Waiver */ = {
+			isa = PBXGroup;
+			children = (
+				1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */,
+				1085A70324FFB18000A7B4A8 /* E-WaiverViewController.swift */,
+				1085A70524FFC41800A7B4A8 /* wavierCell.swift */,
+			);
+			path = "E-Waiver";
+			sourceTree = "<group>";
+		};
 		1098832024BC48BE001F217C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1945,12 +1976,14 @@
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
 				10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */,
 				10CB6FA124CD37A0002F730C /* CompletedEvEventsWithTraining.json in Resources */,
+				1085A70224FFB15A00A7B4A8 /* E-Waiver.storyboard in Resources */,
 				103346662469458000D5EED0 /* Main.storyboard in Resources */,
 				104BCDC624CBE7070095EE48 /* UserTermsAgreed.json in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				103345FA24606D4400D5EED0 /* Home.storyboard in Resources */,
 				103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */,
+				1085A6FD24FF8D8400A7B4A8 /* ReferFriend.storyboard in Resources */,
 				103B26A5249A02ED00BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B268D249941F600BB8CB9 /* ConfigAppStore.xcconfig in Resources */,
 				109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */,
@@ -2303,6 +2336,7 @@
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
 				104B8DC9248903CD008BE5DA /* Membership.swift in Sources */,
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
+				1085A70624FFC41800A7B4A8 /* wavierCell.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */,
 				1039FE8224509F3100190088 /* AdminResponses.swift in Sources */,
@@ -2325,6 +2359,7 @@
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidator+Extension.swift in Sources */,
+				1085A6FF24FF8DE600A7B4A8 /* ReferFriendViewController.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
 				10A06ADF249550E70051FF56 /* UserAcceptanceStatus.swift in Sources */,
@@ -2394,6 +2429,7 @@
 				10336660248389BF009AF19A /* PaymentViewController.swift in Sources */,
 				104BDFDA24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
 				10A06AD62494C6340051FF56 /* CoachDuty.swift in Sources */,
+				1085A70424FFB18000A7B4A8 /* E-WaiverViewController.swift in Sources */,
 				10336610247D3FED009AF19A /* CheckoutResponse.swift in Sources */,
 				10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
