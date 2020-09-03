@@ -626,6 +626,7 @@
 		109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8724863D5B009446A0 /* GiftCard.swift */; };
 		109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */; };
 		109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */; };
+		109D7C6424D9117100666E76 /* ForgotPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D7C6324D9117100666E76 /* ForgotPasswordTests.swift */; };
 		10A06ACC24937AD50051FF56 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ACB24937AD50051FF56 /* AddressViewController.swift */; };
 		10A06ACE24937BFF0051FF56 /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ACD24937BFF0051FF56 /* Address.storyboard */; };
 		10A06AD02493911B0051FF56 /* AddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ACF2493911B0051FF56 /* AddressInteractor.swift */; };
@@ -920,6 +921,7 @@
 		109D6E8724863D5B009446A0 /* GiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCard.swift; sourceTree = "<group>"; };
 		109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAcknowledgementController.swift; sourceTree = "<group>"; };
 		109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardDetailsViewController.swift; sourceTree = "<group>"; };
+		109D7C6324D9117100666E76 /* ForgotPasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTests.swift; sourceTree = "<group>"; };
 		10A06ACB24937AD50051FF56 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		10A06ACD24937BFF0051FF56 /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
 		10A06ACF2493911B0051FF56 /* AddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractor.swift; sourceTree = "<group>"; };
@@ -1627,10 +1629,9 @@
 		104BCDB924CB585F0095EE48 /* UIAutomation */ = {
 			isa = PBXGroup;
 			children = (
+				109D7C6224D9112F00666E76 /* Login */,
 				1020F4CF24CD70680059DED9 /* Admin */,
 				1009E84124C3835400AD2DCF /* BaseTests.swift */,
-				1009E84B24C38BBE00AD2DCF /* LoginTests.swift */,
-				1009E84924C383C400AD2DCF /* AppSelectorTest.swift */,
 				104BCDBA24CB585F0095EE48 /* UIAutomation.swift */,
 				104BCDBC24CB585F0095EE48 /* Info.plist */,
 			);
@@ -1693,6 +1694,16 @@
 				109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */,
 			);
 			path = GiftCardList;
+			sourceTree = "<group>";
+		};
+		109D7C6224D9112F00666E76 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1009E84B24C38BBE00AD2DCF /* LoginTests.swift */,
+				1009E84924C383C400AD2DCF /* AppSelectorTest.swift */,
+				109D7C6324D9117100666E76 /* ForgotPasswordTests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		10A06ACA24937AB40051FF56 /* Address */ = {
@@ -2850,6 +2861,7 @@
 				1020F4D324CE86940059DED9 /* AdminEventParticipantTests.swift in Sources */,
 				104BCDC424CB588D0095EE48 /* LoginTests.swift in Sources */,
 				10581B0D24D52A3F0053126C /* AdminSignatureInputTests.swift in Sources */,
+				109D7C6424D9117100666E76 /* ForgotPasswordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
