@@ -552,8 +552,6 @@
 		103B26952499483000BB8CB9 /* ConfigQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B268F2499471E00BB8CB9 /* ConfigQA.swift */; };
 		103B26962499483500BB8CB9 /* ConfigUAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B2691249947D200BB8CB9 /* ConfigUAT.swift */; };
 		103B26A5249A02ED00BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */; };
-		103B26AF249A04E000BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */; };
-		103B26B1249A054F00BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */; };
 		103B26B3249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
 		103B26B4249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
 		103B26B5249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
@@ -619,6 +617,8 @@
 		1098831624B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
 		1098831724B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
 		1098832224BC48BE001F217C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098832124BC48BE001F217C /* Tests.swift */; };
+		109B4BB52500E64300E45375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109B4BB42500E64300E45375 /* GoogleService-Info.plist */; };
+		109B4BB72500E69800E45375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109B4BB62500E69800E45375 /* GoogleService-Info.plist */; };
 		109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */; };
 		109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E812484EEA4009446A0 /* GiftCardViewController.swift */; };
 		109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */; };
@@ -863,9 +863,7 @@
 		103B268F2499471E00BB8CB9 /* ConfigQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQA.swift; sourceTree = "<group>"; };
 		103B2691249947D200BB8CB9 /* ConfigUAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUAT.swift; sourceTree = "<group>"; };
 		103B26932499480000BB8CB9 /* ConfigAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAppStore.swift; sourceTree = "<group>"; };
-		103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "EvolveGT-iOS/Config/FireBaseConfig/Prod/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplayController.swift; sourceTree = "<group>"; };
 		104B8DC42488FC0F008BE5DA /* MembershipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipController.swift; sourceTree = "<group>"; };
 		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
@@ -914,6 +912,8 @@
 		1098831F24BC48BE001F217C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1098832124BC48BE001F217C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		1098832324BC48BE001F217C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		109B4BB42500E64300E45375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "EvolveGT-iOS/Config/FireBaseConfig/QA/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		109B4BB62500E69800E45375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftCard.storyboard; sourceTree = "<group>"; };
 		109D6E812484EEA4009446A0 /* GiftCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardViewController.swift; sourceTree = "<group>"; };
 		109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardInteractor.swift; sourceTree = "<group>"; };
@@ -1597,9 +1597,9 @@
 		103B26A3249A02DD00BB8CB9 /* FireBaseConfig */ = {
 			isa = PBXGroup;
 			children = (
-				103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */,
-				103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */,
-				103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */,
+				109B4BB12500E5DC00E45375 /* UAT */,
+				109B4BB02500E5D600E45375 /* Prod */,
+				109B4BAF2500E5CF00E45375 /* QA */,
 			);
 			path = FireBaseConfig;
 			sourceTree = "<group>";
@@ -1682,6 +1682,30 @@
 				1098832324BC48BE001F217C /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		109B4BAF2500E5CF00E45375 /* QA */ = {
+			isa = PBXGroup;
+			children = (
+				109B4BB42500E64300E45375 /* GoogleService-Info.plist */,
+			);
+			path = QA;
+			sourceTree = "<group>";
+		};
+		109B4BB02500E5D600E45375 /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */,
+			);
+			path = Prod;
+			sourceTree = "<group>";
+		};
+		109B4BB12500E5DC00E45375 /* UAT */ = {
+			isa = PBXGroup;
+			children = (
+				109B4BB62500E69800E45375 /* GoogleService-Info.plist */,
+			);
+			path = UAT;
 			sourceTree = "<group>";
 		};
 		109D6E7E2484EE01009446A0 /* GiftCardList */ = {
@@ -2034,6 +2058,7 @@
 				103B259D249940BE00BB8CB9 /* Main.storyboard in Resources */,
 				104BCDC724CBE7070095EE48 /* UserTermsAgreed.json in Resources */,
 				103B259E249940BE00BB8CB9 /* Cart.storyboard in Resources */,
+				109B4BB52500E64300E45375 /* GoogleService-Info.plist in Resources */,
 				103B259F249940BE00BB8CB9 /* Admin.storyboard in Resources */,
 				103B25A0249940BE00BB8CB9 /* Home.storyboard in Resources */,
 				1020F4DF24D1D2A10059DED9 /* ParticipantsWithNoTraining.json in Resources */,
@@ -2041,7 +2066,6 @@
 				1020F4DD24D197510059DED9 /* EmptyParticipants.json in Resources */,
 				1020F4E124D1D3F90059DED9 /* ParticipantsWithNoRentals.json in Resources */,
 				1020F4E324D1D62C0059DED9 /* ParticipantsWithNoAccessories.json in Resources */,
-				103B26AF249A04E000BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B25A2249940BE00BB8CB9 /* GiftCard.storyboard in Resources */,
 				103B25A3249940BE00BB8CB9 /* ChangePassword.storyboard in Resources */,
 				1009E86624C4E1E700AD2DCF /* Success.json in Resources */,
@@ -2087,7 +2111,6 @@
 				103B2674249940CC00BB8CB9 /* Cart.storyboard in Resources */,
 				103B2675249940CC00BB8CB9 /* Admin.storyboard in Resources */,
 				103B2676249940CC00BB8CB9 /* Home.storyboard in Resources */,
-				103B26B1249A054F00BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B2677249940CC00BB8CB9 /* Tabs.storyboard in Resources */,
 				103B2678249940CC00BB8CB9 /* GiftCard.storyboard in Resources */,
 				1009E86724C4E1E700AD2DCF /* Success.json in Resources */,
@@ -2097,6 +2120,7 @@
 				103B267C249940CC00BB8CB9 /* Address.storyboard in Resources */,
 				103B267D249940CC00BB8CB9 /* Shop.storyboard in Resources */,
 				103B267E249940CC00BB8CB9 /* AboutUs.storyboard in Resources */,
+				109B4BB72500E69800E45375 /* GoogleService-Info.plist in Resources */,
 				103B267F249940CC00BB8CB9 /* Membership.storyboard in Resources */,
 				103B2680249940CC00BB8CB9 /* CreditHistory.storyboard in Resources */,
 				103B2681249940CC00BB8CB9 /* AlertStoryboard.storyboard in Resources */,
