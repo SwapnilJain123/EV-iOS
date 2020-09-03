@@ -37,6 +37,14 @@ class BaseUITests: XCTestCase {
         app.keyboards.buttons[returnKey].tap()
     }
     
+    func selectAppTheme(isEvApp:Bool){
+        if isEvApp{
+            app.buttons["ev logo"].tap()
+        }else{
+            app.buttons["moto logo"].tap()
+        }
+    }
+    
     func moveToParticipantPage(evApp: Bool = true){
         loginAdminUser(isEvApp: evApp)
         let eventsPage = app.staticTexts["Events"]
@@ -119,6 +127,48 @@ class BaseUITests: XCTestCase {
           app.buttons["SIGN IN"].tap()
           
       }
+    
+    func loginAsRegularUser(isEvApp: Bool = true){
+        
+        app.launchEnvironment = testData
+        app.launch()
+        
+        if isEvApp{
+            app.buttons["ev logo"].tap()
+        }else{
+            app.buttons["moto logo"].tap()
+        }
+        app.textFields["Email"].tap()
+        app.textFields["Email"].typeText("regularuser@gmail.com")
+        hideKeyboard()
+        
+        app.secureTextFields["Password"].tap()
+        app.secureTextFields["Password"].typeText("user@123")
+        hideKeyboard()
+        app.buttons["SIGN IN"].tap()
+        
+    }
+    
+    func loginAsCoach(isEvApp: Bool = true){
+        
+        app.launchEnvironment = testData
+        app.launch()
+        
+        if isEvApp{
+            app.buttons["ev logo"].tap()
+        }else{
+            app.buttons["moto logo"].tap()
+        }
+        app.textFields["Email"].tap()
+        app.textFields["Email"].typeText("coach@gmail.com")
+        hideKeyboard()
+        
+        app.secureTextFields["Password"].tap()
+        app.secureTextFields["Password"].typeText("coach@123")
+        hideKeyboard()
+        app.buttons["SIGN IN"].tap()
+        
+    }
     
     func verifyVisibility(element: XCUIElement){
         let window = app.windows.element(boundBy: 0)
