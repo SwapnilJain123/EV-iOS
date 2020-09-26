@@ -49,6 +49,9 @@
 		100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */; };
 		100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A23245607A300EF2B9F /* Sequence+Extension.swift */; };
 		100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */; };
+		101A14D8251E793B00189005 /* ReferAFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A14D7251E793B00189005 /* ReferAFriendCell.swift */; };
+		101A14D9251E793B00189005 /* ReferAFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A14D7251E793B00189005 /* ReferAFriendCell.swift */; };
+		101A14DA251E793B00189005 /* ReferAFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A14D7251E793B00189005 /* ReferAFriendCell.swift */; };
 		1020F4D124CD707B0059DED9 /* AdminCompletedEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020F4D024CD707B0059DED9 /* AdminCompletedEventsTests.swift */; };
 		1020F4D324CE86940059DED9 /* AdminEventParticipantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020F4D224CE86940059DED9 /* AdminEventParticipantTests.swift */; };
 		1020F4D724CE8A290059DED9 /* EventParticipantsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 1020F4D624CE8A290059DED9 /* EventParticipantsResponse.json */; };
@@ -552,8 +555,6 @@
 		103B26952499483000BB8CB9 /* ConfigQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B268F2499471E00BB8CB9 /* ConfigQA.swift */; };
 		103B26962499483500BB8CB9 /* ConfigUAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B2691249947D200BB8CB9 /* ConfigUAT.swift */; };
 		103B26A5249A02ED00BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */; };
-		103B26AF249A04E000BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */; };
-		103B26B1249A054F00BB8CB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */; };
 		103B26B3249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
 		103B26B4249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
 		103B26B5249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */; };
@@ -589,6 +590,18 @@
 		104BDFDA24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */; };
 		104BDFDB24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */; };
 		104BDFDC24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */; };
+		104DD79A2503684C00D2539E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DD7992503684C00D2539E /* Register.storyboard */; };
+		104DD79B2503684C00D2539E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DD7992503684C00D2539E /* Register.storyboard */; };
+		104DD79C2503684C00D2539E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DD7992503684C00D2539E /* Register.storyboard */; };
+		104DD79E2503689E00D2539E /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD79D2503689E00D2539E /* FirstRegisterViewController.swift */; };
+		104DD79F2503689E00D2539E /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD79D2503689E00D2539E /* FirstRegisterViewController.swift */; };
+		104DD7A02503689E00D2539E /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD79D2503689E00D2539E /* FirstRegisterViewController.swift */; };
+		104DD7A22503692400D2539E /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD7A12503692400D2539E /* SecondRegisterViewController.swift */; };
+		104DD7A32503692400D2539E /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD7A12503692400D2539E /* SecondRegisterViewController.swift */; };
+		104DD7A42503692400D2539E /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD7A12503692400D2539E /* SecondRegisterViewController.swift */; };
+		104DD7A625036DBC00D2539E /* EWaiverDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD7A525036DBC00D2539E /* EWaiverDetailsViewController.swift */; };
+		104DD7A725036DBC00D2539E /* EWaiverDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD7A525036DBC00D2539E /* EWaiverDetailsViewController.swift */; };
+		104DD7A825036DBC00D2539E /* EWaiverDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD7A525036DBC00D2539E /* EWaiverDetailsViewController.swift */; };
 		10581B0724D283820053126C /* GetSignatureResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10581B0624D283820053126C /* GetSignatureResponse.json */; };
 		10581B0924D51FBC0053126C /* SignUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = 10581B0824D51FBC0053126C /* SignUpdated.json */; };
 		10581B0B24D529740053126C /* AdminSignatureViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10581B0A24D529740053126C /* AdminSignatureViewTests.swift */; };
@@ -607,6 +620,9 @@
 		10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD62479A9920032C056 /* ProductDetailsCells.swift */; };
 		10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FD8247AF8AF0032C056 /* ProductDetails.swift */; };
 		10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FDA247BE20F0032C056 /* DropDownList.swift */; };
+		1085A6FD24FF8D8400A7B4A8 /* ReferFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */; };
+		1085A70224FFB15A00A7B4A8 /* E-Waiver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */; };
+		1085A70624FFC41800A7B4A8 /* wavierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70524FFC41800A7B4A8 /* wavierCell.swift */; };
 		1098831124B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
 		1098831224B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
 		1098831324B5C899001F217C /* SelfSizeableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831024B5C899001F217C /* SelfSizeableTableView.swift */; };
@@ -614,6 +630,18 @@
 		1098831624B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
 		1098831724B5D21A001F217C /* AlertListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098831424B5D21A001F217C /* AlertListController.swift */; };
 		1098832224BC48BE001F217C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098832124BC48BE001F217C /* Tests.swift */; };
+		109B4BB52500E64300E45375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109B4BB42500E64300E45375 /* GoogleService-Info.plist */; };
+		109B4BB72500E69800E45375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109B4BB62500E69800E45375 /* GoogleService-Info.plist */; };
+		109B4BB82501285400E45375 /* E-Waiver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */; };
+		109B4BB92501285500E45375 /* E-Waiver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */; };
+		109B4BBA2501285A00E45375 /* EWaiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70324FFB18000A7B4A8 /* EWaiverViewController.swift */; };
+		109B4BBB2501285A00E45375 /* EWaiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70324FFB18000A7B4A8 /* EWaiverViewController.swift */; };
+		109B4BBC2501285D00E45375 /* wavierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70524FFC41800A7B4A8 /* wavierCell.swift */; };
+		109B4BBD2501285E00E45375 /* wavierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70524FFC41800A7B4A8 /* wavierCell.swift */; };
+		109B4BBE2501287500E45375 /* ReferFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */; };
+		109B4BBF2501287600E45375 /* ReferFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */; };
+		109B4BC02501287A00E45375 /* ReferFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */; };
+		109B4BC12501287A00E45375 /* ReferFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */; };
 		109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */; };
 		109D6E822484EEA4009446A0 /* GiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E812484EEA4009446A0 /* GiftCardViewController.swift */; };
 		109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */; };
@@ -622,6 +650,14 @@
 		109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */; };
 		109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */; };
 		109D7C6424D9117100666E76 /* ForgotPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D7C6324D9117100666E76 /* ForgotPasswordTests.swift */; };
+		109EEDC425024DDC00E84D2F /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
+		109EEDC525024DDE00E84D2F /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
+		109EEDC72502541F00E84D2F /* EWaiverInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EEDC62502541F00E84D2F /* EWaiverInteractor.swift */; };
+		109EEDC8250254A600E84D2F /* EWaiverInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EEDC62502541F00E84D2F /* EWaiverInteractor.swift */; };
+		109EEDC9250254A700E84D2F /* EWaiverInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EEDC62502541F00E84D2F /* EWaiverInteractor.swift */; };
+		109EEDCB250263F000E84D2F /* WaiverApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EEDCA250263F000E84D2F /* WaiverApi.swift */; };
+		109EEDCC250263F000E84D2F /* WaiverApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EEDCA250263F000E84D2F /* WaiverApi.swift */; };
+		109EEDCD250263F000E84D2F /* WaiverApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EEDCA250263F000E84D2F /* WaiverApi.swift */; };
 		10A06ACC24937AD50051FF56 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ACB24937AD50051FF56 /* AddressViewController.swift */; };
 		10A06ACE24937BFF0051FF56 /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ACD24937BFF0051FF56 /* Address.storyboard */; };
 		10A06AD02493911B0051FF56 /* AddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ACF2493911B0051FF56 /* AddressInteractor.swift */; };
@@ -638,6 +674,38 @@
 		10A06AEA2496A1140051FF56 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AE92496A1140051FF56 /* SettingsInteractor.swift */; };
 		10A06AEC2496A48A0051FF56 /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AEB2496A48A0051FF56 /* UserPreference.swift */; };
 		10A06AEE2496B4930051FF56 /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AED2496B4930051FF56 /* UISwitchExtension.swift */; };
+		10A551A7250648AF0049C3DB /* RegistrationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551A6250648AF0049C3DB /* RegistrationCells.swift */; };
+		10A551A8250648AF0049C3DB /* RegistrationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551A6250648AF0049C3DB /* RegistrationCells.swift */; };
+		10A551A9250648AF0049C3DB /* RegistrationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551A6250648AF0049C3DB /* RegistrationCells.swift */; };
+		10A551AC25064E830049C3DB /* RegistraionPhases.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A551AB25064E830049C3DB /* RegistraionPhases.xib */; };
+		10A551AD25064E830049C3DB /* RegistraionPhases.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A551AB25064E830049C3DB /* RegistraionPhases.xib */; };
+		10A551AE25064E830049C3DB /* RegistraionPhases.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A551AB25064E830049C3DB /* RegistraionPhases.xib */; };
+		10A551B425067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551B325067F1F0049C3DB /* RegPhaseIndicator.swift */; };
+		10A551B525067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551B325067F1F0049C3DB /* RegPhaseIndicator.swift */; };
+		10A551B625067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551B325067F1F0049C3DB /* RegPhaseIndicator.swift */; };
+		10A551C3250902F40049C3DB /* EWaiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A70324FFB18000A7B4A8 /* EWaiverViewController.swift */; };
+		10A551C5250B52350049C3DB /* WaiverDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551C4250B52350049C3DB /* WaiverDetails.swift */; };
+		10A551C6250B52350049C3DB /* WaiverDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551C4250B52350049C3DB /* WaiverDetails.swift */; };
+		10A551C7250B52350049C3DB /* WaiverDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551C4250B52350049C3DB /* WaiverDetails.swift */; };
+		10A551C9250B5E800049C3DB /* WaiverDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551C8250B5E800049C3DB /* WaiverDetailsRequest.swift */; };
+		10A551CA250B5E800049C3DB /* WaiverDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551C8250B5E800049C3DB /* WaiverDetailsRequest.swift */; };
+		10A551CB250B5E800049C3DB /* WaiverDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551C8250B5E800049C3DB /* WaiverDetailsRequest.swift */; };
+		10A551CD250F52DE0049C3DB /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551CC250F52DE0049C3DB /* SignViewController.swift */; };
+		10A551CE250F52DE0049C3DB /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551CC250F52DE0049C3DB /* SignViewController.swift */; };
+		10A551CF250F52DE0049C3DB /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551CC250F52DE0049C3DB /* SignViewController.swift */; };
+		10A551D125122DAC0049C3DB /* ReferFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */; };
+		10A551D3251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551D2251497940049C3DB /* SaveWaiverDetailsRequest.swift */; };
+		10A551D4251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551D2251497940049C3DB /* SaveWaiverDetailsRequest.swift */; };
+		10A551D5251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551D2251497940049C3DB /* SaveWaiverDetailsRequest.swift */; };
+		10A551D7251748830049C3DB /* ReferFriendInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551D6251748830049C3DB /* ReferFriendInteractor.swift */; };
+		10A551D8251748830049C3DB /* ReferFriendInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551D6251748830049C3DB /* ReferFriendInteractor.swift */; };
+		10A551D9251748830049C3DB /* ReferFriendInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551D6251748830049C3DB /* ReferFriendInteractor.swift */; };
+		10A551DB251779CC0049C3DB /* ReferFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */; };
+		10A551DC251779CC0049C3DB /* ReferFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */; };
+		10A551DD251779CC0049C3DB /* ReferFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */; };
+		10BB126E251BC1CE00320A84 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */; };
+		10BB126F251BC1CE00320A84 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */; };
+		10BB1270251BC1CE00320A84 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */; };
 		10BDD014245982ED00F05700 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD011245982ED00F05700 /* AlertService.swift */; };
 		10BDD01824598AB000F05700 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */; };
 		10BDD01924598AB000F05700 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD01724598AAF00F05700 /* AlertViewController.swift */; };
@@ -674,6 +742,7 @@
 		10FCA2552451D29900EA95C0 /* EventParticipantsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */; };
 		10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA256245212AD00EA95C0 /* String+DateExtension.swift */; };
 		10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiView+Extension.swift */; };
+		10FE935525023094002F3572 /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
 		3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */; };
 		DF5E703275A0503AFA3E7AA3 /* Pods_UIAutomation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA80F2D4E1FC4292A5100E98 /* Pods_UIAutomation.framework */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
@@ -737,6 +806,7 @@
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		100A2A23245607A300EF2B9F /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeSkillRequest.swift; sourceTree = "<group>"; };
+		101A14D7251E793B00189005 /* ReferAFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferAFriendCell.swift; sourceTree = "<group>"; };
 		1020F4D024CD707B0059DED9 /* AdminCompletedEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCompletedEventsTests.swift; sourceTree = "<group>"; };
 		1020F4D224CE86940059DED9 /* AdminEventParticipantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventParticipantTests.swift; sourceTree = "<group>"; };
 		1020F4D624CE8A290059DED9 /* EventParticipantsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventParticipantsResponse.json; sourceTree = "<group>"; };
@@ -858,9 +928,7 @@
 		103B268F2499471E00BB8CB9 /* ConfigQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQA.swift; sourceTree = "<group>"; };
 		103B2691249947D200BB8CB9 /* ConfigUAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUAT.swift; sourceTree = "<group>"; };
 		103B26932499480000BB8CB9 /* ConfigAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAppStore.swift; sourceTree = "<group>"; };
-		103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "EvolveGT-iOS/Config/FireBaseConfig/Prod/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplayController.swift; sourceTree = "<group>"; };
 		104B8DC42488FC0F008BE5DA /* MembershipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipController.swift; sourceTree = "<group>"; };
 		104B8DC62488FC3C008BE5DA /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
@@ -881,6 +949,10 @@
 		104BDFD124A920FE00E198FF /* EnrolledEventsSlidingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledEventsSlidingTabController.swift; sourceTree = "<group>"; };
 		104BDFD524AA68E400E198FF /* CoachDutiesSlidingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutiesSlidingTabController.swift; sourceTree = "<group>"; };
 		104BDFD924AAF80C00E198FF /* ShopSlidingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSlidingTabController.swift; sourceTree = "<group>"; };
+		104DD7992503684C00D2539E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		104DD79D2503689E00D2539E /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
+		104DD7A12503692400D2539E /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
+		104DD7A525036DBC00D2539E /* EWaiverDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWaiverDetailsViewController.swift; sourceTree = "<group>"; };
 		10581B0624D283820053126C /* GetSignatureResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSignatureResponse.json; sourceTree = "<group>"; };
 		10581B0824D51FBC0053126C /* SignUpdated.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SignUpdated.json; sourceTree = "<group>"; };
 		10581B0A24D529740053126C /* AdminSignatureViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignatureViewTests.swift; sourceTree = "<group>"; };
@@ -899,11 +971,18 @@
 		10716FD62479A9920032C056 /* ProductDetailsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCells.swift; sourceTree = "<group>"; };
 		10716FD8247AF8AF0032C056 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		10716FDA247BE20F0032C056 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReferFriend.storyboard; sourceTree = "<group>"; };
+		1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferFriendViewController.swift; sourceTree = "<group>"; };
+		1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "E-Waiver.storyboard"; sourceTree = "<group>"; };
+		1085A70324FFB18000A7B4A8 /* EWaiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWaiverViewController.swift; sourceTree = "<group>"; };
+		1085A70524FFC41800A7B4A8 /* wavierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wavierCell.swift; sourceTree = "<group>"; };
 		1098831024B5C899001F217C /* SelfSizeableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizeableTableView.swift; sourceTree = "<group>"; };
 		1098831424B5D21A001F217C /* AlertListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListController.swift; sourceTree = "<group>"; };
 		1098831F24BC48BE001F217C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1098832124BC48BE001F217C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		1098832324BC48BE001F217C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		109B4BB42500E64300E45375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "EvolveGT-iOS/Config/FireBaseConfig/QA/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		109B4BB62500E69800E45375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		109D6E7F2484EE4C009446A0 /* GiftCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftCard.storyboard; sourceTree = "<group>"; };
 		109D6E812484EEA4009446A0 /* GiftCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardViewController.swift; sourceTree = "<group>"; };
 		109D6E832484EEF5009446A0 /* GiftCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardInteractor.swift; sourceTree = "<group>"; };
@@ -912,6 +991,8 @@
 		109D6E8924869976009446A0 /* PurchaseAcknowledgementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAcknowledgementController.swift; sourceTree = "<group>"; };
 		109D6E8B24878FB7009446A0 /* GiftCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardDetailsViewController.swift; sourceTree = "<group>"; };
 		109D7C6324D9117100666E76 /* ForgotPasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTests.swift; sourceTree = "<group>"; };
+		109EEDC62502541F00E84D2F /* EWaiverInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWaiverInteractor.swift; sourceTree = "<group>"; };
+		109EEDCA250263F000E84D2F /* WaiverApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiverApi.swift; sourceTree = "<group>"; };
 		10A06ACB24937AD50051FF56 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		10A06ACD24937BFF0051FF56 /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
 		10A06ACF2493911B0051FF56 /* AddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractor.swift; sourceTree = "<group>"; };
@@ -928,6 +1009,16 @@
 		10A06AE92496A1140051FF56 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		10A06AEB2496A48A0051FF56 /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
 		10A06AED2496B4930051FF56 /* UISwitchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
+		10A551A6250648AF0049C3DB /* RegistrationCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCells.swift; sourceTree = "<group>"; };
+		10A551AB25064E830049C3DB /* RegistraionPhases.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistraionPhases.xib; sourceTree = "<group>"; };
+		10A551B325067F1F0049C3DB /* RegPhaseIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPhaseIndicator.swift; sourceTree = "<group>"; };
+		10A551C4250B52350049C3DB /* WaiverDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiverDetails.swift; sourceTree = "<group>"; };
+		10A551C8250B5E800049C3DB /* WaiverDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiverDetailsRequest.swift; sourceTree = "<group>"; };
+		10A551CC250F52DE0049C3DB /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		10A551D2251497940049C3DB /* SaveWaiverDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveWaiverDetailsRequest.swift; sourceTree = "<group>"; };
+		10A551D6251748830049C3DB /* ReferFriendInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferFriendInteractor.swift; sourceTree = "<group>"; };
+		10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferFriendRequest.swift; sourceTree = "<group>"; };
+		10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		10BDD01724598AAF00F05700 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -950,6 +1041,7 @@
 		10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsInteractor.swift; sourceTree = "<group>"; };
 		10FCA256245212AD00EA95C0 /* String+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension.swift"; sourceTree = "<group>"; };
 		10FCA25824521E6300EA95C0 /* UiView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extension.swift"; sourceTree = "<group>"; };
+		10FE935425023094002F3572 /* Ewaiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ewaiver.swift; sourceTree = "<group>"; };
 		127112E5F6A0C1AD2BD9B271 /* Pods-EvolveGT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1C195867CC2329D3C4C614C9 /* Pods-EvolveGT-iOS.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.uat.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.uat.xcconfig"; sourceTree = "<group>"; };
 		319831E3D81497F7AAFBB35C /* Pods-EvolveGT-QA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-QA.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1082,6 +1174,8 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				1085A70024FFB10800A7B4A8 /* E-Waiver */,
+				1085A6FB24FF8D5900A7B4A8 /* ReferFriend */,
 				10A06AE2249697C40051FF56 /* Settings */,
 				10A06AD72494C9590051FF56 /* CoachDuties */,
 				10A06ACA24937AB40051FF56 /* Address */,
@@ -1172,6 +1266,7 @@
 				103346172461D2CA00D5EED0 /* EmptyCell.swift */,
 				103346192461DB3400D5EED0 /* CreditHistoryCell.swift */,
 				10A06AD32494BBC40051FF56 /* CoachDutyCell.swift */,
+				101A14D7251E793B00189005 /* ReferAFriendCell.swift */,
 			);
 			path = DashboardSections;
 			sourceTree = "<group>";
@@ -1340,6 +1435,7 @@
 		1039FE13244F25AA00190088 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				104DD7982503680900D2539E /* Register */,
 				1033465A246944B200D5EED0 /* Forgot Password */,
 				1039FE16244F25E100190088 /* LoginViewController.swift */,
 				1039FE6924506DE800190088 /* LoginInterator.swift */,
@@ -1373,6 +1469,8 @@
 				10A06AD52494C6340051FF56 /* CoachDuty.swift */,
 				10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */,
 				10A06AEB2496A48A0051FF56 /* UserPreference.swift */,
+				10FE935425023094002F3572 /* Ewaiver.swift */,
+				10A551C4250B52350049C3DB /* WaiverDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1411,6 +1509,9 @@
 				10048F1B246DB24F00684A87 /* CartRequest.swift */,
 				10048F34246EC50D00684A87 /* ShopsItemRequest.swift */,
 				1033665A24814F65009AF19A /* CheckoutRequests.swift */,
+				10A551C8250B5E800049C3DB /* WaiverDetailsRequest.swift */,
+				10A551D2251497940049C3DB /* SaveWaiverDetailsRequest.swift */,
+				10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1450,6 +1551,7 @@
 				1039FE8424509FE600190088 /* AdminApi.swift */,
 				10048F49246F0F7300684A87 /* GenericApi.swift */,
 				1039FE5124500A4F00190088 /* BaseApiAdapter.swift */,
+				109EEDCA250263F000E84D2F /* WaiverApi.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -1585,9 +1687,9 @@
 		103B26A3249A02DD00BB8CB9 /* FireBaseConfig */ = {
 			isa = PBXGroup;
 			children = (
-				103B26B0249A054F00BB8CB9 /* GoogleService-Info.plist */,
-				103B26AE249A04E000BB8CB9 /* GoogleService-Info.plist */,
-				103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */,
+				109B4BB12500E5DC00E45375 /* UAT */,
+				109B4BB02500E5D600E45375 /* Prod */,
+				109B4BAF2500E5CF00E45375 /* QA */,
 			);
 			path = FireBaseConfig;
 			sourceTree = "<group>";
@@ -1626,6 +1728,18 @@
 			path = UIAutomation;
 			sourceTree = "<group>";
 		};
+		104DD7982503680900D2539E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				104DD7992503684C00D2539E /* Register.storyboard */,
+				104DD79D2503689E00D2539E /* FirstRegisterViewController.swift */,
+				104DD7A12503692400D2539E /* SecondRegisterViewController.swift */,
+				10A551A6250648AF0049C3DB /* RegistrationCells.swift */,
+				10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		10716FBC2478228C0032C056 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -1644,6 +1758,29 @@
 			path = ProductDetails;
 			sourceTree = "<group>";
 		};
+		1085A6FB24FF8D5900A7B4A8 /* ReferFriend */ = {
+			isa = PBXGroup;
+			children = (
+				1085A6FC24FF8D8400A7B4A8 /* ReferFriend.storyboard */,
+				1085A6FE24FF8DE600A7B4A8 /* ReferFriendViewController.swift */,
+				10A551D6251748830049C3DB /* ReferFriendInteractor.swift */,
+			);
+			path = ReferFriend;
+			sourceTree = "<group>";
+		};
+		1085A70024FFB10800A7B4A8 /* E-Waiver */ = {
+			isa = PBXGroup;
+			children = (
+				1085A70124FFB15A00A7B4A8 /* E-Waiver.storyboard */,
+				1085A70324FFB18000A7B4A8 /* EWaiverViewController.swift */,
+				1085A70524FFC41800A7B4A8 /* wavierCell.swift */,
+				109EEDC62502541F00E84D2F /* EWaiverInteractor.swift */,
+				104DD7A525036DBC00D2539E /* EWaiverDetailsViewController.swift */,
+				10A551CC250F52DE0049C3DB /* SignViewController.swift */,
+			);
+			path = "E-Waiver";
+			sourceTree = "<group>";
+		};
 		1098832024BC48BE001F217C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1651,6 +1788,30 @@
 				1098832324BC48BE001F217C /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		109B4BAF2500E5CF00E45375 /* QA */ = {
+			isa = PBXGroup;
+			children = (
+				109B4BB42500E64300E45375 /* GoogleService-Info.plist */,
+			);
+			path = QA;
+			sourceTree = "<group>";
+		};
+		109B4BB02500E5D600E45375 /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				103B26A4249A02ED00BB8CB9 /* GoogleService-Info.plist */,
+			);
+			path = Prod;
+			sourceTree = "<group>";
+		};
+		109B4BB12500E5DC00E45375 /* UAT */ = {
+			isa = PBXGroup;
+			children = (
+				109B4BB62500E69800E45375 /* GoogleService-Info.plist */,
+			);
+			path = UAT;
 			sourceTree = "<group>";
 		};
 		109D6E7E2484EE01009446A0 /* GiftCardList */ = {
@@ -1707,6 +1868,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		10A551AA25064E190049C3DB /* RegistraionPhases */ = {
+			isa = PBXGroup;
+			children = (
+				10A551AB25064E830049C3DB /* RegistraionPhases.xib */,
+				10A551B325067F1F0049C3DB /* RegPhaseIndicator.swift */,
+			);
+			path = RegistraionPhases;
+			sourceTree = "<group>";
+		};
 		10BDD00F245982CA00F05700 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1743,6 +1913,7 @@
 		10BDD024245B100700F05700 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				10A551AA25064E190049C3DB /* RegistraionPhases */,
 				10336643247FCE37009AF19A /* ShippingIndicator */,
 				10716FA924706B870032C056 /* DividerView.swift */,
 				10716FDA247BE20F0032C056 /* DropDownList.swift */,
@@ -1948,20 +2119,24 @@
 				104B8DD0248932BF008BE5DA /* Profile.storyboard in Resources */,
 				10A06AE4249697DD0051FF56 /* Settings.storyboard in Resources */,
 				10CB6FA524CD37AB002F730C /* CompletedMotoEvents.json in Resources */,
+				104DD79A2503684C00D2539E /* Register.storyboard in Resources */,
 				104BCDCA24CBEEB20095EE48 /* UserTermsNotAgareed.json in Resources */,
 				1033462B24669B1300D5EED0 /* EnrolledEvents.storyboard in Resources */,
 				10336646247FCE53009AF19A /* ShippingIndicator.xib in Resources */,
 				10CB6FA324CD37A5002F730C /* CompletedEventsNoTraining.json in Resources */,
+				10A551AC25064E830049C3DB /* RegistraionPhases.xib in Resources */,
 				1009E85F24C4D93800AD2DCF /* LoginResponse.json in Resources */,
 				1039FE09244F1A1A00190088 /* LaunchScreen.storyboard in Resources */,
 				10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */,
 				10CB6FA124CD37A0002F730C /* CompletedEvEventsWithTraining.json in Resources */,
+				1085A70224FFB15A00A7B4A8 /* E-Waiver.storyboard in Resources */,
 				103346662469458000D5EED0 /* Main.storyboard in Resources */,
 				104BCDC624CBE7070095EE48 /* UserTermsAgreed.json in Resources */,
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				103345FA24606D4400D5EED0 /* Home.storyboard in Resources */,
 				103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */,
+				1085A6FD24FF8D8400A7B4A8 /* ReferFriend.storyboard in Resources */,
 				103B26A5249A02ED00BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B268D249941F600BB8CB9 /* ConfigAppStore.xcconfig in Resources */,
 				109D6E802484EE4C009446A0 /* GiftCard.storyboard in Resources */,
@@ -1991,6 +2166,7 @@
 				103B2598249940BE00BB8CB9 /* Settings.storyboard in Resources */,
 				104BCDCB24CBEEB20095EE48 /* UserTermsNotAgareed.json in Resources */,
 				103B2599249940BE00BB8CB9 /* EnrolledEvents.storyboard in Resources */,
+				104DD79B2503684C00D2539E /* Register.storyboard in Resources */,
 				10581B0724D283820053126C /* GetSignatureResponse.json in Resources */,
 				103B259A249940BE00BB8CB9 /* ShippingIndicator.xib in Resources */,
 				10CB6F9B24CC3A5E002F730C /* CompletedEventsNoTraining.json in Resources */,
@@ -1999,16 +2175,18 @@
 				103B259C249940BE00BB8CB9 /* CoachDuties.storyboard in Resources */,
 				10CB6F8F24CC188D002F730C /* CompletedEvEventsWithTraining.json in Resources */,
 				103B259D249940BE00BB8CB9 /* Main.storyboard in Resources */,
+				10A551AD25064E830049C3DB /* RegistraionPhases.xib in Resources */,
 				104BCDC724CBE7070095EE48 /* UserTermsAgreed.json in Resources */,
 				103B259E249940BE00BB8CB9 /* Cart.storyboard in Resources */,
+				109B4BB52500E64300E45375 /* GoogleService-Info.plist in Resources */,
 				103B259F249940BE00BB8CB9 /* Admin.storyboard in Resources */,
 				103B25A0249940BE00BB8CB9 /* Home.storyboard in Resources */,
+				109B4BBE2501287500E45375 /* ReferFriend.storyboard in Resources */,
 				1020F4DF24D1D2A10059DED9 /* ParticipantsWithNoTraining.json in Resources */,
 				103B25A1249940BE00BB8CB9 /* Tabs.storyboard in Resources */,
 				1020F4DD24D197510059DED9 /* EmptyParticipants.json in Resources */,
 				1020F4E124D1D3F90059DED9 /* ParticipantsWithNoRentals.json in Resources */,
 				1020F4E324D1D62C0059DED9 /* ParticipantsWithNoAccessories.json in Resources */,
-				103B26AF249A04E000BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B25A2249940BE00BB8CB9 /* GiftCard.storyboard in Resources */,
 				103B25A3249940BE00BB8CB9 /* ChangePassword.storyboard in Resources */,
 				1009E86624C4E1E700AD2DCF /* Success.json in Resources */,
@@ -2024,6 +2202,7 @@
 				1020F4D724CE8A290059DED9 /* EventParticipantsResponse.json in Resources */,
 				103B25AA249940BE00BB8CB9 /* CreditHistory.storyboard in Resources */,
 				10CB6F9D24CC3C56002F730C /* CompletedMotoEvents.json in Resources */,
+				109B4BB82501285400E45375 /* E-Waiver.storyboard in Resources */,
 				103B25AB249940BE00BB8CB9 /* AlertStoryboard.storyboard in Resources */,
 				103B25AC249940BE00BB8CB9 /* Guest.storyboard in Resources */,
 				103B268C249941F300BB8CB9 /* ConfigQA.xcconfig in Resources */,
@@ -2040,9 +2219,12 @@
 				103B266D249940CC00BB8CB9 /* Profile.storyboard in Resources */,
 				103B266E249940CC00BB8CB9 /* Settings.storyboard in Resources */,
 				10CB6FA624CD37AC002F730C /* CompletedMotoEvents.json in Resources */,
+				104DD79C2503684C00D2539E /* Register.storyboard in Resources */,
 				104BCDCC24CBEEB20095EE48 /* UserTermsNotAgareed.json in Resources */,
 				103B266F249940CC00BB8CB9 /* EnrolledEvents.storyboard in Resources */,
 				103B2670249940CC00BB8CB9 /* ShippingIndicator.xib in Resources */,
+				109B4BBF2501287600E45375 /* ReferFriend.storyboard in Resources */,
+				10A551AE25064E830049C3DB /* RegistraionPhases.xib in Resources */,
 				10CB6FA224CD37A4002F730C /* CompletedEventsNoTraining.json in Resources */,
 				1009E86124C4D93800AD2DCF /* LoginResponse.json in Resources */,
 				103B2671249940CC00BB8CB9 /* LaunchScreen.storyboard in Resources */,
@@ -2054,7 +2236,6 @@
 				103B2674249940CC00BB8CB9 /* Cart.storyboard in Resources */,
 				103B2675249940CC00BB8CB9 /* Admin.storyboard in Resources */,
 				103B2676249940CC00BB8CB9 /* Home.storyboard in Resources */,
-				103B26B1249A054F00BB8CB9 /* GoogleService-Info.plist in Resources */,
 				103B2677249940CC00BB8CB9 /* Tabs.storyboard in Resources */,
 				103B2678249940CC00BB8CB9 /* GiftCard.storyboard in Resources */,
 				1009E86724C4E1E700AD2DCF /* Success.json in Resources */,
@@ -2064,7 +2245,9 @@
 				103B267C249940CC00BB8CB9 /* Address.storyboard in Resources */,
 				103B267D249940CC00BB8CB9 /* Shop.storyboard in Resources */,
 				103B267E249940CC00BB8CB9 /* AboutUs.storyboard in Resources */,
+				109B4BB72500E69800E45375 /* GoogleService-Info.plist in Resources */,
 				103B267F249940CC00BB8CB9 /* Membership.storyboard in Resources */,
+				109B4BB92501285500E45375 /* E-Waiver.storyboard in Resources */,
 				103B2680249940CC00BB8CB9 /* CreditHistory.storyboard in Resources */,
 				103B2681249940CC00BB8CB9 /* AlertStoryboard.storyboard in Resources */,
 				103B2682249940CC00BB8CB9 /* Guest.storyboard in Resources */,
@@ -2273,23 +2456,31 @@
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
 				104B8DD4248ABF5B008BE5DA /* ProfileInteractor.swift in Sources */,
 				10048F1E246DB47700684A87 /* CartApiConstant.swift in Sources */,
+				10BB126E251BC1CE00320A84 /* RegisterInteractor.swift in Sources */,
 				104B8DD2248ABE5D008BE5DA /* ProfileViewCells.swift in Sources */,
 				10334660246944B200D5EED0 /* PwdResetAckController.swift in Sources */,
 				1039FE49244FFF3000190088 /* ApiClient.swift in Sources */,
 				10BDD014245982ED00F05700 /* AlertService.swift in Sources */,
+				10A551C9250B5E800049C3DB /* WaiverDetailsRequest.swift in Sources */,
 				1033460E24613FAA00D5EED0 /* ProfileData.swift in Sources */,
 				10A06ACC24937AD50051FF56 /* AddressViewController.swift in Sources */,
 				10048F4E246F2B6400684A87 /* JsonAny.swift in Sources */,
+				104DD7A625036DBC00D2539E /* EWaiverDetailsViewController.swift in Sources */,
+				10A551D125122DAC0049C3DB /* ReferFriendViewController.swift in Sources */,
 				100A2A1C2454925700EF2B9F /* UibarButtonItem+Extension.swift in Sources */,
 				10FCA257245212AD00EA95C0 /* String+DateExtension.swift in Sources */,
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
 				109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */,
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
+				10FE935525023094002F3572 /* Ewaiver.swift in Sources */,
 				10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */,
 				1033660C247D3E7D009AF19A /* CheckoutApi.swift in Sources */,
 				10A06AD22493C9A10051FF56 /* Country.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
+				104DD79E2503689E00D2539E /* FirstRegisterViewController.swift in Sources */,
+				109EEDC72502541F00E84D2F /* EWaiverInteractor.swift in Sources */,
+				10A551D7251748830049C3DB /* ReferFriendInteractor.swift in Sources */,
 				10336647247FCE53009AF19A /* ShippingIndicator.swift in Sources */,
 				1039FE502450076300190088 /* UserApiConstants.swift in Sources */,
 				10048F44246F094800684A87 /* AboutUsViewController.swift in Sources */,
@@ -2314,10 +2505,13 @@
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
 				104B8DC9248903CD008BE5DA /* Membership.swift in Sources */,
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
+				1085A70624FFC41800A7B4A8 /* wavierCell.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
+				10A551DB251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
 				109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */,
 				1039FE8224509F3100190088 /* AdminResponses.swift in Sources */,
 				103B26942499480000BB8CB9 /* ConfigAppStore.swift in Sources */,
+				10A551C5250B52350049C3DB /* WaiverDetails.swift in Sources */,
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
 				10A06AD42494BBC40051FF56 /* CoachDutyCell.swift in Sources */,
@@ -2357,6 +2551,7 @@
 				10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */,
 				103346322466A91300D5EED0 /* UpcomingEventsController.swift in Sources */,
 				1039FE7C2450895100190088 /* ETViewController.swift in Sources */,
+				10A551C3250902F40049C3DB /* EWaiverViewController.swift in Sources */,
 				10716FC22478290B0032C056 /* Product.swift in Sources */,
 				1098831524B5D21A001F217C /* AlertListController.swift in Sources */,
 				1039FE5224500A4F00190088 /* BaseApiAdapter.swift in Sources */,
@@ -2364,6 +2559,8 @@
 				10716FD52479A63C0032C056 /* ProductDetailsController.swift in Sources */,
 				10336617247ECE18009AF19A /* ReviewCartController.swift in Sources */,
 				10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */,
+				10A551B425067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */,
+				101A14D8251E793B00189005 /* ReferAFriendCell.swift in Sources */,
 				1039FE66245064D800190088 /* UserDefaultHelper.swift in Sources */,
 				10716FBE247822AA0032C056 /* ProductListController.swift in Sources */,
 				104BDFD624AA68E400E198FF /* CoachDutiesSlidingTabController.swift in Sources */,
@@ -2386,6 +2583,7 @@
 				10A06AEC2496A48A0051FF56 /* UserPreference.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */,
+				109EEDCB250263F000E84D2F /* WaiverApi.swift in Sources */,
 				109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */,
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
@@ -2425,18 +2623,22 @@
 				1033460B24612CC100D5EED0 /* ProfileCell.swift in Sources */,
 				10716FB82476E98E0032C056 /* ShopsInteractor.swift in Sources */,
 				10048F0F246D017400684A87 /* ShopItemResponse.swift in Sources */,
+				104DD7A22503692400D2539E /* SecondRegisterViewController.swift in Sources */,
 				10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */,
 				109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
+				10A551D3251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
 				104B8DCB2489048B008BE5DA /* MembershipInteractor.swift in Sources */,
 				104B8DD6248ACA87008BE5DA /* ImageViewExtension.swift in Sources */,
 				104B8DC52488FC0F008BE5DA /* MembershipController.swift in Sources */,
 				10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */,
 				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,
+				10A551CD250F52DE0049C3DB /* SignViewController.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 				10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */,
 				10048F30246EB0CF00684A87 /* EventDetailsController.swift in Sources */,
+				10A551A7250648AF0049C3DB /* RegistrationCells.swift in Sources */,
 				1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2459,23 +2661,31 @@
 				103B24EE249940BE00BB8CB9 /* CompletedEventCell.swift in Sources */,
 				103B24EF249940BE00BB8CB9 /* ProfileInteractor.swift in Sources */,
 				103B24F0249940BE00BB8CB9 /* CartApiConstant.swift in Sources */,
+				10BB126F251BC1CE00320A84 /* RegisterInteractor.swift in Sources */,
 				103B24F1249940BE00BB8CB9 /* ProfileViewCells.swift in Sources */,
 				103B24F2249940BE00BB8CB9 /* PwdResetAckController.swift in Sources */,
 				103B24F3249940BE00BB8CB9 /* ApiClient.swift in Sources */,
 				103B24F4249940BE00BB8CB9 /* AlertService.swift in Sources */,
+				10A551CA250B5E800049C3DB /* WaiverDetailsRequest.swift in Sources */,
 				103B24F5249940BE00BB8CB9 /* ProfileData.swift in Sources */,
 				103B24F6249940BE00BB8CB9 /* AddressViewController.swift in Sources */,
 				103B24F7249940BE00BB8CB9 /* JsonAny.swift in Sources */,
+				104DD7A725036DBC00D2539E /* EWaiverDetailsViewController.swift in Sources */,
+				109B4BBC2501285D00E45375 /* wavierCell.swift in Sources */,
 				103B24F8249940BE00BB8CB9 /* UibarButtonItem+Extension.swift in Sources */,
 				103B24F9249940BE00BB8CB9 /* String+DateExtension.swift in Sources */,
 				103B24FA249940BE00BB8CB9 /* Sequence+Extension.swift in Sources */,
 				103B24FB249940BE00BB8CB9 /* LoginRequest.swift in Sources */,
 				103B24FC249940BE00BB8CB9 /* PurchaseAcknowledgementController.swift in Sources */,
+				109EEDC425024DDC00E84D2F /* Ewaiver.swift in Sources */,
 				103B24FD249940BE00BB8CB9 /* GuestViewController.swift in Sources */,
 				103B24FE249940BE00BB8CB9 /* String+Extenstion.swift in Sources */,
 				103B24FF249940BE00BB8CB9 /* CheckoutApi.swift in Sources */,
 				103B2501249940BE00BB8CB9 /* Country.swift in Sources */,
+				104DD79F2503689E00D2539E /* FirstRegisterViewController.swift in Sources */,
+				109EEDC8250254A600E84D2F /* EWaiverInteractor.swift in Sources */,
 				103B2502249940BE00BB8CB9 /* EventParticipantRequest.swift in Sources */,
+				10A551D8251748830049C3DB /* ReferFriendInteractor.swift in Sources */,
 				103B2503249940BE00BB8CB9 /* ShippingIndicator.swift in Sources */,
 				103B2504249940BE00BB8CB9 /* UserApiConstants.swift in Sources */,
 				103B2505249940BE00BB8CB9 /* AboutUsViewController.swift in Sources */,
@@ -2502,8 +2712,10 @@
 				103B2519249940BE00BB8CB9 /* Membership.swift in Sources */,
 				103B251A249940BE00BB8CB9 /* ForgotPasswordInteractor.swift in Sources */,
 				103B251B249940BE00BB8CB9 /* MessageConstants.swift in Sources */,
+				10A551DC251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
 				103B251C249940BE00BB8CB9 /* GiftCardDetailsViewController.swift in Sources */,
 				103B251D249940BE00BB8CB9 /* AdminResponses.swift in Sources */,
+				10A551C6250B52350049C3DB /* WaiverDetails.swift in Sources */,
 				103B251E249940BE00BB8CB9 /* EventParticipantCell.swift in Sources */,
 				103B251F249940BE00BB8CB9 /* AppEngine.swift in Sources */,
 				103B2520249940BE00BB8CB9 /* CoachDutyCell.swift in Sources */,
@@ -2511,6 +2723,7 @@
 				103B2522249940BE00BB8CB9 /* SettingsViewController.swift in Sources */,
 				103B2523249940BE00BB8CB9 /* Logger.swift in Sources */,
 				103B2524249940BE00BB8CB9 /* AppVersion.swift in Sources */,
+				109B4BC02501287A00E45375 /* ReferFriendViewController.swift in Sources */,
 				103B2525249940BE00BB8CB9 /* LoginApi.swift in Sources */,
 				103B2526249940BE00BB8CB9 /* CartCells.swift in Sources */,
 				103B2527249940BE00BB8CB9 /* AdminApi.swift in Sources */,
@@ -2550,7 +2763,9 @@
 				103B2547249940BE00BB8CB9 /* ProductDetailsController.swift in Sources */,
 				103B2549249940BE00BB8CB9 /* ReviewCartController.swift in Sources */,
 				103B254A249940BE00BB8CB9 /* ProductDetailsCells.swift in Sources */,
+				10A551B525067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */,
 				103B254B249940BE00BB8CB9 /* UserDefaultHelper.swift in Sources */,
+				101A14D9251E793B00189005 /* ReferAFriendCell.swift in Sources */,
 				103B254C249940BE00BB8CB9 /* ProductListController.swift in Sources */,
 				104BDFD724AA68E400E198FF /* CoachDutiesSlidingTabController.swift in Sources */,
 				103B254D249940BE00BB8CB9 /* ForgotPasswordRequest.swift in Sources */,
@@ -2572,6 +2787,7 @@
 				103B255D249940BE00BB8CB9 /* UserPreference.swift in Sources */,
 				103B255E249940BE00BB8CB9 /* EventListCells.swift in Sources */,
 				103B255F249940BE00BB8CB9 /* GiftCard.swift in Sources */,
+				109EEDCC250263F000E84D2F /* WaiverApi.swift in Sources */,
 				103B2560249940BE00BB8CB9 /* GiftCardCell.swift in Sources */,
 				103B2561249940BE00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2562249940BE00BB8CB9 /* ApiConstsant.swift in Sources */,
@@ -2591,6 +2807,7 @@
 				103B256F249940BE00BB8CB9 /* PaymentViewController.swift in Sources */,
 				104BDFDB24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
 				103B2570249940BE00BB8CB9 /* CoachDuty.swift in Sources */,
+				109B4BBA2501285A00E45375 /* EWaiverViewController.swift in Sources */,
 				103B2571249940BE00BB8CB9 /* CheckoutResponse.swift in Sources */,
 				103B2572249940BE00BB8CB9 /* Encodable+Extension.swift in Sources */,
 				103B2573249940BE00BB8CB9 /* CompletedEventsViewController.swift in Sources */,
@@ -2611,18 +2828,22 @@
 				103B2582249940BE00BB8CB9 /* ProfileCell.swift in Sources */,
 				103B2583249940BE00BB8CB9 /* ShopsInteractor.swift in Sources */,
 				103B2584249940BE00BB8CB9 /* ShopItemResponse.swift in Sources */,
+				104DD7A32503692400D2539E /* SecondRegisterViewController.swift in Sources */,
 				103B2585249940BE00BB8CB9 /* AppApiConstants.swift in Sources */,
 				103B2586249940BE00BB8CB9 /* GiftCardInteractor.swift in Sources */,
 				103B2587249940BE00BB8CB9 /* CreditHistory.swift in Sources */,
+				10A551D4251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */,
 				103B2588249940BE00BB8CB9 /* CompletedEventRequest.swift in Sources */,
 				103B2589249940BE00BB8CB9 /* MembershipInteractor.swift in Sources */,
 				103B258A249940BE00BB8CB9 /* ImageViewExtension.swift in Sources */,
 				103B258B249940BE00BB8CB9 /* MembershipController.swift in Sources */,
 				103B258C249940BE00BB8CB9 /* CartRequest.swift in Sources */,
 				103B258D249940BE00BB8CB9 /* BuildScheme.swift in Sources */,
+				10A551CE250F52DE0049C3DB /* SignViewController.swift in Sources */,
 				103B258E249940BE00BB8CB9 /* LoginResponse.swift in Sources */,
 				103B258F249940BE00BB8CB9 /* DropDownList.swift in Sources */,
 				103B2590249940BE00BB8CB9 /* EventDetailsController.swift in Sources */,
+				10A551A8250648AF0049C3DB /* RegistrationCells.swift in Sources */,
 				103B2591249940BE00BB8CB9 /* CreditHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2645,23 +2866,31 @@
 				103B25C4249940CC00BB8CB9 /* CompletedEventCell.swift in Sources */,
 				103B25C5249940CC00BB8CB9 /* ProfileInteractor.swift in Sources */,
 				103B25C6249940CC00BB8CB9 /* CartApiConstant.swift in Sources */,
+				10BB1270251BC1CE00320A84 /* RegisterInteractor.swift in Sources */,
 				103B25C7249940CC00BB8CB9 /* ProfileViewCells.swift in Sources */,
 				103B25C8249940CC00BB8CB9 /* PwdResetAckController.swift in Sources */,
 				103B25C9249940CC00BB8CB9 /* ApiClient.swift in Sources */,
 				103B25CA249940CC00BB8CB9 /* AlertService.swift in Sources */,
+				10A551CB250B5E800049C3DB /* WaiverDetailsRequest.swift in Sources */,
 				103B25CB249940CC00BB8CB9 /* ProfileData.swift in Sources */,
 				103B25CC249940CC00BB8CB9 /* AddressViewController.swift in Sources */,
 				103B25CD249940CC00BB8CB9 /* JsonAny.swift in Sources */,
+				104DD7A825036DBC00D2539E /* EWaiverDetailsViewController.swift in Sources */,
+				109B4BBD2501285E00E45375 /* wavierCell.swift in Sources */,
 				103B25CE249940CC00BB8CB9 /* UibarButtonItem+Extension.swift in Sources */,
 				103B25CF249940CC00BB8CB9 /* String+DateExtension.swift in Sources */,
 				103B25D0249940CC00BB8CB9 /* Sequence+Extension.swift in Sources */,
 				103B25D1249940CC00BB8CB9 /* LoginRequest.swift in Sources */,
 				103B25D2249940CC00BB8CB9 /* PurchaseAcknowledgementController.swift in Sources */,
+				109EEDC525024DDE00E84D2F /* Ewaiver.swift in Sources */,
 				103B25D3249940CC00BB8CB9 /* GuestViewController.swift in Sources */,
 				103B25D4249940CC00BB8CB9 /* String+Extenstion.swift in Sources */,
 				103B25D5249940CC00BB8CB9 /* CheckoutApi.swift in Sources */,
 				103B25D7249940CC00BB8CB9 /* Country.swift in Sources */,
+				104DD7A02503689E00D2539E /* FirstRegisterViewController.swift in Sources */,
+				109EEDC9250254A700E84D2F /* EWaiverInteractor.swift in Sources */,
 				103B25D8249940CC00BB8CB9 /* EventParticipantRequest.swift in Sources */,
+				10A551D9251748830049C3DB /* ReferFriendInteractor.swift in Sources */,
 				103B25D9249940CC00BB8CB9 /* ShippingIndicator.swift in Sources */,
 				103B25DA249940CC00BB8CB9 /* UserApiConstants.swift in Sources */,
 				103B25DB249940CC00BB8CB9 /* AboutUsViewController.swift in Sources */,
@@ -2688,8 +2917,10 @@
 				103B25F0249940CC00BB8CB9 /* ForgotPasswordInteractor.swift in Sources */,
 				103B25F1249940CC00BB8CB9 /* MessageConstants.swift in Sources */,
 				103B25F2249940CC00BB8CB9 /* GiftCardDetailsViewController.swift in Sources */,
+				10A551DD251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
 				103B25F3249940CC00BB8CB9 /* AdminResponses.swift in Sources */,
 				103B25F4249940CC00BB8CB9 /* EventParticipantCell.swift in Sources */,
+				10A551C7250B52350049C3DB /* WaiverDetails.swift in Sources */,
 				103B25F5249940CC00BB8CB9 /* AppEngine.swift in Sources */,
 				103B25F6249940CC00BB8CB9 /* CoachDutyCell.swift in Sources */,
 				103B25F7249940CC00BB8CB9 /* SettingsTableViewCells.swift in Sources */,
@@ -2697,6 +2928,7 @@
 				103B25F9249940CC00BB8CB9 /* Logger.swift in Sources */,
 				103B25FA249940CC00BB8CB9 /* AppVersion.swift in Sources */,
 				103B25FB249940CC00BB8CB9 /* LoginApi.swift in Sources */,
+				109B4BC12501287A00E45375 /* ReferFriendViewController.swift in Sources */,
 				103B25FC249940CC00BB8CB9 /* CartCells.swift in Sources */,
 				103B25FD249940CC00BB8CB9 /* AdminApi.swift in Sources */,
 				103B25FE249940CC00BB8CB9 /* CreditHistoryViewController.swift in Sources */,
@@ -2736,7 +2968,9 @@
 				103B261D249940CC00BB8CB9 /* ProductDetailsController.swift in Sources */,
 				103B261F249940CC00BB8CB9 /* ReviewCartController.swift in Sources */,
 				103B2620249940CC00BB8CB9 /* ProductDetailsCells.swift in Sources */,
+				10A551B625067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */,
 				103B2621249940CC00BB8CB9 /* UserDefaultHelper.swift in Sources */,
+				101A14DA251E793B00189005 /* ReferAFriendCell.swift in Sources */,
 				103B2622249940CC00BB8CB9 /* ProductListController.swift in Sources */,
 				104BDFD824AA68E400E198FF /* CoachDutiesSlidingTabController.swift in Sources */,
 				103B2623249940CC00BB8CB9 /* ForgotPasswordRequest.swift in Sources */,
@@ -2758,6 +2992,7 @@
 				103B2633249940CC00BB8CB9 /* UserPreference.swift in Sources */,
 				103B2634249940CC00BB8CB9 /* EventListCells.swift in Sources */,
 				103B2635249940CC00BB8CB9 /* GiftCard.swift in Sources */,
+				109EEDCD250263F000E84D2F /* WaiverApi.swift in Sources */,
 				103B2636249940CC00BB8CB9 /* GiftCardCell.swift in Sources */,
 				103B2637249940CC00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2638249940CC00BB8CB9 /* ApiConstsant.swift in Sources */,
@@ -2777,6 +3012,7 @@
 				103B2645249940CC00BB8CB9 /* PaymentViewController.swift in Sources */,
 				104BDFDC24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
 				103B2646249940CC00BB8CB9 /* CoachDuty.swift in Sources */,
+				109B4BBB2501285A00E45375 /* EWaiverViewController.swift in Sources */,
 				103B2647249940CC00BB8CB9 /* CheckoutResponse.swift in Sources */,
 				103B2648249940CC00BB8CB9 /* Encodable+Extension.swift in Sources */,
 				103B2649249940CC00BB8CB9 /* CompletedEventsViewController.swift in Sources */,
@@ -2797,18 +3033,22 @@
 				103B2658249940CC00BB8CB9 /* ProfileCell.swift in Sources */,
 				103B2659249940CC00BB8CB9 /* ShopsInteractor.swift in Sources */,
 				103B265A249940CC00BB8CB9 /* ShopItemResponse.swift in Sources */,
+				104DD7A42503692400D2539E /* SecondRegisterViewController.swift in Sources */,
 				103B265B249940CC00BB8CB9 /* AppApiConstants.swift in Sources */,
 				103B265C249940CC00BB8CB9 /* GiftCardInteractor.swift in Sources */,
 				103B265D249940CC00BB8CB9 /* CreditHistory.swift in Sources */,
+				10A551D5251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */,
 				103B265E249940CC00BB8CB9 /* CompletedEventRequest.swift in Sources */,
 				103B265F249940CC00BB8CB9 /* MembershipInteractor.swift in Sources */,
 				103B2660249940CC00BB8CB9 /* ImageViewExtension.swift in Sources */,
 				103B2661249940CC00BB8CB9 /* MembershipController.swift in Sources */,
 				103B2662249940CC00BB8CB9 /* CartRequest.swift in Sources */,
 				103B2663249940CC00BB8CB9 /* BuildScheme.swift in Sources */,
+				10A551CF250F52DE0049C3DB /* SignViewController.swift in Sources */,
 				103B2664249940CC00BB8CB9 /* LoginResponse.swift in Sources */,
 				103B2665249940CC00BB8CB9 /* DropDownList.swift in Sources */,
 				103B2666249940CC00BB8CB9 /* EventDetailsController.swift in Sources */,
+				10A551A9250648AF0049C3DB /* RegistrationCells.swift in Sources */,
 				103B2667249940CC00BB8CB9 /* CreditHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

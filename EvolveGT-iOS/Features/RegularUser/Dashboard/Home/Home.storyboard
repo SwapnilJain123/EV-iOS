@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdK-nz-6Sj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdK-nz-6Sj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -32,11 +32,11 @@
             <objects>
                 <viewController id="h8S-hB-tj4" customClass="HomeViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ipj-Pa-uFP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPp-J7-3Za" userLabel="Profile View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1429"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1729"/>
                                 <color key="backgroundColor" red="0.89390325550000005" green="0.89803808929999995" blue="0.90205961469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollapsedCell" id="ZPe-B3-KAq" customClass="CollapsedCell" customModule="EvolveGT_QA" customModuleProvider="target">
@@ -1164,6 +1164,64 @@
                                             <outlet property="btnCochDuties" destination="Gtv-RI-lFk" id="OgO-ob-DuK"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReferFriendCell" id="3id-eU-lmn" customClass="ReferAFriendCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1364.5" width="414" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3id-eU-lmn" id="8XC-XZ-XmB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-pD-yMQ">
+                                                    <rect key="frame" x="10" y="10" width="394" height="70"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refer_a_friend" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-f5-Rl6">
+                                                            <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="5bf-7i-HBL"/>
+                                                                <constraint firstAttribute="width" constant="40" id="MXX-Uf-2eC"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refer A Friend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i71-UG-aRr">
+                                                            <rect key="frame" x="75" y="24.5" width="299" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d6-Qc-da2">
+                                                            <rect key="frame" x="8" y="8" width="378" height="54"/>
+                                                            <connections>
+                                                                <action selector="didPressReferAFriend:" destination="3id-eU-lmn" eventType="touchUpInside" id="Jzd-ij-E92"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="i71-UG-aRr" firstAttribute="leading" secondItem="m1b-f5-Rl6" secondAttribute="trailing" constant="20" id="0cE-hJ-oBB"/>
+                                                        <constraint firstAttribute="bottom" secondItem="m1b-f5-Rl6" secondAttribute="bottom" constant="15" id="6lx-Fc-Nzm"/>
+                                                        <constraint firstItem="i71-UG-aRr" firstAttribute="centerY" secondItem="J1l-pD-yMQ" secondAttribute="centerY" id="7ZD-Pp-wXX"/>
+                                                        <constraint firstItem="m1b-f5-Rl6" firstAttribute="top" secondItem="J1l-pD-yMQ" secondAttribute="top" constant="15" id="ApC-cD-aHN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="i71-UG-aRr" secondAttribute="trailing" constant="20" id="Gpo-mU-REW"/>
+                                                        <constraint firstItem="4d6-Qc-da2" firstAttribute="leading" secondItem="J1l-pD-yMQ" secondAttribute="leading" constant="8" id="IvC-iU-LuX"/>
+                                                        <constraint firstItem="4d6-Qc-da2" firstAttribute="top" secondItem="J1l-pD-yMQ" secondAttribute="top" constant="8" id="OwB-xk-hJu"/>
+                                                        <constraint firstItem="m1b-f5-Rl6" firstAttribute="leading" secondItem="J1l-pD-yMQ" secondAttribute="leading" constant="15" id="TKa-Lx-RoJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4d6-Qc-da2" secondAttribute="trailing" constant="8" id="TcM-st-bam"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4d6-Qc-da2" secondAttribute="bottom" constant="8" id="hAE-gY-o1Q"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J1l-pD-yMQ" firstAttribute="top" secondItem="8XC-XZ-XmB" secondAttribute="top" constant="10" id="7F2-kA-ED2"/>
+                                                <constraint firstAttribute="bottom" secondItem="J1l-pD-yMQ" secondAttribute="bottom" constant="10" id="ULS-oy-F4t"/>
+                                                <constraint firstItem="J1l-pD-yMQ" firstAttribute="leading" secondItem="8XC-XZ-XmB" secondAttribute="leading" constant="10" id="nVj-Gt-2Pm"/>
+                                                <constraint firstAttribute="trailing" secondItem="J1l-pD-yMQ" secondAttribute="trailing" constant="10" id="saj-eK-Rbt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="actionButton" destination="4d6-Qc-da2" id="5Bq-47-BcV"/>
+                                            <outlet property="icon" destination="m1b-f5-Rl6" id="jdd-oI-3b5"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="h8S-hB-tj4" id="sV6-xJ-UF3"/>
@@ -1181,7 +1239,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="home" id="Cwe-ox-3sO"/>
                     <navigationItem key="navigationItem" id="83L-Hk-KYC"/>
-                    <size key="freeformSize" width="414" height="1600"/>
+                    <size key="freeformSize" width="414" height="1900"/>
                     <connections>
                         <outlet property="profileView" destination="NPp-J7-3Za" id="CEv-K6-tsx"/>
                     </connections>
@@ -1267,6 +1325,7 @@
         <image name="ic_btn_plus_blue" width="21.333333969116211" height="21.333333969116211"/>
         <image name="past_events" width="42.666667938232422" height="42.666667938232422"/>
         <image name="plus_green" width="20" height="20"/>
+        <image name="refer_a_friend" width="128" height="128"/>
         <image name="skill_level" width="128" height="128"/>
         <image name="upcoming_events" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="RootBackGround">

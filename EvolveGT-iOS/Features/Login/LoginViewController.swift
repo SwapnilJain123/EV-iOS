@@ -12,6 +12,8 @@ import UIKit
 import SkyFloatingLabelTextField
 class LoginViewController : ETViewController, UITextFieldDelegate{
     
+    @IBOutlet weak var btnSignUp: UIButton!
+    
     @IBOutlet weak var loginImage: UIImageView!
     
     @IBOutlet weak var loginButton: UIButton!
@@ -41,7 +43,7 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         tfEmail.applyColorTheme()
         loginButton.applyColorTheme()
         tfPassword.applyColorTheme()
-        
+        btnSignUp.setTitleColor(.getAppThemeColor(), for: .normal)
         guestButton.isHidden = !AppEngine.sharedInstance.isEvApp()
         
         var image = UIImage(named: "splash_logo")
@@ -80,6 +82,12 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
        loginInteractor.loginViwelegate = self
         loginInteractor.doLogin(email: tfEmail.text ?? "", password: tfPassword.text ?? "")
     }
+    
+    @IBAction func didPressedCreateAccount(_ sender: UIButton) {
+        
+        self.ext.pushViewController(storyBoard: "Register", VCIdentifier: "fistRegisterVC")
+    }
+    
     
     @IBAction func didPressGuest(_ sender: Any) {
         let controller = UIStoryboard.init(name: "Guest", bundle: nil).instantiateViewController(withIdentifier: "GuestVC") as! GuestViewController

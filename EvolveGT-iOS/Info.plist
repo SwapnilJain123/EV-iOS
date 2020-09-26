@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
 	<key>APP_NAME</key>
 	<string>$(APP_NAME)</string>
 	<key>BASE_URL</key>
@@ -42,6 +44,8 @@
 	<string>$(CHECKOUT_MODE)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>EvolveGT would like to access calendar to mark the the events and reminders in the calendar.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Enable camera access so that you can add photos to profile</string>
 	<key>NSPhotoLibraryUsageDescription</key>

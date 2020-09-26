@@ -29,4 +29,14 @@ class LoginApi : BaseApiAdapter{
        }
     
     
+    func createAccount(signupRequest: RegistrationRequest){
+           
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CREATE_ACCOUNT)"
+           setUrl(url: url)
+          
+           setParameters(parameters: makeDictionary(signupRequest))
+           super.makeRequest(method: .POST)
+       }
+    
+    
 }

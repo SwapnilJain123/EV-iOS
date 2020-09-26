@@ -164,6 +164,23 @@ extension HomeViewController: UITableViewDataSource{
                 
             }
             
+        case .referAFriend:
+            let referFriendCell = tableView.dequeueReusableCell(withIdentifier:"ReferFriendCell",for: indexPath) as! ReferAFriendCell
+            referFriendCell.action = {
+                let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
+                
+                VC.providesPresentationContextTransitionStyle = true
+                VC.definesPresentationContext = true
+                VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                
+                
+                self.present(VC, animated: true, completion: nil)
+                
+            }
+            referFriendCell.updateUi()
+            return referFriendCell
+            
         }
         
     }
@@ -249,5 +266,5 @@ extension HomeViewController: ProfileCellDelegate{
         vc.selectedIndex = eventType
         self.ext.pushViewController(viewController: vc)
     }
- 
+    
 }
