@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,16 +12,16 @@
         <!--Refer Friend View Controller-->
         <scene sceneID="St9-HN-AYr">
             <objects>
-                <viewController storyboardIdentifier="referFriendVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Jp-V7-2Tz" customClass="ReferFriendViewController" customModule="Evolve_GT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="referFriendVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Jp-V7-2Tz" customClass="ReferFriendViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8jg-q0-bsA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9h-m0-BZ0" userLabel="RootView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKB-ck-uno" userLabel="MessageView">
-                                        <rect key="frame" x="32" y="287" width="350" height="200"/>
+                                        <rect key="frame" x="32" y="309" width="350" height="200"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIL-xb-wlH" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="20" y="83" width="310" height="34"/>
@@ -32,7 +32,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuJ-vp-iaM">
-                                                <rect key="frame" x="20" y="143" width="310" height="36"/>
+                                                <rect key="frame" x="20" y="132" width="310" height="47"/>
                                                 <color key="backgroundColor" name="ColorEV"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="Send Invitation">
@@ -42,7 +42,7 @@
                                                     <action selector="sendInvitationButton:" destination="3Jp-V7-2Tz" eventType="touchUpInside" id="JCD-ud-I4k"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalied Email." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB3-vM-WU5" userLabel="ErrorLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please provide valid email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB3-vM-WU5" userLabel="ErrorLabel">
                                                 <rect key="frame" x="20" y="57" width="310" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" name="TextColorRed"/>
@@ -58,7 +58,7 @@
                                             <constraint firstItem="DIL-xb-wlH" firstAttribute="top" secondItem="wB3-vM-WU5" secondAttribute="bottom" constant="8" id="6sO-sX-r2s"/>
                                             <constraint firstAttribute="trailing" secondItem="wB3-vM-WU5" secondAttribute="trailing" constant="20" id="EYn-YZ-tDi"/>
                                             <constraint firstItem="DIL-xb-wlH" firstAttribute="centerY" secondItem="wKB-ck-uno" secondAttribute="centerY" id="F2l-Ri-v52"/>
-                                            <constraint firstItem="vuJ-vp-iaM" firstAttribute="top" secondItem="DIL-xb-wlH" secondAttribute="bottom" constant="26" id="J0O-Ma-IfY"/>
+                                            <constraint firstItem="vuJ-vp-iaM" firstAttribute="top" secondItem="DIL-xb-wlH" secondAttribute="bottom" constant="15" id="J0O-Ma-IfY"/>
                                             <constraint firstAttribute="trailing" secondItem="vuJ-vp-iaM" secondAttribute="trailing" constant="20" id="PtF-wa-5gx"/>
                                             <constraint firstItem="wB3-vM-WU5" firstAttribute="leading" secondItem="wKB-ck-uno" secondAttribute="leading" constant="20" id="VxB-Ef-NJ3"/>
                                             <constraint firstItem="vuJ-vp-iaM" firstAttribute="leading" secondItem="wKB-ck-uno" secondAttribute="leading" constant="20" id="aMG-MA-DBD"/>
@@ -67,7 +67,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REFER A FRIEND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGE-jI-KdE" userLabel="TitleLabel">
-                                        <rect key="frame" x="32" y="242" width="350" height="45"/>
+                                        <rect key="frame" x="32" y="264" width="350" height="45"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="mza-KR-DmN"/>
@@ -77,7 +77,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refer a friend and get reward" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc8-xL-niG" userLabel="messageLabel">
-                                        <rect key="frame" x="32" y="307" width="350" height="25"/>
+                                        <rect key="frame" x="32" y="329" width="350" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="5FU-sz-sFQ"/>
                                         </constraints>
@@ -85,12 +85,25 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOp-OG-NQv" userLabel="Close Button">
+                                        <rect key="frame" x="369.5" y="251.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="PhL-av-XXa"/>
+                                            <constraint firstAttribute="height" constant="25" id="dgC-wf-qxm"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_not_assigned"/>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="3Jp-V7-2Tz" eventType="touchUpInside" id="urd-uO-eba"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.54171125856164382" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="DGE-jI-KdE" firstAttribute="centerX" secondItem="wKB-ck-uno" secondAttribute="centerX" id="OIc-mv-dwQ"/>
                                     <constraint firstItem="cc8-xL-niG" firstAttribute="leading" secondItem="wKB-ck-uno" secondAttribute="leading" id="R55-c4-aqT"/>
+                                    <constraint firstItem="aOp-OG-NQv" firstAttribute="top" secondItem="DGE-jI-KdE" secondAttribute="top" constant="-12.5" id="WS2-zy-9oa"/>
                                     <constraint firstItem="cc8-xL-niG" firstAttribute="top" secondItem="DGE-jI-KdE" secondAttribute="bottom" constant="20" id="XXk-dl-YRY"/>
+                                    <constraint firstItem="aOp-OG-NQv" firstAttribute="trailing" secondItem="DGE-jI-KdE" secondAttribute="trailing" constant="12.5" id="Xrw-Ax-4ep"/>
                                     <constraint firstItem="wKB-ck-uno" firstAttribute="top" secondItem="DGE-jI-KdE" secondAttribute="bottom" id="bAO-k9-jSX"/>
                                     <constraint firstItem="DGE-jI-KdE" firstAttribute="trailing" secondItem="wKB-ck-uno" secondAttribute="trailing" id="gRa-t4-Hj5"/>
                                     <constraint firstItem="cc8-xL-niG" firstAttribute="trailing" secondItem="wKB-ck-uno" secondAttribute="trailing" id="htz-RV-GIf"/>
@@ -100,7 +113,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.15613102791878175" green="0.15613102791878175" blue="0.15613102791878175" alpha="0.51522367294520544" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CD4-iU-dKV" firstAttribute="trailing" secondItem="B9h-m0-BZ0" secondAttribute="trailing" id="Fhs-Es-Yd1"/>
                             <constraint firstItem="B9h-m0-BZ0" firstAttribute="leading" secondItem="CD4-iU-dKV" secondAttribute="leading" id="WjL-oo-AVw"/>
@@ -115,32 +128,16 @@
                     <connections>
                         <outlet property="emailTF" destination="DIL-xb-wlH" id="4tg-r7-AP2"/>
                         <outlet property="errorLabel" destination="wB3-vM-WU5" id="gjM-L6-58u"/>
+                        <outlet property="sendInvitation" destination="vuJ-vp-iaM" id="BqE-JS-qwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gg-gK-go2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1426.0869565217392" y="147.99107142857142"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Eam-mq-M6z">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G1n-7a-bzv" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="42V-sT-GEE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3Jp-V7-2Tz" kind="relationship" relationship="rootViewController" id="9U4-4G-1B5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gEv-zb-cbB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="515.94202898550725" y="147.99107142857142"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="ic_not_assigned" width="64" height="64"/>
         <namedColor name="ColorEV">
             <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

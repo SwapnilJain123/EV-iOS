@@ -11,11 +11,13 @@ protocol EventListViewDelegate : BaseViewDelegate{
     func didFetchEvents(events : [Event]?)
     func presentEventTypeFilterOptions(options : [String])
     func presentMonthFilterOptions(options : [String])
+    func addEventToCalendar(event: Event)
 }
 
 protocol EventDetailsDelegate : BaseViewDelegate{
     func didFetchEventDetails(_ eventDetails : EventDetails, sections :[EventsInteractor.EventDetailsSections] )
     func validationError(_ errorMessage: String)
+     func addEventToCalendar(event: EventDetails)
 }
 class EventsInteractor :BaseInteractor{
     
@@ -154,9 +156,8 @@ class EventsInteractor :BaseInteractor{
             self.eventListDelegate?.hideProgressIndicator()
             self.eventDetailsDelegate?.hideProgressIndicator()
             if error == nil{
-                self.eventListDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
-                self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
                 self.syncCartBadgeCount()
+                self.eventListDelegate?.addEventToCalendar(event: event)
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.eventListDelegate?.showErrorToastMessage(message: error!.errorMessage)
@@ -208,7 +209,8 @@ class EventsInteractor :BaseInteractor{
         cartApi.setCompletionHandler{ response, error in
             self.eventDetailsDelegate?.hideProgressIndicator()
             if error == nil{
-                self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+                
+                 self.eventDetailsDelegate?.addEventToCalendar(event: event)
                 self.syncCartBadgeCount()
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
@@ -253,7 +255,8 @@ class EventsInteractor :BaseInteractor{
         cartApi.setCompletionHandler{ response, error in
             self.eventDetailsDelegate?.hideProgressIndicator()
             if error == nil{
-                self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.eventAddedToCart)
+               
+                 self.eventDetailsDelegate?.addEventToCalendar(event: event)
                 self.syncCartBadgeCount()
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")

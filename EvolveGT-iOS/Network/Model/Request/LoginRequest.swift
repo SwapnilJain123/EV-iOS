@@ -23,3 +23,26 @@ struct SupportedStateRequest: Codable {
         case countryCode = "country_code"
     }
 }
+
+class RegistrationRequest: Codable{
+    var firstname, lastname, email, confirmEmail: String?
+    var password, confirmPassword: String?
+    var raceLicense: Int? = 0
+    var everBeenTrack: Int? = 0
+    var skillLevel, phone, dob: String?
+    var gender: String? = "Male"
+    var accept: Int? = 1
+    var subscribeForDiscounts: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case firstname, lastname, email
+        case confirmEmail = "confirm_email"
+        case password
+        case confirmPassword = "confirm_password"
+        case raceLicense = "race_license"
+        case everBeenTrack = "ever_been_track"
+        case skillLevel = "skill_level"
+        case phone, dob, gender, accept
+        case subscribeForDiscounts = "subscribe_for_discounts"
+    }
+}

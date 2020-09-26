@@ -118,6 +118,16 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(storyBoard: "Profile", VCIdentifier: "ProfileController")
         case SlideMenuItem.TAG_E_WAIVER:
             self.ext.pushViewController(storyBoard: "E-Waiver", VCIdentifier: "E-WaiverVC")
+        case SlideMenuItem.TAG_REFER_FRIEND:
+                       let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
+                       
+                       VC.providesPresentationContextTransitionStyle = true
+                              VC.definesPresentationContext = true
+                              VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                              VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                       
+                       
+                       self.present(VC, animated: true, completion: nil)
             
             
         default:

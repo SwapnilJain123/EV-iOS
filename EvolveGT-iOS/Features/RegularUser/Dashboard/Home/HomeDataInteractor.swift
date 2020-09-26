@@ -237,4 +237,5 @@ enum HomeSection: Int, CaseIterable{
     case upcomingEvents
     case pastEvents
     case creditHistory
+    case referAFriend
 }

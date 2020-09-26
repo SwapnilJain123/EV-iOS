@@ -42,6 +42,8 @@
 	<string>$(CHECKOUT_MODE)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>EvolveGT would like to access calendar to mark the the events and reminders in the calendar.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Enable camera access so that you can add photos to profile</string>
 	<key>NSPhotoLibraryUsageDescription</key>

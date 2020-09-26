@@ -75,6 +75,12 @@ struct ValidationErrors{
     static let cityRequired = "Please provide your city"
      static let addressRequired = "Please provide your address"
     static let postalCodeRequired = "Please provide your postal code"
+    
+    static let emptyNameAndLocation = "Please provide name and location of event"
+    static let emptyLicense = "Please provide your license number"
+    static let emptyLicenseIssuedState = "Please select license issued state"
+     static let incorrectConfirmPassword = "Password mismatch"
+     static let emptyPassword = "Please provide a valid password"
 }
 
 //Mark: - Indicator Messages
@@ -127,6 +133,11 @@ struct LoadingIndicatorMessages {
     
      static let readingPrefernces = "Please wait, reading your preferences..."
      static let upgradingSkill = "Upgrading skill..."
+     static let loadingWaiverEvents = "Loading Waiver Events..."
+     static let loadingWaiverDetails = "Loading details..."
+     static let savingSignature = "Saving signature..."
+    static let inviteFriend = "Sending invitation"
+    static let creatingAccount = "Please wait, We're creating your account."
     
 }
 
@@ -163,6 +174,8 @@ struct ErrorMessages {
     static let emptyCreditHistory = "Sorry, You have no credit history."
     static let emptyCreditList = "Sorry, You have no credit history."
     static let emptyEventList = "Sorry, there is no events available right now."
+    static let emptyWaiverEventList = "Sorry, there is no waiver events available right now."
+    static let emptyWaiverEventDetails = "Sorry, Waiver details not found"
     static let emptyEventClass = "Please select at least one class"
     static let emptyProducts = "Unfortunately, there is no products available right now."
     static let emptyCartList = "Sorry, Your cart is empty."
@@ -174,6 +187,8 @@ struct ErrorMessages {
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
      static let emptyMemberships = "Unfortunately, there is no memberships available right now."
     static let updatingPreferenceFailed = "Your notification preferences could not be updated."
+    
+   
 }
 
 
@@ -197,7 +212,10 @@ struct SuccessMessages {
     static let profileUpdated = "Profile updated successfully."
      static let billingAdressUpdated = "Billing address updated successfully."
     static let preferencesUpdated = "Your notification preferences updated."
+    static let InvitationSent = "Your invitation has been sent successfully"
     
+    static let eventConfirmation = "Event added successfully. Would you like to add this to your calendar?"
+   static let eventAddedToCalendar = "Event added to your calendar"
     
 }
 

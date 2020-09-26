@@ -148,6 +148,17 @@ extension EventDetailsController: EventDetailsDelegate{
         self.eventDetailsView.reloadData()
     }
     
+    func addEventToCalendar(event: EventDetails) {
+           self.ext.confirmationAlert(title: "Add Event To Calendar", message: SuccessMessages.eventConfirmation, btnText: "Add Event", handler: {
+               self.ext.addEventToCalendar(title: event.title!, description: "\(event.eventType ?? "") event", startDate: event.eventDate!.createDate(inPattern: .FORMAT_YYYY_MM_DD_HIPHEN).addingTimeInterval(TimeInterval(6 * 60.0 * 60.0)), endDate: event.eventDate!.createDate(inPattern: .FORMAT_YYYY_MM_DD_HIPHEN).addingTimeInterval(TimeInterval(10 * 60.0 * 60.0))){ added, error in
+                   
+                   DispatchQueue.main.async() {
+                        self.showSuccessToastMessage(message: SuccessMessages.eventAddedToCalendar)
+                   }
+               }
+           })
+       }
+    
 }
 extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

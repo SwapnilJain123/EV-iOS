@@ -70,3 +70,32 @@ struct NotificationTypesResponse: Codable {
         case preferences = "result"
     }
 }
+
+struct WaiverListResponse: Codable {
+    var status: Int?
+    var msg: String?
+    var result: [EWaiver]?
+    var count: Int?
+}
+
+
+struct WaiverDeatailsResponse: Codable {
+    var status: Int?
+    var msg: String?
+    var eventData: EventData?
+    var userData: UserData?
+    var states: [State]?
+
+    enum CodingKeys: String, CodingKey {
+        case status, msg
+        case eventData = "event_data"
+        case userData = "user_data"
+        case states
+    }
+}
+
+struct ReferFriendResponse: Codable {
+    var status: Int?
+    var msg: String?
+}
+
