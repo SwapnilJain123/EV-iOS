@@ -108,15 +108,14 @@ extension SignatureReaderController: SignatureViewDelegate{
 }
 
 extension SignatureReaderController: SwiftSignatureViewDelegate{
-    func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
-         saveButton.isEnabled = termsCheckBox.isOn && view.signature != nil
-    }
+   
     
-    func swiftSignatureViewDidDraw(_ view: ISignatureView) {
+    func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView){
         
     }
-    
-    
+    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan:UIPanGestureRecognizer){
+        saveButton.isEnabled = termsCheckBox.isOn && view.signature != nil
+    }
     
     
 }

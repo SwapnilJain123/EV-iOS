@@ -51,6 +51,10 @@ struct ProfileData{
             self.membershipStatus = "INACTIVE"
         }
         
-        self.skillLevel = userDetails.skillLevel
+        if(AppEngine.sharedInstance.currentUser?.isAdminOrCoach() ?? false){
+            self.skillLevel = AppEngine.sharedInstance.currentUser?.role.capitalized
+        }else{
+         self.skillLevel = AppEngine.sharedInstance.isEvApp() ? userDetails.skillLevel : userDetails.motoSkill
+        }
     }
 }

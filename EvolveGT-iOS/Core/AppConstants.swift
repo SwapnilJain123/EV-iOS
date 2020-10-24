@@ -16,6 +16,8 @@ let KEY_AUTH_TOKEN = "auth_token"
 
 struct AppConstants{
     static let SkillLevels = ["GT1","E1","E2","E3","E4","COACHES"]
+    static let TrackYesSkillLevels = ["E1","E2","E3"]
+    static let TrackNoSkillLevels = ["GT1"]
     static let emergencyRelationShips = ["Friend","Parent", "Local Guardian", "Other"]
     static let ImageTag = "data:image/png;base64,"
     
@@ -90,7 +92,7 @@ struct ScreenTitle{
     //Mark: User Screen
     static let TITLE_DASHBOARD = "Dashboard"
     static let TITLE_WAIVER = "E-Waiver"
-    static let TITLE_CREATE_ACCOUNT = "Create your account"
+    static let TITLE_CREATE_ACCOUNT = "Create Your Account"
     
     static let TITLE_UPCOMING_EVENTS = "Upcoming Events"
     static let TITLE_PAST_EVENTS = "Past Events"
@@ -137,5 +139,6 @@ struct DeviceType
     static let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH >= 812.0
     static let IS_IPAD = UIDevice.current.userInterfaceIdiom == .pad
     
+    static let IS_BIG_SCREEN_DEVICE = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH >= 700
     
 }

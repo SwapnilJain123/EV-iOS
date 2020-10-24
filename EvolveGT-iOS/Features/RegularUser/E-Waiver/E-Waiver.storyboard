@@ -180,7 +180,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdM-ab-OkA" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
-                                <rect key="frame" x="10" y="764" width="394" height="18"/>
+                                <rect key="frame" x="10" y="752" width="394" height="30"/>
                                 <state key="normal" title=" I Agree terms and conditions">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -209,7 +209,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-c8-6XV">
-                                <rect key="frame" x="10" y="245.5" width="394" height="499.5"/>
+                                <rect key="frame" x="10" y="245.5" width="394" height="487.5"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -268,56 +268,70 @@
                                         <rect key="frame" x="10" y="198.5" width="394" height="375"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Name and location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmR-kZ-pXj" userLabel="Name and location" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="43"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="5" y="0.0" width="384" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="KsP-VN-yla"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" license number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQ1-py-psE" userLabel="license number" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="58" width="394" height="42.5"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="5" y="60" width="384" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="z5K-Y9-J6R"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" License issued state" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgk-Ol-MF8" userLabel="license issued state" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="115.5" width="394" height="43"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="5" y="120" width="384" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Fmu-ny-WuQ"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-oF-HOP" userLabel="state button">
-                                                <rect key="frame" x="0.0" y="115.5" width="394" height="43"/>
+                                                <rect key="frame" x="10" y="120" width="384" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="statesButtonPressed:" destination="F8G-7H-k98" eventType="touchUpInside" id="DuQ-Rt-lve"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="IWY-bU-8ed" userLabel="arrow image">
-                                                <rect key="frame" x="364" y="127" width="20" height="20"/>
+                                                <rect key="frame" x="359" y="132.5" width="20" height="20"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="0F5-3C-g84"/>
                                                     <constraint firstAttribute="height" constant="20" id="Khk-v7-22y"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ppf-ZT-Joo">
+                                                <rect key="frame" x="0.0" y="185" width="394" height="190"/>
+                                                <color key="backgroundColor" name="RootBackGround"/>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="PmR-kZ-pXj" firstAttribute="trailing" secondItem="IQ1-py-psE" secondAttribute="trailing" id="33B-p5-SJf"/>
                                             <constraint firstItem="IWY-bU-8ed" firstAttribute="centerY" secondItem="bgk-Ol-MF8" secondAttribute="centerY" id="D8f-Hl-01t"/>
-                                            <constraint firstAttribute="trailing" secondItem="IQ1-py-psE" secondAttribute="trailing" id="G2H-h7-nPO"/>
-                                            <constraint firstItem="iCr-oF-HOP" firstAttribute="trailing" secondItem="bgk-Ol-MF8" secondAttribute="trailing" id="LQH-F9-c8t"/>
+                                            <constraint firstItem="Ppf-ZT-Joo" firstAttribute="top" secondItem="iCr-oF-HOP" secondAttribute="bottom" constant="20" id="EKc-Di-LvY"/>
+                                            <constraint firstAttribute="trailing" secondItem="IQ1-py-psE" secondAttribute="trailing" constant="5" id="G2H-h7-nPO"/>
+                                            <constraint firstItem="iCr-oF-HOP" firstAttribute="trailing" secondItem="bgk-Ol-MF8" secondAttribute="trailing" constant="5" id="LQH-F9-c8t"/>
+                                            <constraint firstItem="Ppf-ZT-Joo" firstAttribute="leading" secondItem="697-Lw-Uv1" secondAttribute="leading" id="LSg-ty-YTB"/>
                                             <constraint firstItem="bgk-Ol-MF8" firstAttribute="top" secondItem="IQ1-py-psE" secondAttribute="bottom" constant="15" id="O7Q-6A-Xhv"/>
-                                            <constraint firstItem="IQ1-py-psE" firstAttribute="leading" secondItem="697-Lw-Uv1" secondAttribute="leading" id="RkP-A0-6rw"/>
+                                            <constraint firstItem="IQ1-py-psE" firstAttribute="leading" secondItem="697-Lw-Uv1" secondAttribute="leading" constant="5" id="RkP-A0-6rw"/>
                                             <constraint firstItem="iCr-oF-HOP" firstAttribute="top" secondItem="bgk-Ol-MF8" secondAttribute="top" id="Snk-cy-cRg"/>
                                             <constraint firstItem="PmR-kZ-pXj" firstAttribute="top" secondItem="697-Lw-Uv1" secondAttribute="top" id="aP7-WV-7SJ"/>
                                             <constraint firstItem="bgk-Ol-MF8" firstAttribute="leading" secondItem="IQ1-py-psE" secondAttribute="leading" id="cIa-NS-L51"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ppf-ZT-Joo" secondAttribute="bottom" id="k0D-zm-iza"/>
                                             <constraint firstItem="PmR-kZ-pXj" firstAttribute="leading" secondItem="IQ1-py-psE" secondAttribute="leading" id="lvX-zj-Usu"/>
                                             <constraint firstItem="iCr-oF-HOP" firstAttribute="bottom" secondItem="bgk-Ol-MF8" secondAttribute="bottom" id="n7m-iN-krE"/>
                                             <constraint firstItem="bgk-Ol-MF8" firstAttribute="trailing" secondItem="IQ1-py-psE" secondAttribute="trailing" id="nMv-ar-Ygb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ppf-ZT-Joo" secondAttribute="trailing" id="ooQ-oS-VS0"/>
                                             <constraint firstItem="IQ1-py-psE" firstAttribute="top" secondItem="PmR-kZ-pXj" secondAttribute="bottom" constant="15" id="p8C-cT-puL"/>
                                             <constraint firstItem="IWY-bU-8ed" firstAttribute="trailing" secondItem="bgk-Ol-MF8" secondAttribute="trailing" constant="-10" id="u2q-LZ-hMi"/>
-                                            <constraint firstItem="iCr-oF-HOP" firstAttribute="leading" secondItem="bgk-Ol-MF8" secondAttribute="leading" id="xBQ-0f-Ef1"/>
+                                            <constraint firstItem="iCr-oF-HOP" firstAttribute="leading" secondItem="bgk-Ol-MF8" secondAttribute="leading" constant="5" id="xBQ-0f-Ef1"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7l-26-fxH" userLabel="sign view" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
@@ -423,7 +437,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="TRA-fS-PbR" firstAttribute="trailing" secondItem="J1C-R5-4Is" secondAttribute="trailing" id="Vry-XT-Tp0"/>
                             <constraint firstItem="TRA-fS-PbR" firstAttribute="bottom" secondItem="J1C-R5-4Is" secondAttribute="bottom" id="n2e-FA-Llq"/>
@@ -433,7 +447,9 @@
                         <viewLayoutGuide key="safeArea" id="TRA-fS-PbR"/>
                     </view>
                     <connections>
+                        <outlet property="btnClear" destination="RYg-7D-gNd" id="kTR-lT-9pm"/>
                         <outlet property="eventDateLabel" destination="DHF-Ru-ppP" id="a4f-0P-YKN"/>
+                        <outlet property="eventImageHeight" destination="bVE-aG-01q" id="X8d-W5-Y4t"/>
                         <outlet property="eventTitle" destination="aTR-JG-ktH" id="MCW-Cs-fju"/>
                         <outlet property="hostedLabel" destination="g0K-lH-T6B" id="Egn-JR-nr4"/>
                         <outlet property="imageView" destination="h19-XS-f0B" id="DjE-YK-sgE"/>

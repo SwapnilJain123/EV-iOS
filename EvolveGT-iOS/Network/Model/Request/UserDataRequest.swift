@@ -19,19 +19,22 @@ struct UserDataUserIdRequest : Codable{
 
 struct UserDataSerialRequest : Codable{
     var userID: String?
+    var isMoto: Int?
     
     enum CodingKeys: String, CodingKey {
         case userID = "serial"
+        case isMoto = "is_moto"
         
     }
 }
 
 struct UserDetailsRequest : Codable{
     var userID: String?
+    var isMoto: Int?
     
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
-        
+        case isMoto = "is_moto"
     }
 }
 

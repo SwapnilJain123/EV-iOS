@@ -58,5 +58,9 @@ class ReferFriendViewController: ETViewController, UITextFieldDelegate{
     }
     
    
-    
+    override func showAlert(title: String, message: String) {
+        self.ext.showAlert(title: title, message: message, handler: {
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
 }

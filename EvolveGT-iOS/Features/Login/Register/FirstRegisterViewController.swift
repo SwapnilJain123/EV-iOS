@@ -41,6 +41,7 @@ class FirstRegisterViewController:ETViewController {
         super.viewDidLoad()
         
         self.ext.showNavbar()
+        ext.showBackButton()
         registerTableView.delegate = self
         registerTableView.dataSource = self
         
@@ -148,8 +149,9 @@ extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
         dateFormatter.dateFormat = String.FORMAT_YYYY_MM_DD_HIPHEN
         
         let date = "20000101".createDate(inPattern: .FORMAT_YYYY_MM_DD)
+        let maxDate = "20130101".createDate(inPattern: .FORMAT_YYYY_MM_DD)
         
-        DatePickerDialog().show("Select Date of Birth", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, datePickerMode: .date) {
+       DatePickerDialog(buttonColor:.getAppThemeColor(), showCancelButton: false).show("Select Date of Birth", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, maximumDate: maxDate, datePickerMode: .date) {
             (date) -> Void in
             
             

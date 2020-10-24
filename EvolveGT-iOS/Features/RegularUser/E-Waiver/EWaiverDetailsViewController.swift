@@ -12,6 +12,9 @@ import WebKit
 import Kingfisher
 
 class EWaiverDetailsViewController: ETViewController , WaiverDetailsDelegate ,  WKUIDelegate  {
+   
+    
+    
     func fetchedWaiverDetails(eventData: EventData, userData: UserData?, stateList: [State]?) {
         self.userData = userData ?? UserData()
         self.eventData = eventData

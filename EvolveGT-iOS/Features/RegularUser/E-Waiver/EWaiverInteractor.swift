@@ -70,7 +70,9 @@ class EWaiverInteractor: BaseInteractor {
                 }
                 
             }else{
-                self.delegate?.showEmptyPageError(message: ErrorMessages.emptyWaiverEventDetails)
+                let message = error?.errorMessage ?? ErrorMessages.signatureUploadError
+
+                self.delegate?.showEmptyPageError(message: message)
                 
             }
         }
@@ -92,7 +94,9 @@ class EWaiverInteractor: BaseInteractor {
             if error == nil{
                 self.delegate?.showAlert(title: "Saved Signature", message: SuccessMessages.signatureSaved)
             }else{
-                self.delegate?.showAlert(title: "Error!", message: ErrorMessages.signatureUploadError)
+                
+                let message = error?.errorMessage ?? ErrorMessages.signatureUploadError
+                self.delegate?.showAlert(title: "Error!", message: message)
             }
         }
         var request = SaveWaiverDetailsRequest()

@@ -143,8 +143,8 @@ extension UIViewController{
             }
         }
         
-        func showBackButton(){
-            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        func showBackButton(_ backButtonText:String = ""){
+            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: backButtonText, style: .plain, target: nil, action: nil)
         }
         
         func backButtonToRootViewController(){

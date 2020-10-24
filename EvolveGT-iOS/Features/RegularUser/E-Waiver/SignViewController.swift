@@ -13,6 +13,7 @@ import SkyFloatingLabelTextField
 
 class SignViewController: ETViewController  {
     
+    @IBOutlet weak var eventImageHeight: NSLayoutConstraint!
     func populateUI() {
        
         eventTitle.text = eventData.title 
@@ -35,7 +36,8 @@ class SignViewController: ETViewController  {
     @IBOutlet weak var eventDateLabel: UILabel!
     
    
-   
+    @IBOutlet weak var btnClear: UIButton!
+    
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -136,6 +138,12 @@ class SignViewController: ETViewController  {
         setTextFieldDelegate(textField: tfNameAndLocation)
         setTextFieldDelegate(textField: tfLicenseNumber)
         setTextFieldDelegate(textField: tfIssuedState)
+        
+        btnClear.showRoundCorner(roundCorner: 5.0)
+        
+        if(!DeviceType.IS_BIG_SCREEN_DEVICE){
+            eventImageHeight.constant = 0
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -161,15 +169,14 @@ class SignViewController: ETViewController  {
 }
 
 extension SignViewController:SwiftSignatureViewDelegate{
-    func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
-        saveButton.isEnabled = true
-    }
     
-    func swiftSignatureViewDidDraw(_ view: ISignatureView) {
+    
+    func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView){
         
     }
-    
-    
+    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan:UIPanGestureRecognizer){
+       saveButton.isEnabled = true
+    }
     
 }
 extension SignViewController: UITextFieldDelegate{

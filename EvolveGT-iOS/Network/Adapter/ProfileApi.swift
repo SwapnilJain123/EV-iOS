@@ -13,7 +13,9 @@ class ProfileApi : BaseApiAdapter{
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_DETAILS)"
         setUrl(url: url)
-        let request = UserDetailsRequest(userID: userId)
+        var request = UserDetailsRequest()
+        request.isMoto = AppEngine.sharedInstance.isEvApp() ? 0 : 1
+        request.userID = userId
         setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }
@@ -113,7 +115,10 @@ class ProfileApi : BaseApiAdapter{
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CHECK_TnC_STATUS)"
         setUrl(url: url)
-        setParameters(parameters: makeDictionary(UserDataSerialRequest(userID: userId)))
+        var request = UserDataSerialRequest()
+        request.userID = userId
+        request.isMoto = AppEngine.sharedInstance.isEvApp() ? 0 : 1
+        setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }
     func saveAgreementStatus(userId: String, status: Bool){

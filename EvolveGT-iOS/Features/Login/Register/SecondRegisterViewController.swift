@@ -40,6 +40,7 @@ class SecondRegisterViewController: ETViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ext.showNavbar()
+         ext.showBackButton()
         secondREgisterTableView.delegate = self
         secondREgisterTableView.dataSource = self
         
@@ -148,7 +149,9 @@ extension SecondRegisterViewController:UITableViewDelegate,UITableViewDataSource
     }
     
     func selectSkillLevel(){
-        self.ext.presentOptions(title: "Select Skill Level", message: "", options: AppConstants.SkillLevels, selected: "", completionHandler: { selected in
+        
+        let options = self.interactor!.signupRequest.everBeenTrack == 1 ? AppConstants.TrackYesSkillLevels : AppConstants.TrackNoSkillLevels
+        self.ext.presentOptions(title: "Select Skill Level", message: "", options: options, selected: "", completionHandler: { selected in
             self.interactor!.signupRequest.skillLevel = selected
             
             let indexPath = IndexPath(row: 2, section: 0)

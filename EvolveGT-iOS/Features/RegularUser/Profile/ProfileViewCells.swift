@@ -187,7 +187,7 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
         }
         
         
-        DatePickerDialog().show("Select Date of Birth", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, datePickerMode: .date) {
+        DatePickerDialog(buttonColor:.getAppThemeColor(), showCancelButton: false).show("Select Date of Birth", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, datePickerMode: .date) {
             (date) -> Void in
             if let dt = date {
                 let formatter = DateFormatter()
@@ -329,7 +329,14 @@ class SkillInfo: UITableViewCell, RadioButtonDelegate{
         rbNo.isEnabled = rbYes.isEnabled
         
         skillLevelDropDown.optionArray = AppConstants.SkillLevels
-        skillLevelDropDown.text = user.skillLevel?.uppercased()
+        var skillLevel = AppEngine.sharedInstance.isEvApp() ? user.skillLevel?.uppercased() : user.motoSkill?.capitalized
+        
+        
+        if(AppEngine.sharedInstance.currentUser?.isAdminOrCoach() ?? false){
+            skillLevel = AppEngine.sharedInstance.currentUser?.role.capitalized
+        }
+        
+        skillLevelDropDown.text = skillLevel
         
         skillLevelDropDown.didSelect{(selectedText , index ,id) in
             user.skillLevel = selectedText
@@ -374,7 +381,7 @@ class MotoGladiatorInfoCell: UITableViewCell, UITextFieldDelegate{
                }
                
                
-               DatePickerDialog().show("Select AMA Expiry Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, datePickerMode: .date) {
+        DatePickerDialog(buttonColor:.getAppThemeColor(), showCancelButton: false).show("Select AMA Expiry Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, datePickerMode: .date) {
                    (date) -> Void in
                    if let dt = date {
                        let formatter = DateFormatter()

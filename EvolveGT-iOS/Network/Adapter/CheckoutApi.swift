@@ -11,7 +11,9 @@ class CheckoutApi : BaseApiAdapter{
     func fetchCartList(userId: String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.CART_LIST)"
-        let request = UserDataSerialRequest(userID: userId)
+        var request = UserDataSerialRequest()
+        request.userID = userId
+        request.isMoto = AppEngine.sharedInstance.isEvApp() ? 0 : 1
         setParameters(parameters: makeDictionary(request))
         setUrl(url: url)
         super.makeRequest(method: .POST)
@@ -37,7 +39,9 @@ class CheckoutApi : BaseApiAdapter{
     func resetCartList(userId: String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.RESET_CART)"
-        let request = UserDataSerialRequest(userID: userId)
+        var request = UserDataSerialRequest()
+        request.userID = userId
+        request.isMoto = AppEngine.sharedInstance.isEvApp() ? 0 : 1
         setParameters(parameters: makeDictionary(request))
         setUrl(url: url)
         super.makeRequest(method: .POST)
