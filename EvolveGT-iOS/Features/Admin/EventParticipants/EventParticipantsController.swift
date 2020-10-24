@@ -102,6 +102,13 @@ class EventParticipantsController : ETViewController{
                         self.interactor.filterByRentals(selectedRental: selectedRental.first!)
                     }
                 })
+            case "By Classes":
+            let motoClasses = self.interactor.getAvailableMotoClasses()
+            self.presentSelectionMenu(title: "Select Moto Class", data: motoClasses, dismissHandler: { selectedClass in
+                if(selectedClass.first != nil){
+                    self.interactor.filterByMotoClasses(motoClass: selectedClass.first!)
+                }
+            })
             default:
                 self.interactor.clearFilter()
             }

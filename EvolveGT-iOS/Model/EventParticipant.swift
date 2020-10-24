@@ -21,6 +21,8 @@ struct EventParticipant: Codable {
     var signEnabled: Int
     var rentals: [Rental]?
     var trainings: [String]?
+    var motoClasses: [String]?
+    
     
     var namewithRole : String{
         
@@ -65,6 +67,8 @@ struct EventParticipant: Codable {
         case signEnabled = "sign_enabled"
         case rentals
         case trainings = "training"
+        case motoClasses = "moto_classes"
+        
     }
     
     struct Rental: Codable {

@@ -41,7 +41,7 @@ class EventParticipantIntercator : BaseInteractor{
                                     return displayName < $1.displayName ?? ""
                                 }
                                 return false
-                            })
+                        })
                         self.adminViewDelegate?.didFetchParticipants(participants:  self.participants)
                     }
                     
@@ -94,6 +94,10 @@ class EventParticipantIntercator : BaseInteractor{
             options.append("By Rentals")
             break
         }
+        for participant in participants where participant.motoClasses?.count ?? 0 > 0{
+            options.append("By Classes")
+            break
+        }
         
         
         return options
@@ -109,6 +113,17 @@ class EventParticipantIntercator : BaseInteractor{
         adminViewDelegate?.didFetchParticipants(participants: newList)
     }
     
+    func getAvailableMotoClasses() ->[String]{
+        var motoClasses = [String]()
+        for participnt in participants where participnt.motoClasses?.count ?? 0 > 0{
+            motoClasses.append(contentsOf: participnt.motoClasses!)
+        }
+        return motoClasses.unique().sorted(by: <)
+    }
+    func filterByMotoClasses(motoClass : String){
+        let newList = participants.filter({$0.motoClasses?.contains(motoClass) ?? false})
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
     func getAvailableTrainings() ->[String]{
         var trainings = [String]()
         for participnt in participants where participnt.trainings?.count ?? 0 > 0{
@@ -118,26 +133,26 @@ class EventParticipantIntercator : BaseInteractor{
     }
     func filterByTraining(training : String){
         let newList = participants.filter({$0.trainings?.contains(training) ?? false})
-           adminViewDelegate?.didFetchParticipants(participants: newList)
-       }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
     func clearFilter(){
-         adminViewDelegate?.didFetchParticipants(participants: participants)
+        adminViewDelegate?.didFetchParticipants(participants: participants)
     }
     func getAvailableRentals() ->[String]{
-           var rentals = [String]()
-           for participnt in participants where participnt.rentals?.count ?? 0 > 0{
+        var rentals = [String]()
+        for participnt in participants where participnt.rentals?.count ?? 0 > 0{
             rentals.append(contentsOf: participnt.rentals!.compactMap({ $0.name }))
-           }
-           return rentals.unique().sorted(by: <)
-       }
+        }
+        return rentals.unique().sorted(by: <)
+    }
     func filterByRentals(selectedRental : String){
-           var newList = [EventParticipant]()
+        var newList = [EventParticipant]()
         for participant in participants where participant.rentals?.count ?? 0 > 0{
             for rental in participant.rentals! where rental.name == selectedRental{
                 newList.append(participant)
                 break
             }
         }
-              adminViewDelegate?.didFetchParticipants(participants: newList)
-          }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
 }
