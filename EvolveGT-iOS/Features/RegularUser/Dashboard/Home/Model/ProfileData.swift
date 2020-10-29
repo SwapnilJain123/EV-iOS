@@ -18,6 +18,7 @@ struct ProfileData{
     var membershipExpiryDate : String? = ""
     
     var skillLevel : String? = ""
+    var customerID : String? = ""
     var upComingEventsCount : Int = 0
     var pastEventsCount : Int = 0
     var allEventsCount : Int = 0
@@ -55,6 +56,12 @@ struct ProfileData{
             self.skillLevel = AppEngine.sharedInstance.currentUser?.role.capitalized
         }else{
          self.skillLevel = AppEngine.sharedInstance.isEvApp() ? userDetails.skillLevel : userDetails.motoSkill
+        }
+        
+        if userDetails.customerID?.isEmpty ?? true{
+            customerID = ""
+        }else{
+            customerID = "Cust. ID #\(userDetails.customerID!)"
         }
     }
 }

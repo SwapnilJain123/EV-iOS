@@ -125,6 +125,7 @@ class TwoOptionsCell: UITableViewCell, RadioButtonDelegate{
     
     var leftItemTitle = "Yes"
     var rightItemTitle = "No"
+    
     func updateUi(title: String, leftItemChecked: Bool){
         
         itemTitle.text = title
@@ -135,6 +136,9 @@ class TwoOptionsCell: UITableViewCell, RadioButtonDelegate{
         
         rbItem1.setTitle(leftItemTitle, for: .normal)
         rbItem2.setTitle(rightItemTitle, for: .normal)
+        
+        rbItem1.delegate = self
+        rbItem2.delegate = self
     }
     
 }

@@ -24,6 +24,9 @@ class ProfileCell: UITableViewCell{
     
     @IBOutlet weak var walletBalance: UILabel!
     
+    
+    @IBOutlet weak var customerID: UILabel!
+    
     @IBOutlet weak var membershipExpiryDate: UILabel!
     
     @IBOutlet weak var membershipStatus: UILabel!
@@ -107,6 +110,7 @@ class ProfileCell: UITableViewCell{
         pastEventsCount.text = String(profileData.pastEventsCount)
         AllEventsCount.text = String(profileData.allEventsCount)
         userSkillLevel.text = profileData.skillLevel
+        customerID.text = profileData.customerID
         
     }
     

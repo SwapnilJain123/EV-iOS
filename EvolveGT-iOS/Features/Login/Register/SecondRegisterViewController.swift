@@ -100,7 +100,7 @@ extension SecondRegisterViewController:UITableViewDelegate,UITableViewDataSource
             cell.didChangeStatus = { status in
                 self.interactor!.signupRequest.everBeenTrack = status ? 1 : 0
             }
-             cell.updateUi(title: "Have you ever been on track?",  leftItemChecked: interactor!.signupRequest.raceLicense == 1)
+             cell.updateUi(title: "Have you ever been on track?",  leftItemChecked: interactor!.signupRequest.everBeenTrack == 1)
             return cell
             
         }else if indexPath.row == 2{

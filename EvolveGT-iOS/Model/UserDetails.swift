@@ -32,6 +32,7 @@ class UserDetails: Codable {
     var sponsors, teamnames, shippingCountryName, billingCountryName: String?
     var shippingStateName, billingStateName: String?
     var fullProfileImage: String?
+    var customerID: String?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -108,6 +109,7 @@ class UserDetails: Codable {
         case shippingStateName = "shipping_state_name"
         case billingStateName = "billing_state_name"
         case fullProfileImage = "full_profile_image"
+        case customerID = "customer_number"
        
     }
     
