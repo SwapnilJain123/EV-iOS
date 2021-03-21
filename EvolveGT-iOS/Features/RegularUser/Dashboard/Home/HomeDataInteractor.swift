@@ -40,6 +40,7 @@ class HomeDataInteractor : BaseInteractor{
                     }else{
                         self.profileData.create(with: userDetailsResponse.userDetails!)
                         AppEngine.sharedInstance.userDetails = userDetailsResponse.userDetails
+                        AppEngine.sharedInstance.currentUser?.role = userDetailsResponse.userDetails?.evRole ?? "Guest"
                         self.fetchEventHistory()
                     }
                     

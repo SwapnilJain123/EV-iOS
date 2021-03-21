@@ -111,7 +111,7 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
         rbMale.isOn = user.isMale()
         rbFemale.isOn = !user.isMale()
         
-        rbLincenceYes.isOn = Bool(user.evRaceLicence ?? "") ?? false
+        rbLincenceYes.isOn = user.evRaceLicence == "1"
         rbLicenceNo.isOn = !rbLincenceYes.isOn
         
         rbLincenceYes.isEnabled = user.evRaceLicence?.isEmpty ?? true

@@ -13,15 +13,20 @@ class MembershipController : ETViewController{
     @IBOutlet weak var membershipListView: UICollectionView!
     let interactor = MembershipInteractor()
     var membershipList = [Membership]()
+    
+    var mrlMessage = AppConstants.MRLMessage
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor.delegate = self
         interactor.membershipDelegate = self
+        interactor.mrlMessageDelegate = self
         
         membershipListView.dataSource = self
         membershipListView.delegate = self
         
         interactor.fetchAvailableMemberships()
+        interactor.getMRLMembershipMessage()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,7 +57,20 @@ extension MembershipController : MembershipCellDelegate{
     }
     
     func addMembershipToCart(membership: Membership) {
-        interactor.addMembershipToCart(membership: membership)
+        
+        if membership.membershipID == Membership.ID_MRL{
+            
+            let user = AppEngine.sharedInstance.userDetails
+            if user?.canBuyMRLMembership ?? false == false{
+                self.ext.confirmationAlert(title: "User Race License", message: self.mrlMessage, btnText: "I Agree", btnDismiss: "Cancel", handler: {
+                    self.interactor.addMembershipToCart(membership: membership)
+                })
+            }else{
+                self.interactor.addMembershipToCart(membership: membership)
+            }
+        }else{
+            interactor.addMembershipToCart(membership: membership)
+        }
     }
     
     
@@ -83,6 +101,14 @@ extension MembershipController : MembershipListDelegate, UICollectionViewDataSou
         membershipList.append(contentsOf: memberships)
         membershipListView.reloadData()
     }
+    
+}
+
+extension MembershipController: MRLMessageDelegate{
+    func didFetchMRLMessage(message: String) {
+        self.mrlMessage = message
+    }
+    
     
 }
 protocol MembershipCellDelegate{

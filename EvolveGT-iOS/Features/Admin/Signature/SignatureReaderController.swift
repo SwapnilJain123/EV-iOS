@@ -97,7 +97,7 @@ extension SignatureReaderController: CheckboxButtonDelegate {
 extension SignatureReaderController: SignatureViewDelegate{
     func didUpdateSignature() {
         self.ext.showAlert(title: "Signature Saved", message: SuccessMessages.signatureSaved){
-            self.delegate?.didModifySignature(signatureId: self.eventparticipant!.signatureID)
+            self.delegate?.didModifySignature(signatureId: self.eventparticipant!.signatureID ?? "")
             self.navigationController?.popViewController(animated: true)
         }
     }

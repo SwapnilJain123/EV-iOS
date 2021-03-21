@@ -38,10 +38,21 @@ class TabbedViewController: ETViewController {
                                                style: .plain,
                                                target: self,
                                                action: #selector(self.switchAppTheme))
+        
+        
+         let switchDashboard = UIBarButtonItem(image: #imageLiteral(resourceName: "SwictUserWhite"),
+                                                    style: .plain,
+                                                    target: self,
+                                            action: #selector(self.switchDashboard))
            
         var navbarControls = [UIBarButtonItem]()
         if AppEngine.sharedInstance.isUserLoggedIn(){
-            navbarControls.append(switchAppMode)
+            if(AppConstants.APP_MODE_SWITCH_ENABLED){
+                navbarControls.append(switchAppMode)
+            }
+            if(AppEngine.sharedInstance.currentUser?.isAdminOrCoach() ?? false && AppConstants.DASHBOARD_SWITCH_ENABLED){
+                navbarControls.append(switchDashboard)
+            }
         }
         let additionalControls = addNavBarControls()
         if additionalControls == nil{
@@ -86,6 +97,10 @@ class TabbedViewController: ETViewController {
     @objc func switchAppTheme(){
         self.dashboardManager.switchAppMode()
     }
+    
+    @objc func switchDashboard(){
+           self.dashboardManager.switchToAdminDashboard()
+       }
     
     override  func didChangeAppTheme() {
         setNavbarControls()

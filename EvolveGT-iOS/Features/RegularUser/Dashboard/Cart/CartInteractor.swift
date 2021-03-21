@@ -177,7 +177,7 @@ class CartInteractor: BaseInteractor{
         computeTotals()
         let walletBalance = AppEngine.sharedInstance.walletBalance
         var dueAmount = subTotal - coupon.appliedCouponAmount
-        if walletBalance > 0 && walletBalance < dueAmount{
+        if walletBalance > 0 && walletBalance <= dueAmount{
             walletApplied = walletBalance
             dueAmount = dueAmount - walletBalance
             

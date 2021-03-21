@@ -94,8 +94,9 @@ struct AddGiftCardToCartRequest: Codable {
 struct AddMembershipToCartRequest: Codable{
     
     var image, membership, price, userId, title: String?
+    var force: String = "0"
     enum CodingKeys: String, CodingKey {
-        case image, membership, price, title
+        case image, membership, price, title, force
         case userId = "serial"
     }
 }

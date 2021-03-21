@@ -27,6 +27,7 @@ struct UserApiConstants{
     static let MEMBERSHIP_LIST = "membership/list"
     static let MEMBERSHIP_DETAILS = "membership/details"
     static let USER_MEMBERSHIP = "membership/userMembership"
+    static let MRL_MESSAGE = "membership/mrlMessage"
     
     static let UPDATE_PROFILE = "user/updateProfile"
     static let UPDATE_PROFILE_IMAGE = "user/profilepic"

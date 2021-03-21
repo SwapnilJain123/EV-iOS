@@ -88,4 +88,11 @@ class ShopsApi : BaseApiAdapter{
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
+    
+    func fetchMRLMembershipMessage(){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.MRL_MESSAGE)"
+        setUrl(url: url)
+        super.makeRequest(method: .GET)
+    }
 }

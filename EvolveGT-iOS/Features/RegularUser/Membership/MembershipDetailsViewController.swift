@@ -9,19 +9,37 @@
 import UIKit
 import Kingfisher
 
-class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegate {
+class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegate, MRLMessageDelegate {
+    
+    
     
     var membershipDetails = MembershipDetails()
     
     @IBOutlet weak var outOfStockLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var membershipImage: UIImageView!
+    var mrlMessage = AppConstants.MRLMessage
+   
     @IBAction func addToCartButton(_ sender: UIButton) {
         
-        membershipInteractor.addMembershipToCart(membership: membershipDetails)
+        if membershipDetails.membershipID == Membership.ID_MRL{
+            
+            let user = AppEngine.sharedInstance.userDetails
+            if user?.canBuyMRLMembership ?? false == false{
+                self.ext.confirmationAlert(title: "User Race License", message: self.mrlMessage, btnText: "I Agree", btnDismiss: "Cancel", handler: {
+                    self.membershipInteractor.addMembershipToCart(membership: self.membershipDetails)
+                })
+            }else{
+                 membershipInteractor.addMembershipToCart(membership: membershipDetails)
+            }
+        }else{
+            membershipInteractor.addMembershipToCart(membership: membershipDetails)
+        }
+       
     }
     @IBOutlet weak var membershipDetailsWebView: UIWebView!
     @IBOutlet weak var addToCartButton: UIButton!
+    
     func didFetchMembershipDetails(membershipDetails: MembershipDetails) {
         self.membershipDetails = membershipDetails
         titleLabel.text! = membershipDetails.title!
@@ -59,8 +77,10 @@ class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegat
         super.viewDidLoad()
         membershipInteractor.delegate = self
         membershipInteractor.membershipDetailsDelegate = self
+        membershipInteractor.mrlMessageDelegate = self
         
         membershipInteractor.getMembershipDetails(slug: slug!)
+        membershipInteractor.getMRLMembershipMessage()
         
         addToCartButton.isHidden = true
         
@@ -82,4 +102,7 @@ class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegat
         membershipTitle
     }
     
+    func didFetchMRLMessage(message: String) {
+        mrlMessage = message
+    }
 }

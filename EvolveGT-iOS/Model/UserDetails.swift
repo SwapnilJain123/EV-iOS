@@ -184,7 +184,9 @@ class UserDetails: Codable {
             return address
         }
     }
-    
+    var canBuyMRLMembership: Bool{
+        "1" == evRaceLicence
+    }
     var hasEverBeenOnTrack :Bool{
         "1" == everBeenTrack
     }

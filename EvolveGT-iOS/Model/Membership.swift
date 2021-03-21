@@ -9,6 +9,7 @@
 import Foundation
 
 class Membership: Codable {
+    static let ID_MRL = "5"
     var membershipID, title, slug, price: String?
     var stockStatus: String?
     var image: String?
@@ -70,4 +71,8 @@ struct MembershipDetails: Codable {
         "guest" == title?.lowercased()
     }
     
+}
+struct MRLMeesageResponse: Codable {
+    var status: Int?
+    var title, msg: String?
 }

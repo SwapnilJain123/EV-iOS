@@ -13,6 +13,7 @@ protocol EventParticipantCellDelegate  {
     func clickedOnSignature(_ cell: EventParticipantCell, participant: EventParticipant?)
     func clickedOnUpgradeSkill(_ cell: EventParticipantCell, participant: EventParticipant?)
     func clickedOnAccessories(_ cell: EventParticipantCell, participant: EventParticipant?)
+    func clickedOnMotoIcon(_ cell: EventParticipantCell, participant: EventParticipant?)
 }
 
 class EventParticipantCell: UITableViewCell{
@@ -40,12 +41,14 @@ class EventParticipantCell: UITableViewCell{
     
     @IBOutlet weak var backroundView: UIView!
     
+    @IBOutlet weak var tdPurchaseWarning: UIButton!
     
+    @IBOutlet weak var btnMotoIcon: UIButton!
     override func prepareForReuse() {
         
         super.prepareForReuse()
         btnSign?.isHidden = false
-        btnTraining.isHidden = false
+        btnTraining?.isHidden = false
 
     }
     
@@ -78,7 +81,7 @@ class EventParticipantCell: UITableViewCell{
             btnSign?.setImage(image, for: .normal)
             
         }
-        if (eventParticipant?.hasTrainingOrRentals ?? false) == false{
+        if (eventParticipant?.hasAccessories ?? false) == false{
             if btnTraining != nil && btnTraining.isHidden == false{
                 btnTraining.isHidden = true
             }
@@ -92,10 +95,22 @@ class EventParticipantCell: UITableViewCell{
             }
         }
         
+        if AppEngine.sharedInstance.isEvApp(){
+            btnMotoIcon.setImage(UIImage(named: "ic_moto_green"), for: .normal)
+            tdPurchaseWarning.setImage(UIImage(named: "ic_td_not_purchased"), for: .normal)
+        }else{
+            btnMotoIcon.setImage(UIImage(named: "ic_moto_blue"), for: .normal)
+            tdPurchaseWarning.setImage(UIImage(named: "ic_td_not_purchased_blue"), for: .normal)
+        }
         backroundView.backgroundColor = UIColor.init(hexFromString: "e6e6e6")
         contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 0.8)
         containerView.setCardView()
         
+        tdPurchaseWarning.isHidden = true
+        if eventParticipant?.motoPurchased ?? false == true && eventParticipant?.tdPurchased ?? false == false{
+            tdPurchaseWarning.isHidden = false
+        }
+        btnMotoIcon.isHidden = !(eventParticipant?.motoPurchased ?? false)
         
         
         userName.textColor = UIColor.getAppThemeColor()
@@ -118,5 +133,10 @@ class EventParticipantCell: UITableViewCell{
     
     @IBAction func didPressUpgradeSkill(_ sender: UIButton) {
         delegate?.clickedOnUpgradeSkill(self, participant: eventParticipant)
+    }
+    
+    
+    @IBAction func didPressMotoIcon(_ sender: Any) {
+        delegate?.clickedOnMotoIcon(self, participant: eventParticipant)
     }
 }

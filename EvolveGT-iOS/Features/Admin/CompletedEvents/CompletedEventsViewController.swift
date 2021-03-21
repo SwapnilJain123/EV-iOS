@@ -45,7 +45,7 @@ class CompletedEventViewController : ETViewController{
         if !AppEngine.sharedInstance.isEvApp(){
             switcIcon = UIImage(named: "switch_ev")
         }
-        menuSwitchAppMode.setImage(switcIcon, for: .normal)
+        menuSwitchAppMode?.setImage(switcIcon, for: .normal)
         popUpMenu.setBackground(color: UIColor.getAppThemeColor())
     }
     func setInteractor(){

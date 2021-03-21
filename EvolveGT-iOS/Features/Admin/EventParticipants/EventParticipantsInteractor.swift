@@ -98,6 +98,20 @@ class EventParticipantIntercator : BaseInteractor{
             options.append("By Classes")
             break
         }
+        for participant in participants {
+            if participant.eWaiver ?? false == false{
+                options.append("By Not Signed In")
+                break
+            }
+            
+            
+        }
+        for participant in participants {
+            if participant.motoPurchased ?? false == true{
+                options.append("By Racers")
+                break
+            }
+        }
         
         
         return options
@@ -116,12 +130,40 @@ class EventParticipantIntercator : BaseInteractor{
     func getAvailableMotoClasses() ->[String]{
         var motoClasses = [String]()
         for participnt in participants where participnt.motoClasses?.count ?? 0 > 0{
-            motoClasses.append(contentsOf: participnt.motoClasses!)
+            for motoclass in participnt.motoClasses! where motoclass.raceClasses?.count ?? 0 > 0{
+                for race in motoclass.raceClasses! where race.className?.isEmpty ?? true == false {
+                    motoClasses.append(race.className!)
+                }
+            }
         }
         return motoClasses.unique().sorted(by: <)
     }
     func filterByMotoClasses(motoClass : String){
-        let newList = participants.filter({$0.motoClasses?.contains(motoClass) ?? false})
+        
+         var newList = [EventParticipant]()
+        for participnt in participants where participnt.motoClasses?.count ?? 0 > 0{
+            for motoclass in participnt.motoClasses! where motoclass.raceClasses?.count ?? 0 > 0{
+                for race in motoclass.raceClasses! where race.className == motoClass {
+                    newList.append(participnt)
+                }
+            }
+        }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
+    
+    func filterByUsersNotSignedIn(){
+        var newList = [EventParticipant]()
+        for participnt in participants where participnt.eWaiver ?? false == false{
+            newList.append(participnt)
+        }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
+    
+    func filterByRacers(){
+        var newList = [EventParticipant]()
+        for participnt in participants where participnt.motoPurchased ?? false == true{
+            newList.append(participnt)
+        }
         adminViewDelegate?.didFetchParticipants(participants: newList)
     }
     func getAvailableTrainings() ->[String]{

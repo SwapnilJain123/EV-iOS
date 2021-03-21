@@ -109,6 +109,10 @@ class EventParticipantsController : ETViewController{
                     self.interactor.filterByMotoClasses(motoClass: selectedClass.first!)
                 }
             })
+                case "By Not Signed In":
+                           self.interactor.filterByUsersNotSignedIn()
+            case "By Racers":
+                self.interactor.filterByRacers()
             default:
                 self.interactor.clearFilter()
             }
@@ -190,10 +194,13 @@ extension EventParticipantsController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let eventParticipant = participants[indexPath.row]
-        var identifier = "EventParticipantCellSignDisabled"
-        if eventParticipant.isSignEnabled{
+        var identifier = "EventParticipantCellSignAndStarDisabled"
+        if eventParticipant.isSignAndStarEnabled{
             identifier = "EventParticipantCell"
+        }else if eventParticipant.hasAccessories{
+            identifier = "EventParticipantCellSignDisabled"
         }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                  for: indexPath) as! EventParticipantCell
         cell.eventParticipant = eventParticipant
@@ -247,6 +254,10 @@ extension EventParticipantsController:UISearchBarDelegate{
 }
 
 extension EventParticipantsController: EventParticipantCellDelegate{
+    func clickedOnMotoIcon(_ cell: EventParticipantCell, participant: EventParticipant?) {
+        showEnrolledClasses(eventParticiapnt: participant!)
+    }
+    
     func clickedOnSignature(_ cell: EventParticipantCell, participant: EventParticipant?) {
         Log.i("Signature Tap identified")
         
@@ -267,7 +278,7 @@ extension EventParticipantsController: EventParticipantCellDelegate{
             selectedItems in
             
             if let skill = selectedItems.first{
-                self.interactor.upgradeSkill(skill: skill, userID: participant!.userID)
+                self.interactor.upgradeSkill(skill: skill, userID: participant!.userID ?? "")
             }
         }
     }
@@ -275,10 +286,39 @@ extension EventParticipantsController: EventParticipantCellDelegate{
     func clickedOnAccessories(_ cell: EventParticipantCell, participant: EventParticipant?) {
         Log.i("Training Tap identified")
         //self.interactor.onAccessoriesClicked(participant: participant!)
+        
         showListAlert(eventParticiapnt: participant!)
         
+        //showEnrolledClasses(eventParticiapnt: participant!)
+        
     }
-    
+     func showEnrolledClasses(eventParticiapnt: EventParticipant){
+        let alertService = AlertService()
+         let alertVC = alertService.createListAlertController(title: "Classes", buttonTitle: "OK")
+         
+         let alertData = AlertListData()
+        
+         
+         if let motoClasses = eventParticiapnt.motoClasses{
+            
+            alertData.sectionedData = [SectionedKeyValue]()
+            alertData.sectionHeaderEnabled = true
+             for itemClass in motoClasses{
+                 //alertData.simpleItems?.append(itemClass)
+                let sectionedKeyValue = SectionedKeyValue()
+                sectionedKeyValue.sectionTitle = itemClass.raceName?.capitalized ?? ""
+                for race in itemClass.raceClasses!{
+                    let keyValue = AlertKeyValue()
+                    keyValue.key = race.className ?? ""
+                    keyValue.value = race.bikeData?.capitalized ?? ""
+                    sectionedKeyValue.data.append(keyValue)
+                }
+                alertData.sectionedData.append(sectionedKeyValue)
+             }
+         }
+         alertVC.alertDataList = alertData
+         present(alertVC, animated: true)
+    }
     func showListAlert(eventParticiapnt: EventParticipant){
     
         let alertService = AlertService()

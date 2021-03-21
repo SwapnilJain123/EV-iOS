@@ -10,20 +10,24 @@ import Foundation
 protocol MembershipListDelegate{
     func didFetchMembershipList(memberships : [Membership])
 }
- protocol MembershipDetailsDelegate{
+protocol MembershipDetailsDelegate{
     func didFetchMembershipDetails(membershipDetails:MembershipDetails)
 }
-    
-   
+
+protocol MRLMessageDelegate{
+    func didFetchMRLMessage(message:String)
+}
+
+
 class MembershipInteractor : BaseInteractor{
     
-   
+    
     var membershipDelegate : MembershipListDelegate?
     var membershipDetailsDelegate : MembershipDetailsDelegate?
-    
+    var mrlMessageDelegate: MRLMessageDelegate?
     
     func fetchAvailableMemberships(){
-         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingMembershipList)
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingMembershipList)
         if AppEngine.sharedInstance.membership?.isEmpty ?? true{
             self.fetchCurrentMembership()
         }else{
@@ -53,11 +57,11 @@ class MembershipInteractor : BaseInteractor{
     }
     
     private func fetchMembershipList(){
-       
+        
         
         let shopsApi = ShopsApi()
         shopsApi.setCompletionHandler{ data, error in
-
+            
             self.delegate?.hideEmptyPageError()
             self.delegate?.hideProgressIndicator()
             
@@ -91,6 +95,7 @@ class MembershipInteractor : BaseInteractor{
         request.price = membership.price
         request.title = membership.title
         request.userId = AppEngine.sharedInstance.userID
+        request.force = AppEngine.sharedInstance.userDetails?.canBuyMRLMembership ?? false ? "0" : "1"
         
         let cartApi = CartApi()
         cartApi.setCompletionHandler{data, error in
@@ -107,30 +112,31 @@ class MembershipInteractor : BaseInteractor{
     }
     
     func addMembershipToCart(membership: MembershipDetails){
-           
-           delegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingMembershipToCart)
-           
-           var request = AddMembershipToCartRequest()
-           request.image = membership.image
-           request.membership = membership.slug
-           request.price = membership.price
-           request.title = membership.title
-           request.userId = AppEngine.sharedInstance.userID
-           
-           let cartApi = CartApi()
-           cartApi.setCompletionHandler{data, error in
-               self.delegate?.hideProgressIndicator()
-               if error == nil{
-                   self.delegate?.showSuccessToastMessage(message: SuccessMessages.membershipAddedToCart)
+        
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingMembershipToCart)
+        
+        var request = AddMembershipToCartRequest()
+        request.image = membership.image
+        request.membership = membership.slug
+        request.price = membership.price
+        request.title = membership.title
+        request.userId = AppEngine.sharedInstance.userID
+        request.force = AppEngine.sharedInstance.userDetails?.canBuyMRLMembership ?? false ? "0" : "1"
+        
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler{data, error in
+            self.delegate?.hideProgressIndicator()
+            if error == nil{
+                self.delegate?.showSuccessToastMessage(message: SuccessMessages.membershipAddedToCart)
                 self.syncCartBadgeCount()
-               }else{
-                   self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
-               }
-           }
-           cartApi.addMembershipToCart(request: request)
-           
-       }
-       
+            }else{
+                self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
+        }
+        cartApi.addMembershipToCart(request: request)
+        
+    }
+    
     
     func getMembershipDetails(slug:String) {
         
@@ -144,16 +150,42 @@ class MembershipInteractor : BaseInteractor{
                 
                 let membershipDetailsResponse = self.decodeFromJson(data!, modelType: MembershipDetails.self)
                 self.membershipDetailsDelegate?.didFetchMembershipDetails(membershipDetails: membershipDetailsResponse!)
-               
+                
             }else{
                 
                 self.delegate?.showEmptyPageError(message: error?.errorMessage ?? ErrorMessages.genericError)
-               
+                
             }
             
         }
         
         shopApi.fetchMembershipDetails(slug: slug)
+        
+    }
+    
+    func getMRLMembershipMessage() {
+        
+        
+        let shopApi = ShopsApi()
+        shopApi.setCompletionHandler{data,error in
+            
+            if error == nil{
+                
+                if let mrlResponse = self.decodeFromJson(data!, modelType: MRLMeesageResponse.self){
+                    self.mrlMessageDelegate?.didFetchMRLMessage(message: mrlResponse.msg ?? AppConstants.MRLMessage)
+                }else{
+                    self.mrlMessageDelegate?.didFetchMRLMessage(message: AppConstants.MRLMessage)
+                }
+                
+            }else{
+                
+                self.mrlMessageDelegate?.didFetchMRLMessage(message: AppConstants.MRLMessage)
+                
+            }
+            
+        }
+        
+        shopApi.fetchMRLMembershipMessage()
         
     }
 }
