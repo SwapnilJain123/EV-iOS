@@ -35,6 +35,7 @@ class EventParticipantIntercator : BaseInteractor{
                     if eventParticipantsResponse.eventParticipants.count == 0{
                         self.delegate?.showEmptyPageError(message: ErrorMessages.emptyEventParticipants)
                     }else{
+                        AppEngine.sharedInstance.generalSkills = eventParticipantsResponse.generalSkills
                         self.participants = eventParticipantsResponse.eventParticipants.sorted(by:
                             {
                                 if let displayName = $0.displayName{
@@ -81,35 +82,45 @@ class EventParticipantIntercator : BaseInteractor{
     
     func getAvailableFilterOptions() -> [String]{
         var options = [String]()
-        
+        let isEvApp = AppEngine.sharedInstance.isEvApp()
         for participant in participants where participant.skillLevel?.isNotEmpty ?? false{
             options.append("By Skill Level")
             break
         }
-        for participant in participants where participant.trainings?.count ?? 0 > 0{
-            options.append("By Training")
-            break
+        
+        if(isEvApp){
+            for participant in participants where participant.trainings?.count ?? 0 > 0{
+                options.append("By Training")
+                break
+            }
         }
-        for participant in participants where participant.rentals?.count ?? 0 > 0{
-            options.append("By Rentals")
-            break
+        
+        if(isEvApp){
+            for participant in participants where participant.rentals?.count ?? 0 > 0{
+                options.append("By Rentals")
+                break
+            }
         }
         for participant in participants where participant.motoClasses?.count ?? 0 > 0{
             options.append("By Classes")
             break
         }
-        for participant in participants {
-            if participant.eWaiver ?? false == false{
-                options.append("By Not Signed In")
-                break
+        
+        if(isEvApp){
+            for participant in participants {
+                if participant.eWaiver ?? false == false{
+                    options.append("By Not Signed In")
+                    break
+                }
             }
-            
-            
         }
-        for participant in participants {
-            if participant.motoPurchased ?? false == true{
-                options.append("By Racers")
-                break
+        
+        if(isEvApp){
+            for participant in participants {
+                if participant.motoPurchased ?? false == true{
+                    options.append("By Racers")
+                    break
+                }
             }
         }
         

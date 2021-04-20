@@ -106,12 +106,18 @@ class EventParticipantCell: UITableViewCell{
         contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 0.8)
         containerView.setCardView()
         
-        tdPurchaseWarning.isHidden = true
-        if eventParticipant?.motoPurchased ?? false == true && eventParticipant?.tdPurchased ?? false == false{
-            tdPurchaseWarning.isHidden = false
-        }
-        btnMotoIcon.isHidden = !(eventParticipant?.motoPurchased ?? false)
         
+        if AppEngine.sharedInstance.isEvApp(){
+            
+            btnMotoIcon.isHidden = !(eventParticipant?.motoPurchased ?? false)
+            tdPurchaseWarning.isHidden = !((eventParticipant?.motoPurchased ?? false) && !(eventParticipant?.tdPurchased ?? false))
+        }else{
+            
+            btnMotoIcon.isHidden = false
+            tdPurchaseWarning.isHidden = true
+                
+        }
+         
         
         userName.textColor = UIColor.getAppThemeColor()
          userID.textColor = UIColor.getAppThemeColor()

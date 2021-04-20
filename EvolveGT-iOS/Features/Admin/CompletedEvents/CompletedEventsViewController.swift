@@ -103,7 +103,7 @@ class CompletedEventViewController : ETViewController{
                                               target: self,
                                               action: #selector(self.switchDashboardTapped))
         let morebutton = createMoreButton()
-        self.navigationItem.rightBarButtonItems = [switchDashboard, morebutton]
+        self.navigationItem.rightBarButtonItems = [ morebutton,switchDashboard]
     }
     
     @IBAction func didPressAppSwitchMode(_ sender: Any) {

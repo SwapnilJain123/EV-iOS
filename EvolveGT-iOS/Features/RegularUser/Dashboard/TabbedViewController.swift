@@ -50,7 +50,7 @@ class TabbedViewController: ETViewController {
             if(AppConstants.APP_MODE_SWITCH_ENABLED){
                 navbarControls.append(switchAppMode)
             }
-            if(AppEngine.sharedInstance.currentUser?.isAdminOrCoach() ?? false && AppConstants.DASHBOARD_SWITCH_ENABLED){
+            if(AppEngine.sharedInstance.currentUser?.hasAdminPrevilege ?? false && AppConstants.DASHBOARD_SWITCH_ENABLED){
                 navbarControls.append(switchDashboard)
             }
         }

@@ -26,6 +26,7 @@ class AppEngine{
     }
     
     var countries = [Country]()
+    var generalSkills = [String]()
     var states = [SupportedState]()
     
     var currentUser : User?

@@ -19,9 +19,11 @@ struct CompletedEventsResponse : Decodable{
 struct EventParticpantResponse: Codable {
     var count: Int
     var eventParticipants: [EventParticipant]
+    var generalSkills: [String]
     
     enum CodingKeys: String, CodingKey {
         case eventParticipants = "result"
+        case generalSkills = "general_skills"
         case count
     }
 }

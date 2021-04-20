@@ -14,7 +14,8 @@ struct User: Codable {
     
     
     var id, email, firstName, lastName: String
-    var displayName, skillLevel, role: String 
+    var displayName, skillLevel, role: String
+    var hasAdminPrevilege: Bool
 
     enum CodingKeys: String, CodingKey {
         case id, email
@@ -22,6 +23,7 @@ struct User: Codable {
         case lastName = "last_name"
         case displayName = "display_name"
         case skillLevel = "skill_level"
+        case hasAdminPrevilege = "admin_privilege"
         case role
     }
     

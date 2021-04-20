@@ -195,12 +195,18 @@ extension EventParticipantsController : UITableViewDataSource{
         
         let eventParticipant = participants[indexPath.row]
         var identifier = "EventParticipantCellSignAndStarDisabled"
+       //EventParticipantCellSignNoStar
+        
+        print("Has Sign - \(eventParticipant.isSignEnabled) && Has Accesscories - \(eventParticipant.hasAccessories)")
         if eventParticipant.isSignAndStarEnabled{
             identifier = "EventParticipantCell"
+        }else if eventParticipant.isSignEnabled && eventParticipant.hasAccessories == false{
+          //
+            identifier = "EventParticipantCellSignNoStar"
         }else if eventParticipant.hasAccessories{
             identifier = "EventParticipantCellSignDisabled"
         }
-        
+        print("Identifier - \(identifier)")
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                  for: indexPath) as! EventParticipantCell
         cell.eventParticipant = eventParticipant
@@ -274,7 +280,11 @@ extension EventParticipantsController: EventParticipantCellDelegate{
     }
     
     func clickedOnUpgradeSkill(_ cell: EventParticipantCell, participant: EventParticipant?) {
-        self.presentSelectionMenu(title: "Upgrade Skill Level", data: AppConstants.SkillLevels){
+        var skills = AppEngine.sharedInstance.generalSkills
+        if(skills.count == 0){
+            skills = AppConstants.SkillLevels
+        }
+        self.presentSelectionMenu(title: "Upgrade Skill Level", data: skills){
             selectedItems in
             
             if let skill = selectedItems.first{

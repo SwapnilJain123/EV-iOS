@@ -23,7 +23,7 @@ class HambergerMenuController: ETViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(!(AppEngine.sharedInstance.currentUser?.isAdminOrCoach() ?? false)){
+        if(!(AppEngine.sharedInstance.currentUser?.hasAdminPrevilege ?? false)){
             menuItems.removeAll{$0.tag == SlideMenuItem.TAG_SWITCH_DASHBOARD}
         }
         slidingMenuView.dataSource = self
