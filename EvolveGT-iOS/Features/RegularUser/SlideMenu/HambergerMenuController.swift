@@ -92,13 +92,17 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             let vc = self.ext.getViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
             pushViewController(vc)
         case SlideMenuItem.TAG_PAST_EVENTS:
-            let vc = EnrolledEventsSlidingTabController()
-            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_PAST
+//            let vc = EnrolledEventsSlidingTabController()
+//            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_PAST
+           
+            
+            let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
+            vc.selectedIndex = EventHistoryController.TAB_PAST
             self.ext.pushViewController(viewController: vc)
             
         case SlideMenuItem.TAG_UPCOMING_EVENTS:
-            let vc = EnrolledEventsSlidingTabController()
-            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_UPCOMING
+            let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
+            vc.selectedIndex = EventHistoryController.TAB_UPCOMING
             self.ext.pushViewController(viewController: vc)
         case SlideMenuItem.TAG_SWITCH_DASHBOARD:
             self.dashboardManager.switchToAdminDashboard()
@@ -118,6 +122,8 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(storyBoard: "Profile", VCIdentifier: "ProfileController")
         case SlideMenuItem.TAG_E_WAIVER:
             self.ext.pushViewController(storyBoard: "E-Waiver", VCIdentifier: "E-WaiverVC")
+        case SlideMenuItem.TAG_TRANSFER_CREDIT:
+            self.ext.pushViewController(storyBoard: "TransferCredit", VCIdentifier: "transferCreditVC")
         case SlideMenuItem.TAG_REFER_FRIEND:
                        let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
                        

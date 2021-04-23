@@ -100,6 +100,7 @@ struct ScreenTitle{
     //Mark: User Screen
     static let TITLE_DASHBOARD = "Dashboard"
     static let TITLE_WAIVER = "E-Waiver"
+    static let TITLE_TRANSFER_CREDIT = "Transfer Credit"
     static let TITLE_CREATE_ACCOUNT = "Create Your Account"
     
     static let TITLE_UPCOMING_EVENTS = "Upcoming Events"

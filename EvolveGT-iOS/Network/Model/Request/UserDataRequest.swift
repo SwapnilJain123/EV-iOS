@@ -261,3 +261,13 @@ struct DeviceTokenRequest: Codable{
 
     }
 }
+
+struct TransferAmountRequest: Codable {
+    var userID, transferEmail , transferAmount: String?
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case transferEmail = "transferEmail"
+        case transferAmount = "transferAmount"
+    }
+}

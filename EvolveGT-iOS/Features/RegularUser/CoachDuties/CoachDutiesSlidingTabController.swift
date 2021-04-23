@@ -11,7 +11,7 @@ import UIKit
 
 class CoachDutiesSlidingTabController: ETViewController{
     
-    var assignedEvents =  [AssignedEvent]()
+    var assignedEvents =  AssignedDuty()
     private let slidingTabController = UISimpleSlidingTabController()
     
     
@@ -42,13 +42,14 @@ class CoachDutiesSlidingTabController: ETViewController{
         setupUI()
     }
     private func provideViewControllers() {
-        
+        /*
         for event in assignedEvents{
             let coachDutyController = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "CoachDutiesVC") as! CoachDutiesController
-            coachDutyController.assignedEvent = event
+            //coachDutyController.assignedEvent = event
             
             slidingTabController.addItem(item: coachDutyController, title: event.event ?? "")
         }
+ */
         
     }
 }

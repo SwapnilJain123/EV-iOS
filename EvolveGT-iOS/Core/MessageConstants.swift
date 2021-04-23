@@ -216,6 +216,7 @@ struct SuccessMessages {
     
     static let eventConfirmation = "Event added successfully. Would you like to add this to your calendar?"
    static let eventAddedToCalendar = "Event added to your calendar"
+    static let transferedAmount = "Transaction was successfull"
     
 }
 

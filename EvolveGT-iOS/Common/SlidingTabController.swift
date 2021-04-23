@@ -169,8 +169,10 @@ class UISimpleSlidingTabController: UIViewController {
 extension UISimpleSlidingTabController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         setCurrentPosition(position: indexPath.row)
+        Log.i("Tab Selected - \(currentPosition)")
         if let delegate = getViewController(at: currentPosition) as? SlidingTabDelegate{
             delegate.reloadPage()
+            
         }
     }
     
@@ -178,6 +180,8 @@ extension UISimpleSlidingTabController: UICollectionViewDelegate{
         if scrollView == collectionPage{
             let currentIndex = Int(self.collectionPage.contentOffset.x / collectionPage.frame.size.width)
             setCurrentPosition(position: currentIndex)
+            Log.i("Tab Scrolled To - \(currentPosition)")
+
             if let delegate = getViewController(at: currentPosition) as? SlidingTabDelegate{
                  delegate.reloadPage()
             }

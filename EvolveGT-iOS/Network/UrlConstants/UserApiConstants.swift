@@ -37,6 +37,7 @@ struct UserApiConstants{
 
     static let REFER_FRIEND = "user/referFriend"
     static let CREATE_ACCOUNT = "user/create"
+    static let TRANSFER_AMOUNT = "user/transferCredits"
     
     
     //EWaiver

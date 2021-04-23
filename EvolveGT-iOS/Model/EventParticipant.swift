@@ -81,30 +81,31 @@ struct EventParticipant: Codable {
         case motoPurchased = "moto_purchased"
     }
     
-    struct Rental: Codable {
-        var name, attribute, value: String
-    }
     
-    // MARK: - MotoClass
-    struct MotoClass: Codable {
-        var raceName: String?
-        var raceClasses: [RaceClass]?
-
-        enum CodingKeys: String, CodingKey {
-            case raceName = "race_name"
-            case raceClasses = "race_classes"
-        }
-    }
-
-    // MARK: - RaceClass
-    struct RaceClass: Codable {
-        var className, bikeData: String?
-
-        enum CodingKeys: String, CodingKey {
-            case className = "class_name"
-            case bikeData = "bike_data"
-        }
-    }
 
 }
 
+struct Rental: Codable {
+    var name, attribute, value: String
+}
+
+// MARK: - MotoClass
+struct MotoClass: Codable {
+    var raceName: String?
+    var raceClasses: [RaceClass]?
+
+    enum CodingKeys: String, CodingKey {
+        case raceName = "race_name"
+        case raceClasses = "race_classes"
+    }
+}
+
+// MARK: - RaceClass
+struct RaceClass: Codable {
+    var className, bikeData: String?
+
+    enum CodingKeys: String, CodingKey {
+        case className = "class_name"
+        case bikeData = "bike_data"
+    }
+}

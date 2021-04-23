@@ -19,8 +19,10 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
     
     func reloadPage() {
         eventsTableView?.reloadData()
+        Log.d("Enrolled - Event: Upcoming Page reloaded \(events?.count ?? 0)")
+
         
-        if events == nil{
+        if events?.count ?? 0 == 0{
             eventsTableView?.isHidden = true
             self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
         }else{
@@ -30,15 +32,17 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
     }
     override func viewDidLoad(){
         super.viewDidLoad()
-        
         eventsTableView.dataSource = self
+
         eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.estimatedRowHeight = 120
         eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Log.d("Event Count :\(events?.count ?? 0)")
+        eventsTableView.dataSource = self
+
+        Log.d("Enrolled - Event: Event Count :\(events?.count ?? 0)")
         reloadPage()
     }
     
@@ -66,7 +70,9 @@ extension UpcomingEventsController: EnrolledEventCellDelegate{
             interactor.cancelEvent(itemID: event.orderItemID ?? "")
         }
     }
-    
+    func showAccessories(event: EnrolledEvent) {
+        
+    }
     override func showSuccessToastMessage(message: String) {
         super.showSuccessToastMessage(message: message)
         tabHolderController?.fetchEventHistory()

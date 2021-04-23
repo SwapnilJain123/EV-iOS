@@ -30,4 +30,5 @@ class GenericApi:BaseApiAdapter {
         setUrl(url: url)
         super.makeRequest(method: .POST)
     }
+  
 }

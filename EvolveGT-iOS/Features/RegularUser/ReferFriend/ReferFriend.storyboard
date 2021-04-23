@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,15 +25,15 @@
                                         <rect key="frame" x="32" y="309" width="350" height="200"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIL-xb-wlH" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="20" y="83" width="310" height="34"/>
+                                                <rect key="frame" x="20" y="80.5" width="310" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your friend's Email"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuJ-vp-iaM">
-                                                <rect key="frame" x="20" y="132" width="310" height="47"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuJ-vp-iaM">
+                                                <rect key="frame" x="20" y="134.5" width="310" height="44.5"/>
                                                 <color key="backgroundColor" name="ColorEV"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="Send Invitation">
@@ -43,13 +44,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please provide valid email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB3-vM-WU5" userLabel="ErrorLabel">
-                                                <rect key="frame" x="20" y="57" width="310" height="18"/>
+                                                <rect key="frame" x="20" y="54.5" width="310" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" name="TextColorRed"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="DIL-xb-wlH" firstAttribute="centerX" secondItem="wKB-ck-uno" secondAttribute="centerX" id="1FW-CV-5rk"/>
                                             <constraint firstItem="DIL-xb-wlH" firstAttribute="leading" secondItem="wKB-ck-uno" secondAttribute="leading" constant="20" id="3IN-wh-o62"/>
@@ -113,6 +114,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="CD4-iU-dKV"/>
                         <color key="backgroundColor" red="0.15613102791878175" green="0.15613102791878175" blue="0.15613102791878175" alpha="0.51522367294520544" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CD4-iU-dKV" firstAttribute="trailing" secondItem="B9h-m0-BZ0" secondAttribute="trailing" id="Fhs-Es-Yd1"/>
@@ -120,7 +122,6 @@
                             <constraint firstItem="B9h-m0-BZ0" firstAttribute="top" secondItem="CD4-iU-dKV" secondAttribute="top" id="ZTT-Pk-FQj"/>
                             <constraint firstItem="CD4-iU-dKV" firstAttribute="bottom" secondItem="B9h-m0-BZ0" secondAttribute="bottom" id="u7l-4p-VDe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CD4-iU-dKV"/>
                     </view>
                     <navigationItem key="navigationItem" id="3TO-hn-tOd">
                         <nil key="title"/>
@@ -136,6 +137,11 @@
             <point key="canvasLocation" x="1426.0869565217392" y="147.99107142857142"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="DIL-xb-wlH">
+            <size key="intrinsicContentSize" width="310" height="39.220703125"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ic_not_assigned" width="64" height="64"/>
         <namedColor name="ColorEV">
@@ -147,5 +153,8 @@
         <namedColor name="TextColorRed">
             <color red="0.83099997043609619" green="0.090000003576278687" blue="0.33700001239776611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -152,4 +152,12 @@ class ProfileApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }
+    
+    func transferCredit(transferCreditRequest:TransferAmountRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.TRANSFER_AMOUNT)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(transferCreditRequest))
+        super.makeRequest(method: .POST)
+    }
 }

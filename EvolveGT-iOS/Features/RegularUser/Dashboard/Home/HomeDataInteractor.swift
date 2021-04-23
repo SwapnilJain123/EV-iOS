@@ -11,7 +11,7 @@ import Foundation
 protocol HomeViewDelegate{
     
     func didFetchDetails(profileData : ProfileData?, sections : [HomeSection])
-    func didFetchCoachDuties(assignedEvents : [AssignedEvent])
+    func didFetchCoachDuties(assignedEvents : AssignedDuty)
     
 }
 protocol AgreementAcceptanceDelegate{
@@ -156,10 +156,10 @@ class HomeDataInteractor : BaseInteractor{
             if error == nil{
                 if let response = self.decodeFromJson(data!, modelType: CoachDutyResponse.self){
                     
-                    if response.assignedEvents?.count ?? 0 == 0{
+                    if response.duties == nil{
                         self.delegate?.showAlert(title: "", message: ErrorMessages.eventsNotAssigned)
                     }else{
-                        self.homeViewDelegate?.didFetchCoachDuties(assignedEvents: response.assignedEvents!)
+                        self.homeViewDelegate?.didFetchCoachDuties(assignedEvents: response.duties!)
                     }
                 }else{
                     self.delegate?.showAlert(title: "", message: ErrorMessages.genericError)

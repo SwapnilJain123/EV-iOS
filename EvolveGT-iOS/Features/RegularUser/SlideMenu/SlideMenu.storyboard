@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,13 +85,13 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3V6-5N-CQu"/>
                         <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="3V6-5N-CQu" firstAttribute="trailing" secondItem="VTC-ez-1rS" secondAttribute="trailing" constant="50" id="WAR-r3-5Nr"/>
                             <constraint firstItem="VTC-ez-1rS" firstAttribute="top" secondItem="3V6-5N-CQu" secondAttribute="top" id="pGX-94-XLM"/>
                             <constraint firstItem="3V6-5N-CQu" firstAttribute="bottom" secondItem="VTC-ez-1rS" secondAttribute="bottom" id="vL5-RU-87y"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3V6-5N-CQu"/>
                     </view>
                     <connections>
                         <outlet property="slidingMenuView" destination="VTC-ez-1rS" id="FJQ-Cc-8iq"/>

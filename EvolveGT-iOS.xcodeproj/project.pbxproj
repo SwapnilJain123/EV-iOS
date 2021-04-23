@@ -296,7 +296,6 @@
 		103B256D249940BE00BB8CB9 /* EventParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2502451CF9700EA95C0 /* EventParticipant.swift */; };
 		103B256E249940BE00BB8CB9 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346172461D2CA00D5EED0 /* EmptyCell.swift */; };
 		103B256F249940BE00BB8CB9 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033665F248389BF009AF19A /* PaymentViewController.swift */; };
-		103B2570249940BE00BB8CB9 /* CoachDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD52494C6340051FF56 /* CoachDuty.swift */; };
 		103B2571249940BE00BB8CB9 /* CheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033660F247D3FED009AF19A /* CheckoutResponse.swift */; };
 		103B2572249940BE00BB8CB9 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F51246FE15800684A87 /* Encodable+Extension.swift */; };
 		103B2573249940BE00BB8CB9 /* CompletedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE79245088F600190088 /* CompletedEventsViewController.swift */; };
@@ -490,7 +489,6 @@
 		103B2643249940CC00BB8CB9 /* EventParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA2502451CF9700EA95C0 /* EventParticipant.swift */; };
 		103B2644249940CC00BB8CB9 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103346172461D2CA00D5EED0 /* EmptyCell.swift */; };
 		103B2645249940CC00BB8CB9 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033665F248389BF009AF19A /* PaymentViewController.swift */; };
-		103B2646249940CC00BB8CB9 /* CoachDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD52494C6340051FF56 /* CoachDuty.swift */; };
 		103B2647249940CC00BB8CB9 /* CheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1033660F247D3FED009AF19A /* CheckoutResponse.swift */; };
 		103B2648249940CC00BB8CB9 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10048F51246FE15800684A87 /* Encodable+Extension.swift */; };
 		103B2649249940CC00BB8CB9 /* CompletedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FE79245088F600190088 /* CompletedEventsViewController.swift */; };
@@ -663,7 +661,6 @@
 		10A06AD02493911B0051FF56 /* AddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ACF2493911B0051FF56 /* AddressInteractor.swift */; };
 		10A06AD22493C9A10051FF56 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD12493C9A10051FF56 /* Country.swift */; };
 		10A06AD42494BBC40051FF56 /* CoachDutyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD32494BBC40051FF56 /* CoachDutyCell.swift */; };
-		10A06AD62494C6340051FF56 /* CoachDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06AD52494C6340051FF56 /* CoachDuty.swift */; };
 		10A06ADB2494CA7E0051FF56 /* CoachDutiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */; };
 		10A06ADD2494CB610051FF56 /* CoachDuties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */; };
 		10A06ADF249550E70051FF56 /* UserAcceptanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */; };
@@ -703,6 +700,9 @@
 		10A551DB251779CC0049C3DB /* ReferFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */; };
 		10A551DC251779CC0049C3DB /* ReferFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */; };
 		10A551DD251779CC0049C3DB /* ReferFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */; };
+		10B75CD8262EF31900E7EFDA /* TransferCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B75CD7262EF31900E7EFDA /* TransferCredit.storyboard */; };
+		10B75CDF262EF33700E7EFDA /* TransferCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B75CDE262EF33700E7EFDA /* TransferCreditViewController.swift */; };
+		10B75CE6262EF35800E7EFDA /* TransferCreditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B75CE5262EF35800E7EFDA /* TransferCreditInteractor.swift */; };
 		10BB126E251BC1CE00320A84 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */; };
 		10BB126F251BC1CE00320A84 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */; };
 		10BB1270251BC1CE00320A84 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */; };
@@ -735,6 +735,21 @@
 		10CB6FA924CD37B6002F730C /* UserTermsNotAgareed.json in Resources */ = {isa = PBXBuildFile; fileRef = 104BCDC924CBEEB20095EE48 /* UserTermsNotAgareed.json */; };
 		10CB6FAA24CD37BA002F730C /* LoginAdminUserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10CB6F8C24CC1559002F730C /* LoginAdminUserResponse.json */; };
 		10CB6FAB24CD37BD002F730C /* CompletedEvEventsWithTraining.json in Resources */ = {isa = PBXBuildFile; fileRef = 10CB6F8E24CC188D002F730C /* CompletedEvEventsWithTraining.json */; };
+		10D600FE263039A20097D180 /* TransferCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B75CDE262EF33700E7EFDA /* TransferCreditViewController.swift */; };
+		10D600FF263039A30097D180 /* TransferCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B75CDE262EF33700E7EFDA /* TransferCreditViewController.swift */; };
+		10D60105263039A60097D180 /* TransferCreditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B75CE5262EF35800E7EFDA /* TransferCreditInteractor.swift */; };
+		10D6010B263039A60097D180 /* TransferCreditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B75CE5262EF35800E7EFDA /* TransferCreditInteractor.swift */; };
+		10D6011126303BB10097D180 /* TransferCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B75CD7262EF31900E7EFDA /* TransferCredit.storyboard */; };
+		10D6011726303BB20097D180 /* TransferCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B75CD7262EF31900E7EFDA /* TransferCredit.storyboard */; };
+		10D6011E26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6011D26305C360097D180 /* TransferAmountSuccessViewController.swift */; };
+		10D6011F26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6011D26305C360097D180 /* TransferAmountSuccessViewController.swift */; };
+		10D6012026305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6011D26305C360097D180 /* TransferAmountSuccessViewController.swift */; };
+		10D6012C2631C5630097D180 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6012B2631C5630097D180 /* CollectionView+Extension.swift */; };
+		10D6012D2631C5630097D180 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6012B2631C5630097D180 /* CollectionView+Extension.swift */; };
+		10D6012E2631C5630097D180 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6012B2631C5630097D180 /* CollectionView+Extension.swift */; };
+		10D601352631E1FA0097D180 /* EventHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D601342631E1FA0097D180 /* EventHistoryController.swift */; };
+		10D601362631E1FA0097D180 /* EventHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D601342631E1FA0097D180 /* EventHistoryController.swift */; };
+		10D601372631E1FA0097D180 /* EventHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D601342631E1FA0097D180 /* EventHistoryController.swift */; };
 		10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */; };
 		10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */; };
 		10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */; };
@@ -998,7 +1013,6 @@
 		10A06ACF2493911B0051FF56 /* AddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractor.swift; sourceTree = "<group>"; };
 		10A06AD12493C9A10051FF56 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		10A06AD32494BBC40051FF56 /* CoachDutyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutyCell.swift; sourceTree = "<group>"; };
-		10A06AD52494C6340051FF56 /* CoachDuty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDuty.swift; sourceTree = "<group>"; };
 		10A06ADA2494CA7E0051FF56 /* CoachDutiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDutiesController.swift; sourceTree = "<group>"; };
 		10A06ADC2494CB610051FF56 /* CoachDuties.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoachDuties.storyboard; sourceTree = "<group>"; };
 		10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAcceptanceStatus.swift; sourceTree = "<group>"; };
@@ -1018,6 +1032,9 @@
 		10A551D2251497940049C3DB /* SaveWaiverDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveWaiverDetailsRequest.swift; sourceTree = "<group>"; };
 		10A551D6251748830049C3DB /* ReferFriendInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferFriendInteractor.swift; sourceTree = "<group>"; };
 		10A551DA251779CC0049C3DB /* ReferFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferFriendRequest.swift; sourceTree = "<group>"; };
+		10B75CD7262EF31900E7EFDA /* TransferCredit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransferCredit.storyboard; sourceTree = "<group>"; };
+		10B75CDE262EF33700E7EFDA /* TransferCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCreditViewController.swift; sourceTree = "<group>"; };
+		10B75CE5262EF35800E7EFDA /* TransferCreditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCreditInteractor.swift; sourceTree = "<group>"; };
 		10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		10BDD011245982ED00F05700 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		10BDD01624598AAF00F05700 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
@@ -1034,6 +1051,9 @@
 		10CB6F8E24CC188D002F730C /* CompletedEvEventsWithTraining.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CompletedEvEventsWithTraining.json; sourceTree = "<group>"; };
 		10CB6F9A24CC3A5E002F730C /* CompletedEventsNoTraining.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CompletedEventsNoTraining.json; sourceTree = "<group>"; };
 		10CB6F9C24CC3C56002F730C /* CompletedMotoEvents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CompletedMotoEvents.json; sourceTree = "<group>"; };
+		10D6011D26305C360097D180 /* TransferAmountSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAmountSuccessViewController.swift; sourceTree = "<group>"; };
+		10D6012B2631C5630097D180 /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
+		10D601342631E1FA0097D180 /* EventHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHistoryController.swift; sourceTree = "<group>"; };
 		10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsController.swift; sourceTree = "<group>"; };
 		10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantCell.swift; sourceTree = "<group>"; };
 		10FCA24E2451CE0500EA95C0 /* EventParticipantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantRequest.swift; sourceTree = "<group>"; };
@@ -1174,6 +1194,7 @@
 		103345E824606BB600D5EED0 /* RegularUser */ = {
 			isa = PBXGroup;
 			children = (
+				10B75CD6262EF2EB00E7EFDA /* TransferCredit */,
 				1085A70024FFB10800A7B4A8 /* E-Waiver */,
 				1085A6FB24FF8D5900A7B4A8 /* ReferFriend */,
 				10A06AE2249697C40051FF56 /* Settings */,
@@ -1298,6 +1319,7 @@
 				103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */,
 				1033463A2466CF1200D5EED0 /* EnrolledEventsInteractor.swift */,
 				104BDFD124A920FE00E198FF /* EnrolledEventsSlidingTabController.swift */,
+				10D601342631E1FA0097D180 /* EventHistoryController.swift */,
 			);
 			path = EnrolledEvents;
 			sourceTree = "<group>";
@@ -1466,7 +1488,6 @@
 				109D6E8724863D5B009446A0 /* GiftCard.swift */,
 				104B8DC8248903CD008BE5DA /* Membership.swift */,
 				10A06AD12493C9A10051FF56 /* Country.swift */,
-				10A06AD52494C6340051FF56 /* CoachDuty.swift */,
 				10A06ADE249550E70051FF56 /* UserAcceptanceStatus.swift */,
 				10A06AEB2496A48A0051FF56 /* UserPreference.swift */,
 				10FE935425023094002F3572 /* Ewaiver.swift */,
@@ -1630,6 +1651,7 @@
 				10716FAF2473130F0032C056 /* TextFieldExtension.swift */,
 				104B8DD5248ACA87008BE5DA /* ImageViewExtension.swift */,
 				10A06AED2496B4930051FF56 /* UISwitchExtension.swift */,
+				10D6012B2631C5630097D180 /* CollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1875,6 +1897,17 @@
 				10A551B325067F1F0049C3DB /* RegPhaseIndicator.swift */,
 			);
 			path = RegistraionPhases;
+			sourceTree = "<group>";
+		};
+		10B75CD6262EF2EB00E7EFDA /* TransferCredit */ = {
+			isa = PBXGroup;
+			children = (
+				10B75CD7262EF31900E7EFDA /* TransferCredit.storyboard */,
+				10B75CDE262EF33700E7EFDA /* TransferCreditViewController.swift */,
+				10B75CE5262EF35800E7EFDA /* TransferCreditInteractor.swift */,
+				10D6011D26305C360097D180 /* TransferAmountSuccessViewController.swift */,
+			);
+			path = TransferCredit;
 			sourceTree = "<group>";
 		};
 		10BDD00F245982CA00F05700 /* Common */ = {
@@ -2135,6 +2168,7 @@
 				103345F424606D2200D5EED0 /* Cart.storyboard in Resources */,
 				1039FE772450877600190088 /* Admin.storyboard in Resources */,
 				103345FA24606D4400D5EED0 /* Home.storyboard in Resources */,
+				10B75CD8262EF31900E7EFDA /* TransferCredit.storyboard in Resources */,
 				103345F024606C4300D5EED0 /* Tabs.storyboard in Resources */,
 				1085A6FD24FF8D8400A7B4A8 /* ReferFriend.storyboard in Resources */,
 				103B26A5249A02ED00BB8CB9 /* GoogleService-Info.plist in Resources */,
@@ -2176,6 +2210,7 @@
 				10CB6F8F24CC188D002F730C /* CompletedEvEventsWithTraining.json in Resources */,
 				103B259D249940BE00BB8CB9 /* Main.storyboard in Resources */,
 				10A551AD25064E830049C3DB /* RegistraionPhases.xib in Resources */,
+				10D6011126303BB10097D180 /* TransferCredit.storyboard in Resources */,
 				104BCDC724CBE7070095EE48 /* UserTermsAgreed.json in Resources */,
 				103B259E249940BE00BB8CB9 /* Cart.storyboard in Resources */,
 				109B4BB52500E64300E45375 /* GoogleService-Info.plist in Resources */,
@@ -2235,6 +2270,7 @@
 				103B2673249940CC00BB8CB9 /* Main.storyboard in Resources */,
 				103B2674249940CC00BB8CB9 /* Cart.storyboard in Resources */,
 				103B2675249940CC00BB8CB9 /* Admin.storyboard in Resources */,
+				10D6011726303BB20097D180 /* TransferCredit.storyboard in Resources */,
 				103B2676249940CC00BB8CB9 /* Home.storyboard in Resources */,
 				103B2677249940CC00BB8CB9 /* Tabs.storyboard in Resources */,
 				103B2678249940CC00BB8CB9 /* GiftCard.storyboard in Resources */,
@@ -2494,6 +2530,7 @@
 				1039FE17244F25E100190088 /* LoginViewController.swift in Sources */,
 				103346362466A93400D5EED0 /* AllEventsController.swift in Sources */,
 				10048F42246F094800684A87 /* AboutUsInteractor.swift in Sources */,
+				10B75CDF262EF33700E7EFDA /* TransferCreditViewController.swift in Sources */,
 				10048F13246D01AF00684A87 /* ShopsApiConstants.swift in Sources */,
 				10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */,
 				1033460624608D6400D5EED0 /* HomeDataInteractor.swift in Sources */,
@@ -2529,6 +2566,7 @@
 				1033660E247D3EC4009AF19A /* CheckoutApiConstant.swift in Sources */,
 				10334657246884B500D5EED0 /* TabbedViewController.swift in Sources */,
 				1033465E246944B200D5EED0 /* ForgotPasswordController.swift in Sources */,
+				10D6012C2631C5630097D180 /* CollectionView+Extension.swift in Sources */,
 				1039FE73245071A100190088 /* StringValidator+Extension.swift in Sources */,
 				1033460424608CDD00D5EED0 /* ProfileApi.swift in Sources */,
 				1033461424614DA500D5EED0 /* String+CurrencyExtensio.swift in Sources */,
@@ -2565,6 +2603,7 @@
 				10716FBE247822AA0032C056 /* ProductListController.swift in Sources */,
 				104BDFD624AA68E400E198FF /* CoachDutiesSlidingTabController.swift in Sources */,
 				103346712469461700D5EED0 /* ForgotPasswordRequest.swift in Sources */,
+				10B75CE6262EF35800E7EFDA /* TransferCreditInteractor.swift in Sources */,
 				10A06AE1249557520051FF56 /* PolicyAgreementController.swift in Sources */,
 				10BDD0202459FB3700F05700 /* SignaturePreviewViewController.swift in Sources */,
 				1033464F2468414500D5EED0 /* HambergerMenuController.swift in Sources */,
@@ -2572,6 +2611,7 @@
 				10A06AEA2496A1140051FF56 /* SettingsInteractor.swift in Sources */,
 				103346342466A92200D5EED0 /* PastEventsController.swift in Sources */,
 				10716FB224741EB90032C056 /* SimpleAlertController.swift in Sources */,
+				10D601352631E1FA0097D180 /* EventHistoryController.swift in Sources */,
 				1039FE6A24506DE800190088 /* LoginInterator.swift in Sources */,
 				1039FE01244F1A1800190088 /* ViewController.swift in Sources */,
 				1039FE5424500F4C00190088 /* ETResponse.swift in Sources */,
@@ -2602,7 +2642,6 @@
 				103346182461D2CA00D5EED0 /* EmptyCell.swift in Sources */,
 				10336660248389BF009AF19A /* PaymentViewController.swift in Sources */,
 				104BDFDA24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
-				10A06AD62494C6340051FF56 /* CoachDuty.swift in Sources */,
 				10336610247D3FED009AF19A /* CheckoutResponse.swift in Sources */,
 				10048F52246FE15800684A87 /* Encodable+Extension.swift in Sources */,
 				1039FE7A245088F600190088 /* CompletedEventsViewController.swift in Sources */,
@@ -2635,6 +2674,7 @@
 				10048F1C246DB24F00684A87 /* CartRequest.swift in Sources */,
 				1033464A2468375500D5EED0 /* BuildScheme.swift in Sources */,
 				10A551CD250F52DE0049C3DB /* SignViewController.swift in Sources */,
+				10D6011E26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 				10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */,
 				10048F30246EB0CF00684A87 /* EventDetailsController.swift in Sources */,
@@ -2699,6 +2739,7 @@
 				103B250D249940BE00BB8CB9 /* LoginViewController.swift in Sources */,
 				103B250E249940BE00BB8CB9 /* AllEventsController.swift in Sources */,
 				103B250F249940BE00BB8CB9 /* AboutUsInteractor.swift in Sources */,
+				10D600FE263039A20097D180 /* TransferCreditViewController.swift in Sources */,
 				103B2510249940BE00BB8CB9 /* ShopsApiConstants.swift in Sources */,
 				103B2511249940BE00BB8CB9 /* ChangePasswordInteractor.swift in Sources */,
 				103B2512249940BE00BB8CB9 /* HomeDataInteractor.swift in Sources */,
@@ -2734,6 +2775,7 @@
 				103B252C249940BE00BB8CB9 /* CheckoutApiConstant.swift in Sources */,
 				103B252D249940BE00BB8CB9 /* TabbedViewController.swift in Sources */,
 				103B252E249940BE00BB8CB9 /* ForgotPasswordController.swift in Sources */,
+				10D6012D2631C5630097D180 /* CollectionView+Extension.swift in Sources */,
 				103B252F249940BE00BB8CB9 /* StringValidator+Extension.swift in Sources */,
 				103B2530249940BE00BB8CB9 /* ProfileApi.swift in Sources */,
 				103B2532249940BE00BB8CB9 /* String+CurrencyExtensio.swift in Sources */,
@@ -2770,6 +2812,7 @@
 				104BDFD724AA68E400E198FF /* CoachDutiesSlidingTabController.swift in Sources */,
 				103B254D249940BE00BB8CB9 /* ForgotPasswordRequest.swift in Sources */,
 				103B254E249940BE00BB8CB9 /* PolicyAgreementController.swift in Sources */,
+				10D60105263039A60097D180 /* TransferCreditInteractor.swift in Sources */,
 				103B254F249940BE00BB8CB9 /* SignaturePreviewViewController.swift in Sources */,
 				103B2550249940BE00BB8CB9 /* HambergerMenuController.swift in Sources */,
 				104BDFCF24A9202D00E198FF /* SlidingTabController.swift in Sources */,
@@ -2777,6 +2820,7 @@
 				103B2552249940BE00BB8CB9 /* PastEventsController.swift in Sources */,
 				103B2554249940BE00BB8CB9 /* SimpleAlertController.swift in Sources */,
 				103B2555249940BE00BB8CB9 /* LoginInterator.swift in Sources */,
+				10D601362631E1FA0097D180 /* EventHistoryController.swift in Sources */,
 				103B2556249940BE00BB8CB9 /* ViewController.swift in Sources */,
 				103B2557249940BE00BB8CB9 /* ETResponse.swift in Sources */,
 				103B2558249940BE00BB8CB9 /* AdminApiConstants.swift in Sources */,
@@ -2806,7 +2850,6 @@
 				103B256E249940BE00BB8CB9 /* EmptyCell.swift in Sources */,
 				103B256F249940BE00BB8CB9 /* PaymentViewController.swift in Sources */,
 				104BDFDB24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
-				103B2570249940BE00BB8CB9 /* CoachDuty.swift in Sources */,
 				109B4BBA2501285A00E45375 /* EWaiverViewController.swift in Sources */,
 				103B2571249940BE00BB8CB9 /* CheckoutResponse.swift in Sources */,
 				103B2572249940BE00BB8CB9 /* Encodable+Extension.swift in Sources */,
@@ -2840,6 +2883,7 @@
 				103B258C249940BE00BB8CB9 /* CartRequest.swift in Sources */,
 				103B258D249940BE00BB8CB9 /* BuildScheme.swift in Sources */,
 				10A551CE250F52DE0049C3DB /* SignViewController.swift in Sources */,
+				10D6011F26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				103B258E249940BE00BB8CB9 /* LoginResponse.swift in Sources */,
 				103B258F249940BE00BB8CB9 /* DropDownList.swift in Sources */,
 				103B2590249940BE00BB8CB9 /* EventDetailsController.swift in Sources */,
@@ -2904,6 +2948,7 @@
 				103B25E3249940CC00BB8CB9 /* LoginViewController.swift in Sources */,
 				103B25E4249940CC00BB8CB9 /* AllEventsController.swift in Sources */,
 				103B25E5249940CC00BB8CB9 /* AboutUsInteractor.swift in Sources */,
+				10D600FF263039A30097D180 /* TransferCreditViewController.swift in Sources */,
 				103B25E6249940CC00BB8CB9 /* ShopsApiConstants.swift in Sources */,
 				103B25E7249940CC00BB8CB9 /* ChangePasswordInteractor.swift in Sources */,
 				103B25E8249940CC00BB8CB9 /* HomeDataInteractor.swift in Sources */,
@@ -2939,6 +2984,7 @@
 				103B2603249940CC00BB8CB9 /* TabbedViewController.swift in Sources */,
 				103B2604249940CC00BB8CB9 /* ForgotPasswordController.swift in Sources */,
 				103B2605249940CC00BB8CB9 /* StringValidator+Extension.swift in Sources */,
+				10D6012E2631C5630097D180 /* CollectionView+Extension.swift in Sources */,
 				103B2606249940CC00BB8CB9 /* ProfileApi.swift in Sources */,
 				103B2608249940CC00BB8CB9 /* String+CurrencyExtensio.swift in Sources */,
 				103B2609249940CC00BB8CB9 /* UserAcceptanceStatus.swift in Sources */,
@@ -2975,6 +3021,7 @@
 				104BDFD824AA68E400E198FF /* CoachDutiesSlidingTabController.swift in Sources */,
 				103B2623249940CC00BB8CB9 /* ForgotPasswordRequest.swift in Sources */,
 				103B2624249940CC00BB8CB9 /* PolicyAgreementController.swift in Sources */,
+				10D6010B263039A60097D180 /* TransferCreditInteractor.swift in Sources */,
 				103B2625249940CC00BB8CB9 /* SignaturePreviewViewController.swift in Sources */,
 				103B2626249940CC00BB8CB9 /* HambergerMenuController.swift in Sources */,
 				104BDFD024A9202D00E198FF /* SlidingTabController.swift in Sources */,
@@ -2982,6 +3029,7 @@
 				103B2628249940CC00BB8CB9 /* PastEventsController.swift in Sources */,
 				103B262A249940CC00BB8CB9 /* SimpleAlertController.swift in Sources */,
 				103B262B249940CC00BB8CB9 /* LoginInterator.swift in Sources */,
+				10D601372631E1FA0097D180 /* EventHistoryController.swift in Sources */,
 				103B262C249940CC00BB8CB9 /* ViewController.swift in Sources */,
 				103B262D249940CC00BB8CB9 /* ETResponse.swift in Sources */,
 				103B262E249940CC00BB8CB9 /* AdminApiConstants.swift in Sources */,
@@ -3011,7 +3059,6 @@
 				103B2644249940CC00BB8CB9 /* EmptyCell.swift in Sources */,
 				103B2645249940CC00BB8CB9 /* PaymentViewController.swift in Sources */,
 				104BDFDC24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
-				103B2646249940CC00BB8CB9 /* CoachDuty.swift in Sources */,
 				109B4BBB2501285A00E45375 /* EWaiverViewController.swift in Sources */,
 				103B2647249940CC00BB8CB9 /* CheckoutResponse.swift in Sources */,
 				103B2648249940CC00BB8CB9 /* Encodable+Extension.swift in Sources */,
@@ -3045,6 +3092,7 @@
 				103B2662249940CC00BB8CB9 /* CartRequest.swift in Sources */,
 				103B2663249940CC00BB8CB9 /* BuildScheme.swift in Sources */,
 				10A551CF250F52DE0049C3DB /* SignViewController.swift in Sources */,
+				10D6012026305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				103B2664249940CC00BB8CB9 /* LoginResponse.swift in Sources */,
 				103B2665249940CC00BB8CB9 /* DropDownList.swift in Sources */,
 				103B2666249940CC00BB8CB9 /* EventDetailsController.swift in Sources */,

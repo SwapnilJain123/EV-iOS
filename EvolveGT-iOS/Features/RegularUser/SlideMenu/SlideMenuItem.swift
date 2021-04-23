@@ -23,6 +23,7 @@ struct SlideMenuItem{
     static let TAG_LOG_OUT = 11
     static let TAG_E_WAIVER = 12
     static let TAG_REFER_FRIEND = 13
+    static let TAG_TRANSFER_CREDIT = 14
     var title = ""
     var evIcon = ""
     var motoIcon = ""
@@ -55,13 +56,15 @@ struct SlideMenuItem{
         
         let switchDashboard = SlideMenuItem("Switch Dashboard", "SwictUserGreen","moto_slider_switch_dashboard", TAG_SWITCH_DASHBOARD)
         
-        let waiver = SlideMenuItem("E-Wavier", "e-waiver", "e-waiver-moto",TAG_E_WAIVER)
+        let waiver = SlideMenuItem("E-Waiver", "e-waiver", "e-waiver-moto",TAG_E_WAIVER)
+        
+        let transferCredit = SlideMenuItem("Transfer Credit", "credit-transfer-ev", "credit-transfer-moto",TAG_TRANSFER_CREDIT)
         
         let logout = SlideMenuItem("Logout", "logoutGreen", "mato_slider_logout",TAG_LOG_OUT)
         
          
 //        let referFriend = SlideMenuItem("Refer a friend", "refer_a_friend", "refer_a_friend_moto",TAG_REFER_FRIEND)
 //
-        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, waiver, logout  ]///, referFriend
+        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, waiver,transferCredit, logout   ]///, referFriend
     }
 }

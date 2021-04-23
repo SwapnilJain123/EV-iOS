@@ -12,6 +12,8 @@ import Kingfisher
 
 protocol EnrolledEventCellDelegate{
     func cancelEvent(event : EnrolledEvent)
+    
+    func showAccessories(event : EnrolledEvent)
 }
 class EnrolledEventCell : UITableViewCell{
     
@@ -27,6 +29,7 @@ class EnrolledEventCell : UITableViewCell{
     @IBOutlet weak var orderDate: UILabel!
     
     @IBOutlet weak var cancelButton: UIButton?
+    @IBOutlet weak var icAccessories: UIImageView!
     
     
     override func prepareForReuse() {
@@ -37,6 +40,11 @@ class EnrolledEventCell : UITableViewCell{
     }
     
     
+    @IBAction func didPressAccessories(_ sender: UIButton) {
+        if event?.hasAccessories ?? false{
+            delegate?.showAccessories(event: event!)
+        }
+    }
     @IBAction func didPressCancel(_ sender: Any) {
         delegate?.cancelEvent(event: event!)
     }
@@ -61,6 +69,7 @@ class EnrolledEventCell : UITableViewCell{
             
         }
         
+        icAccessories.isHidden = !event.hasAccessories
         cancelButton?.setBorderColor(color: .red)
         self.containerView.setCardView()
         

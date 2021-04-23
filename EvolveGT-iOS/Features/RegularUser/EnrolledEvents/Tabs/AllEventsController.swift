@@ -17,18 +17,20 @@ class AllEventsController : ETViewController, SlidingTabDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         Log.d("Event Count :\(events?.count ?? 0)")
+         Log.d("Enrolled - Event: All Event Count :\(events?.count ?? 0)")
         reloadPage()
     }
     
     func reloadPage() {
          eventsTableView?.reloadData()
+        Log.d("Enrolled - Event: All Page reloaded:\(events?.count ?? 0)")
                
               if events?.count ?? 0 == 0{
                    self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
                }else{
                    self.ext.hideErrorView()
                }
+ 
     }
     override func viewDidLoad(){
         super.viewDidLoad()

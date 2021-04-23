@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Transfer Credit View Controller-->
+        <scene sceneID="i3G-BH-SBr">
+            <objects>
+                <viewController storyboardIdentifier="transferCreditVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="edH-jv-PKS" customClass="TransferCreditViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qyn-in-lBM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYN-Cp-0d3">
+                                <rect key="frame" x="207" y="194" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQu-SF-fPe" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="10" y="234" width="394" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email of receiver"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6c-VU-TGr" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="10" y="307" width="394" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Amount to transfer"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asM-1z-NJn">
+                                <rect key="frame" x="25" y="807" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Owa-0G-WtW"/>
+                                </constraints>
+                                <state key="normal" title="Transfer"/>
+                                <connections>
+                                    <action selector="didTapTransferButton:" destination="edH-jv-PKS" eventType="touchUpInside" id="6AC-hR-C89"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjZ-tD-uCh" userLabel="errorLabel">
+                                <rect key="frame" x="25" y="214" width="364" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.84051773689999998" green="0.19479362010000001" blue="0.11420131040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.84051773689999998" green="0.19479362010000001" blue="0.11420131040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Ik-7h-EWN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="asM-1z-NJn" firstAttribute="leading" secondItem="1Ik-7h-EWN" secondAttribute="leading" constant="25" id="07h-u0-TFx"/>
+                            <constraint firstItem="xjZ-tD-uCh" firstAttribute="leading" secondItem="1Ik-7h-EWN" secondAttribute="leading" constant="25" id="2k1-vy-oR6"/>
+                            <constraint firstItem="eQu-SF-fPe" firstAttribute="top" secondItem="xjZ-tD-uCh" secondAttribute="bottom" constant="20" id="7FT-ZQ-s0k"/>
+                            <constraint firstItem="1Ik-7h-EWN" firstAttribute="trailing" secondItem="eQu-SF-fPe" secondAttribute="trailing" constant="10" id="8od-TM-LTS"/>
+                            <constraint firstItem="1Ik-7h-EWN" firstAttribute="bottom" secondItem="asM-1z-NJn" secondAttribute="bottom" constant="10" id="Djq-DK-BJ9"/>
+                            <constraint firstItem="O6c-VU-TGr" firstAttribute="top" secondItem="eQu-SF-fPe" secondAttribute="bottom" constant="34" id="M2T-73-xDM"/>
+                            <constraint firstItem="mYN-Cp-0d3" firstAttribute="top" secondItem="1Ik-7h-EWN" secondAttribute="top" constant="150" id="al9-26-zf2"/>
+                            <constraint firstItem="1Ik-7h-EWN" firstAttribute="trailing" secondItem="xjZ-tD-uCh" secondAttribute="trailing" constant="25" id="bmp-1p-f2j"/>
+                            <constraint firstItem="xjZ-tD-uCh" firstAttribute="top" secondItem="mYN-Cp-0d3" secondAttribute="bottom" constant="20" id="fsr-aS-HUE"/>
+                            <constraint firstItem="O6c-VU-TGr" firstAttribute="leading" secondItem="eQu-SF-fPe" secondAttribute="leading" id="j1o-b8-Xnb"/>
+                            <constraint firstItem="mYN-Cp-0d3" firstAttribute="centerX" secondItem="1Ik-7h-EWN" secondAttribute="centerX" id="pMy-bX-6u6"/>
+                            <constraint firstItem="eQu-SF-fPe" firstAttribute="leading" secondItem="1Ik-7h-EWN" secondAttribute="leading" constant="10" id="u0g-rB-vTd"/>
+                            <constraint firstItem="O6c-VU-TGr" firstAttribute="trailing" secondItem="eQu-SF-fPe" secondAttribute="trailing" id="wsm-0v-9ZA"/>
+                            <constraint firstItem="1Ik-7h-EWN" firstAttribute="trailing" secondItem="asM-1z-NJn" secondAttribute="trailing" constant="25" id="yAW-8R-MFi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="availableCreditLabel" destination="mYN-Cp-0d3" id="fX4-uK-byG"/>
+                        <outlet property="btnTransfer" destination="asM-1z-NJn" id="nhe-Ix-7be"/>
+                        <outlet property="errorLabel" destination="xjZ-tD-uCh" id="JdK-Ck-CeQ"/>
+                        <outlet property="tfAmount" destination="O6c-VU-TGr" id="MNd-eW-r2v"/>
+                        <outlet property="tfEmail" destination="eQu-SF-fPe" id="Osy-AA-a93"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7h-iZ-W31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246.37681159420291" y="150.66964285714286"/>
+        </scene>
+        <!--Transfer Amount Success View Controller-->
+        <scene sceneID="zhD-P0-XXL">
+            <objects>
+                <viewController storyboardIdentifier="transferSuccessVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DOP-gc-FPn" customClass="TransferAmountSuccessViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jd5-iC-ny6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction was successfull!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFN-Wh-2eM">
+                                <rect key="frame" x="71" y="441" width="272" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action_success" translatesAutoresizingMaskIntoConstraints="NO" id="2GW-cN-GPj">
+                                <rect key="frame" x="122" y="261" width="170" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="gpX-Z8-kSd"/>
+                                    <constraint firstAttribute="height" constant="140" id="u6G-0G-N1P"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpA-fN-mGW">
+                                <rect key="frame" x="25" y="807" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="MPt-2o-V7u"/>
+                                </constraints>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="didTapExit:" destination="DOP-gc-FPn" eventType="touchUpInside" id="pWO-ug-GmR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F6A-qX-fJg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OFN-Wh-2eM" firstAttribute="top" secondItem="2GW-cN-GPj" secondAttribute="bottom" constant="40" id="YQF-SM-ygV"/>
+                            <constraint firstItem="OFN-Wh-2eM" firstAttribute="centerX" secondItem="F6A-qX-fJg" secondAttribute="centerX" id="iad-pi-vnk"/>
+                            <constraint firstItem="RpA-fN-mGW" firstAttribute="leading" secondItem="F6A-qX-fJg" secondAttribute="leading" constant="25" id="lGn-Ir-uQK"/>
+                            <constraint firstItem="2GW-cN-GPj" firstAttribute="centerX" secondItem="F6A-qX-fJg" secondAttribute="centerX" id="nV1-0z-Unk"/>
+                            <constraint firstItem="F6A-qX-fJg" firstAttribute="trailing" secondItem="RpA-fN-mGW" secondAttribute="trailing" constant="25" id="p9g-aP-Imw"/>
+                            <constraint firstItem="F6A-qX-fJg" firstAttribute="bottom" secondItem="RpA-fN-mGW" secondAttribute="bottom" constant="10" id="rPh-wi-LNq"/>
+                            <constraint firstItem="OFN-Wh-2eM" firstAttribute="centerY" secondItem="F6A-qX-fJg" secondAttribute="centerY" id="zGq-D8-VPw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exitButton" destination="RpA-fN-mGW" id="v3m-iA-gLh"/>
+                        <outlet property="successImage" destination="2GW-cN-GPj" id="AJz-DB-Fc8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Fy-gO-TBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="483" y="130"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="O6c-VU-TGr">
+            <size key="intrinsicContentSize" width="394" height="39.220703125"/>
+        </designable>
+        <designable name="eQu-SF-fPe">
+            <size key="intrinsicContentSize" width="394" height="39.220703125"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="ic_action_success" width="90.333335876464844" height="90.333335876464844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

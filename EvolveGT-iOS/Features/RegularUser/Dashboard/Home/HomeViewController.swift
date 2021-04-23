@@ -189,17 +189,19 @@ extension HomeViewController: UITableViewDataSource{
 
 extension HomeViewController: HomeViewDelegate{
     
-    func didFetchCoachDuties(assignedEvents: [AssignedEvent]) {
+    func didFetchCoachDuties(assignedEvents: AssignedDuty) {
+        /*
         if assignedEvents.count == 1{
-            let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "CoachDutiesVC") as! CoachDutiesController
-            vc.assignedEvent = assignedEvents.first
-            self.ext.pushViewController(viewController: vc)
+           
         }else{
             let vc = CoachDutiesSlidingTabController()
             vc.assignedEvents = assignedEvents
             self.ext.pushViewController(viewController: vc)
         }
-        
+        */
+        let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "CoachDutiesVC") as! CoachDutiesController
+        vc.assignedDuty = assignedEvents
+        self.ext.pushViewController(viewController: vc)
     }
     
     func didFetchDetails(profileData: ProfileData?, sections: [HomeSection]) {
@@ -211,8 +213,14 @@ extension HomeViewController: HomeViewDelegate{
 }
 extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
     func showEnrolledEventList(type: EventType) {
-        let vc = EnrolledEventsSlidingTabController()
+//        let vc = EnrolledEventsSlidingTabController()
+//        vc.selectedIndex = type == EventType.PAST ? EnrolledEventsSlidingTabController.TAB_PAST: EnrolledEventsSlidingTabController.TAB_UPCOMING
+//        self.ext.pushViewController(viewController: vc)
+        
+        //
+        let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
         vc.selectedIndex = type == EventType.PAST ? EnrolledEventsSlidingTabController.TAB_PAST: EnrolledEventsSlidingTabController.TAB_UPCOMING
+        
         self.ext.pushViewController(viewController: vc)
     }
     
@@ -262,7 +270,8 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
 }
 extension HomeViewController: ProfileCellDelegate{
     func openEventHistory(eventType: Int) {
-        let vc = EnrolledEventsSlidingTabController()
+       // let vc = EnrolledEventsSlidingTabController()
+        let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
         vc.selectedIndex = eventType
         self.ext.pushViewController(viewController: vc)
     }

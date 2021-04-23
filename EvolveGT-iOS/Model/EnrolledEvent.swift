@@ -12,6 +12,10 @@ struct EnrolledEvent: Codable {
     var eventImage: String?
     var orderItemID, eventMonth: String?
 
+    var rentals: [Rental]?
+    var trainings: [String]?
+    var motoClasses: [MotoClass]?
+    
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"
         case orderStatus = "order_status"
@@ -20,5 +24,16 @@ struct EnrolledEvent: Codable {
         case eventImage = "event_image"
         case orderItemID = "order_item_id"
         case eventMonth = "event_month"
+        case rentals
+        case trainings = "training"
+        case motoClasses = "moto_classes"
+    }
+    
+    var hasAccessories : Bool{
+        let rentalCount = rentals?.count ?? 0
+        let trainingCount = trainings?.count ?? 0
+        let motoClassCount = motoClasses?.count ?? 0
+        
+        return (rentalCount + trainingCount + motoClassCount) > 0
     }
 }
