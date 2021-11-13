@@ -151,16 +151,21 @@ class RentItemCell : UITableViewCell, CheckboxButtonDelegate{
 }
 
 protocol EventClassCellDelegate{
-    func didChangeEventClassSelection(eventClass: EventClass, indexPath: IndexPath, checkedStatus : Bool)
-}
+    func didChangeEventClassSelection(eventClass: EventClass, raceClass : EventRaceClass, indexPath: IndexPath, checkedStatus : Bool)
+    }
 
-class EventClassCell: UITableViewCell , CheckboxButtonDelegate{
+class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDelegate{
+    
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var tfBikeData: SkyFloatingLabelTextField!
+    
+    
     func chechboxButtonDidSelect(_ button: CheckboxButton) {
-        self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass!, indexPath: self.indexPath!, checkedStatus: true)
+        self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass, raceClass: self.raceClass!, indexPath: self.indexPath!, checkedStatus: true)
     }
     
     func chechboxButtonDidDeselect(_ button: CheckboxButton) {
-         self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass!, indexPath: self.indexPath!, checkedStatus: false)
+         self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass, raceClass: self.raceClass!, indexPath: self.indexPath!, checkedStatus: false)
     }
     
     var delegate : EventClassCellDelegate?
@@ -170,18 +175,48 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate{
     @IBOutlet weak var eventClassTitle: UILabel!
     
     var indexPath: IndexPath?
-    var eventClass : EventClass?
+    var raceClass : EventRaceClass?
+    var eventClass: EventClass = EventClass()
     
-    func showData(eventClass : EventClass, indexPath: IndexPath){
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tfBikeData.delegate = self
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if textField == tfBikeData{
+            
+            if(textField.text == raceClass?.bikeData ?? ""){
+                
+            }else{
+                self.raceClass?.bikeData = tfBikeData.text
+                _ = self.eventClass.validateRaceClasses()
+                
+                self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass, raceClass: self.raceClass!, indexPath: self.indexPath!, checkedStatus: true)
+            }
+        }
+    }
+    
+    func showData(eventClass: EventClass, raceClass : EventRaceClass, indexPath: IndexPath){
         self.indexPath = indexPath
+        self.raceClass = raceClass
         self.eventClass = eventClass
         
-        eventClassTitle.text = eventClass.eventClassName
+       eventClassTitle.text = raceClass.className
+        price.text = "$ \(raceClass.classPrice ?? 0)"
+        tfBikeData.text = raceClass.bikeData
         selectionBox.delegate = nil
-        selectionBox.isEnabled = !(eventClass.inCart ?? false)
-        selectionBox.isOn = eventClass.isSelected || (eventClass.inCart ?? false)
+        selectionBox.isEnabled = !(raceClass.specialCase ?? false) || (raceClass.specialCase ?? false && eventClass.canSelectSpecialClass())
+        selectionBox.isOn = raceClass.checked ?? false
         selectionBox.applyCheckboxTheme()
         selectionBox.delegate = self
+        tfBikeData.isEnabled = selectionBox.isOn
+        if raceClass.hasError{
+            tfBikeData.errorMessage = "Bike data required."
+        }
+        
+
     }
 }
 
@@ -206,18 +241,23 @@ class SkillLevelCell: UITableViewCell, RadioButtonDelegate{
     @IBOutlet weak var radio2: RadioButton!
   
     
-    func showData(amateur : SkillSet, expert : SkillSet, hasSkillRegistered : Bool){
-        radio1.setTitle(amateur.skill, for: .normal)
-        radio2.setTitle(expert.skill, for: .normal)
+    func showData(racerStatus : String, skillRegistered : String){
+        radio1.setTitle("Amateur", for: .normal)
+        radio2.setTitle("Expert", for: .normal)
 
-        radio1.isOn = amateur.active ?? true
-        radio2.isOn = expert.active ?? false
+        radio1.isOn = racerStatus == radio1.title(for: .normal)
+        radio2.isOn = racerStatus == radio2.title(for: .normal)
         
         radio1.delegate = self
         radio2.delegate = self
         
-        radio1.isEnabled = !hasSkillRegistered
-        radio2.isEnabled = !hasSkillRegistered
+        if skillRegistered.lowercased() == "expert"{
+            radio1.isEnabled = false
+            radio2.isEnabled = false
+        }else{
+            radio1.isEnabled = true
+            radio2.isEnabled = true
+        }
         
         radio1.applyRadioButtonTheme()
         radio2.applyRadioButtonTheme()
@@ -225,67 +265,53 @@ class SkillLevelCell: UITableViewCell, RadioButtonDelegate{
 }
 
 protocol TransponderCellDelegate{
-    func didSelectTransponderForRent(transponder: Transponder, indexPath: IndexPath, _ checked : Bool)
-    func didEnterTransponderNumber(transponderNumber: String, transponder: Transponder, indexPath: IndexPath)
+//    func didSelectTransponderForRent(transponder: Transponder, indexPath: IndexPath, _ checked : Bool)
+    func didEnterTransponderNumber(transponderNumber: String, indexPath: IndexPath)
+    func didEnterBikeNumber(bikeNumber: String, indexPath: IndexPath)
 }
 
-class TransponderCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelegate{
-    func chechboxButtonDidSelect(_ button: CheckboxButton) {
-        delegate?.didSelectTransponderForRent(transponder: transponder!, indexPath: indexPath!, true)
-    }
+class TransponderCell: UITableViewCell,  UITextFieldDelegate{
     
-    func chechboxButtonDidDeselect(_ button: CheckboxButton) {
-       delegate?.didSelectTransponderForRent(transponder: transponder!, indexPath: indexPath!, false)
-    }
-    
-    
-    @IBOutlet weak var transponderImage: UIImageView!
-    @IBOutlet weak var transponderRent: CheckboxButton!
+    @IBOutlet weak var tfBikeNumber: SkyFloatingLabelTextField!
     @IBOutlet weak var transponderTF: SkyFloatingLabelTextField!
     
-    var transponder: Transponder?
     var indexPath : IndexPath?
     
     var delegate : TransponderCellDelegate?
-    func showData(transponder: Transponder, indexPath: IndexPath){
+    
+    func showData( transponderNumber: String, bikeNumber: String, indexPath: IndexPath){
         self.indexPath = indexPath
-        self.transponder = transponder
         
-        
-        if  let url = URL(string : transponder.imageURL ?? ""){
-            let fallbackImage = UIImage(named: "fallback_transponder")
-            transponderImage.kf.setImage(with: url,
-                                   placeholder: fallbackImage,
-                                   options: [.transition(ImageTransition.fade(1))])
-            
-        }
-        transponderRent.delegate = nil
-        transponderRent.setTitle("Transponder Rent \(transponder.price?.formatToAmount() ?? "")", for: .normal)
-        transponderRent.isOn = transponder.isSelected
-        transponderTF.isEnabled = !(transponderRent.isOn)
-        transponderTF.text = transponder.number
+        transponderTF.isEnabled = true//!(transponderRent.isOn)
+        transponderTF.text = transponderNumber
         transponderTF.applyColorTheme()
-       
-         transponderRent.delegate = self
-        transponderRent.applyCheckboxTheme()
         
+        tfBikeNumber.text = bikeNumber
+        tfBikeNumber.applyColorTheme()
        
+         
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         transponderTF.delegate = self
+        tfBikeNumber.delegate = self
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-         delegate?.didEnterTransponderNumber(transponderNumber: textField.text!, transponder: transponder!, indexPath: indexPath!)
+        
+        if textField == transponderTF{
+            delegate?.didEnterTransponderNumber(transponderNumber: textField.text!, indexPath: indexPath!)
+        }else{
+            delegate?.didEnterBikeNumber(bikeNumber: textField.text!, indexPath: indexPath!)
+        }
     }
     
     
 }
 
 protocol TrackDayCellDelegate{
-    func didPressAddToCart(event: Event)
+    func didPressAddTrackDayToCart(event: Event)
 }
 class TrackDayCell : UITableViewCell{
     
@@ -302,7 +328,7 @@ class TrackDayCell : UITableViewCell{
     @IBOutlet weak var hostedBy: UILabel!
     
     @IBAction func didPressAddToCart(_ sender: UIButton) {
-        delegate?.didPressAddToCart(event: trackDay!)
+        delegate?.didPressAddTrackDayToCart(event: trackDay!)
     }
     
     var trackDay : Event?{
@@ -345,5 +371,40 @@ class TrackDayCell : UITableViewCell{
                }else{
                     addToCartButton?.setImage(UIImage(named: "cart"), for: .normal)
                }
+    }
+}
+class EventClassHeader: UITableViewCell{
+    static let identifier = "EventClassHeader"
+    
+    
+    @IBOutlet weak var classHeader: UILabel!
+    
+    func setHeader(title: String){
+        classHeader.text = "  \(title)"
+    }
+}
+class MrlLicenceCell: UITableViewCell{
+    static let identifier = "MrlLicenceCell"
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var season: UILabel!
+    @IBOutlet weak var btnPurchase: UIButton!
+    
+ 
+    var purchaseHandler :((_ mrlData: MrlData) -> Void )? = nil
+    @IBAction func didTapPurchaseButton(_ sender: UIButton) {
+        if let handler = purchaseHandler{
+            handler(self.mrlData)
+        }
+    }
+    
+    var mrlData = MrlData()
+    
+    func updateUi(mrlData: MrlData){
+        self.mrlData = mrlData
+        title.text = mrlData.title
+        price.text = "Price: \(mrlData.price?.formatToAmount() ?? "$0.0")"
+        season.text = "\(mrlData.season ?? "") Season"
     }
 }

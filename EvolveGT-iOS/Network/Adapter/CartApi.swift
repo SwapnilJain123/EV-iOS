@@ -23,6 +23,14 @@ class CartApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(eventRequest))
         super.makeRequest(method: .POST)
     }
+    
+    func addTrackDayToCart(eventRequest: TrackDayCartRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_ETRACK_DAY_TO_CART)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(eventRequest))
+        super.makeRequest(method: .POST)
+    }
     func addProductToCart(request: ProductCartRequest){
            
            let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_PRODUCT_TO_CART)"

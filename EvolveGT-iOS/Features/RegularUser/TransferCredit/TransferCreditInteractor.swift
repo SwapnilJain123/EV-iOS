@@ -17,15 +17,29 @@ class TransferCreditInteractor: BaseInteractor {
         delegate?.showProgressIndicator(message: "")
         let api = ProfileApi()
         api.setCompletionHandler{ data , error in
-            self.delegate?.hideProgressIndicator()
             if error == nil{
-                self.transferCreditDelegate?.transferredCredit()
+                self.syncCartBadgeCount()
             }else{
+                self.delegate?.hideProgressIndicator()
+
                 self.delegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
             }
             
         }
         
         api.transferCredit(transferCreditRequest: transferCreditRequest)
+    }
+    
+    override func cartListUpdated() {
+        self.delegate?.hideProgressIndicator()
+
+        super.cartListUpdated()
+        self.transferCreditDelegate?.transferredCredit()
+    }
+    
+    override func cartSyncError() {
+        super.cartSyncError()
+        self.delegate?.hideProgressIndicator()
+
     }
 }

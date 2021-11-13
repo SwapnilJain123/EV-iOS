@@ -177,6 +177,7 @@ struct ErrorMessages {
     static let emptyWaiverEventList = "Sorry, there is no waiver events available right now."
     static let emptyWaiverEventDetails = "Sorry, Waiver details not found"
     static let emptyEventClass = "Please select at least one class"
+    static let invalidBikeData = "Please verify bike data for selected class."
     static let emptyProducts = "Unfortunately, there is no products available right now."
     static let emptyCartList = "Sorry, Your cart is empty."
     static let emptyArchieCards = "There are no Archie Cards available right now."

@@ -54,7 +54,8 @@ class EnrolledEventCell : UITableViewCell{
         self.event = event
         eventTitle.textColor = UIColor.getAppThemeColor()
         
-        if AppEngine.sharedInstance.canCancelEvent{
+        let isPastEvet = event.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? true
+        if AppEngine.sharedInstance.canCancelEvent && !isPastEvet{
             cancelButton?.isHidden = false
         }else{
              cancelButton?.isHidden = true

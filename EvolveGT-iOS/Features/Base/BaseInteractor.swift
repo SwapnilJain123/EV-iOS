@@ -55,13 +55,26 @@ class BaseInteractor{
                        
                        self.delegate?.updateCartBadge(count: AppEngine.sharedInstance.cartListCount )
                        
+                    AppEngine.sharedInstance.walletBalance = cartListResponse.wallet?.toDouble() ?? AppEngine.sharedInstance.walletBalance
                    }else{
                        Log.e("Could not sync the Cart Badge")
                    }
+                
+                self.cartListUpdated()
                }else{
                    Log.e("Could not sync the Cart Badge")
+                self.cartSyncError()
                }
            }
            checkoutApi.fetchCartList(userId: AppEngine.sharedInstance.userID)
        }
+    
+    
+    func cartListUpdated(){
+        
+    }
+    
+    func cartSyncError(){
+        
+    }
 }

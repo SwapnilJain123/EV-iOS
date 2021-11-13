@@ -28,7 +28,7 @@ struct AppConstants{
     
     static let DEVICE_TOKEN = "UserDeviceToken"
     
-    static let APP_MODE_SWITCH_ENABLED = false
+    static let APP_MODE_SWITCH_ENABLED = true
     static let DASHBOARD_SWITCH_ENABLED = true
     
     

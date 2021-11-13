@@ -18,8 +18,14 @@ protocol EventDetailsDelegate : BaseViewDelegate{
     func didFetchEventDetails(_ eventDetails : EventDetails, sections :[EventsInteractor.EventDetailsSections] )
     func validationError(_ errorMessage: String)
      func addEventToCalendar(event: EventDetails)
+    
+    func registrationDenied(title: String, message: String)
+    func mrlLicenceRequired(eventDetails: EventDetails)
 }
 class EventsInteractor :BaseInteractor{
+    
+    var slug = ""
+    var isMotoEvent = false
     
     enum EventDetailsSections: Int{
         case basic
@@ -30,13 +36,9 @@ class EventsInteractor :BaseInteractor{
         case transponder
         case skillSelection
         case trackDays
+        case mrlLicence
     }
-    enum MotoSections: Int{
-        case eventClasses
-        case transponder
-        case skillSelection
-        case trackDays
-    }
+    
     var eventListDelegate : EventListViewDelegate?
     var eventDetailsDelegate : EventDetailsDelegate?
     var events = [Event]()
@@ -167,6 +169,31 @@ class EventsInteractor :BaseInteractor{
         cartApi.addEvolveEventToCart(eventRequest: request)
     }
     
+    func addTrackDayToCart(_ event: Event){
+        super.delegate = eventDetailsDelegate
+        
+        eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
+        
+        
+        var request = TrackDayCartRequest()
+        request.eventId = event.eventID
+        request.userID = AppEngine.sharedInstance.userID
+        
+        
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler{ response, error in
+            self.eventDetailsDelegate?.hideProgressIndicator()
+            if error == nil{
+                self.syncCartBadgeCount()
+                self.fetchEventDetails(slug: self.slug, isMotoEvent: self.isMotoEvent)
+            }else{
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.eventDetailsDelegate?.showErrorToastMessage(message: error!.errorMessage)
+            }
+        }
+        cartApi.addTrackDayToCart(eventRequest: request)
+    }
+    
     func addEvolveEventToCart(_ event: EventDetails){
          super.delegate = eventDetailsDelegate
         eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
@@ -222,15 +249,35 @@ class EventsInteractor :BaseInteractor{
     
     func addMotoEventToCart(_ event: EventDetails){
         super.delegate = eventDetailsDelegate
-        if event.selectedSkill.isEmpty(){
+        
+        var hasValidClasses = true
+        for eventClass in eventDetails.eventClasses!{
+            hasValidClasses = hasValidClasses && eventClass.validateRaceClasses()
+        }
+        
+        if hasValidClasses == false{
+            self.eventDetailsDelegate?.validationError(ErrorMessages.invalidBikeData)
+            self.eventDetailsDelegate?.didFetchEventDetails(eventDetails, sections: [EventDetailsSections]())
+            return
+        }else if event.racerStatus?.isEmpty() ?? true{
             self.eventDetailsDelegate?.validationError(ErrorMessages.skillNotSelected)
             return
-        }else if event.selectedEventClasses.count == 0{
-            self.eventDetailsDelegate?.validationError(ErrorMessages.emptyEventClass)
+        }else if event.transponderNo?.isEmpty ?? true{
+            
+            self.eventDetailsDelegate?.validationError( "Please provide your transponder number.")
             return
-        }else if ((event.transponder?.isSelected ?? false) == false && ((event.transponder?.number ?? "").isEmpty())){
-            self.eventDetailsDelegate?.validationError(ErrorMessages.transponderNotSelected)
-            return 
+        }else if event.bikeNo?.isEmpty ?? true{
+            
+            self.eventDetailsDelegate?.validationError( "Please provide your bike number.")
+            return
+        }else if !(event.trackValidation ?? false){
+            
+            self.eventDetailsDelegate?.showAlert(title: "Track Day Required", message: "Please purchase track day before proceeding with event registration.")
+            return
+        }else if event.mrlValidation ?? false == false{
+            
+            self.eventDetailsDelegate?.validationError("MRL Licence required.")
+            return
         }
         
         
@@ -245,11 +292,11 @@ class EventsInteractor :BaseInteractor{
         request.role = AppEngine.sharedInstance.userRole
         request.title = event.title;
         
-        request.skill = event.selectedSkill;
+        request.skill = event.racerStatus;
         request.eventClasses = event.selectedEventClasses
         request.eventClassTotal = event.selectedEventClassTotal
-        request.transponderNo = event.transponder?.number
-        request.transponderRented = event.transponder?.isSelected
+        request.transponderNo = event.transponderNo
+        request.bikeNumber = event.bikeNo
         
         let cartApi = CartApi()
         cartApi.setCompletionHandler{ response, error in
@@ -271,7 +318,12 @@ class EventsInteractor :BaseInteractor{
     func resetEventList(){
         self.events.removeAll()
     }
+    
+    var eventDetails = EventDetails()
     func fetchEventDetails(slug: String, isMotoEvent: Bool = false){
+        self.slug = slug
+        self.isMotoEvent = isMotoEvent
+        
         eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEventDetails)
         
         var request = EventDetailRequest()
@@ -283,8 +335,16 @@ class EventsInteractor :BaseInteractor{
             self.eventDetailsDelegate?.hideEmptyPageError()
             if error == nil{
                 if let eventDetails = self.decodeFromJson(response!, modelType: EventDetails.self){
+                    
+                    self.eventDetails = eventDetails
                     var sections = [EventsInteractor.EventDetailsSections]()
                     sections.append(.basic)
+                    
+                    if let eventClasses = eventDetails.eventClasses{
+                        for _ in eventClasses{
+                            sections.append(.eventClasses)
+                        }
+                    }
                     
                     if eventDetails.trainingData?.count ?? 0 > 0{
                         sections.append(.trainings)
@@ -292,30 +352,35 @@ class EventsInteractor :BaseInteractor{
                     if eventDetails.rentalData?.count ?? 0 > 0{
                         sections.append(.rentals)
                     }
-                    if eventDetails.activeEventClasses.count > 0{
-                        sections.append(.eventClasses)
+                    
+                    eventDetails.registeredSkill = eventDetails.racerStatus ?? ""
+                    
+                    if(isMotoEvent){
+                        sections.append(.skillSelection)
+                        if eventDetails.trackDays?.count ?? 0 > 0{
+                            sections.append(.trackDays)
+                        }
+                        sections.append(.transponder)
+                        if (!(eventDetails.mrlValidation ?? false)) && (eventDetails.mrlAddToCart ?? false){
+                            sections.append(.mrlLicence)
+                        }
                     }
                     
-                    if eventDetails.skillSet?.count ?? 0 > 0{
-                        sections.append(.skillSelection)
-                        
-                        for skill in eventDetails.skillSet! where skill.active ?? false{
-                            eventDetails.selectedSkill = skill.skill ?? ""
-                        }
-                        
-                    }
-                    if eventDetails.trackDays?.count ?? 0 > 0{
-                        sections.append(.trackDays)
-                    }
-                    if eventDetails.transponder != nil{
-                        sections.append(.transponder)
-                        eventDetails.transponder!.isSelected = eventDetails.transponder!.inCart ?? false
-                    }
+                    
                     if eventDetails.productInfo?.isEmpty() ?? true == false{
                         sections.append(.about)
                     }
                     
                     self.eventDetailsDelegate?.didFetchEventDetails(eventDetails, sections: sections)
+                    
+                    
+                    if eventDetails.registrationClosed ?? true{
+                        self.eventDetailsDelegate?.registrationDenied(title: "Registration Closed", message: "Registration for this event has been closed.")
+                    }else if !(eventDetails.skillEligible ?? false){
+                        self.eventDetailsDelegate?.registrationDenied(title: "Skill Not Eligible", message: "GT1 and E1 are not eligible to participate in race.")
+                    }else if (!(eventDetails.mrlValidation ?? false)) && (eventDetails.mrlAddToCart ?? false == false){
+                        self.eventDetailsDelegate?.mrlLicenceRequired(eventDetails: eventDetails)
+                    }
                 }else{
                     self.eventDetailsDelegate?.showEmptyPageError(message: ErrorMessages.genericError)
                 }
@@ -333,22 +398,25 @@ class EventsInteractor :BaseInteractor{
         
     }
     
-    func getMotoSections(_ eventDetails: EventDetails?) -> [MotoSections]{
-        var sections = [MotoSections]()
-        
-        if eventDetails?.activeEventClasses.count ?? 0 > 0{
-            sections.append(.eventClasses)
+    func addMrlLicenceToCart(mrlData: MrlData){
+        var request = AddMembershipToCartRequest()
+        request.membership = mrlData.slug
+        request.price = mrlData.price
+        request.title = mrlData.title
+        request.userId = AppEngine.sharedInstance.userID
+        request.force = "\(mrlData.force)"
+        self.eventDetailsDelegate?.showProgressIndicator(message: "Adding mrl licence to the cart")
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler{data, error in
+            self.eventDetailsDelegate?.hideProgressIndicator()
+            if error == nil{
+                self.eventDetailsDelegate?.showSuccessToastMessage(message: SuccessMessages.membershipAddedToCart)
+                self.fetchEventDetails(slug: self.slug, isMotoEvent: self.isMotoEvent)
+            }else{
+                self.eventDetailsDelegate?.showErrorToastMessage(message: error?.errorMessage ?? ErrorMessages.genericError)
+            }
         }
-        
-        if eventDetails?.skillSet?.count ?? 0 > 0{
-            sections.append(.skillSelection)
-        }
-        if eventDetails?.trackDays?.count ?? 0 > 0{
-            sections.append(.trackDays)
-        }
-        if eventDetails?.transponder != nil{
-            sections.append(.transponder)
-        }
-        return sections
+        cartApi.addMembershipToCart(request: request)
     }
+
 }

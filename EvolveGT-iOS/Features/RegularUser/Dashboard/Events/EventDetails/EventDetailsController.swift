@@ -77,18 +77,13 @@ class EventDetailsController : ETViewController{
     }
     
     func addMotoEventToCart(){
+        self.eventDetails = self.interactor.eventDetails
         if !AppEngine.sharedInstance.isUserLoggedIn() {
             //Mark: Login required
         }else {
-            if !(eventDetails?.hasRaceLicense ?? false){
-                
-                self.ext.showAlertWithAttributedText(title: AlertTitle.raceLicenceRequired, text: MessageConstants.txtRaceLicenceRequired.toAttributedText(with: 15.0)!, action: nil)
-            }else if !(eventDetails?.skillEligible ?? false){
-                self.ext.showAlert(title: AlertTitle.skillNotEligible, message: ErrorMessages.skillNotEligibleMessage)
-                
-            }else{
+            
                 interactor.addMotoEventToCart(eventDetails!)
-            }
+            
         }
     }
     func addPrivateEventToCart(_ event: EventDetails){
@@ -135,13 +130,29 @@ class EventDetailsController : ETViewController{
 }
 
 extension EventDetailsController: EventDetailsDelegate{
+    func registrationDenied(title: String, message: String) {
+        self.ext.showAlert(title: title, message: message, handler: {
+            self.navigationController?.popViewController(animated: true)
+        })
+    }
+    
+    func mrlLicenceRequired(eventDetails: EventDetails) {
+        self.ext.showAlertWithAttributedText(title: "MRL Licence Required", text: eventDetails.mrlHTML!.toAttributedText(with: 17.0)!, action: {
+            self.navigationController?.popViewController(animated: true)
+
+        })
+    }
+    
     func validationError(_ errorMessage: String) {
-        self.ext.showAlert(title: nil, message: errorMessage)
+        //self.ext.showAlert(title: nil, message: errorMessage)
+        self.ext.showErrorToast(message: errorMessage, handler: nil)
     }
     
     func didFetchEventDetails(_ eventDetails: EventDetails, sections: [EventsInteractor.EventDetailsSections]) {
         
-        self.sections = sections
+        if sections.count > 0{
+            self.sections = sections
+        }
         self.eventDetails = eventDetails
         self.eventDetails?.isMotoEvent = isMotoEvent
         
@@ -161,11 +172,18 @@ extension EventDetailsController: EventDetailsDelegate{
     
 }
 extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
+   
+    func numberOfSections(in tableView: UITableView) -> Int{
+        sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch sections[section] {
         case .eventClasses:
-            return eventDetails?.activeEventClasses.count ?? 0
+            let raceCount = eventDetails?.eventClasses![section - 1].raceClasses?.count ?? 0
+            return raceCount > 0 ? (raceCount + 1) : 0
+            //return eventDetails?.activeEventClasses.count ?? 0
         case .skillSelection:
             return 1
         case .trackDays:
@@ -179,6 +197,8 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         case .trainings:
             return eventDetails?.trainingData?.count ?? 0
         case .about:
+            return 1
+        case .mrlLicence:
             return 1
         }
         
@@ -205,24 +225,40 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
             cell.showData(rentalItem: eventDetails!.rentalData![indexPath.row], indexPath: indexPath)
             return cell
         }else if self.sections[indexPath.section] == .eventClasses{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EventClassCell", for: indexPath as IndexPath) as! EventClassCell
-            cell.showData(eventClass: eventDetails!.activeEventClasses[indexPath.row], indexPath: indexPath)
-            cell.delegate = self
-            return cell
+            
+            if(indexPath.row == 0){
+                let cell = tableView.dequeueReusableCell(withIdentifier: EventClassHeader.identifier, for: indexPath as IndexPath) as! EventClassHeader
+                cell.setHeader(title: eventDetails!.eventClasses![indexPath.section - 1].raceName ?? "")
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "EventClassCell", for: indexPath as IndexPath) as! EventClassCell
+                let eventClass = eventDetails!.eventClasses![indexPath.section - 1]
+                let raceClass = eventClass.raceClasses![indexPath.row - 1]
+                cell.showData(eventClass: eventClass, raceClass: raceClass, indexPath: indexPath)
+                cell.delegate = self
+                return cell
+            }
         }else if self.sections[indexPath.section] == .skillSelection{
             let cell = tableView.dequeueReusableCell(withIdentifier: "SkillLevelCell", for: indexPath as IndexPath) as! SkillLevelCell
-            cell.showData(amateur: eventDetails!.skillSet![0], expert: eventDetails!.skillSet![1], hasSkillRegistered: eventDetails?.hasSkillRegistered ?? false)
+            cell.showData(racerStatus: eventDetails?.racerStatus ?? "", skillRegistered: eventDetails?.registeredSkill ?? "")
             cell.delegate = self
             return cell
         } else if self.sections[indexPath.section] == .transponder{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TransponderCell", for: indexPath as IndexPath) as! TransponderCell
-            cell.showData(transponder: eventDetails!.transponder!, indexPath: indexPath)
+            cell.showData(transponderNumber: eventDetails?.transponderNo ?? "", bikeNumber: eventDetails?.bikeNo ?? "",  indexPath: indexPath)
             cell.delegate = self
             return cell
         }else if self.sections[indexPath.section] == .trackDays{
             let cell = tableView.dequeueReusableCell(withIdentifier: TrackDayCell.identifier, for: indexPath as IndexPath) as! TrackDayCell
             cell.trackDay = eventDetails?.trackDays![indexPath.row]
             cell.delegate = self
+            return cell
+        }else if self.sections[indexPath.section] == .mrlLicence{
+            let cell = tableView.dequeueReusableCell(withIdentifier: MrlLicenceCell.identifier, for: indexPath as IndexPath) as! MrlLicenceCell
+            cell.purchaseHandler = { mrlData in
+                self.interactor.addMrlLicenceToCart(mrlData: mrlData)
+            }
+            cell.updateUi(mrlData: eventDetails!.mrlData!)
             return cell
         }
         
@@ -232,9 +268,7 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int{
-        sections.count
-    }
+    
     
     //section header for rentals and trainings
     func tableView(_ tableView: UITableView, titleForHeaderInSection
@@ -244,13 +278,15 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         }else if sections[section] == .rentals{
             return " Select Rentals"
         }else  if sections[section] == .eventClasses{
-            return " Select Class"
+            return ""
         }else if sections[section] == .skillSelection{
-            return " Select Your Skill Level"
+            return " Racer Status"
         }else if sections[section] == .transponder{
-            return " Transponder"
+            return " Transponder and Bike Number"
         }else if sections[section] == .trackDays{
             return " Want to purchase the track day for this date?"
+        }else if sections[section] == .mrlLicence{
+            return " MRL Licence Required."
         }else {
             return ""
         }
@@ -260,6 +296,16 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
    
 }
 extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCellDelegate, SkillLevelCellDelegate, TransponderCellDelegate, TrackDayCellDelegate{
+    func didEnterBikeNumber(bikeNumber: String, indexPath: IndexPath) {
+        self.eventDetails?.bikeNo = bikeNumber
+        Log.i("Bike Number No set to \(bikeNumber)")
+        self.eventDetailsView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    
+    func didPressAddTrackDayToCart(event: Event) {
+        interactor.addTrackDayToCart(event)
+    }
     func didPressAddToCart(event: Event) {
         if(event.isPrivateEvent ?? false){
             addPrivateEventToCart(event)
@@ -273,19 +319,22 @@ extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCe
         }
     }
     
-    func didChangeEventClassSelection(eventClass: EventClass, indexPath: IndexPath, checkedStatus: Bool) {
-        eventClass.isSelected = checkedStatus
-        var paths = [IndexPath]()
-        paths.append(IndexPath(row: 0, section: 0))
-        paths.append(indexPath)
-       // self.eventDetailsView.reloadRows(at: paths, with: .automatic)
-        self.eventDetailsView.reloadData()
+    func didChangeEventClassSelection(eventClass: EventClass, raceClass: EventRaceClass, indexPath: IndexPath, checkedStatus: Bool) {
+        raceClass.checked = checkedStatus
+       
+        if(eventClass.hasSpecialClass() && !(raceClass.specialCase ?? false)){
+            eventClass.validateSpecialCase(raceClass);
+        }
+       
+        self.eventDetailsView.reloadSections([0, indexPath.section], with: .none)
     }
     
     func didChangeSkillSet(skill: String) {
-        eventDetails?.selectedSkill = skill
+        Log.i("Skill set to \(skill)")
+        eventDetails?.racerStatus = skill
     }
     
+    /*
     func didSelectTransponderForRent(transponder: Transponder, indexPath: IndexPath, _ checked: Bool) {
         transponder.isSelected = checked
         var paths = [IndexPath]()
@@ -295,12 +344,15 @@ extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCe
         //self.eventDetailsView.reloadRows(at: paths, with: .none)
          self.eventDetailsView.reloadData()
     }
-    
-    func didEnterTransponderNumber(transponderNumber: String, transponder: Transponder, indexPath: IndexPath) {
-        transponder.number = transponderNumber
+     */
+    func didEnterTransponderNumber(transponderNumber: String, indexPath: IndexPath) {
+       // transponder.number = transponderNumber
+        self.eventDetails?.transponderNo = transponderNumber
+        Log.i("Transponder No set to \(transponderNumber)")
         self.eventDetailsView.reloadRows(at: [indexPath], with: .none)
         
     }
+
     
     func didChangeTrainingSelection(training: TrainingDatum, checkedStatus: Bool) {
         if let selectedTraining = eventDetails?.trainingData?.first(where:{$0.title == training.title}){

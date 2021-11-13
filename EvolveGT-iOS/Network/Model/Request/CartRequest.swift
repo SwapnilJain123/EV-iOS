@@ -16,10 +16,10 @@ struct EventCartRequest: Codable {
     var serial, role, title: String?
     var eventCouponCode : String?
     
-    var eventClasses: [String]?
+    var eventClasses: [EventClassRequest]?
     var eventID: String?
-    var transponderRented: Bool?
     var transponderNo: String?
+    var bikeNumber: String?
     var eventClassTotal : String?
     var skill : String?
     
@@ -28,17 +28,16 @@ struct EventCartRequest: Codable {
         case eventDate = "event_date"
         case eventPrice = "event_price"
         case eventSlug = "event"
-        case transponderRented = "transponder_rented"
         case rentalList = "rental_list"
         case trainingList = "training_list"
         case serial, role, title
         case transponderNo = "transponder_no"
         
         case eventID = "event_id"
-        
+        case bikeNumber = "bike_no"
         case eventCouponCode = "secret_code"
-        case skill = "skill_class"
-        case eventClassTotal = "amount"
+        case skill = "racer_status"
+        case eventClassTotal = "total_price"
     }
 }
 struct TrainingRequest: Codable {
@@ -99,4 +98,31 @@ struct AddMembershipToCartRequest: Codable{
         case image, membership, price, title, force
         case userId = "serial"
     }
+}
+struct TrackDayCartRequest: Codable {
+    var eventId, userID: String?
+    enum CodingKeys: String, CodingKey {
+        case userID = "serial"
+        case eventId = "event"
+    }
+   
+}
+
+class EventClassRequest: Codable{
+    
+    var className, classId, raceName, raceId, bikeData, price: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case className = "class_name"
+        case classId = "class_id"
+        case raceName = "race_name"
+        case raceId = "race_id"
+        case bikeData = "bike_data"
+        case price = "price"
+    
+        
+    }
+    
+ 
+
 }

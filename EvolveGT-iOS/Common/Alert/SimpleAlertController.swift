@@ -65,11 +65,11 @@ class SimpleAlertController : UIViewController{
         
     }
     @IBAction func didPressPositiveButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
         if let action = alertData.positiveBtnAction{
             action()
         }
         
-        dismiss(animated: true, completion: nil)
     }
 }
 

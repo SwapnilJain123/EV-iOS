@@ -129,13 +129,17 @@ extension CartListController: UITableViewDataSource, UITableViewDelegate{
             let vc = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as! EventDetailsController
             vc.eventSlug = selectedCart.slug ?? ""
             vc.eventTitle = selectedCart.title ?? ""
-            if selectedCart.isMotoEvent && !AppEngine.sharedInstance.isEvApp(){
-                vc.isMotoEvent = false
-                self.ext.pushViewController(viewController: vc)
-                
-            }else if !selectedCart.isMotoEvent && AppEngine.sharedInstance.isEvApp(){
-                vc.isMotoEvent = true
-                self.ext.pushViewController(viewController: vc)
+            
+            if AppEngine.sharedInstance.isEvApp(){
+                if selectedCart.isMotoEvent == false{
+                    vc.isMotoEvent = false
+                    self.ext.pushViewController(viewController: vc)
+                }
+            }else{
+                if selectedCart.isMotoEvent == true{
+                    vc.isMotoEvent = true
+                    self.ext.pushViewController(viewController: vc)
+                }
             }
         case .giftcard:
             let vc = self.ext.getViewController(storyBoard: "GiftCard", VCIdentifier: "giftCardDetailsVC") as! GiftCardDetailsViewController

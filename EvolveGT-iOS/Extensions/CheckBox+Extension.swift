@@ -20,7 +20,7 @@ extension CheckboxButton {
         self.setBackgroundColor(color: .clear)
         
         if self.isEnabled == false{
-            self.checkBoxColor = CheckBoxColor(activeColor: .gray, inactiveColor: .clear, inactiveBorderColor: .gray, checkMarkColor: .white)
+            self.checkBoxColor = CheckBoxColor(activeColor: .gray, inactiveColor: .gray, inactiveBorderColor: .gray, checkMarkColor: .white)
         }
         self.setTitleColor(.darkText, for: .normal)
     }

@@ -431,42 +431,42 @@ class MotoGladiatorInfoCell: UITableViewCell, UITextFieldDelegate{
         addTextFiledDelegate(textField: tfTeammates)
         
         if user.raceNo?.isEmpty ?? true{
-            tfRaceNumber.errorMessage = ValidationErrors.invalidRaceNumber
+            //tfRaceNumber.errorMessage = ValidationErrors.invalidRaceNumber
         }else{
             tfRaceNumber.errorMessage = ""
         }
         if user.amaNo?.isEmpty ?? true{
-            tfAMANumber.errorMessage = ValidationErrors.invalidAMANumber
+           // tfAMANumber.errorMessage = ValidationErrors.invalidAMANumber
         }else{
             tfAMANumber.errorMessage = ""
         }
         if user.ccsNo?.isEmpty ?? true{
-            tfMotoCCSNumber.errorMessage = ValidationErrors.invalidCCSNumber
+           // tfMotoCCSNumber.errorMessage = ValidationErrors.invalidCCSNumber
         }else{
             tfMotoCCSNumber.errorMessage = ""
         }
         if user.amaExpires?.isEmpty ?? true{
-            tfMotoAMAExpiry.errorMessage = ValidationErrors.amaExpiryRequired
+            //tfMotoAMAExpiry.errorMessage = ValidationErrors.amaExpiryRequired
         }else{
             tfMotoAMAExpiry.errorMessage = ""
         }
         if user.asraNo?.isEmpty ?? true{
-            tfMotoASRANumber.errorMessage = ValidationErrors.invalidASRANumber
+           // tfMotoASRANumber.errorMessage = ValidationErrors.invalidASRANumber
         }else{
             tfMotoASRANumber.errorMessage = ""
         }
         if user.nationality?.isEmpty ?? true{
-            tfMotoNationality.errorMessage = ValidationErrors.invalidNationality
+           // tfMotoNationality.errorMessage = ValidationErrors.invalidNationality
         }else{
             tfMotoNationality.errorMessage = ""
         }
         if user.sponsors?.isEmpty ?? true{
-            tfSponsors.errorMessage = ValidationErrors.sponsorRequired
+           // tfSponsors.errorMessage = ValidationErrors.sponsorRequired
         }else{
             tfSponsors.errorMessage = ""
         }
         if user.teamnames?.isEmpty ?? true{
-            tfTeammates.errorMessage = ValidationErrors.teammateRequired
+            //tfTeammates.errorMessage = ValidationErrors.teammateRequired
         }else{
             tfTeammates.errorMessage = ""
         }

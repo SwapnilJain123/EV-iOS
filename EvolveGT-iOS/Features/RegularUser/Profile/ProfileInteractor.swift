@@ -128,13 +128,13 @@ class ProfileInteractor : BaseInteractor{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidEmail, section: .info)
             }else if user.evDob?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidDoB, section: .info)
-            } else if user.evMotorcycle?.isEmpty ?? true{
+            } /*else if user.evMotorcycle?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleName, section: .motorcycle)
             }else if user.evMotorcycleNumber?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleNumber, section: .motorcycle)
             }else if validateMotoInfo() == false{
                  self.profileViewDelegate?.validationError(message: "Moto Info missing", section: .moto)
-            }else if user.evEmergencyFirstName?.isEmpty ?? true{
+            }*/else if user.evEmergencyFirstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .emergency)
             }else if user.evEmergencyLastName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyLastName, section: .emergency)

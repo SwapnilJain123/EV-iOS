@@ -14,20 +14,31 @@ class EventDetails: Codable {
     var price, eventType, stock: String?
     var eventClasses: [EventClass]?
     var hasRaceLicense, skillEligible: Bool?
-    var skillSet: [SkillSet]?
-    var transponder: Transponder?
+    
     var trackDays: [Event]?
     var isPrivateEvent: Bool?
     var isCancelled : Bool?
     var slug : String? = ""
+    var transponderNo : String? = ""
     var roleBasedPrice: RoleBasedPrice? = RoleBasedPrice()
     var trainingData: [TrainingDatum]?
     var rentalData: [RentalDatum]?
-     var external: ExternalHost?
+    var external: ExternalHost?
     
     var selectedSkill = ""
     var isMotoEvent = false
     
+    var racerStatus : String?
+    var bikeNo : String?
+    var hasRaceLicence : Bool?
+    var trackValidation : Bool?
+    var mrlValidation : Bool?
+    var mrlHTML : String?
+    var mrlAddToCart : Bool?
+    var registrationClosed : Bool?
+    var mrlData: MrlData?
+    
+    var registeredSkill = ""
     var total : Double {
         var totalPrice : Double = 0
         
@@ -46,16 +57,12 @@ class EventDetails: Codable {
             }
         }
         
-        if let allEventClasses = eventClasses{
-            for eventClass in allEventClasses where (eventClass.isSelected && !(eventClass.inCart ?? false)){
-                totalPrice = totalPrice + (price?.toDouble() ?? 0)
+        if let eventRaceClasses = eventClasses{
+            for eventClass in eventRaceClasses {
+                totalPrice = totalPrice + (eventClass.getSelectedClassPrice())
             }
         }
         
-        if transponder?.isSelected ?? false{
-            let transponderPrice : Double = Double(transponder?.price ?? "0") ?? 0
-            totalPrice = totalPrice + transponderPrice
-        }
         
         return totalPrice
     }
@@ -72,44 +79,41 @@ class EventDetails: Codable {
     }
     var couponCode: String = ""
     
-    var activeEventClasses: [EventClass]{
-        var activeEventClasses = [EventClass]()
-        if let allEventClasses : [EventClass] = eventClasses{
-            for eventClass in allEventClasses where eventClass.active ?? false{
-                activeEventClasses.append(eventClass)
-            }
-        }
-        return activeEventClasses
-    }
+   
     
-    var selectedEventClasses :[String]{
-        var eventClassList = [String]()
-         if let allEventClasses : [EventClass] = eventClasses{
-            for eventClass in allEventClasses where eventClass.isSelected || (eventClass.inCart ?? false){
-                eventClassList.append(eventClass.eventClassName!)
+    var selectedEventClasses :[EventClassRequest]{
+        var requestList = [EventClassRequest]()
+        if eventClasses?.count ?? 0 > 0 {
+            for eventClass in eventClasses! {
+                for raceClass in eventClass.raceClasses! {
+                    if (raceClass.checked ?? false) && (raceClass.bikeData?.isNotEmpty ?? false) {
+                        let classRequest = EventClassRequest()
+                        classRequest.bikeData = raceClass.bikeData
+                        classRequest.classId = raceClass.classID
+                        classRequest.className = raceClass.className
+                        classRequest.price = "\(raceClass.classPrice ?? 0)"
+                        classRequest.raceId = eventClass.raceID
+                        classRequest.raceName = eventClass.raceName
+                        requestList.append(classRequest)
+                    }
+                }
             }
         }
-        return eventClassList
+        return requestList
+        
     }
     
     var selectedEventClassTotal :String{
         var total: Double = 0.0
-         if let allEventClasses : [EventClass] = eventClasses{
-            for eventClass in allEventClasses where eventClass.isSelected{
-                total = total + (price?.toDouble() ?? 0.0)
+        if let allEventClasses : [EventClass] = eventClasses{
+            for eventClass in allEventClasses {
+                total = total + eventClass.getSelectedClassPrice()
             }
         }
         return String(total)
     }
     
-    var hasSkillRegistered : Bool{
-        if let availableSkillSet: [SkillSet] = skillSet{
-            for skill in availableSkillSet where skill.active ?? false{
-                return true
-            }
-        }
-        return false
-    }
+    
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"
         case title
@@ -124,14 +128,27 @@ class EventDetails: Codable {
         case eventClasses = "classes"
         case hasRaceLicense = "has_race_license"
         case skillEligible = "skill_eligible"
-        case skillSet = "skill_set"
-        case transponder, trackDays
+        case trackDays
         case trainingData, rentalData
         case isPrivateEvent = "is_private_event"
         case roleBasedPrice
         case isCancelled = "is_cancelled"
         case external
+        
+        case transponderNo = "transponder_no"
+        case racerStatus = "racer_status"
+        case bikeNo = "bike_no"
+        case hasRaceLicence = "has_race_licence"
+        case trackValidation = "trackValidation"
+        case mrlValidation = "mrlValidation"
+        case mrlHTML = "mrlHTML"
+        case mrlData = "mrlData"
+        case mrlAddToCart = "mrlAddToCart"
+        case registrationClosed = "registration_closed"
     }
+    
+    
+    
     
     func  getRoleBasedPrice(role : String) -> String{
         if roleBasedPrice?.hasKey(for: role) ?? false{
@@ -171,43 +188,27 @@ class Variation: Codable {
 }
 
 
-
-// MARK: - Class
-class EventClass: Codable {
-    var id: Int?
-    var eventClassName: String?
-    var active, inCart: Bool?
+class MrlData: Codable{
     
-    var isSelected = false
+    var membership : String?
+    var title : String?
+    
+    var price : String?
+    var image : String?
+    var force = 0
+    var userID : String?
+    var season : String?
+    var slug : String?
+    var membershipId : String?
+    
     enum CodingKeys: String, CodingKey {
-        case id
-        case eventClassName = "class"
-        case active, inCart
+        case membership = "membership"
+        case title, slug, force,  image, season, price
+        case userID = "serial"
+        case membershipId = "membership_id"
     }
     
     
-}
-
-// MARK: - SkillSet
-class SkillSet: Codable {
-    var id: Int?
-    var skill: String?
-    var active: Bool?
-}
-
-// MARK: - Transponder
-class Transponder: Codable {
-    var price: String?
-    var imageURL: String?
-    var inCart: Bool?
-    var number: String?
-    var isSelected = false
-    
-    enum CodingKeys: String, CodingKey {
-        case price
-        case imageURL = "image_url"
-        case inCart, number
-    }
 }
 
 class RentalDatum: Codable {
