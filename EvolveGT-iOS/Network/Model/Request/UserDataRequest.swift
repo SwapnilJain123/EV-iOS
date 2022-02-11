@@ -271,3 +271,15 @@ struct TransferAmountRequest: Codable {
         case transferAmount = "transferAmount"
     }
 }
+struct EmergencyContactRequest: Codable {
+    var userID, emergencyFirstName, emergencyLastName, emergencyPhone: String?
+        var emergencyRelationship: String?
+
+        enum CodingKeys: String, CodingKey {
+            case userID = "user_id"
+            case emergencyFirstName = "emergency_first_name"
+            case emergencyLastName = "emergency_last_name"
+            case emergencyPhone = "emergency_phone"
+            case emergencyRelationship = "emergency_relationship"
+        }
+}

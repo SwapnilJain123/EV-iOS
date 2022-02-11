@@ -71,6 +71,12 @@ class CartApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(CartRemoveRequest(cartItem: cartItem)))
         super.makeRequest(method: .POST)
     }
-    
+    func validateCart(userId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.VALIDATE_CART)"
+        setUrl(url: url)
+        setParameters(parameters: ["serial": userId])
+        super.makeRequest(method: .POST)
+    }
     
 }

@@ -160,4 +160,40 @@ class ProfileApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(transferCreditRequest))
         super.makeRequest(method: .POST)
     }
+    
+    func viewPassport(passportId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.VIEW_PASSPORT)"
+        setUrl(url: url)
+        setParameters(parameters: ["passport_id":passportId])
+        super.makeRequest(method: .POST)
+    }
+    
+    func uploadPassport(userId: String, imageUploadItem: UploadItem, signature: Data, eventId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SAVE_PASSPORT)"
+        setUrl(url: url)
+        
+        var encodedSignature = signature.base64EncodedString()
+        encodedSignature = "\(AppConstants.ImageTag)\(encodedSignature)"
+        
+        setParameters(parameters: ["user_id":userId, "event_id":eventId, "signature":encodedSignature, "agree":"1"])
+        clearUploadItems()
+        appendUploadItem(uploadItem: imageUploadItem)
+        super.makeRequest(method: .POST)
+    }
+    
+    func updateEmergencyContact(userId: String, contact: EmergencyContact){
+        var request = EmergencyContactRequest()
+        request.userID = userId
+        request.emergencyFirstName = contact.firstName
+        request.emergencyLastName = contact.lastName
+        request.emergencyPhone = contact.phone
+        request.emergencyRelationship = contact.relationShip
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_EMERGENCY_CONTACT)"
+        setUrl(url: url)
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
 }

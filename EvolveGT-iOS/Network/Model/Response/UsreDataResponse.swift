@@ -99,3 +99,8 @@ struct ReferFriendResponse: Codable {
     var msg: String?
 }
 
+struct ViewPassportResponse: Codable {
+    var status: Int?
+    var msg: String?
+    var data: PassportInfo?
+}

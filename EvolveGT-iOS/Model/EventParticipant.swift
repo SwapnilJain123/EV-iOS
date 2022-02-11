@@ -23,7 +23,8 @@ struct EventParticipant: Codable {
     var trainings: [String]?
     var motoClasses: [MotoClass]?
     var eWaiver, tdPurchased, motoPurchased: Bool?
-    
+    var jobAssigned: String?
+    var duties: [AdminDuty]?
     
     var namewithRole : String{
         
@@ -79,9 +80,16 @@ struct EventParticipant: Codable {
         case eWaiver = "e_waiver"
         case tdPurchased = "td_purchased"
         case motoPurchased = "moto_purchased"
+        case jobAssigned = "jobAssigned"
+        case duties = "duties"
+        
     }
     
-    
+    var consolidatedDuties: String{
+       // let stringArray =
+        let result = duties?.map(){ $0.name ?? ""}.joined(separator: ", ") ?? ""
+        return result.isEmpty ? "NA" : result
+    }
 
 }
 
@@ -107,5 +115,52 @@ struct RaceClass: Codable {
     enum CodingKeys: String, CodingKey {
         case className = "class_name"
         case bikeData = "bike_data"
+    }
+}
+class AdminDuty: Codable {
+    var name: String?
+}
+struct DutyAssignedStaff: Codable {
+    var userID, signatureID, status: String?
+    var signature: Int?
+    var eventID, orderID, title, evDob: String?
+    var displayName, role, email, skillLevel: String?
+    var dayWorker, additionalInfo: String?
+    var duties: [AdminDuty]?
+    var show: Bool?
+    var signEnabled: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case signatureID = "signature_id"
+        case status, signature
+        case eventID = "event_id"
+        case orderID = "order_id"
+        case title
+        case evDob = "ev_dob"
+        case displayName = "display_name"
+        case role, email
+        case skillLevel = "skill_level"
+        case dayWorker = "day_worker"
+        case additionalInfo = "additional_info"
+        case duties, show
+        case signEnabled = "sign_enabled"
+    }
+    func convertToEventParticipant() -> EventParticipant{
+        var participant =  EventParticipant();
+       participant.duties = duties;
+       participant.evDob = evDob;
+       participant.eventID = eventID;
+       participant.displayName = displayName;
+       participant.email = email;
+       participant.skillLevel = skillLevel;
+       participant.orderID = orderID;
+       participant.userID = userID;
+       participant.role = role;
+       participant.signEnabled = signEnabled;
+       participant.signatureID = signatureID;
+       participant.signature = signature == 1;
+       participant.show = show;
+       return participant;
     }
 }

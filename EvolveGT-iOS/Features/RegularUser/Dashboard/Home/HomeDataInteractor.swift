@@ -140,7 +140,7 @@ class HomeDataInteractor : BaseInteractor{
                 sections.append(section)
             }
             
-            if !(AppEngine.sharedInstance.currentUser?.isCoach() ?? false){
+            if !(AppEngine.sharedInstance.userDetails?.canEnableDuties ?? false){
                 sections = sections.filter({$0 != .coachDuties})
             }
             self.homeViewDelegate?.didFetchDetails(profileData: self.profileData, sections: sections)

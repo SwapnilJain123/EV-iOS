@@ -24,6 +24,7 @@ class CartListController : TabbedViewController, CartListDelegate{
         super.viewDidLoad()
         
         interactor.delegate = self
+        interactor.validationDelegate = self
        
         cartListView.dataSource = self
         cartListView.delegate = self
@@ -86,11 +87,15 @@ class CartListController : TabbedViewController, CartListDelegate{
         if !AppEngine.sharedInstance.isUserLoggedIn(){
             self.dashboardManager.switchToLoginPage()
         }else{
-            let vc =  self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "ReviewCartVC") as! ReviewCartController
-            vc.interactor = self.interactor
-            vc.cartItems = self.cartItems
-            self.ext.pushViewController(viewController: vc)
+            interactor.validateCartList()
         }
+    }
+    func presentEmergencyContactReader(){
+        let vc = self.ext.getViewController(storyBoard: "Profile", VCIdentifier: "EmergencyContactController") as! EmergencyContactController
+        vc.saveActionHandler = { contact in
+            
+        }
+        self.present(vc, animated: true, completion: nil)
     }
 }
 extension CartListController: UITableViewDataSource, UITableViewDelegate{
@@ -182,6 +187,27 @@ extension CartListController: UITableViewDataSource, UITableViewDelegate{
 extension CartListController: CartCellDelegate{
     func deleteCartItem(cartItem: CartItem) {
         interactor.removeFromCart(cartItem: cartItem)
+    }
+    
+    
+}
+extension CartListController: CartValidationDelegate{
+    func hasError(message: String, code: Int) {
+        if code == 2{
+            presentEmergencyContactReader()
+        }else if code == 1{
+            //Ignore billing address issue. Validated this in the Review page
+            cartValidationSuccess()
+        }else{
+            self.showErrorToastMessage(message: message)
+        }
+    }
+    
+    func cartValidationSuccess() {
+        let vc =  self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "ReviewCartVC") as! ReviewCartController
+        vc.interactor = self.interactor
+        vc.cartItems = self.cartItems
+        self.ext.pushViewController(viewController: vc)
     }
     
     

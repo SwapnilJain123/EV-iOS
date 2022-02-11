@@ -24,6 +24,10 @@ protocol CartReviewDelegate{
     func didChangeTotal()
     
 }
+protocol CartValidationDelegate{
+    func hasError(message: String, code: Int)
+    func cartValidationSuccess()
+}
 enum CartReviewSections : Int{
     case summaryHeader
     case summaryItems
@@ -43,7 +47,7 @@ class CartInteractor: BaseInteractor{
     var cartListDelegate : CartListDelegate? = nil
     var cartReviewDelegate: CartReviewDelegate? = nil
     var paymentDelegate: PaymentDelegate? = nil
-    
+    var validationDelegate: CartValidationDelegate? = nil
     let coupon = Coupon()
     
     var subTotal: Double = 0
@@ -281,6 +285,34 @@ class CartInteractor: BaseInteractor{
             self.paymentDelegate?.didFinishTransaction(transactionID: self.transactionId)
         }
         checkoutApi.resetCartList(userId: AppEngine.sharedInstance.userID)
+    }
+    func validateCartList(){
+        let cartApi = CartApi()
+        cartApi.setCompletionHandler{ data, error in
+            self.delegate?.hideProgressIndicator()
+            
+            if error != nil{
+                self.validationDelegate?.hasError(message: error?.errorMessage ?? ErrorMessages.genericError, code: error?.errorCode ?? -1)
+            }else{
+                self.validationDelegate?.cartValidationSuccess()
+            }
+        }
+        cartApi.validateCart(userId: AppEngine.sharedInstance.userID)
+    }
+    
+    func updateEmergencyContact(contact: EmergencyContact){
+        self.delegate?.showProgressIndicator(message: "")
+        let profileApi = ProfileApi()
+        profileApi.setCompletionHandler{ data, error in
+            self.delegate?.hideProgressIndicator()
+            
+            if error != nil{
+                self.validationDelegate?.hasError(message: error?.errorMessage ?? ErrorMessages.genericError, code: error?.errorCode ?? -1)
+            }else{
+                self.validationDelegate?.cartValidationSuccess()
+            }
+        }
+        profileApi.updateEmergencyContact(userId: AppEngine.sharedInstance.userID, contact: contact)
     }
     
     func paymentMethodChanged(method: PaymentMethod){

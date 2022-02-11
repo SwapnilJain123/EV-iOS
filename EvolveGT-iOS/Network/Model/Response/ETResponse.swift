@@ -11,9 +11,12 @@ struct ETResponse : Decodable {
     
     var status : Int?
     var msg : String?
+    var errorCode : Int?
+    
     enum CodingKeys: String, CodingKey {
             case status
             case msg
+            case errorCode
     }
     
     
@@ -28,6 +31,9 @@ struct ETResponse : Decodable {
         
         if let valueMsg = try? container.decode(String.self, forKey: .msg) {
             msg = valueMsg
+        }
+        if let code = try? container.decode(Int.self, forKey: .errorCode) {
+            errorCode = code
         }
     }
 }

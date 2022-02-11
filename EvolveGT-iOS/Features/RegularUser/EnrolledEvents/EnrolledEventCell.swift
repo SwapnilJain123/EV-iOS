@@ -14,6 +14,9 @@ protocol EnrolledEventCellDelegate{
     func cancelEvent(event : EnrolledEvent)
     
     func showAccessories(event : EnrolledEvent)
+    
+    func showPassport(event : EnrolledEvent)
+    func uploadPassport(event : EnrolledEvent)
 }
 class EnrolledEventCell : UITableViewCell{
     
@@ -31,6 +34,7 @@ class EnrolledEventCell : UITableViewCell{
     @IBOutlet weak var cancelButton: UIButton?
     @IBOutlet weak var icAccessories: UIImageView!
     
+    @IBOutlet weak var btnShowPassport: UIButton?
     
     override func prepareForReuse() {
         
@@ -49,14 +53,14 @@ class EnrolledEventCell : UITableViewCell{
         delegate?.cancelEvent(event: event!)
     }
     
-    func populateViews(event : EnrolledEvent){
+    func populateViews(event : EnrolledEvent, isUpComing: Bool){
         
         self.event = event
         eventTitle.textColor = UIColor.getAppThemeColor()
         
-        let isPastEvet = event.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? true
-        if AppEngine.sharedInstance.canCancelEvent && !isPastEvet{
-            cancelButton?.isHidden = false
+        //let isPastEvet = event.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? true
+        if AppEngine.sharedInstance.canCancelEvent && isUpComing{
+            cancelButton?.isHidden = true//was false. Cancel button moved to context menu
         }else{
              cancelButton?.isHidden = true
         }
@@ -70,9 +74,29 @@ class EnrolledEventCell : UITableViewCell{
             
         }
         
-        icAccessories.isHidden = !event.hasAccessories
-        cancelButton?.setBorderColor(color: .red)
+        icAccessories.isHidden = true//Was  !event.hasAccessories. This moved to context menu
+        if isUpComing{
+            if event.hasPassport ?? false{
+                btnShowPassport?.setTitle("Tech Passport", for: .normal)
+                btnShowPassport?.isEnabled = true
+            }else{
+                btnShowPassport?.setTitle("I Am Here", for: .normal)
+                btnShowPassport?.isEnabled = event.enableSelfsign ?? false
+            }
+            btnShowPassport?.isHidden = false
+        }else{
+            btnShowPassport?.isHidden = true
+        }
+        //btnShowPassport?.isHidden = !isUpComing || !(event.hasPassport ?? false)
+        btnShowPassport?.applyColorTheme()
         self.containerView.setCardView()
         
+    }
+    @IBAction func didTapShowPassport(_ sender: UIButton) {
+        if event?.hasPassport ?? false{
+            delegate?.showPassport(event: event!)
+        }else{
+            delegate?.uploadPassport(event: event!)
+        }
     }
 }

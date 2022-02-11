@@ -57,4 +57,9 @@ enum UserRoles : String{
     case administrator
     
 }
-
+class EmergencyContact{
+    var firstName = ""
+    var lastName = ""
+    var phone = ""
+    var relationShip = ""
+}

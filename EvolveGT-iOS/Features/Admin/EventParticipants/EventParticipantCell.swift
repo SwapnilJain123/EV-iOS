@@ -34,12 +34,13 @@ class EventParticipantCell: UITableViewCell{
     @IBOutlet weak var orderId: UILabel!
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var backroundView: UIView!
     
     @IBOutlet weak var btnTraining: UIButton!
     @IBOutlet weak var btnSign: UIButton?
     @IBOutlet weak var btnSkillUpgrade: UIButton!
     
-    @IBOutlet weak var backroundView: UIView!
+
     
     @IBOutlet weak var tdPurchaseWarning: UIButton!
     

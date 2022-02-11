@@ -18,43 +18,76 @@ class EventParticipantIntercator : BaseInteractor{
     var adminViewDelegate: EventParticipantsViewDelegate?
     var participants = [EventParticipant]()
     var eventId = ""
+    var isParticipants = true
     
-    func getEventParticipants(_ eventId: String){
+    func getEventParticipants(_ eventId: String, isParticipant: Bool){
         super.delegate = adminViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingParticipants)
         let adminApi  = AdminApi()
         self.eventId = eventId
-        
+        self.isParticipants = isParticipant
         adminApi.setCompletionHandler{ response, error in
             self.delegate?.hideProgressIndicator()
             if error == nil{
                 Log.i("Event Paticipants Request Success - ")
                 self.delegate?.hideEmptyPageError()
-                if let eventParticipantsResponse = self.decodeFromJson(response!, modelType: EventParticpantResponse.self){
-                    
-                    if eventParticipantsResponse.eventParticipants.count == 0{
-                        self.delegate?.showEmptyPageError(message: ErrorMessages.emptyEventParticipants)
-                    }else{
-                        AppEngine.sharedInstance.generalSkills = eventParticipantsResponse.generalSkills
-                        self.participants = eventParticipantsResponse.eventParticipants.sorted(by:
-                            {
-                                if let displayName = $0.displayName{
-                                    return displayName < $1.displayName ?? ""
-                                }
-                                return false
-                        })
-                        self.adminViewDelegate?.didFetchParticipants(participants:  self.participants)
-                    }
-                    
+                if self.isParticipants{
+                    self.handleEventParticipantResponse(response: response!)
+                }else{
+                    self.handleEventParticipantForDutiesResponse(response: response!)
                 }
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
                 self.delegate?.showEmptyPageError(message: error!.errorMessage)
             }
         }
-        adminApi.fetchEventParticipants(eventID: eventId)
+        if isParticipant{
+            adminApi.fetchEventParticipants(eventID: eventId)
+        }else{
+            adminApi.fetchEventParticipantsForDuties(eventID: eventId)
+        }
     }
     
+    func handleEventParticipantResponse(response: Data){
+        if let eventParticipantsResponse = self.decodeFromJson(response, modelType: EventParticpantResponse.self){
+            
+            if eventParticipantsResponse.eventParticipants?.count ?? 0 == 0{
+                self.delegate?.showEmptyPageError(message: ErrorMessages.emptyEventParticipants)
+            }else{
+                AppEngine.sharedInstance.generalSkills = eventParticipantsResponse.generalSkills
+                self.participants = eventParticipantsResponse.eventParticipants!.sorted(by:
+                    {
+                        if let displayName = $0.displayName{
+                            return displayName < $1.displayName ?? ""
+                        }
+                        return false
+                })
+                self.adminViewDelegate?.didFetchParticipants(participants:  self.participants)
+            }
+            
+        }
+    }
+    func handleEventParticipantForDutiesResponse(response: Data){
+        if let eventParticipantsResponse = self.decodeFromJson(response, modelType: EventParticpantForDutiesResponse.self){
+            
+            if eventParticipantsResponse.eventParticipants?.count ?? 0 == 0{
+                self.delegate?.showEmptyPageError(message: ErrorMessages.emptyEventParticipants)
+            }else{
+        
+                self.participants = eventParticipantsResponse.eventParticipants!.sorted(by:
+                    {
+                        if let displayName = $0.displayName{
+                            return displayName < $1.displayName ?? ""
+                        }
+                        return false
+                    }).map(){
+                        $0.convertToEventParticipant()
+                    }
+                self.adminViewDelegate?.didFetchParticipants(participants:  self.participants)
+            }
+            
+        }
+    }
     
     func filter(_ query: String){
         if query.isEmpty(){
@@ -72,7 +105,7 @@ class EventParticipantIntercator : BaseInteractor{
             if error == nil{
                 self.delegate?.hideProgressIndicator()
                 self.delegate?.showSuccessToastMessage(message: SuccessMessages.skillUpgraded)
-                self.getEventParticipants(self.eventId)
+                self.getEventParticipants(self.eventId, isParticipant: self.isParticipants)
             }else{
                 self.delegate?.showAlert(title: "Error", message: error?.errorMessage ?? ErrorMessages.genericError)
             }
@@ -123,7 +156,10 @@ class EventParticipantIntercator : BaseInteractor{
                 }
             }
         }
-        
+        for participant in participants where participant.consolidatedDuties.isNotEmpty || participant.jobAssigned?.isNotEmpty ?? false{
+            options.append("By Duties")
+            break
+        }
         
         return options
     }
@@ -205,6 +241,32 @@ class EventParticipantIntercator : BaseInteractor{
                 newList.append(participant)
                 break
             }
+        }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
+    func getAvailableDuties() ->[String]{
+        var duties = [String]()
+        for participnt in participants where participnt.duties?.count ?? 0 > 0{
+            duties.append(contentsOf: participnt.duties!.map(){ $0.name ?? ""})
+        }
+        for participnt in participants where participnt.jobAssigned?.isNotEmpty ?? false{
+            duties.append(participnt.jobAssigned!)
+        }
+        return duties.filter(){$0.isNotEmpty}.unique().sorted(by: <)
+    }
+    func filterByDuties(query : String){
+        
+         var newList = [EventParticipant]()
+        for participnt in participants {
+            if let duties = participnt.duties{
+                for duty in duties where duty.name == query{
+                    newList.append(participnt)
+                }
+            }
+            if participnt.jobAssigned ?? "" == query{
+                newList.append(participnt)
+            }
+           
         }
         adminViewDelegate?.didFetchParticipants(participants: newList)
     }

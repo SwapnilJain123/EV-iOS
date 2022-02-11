@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct EnrolledEvent: Codable {
+class EnrolledEvent: Codable {
     var productName, orderStatus, orderDate, eventDate: String?
     var eventImage: String?
     var orderItemID, eventMonth: String?
@@ -15,6 +15,10 @@ struct EnrolledEvent: Codable {
     var rentals: [Rental]?
     var trainings: [String]?
     var motoClasses: [MotoClass]?
+    
+    var hasPassport, enableSelfsign: Bool?
+    var passportId: String?
+    var eventId: String?
     
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"
@@ -27,6 +31,11 @@ struct EnrolledEvent: Codable {
         case rentals
         case trainings = "training"
         case motoClasses = "moto_classes"
+        
+        case hasPassport = "has_passport"
+        case enableSelfsign = "enable_selfsign"
+        case passportId = "passport_id"
+        case eventId = "event_id"
     }
     
     var hasAccessories : Bool{
@@ -35,5 +44,19 @@ struct EnrolledEvent: Codable {
         let motoClassCount = motoClasses?.count ?? 0
         
         return (rentalCount + trainingCount + motoClassCount) > 0
+    }
+    
+    var canUploadPassport : Bool{
+        let now = Date()
+        let hour = Calendar.current.component(.hour, from: now)
+        
+        let dateComponents = eventDate!.components(separatedBy: "-")
+        
+        let newDate = Date.createDateFrom(year: Int(dateComponents[0]) ?? 0, month: Int(dateComponents[1]) ?? 0, day: Int(dateComponents[2]) ?? 0)
+        if let date = newDate{
+            let canUpload =  Calendar.current.isDateInYesterday(date) && hour >= 18
+            return canUpload || Calendar.current.isDateInToday(date)
+        }
+        return false
     }
 }

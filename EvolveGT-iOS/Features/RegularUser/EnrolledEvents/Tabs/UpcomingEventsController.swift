@@ -56,10 +56,30 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EnrolledEventCell
         
-        eventCell.populateViews(event: events![indexPath.row])
+        eventCell.populateViews(event: events![indexPath.row], isUpComing: true)
         eventCell.delegate = self
         return eventCell
     }
+}
+extension UpcomingEventsController : UITableViewDelegate{
+    
+    
+     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let event = events![indexPath.row]
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+
+                    // Create an action for sharing
+                    let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
+                        print("Sharing \(event.productName ?? "")")
+                    }
+
+                    // Create other actions...
+
+                    return UIMenu(title: "", children: [share])
+                }
+    }
+    
+  
 }
 extension UpcomingEventsController: EnrolledEventCellDelegate{
     
@@ -70,7 +90,13 @@ extension UpcomingEventsController: EnrolledEventCellDelegate{
             interactor.cancelEvent(itemID: event.orderItemID ?? "")
         }
     }
+    func showPassport(event: EnrolledEvent) {
+        
+    }
     func showAccessories(event: EnrolledEvent) {
+        
+    }
+    func uploadPassport(event: EnrolledEvent) {
         
     }
     override func showSuccessToastMessage(message: String) {

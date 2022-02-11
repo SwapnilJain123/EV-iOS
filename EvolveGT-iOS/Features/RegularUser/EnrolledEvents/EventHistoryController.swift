@@ -30,7 +30,16 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+    }
+    
+    override func getScreenTitle() -> String? {
+        "Event History"
+    }
+    
+    func initViewController(){
         eventHistoryTableView.dataSource = self
+        eventHistoryTableView.delegate = self
 
         eventHistoryTableView.rowHeight = UITableView.automaticDimension
         eventHistoryTableView.estimatedRowHeight = 120
@@ -40,14 +49,10 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
         interactor.enrolledEventsDelegate = self
         interactor.fetchEventHistory()
     }
-    
-    override func getScreenTitle() -> String? {
-        "Event History"
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.ext.showNavbar()
+        initViewController()
        
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,8 +129,16 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let eventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EnrolledEventCell
-        
+        let isUpcoming = eventTabs.selectedSegmentIndex == EventHistoryController.TAB_UPCOMING
+        let event = getEnrolledEvent(indexPath: indexPath)
+        let id = isUpcoming ? "UpcomingEventCell" : "UpcomingEventCellNoPassport"
+        let eventCell = tableView.dequeueReusableCell(withIdentifier:id,for: indexPath) as! EnrolledEventCell
+        eventCell.populateViews(event: event, isUpComing: isUpcoming)
+        eventCell.delegate = self
+        return eventCell
+    }
+    
+    func getEnrolledEvent(indexPath: IndexPath) -> EnrolledEvent{
         var event = EnrolledEvent()
         switch eventTabs.selectedSegmentIndex {
         case EventHistoryController.TAB_UPCOMING:
@@ -137,12 +150,59 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
         default:
             event = EnrolledEvent()
         }
-        
-        eventCell.populateViews(event: event)
-        eventCell.delegate = self
-        return eventCell
+        return event
     }
 }
+
+extension EventHistoryController: UITableViewDelegate {
+     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let event = getEnrolledEvent(indexPath: indexPath)
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+
+            var children = [UIAction]()
+            
+            var image = UIImage(named: "star") as UIImage?
+            if !AppEngine.sharedInstance.isEvApp(){
+                image = UIImage(named: "admin_moto_star") as UIImage?
+            }
+            
+            let accessories = UIAction(title: "Accessories", image: image) { action in
+                self.showAccessories(event: event)
+            }
+            
+            let iamhere = UIAction(title: "I Am Here", image: nil) { action in
+                self.uploadPassport(event: event)
+            }
+            
+            let cancel = UIAction(title: "Cancel", image: nil) { action in
+                self.cancelEvent(event: event)
+            }
+            cancel.attributes.insert(.destructive)
+            
+            if event.hasAccessories{
+                children.append(accessories)
+            }
+            if(event.enableSelfsign ?? false) && !(event.hasPassport ?? false){
+                //children.append(iamhere)
+                if(!event.canUploadPassport){
+                   // iamhere.attributes.insert(.disabled)
+                }
+            }
+            if AppEngine.sharedInstance.canCancelEvent{
+                children.append(cancel)
+            }
+            if self.eventTabs.selectedSegmentIndex == EventHistoryController.TAB_UPCOMING{
+                return UIMenu(title: "", children: children)
+            }else{
+                return nil
+            }
+        }
+    }
+    
+    
+  
+}
+
 extension EventHistoryController: EnrolledEventCellDelegate{
     
     func cancelEvent(event: EnrolledEvent) {
@@ -151,6 +211,19 @@ extension EventHistoryController: EnrolledEventCellDelegate{
             interactor.delegate = self
             interactor.cancelEvent(itemID: event.orderItemID ?? "")
         }
+    }
+    
+    func showPassport(event: EnrolledEvent) {
+        AppEngine.sharedInstance.passportId = event.passportId ?? "0"
+        AppEngine.sharedInstance.trackName = event.productName ?? "0"
+        AppEngine.sharedInstance.eventDate = event.eventDate ?? ""
+        self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: ShowPassportController.identifier)
+    }
+    
+    func uploadPassport(event: EnrolledEvent){
+        AppEngine.sharedInstance.passportId = event.passportId ?? "0"
+        AppEngine.sharedInstance.eventId = event.eventId ?? "0"
+        self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: UploadPassportController.identifier)
     }
     
     func showAccessories(event: EnrolledEvent) {

@@ -32,6 +32,7 @@ class AppEngine{
     var currentUser : User?
     var userDetails : UserDetails?
     var membership : String?
+    var emergencyContact : EmergencyContact? = nil
     
     var authToken = ""
     private var userDefaultHelper = UserDefaultHelper.sharedInstance
@@ -114,5 +115,8 @@ class AppEngine{
         userDetails = nil
     }
     
-   
+   var passportId = ""
+   var eventId = ""
+   var trackName = ""
+   var eventDate = ""
 }

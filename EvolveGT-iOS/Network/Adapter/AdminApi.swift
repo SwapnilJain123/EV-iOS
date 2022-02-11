@@ -27,6 +27,15 @@ class AdminApi: BaseApiAdapter{
         
         super.makeRequest(method: .POST)
     }
+    func fetchEventParticipantsForDuties(eventID: String){
+        let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.EVENT_PARTICIPANTS_FOR_DUTIES)"
+        setUrl(url: url)
+        
+        let eventParticipantRequest = EventParticipantRequest(eventID: eventID)
+        setParameters(parameters: makeDictionary(eventParticipantRequest))
+        
+        super.makeRequest(method: .POST)
+    }
     
     func upgradeSkill(skill: String, userID: String){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.UPDATE_SKILL_LEVEL)"

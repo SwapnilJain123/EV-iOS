@@ -102,7 +102,7 @@ extension BaseApiAdapter{
                     }else{
                         
                         var error = ApiError()
-                        error.errorCode = etResponse.status ?? 0
+                        error.errorCode = etResponse.errorCode ?? 0
                         error.errorMessage = etResponse.msg ?? ApiError.ERROR_GENERIC_MESSAGE
                         didFail(error: error)
                     }

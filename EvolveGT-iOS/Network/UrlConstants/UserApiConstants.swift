@@ -45,4 +45,7 @@ struct UserApiConstants{
        static let WAIVER_DETAILS = "waiverEvents/details"
        static let SAVE_WAIVER_DETAILS = "waiverEvents/saveData"
     
+    static let VIEW_PASSPORT = "user/viewPassport"
+    static let SAVE_PASSPORT = "user/savePassport"
+    static let UPDATE_EMERGENCY_CONTACT = "user/saveEmergencyDetails"
 }

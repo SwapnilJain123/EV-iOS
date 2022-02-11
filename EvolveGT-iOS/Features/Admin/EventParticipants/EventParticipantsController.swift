@@ -12,6 +12,7 @@ import Kingfisher
 import SnapKit
 class EventParticipantsController : ETViewController{
     
+    var isParticipants = true
     var completedEvent : CompletedEvent?
     var participants = [EventParticipant]()
     var selectedParticipant : EventParticipant?
@@ -113,6 +114,13 @@ class EventParticipantsController : ETViewController{
                            self.interactor.filterByUsersNotSignedIn()
             case "By Racers":
                 self.interactor.filterByRacers()
+            case "By Duties":
+                let duties = self.interactor.getAvailableDuties()
+                self.presentSelectionMenu(title: "Select Duty", data: duties, dismissHandler: { selectedDuty in
+                    if(selectedDuty.first != nil){
+                        self.interactor.filterByDuties(query: selectedDuty.first!)
+                    }
+                })
             default:
                 self.interactor.clearFilter()
             }
@@ -144,7 +152,7 @@ class EventParticipantsController : ETViewController{
     }
     
     func requestEventParticipants(){
-        interactor.getEventParticipants(completedEvent?.eventID ?? "-1")
+        interactor.getEventParticipants(completedEvent?.eventID ?? "-1", isParticipant: isParticipants)
     }
     func setupUI(){
         
@@ -159,7 +167,7 @@ class EventParticipantsController : ETViewController{
 }
 extension EventParticipantsController : EventParticipantsViewDelegate, SignatureRefreshDelegate{
     func didModifySignature(signatureId: String) {
-        interactor.getEventParticipants(completedEvent?.eventID ?? "")
+        interactor.getEventParticipants(completedEvent?.eventID ?? "", isParticipant: isParticipants)
     }
     
     
@@ -207,8 +215,8 @@ extension EventParticipantsController : UITableViewDataSource{
             identifier = "EventParticipantCellSignDisabled"
         }
         print("Identifier - \(identifier)")
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
-                                                 for: indexPath) as! EventParticipantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventParticipantV2",
+                                                 for: indexPath) as! EventParticipantCellV2
         cell.eventParticipant = eventParticipant
         cell.delegate = self
         return cell
@@ -259,12 +267,12 @@ extension EventParticipantsController:UISearchBarDelegate{
     }
 }
 
-extension EventParticipantsController: EventParticipantCellDelegate{
-    func clickedOnMotoIcon(_ cell: EventParticipantCell, participant: EventParticipant?) {
+extension EventParticipantsController: EventParticipantV2Delegate{
+    func clickedOnMotoIcon(_ cell: EventParticipantCellV2, participant: EventParticipant?) {
         showEnrolledClasses(eventParticiapnt: participant!)
     }
     
-    func clickedOnSignature(_ cell: EventParticipantCell, participant: EventParticipant?) {
+    func clickedOnSignature(_ cell: EventParticipantCellV2, participant: EventParticipant?) {
         Log.i("Signature Tap identified")
         
         if participant?.hasSignature ?? false{
@@ -279,7 +287,7 @@ extension EventParticipantsController: EventParticipantCellDelegate{
         }
     }
     
-    func clickedOnUpgradeSkill(_ cell: EventParticipantCell, participant: EventParticipant?) {
+    func clickedOnUpgradeSkill(_ cell: EventParticipantCellV2, participant: EventParticipant?) {
         var skills = AppEngine.sharedInstance.generalSkills
         if(skills.count == 0){
             skills = AppConstants.SkillLevels
@@ -293,7 +301,7 @@ extension EventParticipantsController: EventParticipantCellDelegate{
         }
     }
     
-    func clickedOnAccessories(_ cell: EventParticipantCell, participant: EventParticipant?) {
+    func clickedOnAccessories(_ cell: EventParticipantCellV2, participant: EventParticipant?) {
         Log.i("Training Tap identified")
         //self.interactor.onAccessoriesClicked(participant: participant!)
         

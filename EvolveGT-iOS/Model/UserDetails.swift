@@ -33,6 +33,7 @@ class UserDetails: Codable {
     var shippingStateName, billingStateName: String?
     var fullProfileImage: String?
     var customerID: String?
+    var enableMyDuties: Bool?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -110,7 +111,8 @@ class UserDetails: Codable {
         case billingStateName = "billing_state_name"
         case fullProfileImage = "full_profile_image"
         case customerID = "customer_number"
-       
+        case enableMyDuties = "enable_my_duties"
+        
     }
     
     var hasValidBillingAddress : Bool{
@@ -118,6 +120,9 @@ class UserDetails: Codable {
         || billingAddress1?.isEmpty() ?? true || billingState?.isEmpty ?? true
         || billingCity?.isEmpty() ?? true || billingCountry?.isEmpty() ?? true
         || billingPhone?.isEmpty() ?? true)
+    }
+    var canEnableDuties : Bool{
+        enableMyDuties == true
     }
     public static let GENDER_MALE = "male"
     public static let GENDER_FEMALE = "female"

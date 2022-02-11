@@ -49,6 +49,9 @@
 		100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */; };
 		100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A23245607A300EF2B9F /* Sequence+Extension.swift */; };
 		100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */; };
+		1012EA9D27B43C93007220B3 /* EmergencyContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012EA9C27B43C93007220B3 /* EmergencyContactController.swift */; };
+		1012EA9E27B43C93007220B3 /* EmergencyContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012EA9C27B43C93007220B3 /* EmergencyContactController.swift */; };
+		1012EA9F27B43C93007220B3 /* EmergencyContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012EA9C27B43C93007220B3 /* EmergencyContactController.swift */; };
 		101A14D8251E793B00189005 /* ReferAFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A14D7251E793B00189005 /* ReferAFriendCell.swift */; };
 		101A14D9251E793B00189005 /* ReferAFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A14D7251E793B00189005 /* ReferAFriendCell.swift */; };
 		101A14DA251E793B00189005 /* ReferAFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A14D7251E793B00189005 /* ReferAFriendCell.swift */; };
@@ -604,6 +607,24 @@
 		10581B0924D51FBC0053126C /* SignUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = 10581B0824D51FBC0053126C /* SignUpdated.json */; };
 		10581B0B24D529740053126C /* AdminSignatureViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10581B0A24D529740053126C /* AdminSignatureViewTests.swift */; };
 		10581B0D24D52A3F0053126C /* AdminSignatureInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10581B0C24D52A3F0053126C /* AdminSignatureInputTests.swift */; };
+		105D84F027A1463300B269AA /* ShowPassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D84EF27A1463300B269AA /* ShowPassportViewController.swift */; };
+		105D84F127A1463300B269AA /* ShowPassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D84EF27A1463300B269AA /* ShowPassportViewController.swift */; };
+		105D84F227A1463300B269AA /* ShowPassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D84EF27A1463300B269AA /* ShowPassportViewController.swift */; };
+		105D84FE27A1468400B269AA /* ShowPassportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D84FD27A1468400B269AA /* ShowPassportInteractor.swift */; };
+		105D84FF27A1468400B269AA /* ShowPassportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D84FD27A1468400B269AA /* ShowPassportInteractor.swift */; };
+		105D850027A1468400B269AA /* ShowPassportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D84FD27A1468400B269AA /* ShowPassportInteractor.swift */; };
+		105D850727A18C8900B269AA /* PassportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D850627A18C8900B269AA /* PassportInfo.swift */; };
+		105D850827A18C8900B269AA /* PassportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D850627A18C8900B269AA /* PassportInfo.swift */; };
+		105D850927A18C8900B269AA /* PassportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D850627A18C8900B269AA /* PassportInfo.swift */; };
+		105D851027A1BBEB00B269AA /* UploadPassportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D850F27A1BBEB00B269AA /* UploadPassportController.swift */; };
+		105D851127A1BBEB00B269AA /* UploadPassportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D850F27A1BBEB00B269AA /* UploadPassportController.swift */; };
+		105D851227A1BBEB00B269AA /* UploadPassportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D850F27A1BBEB00B269AA /* UploadPassportController.swift */; };
+		105D851927A1BC6000B269AA /* UploadPassportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D851827A1BC6000B269AA /* UploadPassportInteractor.swift */; };
+		105D851A27A1BC6000B269AA /* UploadPassportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D851827A1BC6000B269AA /* UploadPassportInteractor.swift */; };
+		105D851B27A1BC6000B269AA /* UploadPassportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D851827A1BC6000B269AA /* UploadPassportInteractor.swift */; };
+		105D853027A9B0E600B269AA /* EventParticipantV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D852F27A9B0E600B269AA /* EventParticipantV2.swift */; };
+		105D853127A9B0E600B269AA /* EventParticipantV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D852F27A9B0E600B269AA /* EventParticipantV2.swift */; };
+		105D853227A9B0E600B269AA /* EventParticipantV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D852F27A9B0E600B269AA /* EventParticipantV2.swift */; };
 		10716FAA24706B870032C056 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FA924706B870032C056 /* DividerView.swift */; };
 		10716FAE2472990D0032C056 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */; };
 		10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10716FAF2473130F0032C056 /* TextFieldExtension.swift */; };
@@ -824,6 +845,7 @@
 		100A2A1F24557C4500EF2B9F /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		100A2A23245607A300EF2B9F /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		100A2A252457674C00EF2B9F /* UpgradeSkillRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeSkillRequest.swift; sourceTree = "<group>"; };
+		1012EA9C27B43C93007220B3 /* EmergencyContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactController.swift; sourceTree = "<group>"; };
 		101A14D7251E793B00189005 /* ReferAFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferAFriendCell.swift; sourceTree = "<group>"; };
 		1020F4D024CD707B0059DED9 /* AdminCompletedEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCompletedEventsTests.swift; sourceTree = "<group>"; };
 		1020F4D224CE86940059DED9 /* AdminEventParticipantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventParticipantTests.swift; sourceTree = "<group>"; };
@@ -975,6 +997,12 @@
 		10581B0824D51FBC0053126C /* SignUpdated.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SignUpdated.json; sourceTree = "<group>"; };
 		10581B0A24D529740053126C /* AdminSignatureViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignatureViewTests.swift; sourceTree = "<group>"; };
 		10581B0C24D52A3F0053126C /* AdminSignatureInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignatureInputTests.swift; sourceTree = "<group>"; };
+		105D84EF27A1463300B269AA /* ShowPassportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPassportViewController.swift; sourceTree = "<group>"; };
+		105D84FD27A1468400B269AA /* ShowPassportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPassportInteractor.swift; sourceTree = "<group>"; };
+		105D850627A18C8900B269AA /* PassportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportInfo.swift; sourceTree = "<group>"; };
+		105D850F27A1BBEB00B269AA /* UploadPassportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPassportController.swift; sourceTree = "<group>"; };
+		105D851827A1BC6000B269AA /* UploadPassportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPassportInteractor.swift; sourceTree = "<group>"; };
+		105D852F27A9B0E600B269AA /* EventParticipantV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantV2.swift; sourceTree = "<group>"; };
 		10716FA924706B870032C056 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		10716FAD2472990D0032C056 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		10716FAF2473130F0032C056 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -1318,6 +1346,8 @@
 		1033462724669A3E00D5EED0 /* EnrolledEvents */ = {
 			isa = PBXGroup;
 			children = (
+				105D84EE27A1460600B269AA /* Upload Passport */,
+				105D84ED27A145F900B269AA /* ShowPassport */,
 				103346392466CED600D5EED0 /* Tabs */,
 				1033462A24669B1300D5EED0 /* EnrolledEvents.storyboard */,
 				103346372466BA7E00D5EED0 /* EnrolledEventCell.swift */,
@@ -1497,6 +1527,7 @@
 				10FE935425023094002F3572 /* Ewaiver.swift */,
 				10A551C4250B52350049C3DB /* WaiverDetails.swift */,
 				10D6013D2633F5460097D180 /* EventRaceClass.swift */,
+				105D850627A18C8900B269AA /* PassportInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1739,6 +1770,7 @@
 				104B8DCF248932BF008BE5DA /* Profile.storyboard */,
 				104B8DD1248ABE5D008BE5DA /* ProfileViewCells.swift */,
 				104B8DD3248ABF5B008BE5DA /* ProfileInteractor.swift */,
+				1012EA9C27B43C93007220B3 /* EmergencyContactController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1765,6 +1797,24 @@
 				10BB126D251BC1CE00320A84 /* RegisterInteractor.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		105D84ED27A145F900B269AA /* ShowPassport */ = {
+			isa = PBXGroup;
+			children = (
+				105D84EF27A1463300B269AA /* ShowPassportViewController.swift */,
+				105D84FD27A1468400B269AA /* ShowPassportInteractor.swift */,
+			);
+			path = ShowPassport;
+			sourceTree = "<group>";
+		};
+		105D84EE27A1460600B269AA /* Upload Passport */ = {
+			isa = PBXGroup;
+			children = (
+				105D850F27A1BBEB00B269AA /* UploadPassportController.swift */,
+				105D851827A1BC6000B269AA /* UploadPassportInteractor.swift */,
+			);
+			path = "Upload Passport";
 			sourceTree = "<group>";
 		};
 		10716FBC2478228C0032C056 /* Product */ = {
@@ -1965,6 +2015,7 @@
 				10FCA24C2451CAF500EA95C0 /* EventParticipantCell.swift */,
 				10FCA24A2451CA7C00EA95C0 /* EventParticipantsController.swift */,
 				10FCA2542451D29900EA95C0 /* EventParticipantsInteractor.swift */,
+				105D852F27A9B0E600B269AA /* EventParticipantV2.swift */,
 			);
 			path = EventParticipants;
 			sourceTree = "<group>";
@@ -2493,6 +2544,7 @@
 				10716FB02473130F0032C056 /* TextFieldExtension.swift in Sources */,
 				1039FE682450686E00190088 /* AppConstants.swift in Sources */,
 				104B8DCE2489329A008BE5DA /* ProfileController.swift in Sources */,
+				105D84FE27A1468400B269AA /* ShowPassportInteractor.swift in Sources */,
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
 				104B8DD4248ABF5B008BE5DA /* ProfileInteractor.swift in Sources */,
@@ -2513,6 +2565,7 @@
 				100A2A24245607A300EF2B9F /* Sequence+Extension.swift in Sources */,
 				1039FE5924501EAF00190088 /* LoginRequest.swift in Sources */,
 				109D6E8A24869976009446A0 /* PurchaseAcknowledgementController.swift in Sources */,
+				105D850727A18C8900B269AA /* PassportInfo.swift in Sources */,
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
 				10FE935525023094002F3572 /* Ewaiver.swift in Sources */,
 				10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */,
@@ -2550,6 +2603,7 @@
 				1085A70624FFC41800A7B4A8 /* wavierCell.swift in Sources */,
 				1039FE712450706E00190088 /* MessageConstants.swift in Sources */,
 				10A551DB251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
+				105D851927A1BC6000B269AA /* UploadPassportInteractor.swift in Sources */,
 				109D6E8C24878FB7009446A0 /* GiftCardDetailsViewController.swift in Sources */,
 				1039FE8224509F3100190088 /* AdminResponses.swift in Sources */,
 				103B26942499480000BB8CB9 /* ConfigAppStore.swift in Sources */,
@@ -2601,6 +2655,7 @@
 				10048F3B246ECC8400684A87 /* ChangePasswordViewController.swift in Sources */,
 				10716FD52479A63C0032C056 /* ProductDetailsController.swift in Sources */,
 				10336617247ECE18009AF19A /* ReviewCartController.swift in Sources */,
+				105D84F027A1463300B269AA /* ShowPassportViewController.swift in Sources */,
 				10716FD72479A9920032C056 /* ProductDetailsCells.swift in Sources */,
 				10A551B425067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */,
 				101A14D8251E793B00189005 /* ReferAFriendCell.swift in Sources */,
@@ -2629,6 +2684,7 @@
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */,
 				109EEDCB250263F000E84D2F /* WaiverApi.swift in Sources */,
+				1012EA9D27B43C93007220B3 /* EmergencyContactController.swift in Sources */,
 				109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */,
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
@@ -2641,6 +2697,7 @@
 				10BDD05A245D4B7600F05700 /* AppModeSelector.swift in Sources */,
 				10334622246689ED00D5EED0 /* CreditHistoryItemCell.swift in Sources */,
 				1033464824681B4B00D5EED0 /* UIButton+Extension.swift in Sources */,
+				105D853027A9B0E600B269AA /* EventParticipantV2.swift in Sources */,
 				1039FE4B2450057C00190088 /* ApiError.swift in Sources */,
 				103345FC2460718F00D5EED0 /* ETTabViewController.swift in Sources */,
 				1039FDFD244F1A1800190088 /* AppDelegate.swift in Sources */,
@@ -2671,6 +2728,7 @@
 				104DD7A22503692400D2539E /* SecondRegisterViewController.swift in Sources */,
 				10048F48246F0F6600684A87 /* AppApiConstants.swift in Sources */,
 				109D6E842484EEF5009446A0 /* GiftCardInteractor.swift in Sources */,
+				105D851027A1BBEB00B269AA /* UploadPassportController.swift in Sources */,
 				103346122461490600D5EED0 /* CreditHistory.swift in Sources */,
 				10A551D3251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */,
 				1039FE892450A19600190088 /* CompletedEventRequest.swift in Sources */,
@@ -2703,6 +2761,7 @@
 				103B24EA249940BE00BB8CB9 /* TextFieldExtension.swift in Sources */,
 				103B24EB249940BE00BB8CB9 /* AppConstants.swift in Sources */,
 				103B24EC249940BE00BB8CB9 /* ProfileController.swift in Sources */,
+				105D84FF27A1468400B269AA /* ShowPassportInteractor.swift in Sources */,
 				103B24ED249940BE00BB8CB9 /* CompletedEvent.swift in Sources */,
 				103B24EE249940BE00BB8CB9 /* CompletedEventCell.swift in Sources */,
 				103B24EF249940BE00BB8CB9 /* ProfileInteractor.swift in Sources */,
@@ -2723,6 +2782,7 @@
 				103B24FA249940BE00BB8CB9 /* Sequence+Extension.swift in Sources */,
 				103B24FB249940BE00BB8CB9 /* LoginRequest.swift in Sources */,
 				103B24FC249940BE00BB8CB9 /* PurchaseAcknowledgementController.swift in Sources */,
+				105D850827A18C8900B269AA /* PassportInfo.swift in Sources */,
 				109EEDC425024DDC00E84D2F /* Ewaiver.swift in Sources */,
 				103B24FD249940BE00BB8CB9 /* GuestViewController.swift in Sources */,
 				103B24FE249940BE00BB8CB9 /* String+Extenstion.swift in Sources */,
@@ -2760,6 +2820,7 @@
 				103B251A249940BE00BB8CB9 /* ForgotPasswordInteractor.swift in Sources */,
 				103B251B249940BE00BB8CB9 /* MessageConstants.swift in Sources */,
 				10A551DC251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
+				105D851A27A1BC6000B269AA /* UploadPassportInteractor.swift in Sources */,
 				103B251C249940BE00BB8CB9 /* GiftCardDetailsViewController.swift in Sources */,
 				103B251D249940BE00BB8CB9 /* AdminResponses.swift in Sources */,
 				10A551C6250B52350049C3DB /* WaiverDetails.swift in Sources */,
@@ -2811,6 +2872,7 @@
 				103B2547249940BE00BB8CB9 /* ProductDetailsController.swift in Sources */,
 				103B2549249940BE00BB8CB9 /* ReviewCartController.swift in Sources */,
 				103B254A249940BE00BB8CB9 /* ProductDetailsCells.swift in Sources */,
+				105D84F127A1463300B269AA /* ShowPassportViewController.swift in Sources */,
 				10A551B525067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */,
 				103B254B249940BE00BB8CB9 /* UserDefaultHelper.swift in Sources */,
 				101A14D9251E793B00189005 /* ReferAFriendCell.swift in Sources */,
@@ -2839,6 +2901,7 @@
 				103B255F249940BE00BB8CB9 /* GiftCard.swift in Sources */,
 				109EEDCC250263F000E84D2F /* WaiverApi.swift in Sources */,
 				103B2560249940BE00BB8CB9 /* GiftCardCell.swift in Sources */,
+				1012EA9E27B43C93007220B3 /* EmergencyContactController.swift in Sources */,
 				103B2561249940BE00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2562249940BE00BB8CB9 /* ApiConstsant.swift in Sources */,
 				103B2563249940BE00BB8CB9 /* UpgradeSkillRequest.swift in Sources */,
@@ -2851,6 +2914,7 @@
 				103B2568249940BE00BB8CB9 /* CreditHistoryItemCell.swift in Sources */,
 				103B2569249940BE00BB8CB9 /* UIButton+Extension.swift in Sources */,
 				103B256A249940BE00BB8CB9 /* ApiError.swift in Sources */,
+				105D853127A9B0E600B269AA /* EventParticipantV2.swift in Sources */,
 				103B256B249940BE00BB8CB9 /* ETTabViewController.swift in Sources */,
 				103B256C249940BE00BB8CB9 /* AppDelegate.swift in Sources */,
 				103B256D249940BE00BB8CB9 /* EventParticipant.swift in Sources */,
@@ -2881,6 +2945,7 @@
 				104DD7A32503692400D2539E /* SecondRegisterViewController.swift in Sources */,
 				103B2585249940BE00BB8CB9 /* AppApiConstants.swift in Sources */,
 				103B2586249940BE00BB8CB9 /* GiftCardInteractor.swift in Sources */,
+				105D851127A1BBEB00B269AA /* UploadPassportController.swift in Sources */,
 				103B2587249940BE00BB8CB9 /* CreditHistory.swift in Sources */,
 				10A551D4251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */,
 				103B2588249940BE00BB8CB9 /* CompletedEventRequest.swift in Sources */,
@@ -2913,6 +2978,7 @@
 				103B25C0249940CC00BB8CB9 /* TextFieldExtension.swift in Sources */,
 				103B25C1249940CC00BB8CB9 /* AppConstants.swift in Sources */,
 				103B25C2249940CC00BB8CB9 /* ProfileController.swift in Sources */,
+				105D850027A1468400B269AA /* ShowPassportInteractor.swift in Sources */,
 				103B25C3249940CC00BB8CB9 /* CompletedEvent.swift in Sources */,
 				103B25C4249940CC00BB8CB9 /* CompletedEventCell.swift in Sources */,
 				103B25C5249940CC00BB8CB9 /* ProfileInteractor.swift in Sources */,
@@ -2933,6 +2999,7 @@
 				103B25D0249940CC00BB8CB9 /* Sequence+Extension.swift in Sources */,
 				103B25D1249940CC00BB8CB9 /* LoginRequest.swift in Sources */,
 				103B25D2249940CC00BB8CB9 /* PurchaseAcknowledgementController.swift in Sources */,
+				105D850927A18C8900B269AA /* PassportInfo.swift in Sources */,
 				109EEDC525024DDE00E84D2F /* Ewaiver.swift in Sources */,
 				103B25D3249940CC00BB8CB9 /* GuestViewController.swift in Sources */,
 				103B25D4249940CC00BB8CB9 /* String+Extenstion.swift in Sources */,
@@ -2970,6 +3037,7 @@
 				103B25F1249940CC00BB8CB9 /* MessageConstants.swift in Sources */,
 				103B25F2249940CC00BB8CB9 /* GiftCardDetailsViewController.swift in Sources */,
 				10A551DD251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
+				105D851B27A1BC6000B269AA /* UploadPassportInteractor.swift in Sources */,
 				103B25F3249940CC00BB8CB9 /* AdminResponses.swift in Sources */,
 				103B25F4249940CC00BB8CB9 /* EventParticipantCell.swift in Sources */,
 				10A551C7250B52350049C3DB /* WaiverDetails.swift in Sources */,
@@ -3021,6 +3089,7 @@
 				103B261D249940CC00BB8CB9 /* ProductDetailsController.swift in Sources */,
 				103B261F249940CC00BB8CB9 /* ReviewCartController.swift in Sources */,
 				103B2620249940CC00BB8CB9 /* ProductDetailsCells.swift in Sources */,
+				105D84F227A1463300B269AA /* ShowPassportViewController.swift in Sources */,
 				10A551B625067F1F0049C3DB /* RegPhaseIndicator.swift in Sources */,
 				103B2621249940CC00BB8CB9 /* UserDefaultHelper.swift in Sources */,
 				101A14DA251E793B00189005 /* ReferAFriendCell.swift in Sources */,
@@ -3049,6 +3118,7 @@
 				103B2635249940CC00BB8CB9 /* GiftCard.swift in Sources */,
 				109EEDCD250263F000E84D2F /* WaiverApi.swift in Sources */,
 				103B2636249940CC00BB8CB9 /* GiftCardCell.swift in Sources */,
+				1012EA9F27B43C93007220B3 /* EmergencyContactController.swift in Sources */,
 				103B2637249940CC00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2638249940CC00BB8CB9 /* ApiConstsant.swift in Sources */,
 				103B2639249940CC00BB8CB9 /* UpgradeSkillRequest.swift in Sources */,
@@ -3061,6 +3131,7 @@
 				103B263E249940CC00BB8CB9 /* CreditHistoryItemCell.swift in Sources */,
 				103B263F249940CC00BB8CB9 /* UIButton+Extension.swift in Sources */,
 				103B2640249940CC00BB8CB9 /* ApiError.swift in Sources */,
+				105D853227A9B0E600B269AA /* EventParticipantV2.swift in Sources */,
 				103B2641249940CC00BB8CB9 /* ETTabViewController.swift in Sources */,
 				103B2642249940CC00BB8CB9 /* AppDelegate.swift in Sources */,
 				103B2643249940CC00BB8CB9 /* EventParticipant.swift in Sources */,
@@ -3091,6 +3162,7 @@
 				104DD7A42503692400D2539E /* SecondRegisterViewController.swift in Sources */,
 				103B265B249940CC00BB8CB9 /* AppApiConstants.swift in Sources */,
 				103B265C249940CC00BB8CB9 /* GiftCardInteractor.swift in Sources */,
+				105D851227A1BBEB00B269AA /* UploadPassportController.swift in Sources */,
 				103B265D249940CC00BB8CB9 /* CreditHistory.swift in Sources */,
 				10A551D5251497940049C3DB /* SaveWaiverDetailsRequest.swift in Sources */,
 				103B265E249940CC00BB8CB9 /* CompletedEventRequest.swift in Sources */,
@@ -3211,7 +3283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3266,7 +3338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -3283,14 +3355,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4.0;
+				CURRENT_PROJECT_VERSION = 2.5.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = "Evolve GT";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -3306,14 +3378,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4.0;
+				CURRENT_PROJECT_VERSION = 2.5.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = "Evolve GT";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -3329,14 +3401,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4.3;
+				CURRENT_PROJECT_VERSION = 2.5.4;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.3;
+				MARKETING_VERSION = 2.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -3352,14 +3424,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4.3;
+				CURRENT_PROJECT_VERSION = 2.5.4;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.3;
+				MARKETING_VERSION = 2.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

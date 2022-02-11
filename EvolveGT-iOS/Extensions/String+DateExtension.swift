@@ -16,6 +16,7 @@ extension String{
      static let FORMAT_YYYY_MM = "YYYY MM"
     static let FORMAT_YYYY_MM_DD = "yyyyMMdd"
     static let FORMAT_YYYY_MM_DD_HIPHEN = "yyyy-MM-dd"
+    static let FORMAT_MMMM_YYYY_DD_HH_MM_SS = "MMMM dd, yyyy HH:mm:ss"
     
     
     private func convert(fromDateFormat: String, toDateFormat: String) -> String {
@@ -58,6 +59,7 @@ extension String{
         
         return today > date
     }
+    
 }
 extension Date{
      
@@ -69,5 +71,12 @@ extension Date{
                
     }
     
-    
+    static func createDateFrom(year: Int, month: Int, day: Int) -> Date? {
+           let calendar = Calendar(identifier: .gregorian)
+           var dateComponents = DateComponents()
+           dateComponents.year = year
+           dateComponents.month = month
+           dateComponents.day = day
+           return calendar.date(from: dateComponents) ?? nil
+       }
 }

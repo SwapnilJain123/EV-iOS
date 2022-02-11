@@ -141,12 +141,7 @@ class CompletedEventViewController : ETViewController{
 }
 
 extension CompletedEventViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
-        let eventParticipantsController = storyBoard.instantiateViewController(withIdentifier: "EventParticipants") as! EventParticipantsController
-        eventParticipantsController.completedEvent = completedEvents[indexPath.row]
-        self.navigationController?.pushViewController(eventParticipantsController, animated: true)
-    }
+    
 }
 extension CompletedEventViewController : UITableViewDataSource{
     
@@ -160,9 +155,22 @@ extension CompletedEventViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedEvent", for: indexPath) as! CompletedEventCell
         cell.showData(completdEvent: completedEvents[indexPath.row])
+        cell.participantAction = {event in
+            self.openEventParticipantController(event: event, isParticipant: true)
+
+        }
+        cell.dutiesAction = {event in
+            self.openEventParticipantController(event: event, isParticipant: false)
+        }
         return cell
     }
-    
+    func openEventParticipantController(event: CompletedEvent, isParticipant: Bool){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
+        let eventParticipantsController = storyBoard.instantiateViewController(withIdentifier: "EventParticipants") as! EventParticipantsController
+        eventParticipantsController.completedEvent = event
+        eventParticipantsController.isParticipants = isParticipant
+        self.navigationController?.pushViewController(eventParticipantsController, animated: true)
+    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if isSearchActive {
             searchBar = UISearchBar()

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mts-a1-BwX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mts-a1-BwX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,7 +43,7 @@
                                             <constraint firstAttribute="height" constant="40" id="lJS-cz-PZ0"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-B7-ya4">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-B7-ya4">
                                         <rect key="frame" x="97.5" y="163.5" width="80" height="30"/>
                                         <color key="backgroundColor" red="0.60231673720000001" green="0.47561663389999997" blue="0.85101693869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -73,13 +74,13 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="IZE-b2-R3c"/>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.011764705882352941" blue="0.015686274509803921" alpha="0.40496575342465752" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="u1q-mj-9Tk" firstAttribute="top" secondItem="IZE-b2-R3c" secondAttribute="top" constant="229" id="ESe-5r-vp2"/>
                             <constraint firstItem="u1q-mj-9Tk" firstAttribute="centerX" secondItem="h7q-OF-1Qd" secondAttribute="centerX" id="Fl6-eq-AlU"/>
                             <constraint firstItem="u1q-mj-9Tk" firstAttribute="centerY" secondItem="h7q-OF-1Qd" secondAttribute="centerY" id="Uzf-8g-uMu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="IZE-b2-R3c"/>
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="o7M-B7-ya4" id="0l0-Wn-2IH"/>
@@ -122,7 +123,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="cDo-aq-wJB" secondAttribute="trailing" id="ttr-fy-BjJ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWX-Gw-Qxk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWX-Gw-Qxk">
                                         <rect key="frame" x="90" y="133" width="120" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -163,13 +164,13 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cla-M8-fiN"/>
                         <color key="backgroundColor" white="0.0" alpha="0.40584867294520549" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MZD-nd-ED3" firstAttribute="width" secondItem="wXd-z3-VVe" secondAttribute="width" multiplier="0.8" id="LQO-1R-eof"/>
                             <constraint firstItem="MZD-nd-ED3" firstAttribute="centerX" secondItem="wXd-z3-VVe" secondAttribute="centerX" id="b02-2q-rFX"/>
                             <constraint firstItem="MZD-nd-ED3" firstAttribute="centerY" secondItem="wXd-z3-VVe" secondAttribute="centerY" id="enB-MA-R7k"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Cla-M8-fiN"/>
                     </view>
                     <connections>
                         <outlet property="alertTitle" destination="cDo-aq-wJB" id="cVq-iJ-A4D"/>
@@ -213,7 +214,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="QeC-eD-KP1" secondAttribute="trailing" id="tdF-rB-5rJ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9st-G7-fmW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9st-G7-fmW">
                                         <rect key="frame" x="30" y="188" width="215" height="40"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
@@ -228,7 +229,7 @@
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tAL-qB-FhJ" customClass="SelfSizedTableView" customModule="EvolveGT_QA" customModuleProvider="target">
                                         <rect key="frame" x="10" y="50" width="255" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTextCell" id="Y88-PS-XRb" customClass="SimpleTextCell" customModule="EvolveGT_QA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="255" height="40.5"/>
@@ -300,7 +301,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="9st-G7-fmW" firstAttribute="top" secondItem="tAL-qB-FhJ" secondAttribute="bottom" constant="10" id="05f-XL-9H9"/>
                                     <constraint firstAttribute="trailing" secondItem="tAL-qB-FhJ" secondAttribute="trailing" constant="10" id="0C0-8N-4Cp"/>
@@ -315,6 +316,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="HrB-dd-awc"/>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.011764705882352941" blue="0.015686274509803921" alpha="0.41911922089041098" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zjy-vG-i0f" firstAttribute="centerX" secondItem="HrB-dd-awc" secondAttribute="centerX" id="4m2-HZ-BUd"/>
@@ -322,7 +324,6 @@
                             <constraint firstItem="zjy-vG-i0f" firstAttribute="centerY" secondItem="HrB-dd-awc" secondAttribute="centerY" constant="40" id="Sr3-Zr-PxH"/>
                             <constraint firstItem="HrB-dd-awc" firstAttribute="trailing" secondItem="zjy-vG-i0f" secondAttribute="trailing" constant="50" id="UVf-DR-k77"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HrB-dd-awc"/>
                     </view>
                     <connections>
                         <outlet property="alertActionButton" destination="9st-G7-fmW" id="APc-FC-v7t"/>
@@ -341,5 +342,8 @@
         <namedColor name="ColorEV">
             <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

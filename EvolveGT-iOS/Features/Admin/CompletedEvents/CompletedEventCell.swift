@@ -12,13 +12,20 @@ import Kingfisher
 class CompletedEventCell: UITableViewCell{
     
     
+    var dutiesAction: ((_ completdEvent: CompletedEvent)->Void)? = nil
+    var participantAction: ((_ completdEvent: CompletedEvent)->Void)? = nil
+    var event : CompletedEvent? = nil
+    
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventTitle: UILabel!
     
     @IBOutlet weak var eventDate: UILabel!
     
+    @IBOutlet weak var btnParticipants: UIButton!
     
+    @IBOutlet weak var btnDuties: UIButton!
     func showData(completdEvent: CompletedEvent){
+        self.event = completdEvent
         eventTitle.textColor = UIColor.getAppThemeColor()
         eventTitle.text! = completdEvent.title ?? ""
         eventDate.text! = completdEvent.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? ""
@@ -31,6 +38,17 @@ class CompletedEventCell: UITableViewCell{
                                    options: [.transition(ImageTransition.fade(1))])
             
         }
+        btnParticipants.applyBoarderColorTheme()
+        btnDuties.applyBoarderColorTheme()
         
     }
+    
+    @IBAction func didTapParticipantButton(_ sender: Any) {
+        participantAction?(event!)
+    }
+    
+    @IBAction func didTapDutiesButton(_ sender: Any) {
+        dutiesAction?(event!)
+    }
+    
 }

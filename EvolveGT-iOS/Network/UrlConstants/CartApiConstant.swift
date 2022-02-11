@@ -16,6 +16,7 @@ struct CartApiConstants {
     static let ADD_PRODUCT_TO_CART = "products/addToCart"
     
     static let REMOVE_FROM_CART = "cart/removeCartItem"
+    static let VALIDATE_CART = "checkout/validateBeforePay"
     
     static let ADD_ARCHIE_CARD_TO_CART = "archieCard/addToCart"
      static let ADD_MEMBERSHIP_TO_CART = "membership/addToCart"

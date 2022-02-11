@@ -11,6 +11,7 @@ struct AdminApiConstants{
     
     static let COMPLETED_EVENTS = "admin/completedEvents"
     static let EVENT_PARTICIPANTS = "admin/eventParticipants"
+    static let EVENT_PARTICIPANTS_FOR_DUTIES = "admin/eventParticipants/jobAssignments"
     static let GET_SIGNATURE = "admin/getSignature"
     static let UPDATE_SIGNATURE = "admin/updateSignature"
     static let UPDATE_SKILL_LEVEL = "admin/updateSkillLevel"

@@ -51,7 +51,7 @@ class AllEventsController : ETViewController, SlidingTabDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eventCell = tableView.dequeueReusableCell(withIdentifier:"AllEventCell",for: indexPath) as! EnrolledEventCell
         
-        eventCell.populateViews(event: events![indexPath.row])
+        eventCell.populateViews(event: events![indexPath.row], isUpComing: false)
         
         return eventCell
     }
