@@ -23,6 +23,7 @@ struct User: Codable {
         case lastName = "last_name"
         case displayName = "display_name"
         case skillLevel = "skill_level"
+//        case hasAdminPrevilege = "event_cancel"
         case hasAdminPrevilege = "admin_privilege"
         case role
     }

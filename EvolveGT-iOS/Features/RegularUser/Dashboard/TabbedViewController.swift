@@ -26,34 +26,36 @@ class TabbedViewController: ETViewController {
     func addNavBarControls() -> [UIBarButtonItem]?{
         return nil
     }
+    
     private func setNavbarControls(){
-           
-           
-           var switcIcon = UIImage(named: "switch_moto")
-           if !AppEngine.sharedInstance.isEvApp(){
-               switcIcon = UIImage(named: "switch_ev")
-           }
-           
-           let switchAppMode = UIBarButtonItem(image: switcIcon,
-                                               style: .plain,
-                                               target: self,
-                                               action: #selector(self.switchAppTheme))
         
         
-         let switchDashboard = UIBarButtonItem(image: #imageLiteral(resourceName: "SwictUserWhite"),
-                                                    style: .plain,
-                                                    target: self,
-                                            action: #selector(self.switchDashboard))
-           
+        //           var switcIcon = UIImage(named: "switch_moto")
+        //           if !AppEngine.sharedInstance.isEvApp(){
+        //               switcIcon = UIImage(named: "switch_ev")
+        //           }
+        //
+        //           let switchAppMode = UIBarButtonItem(image: switcIcon,
+        //                                               style: .plain,
+        //                                               target: self,
+        //                                               action: #selector(self.switchAppTheme))
+        
+        
+        let switchDashboard = UIBarButtonItem(image: #imageLiteral(resourceName: "SwictUserWhite"),
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(self.switchDashboard))
+        
         var navbarControls = [UIBarButtonItem]()
         if AppEngine.sharedInstance.isUserLoggedIn(){
             if(AppConstants.APP_MODE_SWITCH_ENABLED){
-                navbarControls.append(switchAppMode)
+                //                navbarControls.append(switchAppMode)
             }
             if(AppEngine.sharedInstance.currentUser?.hasAdminPrevilege ?? false && AppConstants.DASHBOARD_SWITCH_ENABLED){
                 navbarControls.append(switchDashboard)
             }
         }
+        
         let additionalControls = addNavBarControls()
         if additionalControls == nil{
             self.navigationItem.rightBarButtonItems = navbarControls
@@ -61,11 +63,9 @@ class TabbedViewController: ETViewController {
             navbarControls.append(contentsOf: additionalControls!)
             self.navigationItem.rightBarButtonItems = navbarControls
         }
-           
-           
-       }
+    }
     
-    private func enableSlideMenu(){
+    private func enableSlideMenu() {
         let button = UIButton(type: UIButton.ButtonType.custom)
         button.setImage(UIImage(named: "HMenu"), for: UIControl.State.normal)
         button.addTarget(self, action:#selector(self.menuBtnClicked) , for: .touchUpInside)

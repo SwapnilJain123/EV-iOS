@@ -30,6 +30,7 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
             eventsTableView?.isHidden = false
         }
     }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         eventsTableView.dataSource = self
@@ -38,6 +39,7 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
         eventsTableView.estimatedRowHeight = 120
         eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         eventsTableView.dataSource = self

@@ -29,6 +29,7 @@ class ApiClient{
     }
     func doGet(completionHandler : @escaping (Data?, ApiError?) -> Void){
         printHeaders()
+        print(parameters)
         Alamofire.request(urlString, parameters: parameters, headers:header)
             .validate()
             .responseJSON {response in
@@ -59,17 +60,23 @@ class ApiClient{
                 Log.d("Params :\n\n \(theJSONText!)\n\n")
             }
         }
-        
+        print(parameters)
+
         Alamofire.request(urlString, method: .post, parameters: parameters,  encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseJSON {response in
                 switch response.result{
                 case .success:
+                    print(response.data)
+                    print(response)
+
                     Log.d("\n\n Response:\(String(describing: String(data: response.data!, encoding: .utf8))) \n\n")
                     completionHandler(response.data!, nil)
                 case .failure(let error):
                     var apiError = ApiError()
                     apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                    print("Error - \(error.localizedDescription)")
+
                     Log.d("Error - \(error.localizedDescription)")
                     completionHandler( nil, apiError)
                 }

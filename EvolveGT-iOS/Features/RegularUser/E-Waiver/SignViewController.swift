@@ -169,7 +169,13 @@ class SignViewController: ETViewController  {
 }
 
 extension SignViewController:SwiftSignatureViewDelegate{
+    func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
+        
+    }
     
+    func swiftSignatureViewDidDraw(_ view: ISignatureView) {
+        
+    }
     
     func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView){
         

@@ -108,6 +108,14 @@ extension SignatureReaderController: SignatureViewDelegate{
 }
 
 extension SignatureReaderController: SwiftSignatureViewDelegate{
+    func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
+        
+    }
+    
+    func swiftSignatureViewDidDraw(_ view: ISignatureView) {
+        
+    }
+    
    
     
     func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView){

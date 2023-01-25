@@ -11,14 +11,10 @@ import UIKit
 import SideMenuSwift
 
 class HambergerMenuController: ETViewController {
-    
-    
-    
+        
     @IBOutlet weak var slidingMenuView: UITableView!
     
     var menuItems = SlideMenuItem.getllItems()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +49,8 @@ class HambergerMenuController: ETViewController {
             rootNavigationController.pushViewController(controller, animated: true)
         }
     }
-    
-    
 }
+
 extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -87,6 +82,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func handleMenuItem(tag: Int){
+        
         switch tag {
         case SlideMenuItem.TAG_CREDIT_HISTORY:
             let vc = self.ext.getViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
@@ -134,9 +130,8 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
                        
                        
                        self.present(VC, animated: true, completion: nil)
-            
-            
         default:
+            self.navigationController?.navigationBar.isHidden = true
             break
         }
     }

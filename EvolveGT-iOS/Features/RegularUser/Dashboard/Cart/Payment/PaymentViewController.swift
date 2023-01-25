@@ -164,8 +164,8 @@ extension PaymentViewController: PaymentDelegate{
         { (controller, result, error) in
             if (error != nil) {
                 Log.e("ERROR")
-            } else if (result?.isCancelled == true) {
-                 Log.e("CANCELLED")
+//            } else if (result?.isCanceled == true) {
+//                 Log.e("CANCELLED")
             } else if let paymentResult = result {
                 let nonce : String = paymentResult.paymentMethod?.nonce ?? ""
                 self.interactor?.completeBrainTreeTransaction(nonce: nonce)

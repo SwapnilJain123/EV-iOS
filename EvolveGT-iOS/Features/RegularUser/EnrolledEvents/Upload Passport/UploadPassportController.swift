@@ -120,6 +120,14 @@ extension UploadPassportController: CheckboxButtonDelegate {
 }
 
 extension UploadPassportController: SwiftSignatureViewDelegate{
+    func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
+        
+    }
+    
+    func swiftSignatureViewDidDraw(_ view: ISignatureView) {
+        
+    }
+    
    
     
     func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView){

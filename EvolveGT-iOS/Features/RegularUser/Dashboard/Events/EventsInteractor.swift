@@ -78,7 +78,8 @@ class EventsInteractor :BaseInteractor{
         if AppEngine.sharedInstance.isEvApp(){
             eventsApi.fetchEvolveEventList()
         }else{
-            eventsApi.fetchMotoEventList()
+            eventsApi.fetchEvolveEventList()
+//            eventsApi.fetchMotoEventList()
         }
     }
     
@@ -87,6 +88,7 @@ class EventsInteractor :BaseInteractor{
         
         (event.activeHostings?.count ?? 0 > 0) || !(event.isMotoEvent ?? false && event.isCancelled ?? false)
     }
+    
     func filterItems(with filterType: FilterType) {
         switch filterType {
             

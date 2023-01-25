@@ -39,8 +39,8 @@ class HomeViewController: TabbedViewController{
         resetProfileData()
         
         interactor.fetchUserDetails()
-        
     }
+    
     func resetProfileData(){
         profileData?.upComingEventsCount = 0
         profileData?.pastEventsCount = 0
@@ -50,6 +50,7 @@ class HomeViewController: TabbedViewController{
         profileData?.recentCreditHistory = nil
         self.profileView.reloadData()
     }
+    
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_DASHBOARD
     }
@@ -68,7 +69,7 @@ class HomeViewController: TabbedViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//        self.navigationController?.navigationBar.isHidden = true
     }
 }
 

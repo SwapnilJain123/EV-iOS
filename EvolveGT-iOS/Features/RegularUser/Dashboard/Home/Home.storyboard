@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdK-nz-6Sj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdK-nz-6Sj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +17,7 @@
                     <tabBarItem key="tabBarItem" title="HOME" image="home" id="59G-U2-bu9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rNH-LC-3lE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -37,11 +37,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPp-J7-3Za" userLabel="Profile View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1729"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="1725"/>
                                 <color key="backgroundColor" red="0.89390325550000005" green="0.89803808929999995" blue="0.90205961469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollapsedCell" id="ZPe-B3-KAq" customClass="CollapsedCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZPe-B3-KAq" id="MDD-Qz-2QP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -93,7 +93,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeProfileCell" id="9sT-xC-bxn" customClass="ProfileCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="93" width="414" height="416.5"/>
+                                        <rect key="frame" x="0.0" y="115" width="414" height="416.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9sT-xC-bxn" id="fVx-my-bUK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="416.5"/>
@@ -569,7 +569,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeEmptyCell" rowHeight="90" id="8lQ-fX-aTk" customClass="EmptyCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="509.5" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="531.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8lQ-fX-aTk" id="R2E-Q7-1lU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
@@ -623,7 +623,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PastEventCell" rowHeight="200" id="0Ul-tm-Pil" userLabel="PastEvent" customClass="SectionEventInfoCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="599.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="621.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ul-tm-Pil" id="V8d-wM-Tcr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -799,7 +799,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UpcomingEventCell" rowHeight="200" id="rOf-eN-ahr" userLabel="Upcoming" customClass="SectionEventInfoCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="799.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="821.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rOf-eN-ahr" id="WnD-zd-43Y">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -975,7 +975,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecentCreditCell" rowHeight="200" id="Z8P-60-TgB" customClass="CreditHistoryCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="999.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="1021.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z8P-60-TgB" id="ucj-Qr-sJ6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -1134,7 +1134,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoachDutyCell" rowHeight="185" id="4em-96-6iN" customClass="CoachDutyCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1199.5" width="414" height="185"/>
+                                        <rect key="frame" x="0.0" y="1221.5" width="414" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4em-96-6iN" id="90X-UA-bCi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
@@ -1176,7 +1176,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReferFriendCell" id="3id-eU-lmn" customClass="ReferAFriendCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1384.5" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="1406.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3id-eU-lmn" id="8XC-XZ-XmB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
@@ -1278,14 +1278,14 @@
                                 </connections>
                             </button>
                             <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STd-Vg-muf">
-                                <rect key="frame" x="10" y="64" width="394" height="665"/>
+                                <rect key="frame" x="10" y="68" width="394" height="661"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NsU-Sp-q2t">
-                                <rect key="frame" x="5" y="54" width="404" height="675"/>
+                                <rect key="frame" x="5" y="58" width="404" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -1332,7 +1332,7 @@
     </scenes>
     <designables>
         <designable name="Z2E-fP-WEq">
-            <size key="intrinsicContentSize" width="263" height="18"/>
+            <size key="intrinsicContentSize" width="239" height="30"/>
         </designable>
     </designables>
     <resources>
@@ -1348,7 +1348,7 @@
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

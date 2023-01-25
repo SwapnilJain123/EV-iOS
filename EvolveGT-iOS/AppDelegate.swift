@@ -72,15 +72,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
         }
-        
-        //get application instance ID
-        InstanceID.instanceID().instanceID { (result, error) in
+        //Deepak
+        Messaging.messaging().token { token, error in
             if let error = error {
                 print("Error fetching remote instance ID: \(error)")
-            } else if let result = result {
-                print("Remote instance ID token: \(result.token)")
+            } else if let token = token {
+                print("Remote instance ID token: \(token)")
             }
         }
+
+        //get application instance ID
+//        InstanceID.instanceID().instanceID { (result, error) in
+//            if let error = error {
+//                print("Error fetching remote instance ID: \(error)")
+//            } else if let result = result {
+//                print("Remote instance ID token: \(result.token)")
+//            }
+//        }
         
         application.registerForRemoteNotifications()
     }
@@ -89,14 +97,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     
     func setUpBrainTreeUrlScheme(){
-        BTAppSwitch.setReturnURLScheme(BuildScheme.brainTreeReturnUrl)
-        Log.d("Brain Tree Return URl = \(BuildScheme.brainTreeReturnUrl)")
+//        BTAppSwitch.setReturnURLScheme(BuildScheme.brainTreeReturnUrl)
+//        Log.d("Brain Tree Return URl = \(BuildScheme.brainTreeReturnUrl)")
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.scheme?.localizedCaseInsensitiveCompare(BuildScheme.brainTreeReturnUrl) == .orderedSame {
-            return BTAppSwitch.handleOpen(url, options: options)
-        }
+//        if url.scheme?.localizedCaseInsensitiveCompare(BuildScheme.brainTreeReturnUrl) == .orderedSame {
+//            return BTAppSwitch.handleOpen(url, options: options)
+//        }
         return false
     }
     
@@ -249,7 +257,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
     
 }
 extension AppDelegate:MessagingDelegate{
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         print("Firebase registration token: \(fcmToken)")
         
         UserDefaults.standard.set(fcmToken, forKey: AppConstants.DEVICE_TOKEN)

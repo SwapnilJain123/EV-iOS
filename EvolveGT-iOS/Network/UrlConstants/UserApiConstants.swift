@@ -22,7 +22,6 @@ struct UserApiConstants{
     static let CANCEL_EVENT = "user/cancelEvent"
     static let UPDATE_DEVICE_TOKEN = "notifications/updateDeviceToken"
     
-    
     //Mark: Profile
     static let MEMBERSHIP_LIST = "membership/list"
     static let MEMBERSHIP_DETAILS = "membership/details"
@@ -39,11 +38,10 @@ struct UserApiConstants{
     static let CREATE_ACCOUNT = "user/create"
     static let TRANSFER_AMOUNT = "user/transferCredits"
     
-    
     //EWaiver
     static let WAIVER_LIST = "waiverEvents/list"
-       static let WAIVER_DETAILS = "waiverEvents/details"
-       static let SAVE_WAIVER_DETAILS = "waiverEvents/saveData"
+    static let WAIVER_DETAILS = "waiverEvents/details"
+    static let SAVE_WAIVER_DETAILS = "waiverEvents/saveData"
     
     static let VIEW_PASSPORT = "user/viewPassport"
     static let SAVE_PASSPORT = "user/savePassport"

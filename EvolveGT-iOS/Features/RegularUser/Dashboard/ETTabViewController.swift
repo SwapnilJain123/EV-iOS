@@ -31,6 +31,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         super.viewWillAppear(animated)
         styleTabBar()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +58,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         super.viewDidAppear(animated)
         updateCartBadgeCount(count: AppEngine.sharedInstance.cartListCount)
     }
+    
     func processNotficationPayload(){
         let pushType = notificationPayload!["type"] as! String
         
@@ -114,16 +116,16 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     func styleTabBar(){
         if AppEngine.sharedInstance.isEvApp(){
             self.tabBar.barTintColor = .getEVTabBackgroundGray()
-            self.tabBar.tintColor = .getEvColor()
-            self.tabBar.unselectedItemTintColor = .lightText
+            self.tabBar.tintColor = .white
+            self.tabBar.unselectedItemTintColor = .lightGray
         }else{
             self.tabBar.barTintColor = .getMotoColor()
             self.tabBar.tintColor = .white
             self.tabBar.unselectedItemTintColor = .lightGray
-            
         }
         self.tabBar.isTranslucent = false
     }
+    
     override func didChangeAppTheme() {
         Log.d("App Theme Changed")
         styleTabBar()
