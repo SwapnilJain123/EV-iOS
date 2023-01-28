@@ -45,6 +45,7 @@ class EventDetails: Codable {
         if !isMotoEvent{
             totalPrice = getRoleBasedPrice(role: AppEngine.sharedInstance.userRole).toDouble()
         }
+        
         if let trainings = trainingData{
             for training in trainings where training.isSelected{
                 totalPrice = totalPrice + (training.price?.toDouble() ?? 0.0)!
