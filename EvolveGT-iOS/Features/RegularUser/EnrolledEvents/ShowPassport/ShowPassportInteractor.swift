@@ -25,6 +25,34 @@ class ShowPassportInteractor: BaseInteractor {
                     
                     if let passportInfo = response.data{
                         self.passportDelegate?.onPassportFetched(passportInfo)
+                    } else {
+                        self.delegate?.showEmptyPageError(message: response.msg ?? ErrorMessages.genericError)
+                    }
+                }else{
+                     self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
+                }
+            }
+            else
+            {
+                let apiError = error?.errorMessage ?? ErrorMessages.genericError
+                 self.delegate?.showEmptyPageError(message: apiError)
+            }
+        }
+        
+        api.viewPassport(passportId: AppEngine.sharedInstance.passportId)
+    }
+    
+    func updatePassportInfo() {
+        delegate?.showProgressIndicator(message: "")
+        let api = ProfileApi()
+        api.setCompletionHandler{data,error in
+            self.delegate?.hideProgressIndicator()
+            if error == nil{
+               
+                if let response = self.decodeFromJson(data!, modelType: ViewPassportResponse.self){
+                    
+                    if let passportInfo = response.data{
+                        self.passportDelegate?.onPassportFetched(passportInfo)
                     }else{
                         self.delegate?.showEmptyPageError(message: response.msg ?? ErrorMessages.genericError)
                     }
@@ -38,6 +66,7 @@ class ShowPassportInteractor: BaseInteractor {
             }
         }
         
-        api.viewPassport(passportId: AppEngine.sharedInstance.passportId)
+        api.showPassport(passportId: AppEngine.sharedInstance.passportId)
     }
+
 }

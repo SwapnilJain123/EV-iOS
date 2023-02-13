@@ -169,6 +169,14 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func showPassport(passportId: String){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SHOW_PASSPORT)"
+        setUrl(url: url)
+        setParameters(parameters: ["passport_id":passportId])
+        super.makeRequest(method: .POST)
+    }
+
     func uploadPassport(userId: String, imageUploadItem: UploadItem, signature: Data, eventId: String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SAVE_PASSPORT)"

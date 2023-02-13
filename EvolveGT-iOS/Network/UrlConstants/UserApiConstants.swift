@@ -45,5 +45,7 @@ struct UserApiConstants{
     
     static let VIEW_PASSPORT = "user/viewPassport"
     static let SAVE_PASSPORT = "user/savePassport"
+    static let SHOW_PASSPORT = "user/updatePassport"
+
     static let UPDATE_EMERGENCY_CONTACT = "user/saveEmergencyDetails"
 }

@@ -26,13 +26,16 @@ class ShowPassportController : ETViewController, PassportViewDelegate{
     let interactor = ShowPassportInteractor()
     
     @IBOutlet weak var selfieDate: UILabel!
-    
-    
     @IBOutlet weak var lblEventDate: UILabel!
     @IBOutlet weak var trackName: UILabel!
+    
+    @IBOutlet weak var btnShowPassport: UIButton!
+
+    var mrlMessage = AppConstants.showPPMessage
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         resetUi()
         self.ext.showNavbar()
         self.ext.showBackButton()
@@ -41,12 +44,12 @@ class ShowPassportController : ETViewController, PassportViewDelegate{
         interactor.delegate = self
         
         interactor.fetchPassportInfo()
-        
-        
     }
+    
     override func getScreenTitle() -> String? {
         "View Passport"
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.ext.showNavbar()
@@ -57,26 +60,35 @@ class ShowPassportController : ETViewController, PassportViewDelegate{
         super.viewWillDisappear(animated)
         self.ext.hideNavbar()
     }
+    
     func onPassportFetched(_ passportInfo: PassportInfo) {
         self.passportImage.superview?.setCardView()
         if let imgUrl = passportInfo.picture{
             
             let placeHolder = UIImage(named: "et_fallback_image")
-            self.passportImage.kf.setImage(with: URL(string : imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
-            
-        }
+            self.passportImage.kf.setImage(with: URL(string: imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
+            }
+        
         if passportInfo.dayWorkerJob?.isEmpty ?? true{
             if let imgUrl = passportInfo.groupLogo{
                 
                 let placeHolder = UIImage(named: "et_fallback_image")
                 self.groupuBadge.kf.setImage(with: URL(string : imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
-                
             }
             lblDayWork.text = ""
         }else{
             groupuBadge.isHidden = true
             lblDayWork.text = "Job: \(passportInfo.dayWorkerJob!)"
         }
+        
+        if passportInfo.isStamped == 1 {
+            btnShowPassport.isHidden = true
+            passportImage.superview?.backgroundColor = #colorLiteral(red: 0.9956100583, green: 0.7715546489, blue: 0.8108837605, alpha: 1)
+        } else {
+            btnShowPassport.isHidden = false
+            passportImage.superview?.backgroundColor = .white
+        }
+        
         lblName.text = passportInfo.riderName ?? "" + " (\(passportInfo.skillLevel ?? ""))"
         lblMembership.text = "Membership Level: \(passportInfo.membershipLevel ?? "")"
         if passportInfo.allRentals.isEmpty{
@@ -116,5 +128,12 @@ class ShowPassportController : ETViewController, PassportViewDelegate{
         trackName.text = ""
         lblEventDate.text = ""
         
+    }
+    
+    ///Actions
+    @IBAction func showPassportAction(_ sender: UIButton){
+        self.ext.confirmationAlert(title: "STAMP PASSPORT", message: self.mrlMessage, btnText: "STAMP PASSPORT", btnDismiss: "CANCEL", handler: {
+            self.interactor.updatePassportInfo()
+        })
     }
 }

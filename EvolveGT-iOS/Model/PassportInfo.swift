@@ -11,6 +11,7 @@ class PassportInfo : Codable{
     
     var eventId, userType,membershipLevel,userId, dayWorkerJob, groupLogo, riderName, skillLevel, picture, passportId, signedDate : String?
     var trainings: [String]?
+    var isStamped: Int?
     var rentals: [Rental]?
     
     enum CodingKeys: String, CodingKey {
@@ -26,6 +27,7 @@ class PassportInfo : Codable{
         case picture = "picture"
         case passportId = "passport_id"
         case rentals = "rentals"
+        case isStamped = "is_stamped"
         case signedDate = "signed_date"
         
     }
