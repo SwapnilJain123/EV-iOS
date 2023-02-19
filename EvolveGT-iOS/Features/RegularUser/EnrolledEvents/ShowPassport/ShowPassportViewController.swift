@@ -108,6 +108,7 @@ class ShowPassportController : ETViewController, PassportViewDelegate{
             selfieDate.isHidden = false
             selfieDate.text = " Date: \(passportInfo.signedDate!.formattedDate(inputPattern: .FORMAT_MMMM_YYYY_DD_HH_MM_SS, outputFormat: .FORMAT_DD_MMM_YYYY)) "
         }
+        
         trackName.textColor = .getAppThemeColor()
         lblEventDate.textColor = .getAppThemeColor()
         trackName.text = AppEngine.sharedInstance.trackName
@@ -127,7 +128,6 @@ class ShowPassportController : ETViewController, PassportViewDelegate{
         lblMembership.text = ""
         trackName.text = ""
         lblEventDate.text = ""
-        
     }
     
     ///Actions

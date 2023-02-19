@@ -13,13 +13,14 @@ protocol EventParticipantsViewDelegate : BaseViewDelegate {
     
     func filteredParticipants(participants : [EventParticipant], query: String)
 }
-class EventParticipantIntercator : BaseInteractor{
+class EventParticipantIntercator : BaseInteractor {
     
     var adminViewDelegate: EventParticipantsViewDelegate?
     var participants = [EventParticipant]()
     var eventId = ""
     var isParticipants = true
-    
+    var cencelEventDelegate : cancelEventDelegete? = nil
+
     func getEventParticipants(_ eventId: String, isParticipant: Bool){
         super.delegate = adminViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingParticipants)
@@ -48,6 +49,31 @@ class EventParticipantIntercator : BaseInteractor{
         }
     }
     
+    func deleteEventParticipants(EventParticipantData: EventParticipant){
+        super.delegate = adminViewDelegate
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingParticipants)
+        let adminApi  = AdminApi()
+        adminApi.setCompletionHandler{ response, error in
+            self.delegate?.hideProgressIndicator()
+            if error == nil{
+                Log.i("Event Paticipants Request Success - ")
+                self.delegate?.hideEmptyPageError()
+                if self.isParticipants{
+                    self.cencelEventDelegate?.cancelEvent()
+                    print(response)
+//                    self.handleEventParticipantResponse(response: response!)
+                }else{
+                    self.handleEventParticipantForDutiesResponse(response: response!)
+                }
+            }else{
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.delegate?.showEmptyPageError(message: error!.errorMessage)
+            }
+        }
+        
+        adminApi.cancelEventParticipants(EventParticipantData: EventParticipantData)
+    }
+
     func handleEventParticipantResponse(response: Data){
         if let eventParticipantsResponse = self.decodeFromJson(response, modelType: EventParticpantResponse.self){
             
@@ -62,11 +88,14 @@ class EventParticipantIntercator : BaseInteractor{
                         }
                         return false
                 })
+                print(self.participants)
+                print(self.participants.count)
                 self.adminViewDelegate?.didFetchParticipants(participants:  self.participants)
             }
             
         }
     }
+    
     func handleEventParticipantForDutiesResponse(response: Data){
         if let eventParticipantsResponse = self.decodeFromJson(response, modelType: EventParticpantForDutiesResponse.self){
             

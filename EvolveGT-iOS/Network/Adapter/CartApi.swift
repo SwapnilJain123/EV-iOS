@@ -20,6 +20,7 @@ class CartApi : BaseApiAdapter{
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CartApiConstants.ADD_EVOLVE_EVENT_TO_CART)"
         setUrl(url: url)
+        print(eventRequest)
         setParameters(parameters: makeDictionary(eventRequest))
         super.makeRequest(method: .POST)
     }

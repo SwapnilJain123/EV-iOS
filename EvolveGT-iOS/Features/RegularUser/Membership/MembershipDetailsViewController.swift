@@ -35,8 +35,8 @@ class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegat
         }else{
             membershipInteractor.addMembershipToCart(membership: membershipDetails)
         }
-       
     }
+    
     @IBOutlet weak var membershipDetailsWebView: UIWebView!
     @IBOutlet weak var addToCartButton: UIButton!
     

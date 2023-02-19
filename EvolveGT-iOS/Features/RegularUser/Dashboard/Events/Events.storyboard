@@ -975,14 +975,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransponderCell" id="tcc-et-hW7" customClass="TransponderCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="585" width="414" height="109"/>
+                                        <rect key="frame" x="0.0" y="585" width="414" height="119.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcc-et-hW7" id="oHa-PP-p6P">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-Yf-WZL" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                    <rect key="frame" x="10" y="10" width="394" height="34"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="39.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
@@ -990,7 +990,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="au9-bR-Gr3" userLabel="Bike No" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                    <rect key="frame" x="10" y="65" width="394" height="34"/>
+                                                    <rect key="frame" x="10" y="70.5" width="394" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
@@ -1014,7 +1014,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackDayCell" id="5Dw-gT-21K" customClass="TrackDayCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="694" width="414" height="132"/>
+                                        <rect key="frame" x="0.0" y="704.5" width="414" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Dw-gT-21K" id="R1d-7K-fXW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
@@ -1053,7 +1053,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Price :  $199.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-mX-ggB">
-                                                            <rect key="frame" x="133" y="83.5" width="165" height="19.5"/>
+                                                            <rect key="frame" x="133" y="83.5" width="165" height="19"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1109,7 +1109,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventClassHeader" id="iHP-co-8N7" userLabel="Event Class Header" customClass="EventClassHeader" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="826" width="414" height="79.5"/>
+                                        <rect key="frame" x="0.0" y="836.5" width="414" height="79.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iHP-co-8N7" id="Dnc-mz-a54">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
@@ -1189,7 +1189,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MrlLicenceCell" id="HbM-0s-IOI" userLabel="MembershipCell" customClass="MrlLicenceCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="905.5" width="414" height="103"/>
+                                        <rect key="frame" x="0.0" y="916" width="414" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HbM-0s-IOI" id="DGr-av-J7K">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
@@ -1302,19 +1302,28 @@
     </scenes>
     <designables>
         <designable name="DOi-UB-RIn">
-            <size key="intrinsicContentSize" width="89.5" height="34"/>
+            <size key="intrinsicContentSize" width="150.5" height="39.220703125"/>
         </designable>
         <designable name="VBw-j5-Ouf">
-            <size key="intrinsicContentSize" width="30" height="30"/>
+            <size key="intrinsicContentSize" width="22" height="18"/>
+        </designable>
+        <designable name="VNv-EO-O1n">
+            <size key="intrinsicContentSize" width="24" height="22"/>
         </designable>
         <designable name="au9-bR-Gr3">
-            <size key="intrinsicContentSize" width="111" height="34"/>
+            <size key="intrinsicContentSize" width="394" height="39.220703125"/>
+        </designable>
+        <designable name="d8g-nd-Cj2">
+            <size key="intrinsicContentSize" width="24" height="22"/>
         </designable>
         <designable name="m1l-1H-p55">
-            <size key="intrinsicContentSize" width="30" height="30"/>
+            <size key="intrinsicContentSize" width="22" height="18"/>
+        </designable>
+        <designable name="oTC-tK-bdK">
+            <size key="intrinsicContentSize" width="24" height="22"/>
         </designable>
         <designable name="oaI-Yf-WZL">
-            <size key="intrinsicContentSize" width="165.5" height="34"/>
+            <size key="intrinsicContentSize" width="394" height="39.220703125"/>
         </designable>
     </designables>
     <resources>

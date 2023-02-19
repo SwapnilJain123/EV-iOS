@@ -24,7 +24,8 @@ class EventParticipantCellV2: UITableViewCell{
     @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var dateOfBirth: UILabel!
     @IBOutlet weak var orderId: UILabel!
-    
+    @IBOutlet weak var btnDeleteEvent: UIButton!
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var backroundView: UIView!
     

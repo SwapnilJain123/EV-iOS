@@ -10,8 +10,13 @@ import Foundation
 import UIKit
 import Kingfisher
 import SnapKit
-class EventParticipantsController : ETViewController{
-    
+
+protocol cancelEventDelegete {
+    func cancelEvent()
+}
+
+class EventParticipantsController : ETViewController, cancelEventDelegete{
+ 
     var isParticipants = true
     var completedEvent : CompletedEvent?
     var participants = [EventParticipant]()
@@ -26,13 +31,13 @@ class EventParticipantsController : ETViewController{
     @IBOutlet weak var eventShortInfoStack: UIStackView!
     
     let interactor = EventParticipantIntercator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         interactor.adminViewDelegate = self
         particiapntTable.dataSource = self
-        
-        
+        interactor.cencelEventDelegate = self
         setUpSearchBar()
         self.ext.showBackButton()
         setupUI()
@@ -40,7 +45,6 @@ class EventParticipantsController : ETViewController{
         requestEventParticipants()
         eventTitle.textColor = UIColor.getAppThemeColor()
     }
-    
     
     /// Setting up the search bar
     func setUpSearchBar(){
@@ -51,6 +55,8 @@ class EventParticipantsController : ETViewController{
         searchBar.resignFirstResponder()
         hideSearchbar()
     }
+    
+    
     func setNavbarControls(){
         self.ext.showBackButton()
         self.ext.setScreenTitle(title: ScreenTitle.TITLE_EVENTS)
@@ -154,6 +160,7 @@ class EventParticipantsController : ETViewController{
     func requestEventParticipants(){
         interactor.getEventParticipants(completedEvent?.eventID ?? "-1", isParticipant: isParticipants)
     }
+    
     func setupUI(){
         
         searchBar.showsCancelButton = true
@@ -170,8 +177,6 @@ extension EventParticipantsController : EventParticipantsViewDelegate, Signature
         interactor.getEventParticipants(completedEvent?.eventID ?? "", isParticipant: isParticipants)
     }
     
-    
-    
     func filteredParticipants(participants: [EventParticipant], query: String) {
         self.participants.removeAll()
         self.participants.append(contentsOf: participants)
@@ -186,10 +191,7 @@ extension EventParticipantsController : EventParticipantsViewDelegate, Signature
         self.participants.append(contentsOf: participants)
         particiapntTable.reloadData()
         listErrorLable.isHidden = true
-        
     }
-    
-    
 }
 
 extension EventParticipantsController : UITableViewDataSource{
@@ -219,9 +221,10 @@ extension EventParticipantsController : UITableViewDataSource{
                                                  for: indexPath) as! EventParticipantCellV2
         cell.eventParticipant = eventParticipant
         cell.delegate = self
+        
+        cell.btnDeleteEvent.tag = indexPath.row
+        cell.btnDeleteEvent.addTarget(self, action: #selector(deleteEvent), for: .touchUpInside)
         return cell
-        
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -252,7 +255,31 @@ extension EventParticipantsController : UITableViewDataSource{
         header.backgroundView?.backgroundColor = .white
         }
     }
+    
+    @objc func deleteEvent(_ sender: UIButton){
+        self.ext.confirmationAlert(title: "Alert!", message: "Are you sure you want to cancel this Rider Order", btnText: "YES", btnDismiss: "NO", handler: {
+            let eventParticipant = self.participants[sender.tag]
+            self.interactor.deleteEventParticipants(EventParticipantData: eventParticipant)
+        })
+    }
+    
+    ///Protocol
+    func cancelEvent() {
+
+        let alert = UIAlertController(title: "Successful!", message: "Your order has been cancelled successfully", preferredStyle: .alert)
+                // Create the actions
+        let cancelAction = UIAlertAction(title: "OK", style:
+            UIAlertAction.Style.cancel) {
+               UIAlertAction in
+            self.navigationController?.popViewController(animated: true)
+            }
+        // Add the actions
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
+
 extension EventParticipantsController:UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         interactor.filter(searchText)

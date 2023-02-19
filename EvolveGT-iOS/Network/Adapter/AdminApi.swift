@@ -18,6 +18,7 @@ class AdminApi: BaseApiAdapter{
         
         super.makeRequest(method: .POST)
     }
+    
     func fetchEventParticipants(eventID: String){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.EVENT_PARTICIPANTS)"
         setUrl(url: url)
@@ -27,6 +28,16 @@ class AdminApi: BaseApiAdapter{
         
         super.makeRequest(method: .POST)
     }
+    
+    func cancelEventParticipants(EventParticipantData: EventParticipant){
+        let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.DELET_EVENT_PARTICIPANTS)"
+        setUrl(url: url)
+        
+        print(AppEngine.sharedInstance.currentUser!.id)
+        setParameters(parameters: ["order_id": EventParticipantData.orderID!, "event_id": EventParticipantData.eventID!, "skill_level": EventParticipantData.skillLevel!, "user_id": AppEngine.sharedInstance.currentUser!.id])
+        super.makeRequest(method: .POST)
+    }
+
     func fetchEventParticipantsForDuties(eventID: String){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.EVENT_PARTICIPANTS_FOR_DUTIES)"
         setUrl(url: url)

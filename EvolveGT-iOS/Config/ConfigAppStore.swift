@@ -8,7 +8,9 @@
 
 import Foundation
 struct Config{
-    static let BASE_URL = "evolvegt.webeteerprojects.com" //staging
+//    static let BASE_URL = "evolvegt.webeteerprojects.com" //staging
+    static let BASE_URL = "qa.evolvegt.com" //release2 uploaded the code on git
+
     
 //    static let BASE_URL = "evolvegt.com"
     static let LOG_ENABLED = false
