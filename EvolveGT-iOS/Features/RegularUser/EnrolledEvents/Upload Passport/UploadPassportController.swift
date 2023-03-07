@@ -87,7 +87,7 @@ class UploadPassportController : ETViewController{
             showAlert(title: "", message: "Please select image.")
         }else{
             if let signatureData = signaturePad.signature?.pngData(){
-                if let image = selectedImage?.jpegData(compressionQuality: 1.0){
+                if let image = selectedImage?.jpegData(compressionQuality: 0.1){
                     interactor.savePassport(selfie: image, signature: signatureData)
                 }
 

@@ -24,13 +24,16 @@ class EventInfoCell: UITableViewCell{
     
     
     func applyTheme() {
-        if AppEngine.sharedInstance.isEvApp(){
-            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
-            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
-        }else{
-            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
-            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
-        }
+//        if AppEngine.sharedInstance.isEvApp(){
+//            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
+//            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
+//        }else{
+//            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
+//            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
+//        }
+        roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
+        totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
+
     }
     func showData(eventDetails : EventDetails?){
         applyTheme()

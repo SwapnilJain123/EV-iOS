@@ -13,7 +13,7 @@
         <!--Completed Event View Controller-->
         <scene sceneID="Ds8-Gd-e0Y">
             <objects>
-                <viewController storyboardIdentifier="CompletedEventsViewController" id="pZg-79-Aw5" customClass="CompletedEventViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompletedEventsViewController" id="pZg-79-Aw5" customClass="CompletedEventViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hv6-Kx-Y7W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompletedEvent" rowHeight="154" id="deW-hh-f4T" customClass="CompletedEventCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompletedEvent" rowHeight="154" id="deW-hh-f4T" customClass="CompletedEventCell" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="414" height="154"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="deW-hh-f4T" id="dfJ-eW-Kju">
@@ -222,7 +222,7 @@
         <!--Event Participants Controller-->
         <scene sceneID="mcw-Ka-EaP">
             <objects>
-                <viewController storyboardIdentifier="EventParticipants" id="Whc-jf-oLr" customClass="EventParticipantsController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventParticipants" id="Whc-jf-oLr" customClass="EventParticipantsController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xu4-Ja-rqy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +294,7 @@
                                         <color key="separatorColor" systemColor="separatorColor"/>
                                         <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantV2" id="zdb-vS-DRy" userLabel="EventParticipantCellV2" customClass="EventParticipantCellV2" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantV2" id="zdb-vS-DRy" userLabel="EventParticipantCellV2" customClass="EventParticipantCellV2" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="414" height="172.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zdb-vS-DRy" id="CwK-4Z-4f9">
@@ -596,7 +596,7 @@
                                                     <outlet property="userName" destination="LVY-7t-Da7" id="KfK-RZ-oKq"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCell" id="hRs-al-s9F" customClass="EventParticipantCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCell" id="hRs-al-s9F" customClass="EventParticipantCell" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="222.5" width="414" height="10"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hRs-al-s9F" id="PjL-JB-IAI">
@@ -854,7 +854,7 @@
                                                     <outlet property="userName" destination="6IM-iH-ula" id="xZp-Zv-Vxt"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCellSignNoStar" id="zKg-8b-119" userLabel="EventParticipantCellSignButNoStar" customClass="EventParticipantCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCellSignNoStar" id="zKg-8b-119" userLabel="EventParticipantCellSignButNoStar" customClass="EventParticipantCell" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="232.5" width="414" height="10"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zKg-8b-119" id="1z4-D7-2Yo">
@@ -1096,7 +1096,7 @@
                                                     <outlet property="userName" destination="1Na-eB-vBy" id="qQ8-R6-Da0"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCellSignDisabled" id="HIA-xy-yR6" customClass="EventParticipantCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCellSignDisabled" id="HIA-xy-yR6" customClass="EventParticipantCell" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="242.5" width="414" height="10"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HIA-xy-yR6" id="a6e-8D-Vgs">
@@ -1338,7 +1338,7 @@
                                                     <outlet property="userName" destination="rkb-Dr-c0h" id="lLH-F6-hwi"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCellSignAndStarDisabled" id="J2P-Zh-KYL" userLabel="EventParticipantCellSignAndStartDisabled" customClass="EventParticipantCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventParticipantCellSignAndStarDisabled" id="J2P-Zh-KYL" userLabel="EventParticipantCellSignAndStartDisabled" customClass="EventParticipantCell" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="252.5" width="414" height="10"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J2P-Zh-KYL" id="LBC-Y1-ljd">
@@ -1626,7 +1626,7 @@
         <!--Signature Reader Controller-->
         <scene sceneID="4KE-Xu-Ezs">
             <objects>
-                <viewController storyboardIdentifier="SignatureReader" id="I6W-JR-Ofa" customClass="SignatureReaderController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignatureReader" id="I6W-JR-Ofa" customClass="SignatureReaderController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6rf-PI-c1d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1776,7 +1776,7 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
         <!--Signature Preview View Controller-->
         <scene sceneID="VXq-CO-vRP">
             <objects>
-                <viewController storyboardIdentifier="SignaturePreviewViewController" id="D73-nS-rj6" customClass="SignaturePreviewViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignaturePreviewViewController" id="D73-nS-rj6" customClass="SignaturePreviewViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="prp-q5-THK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
                                         <color key="backgroundColor" name="RootBackGround"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="archieCardCell" rowHeight="120" id="L2V-HO-8gQ" customClass="ArchiCardCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                                <rect key="frame" x="0.0" y="50" width="375" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L2V-HO-8gQ" id="Kf9-eV-ZO4">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -48,7 +49,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="PI5-0R-GvZ" firstAttribute="leading" secondItem="HtU-WI-HwP" secondAttribute="trailing" constant="10" id="5Wz-a8-HMH"/>
                                                                 <constraint firstAttribute="bottom" secondItem="HtU-WI-HwP" secondAttribute="bottom" constant="8" id="AhD-SF-gMz"/>
@@ -83,6 +84,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="go0-1U-sVg"/>
                         <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="CpJ-Ve-QbN" secondAttribute="bottom" id="67m-vF-BGn"/>
@@ -90,7 +92,6 @@
                             <constraint firstItem="CpJ-Ve-QbN" firstAttribute="leading" secondItem="go0-1U-sVg" secondAttribute="leading" id="IJQ-dt-43K"/>
                             <constraint firstItem="CpJ-Ve-QbN" firstAttribute="top" secondItem="Inu-6A-1q2" secondAttribute="top" id="uAH-h3-Xqy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="go0-1U-sVg"/>
                     </view>
                     <connections>
                         <outlet property="archieCardTableView" destination="Fqe-Ii-9rE" id="WLb-Ot-6BW"/>
@@ -155,7 +156,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="eR6-Fm-d7e"/>
                                                     <constraint firstAttribute="height" constant="40" id="nRa-9g-tIX"/>
                                                 </constraints>
-                                                <state key="normal" image="ic_btn_plus_green"/>
+                                                <state key="normal" image="ic_btn_plus_blue"/>
                                                 <connections>
                                                     <action selector="minusButtonPressed:" destination="CJL-UF-5Jg" eventType="touchUpInside" id="PEf-8A-V9N"/>
                                                 </connections>
@@ -174,13 +175,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="KWk-8w-TyS" secondAttribute="height" multiplier="1:1" id="jpp-aP-TJl"/>
                                                 </constraints>
-                                                <state key="normal" image="ic_btn_minus_green"/>
+                                                <state key="normal" image="ic_btn_minus_blue"/>
                                                 <connections>
                                                     <action selector="plusButtonPressed:" destination="CJL-UF-5Jg" eventType="touchUpInside" id="hrC-CP-Jqv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="1Jz-BA-eFx"/>
                                             <constraint firstItem="bA8-Sc-3Yf" firstAttribute="top" secondItem="h5t-Gp-2wj" secondAttribute="top" constant="8" id="5BY-ti-Vwf"/>
@@ -199,7 +200,7 @@
                                             <constraint firstItem="KWk-8w-TyS" firstAttribute="top" secondItem="iqU-r0-Ho8" secondAttribute="top" id="zzu-MS-WHM"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-GJ-MQk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-GJ-MQk">
                                         <rect key="frame" x="25" y="602" width="325" height="45"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
@@ -229,7 +230,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Rrm-LM-GRf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kug-in-Pln" firstAttribute="top" secondItem="7XE-WL-ifR" secondAttribute="top" id="0ai-iw-oUQ"/>
                             <constraint firstItem="Rrm-LM-GRf" firstAttribute="trailing" secondItem="eAh-OJ-b7p" secondAttribute="trailing" constant="-5" id="G47-Ni-FRf"/>
@@ -240,7 +242,6 @@
                             <constraint firstItem="Kug-in-Pln" firstAttribute="leading" secondItem="7XE-WL-ifR" secondAttribute="leading" id="tM0-6a-Tdu"/>
                             <constraint firstAttribute="trailing" secondItem="Kug-in-Pln" secondAttribute="trailing" id="wPa-4U-eqG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Rrm-LM-GRf"/>
                     </view>
                     <connections>
                         <outlet property="archieCardImage" destination="eAh-OJ-b7p" id="i3Q-zh-HCk"/>
@@ -259,13 +260,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_btn_minus_green" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="ic_btn_plus_green" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="ic_btn_minus_blue" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="ic_btn_plus_blue" width="21.333333969116211" height="21.333333969116211"/>
         <namedColor name="ColorEV">
-            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.23921568627450979" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

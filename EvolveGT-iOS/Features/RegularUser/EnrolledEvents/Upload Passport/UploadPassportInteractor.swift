@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class UploadPassportInteractor: BaseInteractor{
     var passportUploaded : (()->Void)? = nil
     func savePassport(selfie: Data, signature: Data ){

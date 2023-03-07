@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Gift Card View Controller-->
         <scene sceneID="AEH-1A-c4L">
             <objects>
-                <viewController storyboardIdentifier="giftCardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gi-sh-ufW" customClass="GiftCardViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="giftCardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gi-sh-ufW" customClass="GiftCardViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pOk-pH-WEN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dx-sx-7Rn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-7M-urK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="giftCardCell" id="IZa-ZR-l52" customClass="GiftCardCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="giftCardCell" id="IZa-ZR-l52" customClass="GiftCardCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="106"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZa-ZR-l52" id="by9-65-Gej">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
@@ -33,7 +34,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS8-pg-oUk">
                                                             <rect key="frame" x="8" y="4" width="398" height="98"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nrf-Sz-wxZ">
                                                             <rect key="frame" x="10" y="8" width="120" height="90"/>
@@ -45,13 +46,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0la-qT-3go">
                                                             <rect key="frame" x="150" y="27" width="256" height="52"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIFT CARD $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asf-nU-wfd">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="GIFT CARD $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asf-nU-wfd">
                                                                     <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE : $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWl-cS-UvM">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PRICE : $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWl-cS-UvM">
                                                                     <rect key="frame" x="0.0" y="31.5" width="256" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -93,6 +94,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kcD-UC-XIz"/>
                         <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="9Dx-sx-7Rn" firstAttribute="leading" secondItem="kcD-UC-XIz" secondAttribute="leading" id="3ff-4W-9eM"/>
@@ -100,7 +102,6 @@
                             <constraint firstItem="kcD-UC-XIz" firstAttribute="trailing" secondItem="9Dx-sx-7Rn" secondAttribute="trailing" id="jaS-Cl-FZq"/>
                             <constraint firstItem="9Dx-sx-7Rn" firstAttribute="top" secondItem="kcD-UC-XIz" secondAttribute="top" id="o36-Uw-BHK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kcD-UC-XIz"/>
                     </view>
                     <connections>
                         <outlet property="giftCardTableVIew" destination="BCB-7M-urK" id="AIr-nM-dqy"/>
@@ -114,44 +115,44 @@
         <!--Gift Card Details View Controller-->
         <scene sceneID="xhr-5t-Lxz">
             <objects>
-                <viewController storyboardIdentifier="giftCardDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zji-Cw-slZ" customClass="GiftCardDetailsViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="giftCardDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zji-Cw-slZ" customClass="GiftCardDetailsViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8P9-IC-NvT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-h7-2kk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="irl-9j-iNZ">
-                                <rect key="frame" x="80" y="44" width="254" height="140"/>
+                                <rect key="frame" x="80" y="48" width="254" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="n4k-Y8-hoi"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zJ-Z3-thF">
-                                <rect key="frame" x="10" y="204" width="394" height="21"/>
+                                <rect key="frame" x="10" y="208" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: $150.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08G-z9-hmO">
-                                <rect key="frame" x="10" y="233" width="394" height="21"/>
+                                <rect key="frame" x="10" y="237" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.11236817390000001" green="0.68124860529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Receiver Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOA-Fl-f7l" userLabel="Receiver Name" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="20" y="416" width="374" height="34"/>
+                                <rect key="frame" x="20" y="415.5" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Receiver Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLw-GB-bay" userLabel="Receiver Email" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="20" y="482" width="374" height="34"/>
+                                <rect key="frame" x="20" y="486.5" width="374" height="39.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKP-2n-bhx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKP-2n-bhx">
                                 <rect key="frame" x="25" y="797" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="rqa-xj-Utz"/>
@@ -163,12 +164,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP3-rc-5E4" userLabel="ErrorView">
-                                <rect key="frame" x="20" y="396" width="374" height="0.0"/>
+                                <rect key="frame" x="20" y="395.5" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="TextColorRed"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="L7e-w0-3uJ"/>
                         <color key="backgroundColor" name="RootBackGround"/>
                         <constraints>
                             <constraint firstItem="nOA-Fl-f7l" firstAttribute="centerY" secondItem="L7e-w0-3uJ" secondAttribute="centerY" constant="-20" id="0uc-rC-n9g"/>
@@ -197,7 +199,6 @@
                             <constraint firstItem="WLw-GB-bay" firstAttribute="leading" secondItem="nOA-Fl-f7l" secondAttribute="leading" id="s1E-Hf-i6t"/>
                             <constraint firstItem="XP3-rc-5E4" firstAttribute="trailing" secondItem="nOA-Fl-f7l" secondAttribute="trailing" id="uZa-Ww-2W9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="L7e-w0-3uJ"/>
                     </view>
                     <connections>
                         <outlet property="addToCartButton" destination="xKP-2n-bhx" id="t65-48-qCJ"/>
@@ -214,6 +215,14 @@
             <point key="canvasLocation" x="1010.4" y="-12.143928035982009"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="WLw-GB-bay">
+            <size key="intrinsicContentSize" width="374" height="39.220703125"/>
+        </designable>
+        <designable name="nOA-Fl-f7l">
+            <size key="intrinsicContentSize" width="374" height="39.220703125"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,5 +230,8 @@
         <namedColor name="TextColorRed">
             <color red="0.83099997043609619" green="0.090000003576278687" blue="0.33700001239776611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

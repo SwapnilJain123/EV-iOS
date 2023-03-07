@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "aboutUs.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "mato_slider_about_us@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

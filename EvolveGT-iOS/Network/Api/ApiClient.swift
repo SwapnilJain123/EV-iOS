@@ -109,7 +109,15 @@ class ApiClient{
             for (key,value) in self.parameters {
                 multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
             }
+                        
             for uploadItem in self.uploadData{
+                
+                print("\(uploadItem.name)--/n")
+                print("\(uploadItem.data)/n")
+                print("\(uploadItem.fileName)/n")
+                print("\(uploadItem.mimeType)/n")
+                print("\(self.urlString)/n")
+                
                 multipartFormData.append(uploadItem.data, withName: uploadItem.name, fileName: uploadItem.fileName, mimeType: uploadItem.mimeType)
             }
             

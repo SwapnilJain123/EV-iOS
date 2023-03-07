@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UITableViewDataSource{
-   
     
     static let TAB_UPCOMING = 0
     static let TAB_PAST = 1

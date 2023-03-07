@@ -56,7 +56,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updateCartBadgeCount(count: AppEngine.sharedInstance.cartListCount)
+//        updateCartBadgeCount(count: AppEngine.sharedInstance.cartListCount)
     }
     
     func processNotficationPayload(){
@@ -110,7 +110,6 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         if let displayedVC = viewController.presentedViewController as? TabbedViewController{
             displayedVC.didSwitchTab()
         }
-        
     }
     
     func styleTabBar(){
@@ -134,7 +133,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     func updateCartBadgeCount(count: Int){
         if let tabItems = self.tabBar.items{
             // In this case we want to modify the badge number of the third tab:
-            let tabItem = tabItems[3]
+            let tabItem = tabItems[1]
             if count > 0{
                 tabItem.badgeValue = String(count)
             }else{

@@ -31,14 +31,14 @@
         <!--Cart List Controller-->
         <scene sceneID="xj0-F4-8Fd">
             <objects>
-                <viewController storyboardIdentifier="CartList" id="J71-DR-squ" customClass="CartListController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartList" id="J71-DR-squ" customClass="CartListController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jza-cy-Ukq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbC-QJ-UhL">
                                 <rect key="frame" x="25" y="753" width="364" height="45"/>
-                                <color key="backgroundColor" red="0.11236817390000001" green="0.68124860529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.095194482750000003" green="0.1899584164" blue="0.62669134140000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Vdc-Jw-scY"/>
                                 </constraints>
@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="612"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartAllPropertiesCell" id="JE6-qO-bLw" customClass="CartAllPropertiesCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartAllPropertiesCell" id="JE6-qO-bLw" customClass="CartAllPropertiesCell" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JE6-qO-bLw" id="apy-bZ-v1Z">
@@ -189,7 +189,7 @@
                                             <outlet property="tertiaryProperty" destination="kAs-gx-wkR" id="eYC-aE-iuf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart3PropertiesCell" id="CIY-PR-EFG" customClass="Cart3PropertiesCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart3PropertiesCell" id="CIY-PR-EFG" customClass="Cart3PropertiesCell" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="173" width="414" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIY-PR-EFG" id="RkN-iw-ymV">
@@ -282,7 +282,7 @@
                                             <outlet property="secondaryPropert" destination="IT7-bT-RYG" id="EtS-Gq-DuG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart2PropertiesCell" id="Ei6-dr-xfg" customClass="Cart2PropertiesCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart2PropertiesCell" id="Ei6-dr-xfg" customClass="Cart2PropertiesCell" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="291" width="414" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ei6-dr-xfg" id="Mbo-iT-e72">
@@ -410,7 +410,7 @@
         <!--Review Cart Controller-->
         <scene sceneID="GLV-GU-edG">
             <objects>
-                <viewController storyboardIdentifier="ReviewCartVC" id="w3I-s0-bGo" customClass="ReviewCartController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewCartVC" id="w3I-s0-bGo" customClass="ReviewCartController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fRN-Uv-n0V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +418,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USG-vu-hjg">
                                 <rect key="frame" x="0.0" y="48" width="414" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-2x-7ad" customClass="ShippingIndicator" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-2x-7ad" customClass="ShippingIndicator" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                     </view>
@@ -436,7 +436,7 @@
                                 <rect key="frame" x="0.0" y="128" width="414" height="664"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewSummaryHeaderCell" id="Lt0-aq-mIL" customClass="CartReviewSummaryHeaderCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewSummaryHeaderCell" id="Lt0-aq-mIL" customClass="CartReviewSummaryHeaderCell" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="50.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lt0-aq-mIL" id="mEI-ak-a2R">
@@ -449,7 +449,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-DQ-Peq" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-DQ-Peq" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="49.5" width="414" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
@@ -468,7 +468,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewItemCell" id="Pz3-4q-2Ei" customClass="CartReviewItemCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewItemCell" id="Pz3-4q-2Ei" customClass="CartReviewItemCell" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100.5" width="414" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pz3-4q-2Ei" id="Zv0-BQ-mBj">
@@ -493,7 +493,7 @@
                                                     <color key="textColor" name="ColorEV"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0F-2y-FoU" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0F-2y-FoU" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="93" width="414" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
@@ -532,7 +532,7 @@
                                             <outlet property="labelOutOfStock" destination="Kd7-2n-WaO" id="Y8i-hA-TlM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTotalCell" id="TMg-Ak-1dS" customClass="CartTotalCell" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTotalCell" id="TMg-Ak-1dS" customClass="CartTotalCell" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="194.5" width="414" height="95.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TMg-Ak-1dS" id="6Ss-tA-sBg">
@@ -563,7 +563,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-Vo-GfH" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-Vo-GfH" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="94.5" width="414" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
@@ -613,15 +613,15 @@
                                             <outlet property="totalLabel" destination="n6G-zL-NOa" id="te3-1m-Ou2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartPromoCodeCell" id="lS5-y6-3Rp" customClass="CartPromoCodeCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="290" width="414" height="102.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartPromoCodeCell" id="lS5-y6-3Rp" customClass="CartPromoCodeCell" customModule="ASRA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="290" width="414" height="107.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lS5-y6-3Rp" id="hld-hZ-qze">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-7X-cJA">
-                                                    <rect key="frame" x="10" y="10" width="394" height="82.5"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="87.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got an offer code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYg-Xm-9PV">
                                                             <rect key="frame" x="10" y="10" width="374" height="20.5"/>
@@ -630,7 +630,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-Ty-6U8">
-                                                            <rect key="frame" x="314" y="42.5" width="70" height="30"/>
+                                                            <rect key="frame" x="314" y="47.5" width="70" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="4R7-OF-PZn"/>
                                                                 <constraint firstAttribute="height" constant="30" id="EnO-F7-C1z"/>
@@ -641,7 +641,7 @@
                                                             </connections>
                                                         </button>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-bT-aIc" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                            <rect key="frame" x="10" y="38.5" width="283" height="34"/>
+                                                            <rect key="frame" x="10" y="38.5" width="283" height="39"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -674,8 +674,8 @@
                                             <outlet property="tfCouponCode" destination="qsi-bT-aIc" id="stm-np-Yam"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCouponAppliedCell" id="zWR-zH-XJ4" customClass="CartCouponAppliedCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="392.5" width="414" height="114.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCouponAppliedCell" id="zWR-zH-XJ4" customClass="CartCouponAppliedCell" customModule="ASRA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="397.5" width="414" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zWR-zH-XJ4" id="onu-BE-ESg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
@@ -696,7 +696,8 @@
                                                                 <constraint firstAttribute="height" constant="40" id="2fl-bn-nFD"/>
                                                                 <constraint firstAttribute="width" constant="40" id="XL2-hs-vHb"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="delete"/>
+                                                            <color key="tintColor" red="0.0" green="0.23921568630000001" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Button" image="moto_delete"/>
                                                             <connections>
                                                                 <action selector="didPressDeleteButton:" destination="zWR-zH-XJ4" eventType="touchUpInside" id="bfJ-x7-h5W"/>
                                                             </connections>
@@ -744,8 +745,8 @@
                                             <outlet property="lbelCouponBalance" destination="TIg-a4-bm4" id="qP2-Yn-dbM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BillingAddressCell" id="DQI-LJ-EPO" customClass="BillingAddressCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="507" width="414" height="150.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BillingAddressCell" id="DQI-LJ-EPO" customClass="BillingAddressCell" customModule="ASRA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="512" width="414" height="150.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DQI-LJ-EPO" id="3D9-PF-aft">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
@@ -775,7 +776,8 @@
                                                                 <constraint firstAttribute="height" constant="40" id="Q8q-iW-CnI"/>
                                                                 <constraint firstAttribute="width" constant="40" id="YSN-I0-p9X"/>
                                                             </constraints>
-                                                            <state key="normal" image="ic_ev_edit"/>
+                                                            <color key="tintColor" red="0.0" green="0.23921568630000001" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" image="pencil.circle.fill" catalog="system"/>
                                                             <connections>
                                                                 <action selector="didPressAddressAction:" destination="DQI-LJ-EPO" eventType="touchUpInside" id="xa1-Zp-suV"/>
                                                             </connections>
@@ -818,8 +820,8 @@
                                             <outlet property="labelAddress" destination="vHP-RR-F4T" id="ezH-Av-dFA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartWalletCell" id="Fua-9g-GPF" customClass="CartWalletCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="657.5" width="414" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartWalletCell" id="Fua-9g-GPF" customClass="CartWalletCell" customModule="ASRA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="662.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fua-9g-GPF" id="F9k-Ij-KIZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -910,7 +912,7 @@
         <!--Payment View Controller-->
         <scene sceneID="VUg-bn-1pL">
             <objects>
-                <viewController storyboardIdentifier="PaymentVC" id="f15-md-yeG" customClass="PaymentViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentVC" id="f15-md-yeG" customClass="PaymentViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6C-Gh-0Tc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -931,7 +933,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKp-tM-OQK">
                                 <rect key="frame" x="0.0" y="48" width="414" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09n-1h-w3p" customClass="ShippingIndicator" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09n-1h-w3p" customClass="ShippingIndicator" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                     </view>
@@ -1152,7 +1154,7 @@
         <!--Post Purchase Controller-->
         <scene sceneID="FgW-cp-7Hc">
             <objects>
-                <viewController storyboardIdentifier="PostPurchase" id="Fwd-if-LfK" customClass="PostPurchaseController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostPurchase" id="Fwd-if-LfK" customClass="PostPurchaseController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MTW-XS-96I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1160,7 +1162,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnp-Ze-eP7">
                                 <rect key="frame" x="0.0" y="48" width="414" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9S-xR-Ncq" customClass="ShippingIndicator" customModule="EvolveGT_QA" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9S-xR-Ncq" customClass="ShippingIndicator" customModule="ASRA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
@@ -1180,7 +1182,7 @@
                                 <color key="textColor" name="ColorEV"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-5J-gpB" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-5J-gpB" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="202" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1211,7 +1213,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKC-HI-Yz9" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKC-HI-Yz9" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="299" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1236,7 +1238,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-FD-fRz" customClass="DividerView" customModule="EvolveGT_QA" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-FD-fRz" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="389" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1251,7 +1253,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lj-9g-7K3">
                                 <rect key="frame" x="25" y="807" width="364" height="45"/>
-                                <color key="backgroundColor" red="0.11236817390000001" green="0.68124860529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.095194482750000003" green="0.1899584164" blue="0.62669134140000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Z8o-e8-Iq5"/>
                                 </constraints>
@@ -1322,23 +1324,24 @@
     </scenes>
     <designables>
         <designable name="AV4-SQ-Nh0">
-            <size key="intrinsicContentSize" width="43" height="30"/>
+            <size key="intrinsicContentSize" width="65" height="18"/>
         </designable>
         <designable name="OHQ-km-vRD">
-            <size key="intrinsicContentSize" width="206" height="30"/>
+            <size key="intrinsicContentSize" width="228" height="18"/>
         </designable>
         <designable name="qsi-bT-aIc">
-            <size key="intrinsicContentSize" width="32" height="34"/>
+            <size key="intrinsicContentSize" width="283" height="39.220703125"/>
         </designable>
     </designables>
     <resources>
         <image name="cartTab" width="32" height="32"/>
         <image name="delete" width="30" height="30"/>
-        <image name="ic_ev_edit" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_temp_paypal_ack" width="318" height="79"/>
+        <image name="moto_delete" width="42.666667938232422" height="42.666667938232422"/>
         <image name="out-of-stock" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="ColorEV">
-            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.23899999260902405" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

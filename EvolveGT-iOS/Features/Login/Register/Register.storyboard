@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--First Register View Controller-->
         <scene sceneID="pDb-WI-L4O">
             <objects>
-                <viewController storyboardIdentifier="fistRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xpb-RI-xVA" customClass="FirstRegisterViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fistRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xpb-RI-xVA" customClass="FirstRegisterViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Sh-dQ-MsP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQG-Dr-bez" userLabel="iconView">
                                         <rect key="frame" x="30" y="20" width="315" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lb-WQ-JSJ" customClass="RegPhaseIndicator" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lb-WQ-JSJ" customClass="RegPhaseIndicator" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="10" width="240" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -37,7 +38,7 @@
                                             <constraint firstAttribute="bottom" secondItem="8lb-WQ-JSJ" secondAttribute="bottom" constant="10" id="TYW-7N-KvJ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWN-mb-MbW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWN-mb-MbW">
                                         <rect key="frame" x="25" y="905" width="325" height="40"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
@@ -51,7 +52,7 @@
                                             <action selector="didPressNextButton:" destination="Xpb-RI-xVA" eventType="touchUpInside" id="ogm-ff-WQA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foq-n2-o2y">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foq-n2-o2y">
                                         <rect key="frame" x="127" y="955" width="120" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="I have an account">
@@ -63,10 +64,10 @@
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eGs-2E-Dau">
                                         <rect key="frame" x="0.0" y="90" width="375" height="793"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="jvp-04-wHg" customClass="RegistrationTextFieldCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="jvp-04-wHg" customClass="RegistrationTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jvp-04-wHg" id="Qpi-Wi-cbX">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -93,7 +94,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="dWx-h3-s1G" secondAttribute="bottom" constant="10" id="1Lv-vc-9En"/>
                                                                 <constraint firstItem="dWx-h3-s1G" firstAttribute="leading" secondItem="eA7-nP-jaf" secondAttribute="leading" constant="8" id="AsX-cc-AlU"/>
@@ -113,8 +114,8 @@
                                                     <outlet property="textField" destination="dWx-h3-s1G" id="Ipa-ie-hoJ"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="4NT-jz-Ghk" customClass="RegistrationMaskedTextFieldCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="98" width="375" height="70"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="4NT-jz-Ghk" customClass="RegistrationMaskedTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="120" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4NT-jz-Ghk" id="WML-ld-qjZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -146,14 +147,14 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbK-XH-OZ8" userLabel="calenderButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbK-XH-OZ8" userLabel="calenderButton">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                                     <connections>
                                                                         <action selector="didTapMaskedView:" destination="4NT-jz-Ghk" eventType="touchUpInside" id="h6Y-6Y-9LS"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="ZEw-DE-uwh" firstAttribute="centerY" secondItem="tDK-yD-ILe" secondAttribute="centerY" id="2zE-zU-bQ2"/>
                                                                 <constraint firstItem="Rd8-Sk-nnP" firstAttribute="top" secondItem="tDK-yD-ILe" secondAttribute="top" constant="10" id="4hD-8H-Wrb"/>
@@ -180,8 +181,8 @@
                                                     <outlet property="textField" destination="Rd8-Sk-nnP" id="gml-0q-CTJ"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionCell" id="hfH-7g-FLq" customClass="TwoOptionsCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="168" width="375" height="112"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionCell" id="hfH-7g-FLq" customClass="TwoOptionsCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="190" width="375" height="112"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hfH-7g-FLq" id="eeP-pJ-qNN">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
@@ -199,7 +200,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4T-sw-SyP" userLabel="MaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4T-sw-SyP" userLabel="MaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
                                                                     <rect key="frame" x="20" y="60" width="155" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="jSu-oR-eil"/>
@@ -208,14 +209,14 @@
                                                                         <color key="titleColor" name="PrimaryTextColor"/>
                                                                     </state>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CP-c2-9yS" userLabel="femaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CP-c2-9yS" userLabel="femaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
                                                                     <rect key="frame" x="200" y="60" width="155" height="30"/>
                                                                     <state key="normal" title="Female">
                                                                         <color key="titleColor" name="PrimaryTextColor"/>
                                                                     </state>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="a4T-sw-SyP" firstAttribute="leading" secondItem="qcL-7n-K4Z" secondAttribute="leading" constant="20" id="63h-jp-Qyj"/>
                                                                 <constraint firstAttribute="trailing" secondItem="1CP-c2-9yS" secondAttribute="trailing" constant="20" id="8mI-eX-Vmm"/>
@@ -249,7 +250,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="kWN-mb-MbW" secondAttribute="trailing" constant="25" id="BYi-7Q-1Ar"/>
                                     <constraint firstItem="foq-n2-o2y" firstAttribute="leading" secondItem="r1G-q2-NuL" secondAttribute="leading" constant="127" id="HTo-CN-iCf"/>
@@ -268,14 +269,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qMY-pB-dCf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r1G-q2-NuL" firstAttribute="leading" secondItem="qMY-pB-dCf" secondAttribute="leading" id="01y-a6-l9C"/>
                             <constraint firstItem="qMY-pB-dCf" firstAttribute="bottom" secondItem="r1G-q2-NuL" secondAttribute="bottom" id="0HT-fg-V5Z"/>
                             <constraint firstItem="qMY-pB-dCf" firstAttribute="trailing" secondItem="r1G-q2-NuL" secondAttribute="trailing" id="etB-g8-9uM"/>
                             <constraint firstItem="qMY-pB-dCf" firstAttribute="top" secondItem="r1G-q2-NuL" secondAttribute="top" id="kaQ-1q-MrT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qMY-pB-dCf"/>
                     </view>
                     <navigationItem key="navigationItem" id="ckN-u3-anO"/>
                     <size key="freeformSize" width="375" height="1000"/>
@@ -292,7 +293,7 @@
         <!--Second Register View Controller-->
         <scene sceneID="2IA-Tj-6k0">
             <objects>
-                <viewController storyboardIdentifier="secondRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eHB-ic-jyF" customClass="SecondRegisterViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eHB-ic-jyF" customClass="SecondRegisterViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u0c-2F-REJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,9 +304,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9p-2C-3ky" userLabel="Iconview">
                                         <rect key="frame" x="30" y="20" width="315" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkU-rV-lpI" customClass="RegPhaseIndicator" customModule="EvolveGT_QA" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkU-rV-lpI" customClass="RegPhaseIndicator" customModule="ASRA" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="10" width="240" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -317,7 +318,7 @@
                                             <constraint firstItem="UkU-rV-lpI" firstAttribute="leading" secondItem="V9p-2C-3ky" secondAttribute="leading" constant="37" id="Nz2-7Y-SR6"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbW-kb-K9o" userLabel="Register">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbW-kb-K9o" userLabel="Register">
                                         <rect key="frame" x="25" y="567" width="325" height="40"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
@@ -331,7 +332,7 @@
                                             <action selector="registerButton:" destination="eHB-ic-jyF" eventType="touchUpInside" id="7f9-I3-hYH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usO-ax-8Np" userLabel="I have an account">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usO-ax-8Np" userLabel="I have an account">
                                         <rect key="frame" x="128" y="617" width="120" height="30"/>
                                         <state key="normal" title="I have an account">
                                             <color key="titleColor" name="PrimaryTextColor"/>
@@ -342,10 +343,10 @@
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gJJ-c8-6X9">
                                         <rect key="frame" x="0.0" y="88" width="375" height="436"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="3gi-Tn-XOV" customClass="RegistrationTextFieldCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="3gi-Tn-XOV" customClass="RegistrationTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gi-Tn-XOV" id="4yP-EQ-vDc">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -372,7 +373,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="NYo-h4-lqt" firstAttribute="leading" secondItem="adt-xR-Kye" secondAttribute="leading" constant="8" id="Ur8-Qg-uxu"/>
                                                                 <constraint firstAttribute="trailing" secondItem="NYo-h4-lqt" secondAttribute="trailing" constant="8" id="XrC-Ry-CTK"/>
@@ -392,8 +393,8 @@
                                                     <outlet property="textField" destination="NYo-h4-lqt" id="eBm-hb-j26"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="hsr-aG-vSR" customClass="RegistrationMaskedTextFieldCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="98" width="375" height="70"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="hsr-aG-vSR" customClass="RegistrationMaskedTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="120" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hsr-aG-vSR" id="d8o-PJ-mfa">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -425,14 +426,14 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mJ-wS-HzA" userLabel="calenderButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mJ-wS-HzA" userLabel="calenderButton">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                                     <connections>
                                                                         <action selector="didTapMaskedView:" destination="hsr-aG-vSR" eventType="touchUpInside" id="FHh-KQ-BZd"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="2mJ-wS-HzA" secondAttribute="trailing" id="24v-NS-TCr"/>
                                                                 <constraint firstAttribute="bottom" secondItem="2mJ-wS-HzA" secondAttribute="bottom" id="4zI-QD-KGk"/>
@@ -459,8 +460,8 @@
                                                     <outlet property="textField" destination="iKF-4d-0rO" id="RiA-Oh-nl0"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionCell" id="7sj-Ho-w7g" customClass="TwoOptionsCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="168" width="375" height="112"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionCell" id="7sj-Ho-w7g" customClass="TwoOptionsCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="190" width="375" height="112"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7sj-Ho-w7g" id="fJX-5P-DJI">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
@@ -478,7 +479,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqb-gf-hFV" userLabel="MaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqb-gf-hFV" userLabel="MaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
                                                                     <rect key="frame" x="20" y="60" width="155" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="wSf-BA-RDg"/>
@@ -487,14 +488,14 @@
                                                                         <color key="titleColor" name="PrimaryTextColor"/>
                                                                     </state>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wom-Cf-iTk" userLabel="femaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wom-Cf-iTk" userLabel="femaleButton" customClass="RadioButton" customModule="MBRadioCheckboxButton">
                                                                     <rect key="frame" x="200" y="60" width="155" height="30"/>
                                                                     <state key="normal" title="Female">
                                                                         <color key="titleColor" name="PrimaryTextColor"/>
                                                                     </state>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Eqb-gf-hFV" secondAttribute="trailing" constant="200" id="3Pv-93-VIu"/>
                                                                 <constraint firstItem="T0o-u4-sNY" firstAttribute="leading" secondItem="PmX-WB-Bma" secondAttribute="leading" constant="20" id="83u-zT-42Q"/>
@@ -524,8 +525,8 @@
                                                     <outlet property="rbItem2" destination="Wom-Cf-iTk" id="Sfh-h3-nws"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkBoxCell" id="uxA-29-E5z" customClass="CheckBoxCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="280" width="375" height="80"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkBoxCell" id="uxA-29-E5z" customClass="CheckBoxCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="302" width="375" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uxA-29-E5z" id="feo-Iy-Ujs">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -534,7 +535,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncz-JR-91Q" userLabel="Check box">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MxG-T1-W5d" userLabel="checkBoxButton" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MxG-T1-W5d" userLabel="checkBoxButton" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
                                                                     <rect key="frame" x="10" y="10" width="40" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="b8B-8V-Iho"/>
@@ -552,7 +553,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="MxG-T1-W5d" firstAttribute="leading" secondItem="Ncz-JR-91Q" secondAttribute="leading" constant="10" id="Khi-bx-r9q"/>
                                                                 <constraint firstAttribute="trailing" secondItem="41o-Ns-4BF" secondAttribute="trailing" constant="8" id="Qqt-GR-IRL"/>
@@ -574,8 +575,8 @@
                                                     <outlet property="checkboxItem" destination="MxG-T1-W5d" id="S6q-eA-5wi"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" id="0a7-dp-cWF" customClass="PasswordCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="360" width="375" height="220"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" id="0a7-dp-cWF" customClass="PasswordCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="382" width="375" height="220"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0a7-dp-cWF" id="pU8-xM-DX5">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -619,7 +620,7 @@
                                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                 </textField>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="2WB-j9-pz0" firstAttribute="leading" secondItem="K1e-m2-T0z" secondAttribute="leading" constant="10" id="0kI-GG-j6s"/>
                                                                 <constraint firstItem="2WB-j9-pz0" firstAttribute="top" secondItem="xdZ-e3-j6o" secondAttribute="bottom" constant="10" id="1pn-Nt-i2Y"/>
@@ -650,7 +651,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="t8d-zP-lTa">
-                                                <rect key="frame" x="0.0" y="580" width="375" height="60"/>
+                                                <rect key="frame" x="0.0" y="602" width="375" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t8d-zP-lTa" id="Dfy-Zx-XbT">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -659,7 +660,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmZ-g5-mWH" userLabel="Terms and conditions">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-Km-a71" userLabel="Terms and conditions check box button" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-Km-a71" userLabel="Terms and conditions check box button" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
                                                                     <rect key="frame" x="8" y="10" width="97" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="GWg-9l-CGI"/>
@@ -668,12 +669,12 @@
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uim-CF-zm0" userLabel="Terms and conditions button">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uim-CF-zm0" userLabel="Terms and conditions button">
                                                                     <rect key="frame" x="110" y="10" width="235" height="39.5"/>
                                                                     <state key="normal" title="Terms and conditions."/>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="uim-CF-zm0" firstAttribute="top" secondItem="ZmZ-g5-mWH" secondAttribute="top" constant="10" id="9Nq-BY-qUM"/>
                                                                 <constraint firstItem="Ysm-Km-a71" firstAttribute="leading" secondItem="ZmZ-g5-mWH" secondAttribute="leading" constant="8" id="KVq-cK-N5d"/>
@@ -696,7 +697,7 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oy5-FD-rJ2" userLabel="CheckBox" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oy5-FD-rJ2" userLabel="CheckBox" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
                                         <rect key="frame" x="25" y="532" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="72x-pq-ZTc"/>
@@ -709,7 +710,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-s6-4Vd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-s6-4Vd">
                                         <rect key="frame" x="143" y="532" width="222" height="30"/>
                                         <state key="normal" title="Terms and Conditions"/>
                                         <connections>
@@ -717,7 +718,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="usO-ax-8Np" firstAttribute="top" secondItem="SbW-kb-K9o" secondAttribute="bottom" constant="10" id="0KW-pB-HpE"/>
                                     <constraint firstItem="usO-ax-8Np" firstAttribute="leading" secondItem="o27-Yx-I5j" secondAttribute="leading" constant="128" id="A5e-sR-3Y4"/>
@@ -743,14 +744,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oI7-a1-AdD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="o27-Yx-I5j" firstAttribute="top" secondItem="oI7-a1-AdD" secondAttribute="top" id="KC9-c3-xGO"/>
                             <constraint firstItem="oI7-a1-AdD" firstAttribute="trailing" secondItem="o27-Yx-I5j" secondAttribute="trailing" id="gpm-uh-5yl"/>
                             <constraint firstItem="o27-Yx-I5j" firstAttribute="leading" secondItem="oI7-a1-AdD" secondAttribute="leading" id="jBO-zT-RI1"/>
                             <constraint firstItem="oI7-a1-AdD" firstAttribute="bottom" secondItem="o27-Yx-I5j" secondAttribute="bottom" id="vcB-QG-4XF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oI7-a1-AdD"/>
                     </view>
                     <connections>
                         <outlet property="btnRegister" destination="SbW-kb-K9o" id="Qo9-bh-Ss5"/>
@@ -764,13 +765,57 @@
             <point key="canvasLocation" x="1741.5999999999999" y="139.880059970015"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1CP-c2-9yS">
+            <size key="intrinsicContentSize" width="72" height="18"/>
+        </designable>
+        <designable name="2WB-j9-pz0">
+            <size key="intrinsicContentSize" width="345" height="39.220703125"/>
+        </designable>
+        <designable name="Eqb-gf-hFV">
+            <size key="intrinsicContentSize" width="55" height="18"/>
+        </designable>
+        <designable name="MxG-T1-W5d">
+            <size key="intrinsicContentSize" width="24" height="21"/>
+        </designable>
+        <designable name="NYo-h4-lqt">
+            <size key="intrinsicContentSize" width="359" height="39.220703125"/>
+        </designable>
+        <designable name="Oy5-FD-rJ2">
+            <size key="intrinsicContentSize" width="24" height="18"/>
+        </designable>
+        <designable name="Rd8-Sk-nnP">
+            <size key="intrinsicContentSize" width="359" height="39.220703125"/>
+        </designable>
+        <designable name="Wom-Cf-iTk">
+            <size key="intrinsicContentSize" width="72" height="18"/>
+        </designable>
+        <designable name="Ysm-Km-a71">
+            <size key="intrinsicContentSize" width="97" height="18"/>
+        </designable>
+        <designable name="a4T-sw-SyP">
+            <size key="intrinsicContentSize" width="55" height="18"/>
+        </designable>
+        <designable name="dWx-h3-s1G">
+            <size key="intrinsicContentSize" width="359" height="39.220703125"/>
+        </designable>
+        <designable name="iKF-4d-0rO">
+            <size key="intrinsicContentSize" width="359" height="39.220703125"/>
+        </designable>
+        <designable name="xdZ-e3-j6o">
+            <size key="intrinsicContentSize" width="345" height="39.220703125"/>
+        </designable>
+    </designables>
     <resources>
         <image name="calendar" width="96" height="96"/>
         <namedColor name="ColorEV">
-            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.23899999260902405" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -44,23 +44,29 @@ class CreditHistoryCell: UITableViewCell{
     }
     
     func applyTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
-            
-            normalPlusImage = UIImage(named: "ic_btn_plus_green")
-            selectionPlusImage = UIImage(named: "ic_btn_plus_green_lite")
-            
-            normalMinusImage = UIImage(named: "ic_btn_minus_green")
-            selectionMinusImage = UIImage(named: "ic_btn_minus_green_lite")
-            
-        }else{
-            normalPlusImage = UIImage(named: "ic_btn_plus_blue")
-            selectionPlusImage = UIImage(named: "plus_blue_lite")
-            
-            normalMinusImage = UIImage(named: "ic_btn_minus_blue")
-            selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
-            
-        }
+//        if !AppEngine.sharedInstance.isEvApp(){
+//            
+//            normalPlusImage = UIImage(named: "ic_btn_plus_green")
+//            selectionPlusImage = UIImage(named: "ic_btn_plus_green_lite")
+//            
+//            normalMinusImage = UIImage(named: "ic_btn_minus_green")
+//            selectionMinusImage = UIImage(named: "ic_btn_minus_green_lite")
+//            
+//        }else{
+//            normalPlusImage = UIImage(named: "ic_btn_plus_blue")
+//            selectionPlusImage = UIImage(named: "plus_blue_lite")
+//            
+//            normalMinusImage = UIImage(named: "ic_btn_minus_blue")
+//            selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
+//            
+//        }
         
+        normalPlusImage = UIImage(named: "ic_btn_plus_blue")
+        selectionPlusImage = UIImage(named: "plus_blue_lite")
+        
+        normalMinusImage = UIImage(named: "ic_btn_minus_blue")
+        selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
+
         let appColor = UIColor.getAppThemeColor()
         creditAmount?.textColor = appColor
         seeMoreButton?.setTitleColor(appColor, for: .normal)

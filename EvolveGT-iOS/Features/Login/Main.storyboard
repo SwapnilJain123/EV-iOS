@@ -37,7 +37,7 @@
         <!--App Mode Selection Controller-->
         <scene sceneID="q8M-O4-hh1">
             <objects>
-                <viewController storyboardIdentifier="AppModeSelector" id="UpC-NE-WFh" customClass="AppModeSelectionController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppModeSelector" id="UpC-NE-WFh" customClass="AppModeSelectionController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Adx-1z-PoB">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +304,7 @@
         <!--Pwd Reset Ack Controller-->
         <scene sceneID="3hZ-KC-IIg">
             <objects>
-                <viewController storyboardIdentifier="PasswordResetAckVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="coy-Ng-NR5" customClass="PwdResetAckController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordResetAckVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="coy-Ng-NR5" customClass="PwdResetAckController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zez-xe-bvk">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,7 +312,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-Vi-t2e">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action_success" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-hc-Vdy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_moto_action_success" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-hc-Vdy">
                                         <rect key="frame" x="165" y="216" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="TkB-2y-ht7"/>
@@ -385,7 +385,7 @@
         <!--Forgot Password Controller-->
         <scene sceneID="DKw-e8-dep">
             <objects>
-                <viewController storyboardIdentifier="ForgotPasswordVC" modalPresentationStyle="fullScreen" id="O4f-Wy-Suh" customClass="ForgotPasswordController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordVC" modalPresentationStyle="fullScreen" id="O4f-Wy-Suh" customClass="ForgotPasswordController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xY-5f-DGv">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,7 +393,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z09-Ty-SBI" userLabel="RootView">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-XR-wMX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto_forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-XR-wMX">
                                         <rect key="frame" x="165" y="216" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="dBH-gP-1GW"/>
@@ -544,12 +544,12 @@
     </designables>
     <resources>
         <image name="ev_logo" width="106.33333587646484" height="106.33333587646484"/>
-        <image name="forgot_password" width="135.5" height="135.5"/>
-        <image name="ic_action_success" width="90.333335876464844" height="90.333335876464844"/>
+        <image name="ic_moto_action_success" width="90.333335876464844" height="90.333335876464844"/>
+        <image name="moto_forgot_password" width="90.333335876464844" height="90.333335876464844"/>
         <image name="moto_logo" width="106.33333587646484" height="106.33333587646484"/>
-        <image name="splash_logo" width="780" height="1191"/>
+        <image name="splash_logo" width="253" height="74"/>
         <namedColor name="ColorEV">
-            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.23899999260902405" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,18 +13,18 @@
         <!--Waiver View Controller-->
         <scene sceneID="DeI-Kp-2bw">
             <objects>
-                <viewController storyboardIdentifier="E-WaiverVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zch-iK-396" customClass="EWaiverViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="E-WaiverVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zch-iK-396" customClass="EWaiverViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2sF-MK-lei">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wWX-Ui-o58">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <color key="sectionIndexBackgroundColor" name="RootBackGround"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="E-WaiverVC" id="6S1-Hl-2vv" customClass="WavierCell" customModule="EvolveGT_QA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="124"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="E-WaiverVC" id="6S1-Hl-2vv" customClass="WavierCell" customModule="ASRA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6S1-Hl-2vv" id="OAg-eT-Cgr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -133,13 +133,13 @@
         <!--Waiver Details View Controller-->
         <scene sceneID="FDx-Ya-tcl">
             <objects>
-                <viewController storyboardIdentifier="WaiverDeatailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pCx-bV-Bjq" customClass="EWaiverDetailsViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WaiverDeatailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pCx-bV-Bjq" customClass="EWaiverDetailsViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mdw-F6-mok">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meT-wd-XeT" userLabel="Root view">
-                                <rect key="frame" x="10" y="69" width="394" height="124"/>
+                                <rect key="frame" x="10" y="73" width="394" height="124"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bUC-Ep-5Tu">
                                         <rect key="frame" x="50" y="8" width="294" height="80"/>
@@ -188,7 +188,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-yP-Buo" userLabel="Sign button">
                                 <rect key="frame" x="25" y="792" width="364" height="45"/>
-                                <color key="backgroundColor" red="0.11236817390000001" green="0.68124860529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.095194482750000003" green="0.1899584164" blue="0.62669134140000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IWb-TH-F1S"/>
                                 </constraints>
@@ -201,7 +201,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before participating in this event, you must complete and sign required document below:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2X-tZ-nIX" userLabel="Disclimer label">
-                                <rect key="frame" x="10" y="191.5" width="394" height="54"/>
+                                <rect key="frame" x="10" y="195.5" width="394" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="INL-TV-gxM"/>
                                 </constraints>
@@ -210,7 +210,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-c8-6XV">
-                                <rect key="frame" x="10" y="245.5" width="394" height="499.5"/>
+                                <rect key="frame" x="10" y="249.5" width="394" height="495.5"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -257,16 +257,16 @@
         <!--Sign View Controller-->
         <scene sceneID="gDo-ND-yix">
             <objects>
-                <viewController storyboardIdentifier="signVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F8G-7H-k98" customClass="SignViewController" customModule="EvolveGT_QA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F8G-7H-k98" customClass="SignViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRd-x2-oay">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1C-R5-4Is" userLabel="Root view">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="697-Lw-Uv1" userLabel="UserInputs">
-                                        <rect key="frame" x="10" y="198.5" width="394" height="375"/>
+                                        <rect key="frame" x="10" y="198.5" width="394" height="371"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Name and location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmR-kZ-pXj" userLabel="Name and location" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="5" y="0.0" width="384" height="45"/>
@@ -308,7 +308,7 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ppf-ZT-Joo">
-                                                <rect key="frame" x="0.0" y="185" width="394" height="190"/>
+                                                <rect key="frame" x="0.0" y="185" width="394" height="186"/>
                                                 <color key="backgroundColor" name="RootBackGround"/>
                                             </view>
                                         </subviews>
@@ -336,14 +336,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7l-26-fxH" userLabel="sign view" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
-                                        <rect key="frame" x="10" y="608" width="394" height="130"/>
+                                        <rect key="frame" x="10" y="604" width="394" height="130"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="d2w-il-yyB"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r4G-2y-Qbo">
-                                        <rect key="frame" x="25" y="753" width="364" height="45"/>
+                                        <rect key="frame" x="25" y="749" width="364" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-7D-gNd" userLabel="clear button">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="45"/>
@@ -369,7 +369,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw signature here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQT-eW-mi1" userLabel="Draw signature">
-                                        <rect key="frame" x="10" y="583.5" width="394" height="19.5"/>
+                                        <rect key="frame" x="10" y="579.5" width="394" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -472,7 +472,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ars-Ol-aev" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HCJ-fM-h1s">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -502,7 +502,7 @@
     <resources>
         <image name="ic_down_arrow" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="ColorEV">
-            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.23899999260902405" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

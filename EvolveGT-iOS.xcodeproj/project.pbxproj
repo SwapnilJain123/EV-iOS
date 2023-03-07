@@ -920,7 +920,7 @@
 		103366662483AE72009AF19A /* ArchieCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCardViewController.swift; sourceTree = "<group>"; };
 		103366672483AE72009AF19A /* ArchiCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiCardCell.swift; sourceTree = "<group>"; };
 		1033666D2483AE98009AF19A /* ArchieCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCard.swift; sourceTree = "<group>"; };
-		1039FDF9244F1A1800190088 /* Evolve GT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evolve GT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1039FDF9244F1A1800190088 /* ASRA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASRA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1039FE05244F1A1A00190088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1446,7 +1446,7 @@
 		1039FDFA244F1A1800190088 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1039FDF9244F1A1800190088 /* Evolve GT.app */,
+				1039FDF9244F1A1800190088 /* ASRA.app */,
 				103B25B4249940BE00BB8CB9 /* EvolveGT-QA.app */,
 				103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */,
 				1098831F24BC48BE001F217C /* Tests.xctest */,
@@ -2072,7 +2072,7 @@
 			);
 			name = "EvolveGT-iOS";
 			productName = "EvolveGT-iOS";
-			productReference = 1039FDF9244F1A1800190088 /* Evolve GT.app */;
+			productReference = 1039FDF9244F1A1800190088 /* ASRA.app */;
 			productType = "com.apple.product-type.application";
 		};
 		103B24E0249940BE00BB8CB9 /* EvolveGT-QA */ = {
@@ -3355,16 +3355,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.5.2;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ASRA/CCS;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
-				PRODUCT_NAME = "Evolve GT";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.uat;
+				PRODUCT_NAME = ASRA;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3378,16 +3379,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.5.2;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ASRA/CCS;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
-				PRODUCT_NAME = "Evolve GT";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
+				PRODUCT_NAME = ASRA;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

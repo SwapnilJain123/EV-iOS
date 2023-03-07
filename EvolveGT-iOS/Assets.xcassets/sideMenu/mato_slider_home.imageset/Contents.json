@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "homesideMenu.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "mato_slider_home@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

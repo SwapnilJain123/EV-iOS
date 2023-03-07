@@ -78,44 +78,59 @@ extension UIButton{
     }
     
     func applyPlusButtonTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
-            
-            let normalPlusImage = UIImage(named: "ic_btn_plus_green")
-            let selectionPlusImage = UIImage(named: "ic_btn_plus_green_lite")
-            
-            self.setImage(normalPlusImage, for: .normal)
-            self.setImage(selectionPlusImage, for: .highlighted)
-            self.setImage(selectionPlusImage, for: .selected)
-            
-        }else{
-            let normalPlusImage = UIImage(named: "ic_btn_plus_blue")
-            let selectionPlusImage = UIImage(named: "plus_blue_lite")
-            
-            self.setImage(normalPlusImage, for: .normal)
-            self.setImage(selectionPlusImage, for: .highlighted)
-            self.setImage(selectionPlusImage, for: .selected)
-            
-        }
+//        if AppEngine.sharedInstance.isEvApp(){
+//            
+//            let normalPlusImage = UIImage(named: "ic_btn_plus_green")
+//            let selectionPlusImage = UIImage(named: "ic_btn_plus_green_lite")
+//            
+//            self.setImage(normalPlusImage, for: .normal)
+//            self.setImage(selectionPlusImage, for: .highlighted)
+//            self.setImage(selectionPlusImage, for: .selected)
+//            
+//        }else{
+//            let normalPlusImage = UIImage(named: "ic_btn_plus_blue")
+//            let selectionPlusImage = UIImage(named: "plus_blue_lite")
+//            
+//            self.setImage(normalPlusImage, for: .normal)
+//            self.setImage(selectionPlusImage, for: .highlighted)
+//            self.setImage(selectionPlusImage, for: .selected)
+//            
+//        }
+//        
+        let normalPlusImage = UIImage(named: "ic_btn_plus_blue")
+        let selectionPlusImage = UIImage(named: "plus_blue_lite")
+        
+        self.setImage(normalPlusImage, for: .normal)
+        self.setImage(selectionPlusImage, for: .highlighted)
+        self.setImage(selectionPlusImage, for: .selected)
+
     }
     func applyMinusButtonTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
-            
-            
-            let normalMinusImage = UIImage(named: "ic_btn_minus_green")
-            let selectionMinusImage = UIImage(named: "ic_btn_minus_green_lite")
-            
-            self.setImage(normalMinusImage, for: .normal)
-            self.setImage(selectionMinusImage, for: .highlighted)
-            self.setImage(selectionMinusImage, for: .selected)
-        }else{
-            
-            let normalMinusImage = UIImage(named: "ic_btn_minus_blue")
-            let selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
-            self.setImage(normalMinusImage, for: .normal)
-            self.setImage(selectionMinusImage, for: .highlighted)
-            self.setImage(selectionMinusImage, for: .selected)
-            
-        }
+//        if AppEngine.sharedInstance.isEvApp(){
+//
+//
+//            let normalMinusImage = UIImage(named: "ic_btn_minus_green")
+//            let selectionMinusImage = UIImage(named: "ic_btn_minus_green_lite")
+//
+//            self.setImage(normalMinusImage, for: .normal)
+//            self.setImage(selectionMinusImage, for: .highlighted)
+//            self.setImage(selectionMinusImage, for: .selected)
+//        }else{
+//
+//            let normalMinusImage = UIImage(named: "ic_btn_minus_blue")
+//            let selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
+//            self.setImage(normalMinusImage, for: .normal)
+//            self.setImage(selectionMinusImage, for: .highlighted)
+//            self.setImage(selectionMinusImage, for: .selected)
+//
+//        }
+        
+        let normalMinusImage = UIImage(named: "ic_btn_minus_blue")
+        let selectionMinusImage = UIImage(named: "ic_btn_minus_blue_lite")
+        self.setImage(normalMinusImage, for: .normal)
+        self.setImage(selectionMinusImage, for: .highlighted)
+        self.setImage(selectionMinusImage, for: .selected)
+
     }
     
     func applyEditButtonTheme(){

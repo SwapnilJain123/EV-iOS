@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor {
     
-    private static let COLOR_EV = "#08a53a"
+    private static let COLOR_EV = "#003DA6"
     private static let COLOR_MOTO = "#376cde"
     
     private static let COLOR_EV_LITE = "#00574B"
