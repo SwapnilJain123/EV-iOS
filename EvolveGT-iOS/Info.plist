@@ -38,6 +38,10 @@
 			</array>
 		</dict>
 	</array>
+    
+    <key>CFBundleDisplayName</key>
+    <string>$(PRODUCT_NAME)</string>
+    
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>CHECKOUT_MODE</key>

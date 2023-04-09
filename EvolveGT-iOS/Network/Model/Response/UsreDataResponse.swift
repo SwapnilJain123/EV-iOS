@@ -31,6 +31,7 @@ struct CreditHistoryResponse : Decodable{
         case creditHistoryList = "result"
     }
 }
+
 struct MembershipListResponse: Codable {
     var memberships: [Membership]?
     var season: String?
@@ -101,6 +102,6 @@ struct ReferFriendResponse: Codable {
 
 struct ViewPassportResponse: Codable {
     var status: Int?
-    var msg: String?
+var msg: String?
     var data: PassportInfo?
 }

@@ -20,23 +20,23 @@ class LoginApi : BaseApiAdapter{
     }
     
     func forgotPassword(email: String){
-           
+        
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.FORGOT_PASSWORD)"
-           setUrl(url: url)
-           let forgotRequest = ForgotPasswordRequest(userEmail: email)
-           setParameters(parameters: makeDictionary(forgotRequest))
-           super.makeRequest(method: .POST)
-       }
-    
+        setUrl(url: url)
+        let forgotRequest = ForgotPasswordRequest(userEmail: email)
+        setParameters(parameters: makeDictionary(forgotRequest))
+        super.makeRequest(method: .POST)
+    }
     
     func createAccount(signupRequest: RegistrationRequest){
-           
+        
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CREATE_ACCOUNT)"
-           setUrl(url: url)
-          
-           setParameters(parameters: makeDictionary(signupRequest))
-           super.makeRequest(method: .POST)
-       }
+        setUrl(url: url)
+        
+        setParameters(parameters: makeDictionary(signupRequest))
+        print(makeDictionary(signupRequest.gender))
+        super.makeRequest(method: .POST)
+    }
     
     
 }

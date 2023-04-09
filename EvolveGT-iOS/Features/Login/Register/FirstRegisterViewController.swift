@@ -15,6 +15,12 @@ class FirstRegisterViewController:ETViewController {
     let interactor = RegisterInteractor()
     var validated : Bool = false;
     
+    var isMale: Bool = false
+    var isFmale: Bool = false
+    var isUnspecified: Bool = true
+    
+    @IBOutlet weak var myTable: UITableView!
+
     @IBOutlet weak var indicator: RegPhaseIndicator!
     @IBAction func didPressNextButton(_ sender: UIButton) {
         
@@ -117,13 +123,31 @@ extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
             
         }else if indexPath.row == 4{
             
-            let cell = tableView.dequeueReusableCell(withIdentifier:"TwoOptionCell",for: indexPath) as! TwoOptionsCell
-            cell.leftItemTitle = "Male"
-             cell.rightItemTitle = "Female"
-            cell.didChangeStatus = { status in
-                self.interactor.signupRequest.gender = status ? "Male" : "Female"
+            let cell = tableView.dequeueReusableCell(withIdentifier:"TwoOptionsFirestCell",for: indexPath) as! TwoOptionsFirestCell
+            if self.isMale {
+                cell.imgMale.image = UIImage(systemName: "circle.inset.filled")
+                cell.imgFMale.image = UIImage(systemName: "circle")
+                cell.imgUnspecified.image = UIImage(systemName: "circle")
+            } else if self.isFmale {
+                cell.imgFMale.image = UIImage(systemName: "circle.inset.filled")
+                cell.imgMale.image = UIImage(systemName: "circle")
+                cell.imgUnspecified.image = UIImage(systemName: "circle")
+            } else if self.isUnspecified {
+                cell.imgUnspecified.image = UIImage(systemName: "circle.inset.filled")
+                cell.imgMale.image = UIImage(systemName: "circle")
+                cell.imgFMale.image = UIImage(systemName: "circle")
             }
-            cell.updateUi(title: "Gender", leftItemChecked: interactor.signupRequest.gender?.lowercased() == "male")
+            
+            cell.btnMale.addTarget(self, action: #selector(selectedMale), for: .touchUpInside)
+            cell.btnFMale.addTarget(self, action: #selector(selectedFemale), for: .touchUpInside)
+            cell.btnUnspecified.addTarget(self, action: #selector(selectedUnspecified), for: .touchUpInside)
+
+//            cell.leftItemTitle = "Male"
+//             cell.rightItemTitle = "Female"
+//            cell.didChangeStatus = { status in
+//                self.interactor.signupRequest.gender = status ? "Male" : "Female"
+//            }
+//            cell.updateUi(title: "Gender", leftItemChecked: interactor.signupRequest.gender?.lowercased() == "male")
             return cell
             
         }else if indexPath.row == 5 {
@@ -143,7 +167,31 @@ extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     
-    
+    @objc func selectedMale(){
+        self.isMale = true
+        self.isFmale = false
+        self.isUnspecified = false
+        self.interactor.signupRequest.gender = "Male"
+        self.myTable.reloadData()
+    }
+
+    @objc func selectedFemale(){
+        self.isMale = false
+        self.isFmale = true
+        self.isUnspecified = false
+        self.interactor.signupRequest.gender = "Female"
+
+        self.myTable.reloadData()
+    }
+
+    @objc func selectedUnspecified(){
+        self.isMale = false
+        self.isFmale = false
+        self.isUnspecified = true
+        self.myTable.reloadData()
+        self.interactor.signupRequest.gender = "Unspecified"
+    }
+
     func selectDateOfBirth(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = String.FORMAT_YYYY_MM_DD_HIPHEN

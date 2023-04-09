@@ -20,6 +20,8 @@ struct SlideMenuItem{
     static let TAG_SETTINGS = 8
     static let TAG_ABOUT_US = 9
     static let TAG_SWITCH_DASHBOARD = 10
+    static let TAG_Delete_Me = 15
+
     static let TAG_LOG_OUT = 11
     static let TAG_E_WAIVER = 12
     static let TAG_REFER_FRIEND = 13
@@ -60,11 +62,13 @@ struct SlideMenuItem{
         
         let transferCredit = SlideMenuItem("Transfer Credit", "credit-transfer-ev", "credit-transfer-moto",TAG_TRANSFER_CREDIT)
         
+        let deleteMe = SlideMenuItem("Delete Me", "DeleteMe", "DeleteMe",TAG_Delete_Me)
+
         let logout = SlideMenuItem("Logout", "logoutGreen", "mato_slider_logout",TAG_LOG_OUT)
         
          
 //        let referFriend = SlideMenuItem("Refer a friend", "refer_a_friend", "refer_a_friend_moto",TAG_REFER_FRIEND)
 //
-        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, waiver,transferCredit, logout   ]///, referFriend
+        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, waiver,transferCredit, deleteMe, logout]///, referFriend
     }
 }

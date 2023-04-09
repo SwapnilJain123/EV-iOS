@@ -99,37 +99,45 @@ class RegistrationMaskedTextFieldCell: UITableViewCell, UITextFieldDelegate{
         }
     }
 }
-class TwoOptionsCell: UITableViewCell, RadioButtonDelegate{
+class TwoOptionsFirestCell: UITableViewCell, RadioButtonDelegate{
     
     @IBOutlet weak var itemTitle: UILabel!
+    @IBOutlet weak var imgMale: UIImageView!
+    @IBOutlet weak var imgFMale: UIImageView!
+    @IBOutlet weak var imgUnspecified: UIImageView!
+    @IBOutlet weak var btnMale: UIButton!
+    @IBOutlet weak var btnFMale: UIButton!
+    @IBOutlet weak var btnUnspecified: UIButton!
+
+    
     func radioButtonDidSelect(_ button: RadioButton) {
         
         if(didChangeStatus != nil){
-            didChangeStatus!(rbItem1.isOn)
+            // didChangeStatus!(rbItem1.isOn)
         }
     }
     
     func radioButtonDidDeselect(_ button: RadioButton) {
         if(didChangeStatus != nil){
-            didChangeStatus!(rbItem1.isOn)
+           // didChangeStatus!(rbItem1.isOn)
         }
     }
     
     var didChangeStatus : ((_ checkedStatus: Bool) -> Void)?
     
-    @IBOutlet weak var radioGroup: RadioButtonContainerView!
+   // @IBOutlet weak var radioGroup: RadioButtonContainerView!
     
-    @IBOutlet weak var rbItem1: RadioButton!
+   // @IBOutlet weak var rbItem1: RadioButton!
     
-    @IBOutlet weak var rbItem2: RadioButton!
+   // @IBOutlet weak var rbItem2: RadioButton!
     
-    var leftItemTitle = "Yes"
-    var rightItemTitle = "No"
+   // var leftItemTitle = "Yes"
+   // var rightItemTitle = "No"
     
     func updateUi(title: String, leftItemChecked: Bool){
         
         itemTitle.text = title
-        rbItem1.applyRadioButtonTheme()
+       /* rbItem1.applyRadioButtonTheme()
         rbItem2.applyRadioButtonTheme()
         rbItem1.isOn = leftItemChecked
         rbItem2.isOn = !leftItemChecked
@@ -138,7 +146,7 @@ class TwoOptionsCell: UITableViewCell, RadioButtonDelegate{
         rbItem2.setTitle(rightItemTitle, for: .normal)
         
         rbItem1.delegate = self
-        rbItem2.delegate = self
+        rbItem2.delegate = self*/
     }
     
 }
@@ -221,4 +229,48 @@ class PasswordCell:UITableViewCell, UITextFieldDelegate{
             tfConfirmPassword.errorMessage = ValidationErrors.incorrectConfirmPassword
         }
     }
+}
+
+class TwoOptionsCell: UITableViewCell, RadioButtonDelegate{
+    
+    @IBOutlet weak var itemTitle: UILabel!
+    func radioButtonDidSelect(_ button: RadioButton) {
+        
+        if(didChangeStatus != nil){
+            didChangeStatus!(rbItem1.isOn)
+        }
+    }
+    
+    func radioButtonDidDeselect(_ button: RadioButton) {
+        if(didChangeStatus != nil){
+            didChangeStatus!(rbItem1.isOn)
+        }
+    }
+    
+    var didChangeStatus : ((_ checkedStatus: Bool) -> Void)?
+    
+    @IBOutlet weak var radioGroup: RadioButtonContainerView!
+    
+    @IBOutlet weak var rbItem1: RadioButton!
+    
+    @IBOutlet weak var rbItem2: RadioButton!
+    
+    var leftItemTitle = "Yes"
+    var rightItemTitle = "No"
+    
+    func updateUi(title: String, leftItemChecked: Bool){
+        
+        itemTitle.text = title
+        rbItem1.applyRadioButtonTheme()
+        rbItem2.applyRadioButtonTheme()
+        rbItem1.isOn = leftItemChecked
+        rbItem2.isOn = !leftItemChecked
+        
+        rbItem1.setTitle(leftItemTitle, for: .normal)
+        rbItem2.setTitle(rightItemTitle, for: .normal)
+        
+        rbItem1.delegate = self
+        rbItem2.delegate = self
+    }
+    
 }

@@ -55,6 +55,17 @@ extension UIViewController{
             vc.present(alerController, animated: true, completion: nil)
         }
         
+        func confirmationAlertWithoutCancel(title: String?, message: String?, btnText : String, handler: @escaping (()->Void)) {
+            let alerController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: btnText, style: .default){ alertAction in
+                // alerController.dismiss(animated: false, completion: nil)
+                handler()
+            }
+            alerController.addAction(confirmAction)
+                        
+            vc.present(alerController, animated: true, completion: nil)
+        }
+
         func addLoadingIndicator(_ message: String?){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.150, execute: {
                 // MBProgressHUD.showAdded(to: self.view, animated: true)
