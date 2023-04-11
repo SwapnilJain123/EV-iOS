@@ -62,7 +62,7 @@ struct SlideMenuItem{
         
         let transferCredit = SlideMenuItem("Transfer Credit", "credit-transfer-ev", "credit-transfer-moto",TAG_TRANSFER_CREDIT)
         
-        let deleteMe = SlideMenuItem("Delete Me", "DeleteMe", "DeleteMe",TAG_Delete_Me)
+        let deleteMe = SlideMenuItem("Delete Account", "DeleteMe", "DeleteMe",TAG_Delete_Me)
 
         let logout = SlideMenuItem("Logout", "logoutGreen", "mato_slider_logout",TAG_LOG_OUT)
         
