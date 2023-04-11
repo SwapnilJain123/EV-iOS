@@ -1841,11 +1841,6 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
             <point key="canvasLocation" x="-1488" y="-141"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="uNG-iu-UsA">
-            <size key="intrinsicContentSize" width="273" height="18"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Search" width="30" height="30"/>
         <image name="filter" width="24" height="24"/>
