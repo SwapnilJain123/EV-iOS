@@ -1,0 +1,108 @@
+//
+//  UpcomingEventsController.swift
+//  EvolveGT-iOS
+//
+//  Created by Subair Ariyil on 09/05/20.
+//  Copyright © 2020 YaraTech. All rights reserved.
+//
+
+import Foundation
+import UIKit
+class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableViewDataSource{
+    
+    
+    
+    @IBOutlet weak var eventsTableView: UITableView!
+    var events : [EnrolledEvent]?
+    
+    weak var tabHolderController: EnrolledEventsSlidingTabController?
+    
+    func reloadPage() {
+        eventsTableView?.reloadData()
+        Log.d("Enrolled - Event: Upcoming Page reloaded \(events?.count ?? 0)")
+
+        
+        if events?.count ?? 0 == 0{
+            eventsTableView?.isHidden = true
+            self.ext.displayEmptyMessage(message: ErrorMessages.emptyEnrolledEvents)
+        }else{
+            self.ext.hideErrorView()
+            eventsTableView?.isHidden = false
+        }
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        eventsTableView.dataSource = self
+
+        eventsTableView.rowHeight = UITableView.automaticDimension
+        eventsTableView.estimatedRowHeight = 120
+        eventsTableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 220, right: 0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        eventsTableView.dataSource = self
+
+        Log.d("Enrolled - Event: Event Count :\(events?.count ?? 0)")
+        reloadPage()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count = events?.count ?? 0
+        eventsTableView.setEmptyBackground(rowCount: count, message: ErrorMessages.emptyEnrolledEvents)
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let eventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EnrolledEventCell
+        
+        eventCell.populateViews(event: events![indexPath.row], isUpComing: true)
+        eventCell.delegate = self
+        return eventCell
+    }
+}
+extension UpcomingEventsController : UITableViewDelegate{
+    
+    
+     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let event = events![indexPath.row]
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+
+                    // Create an action for sharing
+                    let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
+                        print("Sharing \(event.productName ?? "")")
+                    }
+
+                    // Create other actions...
+
+                    return UIMenu(title: "", children: [share])
+                }
+    }
+    
+  
+}
+extension UpcomingEventsController: EnrolledEventCellDelegate{
+    
+    func cancelEvent(event: EnrolledEvent) {
+        self.ext.confirmationAlert(title: "Cancel Event", message: "You are about to cancel the event - \(event.productName ?? ""). Do you really want to proceed?", btnText: "Yes", btnDismiss: "No"){
+            let interactor = EnrolledEventsInteractor()
+            interactor.delegate = self
+            interactor.cancelEvent(itemID: event.orderItemID ?? "")
+        }
+    }
+    func showPassport(event: EnrolledEvent) {
+        
+    }
+    func showAccessories(event: EnrolledEvent) {
+        
+    }
+    func uploadPassport(event: EnrolledEvent) {
+        
+    }
+    override func showSuccessToastMessage(message: String) {
+        super.showSuccessToastMessage(message: message)
+        tabHolderController?.fetchEventHistory()
+    }
+}

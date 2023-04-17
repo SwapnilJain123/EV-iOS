@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gift Card View Controller-->
+        <scene sceneID="AEH-1A-c4L">
+            <objects>
+                <viewController storyboardIdentifier="giftCardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gi-sh-ufW" customClass="GiftCardViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pOk-pH-WEN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dx-sx-7Rn">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-7M-urK">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
+                                        <color key="backgroundColor" name="RootBackGround"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="giftCardCell" id="IZa-ZR-l52" customClass="GiftCardCell" customModule="ASRA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="106"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZa-ZR-l52" id="by9-65-Gej">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS8-pg-oUk">
+                                                            <rect key="frame" x="8" y="4" width="398" height="98"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        </view>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nrf-Sz-wxZ">
+                                                            <rect key="frame" x="10" y="8" width="120" height="90"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="90" id="6eS-0g-Lok"/>
+                                                                <constraint firstAttribute="width" constant="120" id="JG7-69-0u9"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0la-qT-3go">
+                                                            <rect key="frame" x="150" y="27" width="256" height="52"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="GIFT CARD $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asf-nU-wfd">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PRICE : $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWl-cS-UvM">
+                                                                    <rect key="frame" x="0.0" y="31.5" width="256" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="RootBackGround"/>
+                                                    <constraints>
+                                                        <constraint firstItem="pS8-pg-oUk" firstAttribute="leading" secondItem="by9-65-Gej" secondAttribute="leading" constant="8" id="11e-cp-sfv"/>
+                                                        <constraint firstItem="0la-qT-3go" firstAttribute="leading" secondItem="Nrf-Sz-wxZ" secondAttribute="trailing" constant="20" id="7nV-2K-GeJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pS8-pg-oUk" secondAttribute="trailing" constant="8" id="DOf-QV-Bfa"/>
+                                                        <constraint firstItem="Nrf-Sz-wxZ" firstAttribute="top" secondItem="by9-65-Gej" secondAttribute="top" constant="8" id="GW9-VM-dBr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pS8-pg-oUk" secondAttribute="bottom" constant="4" id="JBH-g3-EXf"/>
+                                                        <constraint firstItem="Nrf-Sz-wxZ" firstAttribute="leading" secondItem="by9-65-Gej" secondAttribute="leading" constant="10" id="S0I-DQ-OFm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0la-qT-3go" secondAttribute="trailing" constant="8" id="bZy-SM-3kL"/>
+                                                        <constraint firstItem="0la-qT-3go" firstAttribute="centerY" secondItem="by9-65-Gej" secondAttribute="centerY" id="byX-Nj-YbL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Nrf-Sz-wxZ" secondAttribute="bottom" constant="8" id="ddC-KJ-tc2"/>
+                                                        <constraint firstItem="pS8-pg-oUk" firstAttribute="top" secondItem="by9-65-Gej" secondAttribute="top" constant="4" id="usX-oK-bCx"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="giftCardImage" destination="Nrf-Sz-wxZ" id="nih-qn-bZL"/>
+                                                    <outlet property="giftCardPriceLabel" destination="uWl-cS-UvM" id="1Pk-PG-cxx"/>
+                                                    <outlet property="giftCardTitleLabel" destination="asf-nU-wfd" id="Gxe-Jr-Zr2"/>
+                                                    <outlet property="rootView" destination="pS8-pg-oUk" id="Gda-Gj-hqM"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="RootBackGround"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BCB-7M-urK" secondAttribute="trailing" id="PMS-KU-lfy"/>
+                                    <constraint firstItem="BCB-7M-urK" firstAttribute="top" secondItem="9Dx-sx-7Rn" secondAttribute="top" id="Rod-5Q-Cp4"/>
+                                    <constraint firstAttribute="bottom" secondItem="BCB-7M-urK" secondAttribute="bottom" id="eJr-sA-kd5"/>
+                                    <constraint firstItem="BCB-7M-urK" firstAttribute="leading" secondItem="9Dx-sx-7Rn" secondAttribute="leading" id="hsl-0o-X1p"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kcD-UC-XIz"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
+                        <constraints>
+                            <constraint firstItem="9Dx-sx-7Rn" firstAttribute="leading" secondItem="kcD-UC-XIz" secondAttribute="leading" id="3ff-4W-9eM"/>
+                            <constraint firstItem="9Dx-sx-7Rn" firstAttribute="bottom" secondItem="kcD-UC-XIz" secondAttribute="bottom" id="S1o-d2-yt8"/>
+                            <constraint firstItem="kcD-UC-XIz" firstAttribute="trailing" secondItem="9Dx-sx-7Rn" secondAttribute="trailing" id="jaS-Cl-FZq"/>
+                            <constraint firstItem="9Dx-sx-7Rn" firstAttribute="top" secondItem="kcD-UC-XIz" secondAttribute="top" id="o36-Uw-BHK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="giftCardTableVIew" destination="BCB-7M-urK" id="AIr-nM-dqy"/>
+                        <outlet property="giftCardTableView" destination="BCB-7M-urK" id="701-nq-o6X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqu-4Z-2bw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-12"/>
+        </scene>
+        <!--Gift Card Details View Controller-->
+        <scene sceneID="xhr-5t-Lxz">
+            <objects>
+                <viewController storyboardIdentifier="giftCardDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zji-Cw-slZ" customClass="GiftCardDetailsViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8P9-IC-NvT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-h7-2kk">
+                                <rect key="frame" x="0.0" y="48" width="414" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="irl-9j-iNZ">
+                                <rect key="frame" x="80" y="48" width="254" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="n4k-Y8-hoi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zJ-Z3-thF">
+                                <rect key="frame" x="10" y="208" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: $150.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08G-z9-hmO">
+                                <rect key="frame" x="10" y="237" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.11236817390000001" green="0.68124860529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Receiver Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOA-Fl-f7l" userLabel="Receiver Name" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="20" y="415.5" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Receiver Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLw-GB-bay" userLabel="Receiver Email" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="20" y="486.5" width="374" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKP-2n-bhx">
+                                <rect key="frame" x="25" y="797" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="rqa-xj-Utz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add To Cart"/>
+                                <connections>
+                                    <action selector="addToCartButtonPressed:" destination="zji-Cw-slZ" eventType="touchUpInside" id="0Qo-dS-fLQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP3-rc-5E4" userLabel="ErrorView">
+                                <rect key="frame" x="20" y="395.5" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="TextColorRed"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L7e-w0-3uJ"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
+                        <constraints>
+                            <constraint firstItem="nOA-Fl-f7l" firstAttribute="centerY" secondItem="L7e-w0-3uJ" secondAttribute="centerY" constant="-20" id="0uc-rC-n9g"/>
+                            <constraint firstItem="WLw-GB-bay" firstAttribute="trailing" secondItem="nOA-Fl-f7l" secondAttribute="trailing" id="2eN-sZ-ZDr"/>
+                            <constraint firstItem="QTc-h7-2kk" firstAttribute="leading" secondItem="L7e-w0-3uJ" secondAttribute="leading" id="4NT-r6-o5G"/>
+                            <constraint firstItem="WLw-GB-bay" firstAttribute="top" secondItem="nOA-Fl-f7l" secondAttribute="bottom" constant="32" id="9HK-3H-gn5"/>
+                            <constraint firstItem="xKP-2n-bhx" firstAttribute="leading" secondItem="L7e-w0-3uJ" secondAttribute="leading" constant="25" id="AoF-Lu-V8U"/>
+                            <constraint firstItem="nOA-Fl-f7l" firstAttribute="leading" secondItem="L7e-w0-3uJ" secondAttribute="leading" constant="20" id="CN9-Iq-AfT"/>
+                            <constraint firstItem="irl-9j-iNZ" firstAttribute="leading" secondItem="L7e-w0-3uJ" secondAttribute="leading" constant="80" id="DeW-YO-P25"/>
+                            <constraint firstItem="6zJ-Z3-thF" firstAttribute="leading" secondItem="L7e-w0-3uJ" secondAttribute="leading" constant="10" id="GqX-Ik-6GW"/>
+                            <constraint firstItem="L7e-w0-3uJ" firstAttribute="trailing" secondItem="nOA-Fl-f7l" secondAttribute="trailing" constant="20" id="HJq-1L-oVF"/>
+                            <constraint firstItem="L7e-w0-3uJ" firstAttribute="trailing" secondItem="xKP-2n-bhx" secondAttribute="trailing" constant="25" id="J0g-tB-2Gk"/>
+                            <constraint firstItem="08G-z9-hmO" firstAttribute="trailing" secondItem="6zJ-Z3-thF" secondAttribute="trailing" id="OJ3-k5-UaS"/>
+                            <constraint firstItem="L7e-w0-3uJ" firstAttribute="trailing" secondItem="irl-9j-iNZ" secondAttribute="trailing" constant="80" id="Spq-Gq-fRx"/>
+                            <constraint firstItem="L7e-w0-3uJ" firstAttribute="trailing" secondItem="QTc-h7-2kk" secondAttribute="trailing" id="V9i-bN-hF4"/>
+                            <constraint firstItem="L7e-w0-3uJ" firstAttribute="bottom" secondItem="xKP-2n-bhx" secondAttribute="bottom" constant="20" id="aFi-qq-vA9"/>
+                            <constraint firstItem="L7e-w0-3uJ" firstAttribute="trailing" secondItem="6zJ-Z3-thF" secondAttribute="trailing" constant="10" id="bdy-CM-Gnh"/>
+                            <constraint firstItem="irl-9j-iNZ" firstAttribute="top" secondItem="L7e-w0-3uJ" secondAttribute="top" id="bpc-hd-62E"/>
+                            <constraint firstItem="08G-z9-hmO" firstAttribute="top" secondItem="6zJ-Z3-thF" secondAttribute="bottom" constant="8" id="erh-4F-hOY"/>
+                            <constraint firstItem="6zJ-Z3-thF" firstAttribute="top" secondItem="irl-9j-iNZ" secondAttribute="bottom" constant="20" id="fWA-DW-A3W"/>
+                            <constraint firstItem="QTc-h7-2kk" firstAttribute="top" secondItem="irl-9j-iNZ" secondAttribute="top" id="gkV-XV-LIC"/>
+                            <constraint firstItem="QTc-h7-2kk" firstAttribute="bottom" secondItem="irl-9j-iNZ" secondAttribute="bottom" id="iUD-vn-WSw"/>
+                            <constraint firstItem="nOA-Fl-f7l" firstAttribute="top" secondItem="XP3-rc-5E4" secondAttribute="bottom" constant="20" id="l8i-dX-INN"/>
+                            <constraint firstItem="08G-z9-hmO" firstAttribute="leading" secondItem="6zJ-Z3-thF" secondAttribute="leading" id="nVl-X6-tMc"/>
+                            <constraint firstItem="XP3-rc-5E4" firstAttribute="leading" secondItem="nOA-Fl-f7l" secondAttribute="leading" id="nhA-9b-Pnk"/>
+                            <constraint firstItem="WLw-GB-bay" firstAttribute="leading" secondItem="nOA-Fl-f7l" secondAttribute="leading" id="s1E-Hf-i6t"/>
+                            <constraint firstItem="XP3-rc-5E4" firstAttribute="trailing" secondItem="nOA-Fl-f7l" secondAttribute="trailing" id="uZa-Ww-2W9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addToCartButton" destination="xKP-2n-bhx" id="t65-48-qCJ"/>
+                        <outlet property="errorViewLabel" destination="XP3-rc-5E4" id="hSk-YZ-z7q"/>
+                        <outlet property="giftCardImage" destination="irl-9j-iNZ" id="m7z-ch-INj"/>
+                        <outlet property="giftPriceLabel" destination="08G-z9-hmO" id="b5m-Zj-vZp"/>
+                        <outlet property="giftTitle" destination="6zJ-Z3-thF" id="78M-Ug-dNg"/>
+                        <outlet property="receiverEmailTF" destination="WLw-GB-bay" id="TbA-GP-mqz"/>
+                        <outlet property="receiverNameTF" destination="nOA-Fl-f7l" id="K5a-wu-Obt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCP-TS-6TK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010.4" y="-12.143928035982009"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="WLw-GB-bay">
+            <size key="intrinsicContentSize" width="374" height="39.220703125"/>
+        </designable>
+        <designable name="nOA-Fl-f7l">
+            <size key="intrinsicContentSize" width="374" height="39.220703125"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColorRed">
+            <color red="0.83099997043609619" green="0.090000003576278687" blue="0.33700001239776611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
