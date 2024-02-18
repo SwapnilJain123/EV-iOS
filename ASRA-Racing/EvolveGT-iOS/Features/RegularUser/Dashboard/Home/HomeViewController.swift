@@ -67,7 +67,6 @@ class HomeViewController: TabbedViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = false
     }
 }
@@ -76,7 +75,6 @@ extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         sections.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -191,14 +189,14 @@ extension HomeViewController: HomeViewDelegate{
     
     func didFetchCoachDuties(assignedEvents: AssignedDuty) {
         /*
-        if assignedEvents.count == 1{
-           
-        }else{
-            let vc = CoachDutiesSlidingTabController()
-            vc.assignedEvents = assignedEvents
-            self.ext.pushViewController(viewController: vc)
-        }
-        */
+         if assignedEvents.count == 1{
+         
+         }else{
+         let vc = CoachDutiesSlidingTabController()
+         vc.assignedEvents = assignedEvents
+         self.ext.pushViewController(viewController: vc)
+         }
+         */
         let vc = self.ext.getViewController(storyBoard: "CoachDuties", VCIdentifier: "CoachDutiesVC") as! CoachDutiesController
         vc.assignedDuty = assignedEvents
         self.ext.pushViewController(viewController: vc)
@@ -213,9 +211,9 @@ extension HomeViewController: HomeViewDelegate{
 }
 extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
     func showEnrolledEventList(type: EventType) {
-//        let vc = EnrolledEventsSlidingTabController()
-//        vc.selectedIndex = type == EventType.PAST ? EnrolledEventsSlidingTabController.TAB_PAST: EnrolledEventsSlidingTabController.TAB_UPCOMING
-//        self.ext.pushViewController(viewController: vc)
+        //        let vc = EnrolledEventsSlidingTabController()
+        //        vc.selectedIndex = type == EventType.PAST ? EnrolledEventsSlidingTabController.TAB_PAST: EnrolledEventsSlidingTabController.TAB_UPCOMING
+        //        self.ext.pushViewController(viewController: vc)
         
         //
         let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
@@ -258,7 +256,6 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
             self.profileView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
             scrollToRow(row: index)
         }
-        
     }
     
     func scrollToRow(row: Int){
@@ -270,7 +267,6 @@ extension HomeViewController: EventCellDelegate, CreditHistoryCellDelegate{
 }
 extension HomeViewController: ProfileCellDelegate{
     func openEventHistory(eventType: Int) {
-       // let vc = EnrolledEventsSlidingTabController()
         let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
         vc.selectedIndex = eventType
         self.ext.pushViewController(viewController: vc)

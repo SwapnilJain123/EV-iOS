@@ -91,6 +91,7 @@ class ProfileCell: UITableViewCell{
 //             // moto_events_alltime
 //        }
     }
+    
     func showData(_ profileData : ProfileData){
         
         applyTheme()

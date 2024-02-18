@@ -14,62 +14,49 @@ import SkyFloatingLabelTextField
 class SignViewController: ETViewController  {
     
     @IBOutlet weak var eventImageHeight: NSLayoutConstraint!
-    func populateUI() {
-       
-        eventTitle.text = eventData.title 
-        hostedLabel.text = "Hosted by: \(eventData.hosting ?? "")"
-        eventDateLabel.text = "Event date: \(eventData.date ?? "")"
-        
-        
-        if let url = URL(string: eventData.logo?.toValidatedImageUrl().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""){
-            let fallbackImage = UIImage(named: "et_fallback_image")
-            imageView.kf.setImage(with: url,placeholder: fallbackImage,  options: [.transition(ImageTransition.fade(1))])
-        }
-        
-    }
-    
     @IBOutlet weak var tfIssuedState: SkyFloatingLabelTextField!
-    
     @IBOutlet weak var signView: SwiftSignatureView!
-    
     @IBOutlet weak var hostedLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
-    
-   
     @IBOutlet weak var btnClear: UIButton!
-    
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-   
-
-   
-    
     @IBAction func clearButtonpressed(_ sender: UIButton) {
         signView.clear()
         saveButton.isEnabled = false
-        
     }
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var tfLicenseNumber: SkyFloatingLabelTextField!
     @IBOutlet weak var tfNameAndLocation: SkyFloatingLabelTextField!
     
+    let interactor = EWaiverInteractor()
+
+    func populateUI() {
+        eventTitle.text = eventData.title
+        hostedLabel.text = "Hosted by: \(eventData.hosting ?? "")"
+        eventDateLabel.text = "Event date: \(eventData.date ?? "")"
+        
+        if let url = URL(string: eventData.logo?.toValidatedImageUrl().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""){
+            let fallbackImage = UIImage(named: "et_fallback_image")
+            imageView.kf.setImage(with: url,placeholder: fallbackImage,  options: [.transition(ImageTransition.fade(1))])
+        }
+    }
     
-     private func saveSignature() {
-           if let signature = signView.signature{
-               guard let data = signature.pngData() else {
-                   self.ext.showAlert(title:"Signature Error", message: "Signature could not be validated.")
-                   return
-               }
+    private func saveSignature() {
+        if let signature = signView.signature{
+            guard let data = signature.pngData() else {
+                self.ext.showAlert(title:"Signature Error", message: "Signature could not be validated.")
+                return
+            }
             var encodedSignature = data.base64EncodedString()
             encodedSignature = "\(AppConstants.ImageTag)\(encodedSignature)"
             
             interactor.saveSignature(userID: AppEngine.sharedInstance.userID, eventID: eventID, nameAndLocation: tfNameAndLocation.text, license: tfLicenseNumber.text, issuingState: fetchStateCode(selectedState: issuedState), signature: encodedSignature, agree: true)
-           }
-         
-       }
+        }
+        
+    }
     
-    let interactor = EWaiverInteractor()
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         if tfNameAndLocation.text?.isEmpty ?? true {
             tfNameAndLocation.errorMessage  = ValidationErrors.emptyNameAndLocation
@@ -87,7 +74,7 @@ class SignViewController: ETViewController  {
         let stateList = createStateArray()
         self.presentSelectionMenu(title: "Select State", data:stateList, dismissHandler: {selectedStates in
             if selectedStates.count > 0{
-            self.issuedState = selectedStates[0]
+                self.issuedState = selectedStates[0]
                 self.tfIssuedState.text = self.issuedState
             }
             
@@ -103,7 +90,7 @@ class SignViewController: ETViewController  {
         }
         return stateCode
     }
-   
+    
     func createStateArray() -> [String]{
         
         var stateList = [String]()
@@ -113,7 +100,7 @@ class SignViewController: ETViewController  {
         
         return stateList
     }
-     
+    
     var eventID = 0
     var userData = UserData()
     var eventData = EventData()
@@ -121,12 +108,8 @@ class SignViewController: ETViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         populateUI()
         interactor.delegate = self
-        
         rootView.setCardView()
         saveButton.isEnabled = false
         signView.delegate = self
@@ -147,15 +130,15 @@ class SignViewController: ETViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           self.ext.showNavbar()
-           self.ext.showBackButton()
-           
-       }
-       override func viewWillDisappear(_ animated: Bool) {
-           super.viewWillDisappear(animated)
-           self.ext.hideNavbar()
-       }
+        super.viewWillAppear(animated)
+        self.ext.showNavbar()
+        self.ext.showBackButton()
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.ext.hideNavbar()
+    }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_WAIVER
     }
@@ -170,7 +153,7 @@ class SignViewController: ETViewController  {
 
 extension SignViewController:SwiftSignatureViewDelegate{
     func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
-        
+        saveButton.isEnabled = true
     }
     
     func swiftSignatureViewDidDraw(_ view: ISignatureView) {
@@ -180,8 +163,9 @@ extension SignViewController:SwiftSignatureViewDelegate{
     func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView){
         
     }
+    
     func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan:UIPanGestureRecognizer){
-       saveButton.isEnabled = true
+        saveButton.isEnabled = true
     }
     
 }
@@ -189,12 +173,12 @@ extension SignViewController: UITextFieldDelegate{
     
     func setTextFieldDelegate(textField: SkyFloatingLabelTextField){
         textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .editingDidBegin)
-         textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .allEditingEvents)
+        textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .allEditingEvents)
     }
     @objc func clearErrorMessage(_ textfield: UITextField) {
-           if let skyFloatingTF = textfield as? SkyFloatingLabelTextField{
-               skyFloatingTF.errorMessage = ""
-           }
-       }
+        if let skyFloatingTF = textfield as? SkyFloatingLabelTextField{
+            skyFloatingTF.errorMessage = ""
+        }
+    }
     
 }

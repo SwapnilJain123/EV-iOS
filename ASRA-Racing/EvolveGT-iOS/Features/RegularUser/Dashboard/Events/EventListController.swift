@@ -141,14 +141,13 @@ extension EventListController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        
-//        if let detailsVC = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as? EventDetailsController{
-//            detailsVC.eventTitle = events?[indexPath.row].title ?? ""
-//            detailsVC.eventSlug = events?[indexPath.row].slug ?? ""
-//            detailsVC.isMotoEvent = events?[indexPath.row].isMotoEvent ?? false
-//            Log.d("Event Selected - \(events?[indexPath.row].title ?? "")")
-//            self.navigationController?.pushViewController(detailsVC, animated: true)
-//        }
+        if let detailsVC = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventDetailsVC") as? EventDetailsController{
+            detailsVC.eventTitle = events?[indexPath.row].title ?? ""
+            detailsVC.eventSlug = events?[indexPath.row].slug ?? ""
+            detailsVC.isMotoEvent = events?[indexPath.row].isMotoEvent ?? false
+            Log.d("Event Selected - \(events?[indexPath.row].title ?? "")")
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
     }
 }
 

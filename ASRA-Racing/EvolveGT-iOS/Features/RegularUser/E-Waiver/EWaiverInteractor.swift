@@ -108,8 +108,6 @@ class EWaiverInteractor: BaseInteractor {
         request.nameAndLocation = nameAndLocation
         request.signature = signature
         api.saveWaiverDetails(saveWaiverDetailsRequest: request)
-        
-
     }
     
 }

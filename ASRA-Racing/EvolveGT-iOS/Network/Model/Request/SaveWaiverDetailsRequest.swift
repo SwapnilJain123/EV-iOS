@@ -15,7 +15,7 @@ struct SaveWaiverDetailsRequest: Codable {
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
-        case eventID = "event_id"
+        case eventID = "eventId"
         case nameAndLocation, license, issuingState, signature, agree
     }
 }

@@ -64,11 +64,10 @@ class EventListCell: UICollectionViewCell {
             eventImage.kf.setImage(with: url,
                                    placeholder: fallbackImage,
                                    options: [.transition(ImageTransition.fade(1))])
-            
         }
         eventName.text! = event?.title ?? ""
         eventDate.text = "Event Date: \(event?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
-        hostedBy.text = "Hosted By \(event?.eventType ?? "")"
+        hostedBy.text = "Hosted By \(event?.hostedByText ?? "")"
         price.text = "Starting From: \((event?.getRoleBasedPrice(role: AppEngine.sharedInstance.userRole) ?? String.DEFAULT_AMOUNT).formatToAmount())"
         
         bannerCancelled.isHidden = !(event?.isCancelled ?? false)
