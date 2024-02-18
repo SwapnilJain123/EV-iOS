@@ -32,22 +32,17 @@ class ShopViewController : TabbedViewController{
     @IBOutlet weak var labelGifts: UILabel!
     @IBOutlet weak var labelGear: UILabel!
     
-    
-    
     var categoryList = [ProductCategory]()
-    
     let interactor = ShopsInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         didChangeAppTheme()
-        
-        
         btnArchieCard.setBackgroundColor(color: .lightGray, forState: .highlighted)
-         btnRentals.setBackgroundColor(color: .lightGray, forState: .highlighted)
-         btnGifts.setBackgroundColor(color: .lightGray, forState: .highlighted)
-         btnGear.setBackgroundColor(color: .lightGray, forState: .highlighted)
+        btnRentals.setBackgroundColor(color: .lightGray, forState: .highlighted)
+        btnGifts.setBackgroundColor(color: .lightGray, forState: .highlighted)
+        btnGear.setBackgroundColor(color: .lightGray, forState: .highlighted)
         
         menuArchieCardBackground.setCardView()
         menuRentalsBackground.setCardView()
@@ -76,9 +71,9 @@ class ShopViewController : TabbedViewController{
             
             shopsBanner.image = UIImage(named: "byke")
             iconArchieCard.image = UIImage(named: "archie_cards")
-             iconRentals.image = UIImage(named: "ic_shop_rentals")
-             iconGifts.image = UIImage(named: "gifts")
-             iconGear.image = UIImage(named: "gear")
+            iconRentals.image = UIImage(named: "ic_shop_rentals")
+            iconGifts.image = UIImage(named: "gifts")
+            iconGear.image = UIImage(named: "gear")
         }else{
             shopsBanner.image = UIImage(named: "moto_shop_background")
             iconArchieCard.image = UIImage(named: "moto_shop_archie_cards")
@@ -100,7 +95,7 @@ class ShopViewController : TabbedViewController{
             self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
             self.interactor.fetchCategoryList()
         }else{
-//            let rentalsVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
+            //            let rentalsVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
             
             let rentalsVC = ShopSlidingTabController()
             for category in categoryList where category.isRentals{
@@ -116,13 +111,13 @@ class ShopViewController : TabbedViewController{
             }else{
                 self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
             }
-           
+            
         }
     }
     
     @IBAction func didPressGift(_ sender: Any) {
         
-          self.ext.pushViewController(storyBoard: "GiftCard", VCIdentifier: "giftCardVC")
+        self.ext.pushViewController(storyBoard: "GiftCard", VCIdentifier: "giftCardVC")
         
     }
     
@@ -131,8 +126,8 @@ class ShopViewController : TabbedViewController{
             self.ext.showErrorToast(message: ErrorMessages.genericError, handler: nil)
             self.interactor.fetchCategoryList()
         }else{
-//            let gearVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
-           let gearVC = ShopSlidingTabController()
+            //            let gearVC = self.ext.getViewController(storyBoard: "Shop", VCIdentifier: "ShopTabbedVC") as! ShopTabViewController
+            let gearVC = ShopSlidingTabController()
             for category in categoryList where category.isGear{
                 if category.children?.count ?? 0 > 0{
                     gearVC.categories = category.children!

@@ -15,8 +15,6 @@ import SnapKit
 
 class PaymentViewController : ETViewController, CartListDelegate{
     func didFetchCartList(cartItems: [CartItem]) {
-       
-        
     }
     
     func totalPrice(total: Double) {
@@ -86,11 +84,9 @@ class PaymentViewController : ETViewController, CartListDelegate{
          }else{
              walletBalance.text = "Your Wallet Balance: \(String(interactor?.getWalletBalance() ?? 0).formatToAmount())"
          }
-         
-        
-         
          btnPaypal.isOn = true
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         btnPlaceOrder.applyColorTheme()

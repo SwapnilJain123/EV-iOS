@@ -8,7 +8,7 @@
 
 import Foundation
 struct SignatureUpdateRequest: Codable {
-    var signatureID: String = ""
+    var signatureID: Int = 0
     var signature : String = ""
 
     enum CodingKeys: String, CodingKey {

@@ -11,29 +11,22 @@ import UIKit
 
 class ProductDetailsController : ETViewController, ProductDetailsDelegate{
     
-    
     @IBOutlet weak var productDetailsView: UITableView!
-    
     @IBOutlet weak var btnAddToCart: UIButton!
     var productSlug = ""
     var productName = ""
-    
     let interactor = ShopsInteractor()
-    
     var productDetails = ProductDetails()
     var sections = [ProductDetailSections]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         productDetailsView.dataSource = self
         productDetailsView.delegate = self
         btnAddToCart.isEnabled = false
-        
         interactor.viewDelegate = self
         interactor.productDetailsDelegate = self
         interactor.fetchProductDetails(slug: productSlug)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

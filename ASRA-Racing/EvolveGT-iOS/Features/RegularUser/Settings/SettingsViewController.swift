@@ -42,7 +42,7 @@ class SettingsViewController : ETViewController{
     }
     
     override func getScreenTitle() -> String? {
-        ScreenTitle.TITLE_MEMBERSHIP
+        ScreenTitle.TITLE_SETTINGS
     }
     
     @IBAction func didPressSaveButton(_ sender: Any) {

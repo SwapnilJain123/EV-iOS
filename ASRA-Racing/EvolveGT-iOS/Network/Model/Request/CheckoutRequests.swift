@@ -8,21 +8,24 @@
 
 import Foundation
 struct ValdateCouponRequest: Codable{
-    var couponCode, userId : String?
+    var couponCode: String?
+    var userId: Int?
     
     enum CodingKeys: String, CodingKey {
-           case couponCode = "coupon"
-           case userId = "uid"
-       }
+        case couponCode = "coupon"
+        case userId = "uid"
+    }
 }
 class PlaceOrderRequest : Codable{
-
+    
     var paymentToken, orderID, payerID, paymentID: String?
-
+    
     var  intent = "sale"
-    var returnUrl, payment, userId,coupon :String?
+    var returnUrl, payment, coupon: String?
+    var userId: Int?
+    
     enum CodingKeys: String, CodingKey {
-       
+        
         case paymentToken
         case orderID
         case payerID
@@ -32,15 +35,18 @@ class PlaceOrderRequest : Codable{
         case payment
         case userId = "serial"
         case coupon
-       
+        
     }
-   
+    
 }
 class CheckoutTokenRequest : Codable{
-    var mode, email, userId: String?
+    var mode, email: String?
+    var userId: Int?
 }
 class BrainTreeTransactionRequest: Codable{
-     var mode, amount, userId, brainTreeNonce, paymentType, coupon: String?
+    var mode, amount, brainTreeNonce, paymentType, coupon: String?
+    var userId: Int?
+    
     enum CodingKeys: String, CodingKey {
         case mode
         case amount
@@ -50,5 +56,5 @@ class BrainTreeTransactionRequest: Codable{
         case coupon = "coupon"
         
     }
-   
+    
 }

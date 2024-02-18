@@ -11,14 +11,14 @@ import UIKit
 
 class EWaiverViewController: ETViewController, WaiverListDelegate , WaiverCellDelegate{
     func showWaiverDetailsPage(waiver: EWaiver) {
-        self.eventId = waiver.eventID ?? ""
+        self.eventId = waiver.eventID ?? 0
          let VC = self.ext.getViewController(storyBoard: "E-Waiver", VCIdentifier: "WaiverDeatailsVC") as! EWaiverDetailsViewController
         VC.eventID = self.eventId
         self.ext.pushViewController(viewController: VC)
         
     }
     
-    var eventId = ""
+    var eventId = 0
     func waiverListFetched(waiverEvents: [EWaiver]) {
         self.eWaiverlist = waiverEvents
         

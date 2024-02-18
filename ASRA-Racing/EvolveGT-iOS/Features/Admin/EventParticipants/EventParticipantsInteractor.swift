@@ -17,11 +17,11 @@ class EventParticipantIntercator : BaseInteractor {
     
     var adminViewDelegate: EventParticipantsViewDelegate?
     var participants = [EventParticipant]()
-    var eventId = ""
+    var eventId = 0
     var isParticipants = true
     var cencelEventDelegate : cancelEventDelegete? = nil
 
-    func getEventParticipants(_ eventId: String, isParticipant: Bool){
+    func getEventParticipants(_ eventId: Int, isParticipant: Bool){
         super.delegate = adminViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingParticipants)
         let adminApi  = AdminApi()
@@ -127,7 +127,7 @@ class EventParticipantIntercator : BaseInteractor {
         }
     }
     
-    func upgradeSkill(skill: String, userID: String){
+    func upgradeSkill(skill: String, userID: Int){
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.upgradingSkill)
         let adminApi  = AdminApi()
         adminApi.setCompletionHandler{ response, error in

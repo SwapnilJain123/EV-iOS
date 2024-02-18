@@ -53,7 +53,7 @@ class EWaiverDetailsViewController: ETViewController , WaiverDetailsDelegate ,  
         
     }
     
-    var eventID = ""
+    var eventID = 0
     var userData = UserData()
     var eventData = EventData()
     var states = [State]()

@@ -8,8 +8,9 @@
 
 import Foundation
 struct ReferFriendRequest: Codable {
-    var userID, friendEmail: String?
-
+    var friendEmail: String?
+    var userID: Int?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case friendEmail = "friend_email"

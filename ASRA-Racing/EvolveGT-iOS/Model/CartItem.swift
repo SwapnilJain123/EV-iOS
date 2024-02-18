@@ -8,23 +8,22 @@
 
 import Foundation
 class CartItem: Codable {
-    var cartID, objectID, slug, parentID: String?
+    var slug: String?
     var title: String?
     var image: String?
-    var price, feeAmount, quantity, postDate: String?
+    var price, feeAmount, quantity, postDate, parentID: String?
     var postModified: String?
     var source: CartSource?
-    var userID, stockStatus: String?
+    var stockStatus: String?
     var canRemove: Bool?
     var evtype: String?
     var itemAttributes: [CartItemAttribute]?
     var parentTitle, parentSlug: String?
-    
+    var userID, cartID, objectID: Int?
     
     var isMotoEvent : Bool{
         "motogladiator" == evtype?.lowercased()
     }
-    
     var isRaceFee : Bool{
         "race-fee" == slug?.lowercased()
     }
@@ -39,8 +38,8 @@ class CartItem: Codable {
         let pricePerItem = price?.toDouble() ?? 0
         
         return (qty * pricePerItem) + fee
-        
     }
+    
     var priceInfoText : String{
         var text = "Qty: \(validatedQty)"
         let fee = feeAmount?.toDouble() ?? 0

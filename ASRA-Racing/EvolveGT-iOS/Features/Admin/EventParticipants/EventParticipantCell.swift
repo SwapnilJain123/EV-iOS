@@ -62,11 +62,11 @@ class EventParticipantCell: UITableViewCell{
         userName.text = eventParticipant?.namewithRole ?? "-"
         skill.text = eventParticipant?.skillLevel
         userID.text! = "#"
-        userID.text?.append(eventParticipant?.userID ?? "-")
+        userID.text?.append("\(eventParticipant?.userID)")
         dateOfBirth.text = eventParticipant?.evDob?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "-"
         email.text = eventParticipant?.email ?? "-"
         orderId.text = "#"
-        orderId.text?.append(eventParticipant?.orderID ?? "-")
+        orderId.text?.append("\(eventParticipant?.orderID)")
         
       if eventParticipant?.isSignEnabled ?? false{
             var image = UIImage(named: "sign_green") as UIImage?

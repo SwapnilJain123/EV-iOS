@@ -8,13 +8,13 @@
 
 import Foundation
 class EventDetails: Codable {
-    var eventID, title, eventDate, productInfo: String?
+    var title, eventDate, productInfo: String?
     var logoIcon: String?
     var eventBanner: String?
     var price, eventType, stock: String?
     var eventClasses: [EventClass]?
     var hasRaceLicense, skillEligible: Bool?
-    
+    var eventID: Int?
     var trackDays: [Event]?
     var isPrivateEvent: Bool?
     var isCancelled : Bool?
@@ -213,10 +213,10 @@ class MrlData: Codable{
 }
 
 class RentalDatum: Codable {
-    var productID, title, slug: String?
+    var title, slug: String?
     var variations: [Variation]?
     var image: String?
-    
+    var productID: Int?
     var selectedVariant : Variation? = nil
     
     enum CodingKeys: String, CodingKey {
@@ -240,9 +240,9 @@ class RentalDatum: Codable {
 }
 
 class TrainingDatum: Codable {
-    var trainingID, title, price, slug: String?
+    var title, price, slug: String?
     var image: String?
-    
+    var trainingID: Int?
     var isSelected = false
     enum CodingKeys: String, CodingKey {
         case trainingID = "training_id"

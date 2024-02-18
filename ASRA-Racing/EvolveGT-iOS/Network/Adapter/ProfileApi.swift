@@ -9,7 +9,7 @@
 import Foundation
 class ProfileApi : BaseApiAdapter{
     
-    func fetchUserDetails(userId: String){
+    func fetchUserDetails(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_DETAILS)"
         setUrl(url: url)
@@ -20,7 +20,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func fetchEventHistory(userId: String){
+    func fetchEventHistory(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_EVENT_HISTORY)"
         setUrl(url: url)
@@ -29,7 +29,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func fetchCreditHistory(userId: String){
+    func fetchCreditHistory(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_CREDIT_HISTORY)"
         setUrl(url: url)
@@ -46,7 +46,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func changePassword(userId:String , newPasssword:String , currentPassword:String){
+    func changePassword(userId: Int , newPasssword:String , currentPassword:String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CHANGE_PASSWORD)"
         setUrl(url: url)
@@ -69,7 +69,7 @@ class ProfileApi : BaseApiAdapter{
         
     }
     
-    func fetchEnrolledMembership(userId: String){
+    func fetchEnrolledMembership(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_MEMBERSHIP)"
         let request = UserMemberShipRequest(userId: userId)
@@ -102,7 +102,7 @@ class ProfileApi : BaseApiAdapter{
            super.makeRequest(method: .POST)
        }
     
-    func updateProfilePicture(userId: String, imageUploadItem: UploadItem){
+    func updateProfilePicture(userId: Int, imageUploadItem: UploadItem){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_PROFILE_IMAGE)"
         setUrl(url: url)
@@ -111,7 +111,7 @@ class ProfileApi : BaseApiAdapter{
         appendUploadItem(uploadItem: imageUploadItem)
         super.makeRequest(method: .POST)
     }
-    func checkTermsAGreementStatus(userId: String){
+    func checkTermsAGreementStatus(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.CHECK_TnC_STATUS)"
         setUrl(url: url)
@@ -121,7 +121,7 @@ class ProfileApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }
-    func saveAgreementStatus(userId: String, status: Bool){
+    func saveAgreementStatus(userId: Int, status: Bool){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SAVE_TnC_STATUS)"
         setUrl(url: url)
@@ -129,7 +129,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func fetchNotificationPreferences(userId: String){
+    func fetchNotificationPreferences(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.NOTIFICATION_TYPES)"
         setUrl(url: url)
@@ -144,7 +144,7 @@ class ProfileApi : BaseApiAdapter{
         setParameters(parameters: makeDictionary(request))
         super.makeRequest(method: .POST)
     }
-    func updateDeviceToken(userId: String?, deviceToken: String? ){
+    func updateDeviceToken(userId: Int?, deviceToken: String? ){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.UPDATE_DEVICE_TOKEN)"
         setUrl(url: url)
@@ -177,7 +177,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
 
-    func uploadPassport(userId: String, imageUploadItem: UploadItem, signature: Data, eventId: String){
+    func uploadPassport(userId: Int, imageUploadItem: UploadItem, signature: Data, eventId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SAVE_PASSPORT)"
         setUrl(url: url)
@@ -191,7 +191,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func updateEmergencyContact(userId: String, contact: EmergencyContact){
+    func updateEmergencyContact(userId: Int, contact: EmergencyContact){
         var request = EmergencyContactRequest()
         request.userID = userId
         request.emergencyFirstName = contact.firstName

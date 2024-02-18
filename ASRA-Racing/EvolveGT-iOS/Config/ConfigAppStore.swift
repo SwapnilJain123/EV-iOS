@@ -19,8 +19,9 @@ struct Config{
 //    static let BASE_URL = "qa-race.asraracing.com" //release3 uploaded the code on git
 
     ///Live
-    static let BASE_URL = "race.asraracing.com" //release3 uploaded the code on git
-      
+//    static let BASE_URL = "race.asraracing.com" //release3 uploaded the code on git
+    static let BASE_URL = "tracknutts.com" //release3 uploaded the code on git
+
 //    static let BASE_URL = "evolvegt.com"
     static let LOG_ENABLED = false
     static let BUILD_CONFIG = "AppStore"

@@ -8,17 +8,14 @@
 
 import Foundation
 struct EventParticipant: Codable {
-    var signatureID: String?
     var signature: Bool?
     var fourSeries, renewOnTen: String?
-    
-    var updated, status, title: String?
+    var updated, title: String?
     var displayName, evDob, email, skillLevel: String?
-    var userID, orderID: String?
-    var eventID, eventDate : String?
+    var eventDate : String?
     var role: String?
     var show: Bool?
-    var signEnabled: Int?
+    var signEnabled, userID, eventID, signatureID, orderID, status: Int?
     var rentals: [Rental]?
     var trainings: [String]?
     var motoClasses: [MotoClass]?
@@ -41,7 +38,7 @@ struct EventParticipant: Codable {
     }
     
     var hasSignature : Bool{
-        status == "1"
+        status == 1
     }
     
     var hasAccessories : Bool{
@@ -121,14 +118,14 @@ class AdminDuty: Codable {
     var name: String?
 }
 struct DutyAssignedStaff: Codable {
-    var userID, signatureID, status: String?
-    var signature: Int?
-    var eventID, orderID, title, evDob: String?
+    var status: String?
+    var signature, signatureID: Int?
+    var title, evDob: String?
     var displayName, role, email, skillLevel: String?
     var dayWorker, additionalInfo: String?
     var duties: [AdminDuty]?
     var show: Bool?
-    var signEnabled: Int?
+    var signEnabled, eventID, orderID, userID: Int?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -146,6 +143,7 @@ struct DutyAssignedStaff: Codable {
         case duties, show
         case signEnabled = "sign_enabled"
     }
+    
     func convertToEventParticipant() -> EventParticipant{
         var participant =  EventParticipant();
        participant.duties = duties;

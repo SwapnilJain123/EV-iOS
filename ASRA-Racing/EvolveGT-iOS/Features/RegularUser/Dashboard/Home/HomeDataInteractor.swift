@@ -57,6 +57,7 @@ class HomeDataInteractor : BaseInteractor{
         }
         profileApi.fetchUserDetails(userId: AppEngine.sharedInstance.userID)
     }
+    
     func fetchEventHistory() {
         
         let profileApi = ProfileApi()
@@ -70,10 +71,8 @@ class HomeDataInteractor : BaseInteractor{
                         self.profileData.pastEventsCount =  0
                         self.profileData.upComingEventsCount =  0
                         self.profileData.allEventsCount =  0
-                        
                         self.profileData.recentPastEvent = nil
                         self.profileData.recentUpComingEvent = nil
-                        
                         self.fetchCreditHistory()
                     }else{
                         self.profileData.allEventsCount = response.enrolledEvents!.count

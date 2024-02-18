@@ -17,7 +17,8 @@ struct ItemDetailRequest: Codable {
 struct EventDetailRequest: Codable {
     
     var postStatus = "publish"
-    var slug, serial: String?
+    var slug: String?
+    var serial: Int?
 
     enum CodingKeys: String, CodingKey {
         case postStatus = "post_status"
@@ -29,7 +30,7 @@ struct ProductListRequest: Codable {
     var category : String?
     var status = "0"
     var method: String? = "product"
-    var categoryIDList: String?
+    var categoryIDList: Int?
 
     init(productCategory : ProductCategory, source: String){
         self.category = source

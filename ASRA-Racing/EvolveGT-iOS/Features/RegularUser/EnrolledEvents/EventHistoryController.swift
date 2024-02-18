@@ -208,7 +208,7 @@ extension EventHistoryController: EnrolledEventCellDelegate{
         self.ext.confirmationAlert(title: "Cancel Event", message: "You are about to cancel the event - \(event.productName ?? ""). Do you really want to proceed?", btnText: "Yes", btnDismiss: "No"){
             let interactor = EnrolledEventsInteractor()
             interactor.delegate = self
-            interactor.cancelEvent(itemID: event.orderItemID ?? "")
+            interactor.cancelEvent(itemID: event.orderItemID ?? 0)
         }
     }
     
@@ -221,7 +221,7 @@ extension EventHistoryController: EnrolledEventCellDelegate{
     
     func uploadPassport(event: EnrolledEvent){
         AppEngine.sharedInstance.passportId = event.passportId ?? "0"
-        AppEngine.sharedInstance.eventId = event.eventId ?? "0"
+        AppEngine.sharedInstance.eventId = event.eventId ?? 0
         self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: UploadPassportController.identifier)
     }
     

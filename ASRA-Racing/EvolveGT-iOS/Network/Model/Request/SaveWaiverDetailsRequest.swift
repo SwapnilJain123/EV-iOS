@@ -8,9 +8,10 @@
 
 import Foundation
 struct SaveWaiverDetailsRequest: Codable {
-    var userID, eventID, nameAndLocation, license: String?
+    var nameAndLocation, license: String?
     var issuingState, signature: String?
     var agree: Bool?
+    var userID, eventID: Int?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"

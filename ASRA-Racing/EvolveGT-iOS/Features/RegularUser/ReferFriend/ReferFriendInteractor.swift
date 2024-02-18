@@ -8,7 +8,7 @@
 
 import Foundation
 class ReferFriendInteractor:BaseInteractor{
-    func ReferFriend(userID:String , email:String){
+    func ReferFriend(userID: Int , email:String){
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.inviteFriend)
         let api = WaiverApi()
         api.setCompletionHandler{ data , error in

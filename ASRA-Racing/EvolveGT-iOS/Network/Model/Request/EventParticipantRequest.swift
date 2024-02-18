@@ -9,7 +9,7 @@
 import Foundation
 
 struct EventParticipantRequest: Codable {
-    var eventID: String
+    var eventID: Int
 
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"

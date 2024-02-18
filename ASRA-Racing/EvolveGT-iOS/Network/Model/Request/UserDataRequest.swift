@@ -9,7 +9,7 @@
 import Foundation
 
 struct UserDataUserIdRequest : Codable{
-    var userID: String?
+    var userID: Int?
     
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -18,7 +18,7 @@ struct UserDataUserIdRequest : Codable{
 }
 
 struct UserDataSerialRequest : Codable{
-    var userID: String?
+    var userID: Int?
     var isMoto: Int?
     
     enum CodingKeys: String, CodingKey {
@@ -29,7 +29,7 @@ struct UserDataSerialRequest : Codable{
 }
 
 struct UserDetailsRequest : Codable{
-    var userID: String?
+    var userID: Int?
     var isMoto: Int?
     
     enum CodingKeys: String, CodingKey {
@@ -39,7 +39,7 @@ struct UserDetailsRequest : Codable{
 }
 
 struct EventHistoryRequest : Codable{
-    var userID: String?
+    var userID: Int?
     var isMotoevent : Int?
     
     enum CodingKeys: String, CodingKey {
@@ -50,7 +50,7 @@ struct EventHistoryRequest : Codable{
 }
 
 struct CreditHistoryRequest : Codable{
-    var userID: String?
+    var userID: Int?
     
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -58,7 +58,7 @@ struct CreditHistoryRequest : Codable{
     }
 }
 struct PasswordChangeRequest: Codable {
-    var userID: String?
+    var userID: Int?
     var passwordRequestBody: PasswordRequestBody?
     
     enum CodingKeys: String, CodingKey {
@@ -78,7 +78,8 @@ struct PasswordRequestBody: Codable {
 }
 struct CancelEventRequest: Codable{
     
-    var orderItemId, userId, skillLevel: String?
+    var skillLevel: String?
+    var orderItemId, userId: Int?
     
     enum CodingKeys: String, CodingKey {
         case orderItemId = "order_item_id"
@@ -88,7 +89,7 @@ struct CancelEventRequest: Codable{
 }
 struct UserMemberShipRequest: Codable{
     
-    var userId: String?
+    var userId: Int?
     
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
@@ -97,7 +98,7 @@ struct UserMemberShipRequest: Codable{
 }
 class ProfileUpdateRequest: Codable {
     var requestBody: ProfileRequestInfo?
-    var userID: String?
+    var userID: Int?
     
     enum CodingKeys: String, CodingKey {
         case requestBody = "data"
@@ -106,7 +107,7 @@ class ProfileUpdateRequest: Codable {
 }
 struct SaveUserAgreementRequest: Codable {
     
-    var userID: String?
+    var userID: Int?
     var agreementStatus: Bool?
     enum CodingKeys: String, CodingKey {
         case agreementStatus = "has_agreed"
@@ -116,11 +117,12 @@ struct SaveUserAgreementRequest: Codable {
 
 class ProfileRequestInfo: Codable {
     var evDob, evEmergencyFirstName, evEmergencyLastName, evEmergencyPhone: String?
-    var evEmergencyRelationship, everBeenTrack, firstName, evGender: String?
+    var evEmergencyRelationship, firstName, evGender: String?
     var lastName, amaExpires, amaNo,email, asraNo: String?
     var ccsNo, raceNo, sponsors, teamnames: String?
     var evMotorcycle, evMotorcycleNumber, nationality, phone: String?
     var evRaceLicence: String?
+    var everBeenTrack: Int?
     
     enum CodingKeys: String, CodingKey {
         case evDob = "ev_dob"
@@ -146,7 +148,7 @@ class ProfileRequestInfo: Codable {
     }
 }
 struct BillingAdressUpdateRequest:Codable {
-    var userId:String?
+    var userId: Int?
     var billingRequest:BillingAdressRequest?
     
     enum CodingKeys: String, CodingKey {
@@ -187,7 +189,7 @@ struct BillingAdressRequest:Codable {
 
 struct ShippingAdressUpdateRequest:Codable {
     
-    var userID:String?
+    var userID: Int?
     var shippingRequest:ShippingAddressRequest?
     
     enum CodingKeys: String, CodingKey {
@@ -230,7 +232,7 @@ struct ShippingAddressRequest:Codable {
 
 
 struct NotificationPreferenceUpdateRequest: Codable{
-    var userId: String?
+    var userId: Int?
     var preferences: [NotificationTypeUpdate]?
     
 
@@ -251,7 +253,7 @@ struct NotificationTypeUpdate: Codable{
     }
 }
 struct DeviceTokenRequest: Codable{
-    var userId: String?
+    var userId: Int?
     var token: String?
     var deviceType = "iOS";
     enum CodingKeys: String, CodingKey {
@@ -263,8 +265,9 @@ struct DeviceTokenRequest: Codable{
 }
 
 struct TransferAmountRequest: Codable {
-    var userID, transferEmail , transferAmount: String?
-
+    var transferEmail , transferAmount: String?
+    var userID: Int?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case transferEmail = "transferEmail"
@@ -272,14 +275,15 @@ struct TransferAmountRequest: Codable {
     }
 }
 struct EmergencyContactRequest: Codable {
-    var userID, emergencyFirstName, emergencyLastName, emergencyPhone: String?
-        var emergencyRelationship: String?
-
-        enum CodingKeys: String, CodingKey {
-            case userID = "user_id"
-            case emergencyFirstName = "emergency_first_name"
-            case emergencyLastName = "emergency_last_name"
-            case emergencyPhone = "emergency_phone"
-            case emergencyRelationship = "emergency_relationship"
-        }
+    var emergencyFirstName, emergencyLastName, emergencyPhone: String?
+    var userID: Int?
+    var emergencyRelationship: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case emergencyFirstName = "emergency_first_name"
+        case emergencyLastName = "emergency_last_name"
+        case emergencyPhone = "emergency_phone"
+        case emergencyRelationship = "emergency_relationship"
+    }
 }

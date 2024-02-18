@@ -40,7 +40,7 @@ struct MembershipListResponse: Codable {
 
 struct UserMembershipResponse: Codable {
     
-    var membershipId: String?
+    var membershipId: Int?
     enum CodingKeys: String, CodingKey {
         case membershipId = "membership_id"
     }
@@ -49,9 +49,9 @@ struct UserMembershipResponse: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         if let value = try? container.decode(Int.self, forKey: .membershipId) {
-            membershipId = String(value)
+            membershipId = value
         } else {
-            membershipId = try container.decode(String.self, forKey: .membershipId)
+            membershipId = try container.decode(Int.self, forKey: .membershipId)
         }
     }
 }

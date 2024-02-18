@@ -19,7 +19,7 @@ class AdminApi: BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func fetchEventParticipants(eventID: String){
+    func fetchEventParticipants(eventID: Int){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.EVENT_PARTICIPANTS)"
         setUrl(url: url)
         
@@ -38,7 +38,7 @@ class AdminApi: BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
 
-    func fetchEventParticipantsForDuties(eventID: String){
+    func fetchEventParticipantsForDuties(eventID: Int){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.EVENT_PARTICIPANTS_FOR_DUTIES)"
         setUrl(url: url)
         
@@ -48,17 +48,17 @@ class AdminApi: BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func upgradeSkill(skill: String, userID: String){
+    func upgradeSkill(skill: String, userID: Int){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.UPDATE_SKILL_LEVEL)"
         setUrl(url: url)
         
-        let skillUpgradeRequest = UpgradeSkillRequest(userID: userID, skilllevel: skill)
+        let skillUpgradeRequest = UpgradeSkillRequest(skilllevel: skill, userID: userID)
         setParameters(parameters: makeDictionary(skillUpgradeRequest))
         
         super.makeRequest(method: .POST)
     }
     
-    func getSignature(signatureId: String){
+    func getSignature(signatureId: Int){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.GET_SIGNATURE)"
         setUrl(url: url)
         let signatueRequest = SignatureRequest(signatureID: signatureId)
@@ -66,7 +66,7 @@ class AdminApi: BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func uploadSignature(signatureId: String, signature: Data){
+    func uploadSignature(signatureId: Int, signature: Data){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.UPDATE_SIGNATURE)"
         setUrl(url: url)
         var encodedSignature = signature.base64EncodedString()
@@ -76,7 +76,7 @@ class AdminApi: BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func getCoachDuties(userId: String){
+    func getCoachDuties(userId: Int){
         let url: String  = "\(ApiConstants.BASE_URL)\(AdminApiConstants.COACH_DUTIES)"
         setUrl(url: url)
         let request = CoachDutyRequest(userId: userId)

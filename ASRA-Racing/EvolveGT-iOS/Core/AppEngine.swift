@@ -17,8 +17,8 @@ class AppEngine{
     }
     static let sharedInstance = AppEngine()
     
-    public var userID : String{
-        currentUser?.id ?? ""
+    public var userID : Int{
+        currentUser?.id ?? 0
     }
     
     public var userRole : String{
@@ -31,7 +31,7 @@ class AppEngine{
     
     var currentUser : User?
     var userDetails : UserDetails?
-    var membership : String?
+    var membership : Int?
     var emergencyContact : EmergencyContact? = nil
     
     var authToken = ""
@@ -111,12 +111,12 @@ class AppEngine{
         walletEnabled = false
         walletBalance = 0
         cartListCount = 0
-        membership = ""
+        membership = 0
         userDetails = nil
     }
     
    var passportId = ""
-   var eventId = ""
+   var eventId = 0
    var trackName = ""
    var eventDate = ""
 }

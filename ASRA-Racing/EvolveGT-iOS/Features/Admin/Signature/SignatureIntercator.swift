@@ -16,7 +16,7 @@ protocol SignatureViewDelegate : BaseViewDelegate {
 class SignatureIntercator : BaseInteractor{
     var signatureViewDelegate: SignatureViewDelegate?
     
-    func getSignature(signatureId: String){
+    func getSignature(signatureId: Int){
         super.delegate = signatureViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingSignature)
         let adminApi  = AdminApi()
@@ -45,7 +45,7 @@ class SignatureIntercator : BaseInteractor{
         adminApi.getSignature(signatureId: signatureId)
     }
     
-    func saveSignature(signatureId: String, signature: Data){
+    func saveSignature(signatureId: Int, signature: Data){
         super.delegate = signatureViewDelegate
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.uploadingSignature)
         let adminApi  = AdminApi()

@@ -12,8 +12,8 @@ struct User: Codable {
     private static let ROLE_ADMIN = "administrator"
     private static let ROLE_COACH = "coach"
     
-    
-    var id, email, firstName, lastName: String
+    var id: Int
+    var email, firstName, lastName: String
     var displayName, skillLevel, role: String
     var hasAdminPrevilege: Bool
 

@@ -21,7 +21,6 @@ struct ShopsApiConstants{
     static let GIFT_CARD_LIST = "giftCard/list"
     static let GIFT_CARD_DETAILS = "giftCard/details"
     
-    
     static let PRODUCT_CATEGORY_LIST = "products/categoryList"
     static let PRODUCT_LIST = "products/list"
     static let PRODUCT_DETAILS = "products/details"

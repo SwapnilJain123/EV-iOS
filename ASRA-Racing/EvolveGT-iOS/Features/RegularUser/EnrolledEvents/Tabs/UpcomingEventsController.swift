@@ -89,7 +89,7 @@ extension UpcomingEventsController: EnrolledEventCellDelegate{
         self.ext.confirmationAlert(title: "Cancel Event", message: "You are about to cancel the event - \(event.productName ?? ""). Do you really want to proceed?", btnText: "Yes", btnDismiss: "No"){
             let interactor = EnrolledEventsInteractor()
             interactor.delegate = self
-            interactor.cancelEvent(itemID: event.orderItemID ?? "")
+            interactor.cancelEvent(itemID: event.orderItemID ?? 0)
         }
     }
     func showPassport(event: EnrolledEvent) {

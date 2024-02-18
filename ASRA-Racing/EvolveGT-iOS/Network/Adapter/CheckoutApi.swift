@@ -8,7 +8,7 @@
 
 import Foundation
 class CheckoutApi : BaseApiAdapter{
-    func fetchCartList(userId: String){
+    func fetchCartList(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.CART_LIST)"
         var request = UserDataSerialRequest()
@@ -19,7 +19,7 @@ class CheckoutApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func validateCoupon(userId: String, couponCode : String){
+    func validateCoupon(userId: Int, couponCode : String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.VALIDATE_COUPON)"
         let request = ValdateCouponRequest(couponCode: couponCode, userId: userId)
@@ -36,7 +36,7 @@ class CheckoutApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func resetCartList(userId: String){
+    func resetCartList(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.RESET_CART)"
         var request = UserDataSerialRequest()
@@ -47,7 +47,7 @@ class CheckoutApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func getCheckoutToken(userId: String, email: String){
+    func getCheckoutToken(userId: Int, email: String){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.CHECKOUT_TOKEN)"
         let request = CheckoutTokenRequest()

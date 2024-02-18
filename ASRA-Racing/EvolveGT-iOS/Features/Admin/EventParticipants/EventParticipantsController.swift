@@ -158,7 +158,7 @@ class EventParticipantsController : ETViewController, cancelEventDelegete{
     }
     
     func requestEventParticipants(){
-        interactor.getEventParticipants(completedEvent?.eventID ?? "-1", isParticipant: isParticipants)
+        interactor.getEventParticipants(completedEvent?.eventID ?? 0, isParticipant: isParticipants)
     }
     
     func setupUI(){
@@ -173,8 +173,8 @@ class EventParticipantsController : ETViewController, cancelEventDelegete{
     }
 }
 extension EventParticipantsController : EventParticipantsViewDelegate, SignatureRefreshDelegate{
-    func didModifySignature(signatureId: String) {
-        interactor.getEventParticipants(completedEvent?.eventID ?? "", isParticipant: isParticipants)
+    func didModifySignature(signatureId: Int) {
+        interactor.getEventParticipants(completedEvent?.eventID ?? 0, isParticipant: isParticipants)
     }
     
     func filteredParticipants(participants: [EventParticipant], query: String) {
@@ -304,7 +304,7 @@ extension EventParticipantsController: EventParticipantV2Delegate{
         
         if participant?.hasSignature ?? false{
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignaturePreviewViewController") as! SignaturePreviewViewController
-            controller.signatureId = participant?.signatureID ?? ""
+            controller.signatureId = participant?.signatureID ?? 0
             navigationController?.pushViewController(controller, animated: true)
         }else{
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignatureReader") as! SignatureReaderController
@@ -323,7 +323,7 @@ extension EventParticipantsController: EventParticipantV2Delegate{
             selectedItems in
             
             if let skill = selectedItems.first{
-                self.interactor.upgradeSkill(skill: skill, userID: participant!.userID ?? "")
+                self.interactor.upgradeSkill(skill: skill, userID: participant!.userID ?? 0)
             }
         }
     }

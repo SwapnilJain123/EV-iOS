@@ -14,7 +14,7 @@ class SignaturePreviewViewController : ETViewController{
     
     @IBOutlet weak var closeButton: UIButton!
     let interactor = SignatureIntercator()
-    var signatureId = ""
+    var signatureId = 0
     @IBOutlet weak var signatureImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()

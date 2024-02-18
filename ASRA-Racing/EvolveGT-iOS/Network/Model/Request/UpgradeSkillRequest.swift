@@ -8,8 +8,9 @@
 
 import Foundation
 struct UpgradeSkillRequest: Codable {
-    var userID, skilllevel: String?
-
+    var skilllevel: String?
+    var userID: Int?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case skilllevel

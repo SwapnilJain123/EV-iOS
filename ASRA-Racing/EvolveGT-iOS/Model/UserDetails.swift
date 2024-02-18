@@ -9,9 +9,10 @@
 import Foundation
 
 class UserDetails: Codable {
-    var userID, oldID, username, password: String?
+    var userID, oldID: Int?
+    var username, password: String?
     var nicename, email, url, registered: String?
-    var activationKey, hashCode, status, displayName: String?
+    var activationKey, hashCode, displayName: String?
     var nickname, firstName, lastName, profileImage: String?
     var billingPhone, billingFirstName, billingLastName, billingCompany: String?
     var billingEmail, billingCountry, billingAddress1, billingAddress2: String?
@@ -21,9 +22,9 @@ class UserDetails: Codable {
     var shippingMethod, evRole, evGender, evRaceLicence: String?
     var evDob, evMotocycleYear, evMotorcycle, evMotorcycleNumber: String?
     var evMotorcycleShiftPattern, evMedications, evMedicalConditions, evEmergencyFirstName: String?
-    var evEmergencyLastName, evEmergencyPhone, evEmergencyRelationship, evStaff: String?
+    var evEmergencyLastName, evEmergencyPhone, evEmergencyRelationship: String?
     var memo, skillLevel, n2Rider, walletAmount: String?
-    var membershipExpDate, newsletter, everBeenTrack, adminNotes: String?
+    var membershipExpDate, adminNotes: String?
     var adminKey, motoCount, raceNumber: String?
     var eventCancel: Bool?
     var hasRCT,transponderNo: String?
@@ -34,6 +35,7 @@ class UserDetails: Codable {
     var fullProfileImage: String?
     var customerID: String?
     var enableMyDuties: Bool?
+    var status, evStaff, newsletter, everBeenTrack, day_worker: Int?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -193,6 +195,6 @@ class UserDetails: Codable {
         "1" == evRaceLicence
     }
     var hasEverBeenOnTrack :Bool{
-        "1" == everBeenTrack
+        1 == everBeenTrack
     }
 }

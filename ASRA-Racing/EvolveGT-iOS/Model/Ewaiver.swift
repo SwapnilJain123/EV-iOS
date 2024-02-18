@@ -11,10 +11,11 @@ import Foundation
 class EWaiver : Codable{
     
     
-    var eventID, eventDate, title, slug: String?
+    var eventDate, title, slug: String?
     var eventLogo, eventType: String?
     var fullEventLogo: String?
     var fullEventDate: String?
+    var eventID: Int?
 
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"

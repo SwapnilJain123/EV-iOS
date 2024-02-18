@@ -107,7 +107,7 @@ class ApiClient{
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             for (key,value) in self.parameters {
-                multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+                multipartFormData.append(("\(value)").data(using: .utf8)!, withName: key)
             }
                         
             for uploadItem in self.uploadData{
@@ -135,7 +135,6 @@ class ApiClient{
                 completionHandler( nil, apiError)
             }
         }
-        
     }
     
     func addAuthTokenHeader(token : String){

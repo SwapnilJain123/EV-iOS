@@ -11,25 +11,20 @@ import UIKit
 class CartListController : TabbedViewController, CartListDelegate{
     
     @IBOutlet weak var guestMessage: UILabel!
-    let interactor = CartInteractor()
-    var cartItems = [CartItem]()
-    
-    
     @IBOutlet weak var outOfStockLabel: UILabel!
     @IBOutlet weak var btnCheckout: UIButton!
     @IBOutlet weak var cartListView: UITableView!
     @IBOutlet weak var labelTotal: UILabel!
     
+    let interactor = CartInteractor()
+    var cartItems = [CartItem]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         interactor.delegate = self
         interactor.validationDelegate = self
-       
         cartListView.dataSource = self
         cartListView.delegate = self
-        
-       
         labelTotal.textColor = .getAppThemeColor()
     }
     

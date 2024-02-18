@@ -56,9 +56,6 @@ struct GiftCardDetailsResponse: Codable {
        }
 }
 
-
-
-
 struct CategoryListResponse: Codable {
     
     var category: [ProductCategory]?

@@ -8,9 +8,9 @@
 
 import Foundation
 struct ProductCategory: Codable {
-    var title, id: String?
+    var title: String?
     var children: [ProductCategory]?
-    
+    var id: Int?
     
     var isGear : Bool{
         "gear" == title?.lowercased()
@@ -21,8 +21,9 @@ struct ProductCategory: Codable {
     }
 }
 struct Product: Codable {
-    var productID, title, slug, image: String?
-    var categoryID: String?
+    var title, slug, image: String?
+    var categoryID: Int?
+    var productID: Int?
 
     enum CodingKeys: String, CodingKey {
         case productID = "product_id"

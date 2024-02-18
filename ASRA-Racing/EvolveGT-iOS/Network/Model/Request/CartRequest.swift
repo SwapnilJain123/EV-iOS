@@ -13,11 +13,11 @@ struct EventCartRequest: Codable {
     
     var rentalList: [RentalRequest]?
     var trainingList: [TrainingRequest]?
-    var serial, role, title: String?
+    var role, title: String?
     var eventCouponCode : String?
-    
+    var serial: Int?
     var eventClasses: [EventClassRequest]?
-    var eventID: String?
+    var eventID: Int?
     var transponderNo: String?
     var bikeNumber: String?
     var eventClassTotal : String?
@@ -41,17 +41,20 @@ struct EventCartRequest: Codable {
     }
 }
 struct TrainingRequest: Codable {
-    var price, slug, id, trainingName: String?
+    var price, slug, trainingName: String?
+    var id: Int?
 }
 
 struct RentalRequest: Codable {
-    var price, slug, id, selectedSize, rentalName: String?
+    var price, slug, selectedSize, rentalName: String?
+    var id: Int?
 }
 struct ProductCartRequest: Codable {
     var selectedAttributes: [ProductCartAttribute]?
     var price: String?
     var quantity: Int?
-    var slug, serial: String?
+    var slug: String?
+    var serial: Int?
 }
 
 // MARK: - SelectedAttribute
@@ -59,7 +62,8 @@ struct ProductCartAttribute: Codable {
     var name, value: String?
 }
 struct CartRemoveRequest: Codable{
-    var cartId, userId, itemId, method: String?
+    var method: String?
+    var cartId, userId, itemId: Int?
     
     init(cartItem : CartItem){
         self.cartId = cartItem.cartID
@@ -79,20 +83,23 @@ struct CartRemoveRequest: Codable{
 }
 
 struct AddArchieCardToCartRequest: Codable {
-    var serial, title, slug, image: String?
+    var title, slug, image: String?
     var price: String?
     var quantity: Int?
+    var serial: Int?
 }
 
 struct AddGiftCardToCartRequest: Codable {
     var email, name: String?
     var image: String?
-    var serial, price, quantity, slug: String?
+    var price, quantity, slug: String?
     var title: String?
+    var serial: Int?
 }
 struct AddMembershipToCartRequest: Codable{
     
-    var image, membership, price, userId, title: String?
+    var image, membership, price, title: String?
+    var userId: Int?
     var force: String = "0"
     enum CodingKeys: String, CodingKey {
         case image, membership, price, title, force
@@ -100,7 +107,8 @@ struct AddMembershipToCartRequest: Codable{
     }
 }
 struct TrackDayCartRequest: Codable {
-    var eventId, userID: String?
+    var eventId: Int?
+    var userID: Int?
     enum CodingKeys: String, CodingKey {
         case userID = "serial"
         case eventId = "event"

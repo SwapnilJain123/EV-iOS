@@ -12,8 +12,6 @@ import SideMenuSwift
 import Braintree
 import Firebase
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

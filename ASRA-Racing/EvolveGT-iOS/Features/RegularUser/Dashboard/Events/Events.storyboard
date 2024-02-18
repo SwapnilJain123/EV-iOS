@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ci-Fp-lkm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ci-Fp-lkm">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                     <tabBarItem key="tabBarItem" title="Events" image="moto_upcoming_eventss" id="5PL-7H-RtL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JnX-6q-sEa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -27,7 +27,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkQ-Fg-uEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1042" y="100"/>
+            <point key="canvasLocation" x="-1528" y="106"/>
         </scene>
         <!--Event List Controller-->
         <scene sceneID="qMF-fP-ctB">
@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-8T-eWk">
-                                <rect key="frame" x="10" y="54" width="394" height="1287"/>
+                                <rect key="frame" x="10" y="74" width="394" height="1267"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="M8T-Y1-k15">
                                     <size key="itemSize" width="288" height="338"/>
@@ -81,7 +81,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-jR-Ooi">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-jR-Ooi">
                                                             <rect key="frame" x="240" y="211" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="Cg6-uF-946"/>
@@ -320,6 +320,7 @@
                                                             <rect key="frame" x="8" y="20" width="120" height="120"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Jwi-uH-Ff1" secondAttribute="height" multiplier="1:1" id="Mfw-Q4-cQy"/>
+                                                                <constraint firstAttribute="width" secondItem="Jwi-uH-Ff1" secondAttribute="height" multiplier="1:1" id="cKr-qJ-qku"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-Ej-BIi">
@@ -346,7 +347,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-f0-cOh">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-f0-cOh">
                                                             <rect key="frame" x="332" y="110" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="QSu-uf-fVq"/>
@@ -418,7 +419,6 @@
                                                         <constraint firstItem="rgc-Gp-Tkq" firstAttribute="leading" secondItem="8gS-nT-dbC" secondAttribute="leading" constant="8" id="Zoy-Vf-c7j"/>
                                                         <constraint firstItem="rgc-Gp-Tkq" firstAttribute="centerY" secondItem="8gS-nT-dbC" secondAttribute="centerY" id="b00-Rh-KSW"/>
                                                         <constraint firstItem="XKG-Ej-BIi" firstAttribute="leading" secondItem="rgc-Gp-Tkq" secondAttribute="trailing" constant="8" id="cIb-hx-8fM"/>
-                                                        <constraint firstItem="Jwi-uH-Ff1" firstAttribute="width" secondItem="Jwi-uH-Ff1" secondAttribute="height" multiplier="1:1" id="cKr-qJ-qku"/>
                                                         <constraint firstItem="W7z-f0-cOh" firstAttribute="trailing" secondItem="rpg-sz-8uJ" secondAttribute="trailing" id="nD2-FE-NKc"/>
                                                         <constraint firstItem="RY8-fg-qYO" firstAttribute="bottom" secondItem="W7z-f0-cOh" secondAttribute="bottom" constant="-3" id="osg-la-bye"/>
                                                         <constraint firstItem="rpg-sz-8uJ" firstAttribute="trailing" secondItem="1Hh-34-UCj" secondAttribute="trailing" id="vxp-R7-dmq"/>
@@ -472,6 +472,7 @@
                                                             <rect key="frame" x="8" y="20" width="120" height="120"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="QSK-Af-Kvk" secondAttribute="height" multiplier="1:1" id="fOD-2n-xHL"/>
+                                                                <constraint firstAttribute="width" secondItem="QSK-Af-Kvk" secondAttribute="height" multiplier="1:1" id="krZ-QV-XyG"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFf-T8-FSp">
@@ -515,7 +516,6 @@
                                                         <constraint firstItem="2P9-hD-7oC" firstAttribute="leading" secondItem="jFf-T8-FSp" secondAttribute="leading" id="gO8-fX-pDb"/>
                                                         <constraint firstItem="PDs-52-oOs" firstAttribute="trailing" secondItem="OJe-Ex-J5r" secondAttribute="trailing" id="gZA-HT-f5A"/>
                                                         <constraint firstAttribute="trailing" secondItem="jFf-T8-FSp" secondAttribute="trailing" constant="8" id="hiX-sN-4Yf"/>
-                                                        <constraint firstItem="QSK-Af-Kvk" firstAttribute="width" secondItem="QSK-Af-Kvk" secondAttribute="height" multiplier="1:1" id="krZ-QV-XyG"/>
                                                         <constraint firstItem="PDs-52-oOs" firstAttribute="top" secondItem="OJe-Ex-J5r" secondAttribute="bottom" constant="8" id="m7j-t1-NtH"/>
                                                         <constraint firstItem="jFf-T8-FSp" firstAttribute="top" secondItem="REA-Xi-61Y" secondAttribute="top" constant="30" id="oDf-ji-Fir"/>
                                                         <constraint firstItem="HB4-Yt-RfL" firstAttribute="centerY" secondItem="REA-Xi-61Y" secondAttribute="centerY" id="wKe-kB-u9l"/>
@@ -588,7 +588,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NJO-yZ-9Iz">
-                                <rect key="frame" x="0.0" y="8" width="414" height="1131"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="1111"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventInfoCell" id="v80-zQ-Hw3" customClass="EventInfoCell" customModule="ASRA" customModuleProvider="target">
@@ -1035,7 +1035,7 @@
                                                             <color key="textColor" name="ColorEV"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-nE-sso" userLabel="AddToCart">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-nE-sso" userLabel="AddToCart">
                                                             <rect key="frame" x="353" y="83.5" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="kXN-BE-Jpo"/>
@@ -1350,10 +1350,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

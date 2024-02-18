@@ -47,7 +47,7 @@ class EWaiverInteractor: BaseInteractor {
         api.fetchWaiverList()
     }
     
-    func getEWaiverDetails(eventId:String){
+    func getEWaiverDetails(eventId: Int){
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingWaiverDetails)
         let api = WaiverApi()
         api.setCompletionHandler{data , error in
@@ -84,7 +84,7 @@ class EWaiverInteractor: BaseInteractor {
         
     }
     
-    func saveSignature(userID:String? ,eventID:String? ,nameAndLocation:String? ,license:String? ,issuingState:String?,signature: String? , agree: Bool? ){
+    func saveSignature(userID: Int? ,eventID: Int? ,nameAndLocation:String? ,license:String? ,issuingState:String?,signature: String? , agree: Bool? ){
         
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.savingSignature)
         let api = WaiverApi()

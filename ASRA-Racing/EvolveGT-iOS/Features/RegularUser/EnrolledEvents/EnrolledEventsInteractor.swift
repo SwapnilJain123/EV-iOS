@@ -67,7 +67,7 @@ class EnrolledEventsInteractor: BaseInteractor {
         profileApi.fetchEventHistory(userId: AppEngine.sharedInstance.userID)
     }
     
-    func cancelEvent(itemID: String){
+    func cancelEvent(itemID: Int){
          self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.cancellingEvent)
         let profileApi = ProfileApi()
         var request = CancelEventRequest()

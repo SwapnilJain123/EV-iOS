@@ -10,15 +10,15 @@ import Foundation
 class EnrolledEvent: Codable {
     var productName, orderStatus, orderDate, eventDate: String?
     var eventImage: String?
-    var orderItemID, eventMonth: String?
-
+    var eventMonth: String?
+    var orderItemID: Int?
     var rentals: [Rental]?
     var trainings: [String]?
     var motoClasses: [MotoClass]?
     
     var hasPassport, enableSelfsign: Bool?
     var passportId: String?
-    var eventId: String?
+    var eventId: Int?
     
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"

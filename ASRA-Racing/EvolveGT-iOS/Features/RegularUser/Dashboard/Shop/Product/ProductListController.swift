@@ -13,11 +13,9 @@ class ProductListController : ETViewController{
     
     @IBOutlet weak var productListView: UICollectionView!
     
-    
     var category : ProductCategory? = nil
     var source : String = ""
     let interactor = ShopsInteractor()
-    
     var productList = [Product]()
     var holderVC : UIViewController?
     

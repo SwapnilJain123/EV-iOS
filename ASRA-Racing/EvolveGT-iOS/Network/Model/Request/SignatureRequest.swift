@@ -8,7 +8,7 @@
 
 import Foundation
 struct SignatureRequest: Codable {
-    var signatureID: String?
+    var signatureID: Int?
 
     enum CodingKeys: String, CodingKey {
         case signatureID = "signature_id"
@@ -20,7 +20,7 @@ struct SignatureResponse: Codable {
     var signature: String?
 }
 struct CoachDutyRequest: Codable {
-    var userId: String?
+    var userId: Int?
 
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"

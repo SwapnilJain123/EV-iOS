@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ShopSlidingTabController: ETViewController{
+class ShopSlidingTabController: ETViewController {
     
     private let slidingTabController = UISimpleSlidingTabController()
     

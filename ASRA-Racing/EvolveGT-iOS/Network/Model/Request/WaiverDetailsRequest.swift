@@ -8,15 +8,10 @@
 
 import Foundation
 struct WaiverDetailsRequest: Codable {
-    var eventID: String?
-    var userID:String?
-    
+    var userID, eventID: Int?
     
     enum CodingKeys: String, CodingKey {
         case eventID = "event_id"
         case userID = "user_id"
     }
-    
-    
-    
 }

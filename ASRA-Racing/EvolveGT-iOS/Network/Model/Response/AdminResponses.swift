@@ -17,7 +17,7 @@ struct CompletedEventsResponse : Decodable{
     }
 }
 struct EventParticpantResponse: Codable {
-    var count: Int
+    var count: Int?
     var eventParticipants: [EventParticipant]?
     var generalSkills: [String]
     

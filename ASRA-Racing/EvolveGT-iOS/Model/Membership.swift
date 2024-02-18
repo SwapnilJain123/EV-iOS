@@ -9,11 +9,12 @@
 import Foundation
 
 class Membership: Codable {
-    static let ID_MRL = "5"
-    var membershipID, title, slug, price: String?
+    static let ID_MRL = 5
+    var title, slug, price: String?
     var stockStatus: String?
     var image: String?
     var season: String?
+    var membershipID: Int?
     
     enum CodingKeys: String, CodingKey {
         case membershipID = "membership_id"
@@ -28,10 +29,8 @@ class Membership: Codable {
     var isOutOfStock : Bool{
         stockStatus?.isOutOfStock() ?? false
     }
-    func canPurchase(currentMembership: String?) -> Bool{
-        let currentId = Int(currentMembership ?? "") ?? 0
-        let membershipId = Int(membershipID ?? "") ?? 0
-        return !isGuest && (currentMembership == nil || currentId < membershipId)
+    func canPurchase(currentMembership: Int?) -> Bool{
+        return !isGuest && (currentMembership == nil || (currentMembership ?? 0) < (membershipID ?? 0))
         
     }
     
@@ -40,11 +39,11 @@ class Membership: Codable {
     }
 }
 struct MembershipDetails: Codable {
-    var membershipID, oldPostID, title, slug: String?
+    var title, slug: String?
     var image: String?
     var price, stockStatus, description, packages: String?
-    var postStatus, postAuthor, postDate, postModified: String?
-    var status: Int?
+    var postStatus, postDate, postModified: String?
+    var status, membershipID, oldPostID, postAuthor: Int?
     var msg: String?
 
     enum CodingKeys: String, CodingKey {
@@ -61,10 +60,8 @@ struct MembershipDetails: Codable {
         case status, msg
     }
     
-    func canPurchase(currentMembership: String?) -> Bool{
-        let currentId = Int(currentMembership ?? "") ?? 0
-        let membershipId = Int(membershipID ?? "") ?? 0
-        return !isGuest && (currentMembership == nil || currentId < membershipId)
+    func canPurchase(currentMembership: Int?) -> Bool{
+        return !isGuest && (currentMembership == nil || (currentMembership ?? 0) < (membershipID ?? 0))
         
     }
     var isGuest : Bool{

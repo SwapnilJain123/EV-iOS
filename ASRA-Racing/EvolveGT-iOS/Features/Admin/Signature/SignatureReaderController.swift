@@ -11,7 +11,7 @@ import SwiftSignatureView
 import MBRadioCheckboxButton
 
 protocol SignatureRefreshDelegate {
-    func didModifySignature(signatureId: String)
+    func didModifySignature(signatureId: Int)
 }
 class SignatureReaderController: ETViewController {
 
@@ -63,7 +63,7 @@ class SignatureReaderController: ETViewController {
                 self.ext.showAlert(title:"Signature Error", message: "Signature could not be validated.")
                 return
             }
-            interactor.saveSignature(signatureId: eventparticipant?.signatureID ?? "", signature: data)
+            interactor.saveSignature(signatureId: eventparticipant?.signatureID ?? 0, signature: data)
         }
       
     }
@@ -97,7 +97,7 @@ extension SignatureReaderController: CheckboxButtonDelegate {
 extension SignatureReaderController: SignatureViewDelegate{
     func didUpdateSignature() {
         self.ext.showAlert(title: "Signature Saved", message: SuccessMessages.signatureSaved){
-            self.delegate?.didModifySignature(signatureId: self.eventparticipant!.signatureID ?? "")
+            self.delegate?.didModifySignature(signatureId: self.eventparticipant!.signatureID ?? 0)
             self.navigationController?.popViewController(animated: true)
         }
     }

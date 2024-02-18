@@ -8,10 +8,11 @@
 
 import Foundation
 struct CreditHistory: Codable {
-    var paymentLogID, amount, mode, isCredit: String?
-    var orderID, userID, postDate, postModified: String?
+    var amount, mode: String?
+    var postDate, postModified: String?
     var creditHistoryDescription: String?
-
+    var paymentLogID, orderID, userID, isCredit: Int?
+    
     enum CodingKeys: String, CodingKey {
         case paymentLogID = "payment_log_id"
         case amount, mode
@@ -23,3 +24,4 @@ struct CreditHistory: Codable {
         case creditHistoryDescription = "description"
     }
 }
+

@@ -8,14 +8,12 @@
 
 import Foundation
 struct Event: Codable {
-    var eventID: String?
-    
+    var eventID: Int?
     var title, price: String?
-    
     var eventType: String?
     var eventDate, slug: String?
-    var isRoleBasedPricing: String?
-    var evType: String?
+    var isRoleBasedPricing: Int?
+    var evType: Int?
     var hostings: [EventHost]?
     var isCancelled, isPrivateEvent: Bool?
     var rolePrice: [String: RolePrice]?

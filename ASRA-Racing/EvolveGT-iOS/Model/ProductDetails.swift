@@ -8,15 +8,15 @@
 
 import Foundation
 class ProductDetails: Codable {
-    var productID, title, slug: String?
+    var title, slug: String?
     var image: String?
-    var price, isVariant, categoryID: String?
+    var price: String?
     var variations: [ProductVariation]?
     var itemStatusList: [ProductItemStatus]?
     var priceRange: String?
     var stockStatus: String?
     var quantity = 1
-    
+    var productID, categoryID, isVariant: Int?
     
     enum CodingKeys: String, CodingKey {
         case productID = "product_id"

@@ -28,7 +28,7 @@ class MembershipInteractor : BaseInteractor{
     
     func fetchAvailableMemberships(){
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingMembershipList)
-        if AppEngine.sharedInstance.membership?.isEmpty ?? true{
+        if AppEngine.sharedInstance.membership == 0 {
             self.fetchCurrentMembership()
         }else{
             self.fetchMembershipList()

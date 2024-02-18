@@ -301,7 +301,7 @@ class SkillInfo: UITableViewCell, RadioButtonDelegate{
     
     var user: UserDetails?
     func radioButtonDidSelect(_ button: RadioButton) {
-        user?.everBeenTrack = button.isOn ? "1" : "0"
+        user?.everBeenTrack = button.isOn ? 1 : 0
     }
     
     func radioButtonDidDeselect(_ button: RadioButton) {
@@ -325,7 +325,7 @@ class SkillInfo: UITableViewCell, RadioButtonDelegate{
         trackCheckContainer.buttonContainer.delegate = self
         skillLevelDropDown.applyDropDwonTheme()
         
-        rbYes.isEnabled = user.everBeenTrack?.isEmpty == true
+        rbYes.isEnabled = String(user.everBeenTrack ?? 0).isEmpty == true
         rbNo.isEnabled = rbYes.isEnabled
         
         skillLevelDropDown.optionArray = AppConstants.SkillLevels
