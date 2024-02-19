@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Address View Controller-->
+        <scene sceneID="Sec-LQ-HZu">
+            <objects>
+                <viewController storyboardIdentifier="AddressVC" id="LIR-im-7Fo" customClass="AddressViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sWl-IB-6en">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xff-mG-akX">
+                                <rect key="frame" x="25" y="807" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Dbn-Mf-ImD"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="didPressSaveButton:" destination="LIR-im-7Fo" eventType="touchUpInside" id="RCm-fh-Ds8"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UuD-mw-G2W">
+                                <rect key="frame" x="0.0" y="68" width="414" height="731"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressFieldCell" id="2VR-iq-JDA" customClass="AddressFieldCell" customModule="ASRA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2VR-iq-JDA" id="NSC-f5-J3L">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-HE-JmW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                    <rect key="frame" x="10" y="3" width="394" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="bdf-uj-b4c"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="UaN-HE-JmW" secondAttribute="bottom" constant="3" id="8Vn-6a-iac"/>
+                                                <constraint firstItem="UaN-HE-JmW" firstAttribute="top" secondItem="NSC-f5-J3L" secondAttribute="top" constant="3" id="Cbf-cP-2sb"/>
+                                                <constraint firstAttribute="trailing" secondItem="UaN-HE-JmW" secondAttribute="trailing" constant="10" id="M6e-AY-nXM"/>
+                                                <constraint firstItem="UaN-HE-JmW" firstAttribute="leading" secondItem="NSC-f5-J3L" secondAttribute="leading" constant="10" id="SOl-AH-Rku"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="textField" destination="UaN-HE-JmW" id="xTq-td-fHF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qdc-2B-UOu"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UuD-mw-G2W" firstAttribute="top" secondItem="qdc-2B-UOu" secondAttribute="top" constant="20" id="3MH-uF-2pX"/>
+                            <constraint firstItem="xff-mG-akX" firstAttribute="top" secondItem="UuD-mw-G2W" secondAttribute="bottom" constant="8" id="7bt-Y9-5uZ"/>
+                            <constraint firstItem="qdc-2B-UOu" firstAttribute="trailing" secondItem="xff-mG-akX" secondAttribute="trailing" constant="25" id="XQq-QO-AuO"/>
+                            <constraint firstItem="xff-mG-akX" firstAttribute="leading" secondItem="qdc-2B-UOu" secondAttribute="leading" constant="25" id="ZKu-YD-qmY"/>
+                            <constraint firstItem="qdc-2B-UOu" firstAttribute="bottom" secondItem="xff-mG-akX" secondAttribute="bottom" constant="10" id="h5p-gx-im4"/>
+                            <constraint firstItem="qdc-2B-UOu" firstAttribute="trailing" secondItem="UuD-mw-G2W" secondAttribute="trailing" id="jmE-fr-xRC"/>
+                            <constraint firstItem="UuD-mw-G2W" firstAttribute="leading" secondItem="qdc-2B-UOu" secondAttribute="leading" id="shq-KR-YJ0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressFormContainer" destination="UuD-mw-G2W" id="wsK-PG-wkd"/>
+                        <outlet property="btnSave" destination="xff-mG-akX" id="Dvj-O0-bly"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8y-0M-2Yp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="UaN-HE-JmW">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
+</document>
