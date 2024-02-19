@@ -9,8 +9,9 @@
 import Foundation
 
 struct Country: Codable {
-    var countryID, value, country: String?
-
+    var value, country: String?
+    var countryID: Int?
+    
     enum CodingKeys: String, CodingKey {
         case countryID = "country_id"
         case value, country

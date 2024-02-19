@@ -176,7 +176,7 @@ class AddressInteractor : BaseInteractor{
         if AppEngine.sharedInstance.countries.count > 0{
             addressViewDelegate?.didFetchSupportedCountries(coutries: AppEngine.sharedInstance.countries)
             if AppEngine.sharedInstance.countries.count == 1{
-                self.fetchSupportedStates(countryCode: AppEngine.sharedInstance.countries.first?.countryID ?? "")
+                self.fetchSupportedStates(countryCode: AppEngine.sharedInstance.countries.first?.countryID ?? 0)
             }
             return
         }
@@ -191,7 +191,7 @@ class AddressInteractor : BaseInteractor{
                         AppEngine.sharedInstance.countries = response.supportedCountries!
                         self.addressViewDelegate?.didFetchSupportedCountries(coutries: response.supportedCountries!)
                         if response.supportedCountries?.count ?? 0 == 1{
-                            self.fetchSupportedStates(countryCode: response.supportedCountries?.first?.countryID ?? "")
+                            self.fetchSupportedStates(countryCode: response.supportedCountries?.first?.countryID ?? 0)
                         }
                     }else{
                         self.viewDelegate?.showAlert(title: "", message: ErrorMessages.genericError)
@@ -206,7 +206,7 @@ class AddressInteractor : BaseInteractor{
         }
         api.fetchSupportedCountries()
     }
-    func fetchSupportedStates(countryCode: String){
+    func fetchSupportedStates(countryCode: Int){
         
         if AppEngine.sharedInstance.countries.count == 1 && AppEngine.sharedInstance.states.count > 0{
             addressViewDelegate?.didFetchSupportedStates(states:  AppEngine.sharedInstance.states)

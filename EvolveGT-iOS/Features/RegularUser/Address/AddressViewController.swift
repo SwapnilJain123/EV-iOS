@@ -201,7 +201,7 @@ extension AddressViewController: UITableViewDataSource, UITableViewDelegate{
             if self.countries.count > 1{
                 self.presentSelectionMenu(title: "Select Country", data: countries){ selectedItems in
                     self.selectedCountry = self.interactor.getSelectedCountry(selectedCountry: selectedItems.first ?? "")
-                    self.interactor.fetchSupportedStates(countryCode:  self.selectedCountry?.countryID ?? "")
+                    self.interactor.fetchSupportedStates(countryCode:  self.selectedCountry?.countryID ?? 0)
                     self.addressFormContainer.reloadData()
                 }
             }
