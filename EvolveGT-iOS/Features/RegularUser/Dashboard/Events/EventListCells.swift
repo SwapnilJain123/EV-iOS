@@ -41,7 +41,7 @@ class EventListCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        btnAddToCart?.isHidden = false
+        btnAddToCart?.isHidden = false
         bannerCancelled.isHidden = false
         
         hostIcon1?.image = nil
@@ -72,7 +72,7 @@ class EventListCell: UICollectionViewCell {
         
         bannerCancelled.isHidden = !(event?.isCancelled ?? false)
         
-//        btnAddToCart?.isHidden = !AppEngine.sharedInstance.isEvApp() || (event?.isCancelled ?? false)
+        btnAddToCart?.isHidden = !AppEngine.sharedInstance.isEvApp() || (event?.isCancelled ?? false)
         
         let hostings = event?.activeHostings
         if let count = hostings?.count {

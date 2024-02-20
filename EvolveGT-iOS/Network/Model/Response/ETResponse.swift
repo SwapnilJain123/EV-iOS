@@ -14,15 +14,15 @@ struct ETResponse : Decodable {
     var errorCode : Int?
     
     enum CodingKeys: String, CodingKey {
-            case status
-            case msg
-            case errorCode
+        case status
+        case msg
+        case errorCode
     }
     
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-       
+        
         if let value = try? container.decode(String.self, forKey: .status) {
             status = Int(value) ?? 0
         } else {
@@ -40,8 +40,7 @@ struct ETResponse : Decodable {
 class CountryListResponse : Codable{
     var supportedCountries: [Country]?
     enum CodingKeys: String, CodingKey {
-            case supportedCountries = "result"
-           
+        case supportedCountries = "result"
     }
     
 }
@@ -49,8 +48,8 @@ class StateListResponse : Codable{
     var supportedStates: [SupportedState]?
     
     enum CodingKeys: String, CodingKey {
-            case supportedStates = "result"
-           
+        case supportedStates = "result"
+        
     }
     
 }

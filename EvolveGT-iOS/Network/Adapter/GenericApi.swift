@@ -22,7 +22,7 @@ class GenericApi:BaseApiAdapter {
         setUrl(url: url)
         super.makeRequest(method: .GET)
     }
-    func fetchSupportedStates(countryCode: String){
+    func fetchSupportedStates(countryCode: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(AppApiConstants.SUPPORTED_STATES)"
         let request = SupportedStateRequest(countryCode: countryCode)

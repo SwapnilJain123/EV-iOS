@@ -99,7 +99,6 @@ class ProfileCell: UITableViewCell{
             
             let placeHolder = UIImage(named: "avatar")
             self.profileImage.kf.setImage(with: URL(string : imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
-            
         }
         
         fullName.text = profileData.fullName
@@ -112,7 +111,6 @@ class ProfileCell: UITableViewCell{
         AllEventsCount.text = String(profileData.allEventsCount)
         userSkillLevel.text = profileData.skillLevel
         customerID.text = profileData.customerID
-        
     }
     
     @IBAction func didPressUpComingEvents(_ sender: Any) {

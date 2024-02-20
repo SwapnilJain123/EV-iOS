@@ -388,6 +388,7 @@ extension UIViewController{
             self.applyThemeToDividers()
             vc.didChangeAppTheme()
         }
+        
         func applyThemeToDividers(){
             func getDividersInView(view: UIView) -> [DividerView] {
                 var results = [DividerView]()

@@ -50,9 +50,7 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         if !AppEngine.sharedInstance.isEvApp(){
             image = UIImage(named: "moto_logo")
         }
-        
         loginImage.image = image
-        
     }
     
     

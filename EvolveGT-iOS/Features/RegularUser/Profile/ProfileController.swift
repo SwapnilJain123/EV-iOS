@@ -52,7 +52,7 @@ class ProfileController : ETViewController{
     }
     
     func saveProfile(){
-        interactor.updateProfile(profileImage: userSelectedImage?.jpegData(compressionQuality: 1.0))
+        interactor.updateProfile(profileImage: userSelectedImage?.jpegData(compressionQuality: 0.25))
     }
 }
 extension ProfileController: UITableViewDataSource{

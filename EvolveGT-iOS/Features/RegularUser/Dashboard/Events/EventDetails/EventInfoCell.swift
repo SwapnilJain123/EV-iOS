@@ -15,36 +15,31 @@ import SkyFloatingLabelTextField
 class EventInfoCell: UITableViewCell{
     
     @IBOutlet weak var bannerCanclled: UIImageView!
-    
     @IBOutlet weak var eventBanner: UIImageView!
-    
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var roleBasedPrice: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
     
-    
     func applyTheme() {
-//        if AppEngine.sharedInstance.isEvApp(){
-//            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
-//            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
-//        }else{
-//            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
-//            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
-//        }
-        roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
-        totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
-
+        if AppEngine.sharedInstance.isEvApp(){
+            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
+            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
+        }else{
+            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
+            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
+        }
     }
+    
     func showData(eventDetails : EventDetails?){
         applyTheme()
         if  let url = URL(string : eventDetails?.eventBanner ?? ""){
             let fallbackImage = UIImage(named: "et_fallback_image")
             eventBanner.kf.setImage(with: url,
-                                   placeholder: fallbackImage,
-                                   options: [.transition(ImageTransition.fade(1))])
+                                    placeholder: fallbackImage,
+                                    options: [.transition(ImageTransition.fade(1))])
             
         }
-       
+        
         eventDate.text = "Event Date: \(eventDetails?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         let role = AppEngine.sharedInstance.userRole
         roleBasedPrice.text = "\(role.capitalized) :\(eventDetails?.getRoleBasedPrice(role: role).formatToAmount() ?? String.DEFAULT_AMOUNT)"
@@ -60,7 +55,7 @@ class AboutEventCell : UITableViewCell{
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var title: UILabel!
     
-     func showData(eventDetails : EventDetails?){
+    func showData(eventDetails : EventDetails?){
         content.attributedText = eventDetails?.productInfo?.toAttributedText(with: 15.0)
     }
 }
@@ -75,7 +70,7 @@ class TrainingItemCell : UITableViewCell, CheckboxButtonDelegate{
     }
     
     func chechboxButtonDidDeselect(_ button: CheckboxButton) {
-         delegate?.didChangeTrainingSelection(training: self.training!, checkedStatus: button.isOn)
+        delegate?.didChangeTrainingSelection(training: self.training!, checkedStatus: button.isOn)
     }
     
     
@@ -97,7 +92,7 @@ class TrainingItemCell : UITableViewCell, CheckboxButtonDelegate{
         priceView.text = training?.price?.formatToAmount(prefix: "Price: ")
         seelctionCheckBox.isOn = training?.isSelected ?? false
         seelctionCheckBox.delegate = self
-        seelctionCheckBox.applyCheckboxTheme() 
+        seelctionCheckBox.applyCheckboxTheme()
     }
     
 }
@@ -111,12 +106,12 @@ class RentItemCell : UITableViewCell, CheckboxButtonDelegate{
     }
     
     func chechboxButtonDidDeselect(_ button: CheckboxButton) {
-         delegate?.didChangeRentalSelection(rental: self.rentalItem!, indexPath: self.indexPath, checkedStatus: false)
+        delegate?.didChangeRentalSelection(rental: self.rentalItem!, indexPath: self.indexPath, checkedStatus: false)
     }
     
     
     var delegate: RentalDelegate?
-  
+    
     @IBOutlet weak var selectionCheckBox: CheckboxButton!
     @IBOutlet weak var rentalTitle: UILabel!
     
@@ -130,22 +125,22 @@ class RentItemCell : UITableViewCell, CheckboxButtonDelegate{
         self.rentalItem = rentalItem
         self.indexPath = indexPath
         selectionCheckBox.applyCheckboxTheme()
-       
+        
         priceView.textColor = UIColor.getAppThemeColor()
         rentalTitle.text = rentalItem.title
         
         selectionCheckBox.delegate = nil
         selectionCheckBox.isOn = rentalItem.selectedVariant != nil
         selectionCheckBox.delegate = self
-       
+        
         if let selectedVariant = rentalItem.selectedVariant{
             selectedSize.text = "\(selectedVariant.attributeName?.capitalized ?? "") : \(selectedVariant.attributeValue?.capitalized ?? "")"
-             priceView.text = selectedVariant.price?.formatToAmount(prefix: "Price: ")
+            priceView.text = selectedVariant.price?.formatToAmount(prefix: "Price: ")
         }else{
             selectedSize.text = ""
             priceView.text = ""
         }
-       
+        
     }
     
     
@@ -155,7 +150,7 @@ class RentItemCell : UITableViewCell, CheckboxButtonDelegate{
 
 protocol EventClassCellDelegate{
     func didChangeEventClassSelection(eventClass: EventClass, raceClass : EventRaceClass, indexPath: IndexPath, checkedStatus : Bool)
-    }
+}
 
 class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDelegate{
     
@@ -168,7 +163,7 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDele
     }
     
     func chechboxButtonDidDeselect(_ button: CheckboxButton) {
-         self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass, raceClass: self.raceClass!, indexPath: self.indexPath!, checkedStatus: false)
+        self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass, raceClass: self.raceClass!, indexPath: self.indexPath!, checkedStatus: false)
     }
     
     var delegate : EventClassCellDelegate?
@@ -206,7 +201,7 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDele
         self.raceClass = raceClass
         self.eventClass = eventClass
         
-       eventClassTitle.text = raceClass.className
+        eventClassTitle.text = raceClass.className
         price.text = "$ \(raceClass.classPrice ?? 0)"
         tfBikeData.text = raceClass.bikeData
         selectionBox.delegate = nil
@@ -219,7 +214,7 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDele
             tfBikeData.errorMessage = "Bike data required."
         }
         
-
+        
     }
 }
 
@@ -239,15 +234,15 @@ class SkillLevelCell: UITableViewCell, RadioButtonDelegate{
     
     var delegate : SkillLevelCellDelegate?
     @IBOutlet weak var radio1: RadioButton!
-
+    
     
     @IBOutlet weak var radio2: RadioButton!
-  
+    
     
     func showData(racerStatus : String, skillRegistered : String){
         radio1.setTitle("Amateur", for: .normal)
         radio2.setTitle("Expert", for: .normal)
-
+        
         radio1.isOn = racerStatus == radio1.title(for: .normal)
         radio2.isOn = racerStatus == radio2.title(for: .normal)
         
@@ -268,7 +263,7 @@ class SkillLevelCell: UITableViewCell, RadioButtonDelegate{
 }
 
 protocol TransponderCellDelegate{
-//    func didSelectTransponderForRent(transponder: Transponder, indexPath: IndexPath, _ checked : Bool)
+    //    func didSelectTransponderForRent(transponder: Transponder, indexPath: IndexPath, _ checked : Bool)
     func didEnterTransponderNumber(transponderNumber: String, indexPath: IndexPath)
     func didEnterBikeNumber(bikeNumber: String, indexPath: IndexPath)
 }
@@ -291,8 +286,8 @@ class TransponderCell: UITableViewCell,  UITextFieldDelegate{
         
         tfBikeNumber.text = bikeNumber
         tfBikeNumber.applyColorTheme()
-       
-         
+        
+        
     }
     
     override func awakeFromNib() {
@@ -344,36 +339,36 @@ class TrackDayCell : UITableViewCell{
         if  let url = URL(string : trackDay?.eventLogo ?? ""){
             let fallbackImage = UIImage(named: "et_fallback_image")
             imageLogo.kf.setImage(with: url,
-                                   placeholder: fallbackImage,
-                                   options: [.transition(ImageTransition.fade(1))])
+                                  placeholder: fallbackImage,
+                                  options: [.transition(ImageTransition.fade(1))])
             
         }
         bannerCancelled.isHidden = !(trackDay?.isCancelled ?? false)
         addToCartButton.isHidden = trackDay?.isCancelled ?? false
         eventName.text = trackDay?.title
         
-//        eventDate.text = "Date: \(trackDay?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
+        //        eventDate.text = "Date: \(trackDay?.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         price.text = trackDay?.price?.formatToAmount(prefix: "Price: ")
         hostedBy.text = "Hosted By: \(trackDay?.eventType ?? "")"
         rootView.setCardView()
         
         if trackDay?.isPrivateEvent ?? false{
-                   if AppEngine.sharedInstance.isEvApp(){
-                       addToCartButton?.setImage(UIImage(named: "private-event-green"), for: .normal)
-                   }else{
-                       addToCartButton?.setImage(UIImage(named: "private-event-blue"), for: .normal)
-                       
-                   }
-               }else if trackDay?.external != nil{
-                   if AppEngine.sharedInstance.isEvApp(){
-                       addToCartButton?.setImage(UIImage(named: "cart-globe-ev"), for: .normal)
-                   }else{
-                       addToCartButton?.setImage(UIImage(named: "cart-globe-moto"), for: .normal)
-                       
-                   }
-               }else{
-                    addToCartButton?.setImage(UIImage(named: "cart"), for: .normal)
-               }
+            if AppEngine.sharedInstance.isEvApp(){
+                addToCartButton?.setImage(UIImage(named: "private-event-green"), for: .normal)
+            }else{
+                addToCartButton?.setImage(UIImage(named: "private-event-blue"), for: .normal)
+                
+            }
+        }else if trackDay?.external != nil{
+            if AppEngine.sharedInstance.isEvApp(){
+                addToCartButton?.setImage(UIImage(named: "cart-globe-ev"), for: .normal)
+            }else{
+                addToCartButton?.setImage(UIImage(named: "cart-globe-moto"), for: .normal)
+                
+            }
+        }else{
+            addToCartButton?.setImage(UIImage(named: "cart"), for: .normal)
+        }
     }
 }
 class EventClassHeader: UITableViewCell{
@@ -394,7 +389,7 @@ class MrlLicenceCell: UITableViewCell{
     @IBOutlet weak var season: UILabel!
     @IBOutlet weak var btnPurchase: UIButton!
     
- 
+    
     var purchaseHandler :((_ mrlData: MrlData) -> Void )? = nil
     @IBAction func didTapPurchaseButton(_ sender: UIButton) {
         if let handler = purchaseHandler{

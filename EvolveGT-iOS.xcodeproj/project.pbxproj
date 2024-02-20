@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -783,7 +783,6 @@
 		10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiView+Extension.swift */; };
 		10FE935525023094002F3572 /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
 		3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */; };
-		DF5E703275A0503AFA3E7AA3 /* Pods_UIAutomation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA80F2D4E1FC4292A5100E98 /* Pods_UIAutomation.framework */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E2596048FB3FBD0D2CD866D9 /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E539CFEE9BD57A1C5B21BC98 /* Pods_EvolveGT_QA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */; };
@@ -920,7 +919,7 @@
 		103366662483AE72009AF19A /* ArchieCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCardViewController.swift; sourceTree = "<group>"; };
 		103366672483AE72009AF19A /* ArchiCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiCardCell.swift; sourceTree = "<group>"; };
 		1033666D2483AE98009AF19A /* ArchieCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieCard.swift; sourceTree = "<group>"; };
-		1039FDF9244F1A1800190088 /* ASRA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASRA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1039FDF9244F1A1800190088 /* EvolveGT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvolveGT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1039FDFC244F1A1800190088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1039FE00244F1A1800190088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1039FE05244F1A1A00190088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1103,13 +1102,10 @@
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
 		73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.appstore.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.appstore.xcconfig"; sourceTree = "<group>"; };
 		761AFDB7FAB0E5D15F2AFA64 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7755BF8EAF5B18DC2EDEB7B9 /* Pods-UIAutomation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIAutomation.release.xcconfig"; path = "Target Support Files/Pods-UIAutomation/Pods-UIAutomation.release.xcconfig"; sourceTree = "<group>"; };
 		8015BE31D916A4876A5CDEE0 /* Pods-EvolveGT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolveGT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA80F2D4E1FC4292A5100E98 /* Pods_UIAutomation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIAutomation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE86EE90B82E53ECE2138B49 /* Pods-EvolveGT-iOS.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.qa.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.qa.xcconfig"; sourceTree = "<group>"; };
 		BBD44127ECF18789CE01190F /* Pods-EvolveGT-UAT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-UAT.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT.debug.xcconfig"; sourceTree = "<group>"; };
-		BDDC29E2B88115468BA0112E /* Pods-UIAutomation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIAutomation.debug.xcconfig"; path = "Target Support Files/Pods-UIAutomation/Pods-UIAutomation.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4A2FC076E6E6382D42ED5B /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolveGT_QA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1144,7 +1140,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF5E703275A0503AFA3E7AA3 /* Pods_UIAutomation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1446,7 +1441,7 @@
 		1039FDFA244F1A1800190088 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1039FDF9244F1A1800190088 /* ASRA.app */,
+				1039FDF9244F1A1800190088 /* EvolveGT.app */,
 				103B25B4249940BE00BB8CB9 /* EvolveGT-QA.app */,
 				103B268A249940CC00BB8CB9 /* EvolveGT-UAT.app */,
 				1098831F24BC48BE001F217C /* Tests.xctest */,
@@ -2027,7 +2022,6 @@
 				CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */,
 				48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */,
 				761AFDB7FAB0E5D15F2AFA64 /* Pods_UITests.framework */,
-				AA80F2D4E1FC4292A5100E98 /* Pods_UIAutomation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2047,8 +2041,6 @@
 				6CB5E4398F4AF2B0CAC4C0DB /* Pods-EvolveGT-UAT.release.xcconfig */,
 				0C1DCC4A5E4F153FD5E4F18D /* Pods-UITests.debug.xcconfig */,
 				CC4A2FC076E6E6382D42ED5B /* Pods-UITests.release.xcconfig */,
-				BDDC29E2B88115468BA0112E /* Pods-UIAutomation.debug.xcconfig */,
-				7755BF8EAF5B18DC2EDEB7B9 /* Pods-UIAutomation.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2072,7 +2064,7 @@
 			);
 			name = "EvolveGT-iOS";
 			productName = "EvolveGT-iOS";
-			productReference = 1039FDF9244F1A1800190088 /* ASRA.app */;
+			productReference = 1039FDF9244F1A1800190088 /* EvolveGT.app */;
 			productType = "com.apple.product-type.application";
 		};
 		103B24E0249940BE00BB8CB9 /* EvolveGT-QA */ = {
@@ -2083,7 +2075,6 @@
 				103B24E2249940BE00BB8CB9 /* Sources */,
 				103B2592249940BE00BB8CB9 /* Frameworks */,
 				103B2594249940BE00BB8CB9 /* Resources */,
-				7AAD0DD54A5D02DCF3F4308C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2102,7 +2093,6 @@
 				103B25B8249940CC00BB8CB9 /* Sources */,
 				103B2668249940CC00BB8CB9 /* Frameworks */,
 				103B266A249940CC00BB8CB9 /* Resources */,
-				45DDD6C86458BA06AFA3BEA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2117,11 +2107,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 104BCDC124CB585F0095EE48 /* Build configuration list for PBXNativeTarget "UIAutomation" */;
 			buildPhases = (
-				695FB09D2523B911236F335F /* [CP] Check Pods Manifest.lock */,
 				104BCDB424CB585F0095EE48 /* Sources */,
 				104BCDB524CB585F0095EE48 /* Frameworks */,
 				104BCDB624CB585F0095EE48 /* Resources */,
-				B376400D0073277DCDEACB3F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2413,79 +2401,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45DDD6C86458BA06AFA3BEA5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		695FB09D2523B911236F335F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UIAutomation-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AAD0DD54A5D02DCF3F4308C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B376400D0073277DCDEACB3F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UIAutomation/Pods-UIAutomation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UIAutomation/Pods-UIAutomation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIAutomation/Pods-UIAutomation-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCB1995583FE4F5A83200BCC /* [CP] Check Pods Manifest.lock */ = {
@@ -3358,14 +3273,13 @@
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ASRA/CCS;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asra.uat;
-				PRODUCT_NAME = ASRA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3382,14 +3296,14 @@
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ASRA/CCS;
+				INFOPLIST_KEY_CFBundleDisplayName = EvolveGT;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
-				PRODUCT_NAME = ASRA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
+				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3490,7 +3404,6 @@
 		};
 		104BCDBF24CB585F0095EE48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDDC29E2B88115468BA0112E /* Pods-UIAutomation.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3P4BH4498;
@@ -3511,7 +3424,6 @@
 		};
 		104BCDC024CB585F0095EE48 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7755BF8EAF5B18DC2EDEB7B9 /* Pods-UIAutomation.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3P4BH4498;

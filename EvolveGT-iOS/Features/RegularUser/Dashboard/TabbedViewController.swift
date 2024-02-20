@@ -30,15 +30,15 @@ class TabbedViewController: ETViewController {
     private func setNavbarControls(){
         
         
-        //           var switcIcon = UIImage(named: "switch_moto")
-        //           if !AppEngine.sharedInstance.isEvApp(){
-        //               switcIcon = UIImage(named: "switch_ev")
-        //           }
-        //
-        //           let switchAppMode = UIBarButtonItem(image: switcIcon,
-        //                                               style: .plain,
-        //                                               target: self,
-        //                                               action: #selector(self.switchAppTheme))
+                   var switcIcon = UIImage(named: "switch_moto")
+                   if !AppEngine.sharedInstance.isEvApp(){
+                       switcIcon = UIImage(named: "switch_ev")
+                   }
+        
+                   let switchAppMode = UIBarButtonItem(image: switcIcon,
+                                                       style: .plain,
+                                                       target: self,
+                                                       action: #selector(self.switchAppTheme))
         
         
         let switchDashboard = UIBarButtonItem(image: #imageLiteral(resourceName: "SwictUserWhite"),
@@ -49,7 +49,7 @@ class TabbedViewController: ETViewController {
         var navbarControls = [UIBarButtonItem]()
         if AppEngine.sharedInstance.isUserLoggedIn(){
             if(AppConstants.APP_MODE_SWITCH_ENABLED){
-                //                navbarControls.append(switchAppMode)
+//                navbarControls.append(switchAppMode)
             }
             if(AppEngine.sharedInstance.currentUser?.hasAdminPrevilege ?? false && AppConstants.DASHBOARD_SWITCH_ENABLED){
                 navbarControls.append(switchDashboard)

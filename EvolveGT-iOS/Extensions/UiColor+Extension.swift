@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor {
     
-    private static let COLOR_EV = "#003DA6"
+    private static let COLOR_EV = "#08A53A"
     private static let COLOR_MOTO = "#376cde"
     
     private static let COLOR_EV_LITE = "#00574B"
@@ -62,9 +62,7 @@ extension UIColor {
         if(AppEngine.sharedInstance.appMode != .APP_EV){
             appColor = UIColor.init(hexFromString: UIColor.COLOR_MOTO)
         }
-        
         return appColor
-        
     }
     
     static func getSecondaryColor() -> UIColor{
