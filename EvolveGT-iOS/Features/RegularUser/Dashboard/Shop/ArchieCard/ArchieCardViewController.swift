@@ -29,22 +29,14 @@ class ArchieCardViewController: ETViewController, ArchieCardListDelegate {
         archieCardInteractor.archieCardListDelegate = self
         archieCardInteractor.viewDelegate = self
         archieCardInteractor.getArchieCards()
-        
-        
-        
-        
     }
     
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_ARCHIE_CARDS
     }
     
-    
-    
-    
-    
-    
 }
+
 extension ArchieCardViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         archieCardList.count

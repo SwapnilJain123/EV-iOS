@@ -56,7 +56,7 @@ struct SlideMenuItem{
         let settings = SlideMenuItem("Settings", "settings", "moto_slider_settings",TAG_SETTINGS)
         let aboutUs = SlideMenuItem("About Us", "aboutUs", "mato_slider_about_us",TAG_ABOUT_US)
         
-        let switchDashboard = SlideMenuItem("Switch Dashboard", "SwictUserGreen","moto_slider_switch_dashboard", TAG_SWITCH_DASHBOARD)
+//        let switchDashboard = SlideMenuItem("Switch Dashboard", "SwictUserGreen","moto_slider_switch_dashboard", TAG_SWITCH_DASHBOARD)
         
         let waiver = SlideMenuItem("E-Waiver", "e-waiver", "e-waiver-moto",TAG_E_WAIVER)
         
@@ -69,6 +69,6 @@ struct SlideMenuItem{
          
 //        let referFriend = SlideMenuItem("Refer a friend", "refer_a_friend", "refer_a_friend_moto",TAG_REFER_FRIEND)
 //
-        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, switchDashboard, waiver,transferCredit, deleteMe, logout]///, referFriend
+        return [empty, home, upcomingEvents, pastEvents, creditHistory, membership, myProfile, changePassword, settings, aboutUs, waiver,transferCredit, deleteMe, logout]///, referFriend
     }
 }

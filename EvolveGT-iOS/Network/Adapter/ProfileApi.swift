@@ -161,7 +161,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func viewPassport(passportId: String){
+    func viewPassport(passportId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.VIEW_PASSPORT)"
         setUrl(url: url)
@@ -169,7 +169,7 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    func showPassport(passportId: String){
+    func showPassport(passportId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SHOW_PASSPORT)"
         setUrl(url: url)

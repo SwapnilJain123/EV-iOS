@@ -171,7 +171,7 @@ extension PaymentViewController: PaymentDelegate{
         self.present(dropIn!, animated: true, completion: nil)
     }
     
-    func didFinishTransaction(transactionID: String) {
+    func didFinishTransaction(transactionID: Int) {
         let postPurchaseVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PostPurchase") as! PostPurchaseController
          postPurchaseVC.interactor = self.interactor
          self.ext.pushViewController(viewController: postPurchaseVC)

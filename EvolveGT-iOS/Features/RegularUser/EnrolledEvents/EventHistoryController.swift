@@ -213,14 +213,14 @@ extension EventHistoryController: EnrolledEventCellDelegate{
     }
     
     func showPassport(event: EnrolledEvent) {
-        AppEngine.sharedInstance.passportId = event.passportId ?? "0"
+        AppEngine.sharedInstance.passportId = event.passportId ?? 0
         AppEngine.sharedInstance.trackName = event.productName ?? "0"
         AppEngine.sharedInstance.eventDate = event.eventDate ?? ""
         self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: ShowPassportController.identifier)
     }
     
     func uploadPassport(event: EnrolledEvent){
-        AppEngine.sharedInstance.passportId = event.passportId ?? "0"
+        AppEngine.sharedInstance.passportId = event.passportId ?? 0
         AppEngine.sharedInstance.eventId = event.eventId ?? 0
         self.ext.pushViewController(storyBoard: "EnrolledEvents", VCIdentifier: UploadPassportController.identifier)
     }

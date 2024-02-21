@@ -100,7 +100,15 @@ class TrainingItemCell : UITableViewCell, CheckboxButtonDelegate{
 protocol RentalDelegate{
     func didChangeRentalSelection(rental: RentalDatum, indexPath: IndexPath, checkedStatus : Bool)
 }
-class RentItemCell : UITableViewCell, CheckboxButtonDelegate{
+class RentItemCell : UITableViewCell, CheckboxButtonDelegate, RadioButtonDelegate {
+    func radioButtonDidSelect(_ button: MBRadioCheckboxButton.RadioButton) {
+        delegate?.didChangeRentalSelection(rental: self.rentalItem!, indexPath: self.indexPath, checkedStatus: true)
+    }
+    
+    func radioButtonDidDeselect(_ button: MBRadioCheckboxButton.RadioButton) {
+        delegate?.didChangeRentalSelection(rental: self.rentalItem!, indexPath: self.indexPath, checkedStatus: false)
+    }
+    
     func chechboxButtonDidSelect(_ button: CheckboxButton) {
         delegate?.didChangeRentalSelection(rental: self.rentalItem!, indexPath: self.indexPath, checkedStatus: true)
     }

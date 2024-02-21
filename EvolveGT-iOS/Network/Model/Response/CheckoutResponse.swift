@@ -28,7 +28,7 @@ struct CouponValidationResponse: Codable {
 }
 
 struct PlaceOrderResponse: Codable {
-    var transactionID : String?
+    var transactionID : Int?
     enum CodingKeys: String, CodingKey {
         case transactionID = "ack_id"
     }
@@ -42,7 +42,8 @@ struct CheckoutTokenResponse: Codable {
     
 }
 struct BrainTreeTransactionResponse : Codable{
-    var orderId, message : String?
+    var message : String?
+    var orderId: Int
     var cartStatus, paymentStatus: Int?
     
     enum CodingKeys: String, CodingKey {

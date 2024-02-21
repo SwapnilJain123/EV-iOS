@@ -33,6 +33,7 @@ extension String{
     }
     
     func toDouble() -> Double{
-        return Double(self) ?? 0.0
+        let strWithoutComma = self.replacingOccurrences(of: ",", with: "")
+        return Double(strWithoutComma) ?? 0.0
     }
 }

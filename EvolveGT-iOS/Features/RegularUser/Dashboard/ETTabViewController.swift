@@ -83,6 +83,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
             self.ext.openLink(url)
         }
     }
+    
     func enableSlideMenu(){
         let button = UIButton(type: UIButton.ButtonType.custom)
         button.setImage(UIImage(named: "HMenu"), for: UIControl.State.normal)

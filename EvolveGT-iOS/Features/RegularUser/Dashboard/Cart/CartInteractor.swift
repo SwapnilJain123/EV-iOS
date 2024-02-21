@@ -14,7 +14,7 @@ protocol CartListDelegate{
     func hasOutOfStockItems(outOfStock: Bool)
 }
 protocol PaymentDelegate{
-    func didFinishTransaction(transactionID: String)
+    func didFinishTransaction(transactionID: Int)
     func transactionError(message: String)
     func presentDropInPayment(token: String)
     func cartClearedError(message: String)
@@ -53,7 +53,7 @@ class CartInteractor: BaseInteractor{
     var subTotal: Double = 0
     var total: Double = 0
     
-    var transactionId = ""
+    var transactionId = 0
     var paymentMethod = PaymentMethod.paypal
     var nonce = ""
     
@@ -264,7 +264,7 @@ class CartInteractor: BaseInteractor{
             
             if error == nil{
                 if let response = self.decodeFromJson(data!, modelType: PlaceOrderResponse.self){
-                    self.transactionId = response.transactionID ?? "0"
+                    self.transactionId = response.transactionID ?? 0
                     self.resetCartList()
                 }else{
                     self.delegate?.showErrorToastMessage(message: ErrorMessages.genericError)
@@ -372,7 +372,7 @@ class CartInteractor: BaseInteractor{
                 if let response = self.decodeFromJson(data!, modelType: BrainTreeTransactionResponse.self){
                     
                     if response.paymentStatus == 1{
-                        self.transactionId = response.orderId ?? "0"
+                        self.transactionId = response.orderId 
                         self.resetCartList()
                     }else{
                         

@@ -115,7 +115,7 @@ class AppEngine{
         userDetails = nil
     }
     
-   var passportId = ""
+   var passportId = 0
    var eventId = 0
    var trackName = ""
    var eventDate = ""

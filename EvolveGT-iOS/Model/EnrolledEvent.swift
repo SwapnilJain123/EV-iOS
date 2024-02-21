@@ -17,7 +17,7 @@ class EnrolledEvent: Codable {
     var motoClasses: [MotoClass]?
     
     var hasPassport, enableSelfsign: Bool?
-    var passportId: String?
+    var passportId: Int?
     var eventId: Int?
     
     enum CodingKeys: String, CodingKey {

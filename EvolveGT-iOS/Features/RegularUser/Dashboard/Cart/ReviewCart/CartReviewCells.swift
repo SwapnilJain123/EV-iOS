@@ -166,8 +166,6 @@ class BillingAddressCell : UITableViewCell{
 }
 class CartWalletCell : UITableViewCell{
     static let identifier = "CartWalletCell"
-    
-    
     @IBOutlet weak var walletAmount: UILabel!
     
     func showData(walletBalanceAmount : Double){
