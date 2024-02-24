@@ -9,7 +9,6 @@
 import UIKit
 import IQKeyboardManagerSwift
 import SideMenuSwift
-import Braintree
 import Firebase
 
 @UIApplicationMain
@@ -90,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
     }
+    
 }
 
 extension AppDelegate{
@@ -100,6 +100,8 @@ extension AppDelegate{
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url)
+
 //        if url.scheme?.localizedCaseInsensitiveCompare(BuildScheme.brainTreeReturnUrl) == .orderedSame {
 //            return BTAppSwitch.handleOpen(url, options: options)
 //        }

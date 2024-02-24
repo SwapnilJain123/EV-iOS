@@ -20,7 +20,13 @@ struct Config{
 
     ///Live
 //    static let BASE_URL = "race.asraracing.com" //release3 uploaded the code on git
+    
+    
+    //stagung
     static let BASE_URL = "tracknutts.com" //release3 uploaded the code on git
+
+    //live
+//    static let BASE_URL = "evolvegt.com" //release3 uploaded the code on git
 
 //    static let BASE_URL = "evolvegt.com"
     static let LOG_ENABLED = false

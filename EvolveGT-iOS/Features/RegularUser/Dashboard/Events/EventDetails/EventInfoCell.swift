@@ -60,24 +60,11 @@ class AboutEventCell : UITableViewCell{
     }
 }
 
+class TrainingItemCell : UITableViewCell{
 
-protocol TrainingDelegate{
-    func didChangeTrainingSelection(training: TrainingDatum, checkedStatus : Bool)
-}
-class TrainingItemCell : UITableViewCell, CheckboxButtonDelegate{
-    func chechboxButtonDidSelect(_ button: CheckboxButton) {
-        delegate?.didChangeTrainingSelection(training: self.training!, checkedStatus: button.isOn)
-    }
-    
-    func chechboxButtonDidDeselect(_ button: CheckboxButton) {
-        delegate?.didChangeTrainingSelection(training: self.training!, checkedStatus: button.isOn)
-    }
-    
-    
-    var delegate :TrainingDelegate?
     @IBOutlet weak var priceView: UILabel!
-    
-    @IBOutlet weak var seelctionCheckBox: CheckboxButton!
+    @IBOutlet weak var selectRedioImg: UIImageView!
+    @IBOutlet weak var radiobutton: UIButton!
     @IBOutlet weak var titleView: UILabel!
     
     var training : TrainingDatum?{
@@ -90,9 +77,7 @@ class TrainingItemCell : UITableViewCell, CheckboxButtonDelegate{
         priceView.textColor = UIColor.getAppThemeColor()
         titleView.text = training?.title
         priceView.text = training?.price?.formatToAmount(prefix: "Price: ")
-        seelctionCheckBox.isOn = training?.isSelected ?? false
-        seelctionCheckBox.delegate = self
-        seelctionCheckBox.applyCheckboxTheme()
+        selectRedioImg.image = (training?.isSelected ?? false) ? UIImage(named: "radio-on-button") : UIImage(named: "radio-off-button")
     }
     
 }

@@ -37,6 +37,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>$(BRAINTREE_RETURN_URL)</string>
+				<string>EvolveGT-iOS</string>
 			</array>
 		</dict>
 	</array>

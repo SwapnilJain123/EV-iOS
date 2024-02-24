@@ -14,7 +14,7 @@ protocol CartListDelegate{
     func hasOutOfStockItems(outOfStock: Bool)
 }
 protocol PaymentDelegate{
-    func didFinishTransaction(transactionID: Int)
+    func didFinishTransaction(transactionID: String)
     func transactionError(message: String)
     func presentDropInPayment(token: String)
     func cartClearedError(message: String)
@@ -53,7 +53,7 @@ class CartInteractor: BaseInteractor{
     var subTotal: Double = 0
     var total: Double = 0
     
-    var transactionId = 0
+    var transactionId = ""
     var paymentMethod = PaymentMethod.paypal
     var nonce = ""
     
@@ -68,6 +68,7 @@ class CartInteractor: BaseInteractor{
             self.delegate?.hideProgressIndicator()
             self.delegate?.hideEmptyPageError()
             if error == nil{
+                print(data as Any)
                 if let cartListResponse = self.decodeFromJson(data!, modelType: CartListResponse.self){
                     AppEngine.sharedInstance.walletEnabled = cartListResponse.walletEnabled ?? 0 != 0
                     AppEngine.sharedInstance.walletBalance = cartListResponse.wallet?.toDouble() ?? 0
@@ -227,7 +228,7 @@ class CartInteractor: BaseInteractor{
         checkoutApi.validateCoupon(userId: AppEngine.sharedInstance.userID, couponCode: coupon)
     }
     
-    private func getPaymentMode() -> String{
+    func getPaymentMode() -> String{
         var paymentType = ""
         
         if(coupon.appliedCouponAmount > 0){
@@ -248,9 +249,8 @@ class CartInteractor: BaseInteractor{
             return String(paymentType.dropLast())
         }
         return paymentType
-        
-        
     }
+    
     func completeTransaction(){
         
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.placingOrder)
@@ -264,7 +264,7 @@ class CartInteractor: BaseInteractor{
             
             if error == nil{
                 if let response = self.decodeFromJson(data!, modelType: PlaceOrderResponse.self){
-                    self.transactionId = response.transactionID ?? 0
+                    self.transactionId = response.transactionID ?? ""
                     self.resetCartList()
                 }else{
                     self.delegate?.showErrorToastMessage(message: ErrorMessages.genericError)
@@ -354,6 +354,7 @@ class CartInteractor: BaseInteractor{
         }
         checkoutApi.getCheckoutToken(userId: AppEngine.sharedInstance.userID, email: AppEngine.sharedInstance.currentUser?.email ?? "")
     }
+    
     func completeBrainTreeTransaction(nonce: String){
         self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.placingOrder)
         self.nonce = nonce

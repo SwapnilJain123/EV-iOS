@@ -195,6 +195,7 @@ extension ReviewCartController: CouponCellDelegate, CartCouponAppliedCellDelegat
     }
 }
 extension ReviewCartController : CartReviewDelegate, PaymentDelegate{
+    
     func cartClearedError(message: String) {
          self.ext.showAlert(title: "Transaction Error", message: message)
     }
@@ -207,7 +208,7 @@ extension ReviewCartController : CartReviewDelegate, PaymentDelegate{
         //Ignored
     }
     
-    func didFinishTransaction(transactionID: Int) {
+    func didFinishTransaction(transactionID: String) {
         let postPurchaseVC = self.ext.getViewController(storyBoard: "Cart", VCIdentifier: "PostPurchase") as! PostPurchaseController
         postPurchaseVC.interactor = self.interactor
         self.ext.pushViewController(viewController: postPurchaseVC)

@@ -18,7 +18,7 @@ target 'EvolveGT-iOS' do
   pod 'DatePickerDialog'
   pod 'SideMenuSwift'
   pod 'SwiftSignatureView'
-  pod 'BraintreeDropIn'
+#  pod 'BraintreeDropIn'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'Firebase/Core'

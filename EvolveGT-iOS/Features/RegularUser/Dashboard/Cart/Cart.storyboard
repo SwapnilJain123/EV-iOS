@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fUx-wy-YKp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fUx-wy-YKp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -31,7 +31,7 @@
         <!--Cart List Controller-->
         <scene sceneID="xj0-F4-8Fd">
             <objects>
-                <viewController storyboardIdentifier="CartList" id="J71-DR-squ" customClass="CartListController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartList" id="J71-DR-squ" customClass="CartListController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jza-cy-Ukq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="612"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartAllPropertiesCell" id="JE6-qO-bLw" customClass="CartAllPropertiesCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartAllPropertiesCell" id="JE6-qO-bLw" customClass="CartAllPropertiesCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JE6-qO-bLw" id="apy-bZ-v1Z">
@@ -189,7 +189,7 @@
                                             <outlet property="tertiaryProperty" destination="kAs-gx-wkR" id="eYC-aE-iuf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart3PropertiesCell" id="CIY-PR-EFG" customClass="Cart3PropertiesCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart3PropertiesCell" id="CIY-PR-EFG" customClass="Cart3PropertiesCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="173" width="414" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIY-PR-EFG" id="RkN-iw-ymV">
@@ -210,6 +210,7 @@
                                                             <rect key="frame" x="8" y="9" width="91" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="KsX-qC-gj7" secondAttribute="height" multiplier="1:1" constant="1" id="TCW-lJ-6ao"/>
+                                                                <constraint firstAttribute="width" secondItem="KsX-qC-gj7" secondAttribute="height" multiplier="1:1" constant="1" id="bf0-cs-Zd0"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN8-Ba-CPO">
@@ -255,7 +256,6 @@
                                                         <constraint firstItem="WoZ-az-mqp" firstAttribute="leading" secondItem="Xkl-gQ-S3d" secondAttribute="leading" constant="8" id="XPK-rD-IZD"/>
                                                         <constraint firstItem="Tq7-S6-gZH" firstAttribute="top" secondItem="IT7-bT-RYG" secondAttribute="bottom" constant="8" id="ZMW-n3-tbK"/>
                                                         <constraint firstItem="KsX-qC-gj7" firstAttribute="top" secondItem="WoZ-az-mqp" secondAttribute="top" id="aCF-8k-gRn"/>
-                                                        <constraint firstItem="KsX-qC-gj7" firstAttribute="width" secondItem="KsX-qC-gj7" secondAttribute="height" multiplier="1:1" constant="1" id="bf0-cs-Zd0"/>
                                                         <constraint firstItem="tCl-mH-dcK" firstAttribute="leading" secondItem="WoZ-az-mqp" secondAttribute="trailing" constant="10" id="cgm-Xc-jGi"/>
                                                         <constraint firstItem="WoZ-az-mqp" firstAttribute="centerY" secondItem="Xkl-gQ-S3d" secondAttribute="centerY" id="eq7-OR-5CS"/>
                                                         <constraint firstAttribute="trailing" secondItem="tCl-mH-dcK" secondAttribute="trailing" constant="8" id="hOx-KM-Sfu"/>
@@ -282,7 +282,7 @@
                                             <outlet property="secondaryPropert" destination="IT7-bT-RYG" id="EtS-Gq-DuG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart2PropertiesCell" id="Ei6-dr-xfg" customClass="Cart2PropertiesCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart2PropertiesCell" id="Ei6-dr-xfg" customClass="Cart2PropertiesCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="291" width="414" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ei6-dr-xfg" id="Mbo-iT-e72">
@@ -302,6 +302,7 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="out-of-stock" translatesAutoresizingMaskIntoConstraints="NO" id="Aa5-Ue-RCy" userLabel="OutOfStock">
                                                             <rect key="frame" x="8" y="12" width="91" height="90"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Aa5-Ue-RCy" secondAttribute="height" multiplier="1:1" constant="1" id="VtP-oi-VKK"/>
                                                                 <constraint firstAttribute="width" secondItem="Aa5-Ue-RCy" secondAttribute="height" multiplier="1:1" constant="1" id="wge-88-bmU"/>
                                                             </constraints>
                                                         </imageView>
@@ -338,7 +339,6 @@
                                                         <constraint firstItem="Aa5-Ue-RCy" firstAttribute="top" secondItem="nIM-Qt-6PC" secondAttribute="top" id="PRJ-GO-Vy9"/>
                                                         <constraint firstItem="YQQ-94-XWa" firstAttribute="leading" secondItem="nIM-Qt-6PC" secondAttribute="trailing" constant="10" id="QKS-9q-yVv"/>
                                                         <constraint firstItem="Aa5-Ue-RCy" firstAttribute="leading" secondItem="nIM-Qt-6PC" secondAttribute="leading" id="SkR-BM-WP5"/>
-                                                        <constraint firstItem="Aa5-Ue-RCy" firstAttribute="width" secondItem="Aa5-Ue-RCy" secondAttribute="height" multiplier="1:1" constant="1" id="VtP-oi-VKK"/>
                                                         <constraint firstAttribute="trailing" secondItem="G0k-nn-ZCk" secondAttribute="trailing" constant="8" id="WxV-OP-yR0"/>
                                                         <constraint firstItem="kmM-W6-qjk" firstAttribute="leading" secondItem="YQQ-94-XWa" secondAttribute="leading" id="aKA-a9-uVa"/>
                                                         <constraint firstItem="G0k-nn-ZCk" firstAttribute="centerY" secondItem="YU9-W4-CcW" secondAttribute="centerY" id="aed-m1-lHA"/>
@@ -410,7 +410,7 @@
         <!--Review Cart Controller-->
         <scene sceneID="GLV-GU-edG">
             <objects>
-                <viewController storyboardIdentifier="ReviewCartVC" id="w3I-s0-bGo" customClass="ReviewCartController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewCartVC" id="w3I-s0-bGo" customClass="ReviewCartController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fRN-Uv-n0V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +418,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USG-vu-hjg">
                                 <rect key="frame" x="0.0" y="48" width="414" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-2x-7ad" customClass="ShippingIndicator" customModule="ASRA" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-2x-7ad" customClass="ShippingIndicator" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                     </view>
@@ -436,7 +436,7 @@
                                 <rect key="frame" x="0.0" y="128" width="414" height="664"/>
                                 <color key="backgroundColor" name="RootBackGround"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewSummaryHeaderCell" id="Lt0-aq-mIL" customClass="CartReviewSummaryHeaderCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewSummaryHeaderCell" id="Lt0-aq-mIL" customClass="CartReviewSummaryHeaderCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="50.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lt0-aq-mIL" id="mEI-ak-a2R">
@@ -449,7 +449,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-DQ-Peq" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-DQ-Peq" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="49.5" width="414" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
@@ -468,7 +468,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewItemCell" id="Pz3-4q-2Ei" customClass="CartReviewItemCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartReviewItemCell" id="Pz3-4q-2Ei" customClass="CartReviewItemCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100.5" width="414" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pz3-4q-2Ei" id="Zv0-BQ-mBj">
@@ -493,7 +493,7 @@
                                                     <color key="textColor" name="ColorEV"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0F-2y-FoU" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0F-2y-FoU" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="93" width="414" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
@@ -532,7 +532,7 @@
                                             <outlet property="labelOutOfStock" destination="Kd7-2n-WaO" id="Y8i-hA-TlM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTotalCell" id="TMg-Ak-1dS" customClass="CartTotalCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTotalCell" id="TMg-Ak-1dS" customClass="CartTotalCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="194.5" width="414" height="95.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TMg-Ak-1dS" id="6Ss-tA-sBg">
@@ -563,7 +563,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-Vo-GfH" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-Vo-GfH" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="94.5" width="414" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
@@ -613,15 +613,15 @@
                                             <outlet property="totalLabel" destination="n6G-zL-NOa" id="te3-1m-Ou2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartPromoCodeCell" id="lS5-y6-3Rp" customClass="CartPromoCodeCell" customModule="ASRA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="290" width="414" height="107.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartPromoCodeCell" id="lS5-y6-3Rp" customClass="CartPromoCodeCell" customModule="EvolveGT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="290" width="414" height="102.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lS5-y6-3Rp" id="hld-hZ-qze">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-7X-cJA">
-                                                    <rect key="frame" x="10" y="10" width="394" height="87.5"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="82.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got an offer code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYg-Xm-9PV">
                                                             <rect key="frame" x="10" y="10" width="374" height="20.5"/>
@@ -630,7 +630,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-Ty-6U8">
-                                                            <rect key="frame" x="314" y="47.5" width="70" height="30"/>
+                                                            <rect key="frame" x="314" y="42.5" width="70" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="4R7-OF-PZn"/>
                                                                 <constraint firstAttribute="height" constant="30" id="EnO-F7-C1z"/>
@@ -641,7 +641,7 @@
                                                             </connections>
                                                         </button>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-bT-aIc" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                            <rect key="frame" x="10" y="38.5" width="283" height="39"/>
+                                                            <rect key="frame" x="10" y="38.5" width="283" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -674,8 +674,8 @@
                                             <outlet property="tfCouponCode" destination="qsi-bT-aIc" id="stm-np-Yam"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCouponAppliedCell" id="zWR-zH-XJ4" customClass="CartCouponAppliedCell" customModule="ASRA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="397.5" width="414" height="114.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCouponAppliedCell" id="zWR-zH-XJ4" customClass="CartCouponAppliedCell" customModule="EvolveGT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="392.5" width="414" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zWR-zH-XJ4" id="onu-BE-ESg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
@@ -745,8 +745,8 @@
                                             <outlet property="lbelCouponBalance" destination="TIg-a4-bm4" id="qP2-Yn-dbM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BillingAddressCell" id="DQI-LJ-EPO" customClass="BillingAddressCell" customModule="ASRA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="512" width="414" height="150.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BillingAddressCell" id="DQI-LJ-EPO" customClass="BillingAddressCell" customModule="EvolveGT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="507" width="414" height="150.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DQI-LJ-EPO" id="3D9-PF-aft">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
@@ -820,8 +820,8 @@
                                             <outlet property="labelAddress" destination="vHP-RR-F4T" id="ezH-Av-dFA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartWalletCell" id="Fua-9g-GPF" customClass="CartWalletCell" customModule="ASRA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="662.5" width="414" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartWalletCell" id="Fua-9g-GPF" customClass="CartWalletCell" customModule="EvolveGT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="657.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fua-9g-GPF" id="F9k-Ij-KIZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -912,7 +912,7 @@
         <!--Payment View Controller-->
         <scene sceneID="VUg-bn-1pL">
             <objects>
-                <viewController storyboardIdentifier="PaymentVC" id="f15-md-yeG" customClass="PaymentViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentVC" id="f15-md-yeG" customClass="PaymentViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6C-Gh-0Tc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -931,10 +931,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKp-tM-OQK">
-                                <rect key="frame" x="0.0" y="48" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09n-1h-w3p" customClass="ShippingIndicator" customModule="ASRA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09n-1h-w3p" customClass="ShippingIndicator" customModule="EvolveGT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <color key="backgroundColor" name="RootBackGround"/>
                                     </view>
                                 </subviews>
@@ -944,11 +944,11 @@
                                     <constraint firstItem="09n-1h-w3p" firstAttribute="top" secondItem="JKp-tM-OQK" secondAttribute="top" id="CkI-fU-abK"/>
                                     <constraint firstAttribute="trailing" secondItem="09n-1h-w3p" secondAttribute="trailing" id="eyq-Nn-t6T"/>
                                     <constraint firstItem="09n-1h-w3p" firstAttribute="leading" secondItem="JKp-tM-OQK" secondAttribute="leading" id="ra5-sR-lQD"/>
-                                    <constraint firstAttribute="height" constant="80" id="w4B-XO-evk"/>
+                                    <constraint firstAttribute="height" constant="50" id="w4B-XO-evk"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2et-Na-RWH" userLabel="Summary">
-                                <rect key="frame" x="10" y="136" width="394" height="126.5"/>
+                                <rect key="frame" x="10" y="106" width="394" height="126.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIW-52-VTk">
                                         <rect key="frame" x="8" y="10" width="130" height="20"/>
@@ -1054,13 +1054,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GZ-Xh-osq">
-                                <rect key="frame" x="10" y="282.5" width="394" height="21"/>
+                                <rect key="frame" x="10" y="252.5" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8k-Hz-Rxv" customClass="RadioButtonContainerView" customModule="MBRadioCheckboxButton">
-                                <rect key="frame" x="10" y="311" width="394" height="210"/>
+                                <rect key="frame" x="10" y="281" width="394" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHQ-km-vRD" customClass="RadioButton" customModule="MBRadioCheckboxButton">
                                         <rect key="frame" x="17" y="8" width="360" height="30"/>
@@ -1139,22 +1139,85 @@
                         <outlet property="labelCoupon" destination="dXl-IK-ezd" id="hfQ-Fr-oGv"/>
                         <outlet property="labelCouponApplied" destination="ILf-aE-I1Y" id="Xo2-dG-oVS"/>
                         <outlet property="labelTotal" destination="eL6-50-HRW" id="trg-Sz-v2Y"/>
+                        <outlet property="labelTotalPaymentForWebView" destination="KRo-Tl-RIk" id="Bep-YB-4xX"/>
                         <outlet property="labelWalletApplied" destination="JBf-9h-Pww" id="fZ6-Fz-IBe"/>
                         <outlet property="labelWalletText" destination="aNO-Nr-Adi" id="UND-O9-EPg"/>
                         <outlet property="labelsubTotal" destination="79j-bN-p4c" id="xHZ-iq-fAT"/>
                         <outlet property="radioButtonGroup" destination="e8k-Hz-Rxv" id="Tha-ZD-zEa"/>
                         <outlet property="shippingIndicator" destination="09n-1h-w3p" id="sef-CK-yea"/>
                         <outlet property="walletBalance" destination="0Aj-mA-3Kd" id="GEE-UP-XMW"/>
+                        <outlet property="webviewForPayment" destination="Rw3-bu-pwZ" id="PJa-MQ-FSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nu-6a-QHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view hidden="YES" contentMode="scaleToFill" id="aPI-BB-yWl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="848"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-bu-pwZ">
+                            <rect key="frame" x="0.0" y="71" width="414" height="777"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vy-8d-nd5">
+                            <rect key="frame" x="20" y="21" width="56.5" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="56.5" id="lkC-W9-lhv"/>
+                                <constraint firstAttribute="height" constant="41" id="uvI-ap-hrI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRo-Tl-RIk" userLabel="Total Value">
+                            <rect key="frame" x="79" y="31" width="244" height="22"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" name="ColorEV"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fh-3F-mZf">
+                            <rect key="frame" x="328" y="23" width="66" height="39"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="66" id="Js8-t6-u4E"/>
+                                <constraint firstAttribute="height" constant="39" id="eCI-wY-g35"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="Done">
+                                <color key="titleColor" name="ColorEV"/>
+                            </state>
+                            <connections>
+                                <action selector="didPressDonePayment:" destination="f15-md-yeG" eventType="touchUpInside" id="yU5-2x-edh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="hEe-Hx-aN7"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="hEe-Hx-aN7" firstAttribute="trailing" secondItem="5fh-3F-mZf" secondAttribute="trailing" constant="20" id="EBR-gU-Jaq"/>
+                        <constraint firstItem="5fh-3F-mZf" firstAttribute="leading" secondItem="KRo-Tl-RIk" secondAttribute="trailing" constant="5" id="Fta-mI-kh7"/>
+                        <constraint firstItem="Rw3-bu-pwZ" firstAttribute="leading" secondItem="aPI-BB-yWl" secondAttribute="leading" id="L6M-Nd-eMh"/>
+                        <constraint firstAttribute="bottom" secondItem="Rw3-bu-pwZ" secondAttribute="bottom" id="Md9-su-O0D"/>
+                        <constraint firstItem="0vy-8d-nd5" firstAttribute="top" secondItem="aPI-BB-yWl" secondAttribute="top" constant="21" id="NFl-26-azW"/>
+                        <constraint firstItem="0vy-8d-nd5" firstAttribute="leading" secondItem="hEe-Hx-aN7" secondAttribute="leading" constant="20" id="PdS-8r-ZHJ"/>
+                        <constraint firstItem="KRo-Tl-RIk" firstAttribute="top" secondItem="aPI-BB-yWl" secondAttribute="top" constant="31" id="RhP-5K-3bN"/>
+                        <constraint firstItem="Rw3-bu-pwZ" firstAttribute="top" secondItem="aPI-BB-yWl" secondAttribute="top" constant="71" id="UQo-LV-09q"/>
+                        <constraint firstAttribute="trailing" secondItem="Rw3-bu-pwZ" secondAttribute="trailing" id="guC-sX-e3O"/>
+                        <constraint firstItem="KRo-Tl-RIk" firstAttribute="leading" secondItem="0vy-8d-nd5" secondAttribute="trailing" constant="2.5" id="iK1-Bh-9bQ"/>
+                        <constraint firstItem="Rw3-bu-pwZ" firstAttribute="top" secondItem="KRo-Tl-RIk" secondAttribute="bottom" constant="18" id="nQe-y1-GZY"/>
+                        <constraint firstItem="5fh-3F-mZf" firstAttribute="top" secondItem="aPI-BB-yWl" secondAttribute="top" constant="23" id="qOd-xQ-2uC"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1313.0434782608697" y="56.919642857142854"/>
         </scene>
         <!--Post Purchase Controller-->
         <scene sceneID="FgW-cp-7Hc">
             <objects>
-                <viewController storyboardIdentifier="PostPurchase" id="Fwd-if-LfK" customClass="PostPurchaseController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostPurchase" id="Fwd-if-LfK" customClass="PostPurchaseController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MTW-XS-96I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1162,7 +1225,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnp-Ze-eP7">
                                 <rect key="frame" x="0.0" y="48" width="414" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9S-xR-Ncq" customClass="ShippingIndicator" customModule="ASRA" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9S-xR-Ncq" customClass="ShippingIndicator" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
@@ -1182,7 +1245,7 @@
                                 <color key="textColor" name="ColorEV"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-5J-gpB" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-5J-gpB" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="202" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1213,7 +1276,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKC-HI-Yz9" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKC-HI-Yz9" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="299" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1238,7 +1301,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-FD-fRz" customClass="DividerView" customModule="ASRA" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-FD-fRz" customClass="DividerView" customModule="EvolveGT" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="389" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1324,13 +1387,13 @@
     </scenes>
     <designables>
         <designable name="AV4-SQ-Nh0">
-            <size key="intrinsicContentSize" width="65" height="18"/>
+            <size key="intrinsicContentSize" width="43" height="30"/>
         </designable>
         <designable name="OHQ-km-vRD">
-            <size key="intrinsicContentSize" width="228" height="18"/>
+            <size key="intrinsicContentSize" width="206" height="30"/>
         </designable>
         <designable name="qsi-bT-aIc">
-            <size key="intrinsicContentSize" width="283" height="39.220703125"/>
+            <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
     </designables>
     <resources>
@@ -1341,7 +1404,7 @@
         <image name="out-of-stock" width="42.666667938232422" height="42.666667938232422"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="ColorEV">
-            <color red="0.0" green="0.23899999260902405" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

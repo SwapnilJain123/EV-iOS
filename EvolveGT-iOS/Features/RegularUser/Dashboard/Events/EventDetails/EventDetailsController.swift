@@ -217,7 +217,8 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         }else if self.sections[indexPath.section] == .trainings{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TrainingItem", for: indexPath as IndexPath) as! TrainingItemCell
             cell.training = eventDetails!.trainingData![indexPath.row]
-            cell.delegate = self
+            cell.radiobutton.tag = indexPath.row
+            cell.radiobutton.addTarget(self, action: #selector(actionRadio(_:)), for: .touchUpInside)
             return cell
         } else if self.sections[indexPath.section] == .rentals{
             let cell = tableView.dequeueReusableCell(withIdentifier: "RentalItem", for: indexPath as IndexPath) as! RentItemCell
@@ -261,14 +262,20 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
             cell.updateUi(mrlData: eventDetails!.mrlData!)
             return cell
         }
-        
-        
         return UITableViewCell()
-        
-        
     }
     
-    
+    @objc func actionRadio(_ sender: UIButton) {
+        for i in 0..<(eventDetails?.trainingData?.count ?? 0) {
+            if eventDetails?.trainingData?[i].isSelected == true {
+                eventDetails?.trainingData?[i].isSelected = false
+            }
+        }
+        eventDetails?.trainingData?[sender.tag].isSelected = true
+        DispatchQueue.main.async {
+            self.eventDetailsView.reloadData()
+        }
+    }
     
     //section header for rentals and trainings
     func tableView(_ tableView: UITableView, titleForHeaderInSection
@@ -295,7 +302,7 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
     
    
 }
-extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCellDelegate, SkillLevelCellDelegate, TransponderCellDelegate, TrackDayCellDelegate{
+extension EventDetailsController: RentalDelegate, EventClassCellDelegate, SkillLevelCellDelegate, TransponderCellDelegate, TrackDayCellDelegate{
     func didEnterBikeNumber(bikeNumber: String, indexPath: IndexPath) {
         self.eventDetails?.bikeNo = bikeNumber
         Log.i("Bike Number No set to \(bikeNumber)")
@@ -350,17 +357,8 @@ extension EventDetailsController: TrainingDelegate, RentalDelegate, EventClassCe
         self.eventDetails?.transponderNo = transponderNumber
         Log.i("Transponder No set to \(transponderNumber)")
         self.eventDetailsView.reloadRows(at: [indexPath], with: .none)
-        
     }
-
     
-    func didChangeTrainingSelection(training: TrainingDatum, checkedStatus: Bool) {
-        if let selectedTraining = eventDetails?.trainingData?.first(where:{$0.title == training.title}){
-            selectedTraining.isSelected = checkedStatus
-            let indexPath = IndexPath(row: 0, section: 0)
-            eventDetailsView.reloadRows(at: [indexPath], with: .none)
-        }
-    }
     func didChangeRentalSelection(rental: RentalDatum, indexPath: IndexPath, checkedStatus: Bool) {
         if checkedStatus{
             self.ext.presentOptions(title: "Variations of \(rental.title ?? "Select")", message: "Select a \(rental.variations?.first?.attributeName ?? "Option")", options: rental.variantOptions, selected: nil){ selected in
