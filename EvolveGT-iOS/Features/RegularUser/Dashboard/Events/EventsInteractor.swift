@@ -51,7 +51,6 @@ class EventsInteractor :BaseInteractor{
         eventListDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEvents)
         let eventsApi  = EventsApi()
         
-        
         eventsApi.setCompletionHandler{ response, error in
             self.eventListDelegate?.hideProgressIndicator()
             self.eventListDelegate?.hideEmptyPageError()

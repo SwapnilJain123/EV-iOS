@@ -13,19 +13,15 @@ struct Config{
 
 //    static let BASE_URL_DeleteAPI = "https://qa-race.asraracing.com/ev-angular-api/public/admin/deletemember" //release3 uploaded the code on git
     
-    static let BASE_URL_DeleteAPI = "https://race.asraracing.com/ev-angular-api/public/admin/deletemember"
-
     ///staging
-//    static let BASE_URL = "qa-race.asraracing.com" //release3 uploaded the code on git
-
+    static let BASE_URL = "qa.asraracing.com"
     ///Live
-//    static let BASE_URL = "race.asraracing.com" //release3 uploaded the code on git
-    static let BASE_URL = "tracknutts.com" //release3 uploaded the code on git
+//    static let BASE_URL = "asraracing.com"
 
-//    static let BASE_URL = "evolvegt.com"
+
     static let LOG_ENABLED = false
     static let BUILD_CONFIG = "AppStore"
     static let CHECKOUT_MODE = "production"
-    static let BUNDLE_ID = "com.evolve.appstore"
+    static let BUNDLE_ID = "com.asra.appstore"
     static let BRAINTREE_RETURN_URL = "com.evolve.appstore.payments"
 }

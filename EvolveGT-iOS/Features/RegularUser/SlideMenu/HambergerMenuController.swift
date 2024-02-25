@@ -148,7 +148,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func deleteMyAccount(){
-        let url: String  = "\(Config.BASE_URL_DeleteAPI)"
+        let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.DELET_USER)"
         let parameters = ["user_id":AppEngine.sharedInstance.userID]
 
         Alamofire.request(url, method: .post, parameters: parameters,  encoding: JSONEncoding.default, headers: nil)
