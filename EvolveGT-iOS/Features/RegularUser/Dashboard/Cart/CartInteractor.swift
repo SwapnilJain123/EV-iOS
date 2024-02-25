@@ -68,7 +68,6 @@ class CartInteractor: BaseInteractor{
             self.delegate?.hideProgressIndicator()
             self.delegate?.hideEmptyPageError()
             if error == nil{
-                print(data as Any)
                 if let cartListResponse = self.decodeFromJson(data!, modelType: CartListResponse.self){
                     AppEngine.sharedInstance.walletEnabled = cartListResponse.walletEnabled ?? 0 != 0
                     AppEngine.sharedInstance.walletBalance = cartListResponse.wallet?.toDouble() ?? 0

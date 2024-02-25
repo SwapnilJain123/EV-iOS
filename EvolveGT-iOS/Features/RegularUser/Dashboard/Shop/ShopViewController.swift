@@ -34,7 +34,8 @@ class ShopViewController : TabbedViewController{
     
     var categoryList = [ProductCategory]()
     let interactor = ShopsInteractor()
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +52,11 @@ class ShopViewController : TabbedViewController{
         
         interactor.viewDelegate = self
         interactor.categoryDelegate = self
-        interactor.fetchCategoryList()
+        if appDelegate.categories.count == 0 {
+            interactor.fetchCategoryList()
+        } else {
+            categoryList = appDelegate.categories
+        }
     }
     
     override func getScreenTitle() -> String? {
@@ -155,6 +160,7 @@ class ShopViewController : TabbedViewController{
 }
 extension ShopViewController : CategoryViewDelegate{
     func didFetchCategories(categories: [ProductCategory]) {
+        appDelegate.categories = categories
         categoryList = categories
     }
     

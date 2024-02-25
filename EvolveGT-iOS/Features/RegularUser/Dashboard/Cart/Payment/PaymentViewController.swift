@@ -142,9 +142,6 @@ class PaymentViewController : ETViewController, CartListDelegate{
     
     @IBAction func didPressDonePayment(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: false)
-//        DispatchQueue.main.async {
-//            self.tabBarController?.selectedIndex = 0
-//        }
     }
 
     @IBAction func didPressPlaceOrder(_ sender: Any) {
@@ -157,21 +154,10 @@ class PaymentViewController : ETViewController, CartListDelegate{
             self.webviewForPayment.navigationDelegate = self
             let userId = AppEngine.sharedInstance.userID
             if let paymentMode = interactor?.getPaymentMode() {
-                let urlString = "https://tracknutts.com/ontrack-api/paypal.php?user_id=\(userId)&payment_modes=\(paymentMode)&coupon=\(coupon.couponCode)&device=iOS"
-                print(urlString)
-                
-                // Payment request with custom URL scheme return URL
-                let paymentURL = URL(string: urlString)!
-                var components = URLComponents(url: paymentURL, resolvingAgainstBaseURL: false)!
-                components.queryItems = [
-                    URLQueryItem(name: "returnUrl", value: "EvolveGT-iOS://success?")
-                ]
-                let paymentRequest = URLRequest(url: components.url!)
-//                self.webviewForPayment.load(paymentRequest)
-                
-                                if let url = URL(string: urlString) {
-                                    self.webviewForPayment.load(URLRequest.init(url: url))
-                                }
+                let urlString = "\(ApiConstants.BASE_URLPaypal)paypal.php?user_id=\(userId)&payment_modes=\(paymentMode)&coupon=\(coupon.couponCode)&device=iOS"
+                if let url = URL(string: urlString) {
+                    self.webviewForPayment.load(URLRequest.init(url: url))
+                }
             }
         }
     }

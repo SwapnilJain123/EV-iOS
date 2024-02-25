@@ -30,6 +30,14 @@ class HomeViewController: TabbedViewController{
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
         interactor.homeViewDelegate = self
+        
+        let rightButtonItem = UIBarButtonItem.init(
+              image: UIImage(named: "cart_a"),
+              style: .done,
+              target: self, action: #selector(cartAction)
+        )
+
+        self.navigationItem.rightBarButtonItem = rightButtonItem
     }
     
     override  func didChangeAppTheme() {
@@ -68,6 +76,10 @@ class HomeViewController: TabbedViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func cartAction(_ sender: UIButton) {
+        self.tabBarController?.selectedIndex = 3
     }
 }
 

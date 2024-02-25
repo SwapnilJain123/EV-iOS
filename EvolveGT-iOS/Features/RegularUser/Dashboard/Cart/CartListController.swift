@@ -88,7 +88,7 @@ class CartListController : TabbedViewController, CartListDelegate{
     func presentEmergencyContactReader(){
         let vc = self.ext.getViewController(storyBoard: "Profile", VCIdentifier: "EmergencyContactController") as! EmergencyContactController
         vc.saveActionHandler = { contact in
-            
+            self.cartValidationSuccess()
         }
         self.present(vc, animated: true, completion: nil)
     }

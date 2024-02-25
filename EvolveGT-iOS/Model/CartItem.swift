@@ -84,7 +84,9 @@ class CartItem: Codable {
                 for attribute in attributes{
                     property = "\(property)\(attribute.name ?? "") : \(attribute.value ?? "") |"
                 }
-                property.removeLast(1)
+                if property.isEmpty == false {
+                    property.removeLast(1)
+                }
             }
         case .giftcard:
             if let attributes = itemAttributes{
