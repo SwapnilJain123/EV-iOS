@@ -28,8 +28,7 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func getScreenTitle() -> String? {

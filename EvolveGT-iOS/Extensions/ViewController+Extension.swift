@@ -90,7 +90,6 @@ extension UIViewController{
         
         func showNavbar(){
             vc.navigationController?.isNavigationBarHidden = false
-            
         }
         
         func hideNavbar(){

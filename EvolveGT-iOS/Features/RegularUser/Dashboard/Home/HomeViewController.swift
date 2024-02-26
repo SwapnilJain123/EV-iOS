@@ -16,16 +16,13 @@ class HomeViewController: TabbedViewController{
     
     var profileData : ProfileData? = nil
     var sections = [HomeSection]()
-    
     var upComingEventsExpanded = true
     var pastEventsExpanded = false
     var creditHistoryExpanded = false
-    
     let interactor = HomeDataInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
@@ -34,7 +31,6 @@ class HomeViewController: TabbedViewController{
     
     override  func didChangeAppTheme() {
         super.didChangeAppTheme()
-        
         resetProfileData()
         interactor.fetchUserDetails()
     }
@@ -67,6 +63,11 @@ class HomeViewController: TabbedViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.tabBarController?.tabBar.isHidden = false
     }
 }
@@ -166,23 +167,16 @@ extension HomeViewController: UITableViewDataSource{
             let referFriendCell = tableView.dequeueReusableCell(withIdentifier:"ReferFriendCell",for: indexPath) as! ReferAFriendCell
             referFriendCell.action = {
                 let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
-                
                 VC.providesPresentationContextTransitionStyle = true
                 VC.definesPresentationContext = true
                 VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
                 VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                
-                
                 self.present(VC, animated: true, completion: nil)
-                
             }
             referFriendCell.updateUi()
             return referFriendCell
-            
         }
-        
     }
-    
 }
 
 extension HomeViewController: HomeViewDelegate{
