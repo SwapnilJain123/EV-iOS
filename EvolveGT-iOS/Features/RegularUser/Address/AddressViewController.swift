@@ -270,11 +270,12 @@ class AddressFieldCell : UITableViewCell, UITextFieldDelegate{
     }
     func setData(value: String?){
         textField?.applyColorTheme()
+        textField.delegate = self
         textField?.isUserInteractionEnabled = userInputAllowed
         textField?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
         textField?.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .editingDidBegin)
+        textField?.text = (placeHolder == "Phone*") ? (formatPhoneNumber(phoneNumber: value ?? "0")) : value
         
-        textField?.text = value
         textField?.placeholder = placeHolder
         if value?.isEmpty ?? true{
             textField?.errorMessage = errorMessage
@@ -293,5 +294,42 @@ class AddressFieldCell : UITableViewCell, UITextFieldDelegate{
             skyFloatingTF.errorMessage = ""
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 11
+        
+        if string.isEmpty {
+            return true
+        }
+        guard let text = textField.text else { return true }
+        let combinedText = "\(text)\(string)"
+        
+        if combinedText.count > maxLength {
+            return false
+        }
+
+        if let formattedNumber = formatPhoneNumber(phoneNumber: combinedText) {
+            self.textField.text = formattedNumber
+        }
+        return true
+    }
+
+    func formatPhoneNumber(phoneNumber: String) -> String? {
+      // Remove non-numeric characters
+      let numbersOnly = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+
+      // Check if the phone number has the correct length (10 digits)
+      guard numbersOnly.count == 10 else {
+        return nil  // Return nil if the number is not 10 digits long
+      }
+
+      // Format the phone number
+      let firstPart = String(numbersOnly.prefix(3))
+      let secondPart = String(numbersOnly.dropFirst(3).prefix(3))
+      let lastPart = String(numbersOnly.suffix(4))
+
+      return "(\(firstPart)) \(secondPart)-\(lastPart)"
+    }
+
 }
 

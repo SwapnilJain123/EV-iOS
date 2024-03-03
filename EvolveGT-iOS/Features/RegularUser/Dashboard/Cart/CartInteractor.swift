@@ -304,7 +304,6 @@ class CartInteractor: BaseInteractor{
         let profileApi = ProfileApi()
         profileApi.setCompletionHandler{ data, error in
             self.delegate?.hideProgressIndicator()
-            
             if error != nil{
                 self.validationDelegate?.hasError(message: error?.errorMessage ?? ErrorMessages.genericError, code: error?.errorCode ?? -1)
             }else{

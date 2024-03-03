@@ -81,11 +81,10 @@ class EventDetailsController : ETViewController{
         if !AppEngine.sharedInstance.isUserLoggedIn() {
             //Mark: Login required
         }else {
-            
-                interactor.addMotoEventToCart(eventDetails!)
-            
+            interactor.addMotoEventToCart(eventDetails!)
         }
     }
+    
     func addPrivateEventToCart(_ event: EventDetails){
         
         let alert = UIAlertController(title: "Enter your secret code", message: nil, preferredStyle: .alert)

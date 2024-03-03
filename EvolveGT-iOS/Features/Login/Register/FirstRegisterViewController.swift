@@ -32,9 +32,8 @@ class FirstRegisterViewController:ETViewController {
             validated = true
             registerTableView.reloadData()
         }
-        
-        
     }
+    
     @IBAction func haveAnAccountButtonPressed(_ sender: UIButton) {
         
         self.ext.pushViewController(storyBoard: "Main", VCIdentifier: "LoginVC")

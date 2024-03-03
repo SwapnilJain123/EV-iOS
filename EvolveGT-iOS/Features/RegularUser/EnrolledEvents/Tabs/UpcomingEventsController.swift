@@ -65,7 +65,6 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
 }
 extension UpcomingEventsController : UITableViewDelegate{
     
-    
      func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         let event = events![indexPath.row]
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in

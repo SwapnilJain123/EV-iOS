@@ -324,31 +324,31 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-Ej-BIi">
-                                                            <rect key="frame" x="166" y="8" width="206" height="17"/>
+                                                            <rect key="frame" x="166" y="8" width="174" height="17"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" systemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date : 12 Sep 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1E-a0-Y9C">
-                                                            <rect key="frame" x="166" y="33" width="206" height="16"/>
+                                                            <rect key="frame" x="166" y="33" width="174" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hosted By" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hh-34-UCj">
-                                                            <rect key="frame" x="166" y="57" width="206" height="16"/>
+                                                            <rect key="frame" x="166" y="57" width="174" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting From : $999.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpg-sz-8uJ">
-                                                            <rect key="frame" x="166" y="81" width="206" height="14.5"/>
+                                                            <rect key="frame" x="166" y="81" width="174" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-f0-cOh">
-                                                            <rect key="frame" x="332" y="110" width="40" height="40"/>
+                                                            <rect key="frame" x="300" y="110" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="QSu-uf-fVq"/>
                                                                 <constraint firstAttribute="height" constant="40" id="UUz-hJ-BjF"/>
@@ -358,8 +358,19 @@
                                                                 <action selector="didPressAddToCart:" destination="vuQ-nH-kTf" eventType="touchUpInside" id="Och-fm-f1D"/>
                                                             </connections>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-9J-jb0">
+                                                            <rect key="frame" x="347" y="5" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="Hut-Uj-JDI"/>
+                                                                <constraint firstAttribute="height" constant="25" id="jNm-7s-1ew"/>
+                                                            </constraints>
+                                                            <state key="normal" image="dots"/>
+                                                            <connections>
+                                                                <action selector="didPressAddToCart:" destination="vuQ-nH-kTf" eventType="touchUpInside" id="Ukm-O1-g1C"/>
+                                                            </connections>
+                                                        </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY8-fg-qYO" userLabel="Hostings">
-                                                            <rect key="frame" x="166" y="112" width="158" height="35"/>
+                                                            <rect key="frame" x="166" y="112" width="126" height="35"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I23-mP-mqO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="36" height="35"/>
@@ -412,15 +423,17 @@
                                                         <constraint firstItem="1Hh-34-UCj" firstAttribute="top" secondItem="b1E-a0-Y9C" secondAttribute="bottom" constant="8" id="M3M-3x-UuT"/>
                                                         <constraint firstItem="1Hh-34-UCj" firstAttribute="trailing" secondItem="b1E-a0-Y9C" secondAttribute="trailing" id="NSG-hI-z33"/>
                                                         <constraint firstItem="1Hh-34-UCj" firstAttribute="leading" secondItem="b1E-a0-Y9C" secondAttribute="leading" id="NbM-IV-Ioo"/>
-                                                        <constraint firstAttribute="trailing" secondItem="XKG-Ej-BIi" secondAttribute="trailing" constant="8" id="Q9B-e1-3vT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XKG-Ej-BIi" secondAttribute="trailing" constant="40" id="Q9B-e1-3vT"/>
                                                         <constraint firstItem="Jwi-uH-Ff1" firstAttribute="leading" secondItem="rgc-Gp-Tkq" secondAttribute="leading" id="SSb-ox-Jwu"/>
                                                         <constraint firstItem="W7z-f0-cOh" firstAttribute="leading" secondItem="RY8-fg-qYO" secondAttribute="trailing" constant="8" id="UGb-gZ-g5D"/>
                                                         <constraint firstItem="W7z-f0-cOh" firstAttribute="top" secondItem="rpg-sz-8uJ" secondAttribute="bottom" constant="14.5" id="Yui-Da-G52"/>
                                                         <constraint firstItem="rgc-Gp-Tkq" firstAttribute="leading" secondItem="8gS-nT-dbC" secondAttribute="leading" constant="8" id="Zoy-Vf-c7j"/>
                                                         <constraint firstItem="rgc-Gp-Tkq" firstAttribute="centerY" secondItem="8gS-nT-dbC" secondAttribute="centerY" id="b00-Rh-KSW"/>
                                                         <constraint firstItem="XKG-Ej-BIi" firstAttribute="leading" secondItem="rgc-Gp-Tkq" secondAttribute="trailing" constant="8" id="cIb-hx-8fM"/>
+                                                        <constraint firstItem="CcQ-9J-jb0" firstAttribute="top" secondItem="8gS-nT-dbC" secondAttribute="top" constant="5" id="lnk-ja-NZY"/>
                                                         <constraint firstItem="W7z-f0-cOh" firstAttribute="trailing" secondItem="rpg-sz-8uJ" secondAttribute="trailing" id="nD2-FE-NKc"/>
                                                         <constraint firstItem="RY8-fg-qYO" firstAttribute="bottom" secondItem="W7z-f0-cOh" secondAttribute="bottom" constant="-3" id="osg-la-bye"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CcQ-9J-jb0" secondAttribute="trailing" constant="8" id="vdC-sF-L2h"/>
                                                         <constraint firstItem="rpg-sz-8uJ" firstAttribute="trailing" secondItem="1Hh-34-UCj" secondAttribute="trailing" id="vxp-R7-dmq"/>
                                                         <constraint firstItem="rpg-sz-8uJ" firstAttribute="top" secondItem="1Hh-34-UCj" secondAttribute="bottom" constant="8" id="wrR-BU-mTX"/>
                                                     </constraints>
@@ -1324,8 +1337,14 @@
         <designable name="DOi-UB-RIn">
             <size key="intrinsicContentSize" width="89.5" height="34"/>
         </designable>
+        <designable name="VBw-j5-Ouf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
         <designable name="au9-bR-Gr3">
             <size key="intrinsicContentSize" width="111" height="34"/>
+        </designable>
+        <designable name="m1l-1H-p55">
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="oaI-Yf-WZL">
             <size key="intrinsicContentSize" width="165.5" height="34"/>
@@ -1334,6 +1353,7 @@
     <resources>
         <image name="banner_cancelled" width="42.666667938232422" height="42.666667938232422"/>
         <image name="cart" width="128" height="128"/>
+        <image name="dots" width="64" height="64"/>
         <image name="et_fallback_image" width="237" height="212"/>
         <image name="moto_upcoming_eventss" width="32" height="32"/>
         <image name="radio-off-button" width="64" height="64"/>
@@ -1356,10 +1376,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

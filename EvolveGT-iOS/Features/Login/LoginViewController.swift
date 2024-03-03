@@ -29,7 +29,9 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
     @IBOutlet weak var tfPassword: SkyFloatingLabelTextField!
     
     @IBOutlet weak var guestButton: UIButton!
-    
+    var eyeIconClick: Bool = true
+    let showHiddenBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,13 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
             tfEmail.text! = ""
             tfPassword.text! = ""
         }
+        
+        tfPassword.rightView = showHiddenBtn
+        tfPassword.rightViewMode = .always
+        showHiddenBtn.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        showHiddenBtn.addTarget(self, action: #selector(eyesButtonTapped), for: .touchUpInside)
+
+        
         tfEmail.applyColorTheme()
         loginButton.applyColorTheme()
         tfPassword.applyColorTheme()
@@ -53,7 +62,18 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         loginImage.image = image
     }
     
-    
+    @objc func eyesButtonTapped(_ sender: UIButton) {
+        if eyeIconClick {
+            tfPassword.isSecureTextEntry = false
+            showHiddenBtn.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+
+        } else {
+            tfPassword.isSecureTextEntry = true
+            showHiddenBtn.setImage(UIImage(systemName:"eye.fill"), for: .normal)
+
+        }
+        eyeIconClick = !eyeIconClick
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         tfEmail.delegate = self

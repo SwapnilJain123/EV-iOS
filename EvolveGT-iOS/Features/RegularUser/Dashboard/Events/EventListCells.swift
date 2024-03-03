@@ -30,6 +30,7 @@ class EventListCell: UICollectionViewCell {
     
     @IBOutlet weak var btnAddToCart: UIButton?
     
+    @IBOutlet weak var btnCancelEvent: UIButton?
     @IBOutlet weak var hostIcon1: UIImageView?
     @IBOutlet weak var hostIcon2: UIImageView?
     @IBOutlet weak var hostIcon3: UIImageView?

@@ -79,10 +79,14 @@ class EventParticipantCellV2: UITableViewCell{
         //tvDayJob.text = eventParticipant?.jobAssigned ?? "NA"
         
         userID.text! = "#"
-        userID.text?.append("\(eventParticipant?.userID)")
+        if let userIDString = eventParticipant?.userID {
+            userID.text?.append("\(userIDString)")
+        }
         dateOfBirth.text = eventParticipant?.evDob?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "-"
         orderId.text = "#"
-        orderId.text?.append("\(eventParticipant?.orderID)")
+        if let userIDString = eventParticipant?.orderID {
+            orderId.text?.append("\(userIDString)")
+        }
         
         aceessoriesStackView.removeAllArrangedSubviews()
         

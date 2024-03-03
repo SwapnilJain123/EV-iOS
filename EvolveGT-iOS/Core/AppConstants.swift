@@ -16,7 +16,7 @@ let KEY_AUTH_TOKEN = "auth_token"
 
 struct AppConstants{
     static let SkillLevels = ["GT1","E1","E2","E3","E4","STAFF", "CIT","COACHES"]
-    static let TrackYesSkillLevels = ["E1","E2","E3"]
+    static let TrackYesSkillLevels = ["E1","E2"]
     static let TrackNoSkillLevels = ["GT1"]
     static let emergencyRelationShips = ["Friend","Parent", "Local Guardian", "Other"]
     static let ImageTag = "data:image/png;base64,"

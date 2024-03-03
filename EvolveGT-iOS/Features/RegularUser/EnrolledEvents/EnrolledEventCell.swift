@@ -39,10 +39,9 @@ class EnrolledEventCell : UITableViewCell{
     override func prepareForReuse() {
         
         super.prepareForReuse()
-        cancelButton?.isHidden = true
+        cancelButton?.isHidden = false
         eventTitle.textColor = UIColor.getAppThemeColor()
     }
-    
     
     @IBAction func didPressAccessories(_ sender: UIButton) {
         if event?.hasAccessories ?? false{
@@ -60,9 +59,9 @@ class EnrolledEventCell : UITableViewCell{
         
         //let isPastEvet = event.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? true
         if AppEngine.sharedInstance.canCancelEvent && isUpComing{
-            cancelButton?.isHidden = true//was false. Cancel button moved to context menu
+            cancelButton?.isHidden = false//was false. Cancel button moved to context menu
         }else{
-             cancelButton?.isHidden = true
+            cancelButton?.isHidden = false
         }
         eventTitle.text = event.productName
         eventDate.text = "Date: \(event.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"

@@ -181,13 +181,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-Pg-qW3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-Pg-qW3">
                                         <rect key="frame" x="10" y="349" width="280" height="45"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Cc5-eX-HGT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -532,6 +531,17 @@
             <point key="canvasLocation" x="833.02325581395348" y="106.86695278969958"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="OVd-Mw-VoT">
+            <size key="intrinsicContentSize" width="94.666666666666671" height="34"/>
+        </designable>
+        <designable name="PfD-6j-8uQ">
+            <size key="intrinsicContentSize" width="65" height="34"/>
+        </designable>
+        <designable name="xej-Hq-74w">
+            <size key="intrinsicContentSize" width="65" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ev_logo" width="106.33333587646484" height="106.33333587646484"/>
         <image name="forgot_password" width="135.5" height="135.5"/>
@@ -539,7 +549,7 @@
         <image name="moto_logo" width="106.33333587646484" height="106.33333587646484"/>
         <image name="splash_logo2" width="780" height="1191"/>
         <namedColor name="ColorEV">
-            <color red="0.031372549019607843" green="0.6470588235294118" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -548,7 +558,7 @@
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
-            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

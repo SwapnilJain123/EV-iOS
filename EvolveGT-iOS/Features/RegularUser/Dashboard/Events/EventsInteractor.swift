@@ -249,7 +249,7 @@ class EventsInteractor :BaseInteractor{
         cartApi.addEvolveEventToCart(eventRequest: request)
     }
     
-    func addMotoEventToCart(_ event: EventDetails){
+    func addMotoEventToCart(_ event: EventDetails) {
         super.delegate = eventDetailsDelegate
         
         var hasValidClasses = true

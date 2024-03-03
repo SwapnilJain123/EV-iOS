@@ -29,9 +29,7 @@ class EventListController : TabbedViewController{
         
         eventsListView.delegate = self
         eventsListView.dataSource = self
-        
         interactor.eventListDelegate = self
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

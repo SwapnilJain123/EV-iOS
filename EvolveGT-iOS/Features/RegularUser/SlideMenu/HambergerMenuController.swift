@@ -132,11 +132,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
                               VC.definesPresentationContext = true
                               VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
                               VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                       
-                       
                        self.present(VC, animated: true, completion: nil)
         default:
-            self.navigationController?.navigationBar.isHidden = true
+            self.navigationController?.navigationBar.isHidden = false
             break
         }
     }

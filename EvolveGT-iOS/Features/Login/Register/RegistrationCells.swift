@@ -16,7 +16,7 @@ class RegistrationTextFieldCell: UITableViewCell, UITextFieldDelegate{
     static let identifier = "TextFieldCell"
     
     var didChangeValue : ((_ text: String?) -> Void)?
-    
+    var placeholder: String = "Phone"
     
     @IBOutlet weak var textField: SkyFloatingLabelTextField!
     
@@ -26,18 +26,51 @@ class RegistrationTextFieldCell: UITableViewCell, UITextFieldDelegate{
         }
     }
     
-    
-    
     func setData(placeHolder: String, value: String){
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
         textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .allEvents)
-        
+        textField.delegate = self
         textField.placeholder = placeHolder
-        textField.text = value
         textField.applyColorTheme()
-        
+        self.placeholder = placeHolder
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 11
+        
+        if string.isEmpty {
+            return true
+        }
+        guard let text = textField.text else { return true }
+        let combinedText = "\(text)\(string)"
+        
+        if combinedText.count > maxLength {
+            return false
+        }
+
+        if let formattedNumber = formatPhoneNumber(phoneNumber: combinedText) {
+            self.textField.text = formattedNumber
+        }
+        return true
+    }
+
+    func formatPhoneNumber(phoneNumber: String) -> String? {
+      // Remove non-numeric characters
+      let numbersOnly = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+
+      // Check if the phone number has the correct length (10 digits)
+      guard numbersOnly.count == 10 else {
+        return nil  // Return nil if the number is not 10 digits long
+      }
+
+      // Format the phone number
+      let firstPart = String(numbersOnly.prefix(3))
+      let secondPart = String(numbersOnly.dropFirst(3).prefix(3))
+      let lastPart = String(numbersOnly.suffix(4))
+
+      return "(\(firstPart)) \(secondPart)-\(lastPart)"
+    }
+
     func showErrorMessage(errorMessage: String, hasError: Bool){
         textField.errorMessage = hasError ? errorMessage : ""
     }
@@ -109,7 +142,6 @@ class TwoOptionsFirestCell: UITableViewCell, RadioButtonDelegate{
     @IBOutlet weak var btnFMale: UIButton!
     @IBOutlet weak var btnUnspecified: UIButton!
 
-    
     func radioButtonDidSelect(_ button: RadioButton) {
         
         if(didChangeStatus != nil){
@@ -184,15 +216,57 @@ class PasswordCell:UITableViewCell, UITextFieldDelegate{
     
     var didChangePassword : ((_ text: String?) -> Void)?
     var didChangeConfirmPassword : ((_ text: String?) -> Void)?
-    
+    let eyeBtnpPassword = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+    let eyeBtnpConfirmPassword = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+
+    var eyePIconClick: Bool = true
+    var eyeCIconClick: Bool = true
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tfPassword.rightView = eyeBtnpPassword
+        tfPassword.rightViewMode = .always
+        eyeBtnpPassword.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        eyeBtnpPassword.addTarget(self, action: #selector(eyesButtonTapped), for: .touchUpInside)
+        
+        tfConfirmPassword.rightView = eyeBtnpConfirmPassword
+        tfConfirmPassword.rightViewMode = .always
+        eyeBtnpConfirmPassword.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        eyeBtnpConfirmPassword.addTarget(self, action: #selector(eyesBtnTappConfirmP), for: .touchUpInside)
+    }
+
+    @objc func eyesButtonTapped(_ sender: UIButton) {
+        if eyePIconClick {
+            tfPassword.isSecureTextEntry = false
+            eyeBtnpPassword.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+
+        } else {
+            tfPassword.isSecureTextEntry = true
+            eyeBtnpPassword.setImage(UIImage(systemName:"eye.fill"), for: .normal)
+
+        }
+        eyePIconClick = !eyePIconClick
+    }
+
+    @objc func eyesBtnTappConfirmP(_ sender: UIButton) {
+        if eyeCIconClick {
+            tfConfirmPassword.isSecureTextEntry = false
+            eyeBtnpConfirmPassword.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+
+        } else {
+            tfConfirmPassword.isSecureTextEntry = true
+            eyeBtnpConfirmPassword.setImage(UIImage(systemName:"eye.fill"), for: .normal)
+
+        }
+        eyeCIconClick = !eyeCIconClick
+    }
+
     func updateUi(password: String, confirmPassword: String){
         tfPassword.text = password
         tfConfirmPassword.text = confirmPassword
         
-        
         tfPassword.applyColorTheme()
         tfConfirmPassword.applyColorTheme()
-        
        
         tfConfirmPassword.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .allEvents)
         tfPassword.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .allEvents)

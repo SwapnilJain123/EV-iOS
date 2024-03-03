@@ -9,7 +9,12 @@
 import Foundation
 struct Config{
    
-    static let BASE_URL = "evolvegt.webeteerprojects.com"
+    //stagung
+    static let BASE_URL = "tracknutts.com"
+
+    //live
+//    static let BASE_URL = "evolvegt.com"
+
     static let LOG_ENABLED = true
     static let BUILD_CONFIG = "QA"
     static let CHECKOUT_MODE = "sandbox"

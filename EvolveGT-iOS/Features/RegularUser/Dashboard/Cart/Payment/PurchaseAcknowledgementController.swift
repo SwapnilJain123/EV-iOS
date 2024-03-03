@@ -23,7 +23,10 @@ class PostPurchaseController : ETViewController{
         super.viewDidLoad()
         self.ext.hideBackButton()
         
-        labelOrderId.text = "#\(interactor?.transactionId ?? "")"
+        if let transactionId = interactor?.transactionId {
+            labelOrderId.text = "#\(transactionId)"
+        }
+        
         labelAmount.text = String(interactor?.total ?? 0).formatToAmount()
         labelDate.text = String.getCurrentDate(format: .FORMAT_DD_MMM_YYYY)
         

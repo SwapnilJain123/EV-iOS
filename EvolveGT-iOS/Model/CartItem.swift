@@ -54,7 +54,8 @@ class CartItem: Codable {
         qty = qty > 0 ? qty : 1
         return qty
     }
-    var secondaryProperty : String{
+    
+    var secondaryProperty : String {
         var property = ""
         switch source {
         case .product, .archie:
@@ -76,6 +77,7 @@ class CartItem: Codable {
         }
         return property
     }
+    
     var tertiaryProperty : String{
         var property = ""
         switch source {

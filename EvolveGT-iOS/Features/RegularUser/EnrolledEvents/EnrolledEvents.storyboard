@@ -13,7 +13,7 @@
         <!--All Events Controller-->
         <scene sceneID="2YI-Eq-F07">
             <objects>
-                <viewController storyboardIdentifier="AllEvents" id="HEe-CL-Rcz" customClass="AllEventsController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllEvents" id="HEe-CL-Rcz" customClass="AllEventsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4me-wk-GUH">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="47" width="428" height="845"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllEventCell" id="SuM-ON-Fc9" customClass="EnrolledEventCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllEventCell" id="SuM-ON-Fc9" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="428" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SuM-ON-Fc9" id="2Sb-zJ-OTT">
@@ -120,7 +120,7 @@
         <!--Upcoming Events Controller-->
         <scene sceneID="WhY-f2-62T">
             <objects>
-                <viewController storyboardIdentifier="UpcomingEvents" id="ySf-PI-39g" customClass="UpcomingEventsController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpcomingEvents" id="ySf-PI-39g" customClass="UpcomingEventsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vu7-3G-oUe">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="47" width="428" height="845"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCell" id="b9d-BD-1ft" customClass="EnrolledEventCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCell" id="b9d-BD-1ft" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="428" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b9d-BD-1ft" id="jOE-Zx-mxa">
@@ -167,12 +167,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3O-s4-W5u">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3O-s4-W5u">
                                                             <rect key="frame" x="344" y="38" width="60" height="30"/>
                                                             <color key="backgroundColor" red="1" green="0.1095090016" blue="0.096013926690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="4IE-8A-giH"/>
-                                                                <constraint firstAttribute="width" constant="60" id="Cge-yI-Vko"/>
+                                                                <constraint firstAttribute="height" constant="30" id="HYO-iy-iws"/>
+                                                                <constraint firstAttribute="width" constant="60" id="vhB-f4-Iop"/>
                                                             </constraints>
                                                             <state key="normal" title="Cancel">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,14 +191,13 @@
                                                         <constraint firstItem="mCI-yw-NxC" firstAttribute="top" secondItem="dty-4q-8kn" secondAttribute="bottom" constant="8" id="Blh-sd-LQq"/>
                                                         <constraint firstItem="VK3-GO-RU1" firstAttribute="centerY" secondItem="DX6-Nu-sdA" secondAttribute="centerY" priority="750" id="DaZ-VU-VYp"/>
                                                         <constraint firstItem="AKR-pU-psh" firstAttribute="height" secondItem="mCI-yw-NxC" secondAttribute="height" multiplier="1.16667" id="LFj-Et-4yR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="f3O-s4-W5u" secondAttribute="trailing" constant="8" id="MWu-pP-DNS"/>
                                                         <constraint firstItem="mCI-yw-NxC" firstAttribute="leading" secondItem="dty-4q-8kn" secondAttribute="leading" id="RAq-PU-xIu"/>
-                                                        <constraint firstItem="f3O-s4-W5u" firstAttribute="centerY" secondItem="DX6-Nu-sdA" secondAttribute="centerY" id="XWb-q8-uV5"/>
                                                         <constraint firstItem="AKR-pU-psh" firstAttribute="leading" secondItem="mCI-yw-NxC" secondAttribute="leading" id="ZCe-dl-Lma"/>
                                                         <constraint firstItem="dty-4q-8kn" firstAttribute="leading" secondItem="VK3-GO-RU1" secondAttribute="trailing" constant="10" id="b6j-kJ-hMp"/>
                                                         <constraint firstItem="mCI-yw-NxC" firstAttribute="trailing" secondItem="dty-4q-8kn" secondAttribute="trailing" id="bhU-wJ-dfE"/>
                                                         <constraint firstItem="VK3-GO-RU1" firstAttribute="top" secondItem="DX6-Nu-sdA" secondAttribute="top" constant="8" id="d1X-06-Gpx"/>
                                                         <constraint firstItem="dty-4q-8kn" firstAttribute="centerY" secondItem="VK3-GO-RU1" secondAttribute="centerY" constant="-30" id="e3c-iK-0ZD"/>
-                                                        <constraint firstAttribute="trailing" secondItem="f3O-s4-W5u" secondAttribute="trailing" constant="8" id="npV-Wn-pLH"/>
                                                         <constraint firstItem="AKR-pU-psh" firstAttribute="top" secondItem="mCI-yw-NxC" secondAttribute="bottom" constant="8" id="rWR-IT-TnF"/>
                                                         <constraint firstItem="VK3-GO-RU1" firstAttribute="leading" secondItem="DX6-Nu-sdA" secondAttribute="leading" constant="8" id="v9O-XW-VEk"/>
                                                         <constraint firstItem="AKR-pU-psh" firstAttribute="trailing" secondItem="mCI-yw-NxC" secondAttribute="trailing" id="zYr-cz-OiS"/>
@@ -246,7 +245,7 @@
         <!--Past Events Controller-->
         <scene sceneID="Ju3-Cm-DNP">
             <objects>
-                <viewController storyboardIdentifier="PastEvents" id="yCF-Qq-Gzv" customClass="PastEventsController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PastEvents" id="yCF-Qq-Gzv" customClass="PastEventsController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ba0-hr-Idk">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,7 +254,7 @@
                                 <rect key="frame" x="0.0" y="47" width="428" height="845"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastEventCell" id="bov-Br-zVN" customClass="EnrolledEventCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastEventCell" id="bov-Br-zVN" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="428" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bov-Br-zVN" id="BA9-uf-cah">
@@ -353,7 +352,7 @@
         <!--Event History Controller-->
         <scene sceneID="Y8y-bN-Hbd">
             <objects>
-                <viewController storyboardIdentifier="EventHistoryController" id="wJY-nD-vwf" customClass="EventHistoryController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventHistoryController" id="wJY-nD-vwf" customClass="EventHistoryController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZHs-dE-vxj">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,7 +372,7 @@
                                 <rect key="frame" x="0.0" y="88" width="428" height="804"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCell" id="bMJ-eg-7Sq" customClass="EnrolledEventCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCell" id="bMJ-eg-7Sq" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="428" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMJ-eg-7Sq" id="YHS-HK-pJH">
@@ -412,12 +411,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxt-0a-2YV">
-                                                            <rect key="frame" x="344" y="80" width="60" height="30"/>
+                                                            <rect key="frame" x="344" y="34" width="60" height="20"/>
                                                             <color key="backgroundColor" red="1" green="0.1095090016" blue="0.096013926690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="SSQ-5G-ReW"/>
-                                                                <constraint firstAttribute="height" constant="30" id="vw7-Zu-Yms"/>
+                                                                <constraint firstAttribute="width" constant="60" id="KZb-ip-nge"/>
+                                                                <constraint firstAttribute="height" constant="20" id="hcb-Fh-Oa7"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="Cancel">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,13 +446,13 @@
                                                         <constraint firstItem="0oJ-EY-2Ax" firstAttribute="leading" secondItem="vhy-U2-noV" secondAttribute="leading" constant="8" id="2oi-k5-8bi"/>
                                                         <constraint firstItem="Gvk-WM-CTE" firstAttribute="trailing" secondItem="Iux-Jh-Z8j" secondAttribute="trailing" id="53R-Kr-ua8"/>
                                                         <constraint firstItem="XBT-1J-94N" firstAttribute="height" secondItem="Gvk-WM-CTE" secondAttribute="height" multiplier="1.16667" id="8AQ-Gy-zF7"/>
-                                                        <constraint firstAttribute="bottom" secondItem="rxt-0a-2YV" secondAttribute="bottom" constant="10" id="EC4-BN-tc3"/>
+                                                        <constraint firstItem="rxt-0a-2YV" firstAttribute="centerY" secondItem="Gvk-WM-CTE" secondAttribute="centerY" id="AQQ-kk-Qo0"/>
                                                         <constraint firstItem="XBT-1J-94N" firstAttribute="trailing" secondItem="Gvk-WM-CTE" secondAttribute="trailing" id="FU4-FG-ilz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rxt-0a-2YV" secondAttribute="trailing" constant="8" id="GbW-F2-Wmb"/>
                                                         <constraint firstItem="Gvk-WM-CTE" firstAttribute="top" secondItem="Iux-Jh-Z8j" secondAttribute="bottom" constant="5" id="Jar-xy-B1n"/>
                                                         <constraint firstItem="jlE-xG-Q6F" firstAttribute="bottom" secondItem="Iux-Jh-Z8j" secondAttribute="bottom" id="L5e-Tb-h6l"/>
                                                         <constraint firstItem="Iux-Jh-Z8j" firstAttribute="leading" secondItem="0oJ-EY-2Ax" secondAttribute="trailing" constant="10" id="OYO-5W-viR"/>
                                                         <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="XBT-1J-94N" secondAttribute="bottom" constant="41" id="PI0-HS-PPg"/>
-                                                        <constraint firstAttribute="trailing" secondItem="rxt-0a-2YV" secondAttribute="trailing" constant="8" id="Q2c-rF-czo"/>
                                                         <constraint firstItem="rco-j7-36c" firstAttribute="leading" secondItem="jlE-xG-Q6F" secondAttribute="leading" id="TCR-zN-JXy"/>
                                                         <constraint firstItem="0oJ-EY-2Ax" firstAttribute="top" secondItem="vhy-U2-noV" secondAttribute="top" constant="15" id="ToS-FK-K3n"/>
                                                         <constraint firstItem="Iux-Jh-Z8j" firstAttribute="centerY" secondItem="0oJ-EY-2Ax" secondAttribute="centerY" constant="-40" id="UPI-lN-k1H"/>
@@ -507,7 +507,7 @@
                                             <outlet property="orderDate" destination="XBT-1J-94N" id="qZE-NJ-qim"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCellNoPassport" id="nxQ-oD-Tp5" customClass="EnrolledEventCell" customModule="ASRA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventCellNoPassport" id="nxQ-oD-Tp5" customClass="EnrolledEventCell" customModule="EvolveGT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="176" width="428" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nxQ-oD-Tp5" id="q3a-1h-Ckf">
@@ -631,7 +631,7 @@
         <!--Show Passport Controller-->
         <scene sceneID="rhe-Zm-8tB">
             <objects>
-                <viewController storyboardIdentifier="ShowPassportController" id="Cx6-PN-eJf" customClass="ShowPassportController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowPassportController" id="Cx6-PN-eJf" customClass="ShowPassportController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="moM-Q6-ISO">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -827,7 +827,7 @@
         <!--Upload Passport Controller-->
         <scene sceneID="cZ4-Qy-jbq">
             <objects>
-                <viewController storyboardIdentifier="UploadPassportController" id="2XN-ET-nbq" customClass="UploadPassportController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadPassportController" id="2XN-ET-nbq" customClass="UploadPassportController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tGM-9S-SUs">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1018,7 +1018,7 @@ I HAVE READ THIS RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK AND INDMNIT
             <color white="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
-            <color red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
