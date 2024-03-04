@@ -102,6 +102,6 @@ struct ReferFriendResponse: Codable {
 
 struct ViewPassportResponse: Codable {
     var status: Int?
-var msg: String?
+    var msg: String?
     var data: PassportInfo?
 }

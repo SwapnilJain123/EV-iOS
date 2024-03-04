@@ -118,14 +118,14 @@ class AdminDuty: Codable {
     var name: String?
 }
 struct DutyAssignedStaff: Codable {
-    var status: String?
+    var status: Int?
     var signature, signatureID: Int?
     var title, evDob: String?
     var displayName, role, email, skillLevel: String?
-    var dayWorker, additionalInfo: String?
+    var additionalInfo: String?
     var duties: [AdminDuty]?
     var show: Bool?
-    var signEnabled, eventID, orderID, userID: Int?
+    var signEnabled, eventID, orderID, userID, dayWorker: Int?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"

@@ -70,7 +70,7 @@ class EventParticipantCell: UITableViewCell{
         
       if eventParticipant?.isSignEnabled ?? false{
             var image = UIImage(named: "sign_green") as UIImage?
-            if eventParticipant?.hasSignature ?? false{
+            if eventParticipant?.signature ?? false{
                 if !AppEngine.sharedInstance.isEvApp(){
                     image = UIImage(named: "admin_moto_signature") as UIImage?
                 }

@@ -32,8 +32,8 @@ class FirstRegisterViewController:ETViewController {
             validated = true
             registerTableView.reloadData()
         }
+        
     }
-    
     @IBAction func haveAnAccountButtonPressed(_ sender: UIButton) {
         
         self.ext.pushViewController(storyBoard: "Main", VCIdentifier: "LoginVC")
@@ -171,7 +171,7 @@ extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
         self.isFmale = false
         self.isUnspecified = false
         self.interactor.signupRequest.gender = "Male"
-        self.myTable.reloadData()
+        reloadRadioButtonCell()
     }
 
     @objc func selectedFemale(){
@@ -179,18 +179,22 @@ extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
         self.isFmale = true
         self.isUnspecified = false
         self.interactor.signupRequest.gender = "Female"
-
-        self.myTable.reloadData()
+        reloadRadioButtonCell()
     }
 
     @objc func selectedUnspecified(){
         self.isMale = false
         self.isFmale = false
         self.isUnspecified = true
-        self.myTable.reloadData()
         self.interactor.signupRequest.gender = "Unspecified"
+        reloadRadioButtonCell()
     }
 
+    func reloadRadioButtonCell() {
+        let indexPath = IndexPath(row: 4, section: 0)
+        self.myTable.reloadRows(at: [indexPath], with: .fade)
+    }
+    
     func selectDateOfBirth(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = String.FORMAT_YYYY_MM_DD_HIPHEN

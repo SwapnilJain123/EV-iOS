@@ -98,7 +98,7 @@ class EventParticipantIntercator : BaseInteractor {
     
     func handleEventParticipantForDutiesResponse(response: Data){
         if let eventParticipantsResponse = self.decodeFromJson(response, modelType: EventParticpantForDutiesResponse.self){
-            
+
             if eventParticipantsResponse.eventParticipants?.count ?? 0 == 0{
                 self.delegate?.showEmptyPageError(message: ErrorMessages.emptyEventParticipants)
             }else{

@@ -289,6 +289,7 @@ class AddressFieldCell : UITableViewCell, UITextFieldDelegate{
             didChangeValue!(textfield.text)
         }
     }
+    
     @objc func clearErrorMessage(_ textfield: UITextField) {
         if let skyFloatingTF = textfield as? SkyFloatingLabelTextField{
             skyFloatingTF.errorMessage = ""

@@ -358,17 +358,6 @@
                                                                 <action selector="didPressAddToCart:" destination="vuQ-nH-kTf" eventType="touchUpInside" id="Och-fm-f1D"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-9J-jb0">
-                                                            <rect key="frame" x="347" y="5" width="25" height="25"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="25" id="Hut-Uj-JDI"/>
-                                                                <constraint firstAttribute="height" constant="25" id="jNm-7s-1ew"/>
-                                                            </constraints>
-                                                            <state key="normal" image="dots"/>
-                                                            <connections>
-                                                                <action selector="didPressAddToCart:" destination="vuQ-nH-kTf" eventType="touchUpInside" id="Ukm-O1-g1C"/>
-                                                            </connections>
-                                                        </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY8-fg-qYO" userLabel="Hostings">
                                                             <rect key="frame" x="166" y="112" width="126" height="35"/>
                                                             <subviews>
@@ -430,10 +419,8 @@
                                                         <constraint firstItem="rgc-Gp-Tkq" firstAttribute="leading" secondItem="8gS-nT-dbC" secondAttribute="leading" constant="8" id="Zoy-Vf-c7j"/>
                                                         <constraint firstItem="rgc-Gp-Tkq" firstAttribute="centerY" secondItem="8gS-nT-dbC" secondAttribute="centerY" id="b00-Rh-KSW"/>
                                                         <constraint firstItem="XKG-Ej-BIi" firstAttribute="leading" secondItem="rgc-Gp-Tkq" secondAttribute="trailing" constant="8" id="cIb-hx-8fM"/>
-                                                        <constraint firstItem="CcQ-9J-jb0" firstAttribute="top" secondItem="8gS-nT-dbC" secondAttribute="top" constant="5" id="lnk-ja-NZY"/>
                                                         <constraint firstItem="W7z-f0-cOh" firstAttribute="trailing" secondItem="rpg-sz-8uJ" secondAttribute="trailing" id="nD2-FE-NKc"/>
                                                         <constraint firstItem="RY8-fg-qYO" firstAttribute="bottom" secondItem="W7z-f0-cOh" secondAttribute="bottom" constant="-3" id="osg-la-bye"/>
-                                                        <constraint firstAttribute="trailing" secondItem="CcQ-9J-jb0" secondAttribute="trailing" constant="8" id="vdC-sF-L2h"/>
                                                         <constraint firstItem="rpg-sz-8uJ" firstAttribute="trailing" secondItem="1Hh-34-UCj" secondAttribute="trailing" id="vxp-R7-dmq"/>
                                                         <constraint firstItem="rpg-sz-8uJ" firstAttribute="top" secondItem="1Hh-34-UCj" secondAttribute="bottom" constant="8" id="wrR-BU-mTX"/>
                                                     </constraints>
@@ -1353,7 +1340,6 @@
     <resources>
         <image name="banner_cancelled" width="42.666667938232422" height="42.666667938232422"/>
         <image name="cart" width="128" height="128"/>
-        <image name="dots" width="64" height="64"/>
         <image name="et_fallback_image" width="237" height="212"/>
         <image name="moto_upcoming_eventss" width="32" height="32"/>
         <image name="radio-off-button" width="64" height="64"/>
@@ -1376,10 +1362,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

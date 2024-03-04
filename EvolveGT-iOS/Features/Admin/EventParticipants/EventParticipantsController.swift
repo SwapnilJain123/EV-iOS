@@ -302,7 +302,7 @@ extension EventParticipantsController: EventParticipantV2Delegate{
     func clickedOnSignature(_ cell: EventParticipantCellV2, participant: EventParticipant?) {
         Log.i("Signature Tap identified")
         
-        if participant?.hasSignature ?? false{
+        if participant?.signature ?? false{
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignaturePreviewViewController") as! SignaturePreviewViewController
             controller.signatureId = participant?.signatureID ?? 0
             navigationController?.pushViewController(controller, animated: true)

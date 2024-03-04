@@ -44,9 +44,6 @@ class EventParticipantCellV2: UITableViewCell{
     @IBOutlet weak var tvDuties: UILabel!
     @IBOutlet weak var tvDayJob: UILabel?
     
-    
-    
-    
     @IBOutlet weak var accessoriesWidth: NSLayoutConstraint!
     var stackWidth: CGFloat = 0
     
@@ -162,7 +159,7 @@ class EventParticipantCellV2: UITableViewCell{
             stackWidth += 42
         })
             var image = UIImage(named: "sign_green") as UIImage?
-            if eventParticipant?.hasSignature ?? false{
+            if eventParticipant?.signature ?? false{
                 if !AppEngine.sharedInstance.isEvApp(){
                     image = UIImage(named: "admin_moto_signature") as UIImage?
                 }

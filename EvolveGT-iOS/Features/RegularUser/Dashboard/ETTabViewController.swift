@@ -134,7 +134,7 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
     func updateCartBadgeCount(count: Int){
         if let tabItems = self.tabBar.items{
             // In this case we want to modify the badge number of the third tab:
-            let tabItem = tabItems[1]
+            let tabItem = tabItems[3]
             if count > 0{
                 tabItem.badgeValue = String(count)
             }else{

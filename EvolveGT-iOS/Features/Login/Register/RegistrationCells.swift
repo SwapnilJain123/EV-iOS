@@ -36,20 +36,23 @@ class RegistrationTextFieldCell: UITableViewCell, UITextFieldDelegate{
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 11
-        
-        if string.isEmpty {
-            return true
-        }
-        guard let text = textField.text else { return true }
-        let combinedText = "\(text)\(string)"
-        
-        if combinedText.count > maxLength {
-            return false
-        }
-
-        if let formattedNumber = formatPhoneNumber(phoneNumber: combinedText) {
-            self.textField.text = formattedNumber
+        if placeholder == "Phone" {
+            let maxLength = 11
+            
+            if string.isEmpty {
+                return true
+            }
+            guard let text = textField.text else { return true }
+            let combinedText = "\(text)\(string)"
+            
+            if combinedText.count > maxLength {
+                return false
+            }
+            
+            if let formattedNumber = formatPhoneNumber(phoneNumber: combinedText) {
+                self.textField.text = formattedNumber
+                didChangeValue!(self.textField.text)
+            }
         }
         return true
     }
