@@ -46,7 +46,6 @@ class BaseInteractor{
     func syncCartBadgeCount(){
            let checkoutApi = CheckoutApi()
            checkoutApi.setCompletionHandler{ data, error in
-               
               
                if error == nil{
                    if let cartListResponse = self.decodeFromJson(data!, modelType: CartListResponse.self){
