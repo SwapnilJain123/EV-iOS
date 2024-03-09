@@ -76,6 +76,7 @@ struct PasswordRequestBody: Codable {
         case confirmPassword = "confirm-password"
     }
 }
+
 struct CancelEventRequest: Codable{
     
     var skillLevel: String?
@@ -87,6 +88,7 @@ struct CancelEventRequest: Codable{
         case skillLevel = "skill_level"
     }
 }
+
 struct UserMemberShipRequest: Codable{
     
     var userId: Int?

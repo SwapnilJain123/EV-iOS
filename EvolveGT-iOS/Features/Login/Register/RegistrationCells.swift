@@ -57,23 +57,6 @@ class RegistrationTextFieldCell: UITableViewCell, UITextFieldDelegate{
         return true
     }
 
-    func formatPhoneNumber(phoneNumber: String) -> String? {
-      // Remove non-numeric characters
-      let numbersOnly = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-
-      // Check if the phone number has the correct length (10 digits)
-      guard numbersOnly.count == 10 else {
-        return nil  // Return nil if the number is not 10 digits long
-      }
-
-      // Format the phone number
-      let firstPart = String(numbersOnly.prefix(3))
-      let secondPart = String(numbersOnly.dropFirst(3).prefix(3))
-      let lastPart = String(numbersOnly.suffix(4))
-
-      return "(\(firstPart)) \(secondPart)-\(lastPart)"
-    }
-
     func showErrorMessage(errorMessage: String, hasError: Bool){
         textField.errorMessage = hasError ? errorMessage : ""
     }
@@ -349,5 +332,21 @@ class TwoOptionsCell: UITableViewCell, RadioButtonDelegate{
         rbItem1.delegate = self
         rbItem2.delegate = self
     }
-    
+}
+
+func formatPhoneNumber(phoneNumber: String) -> String? {
+  // Remove non-numeric characters
+  let numbersOnly = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+
+  // Check if the phone number has the correct length (10 digits)
+  guard numbersOnly.count == 10 else {
+    return nil  // Return nil if the number is not 10 digits long
+  }
+
+  // Format the phone number
+  let firstPart = String(numbersOnly.prefix(3))
+  let secondPart = String(numbersOnly.dropFirst(3).prefix(3))
+  let lastPart = String(numbersOnly.suffix(4))
+
+  return "(\(firstPart)) \(secondPart)-\(lastPart)"
 }

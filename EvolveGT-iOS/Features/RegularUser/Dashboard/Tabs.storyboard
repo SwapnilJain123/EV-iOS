@@ -59,7 +59,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHl-s8-CpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1815" y="-197"/>
+            <point key="canvasLocation" x="-1803" y="-198"/>
         </scene>
         <!--Events-->
         <scene sceneID="RgN-1U-qv3">
@@ -74,7 +74,7 @@
     </scenes>
     <resources>
         <namedColor name="ColorEV">
-            <color red="0.031372549019607843" green="0.6470588235294118" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

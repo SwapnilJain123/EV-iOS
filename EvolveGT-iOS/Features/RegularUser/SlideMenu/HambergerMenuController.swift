@@ -12,11 +12,11 @@ import SideMenuSwift
 import Alamofire
 
 class HambergerMenuController: ETViewController {
-        
+    
     @IBOutlet weak var slidingMenuView: UITableView!
     
     var menuItems = SlideMenuItem.getllItems()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,9 +89,8 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             let vc = self.ext.getViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
             pushViewController(vc)
         case SlideMenuItem.TAG_PAST_EVENTS:
-//            let vc = EnrolledEventsSlidingTabController()
-//            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_PAST
-           
+            //            let vc = EnrolledEventsSlidingTabController()
+            //            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_PAST
             
             let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
             vc.selectedIndex = EventHistoryController.TAB_PAST
@@ -121,18 +120,17 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(storyBoard: "E-Waiver", VCIdentifier: "E-WaiverVC")
         case SlideMenuItem.TAG_TRANSFER_CREDIT:
             self.ext.pushViewController(storyBoard: "TransferCredit", VCIdentifier: "transferCreditVC")
-     
+            
         case SlideMenuItem.TAG_Delete_Me:
             self.deleteMe()
             break
         case SlideMenuItem.TAG_REFER_FRIEND:
-                       let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
-                       
-                       VC.providesPresentationContextTransitionStyle = true
-                              VC.definesPresentationContext = true
-                              VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-                              VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                       self.present(VC, animated: true, completion: nil)
+            let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
+            VC.providesPresentationContextTransitionStyle = true
+            VC.definesPresentationContext = true
+            VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            self.present(VC, animated: true, completion: nil)
         default:
             self.navigationController?.navigationBar.isHidden = false
             break
@@ -148,7 +146,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     func deleteMyAccount(){
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.DELET_USER)"
         let parameters = ["user_id":AppEngine.sharedInstance.userID]
-
+        
         Alamofire.request(url, method: .post, parameters: parameters,  encoding: JSONEncoding.default, headers: nil)
             .validate()
             .responseJSON {response in
@@ -166,15 +164,15 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
                     self.ext.confirmationAlertWithoutCancel(title: "Alert!", message: "Your account has not deleted, Please try again latter", btnText: "OK", handler: {
                     })
                 }
-        }
+            }
     }
     
     func decodeFromJson<T: Decodable>(_ data: Data, modelType: T.Type) -> T? {
-           
+        
         var decoded : T?
         let decoder = JSONDecoder()
         do{
-             decoded = try decoder.decode(modelType, from: data)
+            decoded = try decoder.decode(modelType, from: data)
         }catch let DecodingError.typeMismatch(type, context)  {
             Log.e("Type '\(type)' mismatch: \(context.debugDescription)")
             Log.e("codingPath: \(context.codingPath)")
@@ -186,8 +184,8 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
         }catch{
             Log.e("Json Decode error")
         }
-    
+        
         return decoded
     }
-
+    
 }

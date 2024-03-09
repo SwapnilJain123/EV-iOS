@@ -48,8 +48,7 @@ class ProfilePicCell: UITableViewCell{
     }
 }
 
-
-class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate{
+class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate {
     func radioButtonDidSelect(_ button: RadioButton) {
         if button == rbMale || button == rbFemale{
             user?.evGender = rbMale.isOn ? "Male" : "Female"
@@ -61,7 +60,6 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
     func radioButtonDidDeselect(_ button: RadioButton) {
         
     }
-    
     
     var user: UserDetails?
     
@@ -84,18 +82,16 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
     
     @IBOutlet weak var genderRBContainer: RadioButtonContainerView!
     @IBOutlet weak var trackCheckRBContainer: RadioButtonContainerView!
-    
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
         rbLincenceYes.isEnabled = false
+        tfPhone.delegate = self
         rbLicenceNo.isEnabled = rbLincenceYes.isEnabled
-        
     }
-    func showData(user : UserDetails){
-        
-        
+    
+    func showData(user : UserDetails) {
         self.user = user
         tfFirstName.applyColorTheme()
         tfLastName.applyColorTheme()
@@ -167,15 +163,35 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
         addTextFiledDelegate(textField: tfEmail)
         addTextFiledDelegate(textField: tfPhone)
         addTextFiledDelegate(textField: tfDoB)
-        
-        
-      
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == tfPhone {
+            let maxLength = 11
+            
+            if string.isEmpty {
+                return true
+            }
+            guard let text = textField.text else { return true }
+            let combinedText = "\(text)\(string)"
+            
+            if combinedText.count > maxLength {
+                return false
+            }
+            
+            if let formattedNumber = formatPhoneNumber(phoneNumber: combinedText) {
+                self.tfPhone.text = formattedNumber
+                self.user?.billingPhone = self.tfPhone.text
+            }
+        }
+        return true
     }
     
     private func addTextFiledDelegate(textField : SkyFloatingLabelTextField){
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
         textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .editingDidBegin)
     }
+    
     @IBAction func didPressDoB(_ sender: Any) {
         //delegate?.selectDateOfBirth()
         let dateFormatter = DateFormatter()
@@ -561,7 +577,7 @@ class EmergencyContactCell : UITableViewCell, UITextFieldDelegate{
         addTextFiledDelegate(textField: tfFirstName)
         addTextFiledDelegate(textField: tfLastName)
         addTextFiledDelegate(textField: tfPhone)
-        
+        tfPhone.delegate = self
     }
     private func addTextFiledDelegate(textField : SkyFloatingLabelTextField){
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
@@ -581,6 +597,28 @@ class EmergencyContactCell : UITableViewCell, UITextFieldDelegate{
             skyFloatingTF.errorMessage = ""
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == tfPhone {
+            let maxLength = 11
+            
+            if string.isEmpty {
+                return true
+            }
+            guard let text = textField.text else { return true }
+            let combinedText = "\(text)\(string)"
+            
+            if combinedText.count > maxLength {
+                return false
+            }
+            
+            if let formattedNumber = formatPhoneNumber(phoneNumber: combinedText) {
+                self.tfPhone.text = formattedNumber
+            }
+        }
+        return true
+    }
+    
     @IBAction func didPressRelationShipButton(_ sender: Any) {
         labelRelationShip.textColor = .darkGray
         relationshupDropDown.showList()

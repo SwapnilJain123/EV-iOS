@@ -31,7 +31,7 @@
         <!--HOME-->
         <scene sceneID="KRL-tx-mWk">
             <objects>
-                <viewController id="h8S-hB-tj4" customClass="HomeViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h8S-hB-tj4" customClass="HomeViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ipj-Pa-uFP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1327,6 +1327,11 @@
             <point key="canvasLocation" x="513.04347826086962" y="102.45535714285714"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Z2E-fP-WEq">
+            <size key="intrinsicContentSize" width="239" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="avatar" width="300" height="300"/>
         <image name="home" width="32" height="32"/>
