@@ -67,7 +67,8 @@ class EventParticipantIntercator : BaseInteractor {
                 }
             }else{
                 Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
-                self.delegate?.showEmptyPageError(message: error!.errorMessage)
+                self.delegate?.showErrorToastMessage(message: error!.errorMessage)
+//                self.delegate?.showEmptyPageError(message: error!.errorMessage)
             }
         }
         

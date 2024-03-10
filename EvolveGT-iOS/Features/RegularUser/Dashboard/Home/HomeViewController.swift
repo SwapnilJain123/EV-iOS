@@ -27,7 +27,6 @@ class HomeViewController: TabbedViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
@@ -37,7 +36,7 @@ class HomeViewController: TabbedViewController{
        private func createBadgeView() -> UIView {
            let badgeView = UIView(frame: CGRect(x: 22, y: -05, width: 20, height: 20))
            badgeView.backgroundColor = .red
-           badgeView.layer.cornerRadius = badgeView.frame.width / 2
+           badgeView.layer.cornerRadius = badgeView.frame.height / 2
 
            let label = UILabel(frame: badgeView.bounds)
            label.text = "" // Initially empty

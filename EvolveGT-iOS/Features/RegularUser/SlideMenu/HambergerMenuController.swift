@@ -83,12 +83,16 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func handleMenuItem(tag: Int){
-        
+        self.navigationController?.navigationBar.isHidden = true
+
         switch tag {
         case SlideMenuItem.TAG_CREDIT_HISTORY:
+            self.navigationController?.navigationBar.isHidden = true
+
             let vc = self.ext.getViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
             pushViewController(vc)
         case SlideMenuItem.TAG_PAST_EVENTS:
+            self.navigationController?.navigationBar.isHidden = false
             //            let vc = EnrolledEventsSlidingTabController()
             //            vc.selectedIndex = EnrolledEventsSlidingTabController.TAB_PAST
             
@@ -97,34 +101,45 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.ext.pushViewController(viewController: vc)
             
         case SlideMenuItem.TAG_UPCOMING_EVENTS:
+            self.navigationController?.navigationBar.isHidden = false
             let vc = self.ext.getViewController(storyBoard: "EnrolledEvents", VCIdentifier: "EventHistoryController") as! EventHistoryController
             vc.selectedIndex = EventHistoryController.TAB_UPCOMING
             self.ext.pushViewController(viewController: vc)
         case SlideMenuItem.TAG_SWITCH_DASHBOARD:
+            self.navigationController?.navigationBar.isHidden = false
             self.dashboardManager.switchToAdminDashboard()
             
         case SlideMenuItem.TAG_LOG_OUT:
+            self.navigationController?.navigationBar.isHidden = true
             self.dashboardManager.logout()
         case SlideMenuItem.TAG_SETTINGS:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "Settings", VCIdentifier: "SettingsVC")
         case SlideMenuItem.TAG_CHANGE_PASSWORD:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "ChangePassword", VCIdentifier: "changePasswordVC")
         case SlideMenuItem.TAG_ABOUT_US:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "AboutUs", VCIdentifier: "aboutUsVC")
             
         case SlideMenuItem.TAG_MEMBERSHIP:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "Membership", VCIdentifier: "MembershipVC")
         case SlideMenuItem.TAG_MY_PROFILE:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "Profile", VCIdentifier: "ProfileController")
         case SlideMenuItem.TAG_E_WAIVER:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "E-Waiver", VCIdentifier: "E-WaiverVC")
         case SlideMenuItem.TAG_TRANSFER_CREDIT:
+            self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "TransferCredit", VCIdentifier: "transferCreditVC")
             
         case SlideMenuItem.TAG_Delete_Me:
             self.deleteMe()
             break
         case SlideMenuItem.TAG_REFER_FRIEND:
+            self.navigationController?.navigationBar.isHidden = false
             let VC = self.ext.getViewController(storyBoard: "ReferFriend", VCIdentifier: "referFriendVC")
             VC.providesPresentationContextTransitionStyle = true
             VC.definesPresentationContext = true
@@ -132,7 +147,6 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             VC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
             self.present(VC, animated: true, completion: nil)
         default:
-            self.navigationController?.navigationBar.isHidden = false
             break
         }
     }
