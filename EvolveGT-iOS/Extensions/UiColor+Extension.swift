@@ -11,23 +11,32 @@ import UIKit
 
 extension UIColor {
     
-    private static let COLOR_EV = "#08A53A"
-    private static let COLOR_MOTO = "#376cde"
-    
-    private static let COLOR_EV_LITE = "#00574B"
-    private static let COLOR_MOTO_LITE = "#151E49"
-    
-    static let GREEN_EV_LITE = "#11C248"
-    static let GREEN_EV_DARK = "#08A43A"
-    
-    static let BLUE_MOTO_LITE = "#7189E7"
-    static let BLUE_MOTO_DARK = "#3853C2"
-    
+//    private static let COLOR_EV = "#08A53A"
+//    private static let COLOR_MOTO = "#376cde"
+    private static let COLOR_EV = "#376cde"
+    private static let COLOR_MOTO = "#08A53A"
+
+//    private static let COLOR_EV_LITE = "#00574B"
+//    private static let COLOR_MOTO_LITE = "#151E49"
+    private static let COLOR_EV_LITE = "#151E49"
+    private static let COLOR_MOTO_LITE = "#00574B"
+
+//    static let GREEN_EV_LITE = "#11C248"
+//    static let GREEN_EV_DARK = "#08A43A"
+//    static let BLUE_MOTO_LITE = "#7189E7"
+//    static let BLUE_MOTO_DARK = "#3853C2"
+    static let GREEN_EV_LITE = "#7189E7"
+    static let GREEN_EV_DARK = "#3853C2"
+    static let BLUE_MOTO_LITE = "#11C248"
+    static let BLUE_MOTO_DARK = "#08A43A"
+
     private static let BACKGROUND_GRAY = "#787878"
     
-    private static let EVOLVE_LIGHT_BACKGROUND = "#b3f5c4"
-    private static let MOTO_LIGHT_BACKGROUND = "#94a2d1"
-    
+//    private static let EVOLVE_LIGHT_BACKGROUND = "#b3f5c4"
+//    private static let MOTO_LIGHT_BACKGROUND = "#94a2d1"
+    private static let EVOLVE_LIGHT_BACKGROUND = "#94a2d1"
+    private static let MOTO_LIGHT_BACKGROUND = "#b3f5c4"
+
     private static let INACTIVE_GRAY = "#E6E6E6"
     private static let EV_TAB_BACKGROUND = "#333333"
     

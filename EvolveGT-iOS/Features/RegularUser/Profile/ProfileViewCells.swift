@@ -119,7 +119,7 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
         tfPhone.text = user.billingPhone
         tfDoB.text = user.evDob?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY)
         
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             let icon = UIImage(named: "calendar")
             calendarIcon.image = icon
         }else{
@@ -420,7 +420,7 @@ class MotoGladiatorInfoCell: UITableViewCell, UITextFieldDelegate{
         tfSponsors.applyColorTheme()
         tfTeammates.applyColorTheme()
         
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             let icon = UIImage(named: "calendar")
             calendar.image = icon
         }else{

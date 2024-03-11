@@ -24,7 +24,7 @@ class ForgotPasswordController: ETViewController {
         super.viewDidLoad()
         self.ext.showNavbar()
         self.ext.showBackButton()
-        if AppEngine.sharedInstance.isEvApp() == false{
+        if !AppEngine.sharedInstance.isEvApp() == false{
             iconForgotPassword.image = UIImage(named: "moto_forgot_password")
         }
         tfEmail.applyColorTheme()

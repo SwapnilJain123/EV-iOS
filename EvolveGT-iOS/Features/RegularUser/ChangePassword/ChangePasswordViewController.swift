@@ -21,7 +21,7 @@ class ChangePasswordViewController: ETViewController {
         confirmPasswordTF.applyColorTheme()
         
         var image = UIImage(named: "reset_password")
-        if !AppEngine.sharedInstance.isEvApp(){
+        if AppEngine.sharedInstance.isEvApp(){
             image = UIImage(named: "moto_change_password")
         }
         iconPasswordChange.image = image

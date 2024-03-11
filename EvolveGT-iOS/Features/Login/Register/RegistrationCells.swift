@@ -104,11 +104,11 @@ class RegistrationMaskedTextFieldCell: UITableViewCell, UITextFieldDelegate{
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
         textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .allEvents)
         
-        if AppEngine.sharedInstance.isEvApp(){
-            icon.image = UIImage(named: evIcon)
-        }else{
-            icon.image = UIImage(named: motoIcon)
-        }
+//        if AppEngine.sharedInstance.isEvApp(){
+//            icon.image = UIImage(named: evIcon)
+//        }else{
+//            icon.image = UIImage(named: motoIcon)
+//        }
         
         textField.applyColorTheme()
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,18 +13,18 @@
         <!--First Register View Controller-->
         <scene sceneID="pDb-WI-L4O">
             <objects>
-                <viewController storyboardIdentifier="fistRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xpb-RI-xVA" customClass="FirstRegisterViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fistRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xpb-RI-xVA" customClass="FirstRegisterViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Sh-dQ-MsP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1G-q2-NuL" userLabel="RootView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQG-Dr-bez" userLabel="iconView">
                                         <rect key="frame" x="30" y="20" width="315" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lb-WQ-JSJ" customClass="RegPhaseIndicator" customModule="ASRA" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lb-WQ-JSJ" customClass="RegPhaseIndicator" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="10" width="240" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -39,7 +39,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWN-mb-MbW">
-                                        <rect key="frame" x="25" y="905" width="325" height="40"/>
+                                        <rect key="frame" x="25" y="885" width="325" height="40"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="7tE-cF-fOh"/>
@@ -53,7 +53,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foq-n2-o2y">
-                                        <rect key="frame" x="127" y="955" width="120" height="25"/>
+                                        <rect key="frame" x="127" y="935" width="120" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="I have an account">
                                             <color key="titleColor" name="PrimaryTextColor"/>
@@ -63,10 +63,10 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eGs-2E-Dau">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="793"/>
+                                        <rect key="frame" x="0.0" y="90" width="375" height="773"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="jvp-04-wHg" customClass="RegistrationTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="jvp-04-wHg" customClass="RegistrationTextFieldCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jvp-04-wHg" id="Qpi-Wi-cbX">
@@ -114,7 +114,7 @@
                                                     <outlet property="textField" destination="dWx-h3-s1G" id="Ipa-ie-hoJ"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="4NT-jz-Ghk" customClass="RegistrationMaskedTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="4NT-jz-Ghk" customClass="RegistrationMaskedTextFieldCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="120" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4NT-jz-Ghk" id="WML-ld-qjZ">
@@ -124,7 +124,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDK-yD-ILe">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-DE-uwh">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_moto_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-DE-uwh">
                                                                     <rect key="frame" x="335" y="20" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Agn-sZ-dWE"/>
@@ -181,7 +181,7 @@
                                                     <outlet property="textField" destination="Rd8-Sk-nnP" id="gml-0q-CTJ"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionsFirestCell" id="hfH-7g-FLq" customClass="TwoOptionsFirestCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionsFirestCell" id="hfH-7g-FLq" customClass="TwoOptionsFirestCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="190" width="375" height="112"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hfH-7g-FLq" id="eeP-pJ-qNN">
@@ -397,18 +397,18 @@
         <!--Second Register View Controller-->
         <scene sceneID="2IA-Tj-6k0">
             <objects>
-                <viewController storyboardIdentifier="secondRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eHB-ic-jyF" customClass="SecondRegisterViewController" customModule="ASRA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eHB-ic-jyF" customClass="SecondRegisterViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u0c-2F-REJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o27-Yx-I5j" userLabel="RootView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9p-2C-3ky" userLabel="Iconview">
                                         <rect key="frame" x="30" y="20" width="315" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkU-rV-lpI" customClass="RegPhaseIndicator" customModule="ASRA" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkU-rV-lpI" customClass="RegPhaseIndicator" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="10" width="240" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
@@ -423,7 +423,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbW-kb-K9o" userLabel="Register">
-                                        <rect key="frame" x="25" y="567" width="325" height="40"/>
+                                        <rect key="frame" x="25" y="547" width="325" height="40"/>
                                         <color key="backgroundColor" name="ColorEV"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OdW-P5-rQy"/>
@@ -437,7 +437,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usO-ax-8Np" userLabel="I have an account">
-                                        <rect key="frame" x="128" y="617" width="120" height="30"/>
+                                        <rect key="frame" x="128" y="597" width="120" height="30"/>
                                         <state key="normal" title="I have an account">
                                             <color key="titleColor" name="PrimaryTextColor"/>
                                         </state>
@@ -446,10 +446,10 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gJJ-c8-6X9">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="436"/>
+                                        <rect key="frame" x="0.0" y="88" width="375" height="416"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="3gi-Tn-XOV" customClass="RegistrationTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="3gi-Tn-XOV" customClass="RegistrationTextFieldCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gi-Tn-XOV" id="4yP-EQ-vDc">
@@ -497,7 +497,7 @@
                                                     <outlet property="textField" destination="NYo-h4-lqt" id="eBm-hb-j26"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="hsr-aG-vSR" customClass="RegistrationMaskedTextFieldCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskedTextFieldCell" id="hsr-aG-vSR" customClass="RegistrationMaskedTextFieldCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="120" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hsr-aG-vSR" id="d8o-PJ-mfa">
@@ -564,7 +564,7 @@
                                                     <outlet property="textField" destination="iKF-4d-0rO" id="RiA-Oh-nl0"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionCell" id="7sj-Ho-w7g" customClass="TwoOptionsCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoOptionCell" id="7sj-Ho-w7g" customClass="TwoOptionsCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="190" width="375" height="112"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7sj-Ho-w7g" id="fJX-5P-DJI">
@@ -629,7 +629,7 @@
                                                     <outlet property="rbItem2" destination="Wom-Cf-iTk" id="Sfh-h3-nws"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkBoxCell" id="uxA-29-E5z" customClass="CheckBoxCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkBoxCell" id="uxA-29-E5z" customClass="CheckBoxCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="302" width="375" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uxA-29-E5z" id="feo-Iy-Ujs">
@@ -679,7 +679,7 @@
                                                     <outlet property="checkboxItem" destination="MxG-T1-W5d" id="S6q-eA-5wi"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" id="0a7-dp-cWF" customClass="PasswordCell" customModule="ASRA" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" id="0a7-dp-cWF" customClass="PasswordCell" customModule="EvolveGT" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="382" width="375" height="220"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0a7-dp-cWF" id="pU8-xM-DX5">
@@ -755,17 +755,17 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="t8d-zP-lTa">
-                                                <rect key="frame" x="0.0" y="602" width="375" height="60"/>
+                                                <rect key="frame" x="0.0" y="602" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t8d-zP-lTa" id="Dfy-Zx-XbT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmZ-g5-mWH" userLabel="Terms and conditions">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-Km-a71" userLabel="Terms and conditions check box button" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
-                                                                    <rect key="frame" x="8" y="10" width="97" height="40"/>
+                                                                    <rect key="frame" x="8" y="10" width="97" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="GWg-9l-CGI"/>
                                                                     </constraints>
@@ -774,7 +774,7 @@
                                                                     </state>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uim-CF-zm0" userLabel="Terms and conditions button">
-                                                                    <rect key="frame" x="110" y="10" width="235" height="39.5"/>
+                                                                    <rect key="frame" x="110" y="10" width="235" height="23.5"/>
                                                                     <state key="normal" title="Terms and conditions."/>
                                                                 </button>
                                                             </subviews>
@@ -802,20 +802,20 @@
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oy5-FD-rJ2" userLabel="CheckBox" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
-                                        <rect key="frame" x="25" y="532" width="30" height="30"/>
+                                        <rect key="frame" x="25" y="512" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="72x-pq-ZTc"/>
                                             <constraint firstAttribute="width" constant="30" id="El0-ed-r5m"/>
                                         </constraints>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree the " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z16-Qq-Ayw">
-                                        <rect key="frame" x="63" y="532" width="77" height="30"/>
+                                        <rect key="frame" x="63" y="512" width="77" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-s6-4Vd">
-                                        <rect key="frame" x="143" y="532" width="222" height="30"/>
+                                        <rect key="frame" x="143" y="512" width="222" height="30"/>
                                         <state key="normal" title="Terms and Conditions"/>
                                         <connections>
                                             <action selector="didPressTermsAndConditions:" destination="eHB-ic-jyF" eventType="touchUpInside" id="Eee-qv-BkD"/>
@@ -908,8 +908,9 @@
         <image name="calendar" width="96" height="96"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="circle.inset.filled" catalog="system" width="128" height="123"/>
+        <image name="ic_moto_calendar" width="32" height="32"/>
         <namedColor name="ColorEV">
-            <color red="0.0" green="0.23899999260902405" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

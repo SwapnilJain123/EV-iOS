@@ -87,7 +87,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
 
         switch tag {
         case SlideMenuItem.TAG_CREDIT_HISTORY:
-            self.navigationController?.navigationBar.isHidden = true
+            self.navigationController?.navigationBar.isHidden = false
 
             let vc = self.ext.getViewController(storyBoard: "CreditHistory", VCIdentifier: "CreditHistoryViewController")
             pushViewController(vc)

@@ -220,11 +220,13 @@ class CoachDutiesController: ETViewController{
         func setData(duty: Duty){
             dutyTitle.text = duty.duty
             if duty.status ?? false{
-                if AppEngine.sharedInstance.isEvApp(){
+                if !AppEngine.sharedInstance.isEvApp(){
                     sutyStatusIcon.image = UIImage(named: "ic_evolve_tik")
                 }else{
                     sutyStatusIcon.image = UIImage(named: "ic_moto_tik")
                 }
+                sutyStatusIcon.image = UIImage(named: "ic_moto_tik")
+
             }else{
                 sutyStatusIcon.image = UIImage(named: "ic_not_assigned")
             }

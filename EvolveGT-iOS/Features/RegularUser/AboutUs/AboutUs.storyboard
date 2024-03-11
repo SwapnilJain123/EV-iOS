@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg2" translatesAutoresizingMaskIntoConstraints="NO" id="qI1-JY-m19">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg" translatesAutoresizingMaskIntoConstraints="NO" id="qI1-JY-m19">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Cz-Bw-wx0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="2Cz-Bw-wx0">
                                 <rect key="frame" x="107" y="345" width="200" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="VFB-5a-QxW"/>
@@ -74,8 +74,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash_bg2" width="518" height="920"/>
-        <image name="splash_logo" width="780" height="1191"/>
+        <image name="splash_bg" width="518" height="920"/>
+        <image name="splash_logoOnly" width="774" height="365"/>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

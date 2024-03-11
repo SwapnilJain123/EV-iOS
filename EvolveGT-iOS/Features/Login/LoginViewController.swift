@@ -55,11 +55,11 @@ class LoginViewController : ETViewController, UITextFieldDelegate{
         btnSignUp.setTitleColor(.getAppThemeColor(), for: .normal)
         guestButton.isHidden = !AppEngine.sharedInstance.isEvApp()
         
-        var image = UIImage(named: "splash_logo")
-        if !AppEngine.sharedInstance.isEvApp(){
-            image = UIImage(named: "moto_logo")
-        }
-        loginImage.image = image
+//        var image = UIImage(named: "splash_logo")
+//        if !AppEngine.sharedInstance.isEvApp(){
+//            image = UIImage(named: "moto_logo")
+//        }
+//        loginImage.image = image
     }
     
     @objc func eyesButtonTapped(_ sender: UIButton) {

@@ -77,7 +77,7 @@ extension UIButton{
     }
     
     func applyPlusButtonTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             
             let normalPlusImage = UIImage(named: "ic_btn_plus_green")
             let selectionPlusImage = UIImage(named: "ic_btn_plus_green_lite")
@@ -98,7 +98,7 @@ extension UIButton{
     }
     
     func applyMinusButtonTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             let normalMinusImage = UIImage(named: "ic_btn_minus_green")
             let selectionMinusImage = UIImage(named: "ic_btn_minus_green_lite")
             self.setImage(normalMinusImage, for: .normal)
@@ -114,7 +114,7 @@ extension UIButton{
     }
     
     func applyEditButtonTheme(){
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             let normalEditImage = UIImage(named: "ic_ev_edit")
             let selectionEditImage = UIImage(named: "ic_ev_edit_lite")
             self.setImage(normalEditImage, for: .normal)

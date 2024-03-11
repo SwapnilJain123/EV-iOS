@@ -9,10 +9,7 @@
 import UIKit
 
 class PwdResetAckController: ETViewController {
-    
     var message = ""
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +18,7 @@ class PwdResetAckController: ETViewController {
         
         exitButton.applyColorTheme()
         
-        if AppEngine.sharedInstance.isEvApp() == false{
+        if !AppEngine.sharedInstance.isEvApp() == false{
             resetImage.image = UIImage(named: "ic_moto_action_success")
         }
        

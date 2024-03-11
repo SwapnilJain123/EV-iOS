@@ -42,7 +42,7 @@ class EventListCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        btnAddToCart?.isHidden = false
+        btnAddToCart?.isHidden = true
         bannerCancelled.isHidden = false
         
         hostIcon1?.image = nil
@@ -73,7 +73,7 @@ class EventListCell: UICollectionViewCell {
         
         bannerCancelled.isHidden = !(event?.isCancelled ?? false)
         
-        btnAddToCart?.isHidden = !AppEngine.sharedInstance.isEvApp() || (event?.isCancelled ?? false)
+//        btnAddToCart?.isHidden = !AppEngine.sharedInstance.isEvApp() || (event?.isCancelled ?? false)
         
         let hostings = event?.activeHostings
         if let count = hostings?.count {
@@ -89,14 +89,14 @@ class EventListCell: UICollectionViewCell {
         }
         
         if event?.isPrivateEvent ?? false{
-            if AppEngine.sharedInstance.isEvApp(){
+            if !AppEngine.sharedInstance.isEvApp(){
                 btnAddToCart?.setImage(UIImage(named: "private-event-green"), for: .normal)
             }else{
                 btnAddToCart?.setImage(UIImage(named: "private-event-blue"), for: .normal)
                 
             }
         }else if event?.external != nil{
-            if AppEngine.sharedInstance.isEvApp(){
+            if !AppEngine.sharedInstance.isEvApp(){
                 btnAddToCart?.setImage(UIImage(named: "cart-globe-ev"), for: .normal)
             }else{
                 btnAddToCart?.setImage(UIImage(named: "cart-globe-moto"), for: .normal)
@@ -146,7 +146,7 @@ class EventGridCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        btnAddToCart?.isHidden = false
+        btnAddToCart?.isHidden = true
         bannerCancelled.isHidden = false
         
         hostIcon1?.image = nil
@@ -176,7 +176,7 @@ class EventGridCell: UICollectionViewCell {
         
         bannerCancelled.isHidden = !(event?.isCancelled ?? false)
         
-        btnAddToCart?.isHidden = event!.isMotoEvent || (event?.isCancelled ?? false)
+//        btnAddToCart?.isHidden = event!.isMotoEvent || (event?.isCancelled ?? false)
        
         let hostings = event?.activeHostings
         if let count = hostings?.count {

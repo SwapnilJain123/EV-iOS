@@ -39,7 +39,7 @@ class BaseCartCell : UITableViewCell{
         btnDelete.isHidden = !(cartItem?.canRemove ?? true)
         cartImage.superview?.setCardView()
         
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             btnDelete.setImage(UIImage(named: "delete"), for: .normal)
         }else{
             btnDelete.setImage(UIImage(named: "moto_delete"), for: .normal)

@@ -294,7 +294,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9y-da-UbT" userLabel="UpcomingEvents">
                                                     <rect key="frame" x="10" y="278.5" width="191.5" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upcoming_events" translatesAutoresizingMaskIntoConstraints="NO" id="pSW-Mh-LEL">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto_upcoming_events" translatesAutoresizingMaskIntoConstraints="NO" id="pSW-Mh-LEL">
                                                             <rect key="frame" x="15" y="17.5" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="Yiw-EM-JIT"/>
@@ -348,7 +348,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-Gh-Gm8" userLabel="PastEvents">
                                                     <rect key="frame" x="10" y="348.5" width="191.5" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="past_events" translatesAutoresizingMaskIntoConstraints="NO" id="x6J-k4-uap">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto_past_events" translatesAutoresizingMaskIntoConstraints="NO" id="x6J-k4-uap">
                                                             <rect key="frame" x="15" y="17.5" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="FO7-5J-59U"/>
@@ -412,7 +412,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-Zk-kRw" userLabel="All Events">
                                                     <rect key="frame" x="212.5" y="348.5" width="191.5" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="past_events" translatesAutoresizingMaskIntoConstraints="NO" id="VAS-HH-kcd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto_past_events" translatesAutoresizingMaskIntoConstraints="NO" id="VAS-HH-kcd">
                                                             <rect key="frame" x="15" y="17.5" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="Khk-20-bmp"/>
@@ -466,7 +466,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-HW-avp" userLabel="Skill Level">
                                                     <rect key="frame" x="212.5" y="278.5" width="191.5" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skill_level" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-2c-Nz6">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto_skill_level" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-2c-Nz6">
                                                             <rect key="frame" x="15" y="17.5" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="iLr-vL-xQ7"/>
@@ -1336,11 +1336,11 @@
         <image name="avatar" width="300" height="300"/>
         <image name="home" width="32" height="32"/>
         <image name="ic_btn_plus_blue" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="past_events" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="moto_past_events" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="moto_skill_level" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="moto_upcoming_events" width="42.666667938232422" height="42.666667938232422"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="refer_a_friend" width="128" height="128"/>
-        <image name="skill_level" width="128" height="128"/>
-        <image name="upcoming_events" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

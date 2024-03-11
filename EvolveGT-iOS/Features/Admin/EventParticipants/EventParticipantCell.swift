@@ -71,7 +71,7 @@ class EventParticipantCell: UITableViewCell{
       if eventParticipant?.isSignEnabled ?? false{
             var image = UIImage(named: "sign_green") as UIImage?
             if eventParticipant?.signature ?? false{
-                if !AppEngine.sharedInstance.isEvApp(){
+                if AppEngine.sharedInstance.isEvApp(){
                     image = UIImage(named: "admin_moto_signature") as UIImage?
                 }
             }else{
@@ -88,7 +88,7 @@ class EventParticipantCell: UITableViewCell{
             }
         }else{
             var image = UIImage(named: "star") as UIImage?
-            if !AppEngine.sharedInstance.isEvApp(){
+            if AppEngine.sharedInstance.isEvApp(){
                 image = UIImage(named: "admin_moto_star") as UIImage?
             }
             if(btnTraining != nil){
@@ -96,7 +96,7 @@ class EventParticipantCell: UITableViewCell{
             }
         }
         
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             btnMotoIcon.setImage(UIImage(named: "ic_moto_green"), for: .normal)
             tdPurchaseWarning.setImage(UIImage(named: "ic_td_not_purchased"), for: .normal)
         }else{

@@ -16,7 +16,7 @@ class ReferAFriendCell : UITableViewCell{
     
     @IBOutlet weak var actionButton: UIButton!
     func updateUi(){
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             icon.image = UIImage(named: "refer_a_friend")
         }else{
             icon.image = UIImage(named: "refer_a_friend_moto")

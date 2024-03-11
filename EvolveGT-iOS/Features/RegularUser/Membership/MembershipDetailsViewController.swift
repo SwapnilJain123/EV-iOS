@@ -10,9 +10,6 @@ import UIKit
 import Kingfisher
 
 class MembershipDetailsViewController: ETViewController,MembershipDetailsDelegate, MRLMessageDelegate {
-    
-    
-    
     var membershipDetails = MembershipDetails()
     
     @IBOutlet weak var outOfStockLabel: UILabel!

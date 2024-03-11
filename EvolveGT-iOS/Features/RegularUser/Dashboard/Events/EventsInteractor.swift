@@ -78,8 +78,7 @@ class EventsInteractor :BaseInteractor{
         if AppEngine.sharedInstance.isEvApp(){
             eventsApi.fetchEvolveEventList()
         }else{
-            eventsApi.fetchEvolveEventList()
-//            eventsApi.fetchMotoEventList()
+            eventsApi.fetchMotoEventList()
         }
     }
     

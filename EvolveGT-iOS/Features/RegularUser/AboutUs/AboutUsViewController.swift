@@ -37,17 +37,17 @@ class AboutUsViewController: ETViewController, AboutUsInteractorDelegate{
         super.viewWillAppear(animated)
         self.ext.showNavbar()
         self.ext.showBackButton()
-        
-        if AppEngine.sharedInstance.isEvApp(){
-            let bgImage = UIImage(named: "splash_logo")
-            aboutUsLogo.image = bgImage
-            self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientEVEnd())
-        }else{
-            
-            //let bgImage = nil//UIImage(named: "moto_shop_background")
-            aboutUsLogo.image = UIImage(named: "splash_logo_moto")
-            self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientMotoEnd())
-        }
+//        
+//        if !AppEngine.sharedInstance.isEvApp(){
+//            let bgImage = UIImage(named: "splash_logo")
+//            aboutUsLogo.image = bgImage
+//            self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientEVEnd())
+//        }else{
+//            
+//            //let bgImage = nil//UIImage(named: "moto_shop_background")
+//            aboutUsLogo.image = UIImage(named: "splash_logo_moto")
+//            self.view.setGradientBackground(startColor: .getGradientStart(), endColor: .getGradientMotoEnd())
+//        }
         
     }
     

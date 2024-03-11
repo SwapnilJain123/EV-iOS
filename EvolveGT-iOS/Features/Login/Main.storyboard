@@ -104,7 +104,7 @@
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="iag-Md-Lf8">
                                 <rect key="frame" x="65" y="228.66666666666663" width="300" height="500"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo2" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-EG-4mU" userLabel="WelcomeLogo">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo1" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-EG-4mU" userLabel="WelcomeLogo">
                                         <rect key="frame" x="50" y="10" width="200" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="6Wg-bx-8ch"/>
@@ -312,7 +312,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-Vi-t2e">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action_success" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-hc-Vdy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_moto_action_success" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-hc-Vdy">
                                         <rect key="frame" x="165" y="216" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="TkB-2y-ht7"/>
@@ -393,7 +393,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z09-Ty-SBI" userLabel="RootView">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-XR-wMX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto_forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-XR-wMX">
                                         <rect key="frame" x="165" y="216" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="dBH-gP-1GW"/>
@@ -544,10 +544,10 @@
     </designables>
     <resources>
         <image name="ev_logo" width="106.33333587646484" height="106.33333587646484"/>
-        <image name="forgot_password" width="135.5" height="135.5"/>
-        <image name="ic_action_success" width="90.333335876464844" height="90.333335876464844"/>
+        <image name="ic_moto_action_success" width="90.333335876464844" height="90.333335876464844"/>
+        <image name="moto_forgot_password" width="90.333335876464844" height="90.333335876464844"/>
         <image name="moto_logo" width="106.33333587646484" height="106.33333587646484"/>
-        <image name="splash_logo2" width="780" height="1191"/>
+        <image name="splash_logo1" width="253" height="74"/>
         <namedColor name="ColorEV">
             <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -555,7 +555,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -21,7 +21,7 @@ class EventInfoCell: UITableViewCell{
     @IBOutlet weak var totalPrice: UILabel!
     
     func applyTheme() {
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
             totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
         }else{
@@ -346,14 +346,14 @@ class TrackDayCell : UITableViewCell{
         rootView.setCardView()
         
         if trackDay?.isPrivateEvent ?? false{
-            if AppEngine.sharedInstance.isEvApp(){
+            if !AppEngine.sharedInstance.isEvApp(){
                 addToCartButton?.setImage(UIImage(named: "private-event-green"), for: .normal)
             }else{
                 addToCartButton?.setImage(UIImage(named: "private-event-blue"), for: .normal)
                 
             }
         }else if trackDay?.external != nil{
-            if AppEngine.sharedInstance.isEvApp(){
+            if !AppEngine.sharedInstance.isEvApp(){
                 addToCartButton?.setImage(UIImage(named: "cart-globe-ev"), for: .normal)
             }else{
                 addToCartButton?.setImage(UIImage(named: "cart-globe-moto"), for: .normal)

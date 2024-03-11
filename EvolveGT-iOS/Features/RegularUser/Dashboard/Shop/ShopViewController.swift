@@ -72,7 +72,7 @@ class ShopViewController : TabbedViewController{
         labelGifts.textColor = appColor
         labelRentals.textColor = appColor
         
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             
             shopsBanner.image = UIImage(named: "byke")
             iconArchieCard.image = UIImage(named: "archie_cards")

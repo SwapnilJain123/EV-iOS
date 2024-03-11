@@ -116,7 +116,7 @@ class CartCouponAppliedCell : UITableViewCell{
         labelCouponCode.text = "Coupon Code: \(coupon.couponCode)"
         
         lbelCouponBalance.text = "Coupon Balance: \(String(coupon.couponBalance).formatToAmount())"
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             
             btnDelete.setImage(UIImage(named: "delete"), for: .normal)
         }else{

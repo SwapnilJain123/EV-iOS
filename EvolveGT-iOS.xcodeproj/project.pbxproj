@@ -3282,7 +3282,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.uat;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
@@ -3306,7 +3306,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
@@ -3329,7 +3329,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
@@ -3352,7 +3352,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
@@ -3375,7 +3375,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
@@ -3398,7 +3398,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;

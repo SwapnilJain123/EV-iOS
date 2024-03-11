@@ -97,7 +97,7 @@ class EventParticipantCellV2: UITableViewCell{
             }
         }
         if (eventParticipant?.hasAccessories ?? false){
-            addIconButton(evIcon: "star", motoIcon: "admin_moto_star", action: #selector(trainingButtonTapped))
+            addIconButton(evIcon: "admin_moto_star", motoIcon: "admin_moto_star", action: #selector(trainingButtonTapped))
         }
         if eventParticipant?.isSignEnabled ?? false{
             addSignButton()
@@ -160,7 +160,7 @@ class EventParticipantCellV2: UITableViewCell{
         })
             var image = UIImage(named: "sign_green") as UIImage?
             if eventParticipant?.signature ?? false{
-                if !AppEngine.sharedInstance.isEvApp(){
+                if AppEngine.sharedInstance.isEvApp(){
                     image = UIImage(named: "admin_moto_signature") as UIImage?
                 }
             }else{

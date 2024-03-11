@@ -22,7 +22,7 @@ class CreditHistoryItemCell : UITableViewCell{
         postedDate.text = "Posted on: \(creditItem.postDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         creditDescription.text = creditItem.creditHistoryDescription
         
-        if AppEngine.sharedInstance.isEvApp(){
+        if !AppEngine.sharedInstance.isEvApp(){
             creditIcon.image = UIImage(named: "wallet")
         }else{
             creditIcon.image = UIImage(named: "moto_wallet")
