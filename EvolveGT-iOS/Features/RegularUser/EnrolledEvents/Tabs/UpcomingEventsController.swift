@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableViewDataSource{
-    
-    
-    
+
     @IBOutlet weak var eventsTableView: UITableView!
     var events : [EnrolledEvent]?
     
@@ -57,12 +55,12 @@ class UpcomingEventsController : ETViewController, SlidingTabDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eventCell = tableView.dequeueReusableCell(withIdentifier:"UpcomingEventCell",for: indexPath) as! EnrolledEventCell
-        
         eventCell.populateViews(event: events![indexPath.row], isUpComing: true)
         eventCell.delegate = self
         return eventCell
     }
 }
+
 extension UpcomingEventsController : UITableViewDelegate{
     
      func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
