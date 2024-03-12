@@ -18,7 +18,7 @@ class EnrolledEvent: Codable {
     
     var hasPassport, enableSelfsign: Bool?
     var passportId: Int?
-    var eventId: Int?
+    var eventId, cancelBtnShow: Int?
     
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"
@@ -31,11 +31,11 @@ class EnrolledEvent: Codable {
         case rentals
         case trainings = "training"
         case motoClasses = "moto_classes"
-        
         case hasPassport = "has_passport"
         case enableSelfsign = "enable_selfsign"
         case passportId = "passport_id"
         case eventId = "event_id"
+        case cancelBtnShow = "cancel_btn_show"
     }
     
     var hasAccessories : Bool{

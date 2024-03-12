@@ -10,14 +10,13 @@ import Foundation
 struct Config{
     
     //stagung
-    static let BASE_URL = "tracknutts.com"
+//    static let BASE_URL = "qa.asraracing.com"
 
     //live
-//    static let BASE_URL = "asraracing.com"
+    static let BASE_URL = "asraracing.com"
     static let LOG_ENABLED = false
     static let BUILD_CONFIG = "AppStore"
     static let CHECKOUT_MODE = "production"
     static let BUNDLE_ID = "com.asra.appstore"
-    static let BRAINTREE_RETURN_URL = "com.evolve.appstore.payments"
-
+    static let BRAINTREE_RETURN_URL = "com.asra.appstore.payments"
 }

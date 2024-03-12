@@ -39,7 +39,7 @@ class EnrolledEventCell : UITableViewCell{
     override func prepareForReuse() {
         
         super.prepareForReuse()
-        cancelButton?.isHidden = false
+        cancelButton?.isHidden = true
         eventTitle.textColor = UIColor.getAppThemeColor()
     }
     
@@ -58,11 +58,7 @@ class EnrolledEventCell : UITableViewCell{
         eventTitle.textColor = UIColor.getAppThemeColor()
         
         //let isPastEvet = event.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? true
-        if AppEngine.sharedInstance.canCancelEvent && isUpComing{
-            cancelButton?.isHidden = false//was false. Cancel button moved to context menu
-        }else{
-            cancelButton?.isHidden = false
-        }
+        cancelButton?.isHidden = (event.cancelBtnShow == 0) ? true : false
         eventTitle.text = event.productName
         eventDate.text = "Date: \(event.eventDate?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
         orderDate.text = "Ordered On: \(event.orderDate?.formattedDate(inputPattern: .FORMAT_API_DATE, outputFormat: .FORMAT_DD_MMM_YYYY) ?? "")"
