@@ -10,17 +10,18 @@ import UIKit
 import MBRadioCheckboxButton
 
 class SecondRegisterViewController: ETViewController {
-    
-    
+
     @IBOutlet weak var cbAcceptTermsAndConditions: CheckboxButton!
     var validated: Bool = false
     var interactor: RegisterInteractor?
     @IBOutlet weak var indicator: RegPhaseIndicator!
     @IBOutlet weak var secondREgisterTableView: UITableView!
-    
+    @IBOutlet weak var btnRegister: UIButton!
+
     @IBAction func haveAnAccountButtonPressed(_ sender: UIButton) {
         self.ext.pushViewController(storyBoard: "Main", VCIdentifier: "LoginVC")
     }
+    
     @IBAction func registerButton(_ sender: UIButton) {
         if interactor!.validateProfile(){
             self.interactor!.register()
@@ -30,13 +31,8 @@ class SecondRegisterViewController: ETViewController {
              let indexPath = IndexPath(row: 4, section: 0)
             secondREgisterTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
-        
-        
     }
-    
-    
-    @IBOutlet weak var btnRegister: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ext.showNavbar()
@@ -64,10 +60,9 @@ class SecondRegisterViewController: ETViewController {
     
     @IBAction func didPressTermsAndConditions(_ sender: Any) {
         
-        let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
-        
-        vc.contentTitle = ScreenTitle.TITLE_TERMS_N_CONDITIONS
-        vc.text = AppConstants.TERMS_OF_USE
+        let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
+        vc.url = CheckoutApiConstants.TERMSANDCONDITIONS
+        vc.screenTitle = ScreenTitle.TITLE_TERMS_N_CONDITIONS
         self.ext.pushViewController(viewController: vc)
     }
     override func getScreenTitle() -> String? {

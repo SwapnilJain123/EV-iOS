@@ -15,12 +15,14 @@ class Membership: Codable {
     var image: String?
     var season: String?
     var membershipID: Int?
+    var description: String?
     
     enum CodingKeys: String, CodingKey {
         case membershipID = "membership_id"
         case title, slug, price
         case stockStatus = "stock_status"
         case image
+        case description
     }
     
     var isGuest : Bool{

@@ -784,6 +784,7 @@
 		10FE935525023094002F3572 /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
 		3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */; };
 		720B93A12B9630A30043913B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720B93A02B9630A30043913B /* BadgeView.swift */; };
+		7285314A2BB00DBD0086697B /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E2596048FB3FBD0D2CD866D9 /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E539CFEE9BD57A1C5B21BC98 /* Pods_EvolveGT_QA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */; };
@@ -1102,6 +1103,7 @@
 		6CB5E4398F4AF2B0CAC4C0DB /* Pods-EvolveGT-UAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-UAT.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT.release.xcconfig"; sourceTree = "<group>"; };
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
 		720B93A02B9630A30043913B /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewController.swift; sourceTree = "<group>"; };
 		73B7DDD2238E3F28A47DC264 /* Pods-EvolveGT-iOS.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.appstore.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.appstore.xcconfig"; sourceTree = "<group>"; };
 		761AFDB7FAB0E5D15F2AFA64 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015BE31D916A4876A5CDEE0 /* Pods-EvolveGT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -1936,6 +1938,7 @@
 			children = (
 				10A06AE3249697DD0051FF56 /* Settings.storyboard */,
 				10A06AE524969A150051FF56 /* SettingsViewController.swift */,
+				728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */,
 				10A06AE724969A480051FF56 /* SettingsTableViewCells.swift */,
 				10A06AE92496A1140051FF56 /* SettingsInteractor.swift */,
 				103B26B2249B62EF00BB8CB9 /* InfoDisplayController.swift */,
@@ -2660,6 +2663,7 @@
 				10D6011E26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 				10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */,
+				7285314A2BB00DBD0086697B /* TermsAndConditionViewController.swift in Sources */,
 				10048F30246EB0CF00684A87 /* EventDetailsController.swift in Sources */,
 				10A551A7250648AF0049C3DB /* RegistrationCells.swift in Sources */,
 				1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */,
@@ -3281,7 +3285,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.6;
+				MARKETING_VERSION = 2.5.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -3305,7 +3309,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.6;
+				MARKETING_VERSION = 2.5.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

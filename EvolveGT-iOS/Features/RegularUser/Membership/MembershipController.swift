@@ -59,10 +59,11 @@ extension MembershipController : MembershipCellDelegate{
     func addMembershipToCart(membership: Membership) {
         
         if membership.membershipID == Membership.ID_MRL{
-            
+            let plaintext = membership.description?.html2String
+
             let user = AppEngine.sharedInstance.userDetails
             if user?.canBuyMRLMembership ?? false == false{
-                self.ext.confirmationAlert(title: "User Race License", message: self.mrlMessage, btnText: "I Agree", btnDismiss: "Cancel", handler: {
+                self.ext.confirmationAlert(title: "User Race License", message: plaintext, btnText: "I Agree", btnDismiss: "Cancel", handler: {
                     self.interactor.addMembershipToCart(membership: membership)
                 })
             }else{
@@ -175,4 +176,25 @@ class MembershipCell : UICollectionViewCell{
         btnPurchase.applyColorTheme()
     }
     
+}
+
+extension Data {
+    var html2AttributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            print("error:", error)
+            return  nil
+        }
+    }
+    var html2String: String { html2AttributedString?.string ?? "" }
+}
+
+extension StringProtocol {
+    var html2AttributedString: NSAttributedString? {
+        Data(utf8).html2AttributedString
+    }
+    var html2String: String {
+        html2AttributedString?.string ?? ""
+    }
 }

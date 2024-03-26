@@ -20,4 +20,7 @@ struct CheckoutApiConstants{
     
     static let CHECKOUT_TOKEN = "braintree/token"
      static let BRAINTREE_TRANSACTION = "braintree/transaction"
+    static let TERMSANDCONDITIONS = "user/legalPolicies?policy_type=terms-policy"
+    static let CANCELLATIONPOLICY = "user/legalPolicies?policy_type=cancellation-policy"
+
 }

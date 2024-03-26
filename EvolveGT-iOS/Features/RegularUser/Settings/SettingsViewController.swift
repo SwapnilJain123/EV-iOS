@@ -61,15 +61,15 @@ extension SettingsViewController: SettingsDelegate{
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.settings.count
-       }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         settings[section].menuItems.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-           return 40
-       }
+        return 40
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -98,11 +98,14 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if settings[indexPath.section].settingsType == .more{
-             let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
-            
+            let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
             vc.contentTitle = settings[indexPath.section].menuItems[indexPath.row].title ?? ""
             if indexPath.row == 0{
-                vc.text = AppConstants.TERMS_OF_USE
+                let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
+                vc.url = CheckoutApiConstants.TERMSANDCONDITIONS
+                vc.screenTitle = ScreenTitle.TITLE_TERMS_N_CONDITIONS
+                self.ext.pushViewController(viewController: vc)
+                return
             }else if indexPath.row == 1{
                 vc.text = AppConstants.PRIVACY_POLICY
             }else{

@@ -920,6 +920,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUy-Mf-10b">
+                                <rect key="frame" x="25" y="747" width="364" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apF-7x-M8U" userLabel="CheckBox" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
+                                        <rect key="frame" x="0.0" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="8Ua-3C-0Md"/>
+                                            <constraint firstAttribute="height" constant="30" id="w2J-eN-td9"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree the " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRg-LW-KpY">
+                                        <rect key="frame" x="30" y="10" width="77" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-Tf-iDz">
+                                        <rect key="frame" x="110" y="10" width="254" height="30"/>
+                                        <state key="normal" title="Cancellation Policy">
+                                            <color key="titleColor" name="ColorEV"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressCancellationPolicy:" destination="f15-md-yeG" eventType="touchUpInside" id="cSn-rq-NA9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0NF-2J-pyP"/>
+                                    <constraint firstItem="dWf-Tf-iDz" firstAttribute="leading" secondItem="sRg-LW-KpY" secondAttribute="trailing" constant="3" id="1B3-e2-s1e"/>
+                                    <constraint firstItem="dWf-Tf-iDz" firstAttribute="bottom" secondItem="sRg-LW-KpY" secondAttribute="bottom" id="MVA-Oq-iLC"/>
+                                    <constraint firstItem="sRg-LW-KpY" firstAttribute="centerY" secondItem="apF-7x-M8U" secondAttribute="centerY" id="Sc2-uL-prN"/>
+                                    <constraint firstAttribute="trailing" secondItem="dWf-Tf-iDz" secondAttribute="trailing" id="VX4-Jc-w5F"/>
+                                    <constraint firstItem="apF-7x-M8U" firstAttribute="centerY" secondItem="YUy-Mf-10b" secondAttribute="centerY" id="Vqc-IJ-kDk"/>
+                                    <constraint firstItem="apF-7x-M8U" firstAttribute="leading" secondItem="YUy-Mf-10b" secondAttribute="leading" id="jnN-Un-dTB"/>
+                                    <constraint firstItem="dWf-Tf-iDz" firstAttribute="top" secondItem="sRg-LW-KpY" secondAttribute="top" id="tyb-sE-JNC"/>
+                                    <constraint firstItem="sRg-LW-KpY" firstAttribute="leading" secondItem="apF-7x-M8U" secondAttribute="trailing" id="u2Y-pV-g4j"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-4z-Zeb">
                                 <rect key="frame" x="25" y="797" width="364" height="45"/>
                                 <color key="backgroundColor" name="ColorEV"/>
@@ -1121,6 +1160,7 @@
                             <constraint firstItem="5GZ-Xh-osq" firstAttribute="trailing" secondItem="2et-Na-RWH" secondAttribute="trailing" id="7Tc-xp-hAt"/>
                             <constraint firstItem="5GZ-Xh-osq" firstAttribute="leading" secondItem="2et-Na-RWH" secondAttribute="leading" id="9qo-nd-XAG"/>
                             <constraint firstItem="e8k-Hz-Rxv" firstAttribute="trailing" secondItem="5GZ-Xh-osq" secondAttribute="trailing" id="F9j-fv-XLn"/>
+                            <constraint firstItem="Pst-4z-Zeb" firstAttribute="top" secondItem="YUy-Mf-10b" secondAttribute="bottom" id="IEN-kz-qWc"/>
                             <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="JKp-tM-OQK" secondAttribute="trailing" id="LBg-UM-AXf"/>
                             <constraint firstItem="JKp-tM-OQK" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" id="P2g-GN-85N"/>
                             <constraint firstItem="Pst-4z-Zeb" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" constant="25" id="RBh-ek-Qfq"/>
@@ -1129,8 +1169,10 @@
                             <constraint firstItem="5GZ-Xh-osq" firstAttribute="top" secondItem="2et-Na-RWH" secondAttribute="bottom" constant="20" id="ZFN-uo-5aD"/>
                             <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="2et-Na-RWH" secondAttribute="trailing" constant="10" id="aDe-7B-gay"/>
                             <constraint firstItem="e8k-Hz-Rxv" firstAttribute="top" secondItem="5GZ-Xh-osq" secondAttribute="bottom" constant="7.5" id="apJ-jJ-J1E"/>
+                            <constraint firstItem="YUy-Mf-10b" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" constant="25" id="gv0-vW-9z2"/>
                             <constraint firstItem="e8k-Hz-Rxv" firstAttribute="leading" secondItem="5GZ-Xh-osq" secondAttribute="leading" id="hbi-Gs-aTT"/>
                             <constraint firstItem="tVH-6Q-rAY" firstAttribute="bottom" secondItem="Pst-4z-Zeb" secondAttribute="bottom" constant="20" id="hxq-hn-hCg"/>
+                            <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="YUy-Mf-10b" secondAttribute="trailing" constant="25" id="kJQ-zB-rfJ"/>
                             <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="Pst-4z-Zeb" secondAttribute="trailing" constant="25" id="tH3-Lm-jQO"/>
                         </constraints>
                     </view>
@@ -1139,6 +1181,7 @@
                         <outlet property="btnPlaceOrder" destination="Pst-4z-Zeb" id="waV-HW-vqU"/>
                         <outlet property="btnReview" destination="hDM-Xe-AF9" id="hf8-5K-PEu"/>
                         <outlet property="btnWallet" destination="AV4-SQ-Nh0" id="PZx-TX-Vsx"/>
+                        <outlet property="cbAcceptTermsAndConditions" destination="apF-7x-M8U" id="dc5-hO-USY"/>
                         <outlet property="labelCoupon" destination="dXl-IK-ezd" id="hfQ-Fr-oGv"/>
                         <outlet property="labelCouponApplied" destination="ILf-aE-I1Y" id="Xo2-dG-oVS"/>
                         <outlet property="labelTotal" destination="eL6-50-HRW" id="trg-Sz-v2Y"/>
@@ -1395,6 +1438,9 @@
         <designable name="OHQ-km-vRD">
             <size key="intrinsicContentSize" width="206" height="30"/>
         </designable>
+        <designable name="apF-7x-M8U">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
         <designable name="qsi-bT-aIc">
             <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
@@ -1428,10 +1474,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
