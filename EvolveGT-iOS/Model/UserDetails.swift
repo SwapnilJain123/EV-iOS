@@ -146,7 +146,7 @@ class UserDetails: Codable {
         if billingAddress1?.isEmpty() ?? true{
             return ""
         }else{
-            var address = "\(fullName.capitalized)\n\(billingAddress1!)"
+            var address = "\(fullName.capitalizedAllWords())\n\(billingAddress1!)"
             
             if billingAddress2?.isEmpty() ?? true == false{
                            address = "\(address)\n\(billingAddress2!)"

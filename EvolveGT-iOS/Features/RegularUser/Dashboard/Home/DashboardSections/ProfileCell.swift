@@ -101,7 +101,7 @@ class ProfileCell: UITableViewCell{
             self.profileImage.kf.setImage(with: URL(string : imgUrl), placeholder: placeHolder, options: [.transition(ImageTransition.fade(1))])
         }
         
-        fullName.text = profileData.fullName
+        fullName.text = profileData.fullName?.capitalizedAllWords()
         joiningDate.text = profileData.joiningDate
         walletBalance.text = profileData.walletBalance
         membershipExpiryDate.text = profileData.membershipExpiryDate
@@ -126,3 +126,21 @@ class ProfileCell: UITableViewCell{
     }
     
 }
+
+extension String {
+    func capitalizedAllWords() -> String {
+        var result = ""
+        var capitalizeNext = true
+        for char in self {
+            if char.isLetter {
+                result.append(capitalizeNext ? char.uppercased() : char.lowercased())
+                capitalizeNext = false
+            } else {
+                result.append(char)
+                capitalizeNext = true
+            }
+        }
+        return result
+    }
+}
+

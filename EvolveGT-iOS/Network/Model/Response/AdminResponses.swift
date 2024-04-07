@@ -56,8 +56,9 @@ class AssignedDuty: Codable {
 
 // MARK: - Past
 class EventDuty: Codable {
-    var eventID, event, eventYear, eventType: String?
+    var event, eventType: String?
     var eventDate: String?
+    var eventID, eventYear: Int?
     var duties: [Duty]?
 
     enum CodingKeys: String, CodingKey {

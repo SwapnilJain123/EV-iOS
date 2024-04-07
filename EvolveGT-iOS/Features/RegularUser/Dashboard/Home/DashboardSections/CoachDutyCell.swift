@@ -21,9 +21,7 @@ class CoachDutyCell: UITableViewCell{
         btnCochDuties.superview?.setCardView()
     }
     @IBAction func didPressCoachDutiesButton(_ sender: Any) {
-        
             self.action?()
-        
     }
 }
 
