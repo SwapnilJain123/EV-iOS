@@ -27,6 +27,12 @@ class HomeViewController: TabbedViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let value = UserDefaults.standard.string(forKey: "isLogout") else {
+            UserDefaults.standard.set("true", forKey: "isLogout")
+            self.dashboardManager.logout()
+            return
+        }
+
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
