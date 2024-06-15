@@ -36,7 +36,7 @@ class LoginInteractor : BaseInteractor{
                 if error == nil{
                     Log.i("Login Success - ")
                     if let loginResponse = self.decodeFromJson(response!, modelType: LoginResponse.self){
-                        
+                        UserDefaults.standard.set("true", forKey: "isLogout")
                         Log.i("Logged In By - \(loginResponse.currentUser.displayName)")
                         AppEngine.sharedInstance.saveUserInfo(user: loginResponse.currentUser)
                         AppEngine.sharedInstance.saveAuthToken(token: loginResponse.token)

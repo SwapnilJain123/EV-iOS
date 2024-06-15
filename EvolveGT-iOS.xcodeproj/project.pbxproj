@@ -785,6 +785,7 @@
 		3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */; };
 		720B93A12B9630A30043913B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720B93A02B9630A30043913B /* BadgeView.swift */; };
 		7285314A2BB00DBD0086697B /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */; };
+		7298C47D2C1DACBE00B9FC70 /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E2596048FB3FBD0D2CD866D9 /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E539CFEE9BD57A1C5B21BC98 /* Pods_EvolveGT_QA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84CB9FC791745007EC7627 /* Pods_EvolveGT_QA.framework */; };
@@ -2877,6 +2878,7 @@
 				103B258B249940BE00BB8CB9 /* MembershipController.swift in Sources */,
 				103B258C249940BE00BB8CB9 /* CartRequest.swift in Sources */,
 				103B258D249940BE00BB8CB9 /* BuildScheme.swift in Sources */,
+				7298C47D2C1DACBE00B9FC70 /* TermsAndConditionViewController.swift in Sources */,
 				10A551CE250F52DE0049C3DB /* SignViewController.swift in Sources */,
 				10D6011F26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				103B258E249940BE00BB8CB9 /* LoginResponse.swift in Sources */,
@@ -3285,7 +3287,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.7;
+				MARKETING_VERSION = 2.5.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -3309,7 +3311,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.7;
+				MARKETING_VERSION = 2.5.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

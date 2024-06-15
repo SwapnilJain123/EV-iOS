@@ -45,15 +45,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Log.d("Launching Via Push!  - Remote options available")
         }
        
-        
-        
         //
         Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")
-        
-        
+        checkForUpdateAndShowAlert()
         return true
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        checkForUpdateAndShowAlert()
+    }
+
+    func checkForUpdateAndShowAlert() {
+        checkForUpdate { isUpdateAvailable in
+            DispatchQueue.main.async {
+                if isUpdateAvailable {
+                    self.showUpdateAlert()
+                }
+            }
+        }
+    }
+
     func initFirebase(){
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -266,5 +277,57 @@ extension AppDelegate:MessagingDelegate{
         
     }
     
-    
+}
+
+//force update the app
+extension AppDelegate {
+    func checkForUpdate(completion: @escaping (Bool) -> Void) {
+        guard let infoDictionary = Bundle.main.infoDictionary,
+              let currentVersion = infoDictionary["CFBundleShortVersionString"] as? String,
+              let identifier = infoDictionary["CFBundleIdentifier"] as? String else {
+            completion(false)
+            return
+        }
+        
+        let url = URL(string: "https://itunes.apple.com/lookup?bundleId=com.evolve.appstore")!
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(false)
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let results = json["results"] as? [[String: Any]],
+                   let appStoreVersion = results.first?["version"] as? String {
+                    completion(appStoreVersion != currentVersion)
+                } else {
+                    completion(false)
+                }
+            } catch {
+                completion(false)
+            }
+        }
+        
+        task.resume()
+    }
+
+    func showUpdateAlert() {
+        // Create the alert controller
+        let alert = UIAlertController(title: "Update Available", message: "A new version of the app is available. Please update to the latest version.", preferredStyle: .alert)
+        
+        // Add an action to the alert
+        alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { _ in
+            if let url = URL(string: "itms-apps://itunes.apple.com/app/1469219085") {
+                UIApplication.shared.open(url)
+            }
+        }))
+                
+        // Get the root view controller
+        if let rootViewController = window?.rootViewController {
+            // Present the alert
+            rootViewController.present(alert, animated: true, completion: nil)
+        }
+    }
 }
