@@ -48,12 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")
         checkForUpdateAndShowAlert()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogout), name: .logoutNotification, object: nil)
+
         return true
     }
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        checkForUpdateAndShowAlert()
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .logoutNotification, object: nil)
     }
+
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        checkForUpdateAndShowAlert()
+//    }
 
     func checkForUpdateAndShowAlert() {
         checkForUpdate { isUpdateAvailable in
@@ -65,6 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    @objc func handleLogout() {
+        doLogout()
+    }
+
     func initFirebase(){
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -323,7 +333,7 @@ extension AppDelegate {
                 UIApplication.shared.open(url)
             }
         }))
-                
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         // Get the root view controller
         if let rootViewController = window?.rootViewController {
             // Present the alert

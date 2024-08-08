@@ -20,6 +20,12 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func userLogOut(){
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_LOGOUT)"
+        setUrl(url: url)
+        super.makeRequest(method: .GET)
+    }
+
     func fetchEventHistory(userId: Int){
         
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_EVENT_HISTORY)"

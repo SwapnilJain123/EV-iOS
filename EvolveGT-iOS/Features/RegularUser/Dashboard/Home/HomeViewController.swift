@@ -342,3 +342,7 @@ extension String {
         return boundingBox.width
     }
 }
+
+extension Notification.Name {
+    static let logoutNotification = Notification.Name("logoutNotification")
+}

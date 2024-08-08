@@ -23,6 +23,10 @@ class ApiClient{
     }
     
     private func printHeaders(){
+        if let token = UserDefaultHelper.sharedInstance.getData(key: KEY_AUTH_TOKEN) as? String {
+            self.addAuthTokenHeader(token: token)
+        }
+
         for headerItem in header{
             Log.i("Key: \(headerItem.key) - Value:\(headerItem.value)")
         }
@@ -33,6 +37,13 @@ class ApiClient{
         Alamofire.request(urlString, parameters: parameters, headers:header)
             .validate()
             .responseJSON {response in
+                if let statusCode = response.response?.statusCode {
+                    if statusCode == 403 {
+                        // Post a notification for logout
+                        NotificationCenter.default.post(name: .logoutNotification, object: nil)
+                    }
+                }
+
                 switch response.result{
                 case .success:
                     Log.d("\n\n Response:\(String(describing: String(data: response.data!, encoding: .utf8))) \n\n")
@@ -65,6 +76,13 @@ class ApiClient{
         Alamofire.request(urlString, method: .post, parameters: parameters,  encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseJSON {response in
+                if let statusCode = response.response?.statusCode {
+                    if statusCode == 403 {
+                        // Post a notification for logout
+                        NotificationCenter.default.post(name: .logoutNotification, object: nil)
+                    }
+                }
+
                 switch response.result{
                 case .success:
                     print(response.data)
@@ -138,8 +156,8 @@ class ApiClient{
     }
     
     func addAuthTokenHeader(token : String){
-        header.updateValue("Bearer \(token)", forKey: "Authorization")
-        
+        header.updateValue("Bearer \(token)", forKey: "Xhr-Auth-Token")
+        header.updateValue("V4", forKey: "Xhr-API-Version")
     }
     func addHeader(key: String, value: String){
         header.updateValue(value, forKey: key)

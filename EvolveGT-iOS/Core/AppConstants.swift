@@ -24,7 +24,7 @@ struct AppConstants{
     static let KEY_APP_MODE = "appMode"
     static let KEY_DEVICE_TOKEN_STATUS = "key.device.token.status"
     
-    static let LOGOUT_TIMEOUT = 1.5
+    static let LOGOUT_TIMEOUT = 0.01
     
     static let DEVICE_TOKEN = "UserDeviceToken"
     

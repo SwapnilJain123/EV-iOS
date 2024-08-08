@@ -22,7 +22,7 @@ class HomeDataInteractor : BaseInteractor{
    
     var homeViewDelegate : HomeViewDelegate?
     var agreementStatusDelegate : AgreementAcceptanceDelegate?
-    
+    var logoutAPIResponseDelegate : LogoutAPIResponseDelegate?
     var profileData = ProfileData()
     
     func fetchUserDetails() {
@@ -56,6 +56,27 @@ class HomeDataInteractor : BaseInteractor{
             }
         }
         profileApi.fetchUserDetails(userId: AppEngine.sharedInstance.userID)
+    }
+    
+    func userLogOut() {
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingProfileData)
+        let profileApi = ProfileApi()
+        profileApi.setCompletionHandler{ response, error in
+            
+            if error == nil{
+                Log.i("User logout Success - ")
+                    self.delegate?.hideEmptyPageError()
+                    self.logoutAPIResponseDelegate?.logoutUser()
+                    self.delegate?.hideProgressIndicator()
+                    self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
+
+            }else{
+                self.delegate?.hideProgressIndicator()
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.delegate?.showEmptyPageError(message: error!.errorMessage)
+            }
+        }
+        profileApi.userLogOut()
     }
     
     func fetchEventHistory() {
