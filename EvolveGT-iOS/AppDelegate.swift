@@ -48,12 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
         Log.d("Bundle ID = \(Bundle.main.bundleIdentifier ?? "Not Available")")
         checkForUpdateAndShowAlert()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogout), name: .logoutNotification, object: nil)
+
         return true
     }
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        checkForUpdateAndShowAlert()
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .logoutNotification, object: nil)
     }
+
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        checkForUpdateAndShowAlert()
+//    }
 
     func checkForUpdateAndShowAlert() {
         checkForUpdate { isUpdateAvailable in
@@ -63,6 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+    }
+
+    @objc func handleLogout() {
+        doLogout()
     }
 
     func initFirebase(){
@@ -224,7 +235,6 @@ extension AppDelegate{
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
-    
     func doLogout(){
         AppEngine.sharedInstance.reset()
         launchLoginScreen()
@@ -234,16 +244,10 @@ extension AppDelegate{
 }
 extension AppDelegate: UNUserNotificationCenterDelegate{
     
-    
-    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
-        
-        print(userInfo)
-        
-        // Change this to your preferred presentation option
         completionHandler([.alert,.sound])
     }
     
@@ -323,7 +327,7 @@ extension AppDelegate {
                 UIApplication.shared.open(url)
             }
         }))
-                
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         // Get the root view controller
         if let rootViewController = window?.rootViewController {
             // Present the alert

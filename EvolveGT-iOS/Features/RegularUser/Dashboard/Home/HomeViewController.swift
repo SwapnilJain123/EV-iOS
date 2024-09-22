@@ -32,6 +32,7 @@ class HomeViewController: TabbedViewController{
             self.dashboardManager.logout()
             return
         }
+        
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
@@ -340,4 +341,8 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         return boundingBox.width
     }
+}
+
+extension Notification.Name {
+    static let logoutNotification = Notification.Name("logoutNotification")
 }

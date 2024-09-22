@@ -39,6 +39,7 @@ class BaseApiAdapter{
     }
     
     func setParameters(parameters : [String: Any]){
+        print(parameters)
         apiClient.replaceParameter(parameters: parameters)
     }
     

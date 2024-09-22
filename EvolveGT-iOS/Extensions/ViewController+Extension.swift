@@ -364,9 +364,8 @@ extension UIViewController{
             appDelegate?.pushToNewNavigationController(viewController: viewController)
         }
         
-        func logout () {
+        func logout() {
             vc.ext.addLoadingIndicator(LoadingIndicatorMessages.loggingOut)
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + AppConstants.LOGOUT_TIMEOUT, execute: {
                 Log.d("Logout !!")
                 let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -957,7 +957,105 @@
             </objects>
             <point key="canvasLocation" x="718.84057971014499" y="235.71428571428569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="X8m-4p-ANi">
+            <objects>
+                <viewController id="cNO-lJ-f6v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qxb-Ej-NEF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bVs-ay-cLj"/>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.23529411764705882" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnz-Ql-aeS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="245"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="1Mb-Zn-YEm">
+            <size key="intrinsicContentSize" width="106.5" height="34"/>
+        </designable>
+        <designable name="6Sd-7c-kch">
+            <size key="intrinsicContentSize" width="98" height="34"/>
+        </designable>
+        <designable name="7Se-Ic-Peq">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ARd-xO-0SU">
+            <size key="intrinsicContentSize" width="116" height="34"/>
+        </designable>
+        <designable name="D5E-sD-Igr">
+            <size key="intrinsicContentSize" width="69" height="34"/>
+        </designable>
+        <designable name="Hfh-TX-pC2">
+            <size key="intrinsicContentSize" width="69" height="34"/>
+        </designable>
+        <designable name="If5-Zp-LPM">
+            <size key="intrinsicContentSize" width="132" height="34"/>
+        </designable>
+        <designable name="L1D-5e-s7X">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="OQ0-D5-GUH">
+            <size key="intrinsicContentSize" width="162" height="34"/>
+        </designable>
+        <designable name="SjZ-pW-TES">
+            <size key="intrinsicContentSize" width="102.5" height="34"/>
+        </designable>
+        <designable name="USb-0S-V1g">
+            <size key="intrinsicContentSize" width="110" height="34"/>
+        </designable>
+        <designable name="VYc-mm-Y6o">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Yoe-Dy-1CH">
+            <size key="intrinsicContentSize" width="114.5" height="34"/>
+        </designable>
+        <designable name="aWb-HX-oAT">
+            <size key="intrinsicContentSize" width="112.5" height="34"/>
+        </designable>
+        <designable name="aii-Tl-PCg">
+            <size key="intrinsicContentSize" width="97" height="34"/>
+        </designable>
+        <designable name="cyA-bR-Hk3">
+            <size key="intrinsicContentSize" width="33" height="30"/>
+        </designable>
+        <designable name="fcC-28-MZD">
+            <size key="intrinsicContentSize" width="120" height="34"/>
+        </designable>
+        <designable name="hwJ-4V-UxX">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="loh-bG-3yh">
+            <size key="intrinsicContentSize" width="89" height="34"/>
+        </designable>
+        <designable name="nPy-Ci-lnf">
+            <size key="intrinsicContentSize" width="97" height="34"/>
+        </designable>
+        <designable name="pRV-mv-v7q">
+            <size key="intrinsicContentSize" width="97" height="34"/>
+        </designable>
+        <designable name="qWu-M4-3ef">
+            <size key="intrinsicContentSize" width="98" height="34"/>
+        </designable>
+        <designable name="rEq-SQ-GDL">
+            <size key="intrinsicContentSize" width="98" height="34"/>
+        </designable>
+        <designable name="rWF-Wd-hdK">
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
+        </designable>
+        <designable name="v65-oT-uKc">
+            <size key="intrinsicContentSize" width="50" height="30"/>
+        </designable>
+        <designable name="yre-Z7-EdE">
+            <size key="intrinsicContentSize" width="69" height="34"/>
+        </designable>
+        <designable name="zhW-1M-SRW">
+            <size key="intrinsicContentSize" width="97" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Camera" width="16" height="16"/>
         <image name="calendar" width="96" height="96"/>
@@ -975,10 +1073,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

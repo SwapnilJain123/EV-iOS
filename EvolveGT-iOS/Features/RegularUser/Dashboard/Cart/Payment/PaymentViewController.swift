@@ -156,8 +156,9 @@ class PaymentViewController : ETViewController, CartListDelegate{
             self.webviewForPayment.uiDelegate = self
             self.webviewForPayment.navigationDelegate = self
             let userId = AppEngine.sharedInstance.userID
+            guard let token = UserDefaultHelper.sharedInstance.getData(key: KEY_AUTH_TOKEN) as? String else { return }
             if let paymentMode = interactor?.getPaymentMode() {
-                let urlString = "\(ApiConstants.BASE_URLPaypal)paypal.php?user_id=\(userId)&payment_modes=\(paymentMode)&coupon=\(coupon.couponCode)&device=iOS"
+                let urlString = "\(ApiConstants.BASE_URLPaypal)paypal.php?user_id=\(userId)&payment_modes=\(paymentMode)&coupon=\(coupon.couponCode)&device=iOS&token=\(token)&version=V4"
                 if let url = URL(string: urlString) {
                     self.webviewForPayment.load(URLRequest.init(url: url))
                 }

@@ -15,7 +15,8 @@ struct UserApiConstants{
     static let USER_DETAILS = "user/details"
     static let USER_EVENT_HISTORY = "user/allEvents"
     static let USER_CREDIT_HISTORY = "user/creditHistory"
-    
+    static let USER_LOGOUT = "user/logout"
+
     //Mark: Notifications
     static let NOTIFICATION_TYPES = "notifications/types"
     static let UPDATE_NOTIFICATION_PREF = "notifications/updateNotificationPreference"

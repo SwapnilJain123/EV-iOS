@@ -3287,7 +3287,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.8;
+				MARKETING_VERSION = 2.5.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -3311,7 +3311,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.8;
+				MARKETING_VERSION = 2.5.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

@@ -11,12 +11,22 @@ import UIKit
 import SideMenuSwift
 import Alamofire
 
-class HambergerMenuController: ETViewController {
+protocol LogoutAPIResponseDelegate {
+    func logoutUser()
+}
+
+class HambergerMenuController: ETViewController, LogoutAPIResponseDelegate {
+    func logoutUser() {
+        self.navigationController?.navigationBar.isHidden = true
+        self.dashboardManager.logout()
+    }
+    
     
     @IBOutlet weak var slidingMenuView: UITableView!
     
     var menuItems = SlideMenuItem.getllItems()
-    
+    let interactor = HomeDataInteractor()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +35,9 @@ class HambergerMenuController: ETViewController {
         }
         slidingMenuView.dataSource = self
         slidingMenuView.delegate = self
+        
+        interactor.delegate = self
+        interactor.logoutAPIResponseDelegate = self
         self.ext.hideNavbar()
     }
     
@@ -110,8 +123,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.dashboardManager.switchToAdminDashboard()
             
         case SlideMenuItem.TAG_LOG_OUT:
-            self.navigationController?.navigationBar.isHidden = true
-            self.dashboardManager.logout()
+            self.interactor.userLogOut()
         case SlideMenuItem.TAG_SETTINGS:
             self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "Settings", VCIdentifier: "SettingsVC")
