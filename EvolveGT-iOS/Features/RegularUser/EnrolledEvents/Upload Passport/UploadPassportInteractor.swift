@@ -10,9 +10,9 @@ import Foundation
 
 class UploadPassportInteractor: BaseInteractor{
     var passportUploaded : (()->Void)? = nil
-    func savePassport(selfie: Data, signature: Data ){
+    func savePassport(selfie: Data, signature: Data ) {
         
-        delegate?.showProgressIndicator(message: "")
+        delegate?.showProgressIndicator(message: "Your passport is uploading...")
         let imageUploadItem = UploadItem(data: selfie, name: "myFile", fileName: "image.jpeg", mimeType: "image/jpeg")
         let api = ProfileApi()
         api.setCompletionHandler{data,error in

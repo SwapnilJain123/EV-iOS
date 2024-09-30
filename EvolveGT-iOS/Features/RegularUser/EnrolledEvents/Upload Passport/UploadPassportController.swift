@@ -34,9 +34,14 @@ class UploadPassportController : ETViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.ext.showNavbar()
-       
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewWillDisappear(animated)
+        self.ext.hideNavbar()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCanvas()
@@ -63,7 +68,7 @@ class UploadPassportController : ETViewController{
         interactor.delegate = self
         interactor.passportUploaded = {
             self.ext.showAlert(title: "", message: "Passport saved successfully", handler: {
-                self.navigationController?.popViewController(animated: true)
+                self.ext.didPressBackButton()
             })
         }
     }
@@ -78,7 +83,9 @@ class UploadPassportController : ETViewController{
     }
     
     @IBAction func didTapUploadBtn(_ sender: Any) {
-        pickProfileImage()
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.isCameraOpen = true
+        openCamera()
     }
     
     @IBAction func didTapSaveBtn(_ sender: Any) {
@@ -103,7 +110,7 @@ class UploadPassportController : ETViewController{
     }
     
     @IBAction func didTapClose(_ sender: Any) {
-        navigationController?.popViewController(animated: false)
+        self.ext.didPressBackButton()
     }
     
 }
@@ -164,36 +171,4 @@ extension  UploadPassportController:  UIImagePickerControllerDelegate, UINavigat
             self.showErrorToastMessage(message: "Not supported in this device.")
         }
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewWillDisappear(animated)
-        self.ext.hideNavbar()
-    }
-    func pickProfileImage() {
-        
-        
-        openCamera()
-        /*
-        let options = [ "Camera", "Photo Library"]
-        self.ext.presentOptions(title: "Choose Image", message: "", options: options, selected: nil, preferredStyle: .actionSheet){selected in
-            
-            if selected == "Camera"{
-               openCamera()
-            }else if selected == "Photo Library"{
-                if(UIImagePickerController.isSourceTypeAvailable(.photoLibrary))
-                {
-                    let imagePickerController = UIImagePickerController()
-                    imagePickerController.sourceType = .photoLibrary
-                    imagePickerController.delegate = self
-                    DispatchQueue.main.async {
-                        self.present(imagePickerController, animated: true, completion: nil)
-                    }
-                }else{
-                    self.showErrorToastMessage(message: "Not supported in this device.")
-                }
-            }
-        }*/
-        
-    }
-    
 }

@@ -116,6 +116,11 @@ class HomeViewController: TabbedViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if appDelegate?.isCameraOpen == true {
+            appDelegate?.isCameraOpen = false
+            appDelegate?.launchDashboard(payload: nil)
+        }
     }
     
     @objc func cartAction(_ sender: UIButton) {

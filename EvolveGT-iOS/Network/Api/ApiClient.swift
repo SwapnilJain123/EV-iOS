@@ -26,7 +26,6 @@ class ApiClient{
         if let token = UserDefaultHelper.sharedInstance.getData(key: KEY_AUTH_TOKEN) as? String {
             self.addAuthTokenHeader(token: token)
         }
-print(header)
         for headerItem in header{
             Log.i("Key: \(headerItem.key) - Value:\(headerItem.value)")
         }
