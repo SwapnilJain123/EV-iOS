@@ -38,5 +38,21 @@ class LoginApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
-    
+    func sendOtpForEmailVerify(OTPSendRequest: sendOTPRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.SEND_OTP_EMAILVERIFY)"
+        setUrl(url: url)
+        
+        setParameters(parameters: makeDictionary(OTPSendRequest))
+        super.makeRequest(method: .POST)
+    }
+
+    func verifyOtp(verifyOTPRequest: verifyOTPRequest){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.OTP_VERIFY)"
+        setUrl(url: url)
+        
+        setParameters(parameters: makeDictionary(verifyOTPRequest))
+        super.makeRequest(method: .POST)
+    }
 }

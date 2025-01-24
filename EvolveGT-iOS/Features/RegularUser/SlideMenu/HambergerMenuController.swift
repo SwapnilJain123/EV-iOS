@@ -122,7 +122,9 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.dashboardManager.switchToAdminDashboard()
             
         case SlideMenuItem.TAG_LOG_OUT:
-            self.interactor.userLogOut()
+            self.ext.confirmationAlert(title: "Alert!", message: "Are you sure you want to Logout?", btnText: "Yes", btnDismiss: "No", handler: {
+                self.interactor.userLogOut()
+            })
         case SlideMenuItem.TAG_SETTINGS:
             self.navigationController?.navigationBar.isHidden = false
             self.ext.pushViewController(storyBoard: "Settings", VCIdentifier: "SettingsVC")

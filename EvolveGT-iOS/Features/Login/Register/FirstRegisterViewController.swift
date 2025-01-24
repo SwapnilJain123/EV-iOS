@@ -9,60 +9,109 @@
 import UIKit
 import SkyFloatingLabelTextField
 import DatePickerDialog
+import AEOTPTextField
 
-class FirstRegisterViewController:ETViewController {
+class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
+    
+    @IBOutlet weak var myTable: UITableView!
+    @IBOutlet weak var OTPVerificationField: AEOTPTextField!
+    @IBOutlet weak var OTPVerificationView: UIView!
+    @IBOutlet weak var indicator: RegPhaseIndicator!
+    @IBOutlet weak var registerTableView: UITableView!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnSubmit: UIButton!
     
     let interactor = RegisterInteractor()
     var validated : Bool = false;
-    
     var isMale: Bool = false
     var isFmale: Bool = false
     var isUnspecified: Bool = true
-    
-    @IBOutlet weak var myTable: UITableView!
+    var isEmailVerified: Bool = false
 
-    @IBOutlet weak var indicator: RegPhaseIndicator!
-    @IBAction func didPressNextButton(_ sender: UIButton) {
-        
-        if interactor.validatePersonalData(){
-            let vc =  self.ext.getViewController(storyBoard: "Register", VCIdentifier: "secondRegisterVC")as! SecondRegisterViewController
-            vc.interactor = self.interactor
-            self.ext.pushViewController(viewController: vc)
-        }else{
-            validated = true
-            registerTableView.reloadData()
-        }
-        
-    }
-    @IBAction func haveAnAccountButtonPressed(_ sender: UIButton) {
-        
-        self.ext.pushViewController(storyBoard: "Main", VCIdentifier: "LoginVC")
-        
-    }
-    
-    @IBOutlet weak var btnNext: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.ext.showNavbar()
         ext.showBackButton()
         registerTableView.delegate = self
         registerTableView.dataSource = self
         
+        interactor.delegate = self
+
         btnNext.applyColorTheme()
+        btnSubmit.applyColorTheme()
+        
         indicator.setStep1()
         
+        OTPVerificationView.frame = self.view.bounds
+        self.view.addSubview(OTPVerificationView)
+        OTPVerificationView.isHidden = true
         
+        OTPVerificationField.otpDelegate = self
+        OTPVerificationField.configure(with: 6)
+        
+        interactor.handleSendOTP = { isSuccess in
+            if isSuccess {
+                self.OTPVerificationView.isHidden = false
+            }
+        }
+        
+        interactor.handleVerifyOTP = { isSuccess in
+            if isSuccess {
+                self.isEmailVerified = true
+                self.navigateToSecondScreen()
+            }
+        }
     }
     
-    @IBOutlet weak var registerTableView: UITableView!
+    func didUserFinishEnter(the code: String) {
+        self.interactor.verifyOtpRequest.otp = code
+    }
+
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_CREATE_ACCOUNT
     }
     
+    //MARK: - Actions
+    @IBAction func didPressNextButton(_ sender: UIButton) {
+        let vc =  self.ext.getViewController(storyBoard: "Register", VCIdentifier: "secondRegisterVC")as! SecondRegisterViewController
+        vc.interactor = self.interactor
+        self.ext.pushViewController(viewController: vc)
+
+//        if isEmailVerified {
+//            navigateToSecondScreen()
+//        } else {
+//            interactor.otpSendForEmailVerification()
+//        }
+    }
     
+    @IBAction func didPressCloseViewButton(_ sender: UIButton) {
+        OTPVerificationView.isHidden = true
+    }
+
+    @IBAction func didPressSubmitButton(_ sender: UIButton) {
+        OTPVerificationField.resignFirstResponder()
+        interactor.otpVerification()
+    }
+    
+    @IBAction func haveAnAccountButtonPressed(_ sender: UIButton) {
+        self.ext.pushViewController(storyBoard: "Main", VCIdentifier: "LoginVC")
+    }
+
+    @IBAction func resendOTPPressed(_ sender: UIButton) {
+        interactor.otpSendForEmailVerification()
+    }
+
+    func navigateToSecondScreen() {
+        if self.interactor.validatePersonalData(){
+            self.OTPVerificationView.isHidden = true
+            self.OTPVerificationField.clearOTP()
+            let vc =  self.ext.getViewController(storyBoard: "Register", VCIdentifier: "secondRegisterVC")as! SecondRegisterViewController
+            vc.interactor = self.interactor
+            self.ext.pushViewController(viewController: vc)
+        }
+    }
 }
+
 extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
@@ -99,6 +148,8 @@ extension FirstRegisterViewController:UITableViewDelegate,UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: RegistrationTextFieldCell.identifier, for: indexPath) as! RegistrationTextFieldCell
             
             cell.didChangeValue = { text in
+                self.interactor.otpSendRequest.email = text
+                self.interactor.verifyOtpRequest.email = text
                 self.interactor.signupRequest.email = text
                 self.interactor.signupRequest.confirmEmail = text
             }

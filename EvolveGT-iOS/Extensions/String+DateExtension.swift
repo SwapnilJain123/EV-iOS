@@ -9,7 +9,7 @@
 import Foundation
 
 extension String{
-    static let FORMAT_DD_MMM_YYYY = "dd MMM YYYY"
+    static let FORMAT_DD_MMM_YYYY = "dd MMM yyyy"
     static let FORMAT_API_DATE = "yyyy-MM-dd HH:mm:ss"
     static let FORMAT_MMM_YYYY = "MMM YYYY"
     static let FORMAT_MM_YYYY = "MM YYYY"

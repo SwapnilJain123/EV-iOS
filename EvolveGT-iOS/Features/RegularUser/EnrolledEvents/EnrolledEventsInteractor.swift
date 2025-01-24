@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol EnrolledEventsViewDelegate{
     func didFetchAllEvents(events : [EnrolledEvent])
@@ -23,48 +24,73 @@ class EnrolledEventsInteractor: BaseInteractor {
     
     
     func fetchEventHistory() {
-       
-        let profileApi = ProfileApi()
+        // API URL
+//        let url = "https://tracknutts.com/ontrack-api/public/app/v3/user/allEvents"
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_EVENT_HISTORY)"
+
+        // Parameters for the request
+        let parameters: [String: Any] = [
+            "is_motoevent": 0,
+            "user_id": AppEngine.sharedInstance.userID // Use the current user's ID
+        ]
+        
+        // Show loading indicator
         self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEventHistory)
-        profileApi.setCompletionHandler{ response, error in
-           
+        
+        // Make the POST request with Alamofire
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            // Hide loading indicator
             self.delegate?.hideProgressIndicator()
-            if error == nil{
+            
+            switch response.result {
+            case .success(let value):
                 Log.i("Event History fetched Success - ")
-                if let response = self.decodeFromJson(response!, modelType: EventsHistoryResponse.self){
-                    
-                    if response.enrolledEvents?.isEmpty ?? false{
+                
+                // Convert the value to Data
+                if let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) {
+                    // Decode the response into your model
+                    if let decodedResponse = self.decodeFromJson(jsonData, modelType: EventsHistoryResponse.self) {
+                        
+                        if decodedResponse.enrolledEvents?.isEmpty ?? false {
+                            self.enrolledEventsDelegate?.eventsEmpty()
+                        } else {
+                            // Sort events by event date
+                            let sortedEvents = decodedResponse.enrolledEvents?.sorted(by: {
+                                if let eventDate = $0.eventDate {
+                                    return eventDate < $1.eventDate ?? ""
+                                }
+                                return false
+                            })
+                            
+                            // Separate past and upcoming events
+                            let pastEvents = sortedEvents?.filter({
+                                ($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
+                            })
+                            let upComingEvents = sortedEvents?.filter({
+                                !($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
+                            })
+                            
+                            // Delegate the events
+                            self.enrolledEventsDelegate?.didFetchAllEvents(events: sortedEvents!)
+                            self.enrolledEventsDelegate?.didFetchPastEvents(events: pastEvents)
+                            self.enrolledEventsDelegate?.didFetchUpcomingEvents(events: upComingEvents!)
+                        }
+                    } else {
                         self.enrolledEventsDelegate?.eventsEmpty()
-                    }else{
-                       let sortedEvents = response.enrolledEvents?.sorted(by:
-                        {
-                            if let eventDate = $0.eventDate{
-                                return eventDate < $1.eventDate ?? ""
-                            }
-                            return false
-                        })
-                        
-                        let pastEvents = sortedEvents?.filter({
-                            ($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
-                        })
-                        let upComingEvents = sortedEvents?.filter({
-                            !($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
-                        })
-                        
-                        self.enrolledEventsDelegate?.didFetchAllEvents(events: sortedEvents!)
-                        self.enrolledEventsDelegate?.didFetchPastEvents(events: pastEvents)
-                        self.enrolledEventsDelegate?.didFetchUpcomingEvents(events: upComingEvents!)
-                        
                     }
-                    
+                } else {
+                    Log.e("Failed to serialize JSON response.")
+                    self.enrolledEventsDelegate?.eventsEmpty()
                 }
-            }else{
+                
+            case .failure(let error):
+                Log.e("Failed to fetch event history: \(error)")
                 self.enrolledEventsDelegate?.eventsEmpty()
             }
             
+            // Reload the current index regardless of success or failure
             self.enrolledEventsDelegate?.reloadCurrentIndex()
         }
-        profileApi.fetchEventHistory(userId: AppEngine.sharedInstance.userID)
     }
     
     func cancelEvent(itemID: Int){

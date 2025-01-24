@@ -22,6 +22,7 @@ target 'EvolveGT-iOS' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'Firebase/Core'
+  pod 'AEOTPTextField'
 
 end
 

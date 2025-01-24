@@ -191,9 +191,19 @@ class EventParticipantIntercator : BaseInteractor {
             break
         }
         
+        options.append("Flagged Users")
+
         return options
     }
     
+    func filterByFlaggedUser(motoClass : String){
+        var newList = [EventParticipant]()
+        for participnt in participants where participnt.personAsAProblem ?? 0 == 1{
+            newList.append(participnt)
+        }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
+
     func getAvailableSkillLevels() ->[String]{
         let skillLevels = participants.compactMap { $0.skillLevel }.unique().sorted(by: <)
         return skillLevels

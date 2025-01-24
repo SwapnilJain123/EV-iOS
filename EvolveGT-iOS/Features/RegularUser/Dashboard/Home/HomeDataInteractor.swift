@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol HomeViewDelegate{
     
@@ -80,62 +81,85 @@ class HomeDataInteractor : BaseInteractor{
     }
     
     func fetchEventHistory() {
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_EVENT_HISTORY)"
+
+        let parameters: [String: Any] = [
+            "is_motoevent": 0,
+            "user_id": AppEngine.sharedInstance.userID // Use the current user's ID
+        ]
         
-        let profileApi = ProfileApi()
-        profileApi.setCompletionHandler{ response, error in
+        // Show loading indicator
+        self.delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingEventHistory)
+        
+        // Make the POST request with Alamofire
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            // Hide loading indicator
+            self.delegate?.hideProgressIndicator()
             
-            if error == nil{
-                Log.i("User details fetched Success - ")
-                if let response = self.decodeFromJson(response!, modelType: EventsHistoryResponse.self){
-                    
-                    if response.enrolledEvents?.isEmpty ?? false{
-                        self.profileData.pastEventsCount =  0
-                        self.profileData.upComingEventsCount =  0
-                        self.profileData.allEventsCount =  0
-                        self.profileData.recentPastEvent = nil
-                        self.profileData.recentUpComingEvent = nil
-                        self.fetchCreditHistory()
-                    }else{
-                        self.profileData.allEventsCount = response.enrolledEvents!.count
-                        let sortedEvents = response.enrolledEvents?.sorted(by:
-                        {
-                            if let eventDate = $0.eventDate{
-                                return eventDate < $1.eventDate ?? ""
-                            }
-                            return false
-                        })
+            switch response.result {
+            case .success(let value):
+                Log.i("Event History fetched Success - ")
+                
+                // Convert the value to Data
+                if let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) {
+                    // Decode the response into your model
+                    if let decodedResponse = self.decodeFromJson(jsonData, modelType: EventsHistoryResponse.self) {
                         
-                        let pastEvents = sortedEvents?.filter({
-                            ($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
-                        })
-                        
-                        let upComingEvents = sortedEvents?.filter({
-                            !($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
-                        })
-                        
-                        if !(pastEvents?.isEmpty ?? false){
-                            self.profileData.recentPastEvent = pastEvents?.last
-                        }else{
+                        if decodedResponse.enrolledEvents?.isEmpty ?? false{
+                            self.profileData.pastEventsCount =  0
+                            self.profileData.upComingEventsCount =  0
+                            self.profileData.allEventsCount =  0
                             self.profileData.recentPastEvent = nil
-                        }
-                        if !(upComingEvents?.isEmpty ?? false){
-                            self.profileData.recentUpComingEvent = upComingEvents?.last
-                        }else{
                             self.profileData.recentUpComingEvent = nil
+                            self.fetchCreditHistory()
+                        }else{
+                            self.profileData.allEventsCount = decodedResponse.enrolledEvents!.count
+                            let sortedEvents = decodedResponse.enrolledEvents?.sorted(by:
+                            {
+                                if let eventDate = $0.eventDate{
+                                    return eventDate < $1.eventDate ?? ""
+                                }
+                                return false
+                            })
+                            
+                            let pastEvents = sortedEvents?.filter({
+                                ($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
+                            })
+                            
+                            let upComingEvents = sortedEvents?.filter({
+                                !($0.eventDate?.isEalierThanToday(dateFormat: .FORMAT_YYYY_MM_DD_HIPHEN) ?? false)
+                            })
+                            
+                            if !(pastEvents?.isEmpty ?? false){
+                                self.profileData.recentPastEvent = pastEvents?.last
+                            }else{
+                                self.profileData.recentPastEvent = nil
+                            }
+                            if !(upComingEvents?.isEmpty ?? false){
+                                self.profileData.recentUpComingEvent = upComingEvents?.last
+                            }else{
+                                self.profileData.recentUpComingEvent = nil
+                            }
+                            
+                            self.profileData.pastEventsCount = pastEvents?.count ?? 0
+                            self.profileData.upComingEventsCount = upComingEvents?.count ?? 0
+                            
+                            self.fetchCreditHistory()
                         }
                         
-                        self.profileData.pastEventsCount = pastEvents?.count ?? 0
-                        self.profileData.upComingEventsCount = upComingEvents?.count ?? 0
-                        
+                    } else {
                         self.fetchCreditHistory()
                     }
-                    
+                } else {
+                    Log.e("Failed to serialize JSON response.")
+                    self.fetchCreditHistory()
                 }
-            }else{
+                
+            case .failure(let error):
+                Log.e("Failed to fetch event history: \(error)")
                 self.fetchCreditHistory()
             }
         }
-        profileApi.fetchEventHistory(userId: AppEngine.sharedInstance.userID)
     }
     
     func fetchCreditHistory() {

@@ -28,8 +28,8 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+        initViewController()
+
     }
     
     override func getScreenTitle() -> String? {
@@ -51,8 +51,8 @@ class EventHistoryController : ETViewController, EnrolledEventsViewDelegate, UIT
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.ext.showNavbar()
-        initViewController()
-       
+        interactor.fetchEventHistory()
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)

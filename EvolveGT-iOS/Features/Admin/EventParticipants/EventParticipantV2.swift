@@ -30,6 +30,9 @@ class EventParticipantCellV2: UITableViewCell{
     @IBOutlet weak var backroundView: UIView!
     
 
+    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var flaggedIconebtn: UIButton!
+    @IBOutlet weak var detailLable: UILabel!
     var btnSkillUpgrade: UIButton? = nil
     var tdPurchaseWarning: UIButton? = nil
     var btnMotoIcon: UIButton? = nil
@@ -74,7 +77,9 @@ class EventParticipantCellV2: UITableViewCell{
         tvEmail.text = eventParticipant?.email ?? "-"
         tvDuties.text = eventParticipant?.consolidatedDuties
         //tvDayJob.text = eventParticipant?.jobAssigned ?? "NA"
-        
+        detailLable.text = eventParticipant?.adminNotes ?? "NA"
+        flaggedIconebtn.isHidden = eventParticipant?.personAsAProblem == 1 ? false : true
+
         userID.text! = "#"
         if let userIDString = eventParticipant?.userID {
             userID.text?.append("\(userIDString)")
@@ -116,6 +121,8 @@ class EventParticipantCellV2: UITableViewCell{
         tvEmail.textColor = UIColor.getAppThemeColor()
         tvDuties.textColor = UIColor.getAppThemeColor()
        // tvDayJob.textColor = UIColor.getAppThemeColor()
+        detailLable.textColor = UIColor.getAppThemeColor()
+        checkIfTextIsTruncated()
     }
     
     @IBAction func didTapUpgradeSkill(_ sender: Any) {
@@ -170,4 +177,21 @@ class EventParticipantCellV2: UITableViewCell{
         signButton.addTarget(self, action: #selector(signButtonTapped), for: .touchUpInside)
         signButton.setImage(image, for: .normal)
     }
+    
+    func checkIfTextIsTruncated() {
+        guard let text = detailLable.text else { return }
+        
+        let maxSize = CGSize(width: detailLable.frame.width, height: CGFloat.greatestFiniteMagnitude)
+        let textAttributes: [NSAttributedString.Key: Any] = [.font: detailLable.font!]
+        
+        let requiredSize = (text as NSString).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
+        
+        // Show "More" button if required height exceeds label's frame height
+        if requiredSize.height > detailLable.frame.height {
+            moreButton.isHidden = false
+        } else {
+            moreButton.isHidden = true
+        }
+    }
+
 }

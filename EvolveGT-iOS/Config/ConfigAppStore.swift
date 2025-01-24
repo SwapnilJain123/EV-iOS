@@ -7,13 +7,14 @@
 //
 
 import Foundation
-struct Config{
+struct Config {
     
     //stagung
 //    static let BASE_URL = "qa.asraracing.com"
+        static let BASE_URL = "tracknutts.com"
 
     //live
-    static let BASE_URL = "asraracing.com"
+//    static let BASE_URL = "asraracing.com"
     static let LOG_ENABLED = false
     static let BUILD_CONFIG = "AppStore"
     static let CHECKOUT_MODE = "production"
