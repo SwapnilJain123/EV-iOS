@@ -169,6 +169,7 @@ class EventParticipantIntercator : BaseInteractor {
             break
         }
         
+        
         if(isEvApp){
             for participant in participants {
                 if participant.eWaiver ?? false == false{
@@ -191,6 +192,8 @@ class EventParticipantIntercator : BaseInteractor {
             break
         }
         
+        options.append("Flagged Users")
+
         return options
     }
     
@@ -228,6 +231,14 @@ class EventParticipantIntercator : BaseInteractor {
         adminViewDelegate?.didFetchParticipants(participants: newList)
     }
     
+    func filterByFlaggedUser(motoClass : String){
+        var newList = [EventParticipant]()
+        for participnt in participants where participnt.personAsAProblem ?? 0 == 1{
+            newList.append(participnt)
+        }
+        adminViewDelegate?.didFetchParticipants(participants: newList)
+    }
+
     func filterByUsersNotSignedIn(){
         var newList = [EventParticipant]()
         for participnt in participants where participnt.eWaiver ?? false == false{

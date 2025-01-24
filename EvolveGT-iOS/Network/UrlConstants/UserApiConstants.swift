@@ -38,7 +38,9 @@ struct UserApiConstants{
     static let REFER_FRIEND = "user/referFriend"
     static let CREATE_ACCOUNT = "user/create"
     static let TRANSFER_AMOUNT = "user/transferCredits"
-    
+    static let SEND_OTP_EMAILVERIFY = "user/sendOTP"
+    static let OTP_VERIFY = "user/verifyOTP"
+
     //EWaiver
     static let WAIVER_LIST = "waiverEvents/list"
     static let WAIVER_DETAILS = "waiverEvents/details"

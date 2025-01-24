@@ -10,9 +10,13 @@ import Foundation
 class RegisterInteractor : BaseInteractor{
     
     let signupRequest = RegistrationRequest()
-    
+    let otpSendRequest = sendOTPRequest()
+    let verifyOtpRequest = verifyOTPRequest()
+
     var handleCreateAccount : ((_ isAdmin: Bool) -> Void)?
-    
+    var handleSendOTP : ((_ isSucess: Bool) -> Void)?
+    var handleVerifyOTP : ((_ isSucess: Bool) -> Void)?
+
     var isPasswordValid: Bool{
         
         let predicate = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{6,20}$"
@@ -55,7 +59,7 @@ class RegisterInteractor : BaseInteractor{
         api.setCompletionHandler(completionHandler: {data, error in
             self.delegate?.hideProgressIndicator()
             
-            if error == nil && data != nil{
+            if error == nil && data != nil {
                 if let response = self.decodeFromJson(data!, modelType: LoginResponse.self){
                     AppEngine.sharedInstance.saveUserInfo(user: response.currentUser)
                     AppEngine.sharedInstance.saveAuthToken(token: response.token)
@@ -76,5 +80,59 @@ class RegisterInteractor : BaseInteractor{
             }
         })
         api.createAccount(signupRequest: signupRequest)
+    }
+    
+    func otpSendForEmailVerification() {
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.sendingOTP)
+        
+        let api = LoginApi()
+        api.setCompletionHandler(completionHandler: { data, error in
+            self.delegate?.hideProgressIndicator()
+            
+            if error == nil && data != nil {
+                if let response = self.decodeFromJson(data!, modelType: OTPSendResponse.self){
+                    self.delegate?.showAlert(title: "Alert!", message: response.msg ?? "")
+                    if let action = self.handleSendOTP{
+                        action(response.status == 1)
+                    }
+                }else{
+                    self.delegate?.showAlert(title: "Error", message: ErrorMessages.genericError)
+                }
+            }else{
+                var errorMessage = ErrorMessages.genericError
+                if let apiError = error{
+                    errorMessage = apiError.errorMessage
+                }
+                self.delegate?.showAlert(title: "Error", message: errorMessage)
+            }
+        })
+        api.sendOtpForEmailVerify(OTPSendRequest: otpSendRequest)
+    }
+    
+    func otpVerification() {
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.verifyOTP)
+        
+        let api = LoginApi()
+        api.setCompletionHandler(completionHandler: {data, error in
+            self.delegate?.hideProgressIndicator()
+            
+            if error == nil && data != nil {
+                if let response = self.decodeFromJson(data!, modelType: verifyOTPResponse.self){
+//                    self.delegate?.showAlert(title: "Alert!", message: response.msg ?? "")
+                    if let action = self.handleVerifyOTP{
+                        action(response.status == 1)
+                    }
+                }else{
+                    self.delegate?.showAlert(title: "Error", message: ErrorMessages.genericError)
+                }
+            }else{
+                var errorMessage = ErrorMessages.genericError
+                if let apiError = error{
+                    errorMessage = apiError.errorMessage
+                }
+                self.delegate?.showAlert(title: "Error", message: errorMessage)
+            }
+        })
+        api.verifyOtp(verifyOTPRequest: verifyOtpRequest)
     }
 }

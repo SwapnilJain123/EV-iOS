@@ -46,3 +46,20 @@ class RegistrationRequest: Codable{
         case subscribeForDiscounts = "subscribe_for_discounts"
     }
 }
+
+class sendOTPRequest: Codable{
+    var email: String?
+    enum CodingKeys: String, CodingKey {
+        case email
+    }
+}
+
+class verifyOTPRequest: Codable{
+    var email: String?
+    var otp: String?
+    enum CodingKeys: String, CodingKey {
+        case email
+        case otp
+    }
+}
+

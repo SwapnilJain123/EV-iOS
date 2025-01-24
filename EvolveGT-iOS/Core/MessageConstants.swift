@@ -138,7 +138,8 @@ struct LoadingIndicatorMessages {
      static let savingSignature = "Saving signature..."
     static let inviteFriend = "Sending invitation"
     static let creatingAccount = "Please wait, We're creating your account."
-    
+    static let sendingOTP = "Sending OTP"
+    static let verifyOTP = "Verifying OTP"
 }
 
 struct ErrorMessages {

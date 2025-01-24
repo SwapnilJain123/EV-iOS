@@ -12,7 +12,18 @@ struct LoginResponse: Decodable{
     var token: String
     var currentUser: User
 }
+
 struct ForgotPasswordResponse: Codable {
+    var status: Int?
+    var msg: String?
+}
+
+struct OTPSendResponse: Decodable{
+    var status: Int?
+    var msg: String?
+}
+
+struct verifyOTPResponse: Decodable{
     var status: Int?
     var msg: String?
 }

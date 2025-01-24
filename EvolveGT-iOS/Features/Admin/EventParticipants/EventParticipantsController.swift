@@ -127,6 +127,8 @@ class EventParticipantsController : ETViewController, cancelEventDelegete{
                         self.interactor.filterByDuties(query: selectedDuty.first!)
                     }
                 })
+            case "Flagged Users":
+                self.interactor.filterByFlaggedUser(motoClass: "")
             default:
                 self.interactor.clearFilter()
             }
@@ -223,10 +225,20 @@ extension EventParticipantsController : UITableViewDataSource{
         cell.delegate = self
         
         cell.btnDeleteEvent.tag = indexPath.row
+        cell.moreButton.tag = indexPath.row
         cell.btnDeleteEvent.addTarget(self, action: #selector(deleteEvent), for: .touchUpInside)
+        cell.moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+
         return cell
     }
     
+    @objc func moreButtonTapped(sender: UIButton) {
+        let message = participants[sender.tag].adminNotes ?? ""
+        let alert = UIAlertController(title: "Admin Notes", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let count = participants.count
         if count > 0 {

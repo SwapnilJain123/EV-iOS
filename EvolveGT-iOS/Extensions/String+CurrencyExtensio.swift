@@ -12,14 +12,20 @@ extension String{
     
     static let DEFAULT_AMOUNT = "$0.00"
     func formatToAmount() -> String{
-        
+        var actualValue: String = "$0.00"
         if self == "0"{
             return "$0"
         }
         let price = Double(self) ?? 0
-        let doubleStr = String(format: "%.2f", price)
+        let doubleStr = String(format: "%.2f", abs(price))
         
-        return "$\(doubleStr)"
+        if price < 0 {
+            actualValue = "-$\(doubleStr)"
+        } else {
+            actualValue = "$\(doubleStr)"
+        }
+
+        return actualValue
     }
     
     func formatToAmount(prefix: String) -> String{

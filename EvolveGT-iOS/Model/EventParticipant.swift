@@ -15,12 +15,13 @@ struct EventParticipant: Codable {
     var eventDate : String?
     var role: String?
     var show: Bool?
-    var signEnabled, userID, eventID, signatureID, orderID, status: Int?
+    var signEnabled, userID, eventID, signatureID, orderID, status, personAsAProblem : Int?
     var rentals: [Rental]?
     var trainings: [String]?
     var motoClasses: [MotoClass]?
     var eWaiver, tdPurchased, motoPurchased: Bool?
     var jobAssigned: String?
+    var adminNotes: String?
     var duties: [AdminDuty]?
     
     var namewithRole : String{
@@ -47,7 +48,7 @@ struct EventParticipant: Codable {
         
         return (trainingCount + rentalCount) > 0
     }
-
+    
     var isSignEnabled: Bool{
         signEnabled == 1
     }
@@ -78,16 +79,18 @@ struct EventParticipant: Codable {
         case tdPurchased = "td_purchased"
         case motoPurchased = "moto_purchased"
         case jobAssigned = "jobAssigned"
+        case adminNotes = "admin_notes"
+        case personAsAProblem = "person_as_a_problem"
         case duties = "duties"
         
     }
     
     var consolidatedDuties: String{
-       // let stringArray =
+        // let stringArray =
         let result = duties?.map(){ $0.name ?? ""}.joined(separator: ", ") ?? ""
         return result.isEmpty ? "NA" : result
     }
-
+    
 }
 
 struct Rental: Codable {
@@ -98,7 +101,7 @@ struct Rental: Codable {
 struct MotoClass: Codable {
     var raceName: String?
     var raceClasses: [RaceClass]?
-
+    
     enum CodingKeys: String, CodingKey {
         case raceName = "race_name"
         case raceClasses = "race_classes"
@@ -108,7 +111,7 @@ struct MotoClass: Codable {
 // MARK: - RaceClass
 struct RaceClass: Codable {
     var className, bikeData: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case className = "class_name"
         case bikeData = "bike_data"
@@ -125,8 +128,9 @@ struct DutyAssignedStaff: Codable {
     var additionalInfo: String?
     var duties: [AdminDuty]?
     var show: Bool?
-    var signEnabled, eventID, orderID, userID, dayWorker: Int?
-
+    var adminNotes: String?
+    var signEnabled, eventID, orderID, userID, dayWorker, personAsAProblem: Int?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case signatureID = "signature_id"
@@ -142,23 +146,27 @@ struct DutyAssignedStaff: Codable {
         case additionalInfo = "additional_info"
         case duties, show
         case signEnabled = "sign_enabled"
+        case adminNotes = "admin_notes"
+        case personAsAProblem = "person_as_a_problem"
     }
     
     func convertToEventParticipant() -> EventParticipant{
         var participant =  EventParticipant();
-       participant.duties = duties;
-       participant.evDob = evDob;
-       participant.eventID = eventID;
-       participant.displayName = displayName;
-       participant.email = email;
-       participant.skillLevel = skillLevel;
-       participant.orderID = orderID;
-       participant.userID = userID;
-       participant.role = role;
-       participant.signEnabled = signEnabled;
-       participant.signatureID = signatureID;
-       participant.signature = signature == 1;
-       participant.show = show;
-       return participant;
+        participant.duties = duties;
+        participant.evDob = evDob;
+        participant.eventID = eventID;
+        participant.displayName = displayName;
+        participant.email = email;
+        participant.skillLevel = skillLevel;
+        participant.orderID = orderID;
+        participant.userID = userID;
+        participant.role = role;
+        participant.signEnabled = signEnabled;
+        participant.signatureID = signatureID;
+        participant.signature = signature == 1;
+        participant.show = show;
+        participant.adminNotes = adminNotes;
+        participant.personAsAProblem = personAsAProblem
+        return participant;
     }
 }

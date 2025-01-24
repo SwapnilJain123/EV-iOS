@@ -25,11 +25,12 @@ class EventParticipantCellV2: UITableViewCell{
     @IBOutlet weak var dateOfBirth: UILabel!
     @IBOutlet weak var orderId: UILabel!
     @IBOutlet weak var btnDeleteEvent: UIButton!
-
+    @IBOutlet weak var detailLable: UILabel!
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var backroundView: UIView!
-    
-
+        
+    @IBOutlet weak var flaggedIconebtn: UIButton!
     var btnSkillUpgrade: UIButton? = nil
     var tdPurchaseWarning: UIButton? = nil
     var btnMotoIcon: UIButton? = nil
@@ -39,6 +40,7 @@ class EventParticipantCellV2: UITableViewCell{
     
     @IBOutlet weak var accessoriesView: UIView!
     
+    @IBOutlet weak var moreButton: UIButton!
     
     @IBOutlet weak var tvEmail: UILabel!
     @IBOutlet weak var tvDuties: UILabel!
@@ -74,6 +76,8 @@ class EventParticipantCellV2: UITableViewCell{
         tvEmail.text = eventParticipant?.email ?? "-"
         tvDuties.text = eventParticipant?.consolidatedDuties
         //tvDayJob.text = eventParticipant?.jobAssigned ?? "NA"
+        detailLable.text = eventParticipant?.adminNotes ?? "NA"
+        flaggedIconebtn.isHidden = eventParticipant?.personAsAProblem == 1 ? false : true
         
         userID.text! = "#"
         if let userIDString = eventParticipant?.userID {
@@ -116,6 +120,8 @@ class EventParticipantCellV2: UITableViewCell{
         tvEmail.textColor = UIColor.getAppThemeColor()
         tvDuties.textColor = UIColor.getAppThemeColor()
        // tvDayJob.textColor = UIColor.getAppThemeColor()
+        detailLable.textColor = UIColor.getAppThemeColor()
+        checkIfTextIsTruncated()
     }
     
     @IBAction func didTapUpgradeSkill(_ sender: Any) {
@@ -133,8 +139,6 @@ class EventParticipantCellV2: UITableViewCell{
     @objc func signButtonTapped(sender: UIButton!) {
         delegate?.clickedOnSignature(self, participant: eventParticipant)
     }
-    
-    
     func addIconButton(evIcon: String, motoIcon:String, action: Selector){
         let signButton = UIButton()
         aceessoriesStackView.addArrangedSubview(signButton)
@@ -165,9 +169,25 @@ class EventParticipantCellV2: UITableViewCell{
                 }
             }else{
                 image = UIImage(named: "sign") as UIImage?
-                
             }
         signButton.addTarget(self, action: #selector(signButtonTapped), for: .touchUpInside)
         signButton.setImage(image, for: .normal)
     }
+        
+    func checkIfTextIsTruncated() {
+        guard let text = detailLable.text else { return }
+        
+        let maxSize = CGSize(width: detailLable.frame.width, height: CGFloat.greatestFiniteMagnitude)
+        let textAttributes: [NSAttributedString.Key: Any] = [.font: detailLable.font!]
+        
+        let requiredSize = (text as NSString).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
+        
+        // Show "More" button if required height exceeds label's frame height
+        if requiredSize.height > detailLable.frame.height {
+            moreButton.isHidden = false
+        } else {
+            moreButton.isHidden = true
+        }
+    }
+
 }

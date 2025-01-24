@@ -185,7 +185,10 @@ class CartInteractor: BaseInteractor{
             walletApplied = walletBalance
             dueAmount = dueAmount - walletBalance
             
-        }else{
+        } else if walletBalance < 0 {
+            walletApplied = walletBalance
+            dueAmount = dueAmount - walletBalance
+        } else {
             walletApplied = 0
         }
         return dueAmount
