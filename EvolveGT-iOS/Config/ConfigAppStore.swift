@@ -10,8 +10,7 @@ import Foundation
 struct Config {
     
     //stagung
-//    static let BASE_URL = "qa.asraracing.com"
-        static let BASE_URL = "tracknutts.com"
+    static let BASE_URL = "qa.asraracing.com"
 
     //live
 //    static let BASE_URL = "asraracing.com"

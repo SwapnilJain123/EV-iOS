@@ -73,15 +73,11 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
     
     //MARK: - Actions
     @IBAction func didPressNextButton(_ sender: UIButton) {
-        let vc =  self.ext.getViewController(storyBoard: "Register", VCIdentifier: "secondRegisterVC")as! SecondRegisterViewController
-        vc.interactor = self.interactor
-        self.ext.pushViewController(viewController: vc)
-
-//        if isEmailVerified {
-//            navigateToSecondScreen()
-//        } else {
-//            interactor.otpSendForEmailVerification()
-//        }
+        if isEmailVerified {
+            navigateToSecondScreen()
+        } else {
+            interactor.otpSendForEmailVerification()
+        }
     }
     
     @IBAction func didPressCloseViewButton(_ sender: UIButton) {
