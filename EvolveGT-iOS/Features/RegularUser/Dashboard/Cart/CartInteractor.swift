@@ -236,7 +236,7 @@ class CartInteractor: BaseInteractor{
         if(coupon.appliedCouponAmount > 0){
             paymentType = "coupon-"
         }
-        if(walletApplied > 0.0){
+        if(walletApplied > 0.0 || walletApplied < 0.0 ){
             paymentType +=  "wallet-"
         }
         if total > 0 && paymentMethod == .paypal{

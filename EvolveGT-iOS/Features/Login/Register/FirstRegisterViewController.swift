@@ -27,6 +27,7 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
     var isFmale: Bool = false
     var isUnspecified: Bool = true
     var isEmailVerified: Bool = false
+    var verifiedEmailID: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,7 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
     
     //MARK: - Actions
     @IBAction func didPressNextButton(_ sender: UIButton) {
-        if isEmailVerified {
+        if verifiedEmailID != "", (verifiedEmailID == self.interactor.signupRequest.email ?? "") && isEmailVerified {
             navigateToSecondScreen()
         } else {
             interactor.otpSendForEmailVerification()
@@ -81,6 +82,7 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
     }
     
     @IBAction func didPressCloseViewButton(_ sender: UIButton) {
+        self.OTPVerificationField.clearOTP()
         OTPVerificationView.isHidden = true
     }
 
@@ -94,12 +96,14 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
     }
 
     @IBAction func resendOTPPressed(_ sender: UIButton) {
+        self.OTPVerificationField.clearOTP()
         interactor.otpSendForEmailVerification()
     }
 
     func navigateToSecondScreen() {
         if self.interactor.validatePersonalData(){
             self.OTPVerificationView.isHidden = true
+            self.verifiedEmailID = self.interactor.signupRequest.email ?? ""
             self.OTPVerificationField.clearOTP()
             let vc =  self.ext.getViewController(storyBoard: "Register", VCIdentifier: "secondRegisterVC")as! SecondRegisterViewController
             vc.interactor = self.interactor
