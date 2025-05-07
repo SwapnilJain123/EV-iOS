@@ -86,6 +86,7 @@ class BaseApiAdapter{
         }
     }
 }
+
 extension BaseApiAdapter{
     func didFinishTask(data: Data?, error : ApiError?) -> Void{
         

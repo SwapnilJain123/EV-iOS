@@ -42,6 +42,8 @@ class EventsInteractor :BaseInteractor{
     var eventListDelegate : EventListViewDelegate?
     var eventDetailsDelegate : EventDetailsDelegate?
     var events = [Event]()
+
+    
     func fetchEventList(){
         
         if self.events.count > 0{
@@ -196,10 +198,13 @@ class EventsInteractor :BaseInteractor{
         cartApi.addTrackDayToCart(eventRequest: request)
     }
     
-    func addEvolveEventToCart(_ event: EventDetails){
+    func addEvolveEventToCart(_ event: EventDetails, riderData:[String:String]? = nil){
          super.delegate = eventDetailsDelegate
         eventDetailsDelegate?.showProgressIndicator(message: LoadingIndicatorMessages.addingEventToCart)
         var request = EventCartRequest()
+        if riderData != nil {
+            request.ridersQuery = riderData
+        }
         request.eventSlug = event.slug
         request.eventDate = event.eventDate
         request.eventSlug = event.slug

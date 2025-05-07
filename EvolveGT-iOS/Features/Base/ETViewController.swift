@@ -14,7 +14,7 @@ class ETViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
+        self.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
         
         self.ext.setScreenTitle(title: getScreenTitle() ?? "")
         self.ext.hideErrorView()
@@ -83,7 +83,7 @@ class ETViewController : UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         self.ext.removeLoadingIndicatorImmediately()
         super.viewWillDisappear(animated)
-        self.ext.showNavbar()
+       // self.ext.showNavbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {

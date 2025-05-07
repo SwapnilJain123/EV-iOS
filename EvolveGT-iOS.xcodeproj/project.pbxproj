@@ -783,6 +783,21 @@
 		10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiView+Extension.swift */; };
 		10FE935525023094002F3572 /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
 		3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */; };
+		5574BEC92DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */; };
+		5574BECA2DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */; };
+		5574BECB2DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */; };
+		55AB31A32DB1756900422D39 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31A22DB1756900422D39 /* NotificationListResponse.swift */; };
+		55AB31A42DB1756900422D39 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31A22DB1756900422D39 /* NotificationListResponse.swift */; };
+		55AB31A52DB1756900422D39 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31A22DB1756900422D39 /* NotificationListResponse.swift */; };
+		55AB31B02DB178A700422D39 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31AE2DB178A700422D39 /* NotificationViewController.swift */; };
+		55AB31B12DB178A700422D39 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31AF2DB178A700422D39 /* NotificationTableViewCell.swift */; };
+		55AB31B22DB178A700422D39 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31AE2DB178A700422D39 /* NotificationViewController.swift */; };
+		55AB31B32DB178A700422D39 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31AF2DB178A700422D39 /* NotificationTableViewCell.swift */; };
+		55AB31B42DB178A700422D39 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31AE2DB178A700422D39 /* NotificationViewController.swift */; };
+		55AB31B52DB178A700422D39 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31AF2DB178A700422D39 /* NotificationTableViewCell.swift */; };
+		55B7B2132D97F6CD00398BA0 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7B2122D97F6C000398BA0 /* ThemeData.swift */; };
+		55B7B2142D97F6CD00398BA0 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7B2122D97F6C000398BA0 /* ThemeData.swift */; };
+		55B7B2152D97F6CD00398BA0 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7B2122D97F6C000398BA0 /* ThemeData.swift */; };
 		720B93A12B9630A30043913B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720B93A02B9630A30043913B /* BadgeView.swift */; };
 		7285314A2BB00DBD0086697B /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */; };
 		7298C47D2C1DACBE00B9FC70 /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728531492BB00DBD0086697B /* TermsAndConditionViewController.swift */; };
@@ -1101,6 +1116,11 @@
 		319831E3D81497F7AAFBB35C /* Pods-EvolveGT-QA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-QA.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA.debug.xcconfig"; sourceTree = "<group>"; };
 		45BD9641FEE51201C82C944D /* Pods-EvolveGT-QA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-QA.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA.release.xcconfig"; sourceTree = "<group>"; };
 		48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolveGT_UAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRiderQuery.swift; sourceTree = "<group>"; };
+		55AB31A22DB1756900422D39 /* NotificationListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListResponse.swift; sourceTree = "<group>"; };
+		55AB31AE2DB178A700422D39 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		55AB31AF2DB178A700422D39 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		55B7B2122D97F6C000398BA0 /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		6CB5E4398F4AF2B0CAC4C0DB /* Pods-EvolveGT-UAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-UAT.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT.release.xcconfig"; sourceTree = "<group>"; };
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
 		720B93A02B9630A30043913B /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
@@ -1161,6 +1181,7 @@
 		10048F2E246EB0B400684A87 /* EventDetails */ = {
 			isa = PBXGroup;
 			children = (
+				5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */,
 				10048F32246EB86B00684A87 /* EventInfoCell.swift */,
 				10048F2F246EB0CF00684A87 /* EventDetailsController.swift */,
 			);
@@ -1268,6 +1289,8 @@
 				1033460524608D6400D5EED0 /* HomeDataInteractor.swift */,
 				720B93A02B9630A30043913B /* BadgeView.swift */,
 				10A06AE0249557520051FF56 /* PolicyAgreementController.swift */,
+				55AB31AE2DB178A700422D39 /* NotificationViewController.swift */,
+				55AB31AF2DB178A700422D39 /* NotificationTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1577,8 +1600,10 @@
 		1039FE1C244F334D00190088 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				55B7B2122D97F6C000398BA0 /* ThemeData.swift */,
 				1039FE5324500F4C00190088 /* ETResponse.swift */,
 				10048F0E246D017300684A87 /* ShopItemResponse.swift */,
+				55AB31A22DB1756900422D39 /* NotificationListResponse.swift */,
 				1039FE5C2450429600190088 /* LoginResponse.swift */,
 				1039FE8124509F3100190088 /* AdminResponses.swift */,
 				1033460724608E3100D5EED0 /* UsreDataResponse.swift */,
@@ -2470,6 +2495,8 @@
 				1039FE8024509EE800190088 /* CompletedEvent.swift in Sources */,
 				1039FE7E24509A9A00190088 /* CompletedEventCell.swift in Sources */,
 				104B8DD4248ABF5B008BE5DA /* ProfileInteractor.swift in Sources */,
+				55AB31B42DB178A700422D39 /* NotificationViewController.swift in Sources */,
+				55AB31B52DB178A700422D39 /* NotificationTableViewCell.swift in Sources */,
 				10048F1E246DB47700684A87 /* CartApiConstant.swift in Sources */,
 				10BB126E251BC1CE00320A84 /* RegisterInteractor.swift in Sources */,
 				104B8DD2248ABE5D008BE5DA /* ProfileViewCells.swift in Sources */,
@@ -2520,6 +2547,7 @@
 				1033463B2466CF1200D5EED0 /* EnrolledEventsInteractor.swift in Sources */,
 				10BDD028245B122F00F05700 /* SignatureUpdateRequest.swift in Sources */,
 				103345FE2460886100D5EED0 /* HomeViewController.swift in Sources */,
+				5574BEC92DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */,
 				104B8DC9248903CD008BE5DA /* Membership.swift in Sources */,
 				1033465F246944B200D5EED0 /* ForgotPasswordInteractor.swift in Sources */,
 				1085A70624FFC41800A7B4A8 /* wavierCell.swift in Sources */,
@@ -2604,6 +2632,7 @@
 				100A2A2024557C4500EF2B9F /* StackView+Extension.swift in Sources */,
 				10336608247D3D99009AF19A /* CartListController.swift in Sources */,
 				10A06AEC2496A48A0051FF56 /* UserPreference.swift in Sources */,
+				55B7B2142D97F6CD00398BA0 /* ThemeData.swift in Sources */,
 				10048F4C246F149C00684A87 /* EventListCells.swift in Sources */,
 				109D6E8824863D5B009446A0 /* GiftCard.swift in Sources */,
 				109EEDCB250263F000E84D2F /* WaiverApi.swift in Sources */,
@@ -2634,6 +2663,7 @@
 				103346552468784D00D5EED0 /* SlideMenuItem.swift in Sources */,
 				1033665B24814F65009AF19A /* CheckoutRequests.swift in Sources */,
 				10048F09246D013800684A87 /* EventsInteractor.swift in Sources */,
+				55AB31A52DB1756900422D39 /* NotificationListResponse.swift in Sources */,
 				1039FE6F24506F7000190088 /* BaseInteractor.swift in Sources */,
 				10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */,
 				1033666B2483AE72009AF19A /* ArchieCardViewController.swift in Sources */,
@@ -2714,6 +2744,7 @@
 				103B2501249940BE00BB8CB9 /* Country.swift in Sources */,
 				104DD79F2503689E00D2539E /* FirstRegisterViewController.swift in Sources */,
 				109EEDC8250254A600E84D2F /* EWaiverInteractor.swift in Sources */,
+				5574BECB2DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */,
 				103B2502249940BE00BB8CB9 /* EventParticipantRequest.swift in Sources */,
 				10A551D8251748830049C3DB /* ReferFriendInteractor.swift in Sources */,
 				103B2503249940BE00BB8CB9 /* ShippingIndicator.swift in Sources */,
@@ -2723,6 +2754,7 @@
 				103B2506249940BE00BB8CB9 /* CartReviewCells.swift in Sources */,
 				103B2507249940BE00BB8CB9 /* UserDataRequest.swift in Sources */,
 				103B2509249940BE00BB8CB9 /* ArchieCard.swift in Sources */,
+				55B7B2132D97F6CD00398BA0 /* ThemeData.swift in Sources */,
 				103B250A249940BE00BB8CB9 /* CartInteractor.swift in Sources */,
 				103B250B249940BE00BB8CB9 /* UITableViewCell+Extension.swift in Sources */,
 				103B250C249940BE00BB8CB9 /* EventsApi.swift in Sources */,
@@ -2734,6 +2766,7 @@
 				103B2511249940BE00BB8CB9 /* ChangePasswordInteractor.swift in Sources */,
 				103B2512249940BE00BB8CB9 /* HomeDataInteractor.swift in Sources */,
 				103B2513249940BE00BB8CB9 /* CartItem.swift in Sources */,
+				55AB31A42DB1756900422D39 /* NotificationListResponse.swift in Sources */,
 				103B26952499483000BB8CB9 /* ConfigQA.swift in Sources */,
 				103B2514249940BE00BB8CB9 /* ViewController+Extension.swift in Sources */,
 				103B2515249940BE00BB8CB9 /* CompletedEventsInteractor.swift in Sources */,
@@ -2779,6 +2812,8 @@
 				103B2538249940BE00BB8CB9 /* User.swift in Sources */,
 				103B2539249940BE00BB8CB9 /* EventListController.swift in Sources */,
 				103B253A249940BE00BB8CB9 /* ProductCell.swift in Sources */,
+				55AB31B02DB178A700422D39 /* NotificationViewController.swift in Sources */,
+				55AB31B12DB178A700422D39 /* NotificationTableViewCell.swift in Sources */,
 				104BDFD324A920FE00E198FF /* EnrolledEventsSlidingTabController.swift in Sources */,
 				103B253B249940BE00BB8CB9 /* SectionEventInfoCell.swift in Sources */,
 				103B253C249940BE00BB8CB9 /* EnrolledEvent.swift in Sources */,
@@ -2907,6 +2942,7 @@
 				103B25C3249940CC00BB8CB9 /* CompletedEvent.swift in Sources */,
 				103B25C4249940CC00BB8CB9 /* CompletedEventCell.swift in Sources */,
 				103B25C5249940CC00BB8CB9 /* ProfileInteractor.swift in Sources */,
+				5574BECA2DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */,
 				103B25C6249940CC00BB8CB9 /* CartApiConstant.swift in Sources */,
 				10BB1270251BC1CE00320A84 /* RegisterInteractor.swift in Sources */,
 				103B25C7249940CC00BB8CB9 /* ProfileViewCells.swift in Sources */,
@@ -2946,6 +2982,7 @@
 				103B25E2249940CC00BB8CB9 /* EventsApi.swift in Sources */,
 				103B25E3249940CC00BB8CB9 /* LoginViewController.swift in Sources */,
 				103B25E4249940CC00BB8CB9 /* AllEventsController.swift in Sources */,
+				55B7B2152D97F6CD00398BA0 /* ThemeData.swift in Sources */,
 				103B25E5249940CC00BB8CB9 /* AboutUsInteractor.swift in Sources */,
 				10D600FF263039A30097D180 /* TransferCreditViewController.swift in Sources */,
 				103B25E6249940CC00BB8CB9 /* ShopsApiConstants.swift in Sources */,
@@ -3002,6 +3039,7 @@
 				103B26962499483500BB8CB9 /* ConfigUAT.swift in Sources */,
 				103B2613249940CC00BB8CB9 /* UiColor+Extension.swift in Sources */,
 				103B2614249940CC00BB8CB9 /* EventParticipantsController.swift in Sources */,
+				55AB31A32DB1756900422D39 /* NotificationListResponse.swift in Sources */,
 				103B2615249940CC00BB8CB9 /* ArchiCardCell.swift in Sources */,
 				103B2616249940CC00BB8CB9 /* DividerView.swift in Sources */,
 				103B2617249940CC00BB8CB9 /* SignatureRequest.swift in Sources */,
@@ -3056,6 +3094,8 @@
 				103B263E249940CC00BB8CB9 /* CreditHistoryItemCell.swift in Sources */,
 				103B263F249940CC00BB8CB9 /* UIButton+Extension.swift in Sources */,
 				103B2640249940CC00BB8CB9 /* ApiError.swift in Sources */,
+				55AB31B22DB178A700422D39 /* NotificationViewController.swift in Sources */,
+				55AB31B32DB178A700422D39 /* NotificationTableViewCell.swift in Sources */,
 				105D853227A9B0E600B269AA /* EventParticipantV2.swift in Sources */,
 				103B2641249940CC00BB8CB9 /* ETTabViewController.swift in Sources */,
 				103B2642249940CC00BB8CB9 /* AppDelegate.swift in Sources */,
@@ -3279,6 +3319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
@@ -3288,9 +3329,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				MARKETING_VERSION = 2.6.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3303,6 +3345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
@@ -3313,9 +3356,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.2;
+				MARKETING_VERSION = 2.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3328,17 +3372,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.5.4;
+				CURRENT_PROJECT_VERSION = 2.6.4;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.4;
+				MARKETING_VERSION = 2.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3351,17 +3397,49 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.5.4;
+				CURRENT_PROJECT_VERSION = 2.6.4;
 				DEVELOPMENT_TEAM = M3P4BH4498;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AEOTPTextField\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMessaging\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Loaf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBRadioCheckboxButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RSSelectionMenu\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SideMenuSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkyFloatingLabelTextField\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSignatureView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/FirebaseAnalytics/AdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/AdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/WithoutAdIdSupport\"",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = "EvolveGT-iOS copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.4;
+				MARKETING_VERSION = 2.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3374,6 +3452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.0.3;
 				DEVELOPMENT_TEAM = M3P4BH4498;
@@ -3383,8 +3462,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3406,7 +3486,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.uat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseMessaging
 
 import SkyFloatingLabelTextField
 class LoginViewController : ETViewController, UITextFieldDelegate{
@@ -128,12 +129,14 @@ extension LoginViewController : LoginViewDelegate{
     }
     
     func launchAdminPage() {
-       let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        messagingToken()
+        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.launchAdminDashboard()
     }
     
     func launchUserPage() {
         Log.i("\n\n Should Launch User Dashboard \n\n")
+        messagingToken()
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.launchUserDashboard(payload: nil)
     }
@@ -142,6 +145,21 @@ extension LoginViewController : LoginViewDelegate{
         
     }
     
+    func messagingToken() {
+        DispatchQueue.main.async() {
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                    print("Error fetching remote instance ID: \(error)")
+                } else if let token = token {
+                    print("Firebase registration token (didBecomeActive): \(token)")
+                    UserDefaults.standard.set(token, forKey: AppConstants.DEVICE_TOKEN)
+                    UserDefaults.standard.synchronize()
+                    let interactor = HomeDataInteractor()
+                    interactor.updateDeviceToken()
+                }
+            }
+        }
+    }
    
     
 }

@@ -13,8 +13,8 @@ struct Config{
     static let BASE_URL = "tracknutts.com"
 
     //live
-//    static let BASE_URL = "evolvegt.com"
-    static let LOG_ENABLED = false
+  //  static let BASE_URL = "evolvegt.com"
+    static let LOG_ENABLED = true
     static let BUILD_CONFIG = "AppStore"
     static let CHECKOUT_MODE = "production"
     static let BUNDLE_ID = "com.evolve.appstore"

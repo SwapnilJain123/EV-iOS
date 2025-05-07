@@ -18,9 +18,8 @@ class RegisterInteractor : BaseInteractor{
     var handleVerifyOTP : ((_ isSucess: Bool) -> Void)?
 
     var isPasswordValid: Bool{
-        
         let predicate = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{6,20}$"
-       let passwordCheck = NSPredicate(format: "SELF MATCHES %@", predicate)
+        let passwordCheck = NSPredicate(format: "SELF MATCHES %@", predicate)
         return passwordCheck.evaluate(with: signupRequest.password)
     }
     func validatePersonalData() -> Bool{
@@ -63,12 +62,10 @@ class RegisterInteractor : BaseInteractor{
                 if let response = self.decodeFromJson(data!, modelType: LoginResponse.self){
                     AppEngine.sharedInstance.saveUserInfo(user: response.currentUser)
                     AppEngine.sharedInstance.saveAuthToken(token: response.token)
-                    
                     if let action = self.handleCreateAccount{
                         action(response.currentUser.isAdmin())
                     }
-                    
-                }else{
+                } else {
                     self.delegate?.showAlert(title: "Error", message: ErrorMessages.genericError)
                 }
             }else{
@@ -134,5 +131,17 @@ class RegisterInteractor : BaseInteractor{
             }
         })
         api.verifyOtp(verifyOTPRequest: verifyOtpRequest)
+    }
+    
+    func checkEmailVerification(completionBlock: @escaping(Result<ThemeData, Error>) -> Void) {
+        let url: String = "\(ApiConstants.BASE_URL)\(UserApiConstants.FETCH_THEME)"
+        ApiClient().callAPIFor(strURL: url, requestType: .get, parameter: [:]) { responseData in
+            do {
+                let decodedResponse = try JSONDecoder().decode(ThemeResponse.self, from: responseData)
+                completionBlock(.success(decodedResponse.result))
+            } catch {
+                completionBlock(.failure(error))
+            }
+        }
     }
 }

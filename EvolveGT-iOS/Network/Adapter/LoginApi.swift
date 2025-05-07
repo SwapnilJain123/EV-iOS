@@ -56,5 +56,12 @@ class LoginApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
 
+    func checkForEmailVerify() {
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.FETCH_THEME)"
+        setUrl(url: url)
+        
+        //setParameters(parameters: makeDictionary(OTPSendRequest))
+        super.makeRequest(method: .GET)
+    }
     
 }

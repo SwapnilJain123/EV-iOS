@@ -10,10 +10,10 @@ import Foundation
 struct Config{
    
     //stagung
-//    static let BASE_URL = "tracknutts.com"
+static let BASE_URL = "tracknutts.com"
 
     //live
-    static let BASE_URL = "evolvegt.com"
+  //  static let BASE_URL = "evolvegt.com"
 
     static let LOG_ENABLED = true
     static let BUILD_CONFIG = "QA"

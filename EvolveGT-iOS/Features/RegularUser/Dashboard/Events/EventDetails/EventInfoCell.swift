@@ -297,8 +297,6 @@ class TransponderCell: UITableViewCell,  UITextFieldDelegate{
             delegate?.didEnterBikeNumber(bikeNumber: textField.text!, indexPath: indexPath!)
         }
     }
-    
-    
 }
 
 protocol TrackDayCellDelegate{

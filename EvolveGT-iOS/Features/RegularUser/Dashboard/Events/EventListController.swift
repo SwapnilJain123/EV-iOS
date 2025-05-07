@@ -30,6 +30,8 @@ class EventListController : TabbedViewController{
         eventsListView.delegate = self
         eventsListView.dataSource = self
         interactor.eventListDelegate = self
+        self.navigationController?.navigationBar.backgroundColor = UIColor.getAppThemeColor()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

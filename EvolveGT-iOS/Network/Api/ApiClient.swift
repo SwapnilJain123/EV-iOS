@@ -18,7 +18,7 @@ class ApiClient{
     static let sharedInstance : ApiClient = ApiClient()
     let networkManager = NetworkReachabilityManager()!
     
-    private init(){
+    init(){
         
     }
     
@@ -46,6 +46,7 @@ class ApiClient{
                 switch response.result{
                 case .success:
                     Log.d("\n\n Response:\(String(describing: String(data: response.data!, encoding: .utf8))) \n\n")
+                    
                     completionHandler(response.data!, nil)
                 case .failure(let error):
                     var apiError = ApiError()
@@ -86,6 +87,15 @@ class ApiClient{
                 case .success:
                     print(response.data)
                     print(response)
+                    
+//                    do {
+//                        let decodedResponse = try JSONDecoder().decode(EventDetails.self, from: response.data!)
+//                        print(decodedResponse)
+//
+//                    } catch (let error){
+//                        print(error)
+//                        print(error.localizedDescription)
+//                    }
 
                     Log.d("\n\n Response:\(String(describing: String(data: response.data!, encoding: .utf8))) \n\n")
                     completionHandler(response.data!, nil)
@@ -187,4 +197,36 @@ class UploadItem {
     }
     
     
+}
+
+extension ApiClient {
+    func callAPIFor(strURL: String,
+                       requestType: HTTPMethod,
+                       parameter: [String: Any],
+                       onSuccess successBlock: @escaping(Data) -> Void,
+                       onFailure errorBlock: @escaping(String) -> Void = { _ in }) {
+        printHeaders()
+        print(strURL)
+        print(parameters)
+        Alamofire.request(strURL, parameters: parameters, headers:header)
+            .validate()
+            .responseJSON {response in
+                if let statusCode = response.response?.statusCode {
+                    if statusCode == 403 {
+                        // Post a notification for logout
+                        NotificationCenter.default.post(name: .logoutNotification, object: nil)
+                    }
+                }
+                switch response.result{
+                case .success:
+                    Log.d("\n\n Response:\(String(describing: String(data: response.data!, encoding: .utf8))) \n\n")
+                    successBlock(response.data!)
+                case .failure(let error):
+                    var apiError = ApiError()
+                    apiError.errorMessage = ApiError.ERROR_GENERIC_MESSAGE
+                    Log.d("Error - \(error.localizedDescription)")
+                    errorBlock(apiError.errorMessage)
+                }
+        }
+    }
 }

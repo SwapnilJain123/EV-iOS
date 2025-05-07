@@ -57,6 +57,8 @@ class ShopViewController : TabbedViewController{
         } else {
             categoryList = appDelegate.categories
         }
+        self.navigationController?.navigationBar.backgroundColor = UIColor.getAppThemeColor()
+
     }
     
     override func getScreenTitle() -> String? {

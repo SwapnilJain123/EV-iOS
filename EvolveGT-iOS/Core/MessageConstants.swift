@@ -99,7 +99,8 @@ struct LoadingIndicatorMessages {
     static let loadingCreditHistory = "Loading your credit history..."
     static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
-    
+    static let loadingNotificationList = "Loading Notification List..."
+
     static let loadingEventDetails = "Loading event details..."
     static let loadingArchieCardList = "Loading archie cards..."
      static let loadingArchieCardDetails = "Loading archie cards details..."
@@ -140,6 +141,8 @@ struct LoadingIndicatorMessages {
     static let creatingAccount = "Please wait, We're creating your account."
     static let sendingOTP = "Sending OTP"
     static let verifyOTP = "Verifying OTP"
+    static let checkingDetails = "Checking Details..."
+    
 }
 
 struct ErrorMessages {

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SideMenuSwift
+import FirebaseMessaging
 
 class HomeViewController: TabbedViewController{
     
@@ -33,53 +34,72 @@ class HomeViewController: TabbedViewController{
             return
         }
         
+        self.view.backgroundColor = UIColor.getAppThemeColor()
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.getAppThemeColor()
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
         interactor.homeViewDelegate = self
+        messagingToken()
+
     }
     
-       private func createBadgeView() -> UIView {
-           let badgeView = UIView(frame: CGRect(x: 22, y: -05, width: 20, height: 20))
-           badgeView.backgroundColor = .red
-           badgeView.layer.cornerRadius = badgeView.frame.height / 2
-
-           let label = UILabel(frame: badgeView.bounds)
-           label.text = "" // Initially empty
-           label.textColor = .white
-           label.textAlignment = .center
-           label.font = UIFont.systemFont(ofSize: 12)
-           label.adjustsFontSizeToFitWidth = true
-           badgeView.addSubview(label)
-
-           return badgeView
-       }
-
-       func setBadgeCount(count: Int) {
-           badgeCount = count
-           let badgeLabel = badgeView.subviews.first as! UILabel // Assuming only one subview (label)
-           badgeLabel.text = count > 0 ? "\(count)" : "" // Hide badge if count is 0
-
-           // Optionally adjust badge size based on count (example for max 2 digits):
-           let width = String(count).width(withConstrainedHeight: 20, font: badgeLabel.font!) + 10
-           badgeView.frame.size.width = min(width, 25) // Limit max width to 25
-
-           // Optionally animate badge appearance/disappearance (using simple alpha animation)
-           if count > 0 {
-               badgeView.alpha = 0
-               UIView.animate(withDuration: 0.3) {
-                   self.badgeView.alpha = 1.0
-               }
-           } else {
-               UIView.animate(withDuration: 0.3) {
-                   self.badgeView.alpha = 0
-               } completion: { _ in
-                   // Optional: Hide badge view completely if count is 0 (for better layout)
-                   self.badgeView.isHidden = true
-               }
-           }
-       }
+    private func createBadgeView() -> UIView {
+        let badgeView = UIView(frame: CGRect(x: 22, y: -05, width: 20, height: 20))
+        badgeView.backgroundColor = .red
+        badgeView.layer.cornerRadius = badgeView.frame.height / 2
+        
+        let label = UILabel(frame: badgeView.bounds)
+        label.text = "" // Initially empty
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.adjustsFontSizeToFitWidth = true
+        badgeView.addSubview(label)
+        
+        return badgeView
+    }
     
+    func messagingToken() {
+        DispatchQueue.main.async() {
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                    print("Error fetching remote instance ID: \(error)")
+                } else if let token = token {
+                    print("Firebase registration token (didBecomeActive): \(token)")
+                    UserDefaults.standard.set(token, forKey: AppConstants.DEVICE_TOKEN)
+                    UserDefaults.standard.synchronize()
+                    self.interactor.updateDeviceToken()
+                }
+            }
+        }
+    }
+    
+    func setBadgeCount(count: Int) {
+        badgeCount = count
+        let badgeLabel = badgeView.subviews.first as! UILabel // Assuming only one subview (label)
+        badgeLabel.text = count > 0 ? "\(count)" : "" // Hide badge if count is 0
+        
+        // Optionally adjust badge size based on count (example for max 2 digits):
+        let width = String(count).width(withConstrainedHeight: 20, font: badgeLabel.font!) + 10
+        badgeView.frame.size.width = min(width, 25) // Limit max width to 25
+        
+        // Optionally animate badge appearance/disappearance (using simple alpha animation)
+        if count > 0 {
+            badgeView.alpha = 0
+            UIView.animate(withDuration: 0.3) {
+                self.badgeView.alpha = 1.0
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.badgeView.alpha = 0
+            } completion: { _ in
+                // Optional: Hide badge view completely if count is 0 (for better layout)
+                self.badgeView.isHidden = true
+            }
+        }
+    }
     override  func didChangeAppTheme() {
         super.didChangeAppTheme()
         
@@ -264,14 +284,32 @@ extension HomeViewController: HomeViewDelegate{
         self.profileData = profileData
         self.sections = sections
         
-        let rightBarButton = UIButton(type: .custom)
-        rightBarButton.setImage(UIImage(named: "cart_a"), for: .normal)
-        rightBarButton.addTarget(self, action: #selector(cartAction), for: .touchUpInside)
+        // First Button (Cart)
+        let cartButton = UIButton(type: .custom)
+        cartButton.setImage(UIImage(named: "cart_a"), for: .normal)
+        
+        cartButton.addTarget(self, action: #selector(cartAction), for: .touchUpInside)
         badgeView = createBadgeView()
-        rightBarButton.addSubview(badgeView)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        cartButton.addSubview(badgeView)
         setBadgeCount(count: AppEngine.sharedInstance.cartListCount)
+        
+        let cartBarButtonItem = UIBarButtonItem(customView: cartButton)
+        
+        let notificationBtn = UIButton(type: .custom)
+        notificationBtn.setImage(UIImage(named: "notification"), for: .normal)
+        notificationBtn.addTarget(self, action: #selector(notificationList), for: .touchUpInside)
+      //  notificationBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        
+        let secondBarButtonItem = UIBarButtonItem(customView: notificationBtn)
+        
+        // Add both buttons to the navigation bar
+        navigationItem.rightBarButtonItems = [cartBarButtonItem, secondBarButtonItem]
         profileView.reloadData()
+    }
+    
+    @objc func notificationList() {
+        let vc = self.ext.getViewController(storyBoard: "Home", VCIdentifier: "NotificationViewController") as! NotificationViewController
+        self.ext.pushViewController(viewController: vc)
     }
     
 }

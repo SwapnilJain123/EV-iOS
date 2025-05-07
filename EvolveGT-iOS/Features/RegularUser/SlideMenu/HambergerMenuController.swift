@@ -38,7 +38,7 @@ class HambergerMenuController: ETViewController, LogoutAPIResponseDelegate {
         
         interactor.delegate = self
         interactor.logoutAPIResponseDelegate = self
-        self.ext.hideNavbar()
+      //  self.ext.hideNavbar()
     }
     
     func refreshSideMenu(){
@@ -49,6 +49,7 @@ class HambergerMenuController: ETViewController, LogoutAPIResponseDelegate {
         super.viewWillAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
         self.refreshSideMenu()
+        self.ext.hideNavbar()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -64,6 +65,21 @@ class HambergerMenuController: ETViewController, LogoutAPIResponseDelegate {
         }
     }
 }
+
+extension HambergerMenuController: SideMenuControllerDelegate {
+    func sideMenuControllerWillShowLeftView(_ sideMenuController: SideMenuController) {
+        UIView.animate(withDuration: 0.3) {
+            self.view.transform = CGAffineTransform(translationX: 260, y: 0) // Horizontal only
+        }
+    }
+
+//    func sideMenuControllerWillHideLeftView(_ sideMenuController: SideMenuController) {
+//        UIView.animate(withDuration: 0.3) {
+//            self.view.transform = .identity
+//        }
+//    }
+}
+
 
 extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -168,6 +184,7 @@ extension HambergerMenuController: UITableViewDataSource, UITableViewDelegate{
             self.deleteMyAccount()
         })
     }
+    
     
     func deleteMyAccount(){
         let url: String  = "\(ApiConstants.BASE_URL)\(CheckoutApiConstants.DELET_USER)"

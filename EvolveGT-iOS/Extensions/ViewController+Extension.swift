@@ -177,7 +177,20 @@ extension UIViewController{
             //            navigationBarAppearace.barTintColor = color
             
             vc.navigationController?.navigationBar.barTintColor = color
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = color
+
+            // Set title text attributes
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.white
+            ]
+            appearance.titleTextAttributes = titleTextAttributes
+
+            vc.navigationController?.navigationBar.standardAppearance = appearance
+            vc.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         }
+        
         func setScreenTitle(title: String)
         {
             guard vc.navigationController != nil else { return }
@@ -222,7 +235,6 @@ extension UIViewController{
             guard let url = URL(string: urlString) else { return }
             UIApplication.shared.open(url)
         }
-        
         
         func presentOptions(title: String, message: String, options: [String], selected : String?, completionHandler : @escaping (String)->Void){
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -383,7 +395,7 @@ extension UIViewController{
             AppEngine.sharedInstance.switchApp(appMode: appMode)
             
             Log.d("AppMode - After  - \(AppEngine.sharedInstance.isEvApp())")
-            vc.ext.setNavigationBackgroundColor(color: UIColor.getAppThemeColor())
+            vc.ext.setNavigationBackgroundColor(color: .getAppThemeColor())
             self.applyThemeToDividers()
             vc.didChangeAppTheme()
         }

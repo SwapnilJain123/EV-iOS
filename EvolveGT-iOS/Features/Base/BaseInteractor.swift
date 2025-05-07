@@ -25,8 +25,9 @@ class BaseInteractor{
         do{
              decoded = try decoder.decode(modelType, from: data)
         }catch let DecodingError.typeMismatch(type, context)  {
+            Log.d("Type '\(type)' mismatch: \(context.debugDescription)")
             Log.e("Type '\(type)' mismatch: \(context.debugDescription)")
-            Log.e("codingPath: \(context.codingPath)")
+            Log.d("codingPath: \(context.codingPath)")
             
         }catch let DecodingError.keyNotFound(key, context)  {
             Log.e("Key '\(key)' mismatch: \(context.debugDescription)")

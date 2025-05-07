@@ -4,7 +4,8 @@
 //
 //  Created by Subair Ariyil on 21/04/20.
 //  Copyright © 2020 YaraTech. All rights reserved.
-//
+//  com.evolve.appstore
+//  com.evolve.uat  -- dev
 
 import UIKit
 import IQKeyboardManagerSwift
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var categories: [ProductCategory] = []
     var isCameraOpen: Bool = false
+    let interactor = HomeDataInteractor()
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -80,6 +83,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initFirebase(){
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Pass APNs token to Firebase
+        Messaging.messaging().apnsToken = deviceToken
+        print("APNs device token: \(deviceToken.map { String(format: "%02.2hhx", $0) }.joined())")
     }
     
     func registerForPushNotification(_ application: UIApplication){
@@ -173,6 +182,8 @@ extension AppDelegate{
         let slideMenuStoryBoard = UIStoryboard.init(name: "SlideMenu", bundle: nil)
         let sideMenuVC = slideMenuStoryBoard.instantiateViewController(withIdentifier: "SlideMenuVC") as! HambergerMenuController
         
+       
+        
         let storboard = UIStoryboard.init(name: "Tabs", bundle: nil)
         
         let tabbarCntlr = storboard.instantiateViewController(withIdentifier: "TabView") as! ETTabViewController
@@ -188,7 +199,7 @@ extension AppDelegate{
                 let navigationController = UINavigationController(rootViewController: sideMenuController)
                 
                 navigationController.view.backgroundColor = UIColor.getAppThemeColor()
-                navigationController.isNavigationBarHidden = true
+            navigationController.isNavigationBarHidden = false
                 self.window?.rootViewController = navigationController
                 
                 UIView.setAnimationsEnabled(oldState)
@@ -248,8 +259,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
-        completionHandler([.alert,.sound])
+        if #available(iOS 14.0, *) {
+            completionHandler([.banner, .sound]) // Use .banner instead of .alert
+        } else {
+            completionHandler([.alert, .sound])
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -279,7 +293,23 @@ extension AppDelegate:MessagingDelegate{
         
         UserDefaults.standard.set(fcmToken, forKey: AppConstants.DEVICE_TOKEN)
         UserDefaults.standard.synchronize()
-        
+        interactor.updateDeviceToken()
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        messagingToken()
+    }
+    
+    func messagingToken() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                    print("Error fetching remote instance ID: \(error)")
+                } else if let token = token {
+                    print("Firebase registration token (didBecomeActive): \(token)")
+                }
+            }
+        }
     }
     
 }

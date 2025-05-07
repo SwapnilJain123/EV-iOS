@@ -22,6 +22,8 @@ struct UserApiConstants{
     static let UPDATE_NOTIFICATION_PREF = "notifications/updateNotificationPreference"
     static let CANCEL_EVENT = "user/cancelEvent"
     static let UPDATE_DEVICE_TOKEN = "notifications/updateDeviceToken"
+    static let NOTIFICATION_LIST = "notifications/list"
+
     
     //Mark: Profile
     static let MEMBERSHIP_LIST = "membership/list"
@@ -40,7 +42,8 @@ struct UserApiConstants{
     static let TRANSFER_AMOUNT = "user/transferCredits"
     static let SEND_OTP_EMAILVERIFY = "user/sendOTP"
     static let OTP_VERIFY = "user/verifyOTP"
-
+    static let FETCH_THEME = "themeSettings/fetch"
+    
     //EWaiver
     static let WAIVER_LIST = "waiverEvents/list"
     static let WAIVER_DETAILS = "waiverEvents/details"

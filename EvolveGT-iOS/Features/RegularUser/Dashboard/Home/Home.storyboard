@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdK-nz-6Sj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdK-nz-6Sj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPp-J7-3Za" userLabel="Profile View">
-                                <rect key="frame" x="0.0" y="92" width="414" height="1725"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="1808"/>
                                 <color key="backgroundColor" red="0.89390325550000005" green="0.89803808929999995" blue="0.90205961469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollapsedCell" id="ZPe-B3-KAq" customClass="CollapsedCell" customModule="EvolveGT" customModuleProvider="target">
@@ -1236,13 +1235,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="xEr-sQ-VfP"/>
-                        <color key="backgroundColor" name="RootBackGround"/>
+                        <viewLayoutGuide key="safeArea" id="IRF-c4-YJO"/>
+                        <color key="backgroundColor" name="ColorEV"/>
                         <constraints>
-                            <constraint firstItem="NPp-J7-3Za" firstAttribute="trailing" secondItem="xEr-sQ-VfP" secondAttribute="trailing" id="K8z-Cm-UPG"/>
-                            <constraint firstItem="NPp-J7-3Za" firstAttribute="leading" secondItem="xEr-sQ-VfP" secondAttribute="leading" id="bAI-Sz-d6F"/>
-                            <constraint firstItem="NPp-J7-3Za" firstAttribute="top" secondItem="xEr-sQ-VfP" secondAttribute="top" id="rVR-G0-m8Q"/>
-                            <constraint firstItem="NPp-J7-3Za" firstAttribute="bottom" secondItem="xEr-sQ-VfP" secondAttribute="bottom" id="t7f-U7-Kea"/>
+                            <constraint firstItem="NPp-J7-3Za" firstAttribute="trailing" secondItem="Ipj-Pa-uFP" secondAttribute="trailing" id="K8z-Cm-UPG"/>
+                            <constraint firstItem="NPp-J7-3Za" firstAttribute="leading" secondItem="Ipj-Pa-uFP" secondAttribute="leading" id="bAI-Sz-d6F"/>
+                            <constraint firstItem="NPp-J7-3Za" firstAttribute="top" secondItem="IRF-c4-YJO" secondAttribute="top" id="dUJ-tU-YHv"/>
+                            <constraint firstItem="NPp-J7-3Za" firstAttribute="bottom" secondItem="Ipj-Pa-uFP" secondAttribute="bottom" id="t7f-U7-Kea"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="home" id="Cwe-ox-3sO"/>
@@ -1326,12 +1325,133 @@
             </objects>
             <point key="canvasLocation" x="513.04347826086962" y="102.45535714285714"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="Ajn-Ke-ISK">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xkn-lH-2JM" customClass="NotificationViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gkg-zX-Dzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8Q-q0-oJc">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xu7-IP-A6X">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
+                                        <color key="backgroundColor" name="RootBackGround"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" id="xCp-S1-5gq" customClass="NotificationTableViewCell" customModule="EvolveGT" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="154"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xCp-S1-5gq" id="T1N-CD-29p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-pk-92c">
+                                                            <rect key="frame" x="8" y="4" width="398" height="146"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JhC-IZ-GZW">
+                                                                    <rect key="frame" x="14" y="14" width="370" height="118"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIFT CARD $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nd-35-hpP">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="19.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIFT CARD $50" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjB-RM-U3b">
+                                                                            <rect key="frame" x="0.0" y="29.5" width="370" height="19.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmU-7n-xhX">
+                                                                            <rect key="frame" x="0.0" y="59" width="370" height="32"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                            <state key="normal" title="Button"/>
+                                                                            <connections>
+                                                                                <action selector="openUrl:" destination="xCp-S1-5gq" eventType="touchUpInside" id="F7N-dC-P4H"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIFT CARD $50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMP-Xc-p9o">
+                                                                            <rect key="frame" x="0.0" y="101" width="370" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="JhC-IZ-GZW" firstAttribute="top" secondItem="OYX-pk-92c" secondAttribute="top" constant="14" id="5Qh-9N-Sj6"/>
+                                                                <constraint firstAttribute="trailing" secondItem="JhC-IZ-GZW" secondAttribute="trailing" constant="14" id="PBK-Y3-KmL"/>
+                                                                <constraint firstAttribute="bottom" secondItem="JhC-IZ-GZW" secondAttribute="bottom" constant="14" id="cb0-Od-nI9"/>
+                                                                <constraint firstItem="JhC-IZ-GZW" firstAttribute="leading" secondItem="OYX-pk-92c" secondAttribute="leading" constant="14" id="iE8-r0-p4N"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="RootBackGround"/>
+                                                    <constraints>
+                                                        <constraint firstItem="OYX-pk-92c" firstAttribute="leading" secondItem="T1N-CD-29p" secondAttribute="leading" constant="8" id="BwY-De-ZAP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OYX-pk-92c" secondAttribute="trailing" constant="8" id="Cmd-6R-FrS"/>
+                                                        <constraint firstAttribute="bottom" secondItem="OYX-pk-92c" secondAttribute="bottom" constant="4" id="uhC-UV-VbG"/>
+                                                        <constraint firstItem="OYX-pk-92c" firstAttribute="top" secondItem="T1N-CD-29p" secondAttribute="top" constant="4" id="zgH-ND-9av"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="timeLable" destination="bMP-Xc-p9o" id="Ng9-zs-hbC"/>
+                                                    <outlet property="titleLable" destination="yjB-RM-U3b" id="b8L-0J-04y"/>
+                                                    <outlet property="typeLable" destination="0nd-35-hpP" id="SYE-n3-b0t"/>
+                                                    <outlet property="urlBtn" destination="dmU-7n-xhX" id="bxF-PZ-ZbS"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="xkn-lH-2JM" id="vk4-8N-76f"/>
+                                            <outlet property="delegate" destination="xkn-lH-2JM" id="lMO-lT-3P8"/>
+                                        </connections>
+                                    </tableView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Notification list found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEB-DG-7Yf">
+                                        <rect key="frame" x="30" y="397.5" width="354" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="RootBackGround"/>
+                                <constraints>
+                                    <constraint firstItem="QEB-DG-7Yf" firstAttribute="centerX" secondItem="u8Q-q0-oJc" secondAttribute="centerX" id="2tF-0U-Oor"/>
+                                    <constraint firstItem="QEB-DG-7Yf" firstAttribute="centerY" secondItem="u8Q-q0-oJc" secondAttribute="centerY" id="5OG-T0-XDd"/>
+                                    <constraint firstItem="Xu7-IP-A6X" firstAttribute="top" secondItem="u8Q-q0-oJc" secondAttribute="top" id="5b8-x3-sn9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xu7-IP-A6X" secondAttribute="trailing" id="KbD-Tv-f9d"/>
+                                    <constraint firstAttribute="trailing" secondItem="QEB-DG-7Yf" secondAttribute="trailing" constant="30" id="Rj7-FS-FCk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xu7-IP-A6X" secondAttribute="bottom" id="l31-g0-wtK"/>
+                                    <constraint firstItem="Xu7-IP-A6X" firstAttribute="leading" secondItem="u8Q-q0-oJc" secondAttribute="leading" id="ni7-9Q-MPA"/>
+                                    <constraint firstItem="QEB-DG-7Yf" firstAttribute="leading" secondItem="u8Q-q0-oJc" secondAttribute="leading" constant="30" id="poe-8Y-9dS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Diq-tg-BbS"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
+                        <constraints>
+                            <constraint firstItem="Diq-tg-BbS" firstAttribute="trailing" secondItem="u8Q-q0-oJc" secondAttribute="trailing" id="2YE-oo-WyI"/>
+                            <constraint firstItem="u8Q-q0-oJc" firstAttribute="bottom" secondItem="Diq-tg-BbS" secondAttribute="bottom" id="aSP-L2-Tam"/>
+                            <constraint firstItem="u8Q-q0-oJc" firstAttribute="leading" secondItem="Diq-tg-BbS" secondAttribute="leading" id="kFA-gB-6VA"/>
+                            <constraint firstItem="u8Q-q0-oJc" firstAttribute="top" secondItem="Diq-tg-BbS" secondAttribute="top" id="nyb-tG-B7U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noDataFoundLable" destination="QEB-DG-7Yf" id="C4V-oO-i53"/>
+                        <outlet property="notificationTableView" destination="Xu7-IP-A6X" id="Yme-vp-CY7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jS-UR-g8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1371.0144927536232" y="98.4375"/>
+        </scene>
     </scenes>
-    <designables>
-        <designable name="Z2E-fP-WEq">
-            <size key="intrinsicContentSize" width="239" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="avatar" width="300" height="300"/>
         <image name="home" width="32" height="32"/>
@@ -1341,6 +1461,9 @@
         <image name="refer_a_friend" width="128" height="128"/>
         <image name="skill_level" width="128" height="128"/>
         <image name="upcoming_events" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="ColorEV">
+            <color red="0.030999999493360519" green="0.6470000147819519" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="RootBackGround">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -8,12 +8,12 @@
 
 import Foundation
 class UserPreference: Codable {
-    var id, title: String?
-    var status: Int?
+    var title: String?
+    var status, id: Int?
     init(){
         
     }
-    init(id: String?, title: String?, status: Int?){
+    init(id: Int?, title: String?, status: Int?){
         self.id = id
         self.title = title
         self.status = status

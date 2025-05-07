@@ -28,6 +28,14 @@ struct UserDataSerialRequest : Codable{
     }
 }
 
+struct NotificationListRequest : Codable{
+    var pageNumber: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case pageNumber = "page_number"
+    }
+}
+
 struct UserDetailsRequest : Codable{
     var userID: Int?
     var isMoto: Int?
@@ -246,7 +254,8 @@ struct NotificationPreferenceUpdateRequest: Codable{
 }
 
 struct NotificationTypeUpdate: Codable{
-    var notificationType, notificationId, notificationStatus : String?
+    var notificationType, notificationStatus : String?
+    var notificationId: Int?
     
     enum CodingKeys: String, CodingKey {
         case notificationType = "notification_type"

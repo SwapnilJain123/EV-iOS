@@ -74,7 +74,7 @@ class SettingsItem{
         let item = SettingsItem()
         item.title = "Language"
         item.settingsType = .language
-        let languagePref = UserPreference(id: "LN", title: "English", status: 1)
+        let languagePref = UserPreference(id: 1, title: "English", status: 1)
         item.menuItems = [languagePref]
         return item
     }
@@ -83,9 +83,9 @@ class SettingsItem{
         let item = SettingsItem()
         item.title = "More"
         item.settingsType = .more
-        let termsPolicy = UserPreference(id: "Action1", title: "Terms of Use", status: 1)
-        let privacyPolicy = UserPreference(id: "Action2", title: "Privacy Policy", status: 1)
-        let refundPolicy = UserPreference(id: "Action3", title: "Refund Policy", status: 1)
+        let termsPolicy = UserPreference(id: 1, title: "Terms of Use", status: 1)
+        let privacyPolicy = UserPreference(id: 2, title: "Privacy Policy", status: 1)
+        let refundPolicy = UserPreference(id: 3, title: "Refund Policy", status: 1)
         item.menuItems = [termsPolicy, privacyPolicy, refundPolicy]
         return item
     }
@@ -96,3 +96,4 @@ class SettingsItem{
         case more
     }
 }
+

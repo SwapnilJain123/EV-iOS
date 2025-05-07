@@ -22,10 +22,10 @@ class EventDetailsController : ETViewController{
     var isMotoEvent : Bool = false
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ext.showBackButton()
-        
         
         eventDetailsView.rowHeight = UITableView.automaticDimension
         eventDetailsView.sectionHeaderHeight = UITableView.automaticDimension
@@ -37,7 +37,6 @@ class EventDetailsController : ETViewController{
         eventDetails?.slug = self.eventSlug
         
         interactor.eventDetailsDelegate = self
-        
     }
     
     override func getScreenTitle() -> String? {
@@ -59,7 +58,11 @@ class EventDetailsController : ETViewController{
             }
         }else{
             eventDetails?.slug = self.eventSlug
-            if eventDetails?.external != nil{
+            
+            let selectedTraining = self.interactor.eventDetails.trainingData?.first(where: {$0.isSelected})
+            if selectedTraining?.trainingID == 3 || selectedTraining?.trainingID == 4 {
+                self.presentRiderQueryScreen()
+            } else if eventDetails?.external != nil {
                 self.ext.confirmationAlert(title: AlertTitle.externalHost, message: MessageConstants.externalLink, btnText: "Open"){
                     self.ext.openLink(self.eventDetails!.external!.url!)
                     return
@@ -74,6 +77,14 @@ class EventDetailsController : ETViewController{
                 interactor.addEvolveEventToCart(eventDetails!)
             }
         }
+    }
+    
+    func presentRiderQueryScreen(){
+        let vc = self.ext.getViewController(storyBoard: "Events", VCIdentifier: "EventRiderQuery") as! EventRiderQuery
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
     
     func addMotoEventToCart(){
@@ -126,6 +137,12 @@ class EventDetailsController : ETViewController{
         self.navigationController?.present(alert, animated: true)
     }
     
+}
+
+extension EventDetailsController: EventRiderQueryDelegate {
+    func didCallAddToCart(with riderQuery: [String : String]) {
+        interactor.addEvolveEventToCart(eventDetails!, riderData: riderQuery)
+    }
 }
 
 extension EventDetailsController: EventDetailsDelegate{

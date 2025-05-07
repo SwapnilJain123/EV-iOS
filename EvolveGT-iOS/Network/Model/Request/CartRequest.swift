@@ -22,6 +22,7 @@ struct EventCartRequest: Codable {
     var bikeNumber: String?
     var eventClassTotal : String?
     var skill : String?
+    var ridersQuery : [String:String]?
     
     enum CodingKeys: String, CodingKey {
         case eventClasses = "classes"
@@ -38,6 +39,7 @@ struct EventCartRequest: Codable {
         case eventCouponCode = "secret_code"
         case skill = "racer_status"
         case eventClassTotal = "total_price"
+        case ridersQuery = "ridersQuery"
     }
 }
 struct TrainingRequest: Codable {

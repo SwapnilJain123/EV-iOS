@@ -20,6 +20,17 @@ class ProfileApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     
+    func getNotificationList(page_number: Int){
+        
+        let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.NOTIFICATION_LIST)"
+        setUrl(url: url)
+        var request = NotificationListRequest()
+        request.pageNumber = page_number
+        setParameters(parameters: makeDictionary(request))
+        super.makeRequest(method: .POST)
+    }
+
+    
     func userLogOut(){
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_LOGOUT)"
         setUrl(url: url)
