@@ -41,6 +41,8 @@ class EventListController : TabbedViewController{
         super.viewWillAppear(animated)
          interactor.resetEventList()
         eventsListView.reloadData()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.getAppThemeColor()
+
     }
     
     override func didSwitchTab() {

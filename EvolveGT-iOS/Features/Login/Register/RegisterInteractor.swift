@@ -136,5 +136,17 @@ class RegisterInteractor : BaseInteractor{
         })
         api.verifyOtp(verifyOTPRequest: verifyOtpRequest)
     }
+    
+    func checkEmailVerification(completionBlock: @escaping(Result<ThemeData, Error>) -> Void) {
+        let url: String = "\(ApiConstants.BASE_URL)\(UserApiConstants.FETCH_THEME)"
+        ApiClient().callAPIFor(strURL: url, requestType: .get, parameter: [:]) { responseData in
+            do {
+                let decodedResponse = try JSONDecoder().decode(ThemeResponse.self, from: responseData)
+                completionBlock(.success(decodedResponse.result))
+            } catch {
+                completionBlock(.failure(error))
+            }
+        }
+    }
 
 }

@@ -81,6 +81,11 @@ class ETTabViewController: UITabBarController, UITabBarControllerDelegate, Agree
         }else if pushType == "web"{
              let url = notificationPayload!["url"] as! String
             self.ext.openLink(url)
+        } else if pushType == "list"{
+            let notificationListVC = self.ext.getViewController(storyBoard: "Home", VCIdentifier: "NotificationViewController") as! NotificationViewController
+            let homeNavController = self.viewControllers?[0] as! UINavigationController
+            homeNavController.pushViewController(notificationListVC, animated: false)
+            self.selectedViewController = self.viewControllers?[0]
         }
     }
     

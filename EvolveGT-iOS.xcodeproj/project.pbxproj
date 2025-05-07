@@ -783,6 +783,18 @@
 		10FCA25924521E6300EA95C0 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA25824521E6300EA95C0 /* UiView+Extension.swift */; };
 		10FE935525023094002F3572 /* Ewaiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE935425023094002F3572 /* Ewaiver.swift */; };
 		3832A717B91218AD6545D3ED /* Pods_EvolveGT_UAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */; };
+		55A46A9E2DB397D5009E4013 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46A9D2DB397D5009E4013 /* NotificationListResponse.swift */; };
+		55A46A9F2DB397D5009E4013 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46A9D2DB397D5009E4013 /* NotificationListResponse.swift */; };
+		55A46AA02DB397D5009E4013 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46A9D2DB397D5009E4013 /* NotificationListResponse.swift */; };
+		55A46AA22DB399CF009E4013 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46AA12DB399CF009E4013 /* NotificationViewController.swift */; };
+		55A46AA32DB399CF009E4013 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46AA12DB399CF009E4013 /* NotificationViewController.swift */; };
+		55A46AA42DB399CF009E4013 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46AA12DB399CF009E4013 /* NotificationViewController.swift */; };
+		55A46AA62DB39A06009E4013 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46AA52DB39A06009E4013 /* NotificationTableViewCell.swift */; };
+		55A46AA72DB39A06009E4013 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46AA52DB39A06009E4013 /* NotificationTableViewCell.swift */; };
+		55A46AA82DB39A06009E4013 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A46AA52DB39A06009E4013 /* NotificationTableViewCell.swift */; };
+		55B7B21B2D980E5200398BA0 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7B21A2D980E5200398BA0 /* ThemeData.swift */; };
+		55B7B21C2D980E5200398BA0 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7B21A2D980E5200398BA0 /* ThemeData.swift */; };
+		55B7B21D2D980E5200398BA0 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7B21A2D980E5200398BA0 /* ThemeData.swift */; };
 		720B93A12B9630A30043913B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720B93A02B9630A30043913B /* BadgeView.swift */; };
 		E22F623ED7C628F5ED8B647A /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
 		E2596048FB3FBD0D2CD866D9 /* Pods_EvolveGT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED6F50B7241B802B2342C77 /* Pods_EvolveGT_iOS.framework */; };
@@ -1099,6 +1111,10 @@
 		319831E3D81497F7AAFBB35C /* Pods-EvolveGT-QA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-QA.debug.xcconfig"; path = "Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA.debug.xcconfig"; sourceTree = "<group>"; };
 		45BD9641FEE51201C82C944D /* Pods-EvolveGT-QA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-QA.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA.release.xcconfig"; sourceTree = "<group>"; };
 		48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolveGT_UAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A46A9D2DB397D5009E4013 /* NotificationListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListResponse.swift; sourceTree = "<group>"; };
+		55A46AA12DB399CF009E4013 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		55A46AA52DB39A06009E4013 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		55B7B21A2D980E5200398BA0 /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		6CB5E4398F4AF2B0CAC4C0DB /* Pods-EvolveGT-UAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-UAT.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-UAT/Pods-EvolveGT-UAT.release.xcconfig"; sourceTree = "<group>"; };
 		6D74E853335F961FFC3C29D4 /* Pods-EvolveGT-iOS.sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-iOS.sample.xcconfig"; path = "Target Support Files/Pods-EvolveGT-iOS/Pods-EvolveGT-iOS.sample.xcconfig"; sourceTree = "<group>"; };
 		720B93A02B9630A30043913B /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
@@ -1264,6 +1280,8 @@
 				103345FD2460886100D5EED0 /* HomeViewController.swift */,
 				1033460524608D6400D5EED0 /* HomeDataInteractor.swift */,
 				720B93A02B9630A30043913B /* BadgeView.swift */,
+				55A46AA52DB39A06009E4013 /* NotificationTableViewCell.swift */,
+				55A46AA12DB399CF009E4013 /* NotificationViewController.swift */,
 				10A06AE0249557520051FF56 /* PolicyAgreementController.swift */,
 			);
 			path = Home;
@@ -1575,9 +1593,11 @@
 			isa = PBXGroup;
 			children = (
 				1039FE5324500F4C00190088 /* ETResponse.swift */,
+				55B7B21A2D980E5200398BA0 /* ThemeData.swift */,
 				10048F0E246D017300684A87 /* ShopItemResponse.swift */,
 				1039FE5C2450429600190088 /* LoginResponse.swift */,
 				1039FE8124509F3100190088 /* AdminResponses.swift */,
+				55A46A9D2DB397D5009E4013 /* NotificationListResponse.swift */,
 				1033460724608E3100D5EED0 /* UsreDataResponse.swift */,
 				1033660F247D3FED009AF19A /* CheckoutResponse.swift */,
 			);
@@ -2487,6 +2507,7 @@
 				10BDD05C245EC75700F05700 /* GuestViewController.swift in Sources */,
 				10FE935525023094002F3572 /* Ewaiver.swift in Sources */,
 				10048F50246FA63400684A87 /* String+Extenstion.swift in Sources */,
+				55B7B21C2D980E5200398BA0 /* ThemeData.swift in Sources */,
 				1033660C247D3E7D009AF19A /* CheckoutApi.swift in Sources */,
 				10A06AD22493C9A10051FF56 /* Country.swift in Sources */,
 				10FCA24F2451CE0500EA95C0 /* EventParticipantRequest.swift in Sources */,
@@ -2527,6 +2548,7 @@
 				103B26942499480000BB8CB9 /* ConfigAppStore.swift in Sources */,
 				10A551C5250B52350049C3DB /* WaiverDetails.swift in Sources */,
 				10FCA24D2451CAF500EA95C0 /* EventParticipantCell.swift in Sources */,
+				55A46AA82DB39A06009E4013 /* NotificationTableViewCell.swift in Sources */,
 				1039FE642450632900190088 /* AppEngine.swift in Sources */,
 				10A06AD42494BBC40051FF56 /* CoachDutyCell.swift in Sources */,
 				10A06AE824969A480051FF56 /* SettingsTableViewCells.swift in Sources */,
@@ -2562,6 +2584,7 @@
 				100A2A16245319D800EF2B9F /* UiColor+Extension.swift in Sources */,
 				10FCA24B2451CA7C00EA95C0 /* EventParticipantsController.swift in Sources */,
 				1033666C2483AE72009AF19A /* ArchiCardCell.swift in Sources */,
+				55A46A9E2DB397D5009E4013 /* NotificationListResponse.swift in Sources */,
 				10716FAA24706B870032C056 /* DividerView.swift in Sources */,
 				720B93A12B9630A30043913B /* BadgeView.swift in Sources */,
 				10BDD01C2459BFC700F05700 /* SignatureRequest.swift in Sources */,
@@ -2660,6 +2683,7 @@
 				10D6011E26305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				1039FE5D2450429600190088 /* LoginResponse.swift in Sources */,
 				10716FDB247BE20F0032C056 /* DropDownList.swift in Sources */,
+				55A46AA32DB399CF009E4013 /* NotificationViewController.swift in Sources */,
 				10048F30246EB0CF00684A87 /* EventDetailsController.swift in Sources */,
 				10A551A7250648AF0049C3DB /* RegistrationCells.swift in Sources */,
 				1033461A2461DB3400D5EED0 /* CreditHistoryCell.swift in Sources */,
@@ -2736,6 +2760,7 @@
 				103B2517249940BE00BB8CB9 /* SignatureUpdateRequest.swift in Sources */,
 				103B2518249940BE00BB8CB9 /* HomeViewController.swift in Sources */,
 				103B2519249940BE00BB8CB9 /* Membership.swift in Sources */,
+				55B7B21D2D980E5200398BA0 /* ThemeData.swift in Sources */,
 				103B251A249940BE00BB8CB9 /* ForgotPasswordInteractor.swift in Sources */,
 				103B251B249940BE00BB8CB9 /* MessageConstants.swift in Sources */,
 				10A551DC251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
@@ -2789,6 +2814,7 @@
 				103B2545249940BE00BB8CB9 /* BaseApiAdapter.swift in Sources */,
 				103B2546249940BE00BB8CB9 /* ChangePasswordViewController.swift in Sources */,
 				103B2547249940BE00BB8CB9 /* ProductDetailsController.swift in Sources */,
+				55A46AA62DB39A06009E4013 /* NotificationTableViewCell.swift in Sources */,
 				103B2549249940BE00BB8CB9 /* ReviewCartController.swift in Sources */,
 				103B254A249940BE00BB8CB9 /* ProductDetailsCells.swift in Sources */,
 				105D84F127A1463300B269AA /* ShowPassportViewController.swift in Sources */,
@@ -2824,6 +2850,7 @@
 				103B2561249940BE00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2562249940BE00BB8CB9 /* ApiConstsant.swift in Sources */,
 				103B2563249940BE00BB8CB9 /* UpgradeSkillRequest.swift in Sources */,
+				55A46A9F2DB397D5009E4013 /* NotificationListResponse.swift in Sources */,
 				103B26B4249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */,
 				10D6013F2633F5460097D180 /* EventRaceClass.swift in Sources */,
 				103B2564249940BE00BB8CB9 /* ShopsItemRequest.swift in Sources */,
@@ -2838,6 +2865,7 @@
 				103B256C249940BE00BB8CB9 /* AppDelegate.swift in Sources */,
 				103B256D249940BE00BB8CB9 /* EventParticipant.swift in Sources */,
 				103B256E249940BE00BB8CB9 /* EmptyCell.swift in Sources */,
+				55A46AA42DB399CF009E4013 /* NotificationViewController.swift in Sources */,
 				103B256F249940BE00BB8CB9 /* PaymentViewController.swift in Sources */,
 				104BDFDB24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
 				109B4BBA2501285A00E45375 /* EWaiverViewController.swift in Sources */,
@@ -2953,6 +2981,7 @@
 				103B25EE249940CC00BB8CB9 /* HomeViewController.swift in Sources */,
 				103B25EF249940CC00BB8CB9 /* Membership.swift in Sources */,
 				103B25F0249940CC00BB8CB9 /* ForgotPasswordInteractor.swift in Sources */,
+				55B7B21B2D980E5200398BA0 /* ThemeData.swift in Sources */,
 				103B25F1249940CC00BB8CB9 /* MessageConstants.swift in Sources */,
 				103B25F2249940CC00BB8CB9 /* GiftCardDetailsViewController.swift in Sources */,
 				10A551DD251779CC0049C3DB /* ReferFriendRequest.swift in Sources */,
@@ -3006,6 +3035,7 @@
 				103B261B249940CC00BB8CB9 /* BaseApiAdapter.swift in Sources */,
 				103B261C249940CC00BB8CB9 /* ChangePasswordViewController.swift in Sources */,
 				103B261D249940CC00BB8CB9 /* ProductDetailsController.swift in Sources */,
+				55A46AA72DB39A06009E4013 /* NotificationTableViewCell.swift in Sources */,
 				103B261F249940CC00BB8CB9 /* ReviewCartController.swift in Sources */,
 				103B2620249940CC00BB8CB9 /* ProductDetailsCells.swift in Sources */,
 				105D84F227A1463300B269AA /* ShowPassportViewController.swift in Sources */,
@@ -3041,6 +3071,7 @@
 				103B2637249940CC00BB8CB9 /* ProductDetails.swift in Sources */,
 				103B2638249940CC00BB8CB9 /* ApiConstsant.swift in Sources */,
 				103B2639249940CC00BB8CB9 /* UpgradeSkillRequest.swift in Sources */,
+				55A46AA02DB397D5009E4013 /* NotificationListResponse.swift in Sources */,
 				103B26B5249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */,
 				10D601402633F5460097D180 /* EventRaceClass.swift in Sources */,
 				103B263A249940CC00BB8CB9 /* ShopsItemRequest.swift in Sources */,
@@ -3055,6 +3086,7 @@
 				103B2642249940CC00BB8CB9 /* AppDelegate.swift in Sources */,
 				103B2643249940CC00BB8CB9 /* EventParticipant.swift in Sources */,
 				103B2644249940CC00BB8CB9 /* EmptyCell.swift in Sources */,
+				55A46AA22DB399CF009E4013 /* NotificationViewController.swift in Sources */,
 				103B2645249940CC00BB8CB9 /* PaymentViewController.swift in Sources */,
 				104BDFDC24AAF80C00E198FF /* ShopSlidingTabController.swift in Sources */,
 				109B4BBB2501285A00E45375 /* EWaiverViewController.swift in Sources */,
@@ -3202,7 +3234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3257,7 +3289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -3273,8 +3305,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -3282,9 +3315,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asra.uat;
+				MARKETING_VERSION = 2.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
 				PRODUCT_NAME = EvolveGT;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3298,7 +3332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EvolveGT-iOS/EvolveGT-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = M3P4BH4498;
 				INFOPLIST_FILE = "EvolveGT-iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = EvolveGT;
@@ -3307,7 +3341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

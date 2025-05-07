@@ -15,6 +15,12 @@ protocol HomeViewDelegate{
     func didFetchCoachDuties(assignedEvents : AssignedDuty)
     
 }
+
+protocol NotificationDelegate {
+    func didGetNotificaitonData(notificationData : NotificationListResponse?)
+    func didFailToGetNotificaitonData()
+}
+
 protocol AgreementAcceptanceDelegate{
     func requestToAcceptPolicies(agreement : AgreementStatus)
     func userHasAcceptedConditions()
@@ -25,6 +31,8 @@ class HomeDataInteractor : BaseInteractor{
     var agreementStatusDelegate : AgreementAcceptanceDelegate?
     var logoutAPIResponseDelegate : LogoutAPIResponseDelegate?
     var profileData = ProfileData()
+    var notificationDelegate : NotificationDelegate?
+
     
     func fetchUserDetails() {
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingProfileData)
@@ -57,6 +65,38 @@ class HomeDataInteractor : BaseInteractor{
             }
         }
         profileApi.fetchUserDetails(userId: AppEngine.sharedInstance.userID)
+    }
+    
+    func getNotificationList(page: Int) {
+        delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingNotificationList)
+        let profileApi = ProfileApi()
+        profileApi.setCompletionHandler{ response, error in
+            
+            if error == nil{
+                Log.i("Notification list fetch Success - ")
+                if let notificationList = self.decodeFromJson(response!, modelType: NotificationListResponse.self){
+                    self.delegate?.hideEmptyPageError()
+                    if notificationList.results == nil{
+                        self.delegate?.hideProgressIndicator()
+                        self.delegate?.showEmptyPageError(message: ErrorMessages.genericError)
+                        self.notificationDelegate?.didFailToGetNotificaitonData()
+                    }else{
+                        self.notificationDelegate?.didGetNotificaitonData(notificationData: notificationList)
+                    }
+                }else{
+                    self.delegate?.hideProgressIndicator()
+                    self.notificationDelegate?.didFailToGetNotificaitonData()
+                    Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                    self.delegate?.showEmptyPageError(message: error?.errorMessage ?? "")
+                }
+            }else{
+                self.delegate?.hideProgressIndicator()
+                self.notificationDelegate?.didFailToGetNotificaitonData()
+                Log.i("Api Error - \(String(describing: error?.errorMessage)) ")
+                self.delegate?.showEmptyPageError(message: error!.errorMessage)
+            }
+        }
+        profileApi.getNotificationList(page_number: page)
     }
     
     func userLogOut() {

@@ -176,7 +176,22 @@ extension UIViewController{
             //            let navigationBarAppearace = UINavigationBar.appearance()
             //            navigationBarAppearace.barTintColor = color
             
+            
+            
             vc.navigationController?.navigationBar.barTintColor = color
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = color
+
+            // Set title text attributes
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.white
+            ]
+            appearance.titleTextAttributes = titleTextAttributes
+
+            vc.navigationController?.navigationBar.standardAppearance = appearance
+            vc.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+      
         }
         func setScreenTitle(title: String)
         {

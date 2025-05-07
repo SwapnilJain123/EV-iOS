@@ -4,7 +4,8 @@
 //
 //  Created by Subair Ariyil on 21/04/20.
 //  Copyright © 2020 YaraTech. All rights reserved.
-//
+//  com.asra.uat -- dev
+// com.asra.appstore
 
 import UIKit
 import IQKeyboardManagerSwift
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var categories: [ProductCategory] = []
     var isCameraOpen: Bool = false
+    let interactor = HomeDataInteractor()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -61,6 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    func applicationDidBecomeActive(_ application: UIApplication) {
 //        checkForUpdateAndShowAlert()
 //    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Pass APNs token to Firebase
+        Messaging.messaging().apnsToken = deviceToken
+        print("APNs device token: \(deviceToken.map { String(format: "%02.2hhx", $0) }.joined())")
+    }
 
     func checkForUpdateAndShowAlert() {
         checkForUpdate { isUpdateAvailable in
@@ -93,13 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         //Deepak
-        Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-            } else if let token = token {
-                print("Remote instance ID token: \(token)")
-            }
-        }
+        messagingToken()
 
         //get application instance ID
 //        InstanceID.instanceID().instanceID { (result, error) in
@@ -255,7 +258,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
         print(userInfo)
         
         // Change this to your preferred presentation option
-        completionHandler([.alert,.sound])
+        if #available(iOS 14.0, *) {
+            completionHandler([.banner, .sound]) // Use .banner instead of .alert
+        } else {
+            completionHandler([.alert, .sound])
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -285,7 +292,24 @@ extension AppDelegate:MessagingDelegate{
         
         UserDefaults.standard.set(fcmToken, forKey: AppConstants.DEVICE_TOKEN)
         UserDefaults.standard.synchronize()
-        
+        interactor.updateDeviceToken()
+
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        messagingToken()
+    }
+    
+    func messagingToken() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                    print("Error fetching remote instance ID: \(error)")
+                } else if let token = token {
+                    print("Firebase registration token (didBecomeActive): \(token)")
+                }
+            }
+        }
     }
     
 }

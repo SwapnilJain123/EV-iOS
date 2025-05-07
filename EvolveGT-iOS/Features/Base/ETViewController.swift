@@ -76,14 +76,13 @@ class ETViewController : UIViewController{
         selectionMenu.cellSelectionStyle = .checkbox
         selectionMenu.title = title
         selectionMenu.tableView?.accessibilityIdentifier = "SelectionMenuTableView"
-        
         selectionMenu.show(style: .present, from: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.ext.removeLoadingIndicatorImmediately()
         super.viewWillDisappear(animated)
-        self.ext.showNavbar()
+       // self.ext.showNavbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {

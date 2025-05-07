@@ -26,6 +26,8 @@ class CartListController : TabbedViewController, CartListDelegate{
         cartListView.dataSource = self
         cartListView.delegate = self
         labelTotal.textColor = .getAppThemeColor()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.getAppThemeColor()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

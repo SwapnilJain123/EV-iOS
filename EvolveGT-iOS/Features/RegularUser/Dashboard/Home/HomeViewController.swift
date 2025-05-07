@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SideMenuSwift
+import FirebaseMessaging
 
 class HomeViewController: TabbedViewController{
     
@@ -37,6 +38,22 @@ class HomeViewController: TabbedViewController{
         profileView.estimatedRowHeight = 300
         interactor.delegate = self
         interactor.homeViewDelegate = self
+        messagingToken()
+    }
+    
+    func messagingToken() {
+        DispatchQueue.main.async() {
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                    print("Error fetching remote instance ID: \(error)")
+                } else if let token = token {
+                    print("Firebase registration token (didBecomeActive): \(token)")
+                    UserDefaults.standard.set(token, forKey: AppConstants.DEVICE_TOKEN)
+                    UserDefaults.standard.synchronize()
+                    self.interactor.updateDeviceToken()
+                }
+            }
+        }
     }
     
 //       private func createBadgeView() -> UIView {
@@ -263,15 +280,22 @@ extension HomeViewController: HomeViewDelegate{
     func didFetchDetails(profileData: ProfileData?, sections: [HomeSection]) {
         self.profileData = profileData
         self.sections = sections
+
+        // First Button (Cart)
         
-//        let rightBarButton = UIButton(type: .custom)
-//        rightBarButton.setImage(UIImage(named: "cart_a"), for: .normal)
-//        rightBarButton.addTarget(self, action: #selector(cartAction), for: .touchUpInside)
-//        badgeView = createBadgeView()
-//        rightBarButton.addSubview(badgeView)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
-//        setBadgeCount(count: AppEngine.sharedInstance.cartListCount)
+        let notificationBtn = UIButton(type: .custom)
+        notificationBtn.setImage(UIImage(named: "notification"), for: .normal)
+        notificationBtn.addTarget(self, action: #selector(notificationList), for: .touchUpInside)
+
+        let secondBarButtonItem = UIBarButtonItem(customView: notificationBtn)
+
+        navigationItem.rightBarButtonItems = [secondBarButtonItem]
         profileView.reloadData()
+    }
+    
+    @objc func notificationList() {
+        let vc = self.ext.getViewController(storyBoard: "Home", VCIdentifier: "NotificationViewController") as! NotificationViewController
+        self.ext.pushViewController(viewController: vc)
     }
     
 }

@@ -77,7 +77,16 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
         if verifiedEmailID != "", (verifiedEmailID == self.interactor.signupRequest.email ?? "") && isEmailVerified {
             navigateToSecondScreen()
         } else {
-            interactor.otpSendForEmailVerification()
+            interactor.checkEmailVerification { result in
+                switch result {
+                case .success(let themeData):
+                    print(themeData.eEmailVerification ?? "")
+                    self.checkAndShowOTPVerificationView(isEmailVerfiy: themeData.eEmailVerification ?? "0")
+                case .failure(let error):
+                    print("Failed to fetch theme: \(error.localizedDescription)")
+                }
+            }
+            //interactor.otpSendForEmailVerification()
         }
     }
     
@@ -98,6 +107,14 @@ class FirstRegisterViewController:ETViewController, AEOTPTextFieldDelegate {
     @IBAction func resendOTPPressed(_ sender: UIButton) {
         self.OTPVerificationField.clearOTP()
         interactor.otpSendForEmailVerification()
+    }
+    
+    func checkAndShowOTPVerificationView(isEmailVerfiy:String){
+        if isEmailVerfiy == "1" {
+            interactor.otpSendForEmailVerification()
+        } else {
+            self.navigateToSecondScreen()
+        }
     }
 
     func navigateToSecondScreen() {

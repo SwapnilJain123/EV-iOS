@@ -24,3 +24,10 @@ struct verifyOTPResponse: Decodable{
     var status: Int?
     var msg: String?
 }
+
+struct ThemeResponse: Decodable{
+    var status: Int?
+    var msg: String?
+    var result: ThemeData
+}
+
