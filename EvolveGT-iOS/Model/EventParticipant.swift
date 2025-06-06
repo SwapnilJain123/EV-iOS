@@ -101,10 +101,12 @@ struct Rental: Codable {
 struct MotoClass: Codable {
     var raceName: String?
     var raceClasses: [RaceClass]?
+    var bikes: [[String:String]]?
     
     enum CodingKeys: String, CodingKey {
         case raceName = "race_name"
         case raceClasses = "race_classes"
+        case bikes = "bikes"
     }
 }
 

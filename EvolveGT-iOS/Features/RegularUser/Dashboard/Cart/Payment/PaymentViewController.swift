@@ -50,6 +50,9 @@ class PaymentViewController : ETViewController, CartListDelegate{
     @IBOutlet weak var webviewForPayment: WKWebView!
     @IBOutlet weak var labelTotalPaymentForWebView: UILabel!
     
+    @IBOutlet weak var cbAcceptTermsAndConditions: CheckboxButton!
+
+    
     var interactor: CartInteractor?
     var webView: WKWebView!
     var paymentMethod = PaymentMethod.paypal
@@ -69,6 +72,9 @@ class PaymentViewController : ETViewController, CartListDelegate{
         self.webviewForPayment.superview?.frame = self.view.bounds
         self.view.addSubview(self.webviewForPayment.superview ?? view)
         self.webviewForPayment.superview?.isHidden = true
+        
+        cbAcceptTermsAndConditions.delegate = self
+        cbAcceptTermsAndConditions.applyCheckboxTheme()
     }
     
     func populateUi(){
@@ -97,6 +103,7 @@ class PaymentViewController : ETViewController, CartListDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         btnPlaceOrder.applyColorTheme()
+        btnPlaceOrder.isEnabled = false
         
         labelsubTotal.textColor = .getAppThemeColor()
         labelTotal.textColor = .getAppThemeColor()
@@ -160,6 +167,13 @@ class PaymentViewController : ETViewController, CartListDelegate{
                 }
             }
         }
+    }
+    
+    @IBAction func didPressCancellationPolicy(_ sender: Any) {
+        let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
+        vc.url = CheckoutApiConstants.CANCELLATIONPOLICY
+        vc.screenTitle = ScreenTitle.TITLE_CANCELLATIONPOLICY
+        self.ext.pushViewController(viewController: vc)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -249,5 +263,15 @@ extension PaymentViewController: UIWebViewDelegate, WKUIDelegate, WKNavigationDe
             UIApplication.shared.open(navigationAction.request.url!)
         }
         return nil
+    }
+}
+
+extension PaymentViewController : CheckboxButtonDelegate{
+    func chechboxButtonDidSelect(_ button: CheckboxButton) {
+        btnPlaceOrder.isEnabled = true
+    }
+    
+    func chechboxButtonDidDeselect(_ button: CheckboxButton) {
+        btnPlaceOrder.isEnabled = false
     }
 }

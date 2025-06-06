@@ -153,6 +153,7 @@ extension EventDetailsController: EventDetailsDelegate{
             self.sections = sections
         }
         self.eventDetails = eventDetails
+        
         self.eventDetails?.isMotoEvent = isMotoEvent
         
         self.eventDetailsView.reloadData()
@@ -188,7 +189,7 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         case .trackDays:
             return eventDetails?.trackDays?.count ?? 0
         case .transponder:
-            return 1
+            return 0
         case .basic:
             return 1
         case .rentals:
@@ -200,7 +201,6 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
         case .mrlLicence:
             return 1
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -234,6 +234,7 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "EventClassCell", for: indexPath as IndexPath) as! EventClassCell
                 let eventClass = eventDetails!.eventClasses![indexPath.section - 1]
                 let raceClass = eventClass.raceClasses![indexPath.row - 1]
+                cell.setupBikePickerView(bikeData: eventDetails!.bikes ?? [])
                 cell.showData(eventClass: eventClass, raceClass: raceClass, indexPath: indexPath)
                 cell.delegate = self
                 return cell
@@ -243,12 +244,14 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
             cell.showData(racerStatus: eventDetails?.racerStatus ?? "", skillRegistered: eventDetails?.registeredSkill ?? "")
             cell.delegate = self
             return cell
-        } else if self.sections[indexPath.section] == .transponder{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TransponderCell", for: indexPath as IndexPath) as! TransponderCell
-            cell.showData(transponderNumber: eventDetails?.transponderNo ?? "", bikeNumber: eventDetails?.bikeNo ?? "",  indexPath: indexPath)
-            cell.delegate = self
-            return cell
-        }else if self.sections[indexPath.section] == .trackDays{
+        }
+//        else if self.sections[indexPath.section] == .transponder{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "TransponderCell", for: indexPath as IndexPath) as! TransponderCell
+//            cell.showData(transponderNumber: eventDetails?.transponderNo ?? "", bikeNumber: eventDetails?.bikeNo ?? "",  indexPath: indexPath)
+//            cell.delegate = self
+//            return cell
+//        }
+        else if self.sections[indexPath.section] == .trackDays{
             let cell = tableView.dequeueReusableCell(withIdentifier: TrackDayCell.identifier, for: indexPath as IndexPath) as! TrackDayCell
             cell.trackDay = eventDetails?.trackDays![indexPath.row]
             cell.delegate = self
@@ -287,9 +290,11 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
             return ""
         }else if sections[section] == .skillSelection{
             return " Racer Status"
-        }else if sections[section] == .transponder{
-            return " Transponder and Bike Number"
-        }else if sections[section] == .trackDays{
+        }
+//        else if sections[section] == .transponder{
+//            return " Transponder and Bike Number"
+//        }
+        else if sections[section] == .trackDays{
             return " Want to purchase the track day for this date?"
         }else if sections[section] == .mrlLicence{
             return " MRL Licence Required."
@@ -331,7 +336,7 @@ extension EventDetailsController: RentalDelegate, EventClassCellDelegate, SkillL
         if(eventClass.hasSpecialClass() && !(raceClass.specialCase ?? false)){
             eventClass.validateSpecialCase(raceClass);
         }
-       
+        print(indexPath.section)
         self.eventDetailsView.reloadSections([0, indexPath.section], with: .none)
     }
     

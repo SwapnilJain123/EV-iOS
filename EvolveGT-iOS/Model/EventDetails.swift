@@ -13,6 +13,7 @@ class EventDetails: Codable {
     var eventBanner: String?
     var price, eventType, stock: String?
     var eventClasses: [EventClass]?
+    var bikes:[BikesClass]?
     var hasRaceLicense, skillEligible: Bool?
     var eventID: Int?
     var trackDays: [Event]?
@@ -127,6 +128,7 @@ class EventDetails: Codable {
         case eventType = "event_type"
         case stock
         case eventClasses = "classes"
+        case bikes
         case hasRaceLicense = "has_race_license"
         case skillEligible = "skill_eligible"
         case trackDays

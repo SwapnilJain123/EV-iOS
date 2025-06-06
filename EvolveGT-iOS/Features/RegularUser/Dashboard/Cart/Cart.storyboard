@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fUx-wy-YKp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fUx-wy-YKp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1113,6 +1113,45 @@
                                     <constraint firstAttribute="height" constant="210" id="vNv-eC-nMr"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgi-8I-lqK">
+                                <rect key="frame" x="20" y="732" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXH-wO-tJb" userLabel="CheckBox" customClass="CheckboxButton" customModule="MBRadioCheckboxButton">
+                                        <rect key="frame" x="0.0" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="seP-54-qeo"/>
+                                            <constraint firstAttribute="width" constant="30" id="uVY-WM-RTE"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree the " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FD-hS-3MQ">
+                                        <rect key="frame" x="30" y="10" width="77" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-SY-2Eq">
+                                        <rect key="frame" x="110" y="10" width="264" height="30"/>
+                                        <state key="normal" title="Cancellation Policy">
+                                            <color key="titleColor" name="ColorEV"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressCancellationPolicy:" destination="f15-md-yeG" eventType="touchUpInside" id="G7B-1k-uDN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="i9G-SY-2Eq" firstAttribute="top" secondItem="7FD-hS-3MQ" secondAttribute="top" id="0w3-rh-Jsi"/>
+                                    <constraint firstItem="aXH-wO-tJb" firstAttribute="leading" secondItem="bgi-8I-lqK" secondAttribute="leading" id="1j8-W6-K8r"/>
+                                    <constraint firstAttribute="height" constant="50" id="6Ia-zd-gGF"/>
+                                    <constraint firstItem="i9G-SY-2Eq" firstAttribute="leading" secondItem="7FD-hS-3MQ" secondAttribute="trailing" constant="3" id="FSt-Lw-eMk"/>
+                                    <constraint firstAttribute="trailing" secondItem="i9G-SY-2Eq" secondAttribute="trailing" id="NQY-Bw-YNA"/>
+                                    <constraint firstItem="7FD-hS-3MQ" firstAttribute="centerY" secondItem="aXH-wO-tJb" secondAttribute="centerY" id="OsT-4r-sV5"/>
+                                    <constraint firstItem="7FD-hS-3MQ" firstAttribute="leading" secondItem="aXH-wO-tJb" secondAttribute="trailing" id="QXF-zj-HV9"/>
+                                    <constraint firstItem="i9G-SY-2Eq" firstAttribute="bottom" secondItem="7FD-hS-3MQ" secondAttribute="bottom" id="hR5-4V-uOU"/>
+                                    <constraint firstItem="aXH-wO-tJb" firstAttribute="centerY" secondItem="bgi-8I-lqK" secondAttribute="centerY" id="t0K-bE-Kmv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tVH-6Q-rAY"/>
                         <color key="backgroundColor" name="RootBackGround"/>
@@ -1120,9 +1159,12 @@
                             <constraint firstItem="2et-Na-RWH" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" constant="10" id="5y6-th-nu1"/>
                             <constraint firstItem="5GZ-Xh-osq" firstAttribute="trailing" secondItem="2et-Na-RWH" secondAttribute="trailing" id="7Tc-xp-hAt"/>
                             <constraint firstItem="5GZ-Xh-osq" firstAttribute="leading" secondItem="2et-Na-RWH" secondAttribute="leading" id="9qo-nd-XAG"/>
+                            <constraint firstItem="Pst-4z-Zeb" firstAttribute="top" secondItem="bgi-8I-lqK" secondAttribute="bottom" constant="15" id="DaU-R1-v5u"/>
                             <constraint firstItem="e8k-Hz-Rxv" firstAttribute="trailing" secondItem="5GZ-Xh-osq" secondAttribute="trailing" id="F9j-fv-XLn"/>
                             <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="JKp-tM-OQK" secondAttribute="trailing" id="LBg-UM-AXf"/>
+                            <constraint firstItem="tVH-6Q-rAY" firstAttribute="trailing" secondItem="bgi-8I-lqK" secondAttribute="trailing" constant="20" id="O0v-av-r8g"/>
                             <constraint firstItem="JKp-tM-OQK" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" id="P2g-GN-85N"/>
+                            <constraint firstItem="bgi-8I-lqK" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" constant="20" id="Pby-Ki-xVl"/>
                             <constraint firstItem="Pst-4z-Zeb" firstAttribute="leading" secondItem="tVH-6Q-rAY" secondAttribute="leading" constant="25" id="RBh-ek-Qfq"/>
                             <constraint firstItem="JKp-tM-OQK" firstAttribute="top" secondItem="tVH-6Q-rAY" secondAttribute="top" id="WVD-It-Xf8"/>
                             <constraint firstItem="2et-Na-RWH" firstAttribute="top" secondItem="JKp-tM-OQK" secondAttribute="bottom" constant="8" id="Ydb-fc-fuf"/>
@@ -1139,6 +1181,7 @@
                         <outlet property="btnPlaceOrder" destination="Pst-4z-Zeb" id="waV-HW-vqU"/>
                         <outlet property="btnReview" destination="hDM-Xe-AF9" id="hf8-5K-PEu"/>
                         <outlet property="btnWallet" destination="AV4-SQ-Nh0" id="PZx-TX-Vsx"/>
+                        <outlet property="cbAcceptTermsAndConditions" destination="aXH-wO-tJb" id="8DP-5H-KNa"/>
                         <outlet property="labelCoupon" destination="dXl-IK-ezd" id="hfQ-Fr-oGv"/>
                         <outlet property="labelCouponApplied" destination="ILf-aE-I1Y" id="Xo2-dG-oVS"/>
                         <outlet property="labelTotal" destination="eL6-50-HRW" id="trg-Sz-v2Y"/>
@@ -1388,17 +1431,6 @@
             <point key="canvasLocation" x="1989.8550724637682" y="56.919642857142854"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="AV4-SQ-Nh0">
-            <size key="intrinsicContentSize" width="43" height="30"/>
-        </designable>
-        <designable name="OHQ-km-vRD">
-            <size key="intrinsicContentSize" width="206" height="30"/>
-        </designable>
-        <designable name="qsi-bT-aIc">
-            <size key="intrinsicContentSize" width="32" height="34"/>
-        </designable>
-    </designables>
     <resources>
         <image name="cartTab" width="32" height="32"/>
         <image name="delete" width="30" height="30"/>
@@ -1428,10 +1460,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

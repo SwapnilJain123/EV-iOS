@@ -176,7 +176,6 @@ class CartInteractor: BaseInteractor{
         self.cartReviewDelegate?.didChangeTotal()
     }
     
-    
     func computeFinalPayment() -> Double{
         computeTotals()
         let walletBalance = AppEngine.sharedInstance.walletBalance
@@ -184,8 +183,10 @@ class CartInteractor: BaseInteractor{
         if walletBalance > 0 && walletBalance <= dueAmount{
             walletApplied = walletBalance
             dueAmount = dueAmount - walletBalance
-            
-        }else{
+        } else if walletBalance < 0 {
+            walletApplied = walletBalance
+            dueAmount = dueAmount - walletBalance
+        } else {
             walletApplied = 0
         }
         return dueAmount

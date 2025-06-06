@@ -102,9 +102,10 @@ class EventRaceClass: Codable {
     var specialCase: Bool?
     var classPrice: Int?
     var bikeData: String?
+    var bikeDataValue: String?
     var checked: Bool?
-    
     var hasError = false
+    var soldOut: Bool?
 
     
     enum CodingKeys: String, CodingKey {
@@ -114,5 +115,14 @@ class EventRaceClass: Codable {
         case classPrice = "class_price"
         case bikeData = "bike_data"
         case checked
+        case soldOut = "sold_out"
+    }
+}
+
+class BikesClass: Codable {
+    var key, value: String?
+    enum CodingKeys: String, CodingKey {
+        case key
+        case value
     }
 }

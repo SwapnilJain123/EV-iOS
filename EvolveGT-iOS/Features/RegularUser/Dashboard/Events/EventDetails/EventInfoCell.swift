@@ -21,13 +21,13 @@ class EventInfoCell: UITableViewCell{
     @IBOutlet weak var totalPrice: UILabel!
     
     func applyTheme() {
-        if !AppEngine.sharedInstance.isEvApp(){
-            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
-            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
-        }else{
+//        if !AppEngine.sharedInstance.isEvApp(){
+//            roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_LITE)
+//            totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.GREEN_EV_DARK)
+//        }else{
             roleBasedPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_LITE)
             totalPrice.backgroundColor = UIColor.init(hexFromString: UIColor.BLUE_MOTO_DARK)
-        }
+      //  }
     }
     
     func showData(eventDetails : EventDetails?){
@@ -135,17 +135,13 @@ class RentItemCell : UITableViewCell, CheckboxButtonDelegate, RadioButtonDelegat
         }
         
     }
-    
-    
-    
-    
 }
 
 protocol EventClassCellDelegate{
     func didChangeEventClassSelection(eventClass: EventClass, raceClass : EventRaceClass, indexPath: IndexPath, checkedStatus : Bool)
 }
 
-class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDelegate{
+class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var tfBikeData: SkyFloatingLabelTextField!
@@ -162,12 +158,15 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDele
     var delegate : EventClassCellDelegate?
     
     @IBOutlet weak var selectionBox: CheckboxButton!
+    @IBOutlet weak var lockImage: UIImageView!
     
     @IBOutlet weak var eventClassTitle: UILabel!
     
     var indexPath: IndexPath?
     var raceClass : EventRaceClass?
     var eventClass: EventClass = EventClass()
+    var bikes: [BikesClass] = []
+    var selectedBike :BikesClass?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -178,10 +177,18 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDele
         
         if textField == tfBikeData{
             
-            if(textField.text == raceClass?.bikeData ?? ""){
-                
+            if(textField.text == ""){
+                if let picker = tfBikeData.inputView as? UIPickerView {
+                    let selectedRow = picker.selectedRow(inComponent: 0)
+                    selectedBike = self.bikes[selectedRow]
+                    tfBikeData.text = selectedBike?.value
+                    self.raceClass?.bikeData = selectedBike?.key
+                    _ = eventClass.validateRaceClasses()
+                    delegate?.didChangeEventClassSelection(eventClass: eventClass, raceClass: raceClass!, indexPath: indexPath!, checkedStatus: true)
+                }
             }else{
-                self.raceClass?.bikeData = tfBikeData.text
+                print("selectedBike?.key : \(String(describing: selectedBike?.key))")
+                self.raceClass?.bikeData = selectedBike?.key
                 _ = self.eventClass.validateRaceClasses()
                 
                 self.delegate?.didChangeEventClassSelection(eventClass: self.eventClass, raceClass: self.raceClass!, indexPath: self.indexPath!, checkedStatus: true)
@@ -196,19 +203,64 @@ class EventClassCell: UITableViewCell , CheckboxButtonDelegate,  UITextFieldDele
         
         eventClassTitle.text = raceClass.className
         price.text = "$ \(raceClass.classPrice ?? 0)"
+        
         tfBikeData.text = raceClass.bikeData
+        print("tfbikedata: \(String(describing: tfBikeData.text))")
         selectionBox.delegate = nil
         selectionBox.isEnabled = !(raceClass.specialCase ?? false) || (raceClass.specialCase ?? false && eventClass.canSelectSpecialClass())
         selectionBox.isOn = raceClass.checked ?? false
-        selectionBox.applyCheckboxTheme()
+       
         selectionBox.delegate = self
         tfBikeData.isEnabled = selectionBox.isOn
+        if raceClass.soldOut ?? false {
+            lockImage.isHidden = false
+            selectionBox.isHidden = true // Remove borders if added before
+            selectionBox.isUserInteractionEnabled = false
+        } else {
+            lockImage.isHidden = true
+            selectionBox.isHidden = false
+            selectionBox.isUserInteractionEnabled = true
+            selectionBox.applyCheckboxTheme()
+        }
+       
+        
         if raceClass.hasError{
             tfBikeData.errorMessage = "Bike data required."
         }
-        
-        
     }
+
+    // MARK: - UIPickerView for tfBikeData
+    func setupBikePickerView(bikeData:[BikesClass]) {
+        self.bikes = bikeData
+        let bikePicker = UIPickerView()
+        bikePicker.dataSource = self
+        bikePicker.delegate = self
+        tfBikeData.inputView = bikePicker
+    }
+
+    // MARK: - UIPickerViewDataSource
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.bikes.count
+    }
+
+    // MARK: - UIPickerViewDelegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.bikes[row].value
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedBike = self.bikes[row]
+        tfBikeData.text = self.bikes[row].value
+        self.raceClass?.bikeData = selectedBike?.key
+      //  _ = eventClass.validateRaceClasses()
+      //  delegate?.didChangeEventClassSelection(eventClass: eventClass, raceClass: raceClass!, indexPath: indexPath!, checkedStatus: true)
+    }
+        
+        
 }
 
 
@@ -349,8 +401,7 @@ class TrackDayCell : UITableViewCell{
             if !AppEngine.sharedInstance.isEvApp(){
                 addToCartButton?.setImage(UIImage(named: "private-event-green"), for: .normal)
             }else{
-                addToCartButton?.setImage(UIImage(named: "private-event-blue"), for: .normal)
-                
+                addToCartButton?.setImage(UIImage(named: "private-event-blue"), for: .normal)                
             }
         }else if trackDay?.external != nil{
             if !AppEngine.sharedInstance.isEvApp(){

@@ -25,10 +25,10 @@ extension UIColor {
 //    static let GREEN_EV_DARK = "#08A43A"
 //    static let BLUE_MOTO_LITE = "#7189E7"
 //    static let BLUE_MOTO_DARK = "#3853C2"
-    static let GREEN_EV_LITE = "#7189E7"
-    static let GREEN_EV_DARK = "#3853C2"
-    static let BLUE_MOTO_LITE = "#11C248"
-    static let BLUE_MOTO_DARK = "#08A43A"
+//    static let GREEN_EV_LITE = "#7189E7"
+//    static let GREEN_EV_DARK = "#3853C2"
+    static let BLUE_MOTO_LITE = "#376cde"
+    static let BLUE_MOTO_DARK = "#3750de"
 
     private static let BACKGROUND_GRAY = "#787878"
     
