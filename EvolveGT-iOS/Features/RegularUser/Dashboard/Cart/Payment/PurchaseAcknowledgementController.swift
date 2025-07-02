@@ -30,7 +30,9 @@ class PostPurchaseController : ETViewController{
         labelAmount.text = String(interactor?.total ?? 0).formatToAmount()
         labelDate.text = String.getCurrentDate(format: .FORMAT_DD_MMM_YYYY)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action:#selector(self.didPressDismissButton))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action:#selector(self.didPressDismissButton))
+        
+       
     }
     
     @objc func didPressDismissButton(){

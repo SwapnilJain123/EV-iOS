@@ -212,7 +212,6 @@ extension UIViewController{
         }
         
         func pushViewController(viewController : UIViewController){
-            
             vc.navigationController?.pushViewController(viewController, animated: true)
         }
         

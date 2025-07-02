@@ -233,6 +233,24 @@ class ProfileInfoCell: UITableViewCell, RadioButtonDelegate, UITextFieldDelegate
     }
 }
 
+class BikeDataCell: UITableViewCell {
+    
+    static let identifier = "BikeDataCell"
+
+    @IBOutlet weak var makeTextField: UILabel!
+    @IBOutlet weak var modelTextField: UILabel!
+    @IBOutlet weak var yearTextField: UILabel!
+    @IBOutlet weak var ccTextField: UILabel!
+    @IBOutlet weak var transponderTextField: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
+
+    var deleteAction: (() -> Void)?
+
+    @IBAction func deleteTapped(_ sender: UIButton) {
+        deleteAction?()
+    }
+}
+
 class MotorCycleInfoCell: UITableViewCell, UITextFieldDelegate{
     static let identifier = "MotorCycleInfoCell"
     
@@ -280,6 +298,9 @@ class MotorCycleInfoCell: UITableViewCell, UITextFieldDelegate{
         }
     }
 }
+
+
+
 class AddressCell : UITableViewCell{
     static let identifier = "AddressCell"
     
@@ -622,5 +643,36 @@ class EmergencyContactCell : UITableViewCell, UITextFieldDelegate{
     @IBAction func didPressRelationShipButton(_ sender: Any) {
         labelRelationShip.textColor = .darkGray
         relationshupDropDown.showList()
+    }
+}
+
+
+import UIKit
+
+class EvolveGTInfoCell: UITableViewCell {
+
+    static let identifier = "EvolveGTInfoCell"
+
+    // Grid fields
+    @IBOutlet weak var expertStatusTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var transponderTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var raceNumberTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var nationalityTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var amaNumberTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var amaExpiryTextField: SkyFloatingLabelTextField!
+
+    // Sponsor and Team fields
+    @IBOutlet weak var sponsorTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var teamNamesTextView: UITextView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        teamNamesTextView.layer.borderWidth = 1
+        teamNamesTextView.layer.cornerRadius = 4
+        teamNamesTextView.layer.borderColor = UIColor.lightGray.cgColor
+    }
+
+    func showData(user: UserDetails?) {
+        
     }
 }

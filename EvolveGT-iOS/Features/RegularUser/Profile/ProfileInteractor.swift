@@ -207,9 +207,12 @@ enum ProfileSections : Int, CaseIterable{
     case pic
     case info
     case motorcycle
+    case bike
     case mailingAddress
     case billingAddress
     case skillLevel
     case moto
     case emergency
+    case evolvegtinfo
+    
 }

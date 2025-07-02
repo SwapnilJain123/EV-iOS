@@ -263,15 +263,17 @@ class EventsInteractor :BaseInteractor{
         }else if event.racerStatus?.isEmpty() ?? true{
             self.eventDetailsDelegate?.validationError(ErrorMessages.skillNotSelected)
             return
-        }else if event.transponderNo?.isEmpty ?? true{
-            
-            self.eventDetailsDelegate?.validationError( "Please provide your transponder number.")
-            return
-        }else if event.bikeNo?.isEmpty ?? true{
-            
-            self.eventDetailsDelegate?.validationError( "Please provide your bike number.")
-            return
-        }else if !(event.trackValidation ?? false){
+        }
+//        else if event.transponderNo?.isEmpty ?? true{
+//            
+//            self.eventDetailsDelegate?.validationError( "Please provide your transponder number.")
+//            return
+//        }else if event.bikeNo?.isEmpty ?? true{
+//            
+//            self.eventDetailsDelegate?.validationError( "Please provide your bike number.")
+//            return
+//        }
+        else if !(event.trackValidation ?? false){
             
             self.eventDetailsDelegate?.showAlert(title: "Track Day Required", message: "Please purchase track day before proceeding with event registration.")
             return
@@ -296,8 +298,8 @@ class EventsInteractor :BaseInteractor{
         request.skill = event.racerStatus;
         request.eventClasses = event.selectedEventClasses
         request.eventClassTotal = event.selectedEventClassTotal
-        request.transponderNo = event.transponderNo
-        request.bikeNumber = event.bikeNo
+        request.transponderNo = event.transponderNo == "" ? "  " : event.transponderNo
+        request.bikeNumber = event.bikeNo == "" ? " " : event.bikeNo
         
         let cartApi = CartApi()
         cartApi.setCompletionHandler{ response, error in

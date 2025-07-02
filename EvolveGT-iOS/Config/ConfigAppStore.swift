@@ -9,11 +9,11 @@
 import Foundation
 struct Config {
     
-    //stagung
+    //QA
     static let BASE_URL = "qa.asraracing.com"
 
     //live
-  //  static let BASE_URL = "asraracing.com"
+    //static let BASE_URL = "asraracing.com"
     static let LOG_ENABLED = false
     static let BUILD_CONFIG = "AppStore"
     static let CHECKOUT_MODE = "production"

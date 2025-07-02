@@ -139,12 +139,14 @@ class RentItemCell : UITableViewCell, CheckboxButtonDelegate, RadioButtonDelegat
 
 protocol EventClassCellDelegate{
     func didChangeEventClassSelection(eventClass: EventClass, raceClass : EventRaceClass, indexPath: IndexPath, checkedStatus : Bool)
+    func didShowErrorMessage(_ message: String)
+
 }
 
 class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var tfBikeData: SkyFloatingLabelTextField!
+    @IBOutlet weak var tfBikeData: CustomUITextField!
     
     
     func chechboxButtonDidSelect(_ button: CheckboxButton) {
@@ -173,16 +175,18 @@ class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelega
         tfBikeData.delegate = self
     }
     
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        guard self.bikes.count > 0 else {return}
         
         if textField == tfBikeData{
             
             if(textField.text == ""){
                 if let picker = tfBikeData.inputView as? UIPickerView {
-                    let selectedRow = picker.selectedRow(inComponent: 0)
-                    selectedBike = self.bikes[selectedRow]
-                    tfBikeData.text = selectedBike?.value
+                    selectedBike = self.bikes[0]
+                    tfBikeData.text = self.bikes[0].value
                     self.raceClass?.bikeData = selectedBike?.key
+                    self.raceClass?.bikeDataValue = selectedBike?.value
                     _ = eventClass.validateRaceClasses()
                     delegate?.didChangeEventClassSelection(eventClass: eventClass, raceClass: raceClass!, indexPath: indexPath!, checkedStatus: true)
                 }
@@ -204,7 +208,12 @@ class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelega
         eventClassTitle.text = raceClass.className
         price.text = "$ \(raceClass.classPrice ?? 0)"
         
-        tfBikeData.text = raceClass.bikeData
+        if let bike = bikes.filter({$0.key == raceClass.bikeData}).first {
+            tfBikeData.text = bike.value
+        } else {
+            tfBikeData.text =  ""
+        }
+
         print("tfbikedata: \(String(describing: tfBikeData.text))")
         selectionBox.delegate = nil
         selectionBox.isEnabled = !(raceClass.specialCase ?? false) || (raceClass.specialCase ?? false && eventClass.canSelectSpecialClass())
@@ -225,7 +234,8 @@ class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelega
        
         
         if raceClass.hasError{
-            tfBikeData.errorMessage = "Bike data required."
+            self.delegate?.didShowErrorMessage("Bike data required.")
+          //  tfBikeData.errorMessage = "Bike data required."
         }
     }
 
@@ -236,6 +246,8 @@ class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelega
         bikePicker.dataSource = self
         bikePicker.delegate = self
         tfBikeData.inputView = bikePicker
+        tfBikeData.tintColor = .clear // hide blinking cursor
+        
     }
 
     // MARK: - UIPickerViewDataSource
@@ -256,6 +268,7 @@ class EventClassCell: UITableViewCell, CheckboxButtonDelegate, UITextFieldDelega
         selectedBike = self.bikes[row]
         tfBikeData.text = self.bikes[row].value
         self.raceClass?.bikeData = selectedBike?.key
+        self.raceClass?.bikeDataValue = selectedBike?.value
       //  _ = eventClass.validateRaceClasses()
       //  delegate?.didChangeEventClassSelection(eventClass: eventClass, raceClass: raceClass!, indexPath: indexPath!, checkedStatus: true)
     }

@@ -163,6 +163,7 @@ class PaymentViewController : ETViewController, CartListDelegate{
             if let paymentMode = interactor?.getPaymentMode() {
                 let urlString = "\(ApiConstants.BASE_URLPaypal)paypal.php?user_id=\(userId)&payment_modes=\(paymentMode)&coupon=\(coupon.couponCode)&device=iOS"
                 if let url = URL(string: urlString) {
+                    self.ext.showNavbar()
                     self.webviewForPayment.load(URLRequest.init(url: url))
                 }
             }

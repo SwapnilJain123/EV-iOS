@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProfileController : ETViewController{
+class ProfileController : ETViewController, UITableViewDelegate {
     @IBOutlet weak var btnSave: UIButton!
     
     private var userSelectedImage: UIImage? = nil
@@ -22,9 +22,9 @@ class ProfileController : ETViewController{
         
         btnSave.applyColorTheme()
         profileViewContainer.dataSource = self
+        profileViewContainer.delegate = self
         interactor.viewDelegate = self
         interactor.profileViewDelegate = self
-        
         
         self.navigationController?.title = getScreenTitle()
     }
@@ -116,22 +116,76 @@ extension ProfileController: UITableViewDataSource {
             cell.showData(user: AppEngine.sharedInstance.userDetails!)
             return cell
             
+        case .bike:
+            let cell = tableView.dequeueReusableCell(withIdentifier: BikeDataCell.identifier, for: indexPath) as! BikeDataCell
+            return cell
+            
+        case .evolvegtinfo:
+            let cell = tableView.dequeueReusableCell(withIdentifier: EvolveGTInfoCell.identifier, for: indexPath) as! EvolveGTInfoCell
+            return cell
+            
         }
-        
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if sections[section] == .bike {
+            return 30
+        }
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if sections[section] == .bike {
+            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
+            headerView.backgroundColor = .systemGray5
+
+            let titleLabel = UILabel()
+            titleLabel.text = "Bike"
+            titleLabel.textColor = .systemGray
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+            let addButton = UIButton(type: .system)
+            addButton.setTitle("Add", for: .normal)
+            addButton.addTarget(self, action: #selector(handleAddButtonTapped), for: .touchUpInside)
+            addButton.translatesAutoresizingMaskIntoConstraints = false
+
+            headerView.addSubview(titleLabel)
+            headerView.addSubview(addButton)
+
+            NSLayoutConstraint.activate([
+                titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+                titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+                addButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+                addButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            ])
+            return headerView
+        }
+
+        return nil
+    }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if sections[section] == .motorcycle{
             return "Your Motor Cycle"
         }else if sections[section] == .moto{
             return "MotoGladiator Info"
+        }else if sections[section] == .bike{
+            return "Bike"
         }else if sections[section] == .skillLevel{
             return "Skill Level"
         }else if sections[section] == .emergency{
             return "Emergency Contact"
+        }else if sections[section] == .evolvegtinfo{
+            return "Evolve GT Information"
         }else{
             return nil
         }
+    }
+    
+    @objc func handleAddButtonTapped(sender:UIButton) {
+        
     }
 }
 extension  ProfileController: ProfileViewDelegate{

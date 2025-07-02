@@ -345,6 +345,10 @@ extension EventDetailsController: RentalDelegate, EventClassCellDelegate, SkillL
         eventDetails?.racerStatus = skill
     }
     
+    func didShowErrorMessage(_ message: String) {
+        self.showErrorToastMessage(message: message)
+    }
+    
     /*
     func didSelectTransponderForRent(transponder: Transponder, indexPath: IndexPath, _ checked: Bool) {
         transponder.isSelected = checked
