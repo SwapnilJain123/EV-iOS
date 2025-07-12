@@ -237,14 +237,26 @@ class BikeDataCell: UITableViewCell {
     
     static let identifier = "BikeDataCell"
 
+    @IBOutlet weak var bikeView: UIView!
+    @IBOutlet weak var bikeLabel: UILabel!
     @IBOutlet weak var makeTextField: UILabel!
     @IBOutlet weak var modelTextField: UILabel!
     @IBOutlet weak var yearTextField: UILabel!
     @IBOutlet weak var ccTextField: UILabel!
     @IBOutlet weak var transponderTextField: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    
 
     var deleteAction: (() -> Void)?
+    
+    func showData(bike:Bike){
+        self.bikeView.drawBorder(width: 2.0, borderColor: .lightGray)
+        makeTextField.text = bike.make
+        modelTextField.text = bike.model
+        yearTextField.text = bike.year
+        transponderTextField.text = bike.transponder
+        ccTextField.text = bike.cc
+    }
 
     @IBAction func deleteTapped(_ sender: UIButton) {
         deleteAction?()
@@ -649,9 +661,10 @@ class EmergencyContactCell : UITableViewCell, UITextFieldDelegate{
 
 import UIKit
 
-class EvolveGTInfoCell: UITableViewCell {
+class EvolveGTInfoCell: UITableViewCell, UITextViewDelegate {
 
     static let identifier = "EvolveGTInfoCell"
+    var user: UserDetails?
 
     // Grid fields
     @IBOutlet weak var expertStatusTextField: SkyFloatingLabelTextField!
@@ -661,7 +674,8 @@ class EvolveGTInfoCell: UITableViewCell {
     @IBOutlet weak var amaNumberTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var amaExpiryTextField: SkyFloatingLabelTextField!
 
-    // Sponsor and Team fields
+    // Sponsor and Team field
+    @IBOutlet weak var btnSponsor: UIButton!
     @IBOutlet weak var sponsorTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var teamNamesTextView: UITextView!
 
@@ -670,9 +684,152 @@ class EvolveGTInfoCell: UITableViewCell {
         teamNamesTextView.layer.borderWidth = 1
         teamNamesTextView.layer.cornerRadius = 4
         teamNamesTextView.layer.borderColor = UIColor.lightGray.cgColor
+        teamNamesTextView.delegate = self  // 👈 Set the delegate
     }
 
-    func showData(user: UserDetails?) {
+    @IBAction func didPressAMAExpiryButton(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = String.FORMAT_YYYY_MM_DD_HIPHEN
         
+        var date = Date()
+        if (self.user?.amaExpires) != nil{
+            date = dateFormatter.date(from: self.user!.amaExpires!) ?? Date()
+        }
+        
+        DatePickerDialog(buttonColor:.getAppThemeColor(), showCancelButton: false).show("Select AMA Expiry Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: date, datePickerMode: .date) {
+            (date) -> Void in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = String.FORMAT_YYYY_MM_DD_HIPHEN
+                let selectedeDate = formatter.string(from: dt)
+                self.user?.amaExpires = selectedeDate
+               // self.amaExpiryTextField.text = self.user!.amaExpires?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY)
+            }
+        }
+    }
+    
+    func showData(user: UserDetails){
+        self.user = user
+        expertStatusTextField.applyColorTheme()
+        amaNumberTextField.applyColorTheme()
+        transponderTextField.applyColorTheme()
+        amaExpiryTextField.applyColorTheme()
+        nationalityTextField.applyColorTheme()
+        nationalityTextField.applyColorTheme()
+        
+//        if !AppEngine.sharedInstance.isEvApp(){
+//            let icon = UIImage(named: "calendar")
+//            calendar.image = icon
+//        }else{
+//            let icon = UIImage(named: "ic_moto_calendar")
+//            calendar.image = icon
+//        }
+        
+        amaNumberTextField.text = user.amaNo
+        transponderTextField.text = user.transponderNo
+        amaExpiryTextField.text = user.amaExpires?.formattedDate(inputPattern: .FORMAT_YYYY_MM_DD_HIPHEN, outputFormat: .FORMAT_DD_MMM_YYYY)
+        nationalityTextField.text = user.nationality
+        amaNumberTextField.text = user.amaNo
+        raceNumberTextField.text = user.raceNo
+        teamNamesTextView.text = user.teamnames
+        
+        addTextFiledDelegate(textField: expertStatusTextField)
+        addTextFiledDelegate(textField: transponderTextField)
+        addTextFiledDelegate(textField: raceNumberTextField)
+        addTextFiledDelegate(textField: nationalityTextField)
+        addTextFiledDelegate(textField: amaNumberTextField)
+        
+        if user.amaNo?.isEmpty ?? true{
+            amaNumberTextField.errorMessage = ValidationErrors.invalidAMANumber
+        }else{
+            amaNumberTextField.errorMessage = ""
+        }
+        if user.amaExpires?.isEmpty ?? true{
+            amaExpiryTextField.errorMessage = ValidationErrors.amaExpiryRequired
+        }else{
+            amaExpiryTextField.errorMessage = ""
+        }
+        if user.nationality?.isEmpty ?? true{
+           // tfMotoNationality.errorMessage = ValidationErrors.invalidNationality
+        }else{
+            nationalityTextField.errorMessage = ""
+        }
+    }
+    
+    private func addTextFiledDelegate(textField : SkyFloatingLabelTextField){
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
+        textField.addTarget(self, action: #selector(clearErrorMessage(_:)), for: .editingDidBegin)
+    }
+    
+    @objc func textFieldDidChange(_ textfield: UITextField) {
+        if textfield == expertStatusTextField{
+            self.user?.expertStatus = textfield.text
+        }else if textfield == transponderTextField{
+            self.user?.transponderNo = textfield.text
+        }else if textfield == raceNumberTextField{
+            self.user?.raceNumber = textfield.text
+        }else if textfield == nationalityTextField{
+            self.user?.nationality = textfield.text
+        }else if textfield == amaNumberTextField{
+            self.user?.amaNo = textfield.text
+        } else if textfield == amaExpiryTextField{
+            self.user?.amaExpiry = textfield.text
+        } else if textfield == sponsorTextField{
+            self.user?.sponsors = textfield.text
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView == teamNamesTextView {
+            self.user?.teamnames = textView.text
+        }
+    }
+    
+    @objc func clearErrorMessage(_ textfield: UITextField) {
+        if let skyFloatingTF = textfield as? SkyFloatingLabelTextField{
+            skyFloatingTF.errorMessage = ""
+        }
+    }
+}
+
+
+class BikeTextFieldCell: UITableViewCell {
+
+    static let identifier = "BikeTextFieldCell"
+
+    @IBOutlet weak var textField: SkyFloatingLabelTextField!
+
+    var onTextChanged: ((String) -> Void)?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textField.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
+    }
+
+    @objc private func textChanged(_ sender: UITextField) {
+        onTextChanged?(sender.text ?? "")
+    }
+
+    func configure(placeholder: String, text: String?) {
+        textField.placeholder = placeholder
+        textField.title = placeholder
+        textField.text = text
+    }
+}
+
+
+class SponsorCell: UITableViewCell {
+
+    static let identifier = "SponsorCell"
+
+    @IBOutlet weak var lblSponsorName: UILabel!
+    @IBOutlet weak var btnCheckBox: UIButton!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    func configure(text: String?) {
+        lblSponsorName.text = text
     }
 }

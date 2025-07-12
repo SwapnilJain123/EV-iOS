@@ -14,7 +14,7 @@ class ProfileController : ETViewController, UITableViewDelegate {
     
     private var userSelectedImage: UIImage? = nil
     @IBOutlet weak var profileViewContainer: UITableView!
-    
+        
     let interactor = ProfileInteractor()
     var sections = [ProfileSections]()
     override func viewDidLoad() {
@@ -57,7 +57,11 @@ class ProfileController : ETViewController, UITableViewDelegate {
 }
 extension ProfileController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        if sections[section] == .bike {
+            print(AppEngine.sharedInstance.userDetails!.bikes ?? "2")
+            return AppEngine.sharedInstance.userDetails!.bikes?.count ?? 0
+        }
+        return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         sections.count
@@ -118,12 +122,14 @@ extension ProfileController: UITableViewDataSource {
             
         case .bike:
             let cell = tableView.dequeueReusableCell(withIdentifier: BikeDataCell.identifier, for: indexPath) as! BikeDataCell
+            cell.showData(bike: AppEngine.sharedInstance.userDetails!.bikes![indexPath.row])
             return cell
             
         case .evolvegtinfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: EvolveGTInfoCell.identifier, for: indexPath) as! EvolveGTInfoCell
+            cell.showData(user: AppEngine.sharedInstance.userDetails!)
+            cell.btnSponsor.addTarget(self, action: #selector(actionOnSponsor(sender:)), for: .touchUpInside)
             return cell
-            
         }
     }
     
@@ -178,17 +184,24 @@ extension ProfileController: UITableViewDataSource {
         }else if sections[section] == .emergency{
             return "Emergency Contact"
         }else if sections[section] == .evolvegtinfo{
-            return "Evolve GT Information"
+            return "Asra Information"
         }else{
             return nil
         }
     }
     
     @objc func handleAddButtonTapped(sender:UIButton) {
-        
+        let vc = self.ext.getViewController(storyBoard: "Profile", VCIdentifier: "BikeDataVC") as! BikeController
+       
+        self.ext.pushViewController(viewController: vc)
+    }
+    
+    @objc func actionOnSponsor(sender:UIButton) {
+        let vc = self.ext.getViewController(storyBoard: "Profile", VCIdentifier: "SponsorController") as! SponsorController
+        self.ext.pushViewController(viewController: vc)
     }
 }
-extension  ProfileController: ProfileViewDelegate{
+extension ProfileController: ProfileViewDelegate{
     
     func validationError(message: String, section: ProfileSections) {
         let sectionIndex = sections.index(of: section) ?? 0

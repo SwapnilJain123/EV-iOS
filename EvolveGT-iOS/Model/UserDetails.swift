@@ -8,6 +8,14 @@
 
 import Foundation
 
+class Bike: Codable {
+    let make: String
+    let model: String
+    let cc: String
+    let year: String
+    let transponder: String
+}
+
 class UserDetails: Codable {
     var userID, oldID: Int?
     var username, password: String?
@@ -27,7 +35,7 @@ class UserDetails: Codable {
     var membershipExpDate, adminNotes: String?
     var adminKey, motoCount, raceNumber: String?
     var eventCancel: Bool?
-    var hasRCT,transponderNo: String?
+    var hasRCT, expertStatus, transponderNo: String?
     var motoSkill, raceNo, amaNo, amaExpires: String?
     var amaExpiry, ccsNo, asraNo, nationality: String?
     var sponsors, teamnames, shippingCountryName, billingCountryName: String?
@@ -36,6 +44,7 @@ class UserDetails: Codable {
     var customerID: String?
     var enableMyDuties: Bool?
     var status, evStaff, newsletter, everBeenTrack, day_worker: Int?
+    var bikes:[Bike]?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -114,8 +123,19 @@ class UserDetails: Codable {
         case fullProfileImage = "full_profile_image"
         case customerID = "customer_number"
         case enableMyDuties = "enable_my_duties"
-        
+        case bikes
     }
+    
+//    "moto_skill": "NA",
+//    "transponder_no": "12345",
+//    "race_no": "54321",
+//    "nationality": "USA",
+//    "ama_no": "9900",
+//    "ama_expires": "9999-09-09",
+//    "ccs_no": "2233",
+//    "asra_no": "3322",
+//    "sponsors": "5,11",
+//    "teamnames": "Race,Demo",
     
     var hasValidBillingAddress : Bool{
         !(billingFirstName?.isEmpty ?? true || billingLastName?.isEmpty ?? true
