@@ -197,10 +197,10 @@ class MrlData: Codable{
     var price : String?
     var image : String?
     var force = 0
-    var userID : String?
+    var userID : Int?
     var season : String?
     var slug : String?
-    var membershipId : String?
+    var membershipId : Int?
     
     enum CodingKeys: String, CodingKey {
         case membership = "membership"
