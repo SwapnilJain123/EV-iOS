@@ -81,6 +81,9 @@ class ProfileInteractor : BaseInteractor{
         request.requestBody?.sponsors = user.sponsors
         request.requestBody?.nationality = user.nationality
         request.requestBody?.teamnames = user.teamnames
+        request.requestBody?.motoSkill = user.motoSkill
+        request.requestBody?.bikes = user.bikes
+        request.requestBody?.region = user.region
         
         request.requestBody?.firstName = user.firstName
         request.requestBody?.lastName = user.lastName
@@ -142,7 +145,28 @@ class ProfileInteractor : BaseInteractor{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidPhoneNumber, section: .emergency)
             }else if user.evEmergencyRelationship?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRelationship, section: .emergency)
-            }else{
+            } else if user.motoSkill?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidExpertStatus, section: .evolvegtinfo)
+            }else if user.transponderNo?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidTransponderNo, section: .evolvegtinfo)
+            }else if user.raceNo?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRaceNumber, section: .evolvegtinfo)
+            }else if user.amaNo?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidAMANumber, section: .evolvegtinfo)
+            }else if user.amaExpires?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.amaExpiryRequired, section: .evolvegtinfo)
+            }else if user.nationality?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidNationality, section: .evolvegtinfo)
+            }else if user.sponsors?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidSponsor, section: .evolvegtinfo)
+            }else if user.ccsNo?.isEmpty ?? true {
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidCCSNumber, section: .evolvegtinfo)
+            } else if user.asraNo?.isEmpty ?? true {
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidASRANumber, section: .evolvegtinfo)
+            } else if user.teamnames?.isEmpty ?? true{
+                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidTeam, section: .evolvegtinfo)
+            }
+            else{
                 isValid = true;
             }
         }else{
@@ -207,9 +231,10 @@ enum ProfileSections : Int, CaseIterable{
     case pic
     case info
     case motorcycle
-    case bike
     case mailingAddress
     case billingAddress
+    case bike
+    case raceNumber
     case skillLevel
     case moto
     case emergency

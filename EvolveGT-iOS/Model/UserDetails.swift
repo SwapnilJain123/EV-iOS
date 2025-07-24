@@ -14,6 +14,15 @@ class Bike: Codable {
     let cc: String
     let year: String
     let transponder: String
+    
+    // Custom initializer
+    init(make: String, model: String, cc: String, year: String, transponder: String) {
+        self.make = make
+        self.model = model
+        self.cc = cc
+        self.year = year
+        self.transponder = transponder
+    }
 }
 
 class UserDetails: Codable {
@@ -35,7 +44,7 @@ class UserDetails: Codable {
     var membershipExpDate, adminNotes: String?
     var adminKey, motoCount, raceNumber: String?
     var eventCancel: Bool?
-    var hasRCT, expertStatus, transponderNo: String?
+    var hasRCT, transponderNo: String?
     var motoSkill, raceNo, amaNo, amaExpires: String?
     var amaExpiry, ccsNo, asraNo, nationality: String?
     var sponsors, teamnames, shippingCountryName, billingCountryName: String?
@@ -45,7 +54,8 @@ class UserDetails: Codable {
     var enableMyDuties: Bool?
     var status, evStaff, newsletter, everBeenTrack, day_worker: Int?
     var bikes:[Bike]?
-
+    var region:String?
+    
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case oldID = "old_id"
@@ -124,24 +134,26 @@ class UserDetails: Codable {
         case customerID = "customer_number"
         case enableMyDuties = "enable_my_duties"
         case bikes
+        case region
+        
     }
     
-//    "moto_skill": "NA",
-//    "transponder_no": "12345",
-//    "race_no": "54321",
-//    "nationality": "USA",
-//    "ama_no": "9900",
-//    "ama_expires": "9999-09-09",
-//    "ccs_no": "2233",
-//    "asra_no": "3322",
-//    "sponsors": "5,11",
-//    "teamnames": "Race,Demo",
+    //    "moto_skill": "NA",
+    //    "transponder_no": "12345",
+    //    "race_no": "54321",
+    //    "nationality": "USA",
+    //    "ama_no": "9900",
+    //    "ama_expires": "9999-09-09",
+    //    "ccs_no": "2233",
+    //    "asra_no": "3322",
+    //    "sponsors": "5,11",
+    //    "teamnames": "Race,Demo",
     
     var hasValidBillingAddress : Bool{
         !(billingFirstName?.isEmpty ?? true || billingLastName?.isEmpty ?? true
-        || billingAddress1?.isEmpty() ?? true || billingState?.isEmpty ?? true
-        || billingCity?.isEmpty() ?? true || billingCountry?.isEmpty() ?? true
-        || billingPhone?.isEmpty() ?? true)
+          || billingAddress1?.isEmpty() ?? true || billingState?.isEmpty ?? true
+          || billingCity?.isEmpty() ?? true || billingCountry?.isEmpty() ?? true
+          || billingPhone?.isEmpty() ?? true)
     }
     var canEnableDuties : Bool{
         enableMyDuties == true
@@ -152,11 +164,11 @@ class UserDetails: Codable {
     public  func isMale() -> Bool{
         return UserDetails.GENDER_MALE == self.evGender
     }
-
+    
     public func isFeMale() -> Bool{
-       return UserDetails.GENDER_FEMALE == self.evGender
+        return UserDetails.GENDER_FEMALE == self.evGender
     }
-
+    
     public var fullName : String {
         return "\(firstName ?? "") \(lastName ?? "")"
     }
@@ -169,20 +181,20 @@ class UserDetails: Codable {
             var address = "\(fullName.capitalized)\n\(billingAddress1!)"
             
             if billingAddress2?.isEmpty() ?? true == false{
-                           address = "\(address)\n\(billingAddress2!)"
+                address = "\(address)\n\(billingAddress2!)"
             }
             if billingCompany?.isEmpty() ?? true == false{
-                           address = "\(address)\n\(billingCompany!)"
+                address = "\(address)\n\(billingCompany!)"
             }
             let state = billingState?.isEmpty ?? true ? "" : "\(billingState!) - "
             if billingCity?.isEmpty() ?? true == false{
                 address = "\(address)\n\(billingCity!), \(state)\(billingPostcode ?? "")"
             }
             if billingCountry?.isEmpty() ?? true == false{
-                           address = "\(address)\n\(billingCountry!)"
+                address = "\(address)\n\(billingCountry!)"
             }
-             if billingPhone?.isEmpty() ?? true == false{
-                 address = "\(address)\nCell: \(billingPhone!)"
+            if billingPhone?.isEmpty() ?? true == false{
+                address = "\(address)\nCell: \(billingPhone!)"
             }
             return address
         }
@@ -196,17 +208,17 @@ class UserDetails: Codable {
             var address = "\(fullName.capitalized)\n\(shippingAddress1!)"
             
             if shippingAddress2?.isEmpty() ?? true == false{
-                           address = "\(address)\n\(shippingAddress2!)"
+                address = "\(address)\n\(shippingAddress2!)"
             }
             if shippingCompany?.isEmpty() ?? true == false{
-                           address = "\(address)\n\(shippingCompany!)"
+                address = "\(address)\n\(shippingCompany!)"
             }
             
             if shippingCity?.isEmpty() ?? true == false{
                 address = "\(address)\n\(shippingCity!), \(shippingState ?? "")-\(shippingPostcode ?? "")"
             }
             if shippingCountry?.isEmpty() ?? true == false{
-                           address = "\(address)\n\(shippingCountry!)"
+                address = "\(address)\n\(shippingCountry!)"
             }
             return address
         }

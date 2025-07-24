@@ -22,5 +22,12 @@ struct CheckoutApiConstants{
      static let BRAINTREE_TRANSACTION = "braintree/transaction"
     static let TERMSANDCONDITIONS = "user/legalPolicies?policy_type=terms-policy"
     static let CANCELLATIONPOLICY = "user/legalPolicies?policy_type=cancellation-policy"
+    static let PRIVACY_POLICY = "user/legalPolicies?policy_type=privacy-policy"
 
+
+//    [DOMAIN]/ontrack-api/public/app/v3/user/legalPolicies?policy_type=terms-policy
+//    [DOMAIN]/ontrack-api/public/app/v3/user/legalPolicies?policy_type=privacy-policy
+//    [DOMAIN]/ontrack-api/public/app/v3/user/legalPolicies?policy_type=refund-policy
+//    [DOMAIN]/ontrack-api/public/app/v3/user/legalPolicies?policy_type=cancellation-policy
 }
+//https://qa.asraracing.com/ontrack-api/public/app/v3/themeSettings/fetch

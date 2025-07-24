@@ -16,7 +16,7 @@ protocol EnrolledEventsViewDelegate{
     
     func eventsEmpty()
     func reloadCurrentIndex()
-}
+} 
 
 class EnrolledEventsInteractor: BaseInteractor {
     
@@ -25,7 +25,6 @@ class EnrolledEventsInteractor: BaseInteractor {
     
     func fetchEventHistory() {
         // API URL
-//        let url = "https://tracknutts.com/ontrack-api/public/app/v3/user/allEvents"
         let url: String  = "\(ApiConstants.BASE_URL)\(UserApiConstants.USER_EVENT_HISTORY)"
 
         // Parameters for the request

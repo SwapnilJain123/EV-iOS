@@ -98,17 +98,32 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if settings[indexPath.section].settingsType == .more{
-             let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
             
-            vc.contentTitle = settings[indexPath.section].menuItems[indexPath.row].title ?? ""
+            let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
+            
             if indexPath.row == 0{
-                vc.text = AppConstants.TERMS_OF_USE
+                vc.url = CheckoutApiConstants.TERMSANDCONDITIONS
+                vc.screenTitle = ScreenTitle.TITLE_TERMS_N_CONDITIONS
             }else if indexPath.row == 1{
-                vc.text = AppConstants.PRIVACY_POLICY
-            }else{
-                vc.text = AppConstants.REFUND_POLICY
+                vc.url = CheckoutApiConstants.PRIVACY_POLICY
+                vc.screenTitle = ScreenTitle.TITLE_PRIVACY_POLICY
             }
+//            else{
+//                vc.url = AppConstants.REFUND_POLICY
+//            }
+            
             self.ext.pushViewController(viewController: vc)
+            
+//             let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
+//            
+//            vc.contentTitle = settings[indexPath.section].menuItems[indexPath.row].title ?? ""
+//            if indexPath.row == 0{
+//                vc.text = AppConstants.TERMS_OF_USE
+//            }else if indexPath.row == 1{
+//                vc.text = AppConstants.PRIVACY_POLICY
+//            }else{
+//                vc.text = AppConstants.REFUND_POLICY
+//            }
         }
     }
 }

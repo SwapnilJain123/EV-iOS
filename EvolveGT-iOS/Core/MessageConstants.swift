@@ -9,7 +9,7 @@
 import Foundation
 struct MessageConstants {
     
-   
+    
     static let KPromptMsgEnterEmail = "Please Enter Email"
     static let KPromptMsgEnterValidEmail = "Please Enter Valid Email"
     static let KPromptMsgEnterPassword = "Please Enter Password"
@@ -32,7 +32,7 @@ struct MessageConstants {
     static let externalLink = "Would you like to open this event in browser?"
     static let loginRequired = "Only logged in users can add items to cart. Would you like to login?"
     
-     static let guestCart = "You must be logged in to complete the checkout. \n\nWould you like to login?"
+    static let guestCart = "You must be logged in to complete the checkout. \n\nWould you like to login?"
     static let txtRaceLicenceRequired = """
 <p>
       A race license is required to participate in Motogladiator racing. Please sign up for the Race Certification
@@ -70,17 +70,22 @@ struct ValidationErrors{
     static let amaExpiryRequired = "Please select your AMA expiry date"
     static let mailingAddressRequired = "No mailing address found. Please add a new address"
     static let billingAddressRequired = "No billing address found. Please add a new address"
-     static let countryRequired = "Please select your country"
-     static let stateRequired = "Please select your state"
+    static let countryRequired = "Please select your country"
+    static let stateRequired = "Please select your state"
     static let cityRequired = "Please provide your city"
-     static let addressRequired = "Please provide your address"
+    static let addressRequired = "Please provide your address"
     static let postalCodeRequired = "Please provide your postal code"
     
     static let emptyNameAndLocation = "Please provide name and location of event"
     static let emptyLicense = "Please provide your license number"
     static let emptyLicenseIssuedState = "Please select license issued state"
-     static let incorrectConfirmPassword = "Password mismatch"
-     static let emptyPassword = "Please provide a valid password"
+    static let incorrectConfirmPassword = "Password mismatch"
+    static let emptyPassword = "Please provide a valid password"
+    
+    static let invalidExpertStatus = "Please provide a valid expert status"
+    static let invalidTransponderNo = "Please provide a valid transponder number"
+    static let invalidSponsor = "Please provide a valid sponsors"
+    static let invalidTeam = "Please provide a valid team"
 }
 
 //Mark: - Indicator Messages
@@ -91,7 +96,7 @@ struct LoadingIndicatorMessages {
     static let loadingCompletedEvents = "Loading events..."
     static let loadingParticipants = "Loading participants..."
     static let loadingSignature = "Loading Signature..."
-     static let loadingMembershipList = "Loading available membership packages..."
+    static let loadingMembershipList = "Loading available membership packages..."
     
     static let loadingEvents = "Loading Events..."
     
@@ -100,15 +105,15 @@ struct LoadingIndicatorMessages {
     static let loadingEventHistory = "Loading your event history..."
     static let resettingPassword = "Resetting your password..."
     static let loadingNotificationList = "Loading Notification List..."
-
+    
     
     static let loadingEventDetails = "Loading event details..."
     static let loadingArchieCardList = "Loading archie cards..."
-     static let loadingArchieCardDetails = "Loading archie cards details..."
+    static let loadingArchieCardDetails = "Loading archie cards details..."
     static let addingArchieCardToCart = "Adding Archie Card to cart..."
     static let loadingGiftCardList = "Loading Gift cards..."
-     static let loadingGiftCardDetails = "Loading gift cards details..."
-     
+    static let loadingGiftCardDetails = "Loading gift cards details..."
+    
     static let addingGiftCardToCart = "Adding Gift Card to cart..."
     static let loadingProducts = "Loading products..."
     static let loadingProductDetails = "Loading product details..."
@@ -124,20 +129,20 @@ struct LoadingIndicatorMessages {
     static let uploadingSignature = "Please wait, We're saving your signature."
     static let placingOrder = "Please wait, Placing your order..."
     
-     static let cancellingEvent = "Please wait, we are cancelling your event"
+    static let cancellingEvent = "Please wait, we are cancelling your event"
     static let addingMembershipToCart = "Adding this membership to cart..."
-       static let loadingMembershipDetails = "Loading Membership details..."
+    static let loadingMembershipDetails = "Loading Membership details..."
     static let updatingProfile = "Please wait, we are updating your profile"
-     static let updatingBillingAdress = "Please wait, we are updating your billing address"
+    static let updatingBillingAdress = "Please wait, we are updating your billing address"
     static let updatingShippingAdress = "Please wait, we are updating your shipping address"
     static let loadingCoachDuties = "Loading duties assigned to you."
-     static let savingAgreement = "Saving policy agreement..."
+    static let savingAgreement = "Saving policy agreement..."
     
-     static let readingPrefernces = "Please wait, reading your preferences..."
-     static let upgradingSkill = "Upgrading skill..."
-     static let loadingWaiverEvents = "Loading Waiver Events..."
-     static let loadingWaiverDetails = "Loading details..."
-     static let savingSignature = "Saving signature..."
+    static let readingPrefernces = "Please wait, reading your preferences..."
+    static let upgradingSkill = "Upgrading skill..."
+    static let loadingWaiverEvents = "Loading Waiver Events..."
+    static let loadingWaiverDetails = "Loading details..."
+    static let savingSignature = "Saving signature..."
     static let inviteFriend = "Sending invitation"
     static let creatingAccount = "Please wait, We're creating your account."
     static let sendingOTP = "Sending OTP"
@@ -157,9 +162,9 @@ struct ErrorMessages {
     static let emptySearchEvents = "Sorry, we couldn't find any event matching the search"
     static let signatureUploadError = "Sorry, Signature could not be saved."
     static let invalidEmail = "Please enter valid email"
-     static let emptyReceiverName = "Please enter receiver name"
+    static let emptyReceiverName = "Please enter receiver name"
     static let emptyReceiverEmail = "Please enter receiver email"
-
+    
     static let errorConfirmPassword = "Your password and confirmation password do not match."
     static let errorEmptyPassword = "Please enter new password."
     static let errorEmptyCurrentPassword = "Please enter your current password."
@@ -188,12 +193,12 @@ struct ErrorMessages {
     static let emptyGiftCards = "There are no Gift Cards available."
     
     
-     static let eventsNotAssigned = "Sorry. There are no events assigned to you."
+    static let eventsNotAssigned = "Sorry. There are no events assigned to you."
     static let paypalTokenError = "Sorry, paypal payment service is not available now. Please try again later."
-     static let emptyMemberships = "Unfortunately, there is no memberships available right now."
+    static let emptyMemberships = "Unfortunately, there is no memberships available right now."
     static let updatingPreferenceFailed = "Your notification preferences could not be updated."
     
-   
+    
 }
 
 
@@ -212,15 +217,15 @@ struct SuccessMessages {
     static let newVersionAvailable = "New version available in store. Please update."
     static let cartItemDeleted = "Successfully deleted."
     static let eventCancelled = "Event Cancelled successfully."
-     static let membershipAddedToCart = "Your membership has been added to the cart successfully."
+    static let membershipAddedToCart = "Your membership has been added to the cart successfully."
     
     static let profileUpdated = "Profile updated successfully."
-     static let billingAdressUpdated = "Billing address updated successfully."
+    static let billingAdressUpdated = "Billing address updated successfully."
     static let preferencesUpdated = "Your notification preferences updated."
     static let InvitationSent = "Your invitation has been sent successfully"
     
     static let eventConfirmation = "Event added successfully. Would you like to add this to your calendar?"
-   static let eventAddedToCalendar = "Event added to your calendar"
+    static let eventAddedToCalendar = "Event added to your calendar"
     static let transferedAmount = "Transaction was successfull"
     
 }
@@ -229,5 +234,6 @@ struct AlertTitle{
     static let raceLicenceRequired = "Race Licence is Required"
     static let skillNotEligible = "Skill Not Eligible"
     static let externalHost = "External Host"
-     static let loginRequired = "Login Required"
+    static let loginRequired = "Login Required"
 }
+

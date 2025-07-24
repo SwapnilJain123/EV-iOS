@@ -6,13 +6,13 @@
 //  Copyright © 2020 YaraTech. All rights reserved.
 //
 
-import Foundation
-struct Config{
-   
-    static let BASE_URL = "evolvegt.com"
-    static let LOG_ENABLED = true
-    static let BUILD_CONFIG = "UAT"
-    static let CHECKOUT_MODE = "sandbox"
-    static let BUNDLE_ID = "com.evolve.uat"
-    static let BRAINTREE_RETURN_URL = "com.evolve.uat.payments"
-}
+//import Foundation
+//struct Config{
+//   
+//    static let BASE_URL = "evolvegt.com"
+//    static let LOG_ENABLED = true
+//    static let BUILD_CONFIG = "UAT"
+//    static let CHECKOUT_MODE = "sandbox"
+//    static let BUNDLE_ID = "com.evolve.uat"
+//    static let BRAINTREE_RETURN_URL = "com.evolve.uat.payments"
+//}

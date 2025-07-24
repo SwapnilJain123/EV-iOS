@@ -131,8 +131,10 @@ class ProfileRequestInfo: Codable {
     var lastName, amaExpires, amaNo,email, asraNo: String?
     var ccsNo, raceNo, sponsors, teamnames: String?
     var evMotorcycle, evMotorcycleNumber, nationality, phone: String?
-    var evRaceLicence: String?
+    var evRaceLicence, motoSkill: String?
     var everBeenTrack: Int?
+    var bikes: [Bike]?
+    var region:String?
     
     enum CodingKeys: String, CodingKey {
         case evDob = "ev_dob"
@@ -155,6 +157,8 @@ class ProfileRequestInfo: Codable {
         case evMotorcycleNumber = "ev_motorcycle_number"
         case nationality, phone
         case evRaceLicence = "ev_race_licence"
+        case motoSkill = "moto_skill"
+        case bikes, region
     }
 }
 struct BillingAdressUpdateRequest:Codable {

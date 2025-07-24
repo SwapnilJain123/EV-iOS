@@ -14,9 +14,14 @@ class ProfileController : ETViewController, UITableViewDelegate {
     
     private var userSelectedImage: UIImage? = nil
     @IBOutlet weak var profileViewContainer: UITableView!
+    
         
     let interactor = ProfileInteractor()
     var sections = [ProfileSections]()
+    var arrSponsor: [Sponsor] = []
+    var arrRegion: [EvolveRegion] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +32,7 @@ class ProfileController : ETViewController, UITableViewDelegate {
         interactor.profileViewDelegate = self
         
         self.navigationController?.title = getScreenTitle()
+        getSponsorData()
     }
     override func getScreenTitle() -> String? {
         ScreenTitle.TITLE_PROFILE
@@ -123,11 +129,17 @@ extension ProfileController: UITableViewDataSource {
         case .bike:
             let cell = tableView.dequeueReusableCell(withIdentifier: BikeDataCell.identifier, for: indexPath) as! BikeDataCell
             cell.showData(bike: AppEngine.sharedInstance.userDetails!.bikes![indexPath.row])
+            cell.deleteButton.addTarget(self, action: #selector(handleDeleteButtonTapped(sender:)), for: .touchUpInside)
+            return cell
+            
+        case .raceNumber:
+            let cell = tableView.dequeueReusableCell(withIdentifier: RaceNumberCell.identifier, for: indexPath) as! RaceNumberCell
+            cell.showData(user: AppEngine.sharedInstance.userDetails!, region: self.arrRegion)
             return cell
             
         case .evolvegtinfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: EvolveGTInfoCell.identifier, for: indexPath) as! EvolveGTInfoCell
-            cell.showData(user: AppEngine.sharedInstance.userDetails!)
+            cell.showData(user: AppEngine.sharedInstance.userDetails!, arrSponsor: self.arrSponsor)
             cell.btnSponsor.addTarget(self, action: #selector(actionOnSponsor(sender:)), for: .touchUpInside)
             return cell
         }
@@ -179,6 +191,8 @@ extension ProfileController: UITableViewDataSource {
             return "MotoGladiator Info"
         }else if sections[section] == .bike{
             return "Bike"
+        }else if sections[section] == .raceNumber{
+            return "Race Number"
         }else if sections[section] == .skillLevel{
             return "Skill Level"
         }else if sections[section] == .emergency{
@@ -190,32 +204,64 @@ extension ProfileController: UITableViewDataSource {
         }
     }
     
+    @objc func handleDeleteButtonTapped(sender:UIButton) {
+        // Convert the sender's position to an indexPath
+        let point = sender.convert(CGPoint.zero, to: profileViewContainer)
+        if let indexPath = profileViewContainer.indexPathForRow(at: point) {
+            // Ensure it's from the 'bike' section
+            guard sections[indexPath.section] == .bike else { return }
+            // Remove the bike from user details
+            AppEngine.sharedInstance.userDetails?.bikes?.remove(at: indexPath.row)
+            // Delete the row from the table view
+            self.profileViewContainer.deleteRows(at: [indexPath], with: .fade)
+            saveProfile()
+        }
+    }
+    
     @objc func handleAddButtonTapped(sender:UIButton) {
         let vc = self.ext.getViewController(storyBoard: "Profile", VCIdentifier: "BikeDataVC") as! BikeController
-       
+        vc.delegate = self
         self.ext.pushViewController(viewController: vc)
     }
     
     @objc func actionOnSponsor(sender:UIButton) {
         let vc = self.ext.getViewController(storyBoard: "Profile", VCIdentifier: "SponsorController") as! SponsorController
+        vc.delegate = self
+        vc.arrSelectedSponsor = AppEngine.sharedInstance.userDetails!.sponsors?.components(separatedBy: ",") ?? []
         self.ext.pushViewController(viewController: vc)
     }
 }
+
+extension ProfileController: SponsorControllerDelegate{
+    func didSponsorSelected(sponsorId:String) {
+        AppEngine.sharedInstance.userDetails!.sponsors = sponsorId
+        profileViewContainer.reloadData()
+    }
+}
+
+extension ProfileController: BikeControllerDelegate {
+    func didSaveDataSuccessfully(bikeData: Bike) {
+        print("Delegate bike object", bikeData)
+        if ((AppEngine.sharedInstance.userDetails?.bikes) != nil) {
+            AppEngine.sharedInstance.userDetails?.bikes?.append(bikeData)
+        } else {
+            AppEngine.sharedInstance.userDetails?.bikes = [bikeData]
+        }
+        profileViewContainer.reloadData()
+    }
+}
+
 extension ProfileController: ProfileViewDelegate{
-    
     func validationError(message: String, section: ProfileSections) {
         let sectionIndex = sections.index(of: section) ?? 0
         profileViewContainer.reloadData()
         profileViewContainer.scrollToRow(at: IndexPath(row: 0, section: sectionIndex), at: .bottom, animated: true)
-        
     }
     
     func availableSections(sections: [ProfileSections]) {
         self.sections = sections
         profileViewContainer.reloadData()
     }
-    
-    
 }
 
 extension  ProfileController: ProfilePicCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -264,5 +310,21 @@ extension  ProfileController: ProfilePicCellDelegate, UIImagePickerControllerDel
         }
         
     }
+    
+    func getSponsorData() {
+        let interactor = RegisterInteractor()
+        interactor.checkEmailVerification { result in
+            switch result {
+            case .success(let themeData):
+                self.arrRegion = themeData.evolveRegions ?? []
+                self.arrSponsor = themeData.allSponsors ?? []
+                self.profileViewContainer.reloadData()
+            case .failure(let error):
+                print("Failed to fetch theme: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
     
 }

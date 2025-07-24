@@ -143,8 +143,9 @@ class RegisterInteractor : BaseInteractor{
             do {
                 let decodedResponse = try JSONDecoder().decode(ThemeResponse.self, from: responseData)
                 completionBlock(.success(decodedResponse.result))
-            } catch {
-                completionBlock(.failure(error))
+            } catch (let e) {
+                print("error: --- ", e)
+                completionBlock(.failure(e))
             }
         }
     }
