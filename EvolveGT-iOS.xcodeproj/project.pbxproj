@@ -3329,7 +3329,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.6;
+				MARKETING_VERSION = 2.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3356,7 +3356,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.6;
+				MARKETING_VERSION = 2.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				PROVISIONING_PROFILE_SPECIFIER = "";

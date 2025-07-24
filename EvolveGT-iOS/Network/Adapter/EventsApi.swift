@@ -31,7 +31,6 @@ class EventsApi : BaseApiAdapter{
         super.makeRequest(method: .POST)
     }
     func fetchMotoEventDetails(_ request: EventDetailRequest){
-        
         let url: String  = "\(ApiConstants.BASE_URL)\(ShopsApiConstants.MOTO_EVENT_DETAILS)"
         setUrl(url: url)
         setParameters(parameters: makeDictionary(request))
