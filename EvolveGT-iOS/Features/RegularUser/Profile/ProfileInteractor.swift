@@ -63,8 +63,6 @@ class ProfileInteractor : BaseInteractor{
         
     }
     private func updateUserProfile(){
-        
-        
         Log.i("Data Validated")
         let user = AppEngine.sharedInstance.userDetails!
         
@@ -84,6 +82,7 @@ class ProfileInteractor : BaseInteractor{
         request.requestBody?.motoSkill = user.motoSkill
         request.requestBody?.bikes = user.bikes
         request.requestBody?.region = user.region
+        request.requestBody?.transponderNo = user.transponderNo
         
         request.requestBody?.firstName = user.firstName
         request.requestBody?.lastName = user.lastName
@@ -131,13 +130,7 @@ class ProfileInteractor : BaseInteractor{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidEmail, section: .info)
             }else if user.evDob?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidDoB, section: .info)
-            } /*else if user.evMotorcycle?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleName, section: .motorcycle)
-            }else if user.evMotorcycleNumber?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidMotorCycleNumber, section: .motorcycle)
-            }else if validateMotoInfo() == false{
-                 self.profileViewDelegate?.validationError(message: "Moto Info missing", section: .moto)
-            }*/else if user.evEmergencyFirstName?.isEmpty ?? true{
+            } else if user.evEmergencyFirstName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyFirstName, section: .emergency)
             }else if user.evEmergencyLastName?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.emptyLastName, section: .emergency)
@@ -151,22 +144,9 @@ class ProfileInteractor : BaseInteractor{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidTransponderNo, section: .evolvegtinfo)
             }else if user.raceNo?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidRaceNumber, section: .evolvegtinfo)
-            }else if user.amaNo?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidAMANumber, section: .evolvegtinfo)
-            }else if user.amaExpires?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.amaExpiryRequired, section: .evolvegtinfo)
-            }else if user.nationality?.isEmpty ?? true{
+            }  else if user.nationality?.isEmpty ?? true{
                 self.profileViewDelegate?.validationError(message: ValidationErrors.invalidNationality, section: .evolvegtinfo)
-            }else if user.sponsors?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidSponsor, section: .evolvegtinfo)
-            }else if user.ccsNo?.isEmpty ?? true {
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidCCSNumber, section: .evolvegtinfo)
-            } else if user.asraNo?.isEmpty ?? true {
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidASRANumber, section: .evolvegtinfo)
-            } else if user.teamnames?.isEmpty ?? true{
-                self.profileViewDelegate?.validationError(message: ValidationErrors.invalidTeam, section: .evolvegtinfo)
-            }
-            else{
+            } else{
                 isValid = true;
             }
         }else{
@@ -237,7 +217,6 @@ enum ProfileSections : Int, CaseIterable{
     case raceNumber
     case skillLevel
     case moto
-    case emergency
     case evolvegtinfo
-    
+    case emergency    
 }

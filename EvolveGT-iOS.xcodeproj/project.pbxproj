@@ -3340,7 +3340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
 				PRODUCT_NAME = EvolveGT;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3366,7 +3366,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asra.appstore;
 				PRODUCT_NAME = EvolveGT;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";

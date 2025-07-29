@@ -36,6 +36,7 @@ class HomeViewController: TabbedViewController{
 
         profileView.rowHeight = UITableView.automaticDimension
         profileView.estimatedRowHeight = 300
+        interactor.getMasterData()
         interactor.delegate = self
         interactor.homeViewDelegate = self
         messagingToken()

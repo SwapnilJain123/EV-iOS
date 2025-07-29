@@ -248,11 +248,11 @@ class BikeDataCell: UITableViewCell {
     
     func showData(bike:Bike){
         self.bikeView.drawBorder(width: 2.0, borderColor: .lightGray)
-        makeTextField.text = bike.make
-        modelTextField.text = bike.model
-        yearTextField.text = bike.year
-        transponderTextField.text = bike.transponder
-        ccTextField.text = bike.cc
+        makeTextField.text = ":  " + bike.make
+        modelTextField.text = ":  " + bike.model
+        yearTextField.text = ":  " + bike.year
+        transponderTextField.text = ":  " + bike.transponder
+        ccTextField.text = ":  " + bike.cc
     }
     
 }
@@ -676,7 +676,6 @@ class EvolveGTInfoCell: UITableViewCell, UITextViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        teamNamesTextView.isUserInteractionEnabled = false
         teamNamesTextView.layer.borderWidth = 1
         teamNamesTextView.layer.cornerRadius = 4
         teamNamesTextView.layer.borderColor = UIColor.lightGray.cgColor
@@ -765,17 +764,6 @@ class EvolveGTInfoCell: UITableViewCell, UITextViewDelegate {
             raceNumberTextField.errorMessage = ""
         }
         
-        if user.amaNo?.isEmpty ?? true{
-            amaNumberTextField.errorMessage = ValidationErrors.invalidAMANumber
-        }else{
-            amaNumberTextField.errorMessage = ""
-        }
-        
-        if user.amaExpires?.isEmpty ?? true{
-            amaExpiryTextField.errorMessage = ValidationErrors.amaExpiryRequired
-        }else{
-            amaExpiryTextField.errorMessage = ""
-        }
         
         if user.nationality?.isEmpty ?? true{
             nationalityTextField.errorMessage = ValidationErrors.invalidNationality
@@ -783,31 +771,6 @@ class EvolveGTInfoCell: UITableViewCell, UITextViewDelegate {
             nationalityTextField.errorMessage = ""
         }
         
-        if user.sponsors?.isEmpty ?? true{
-            sponsorTextField.errorMessage = ValidationErrors.invalidSponsor
-        }else{
-            sponsorTextField.errorMessage = ""
-        }
-        
-        if user.ccsNo?.isEmpty ?? true {
-            ccsNumberTextField.errorMessage = ValidationErrors.invalidCCSNumber
-        } else {
-            ccsNumberTextField.errorMessage = ""
-        }
-
-        if user.asraNo?.isEmpty ?? true {
-            asraNumberTextField.errorMessage = ValidationErrors.invalidASRANumber
-        } else {
-            asraNumberTextField.errorMessage = ""
-        }
-        
-        if user.teamnames?.isEmpty ?? true{
-            teamNamesTextView.textColor = .red
-            teamNamesTextView.text = ValidationErrors.invalidTeam
-        }else{
-            teamNamesTextView.textColor = .black
-            teamNamesTextView.text = user.teamnames
-        }
         
         let selectedIds = AppEngine.sharedInstance.userDetails?.sponsors?.components(separatedBy: ",")
         let selectedIdSet = Set(selectedIds ?? [])
@@ -827,11 +790,10 @@ class EvolveGTInfoCell: UITableViewCell, UITextViewDelegate {
     }
     
     @objc func textFieldDidChange(_ textfield: UITextField) {
-        if textfield == expertStatusTextField{
-        }else if textfield == transponderTextField{
+        if textfield == transponderTextField{
             self.user?.transponderNo = textfield.text
         }else if textfield == raceNumberTextField{
-            self.user?.raceNumber = textfield.text
+            self.user?.raceNo = textfield.text
         }else if textfield == nationalityTextField{
             self.user?.nationality = textfield.text
         }else if textfield == amaNumberTextField{

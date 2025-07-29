@@ -38,6 +38,7 @@ struct ThemeData: Codable {
     let payPalClientId: String?
     let payPalSecretKey: String?
     let allSponsors: [Sponsor]?
+    let trainingSelectionHeading:String
     
     enum CodingKeys: String, CodingKey {
         case bottomCaption1, bottomCaption2, eWaiver, eEmailVerification
@@ -51,7 +52,7 @@ struct ThemeData: Codable {
         case raceOrganizationEmail = "race_organization_email"
         case licenseTitle = "license_title"
         case payMode, payPalClientId, payPalSecretKey
-        case allSponsors
+        case allSponsors, trainingSelectionHeading
     }
 }
 

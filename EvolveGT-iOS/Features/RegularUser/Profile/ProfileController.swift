@@ -163,8 +163,12 @@ extension ProfileController: UITableViewDataSource {
             titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
-            let addButton = UIButton(type: .system)
-            addButton.setTitle("Add", for: .normal)
+            let addButton = UIButton(type: .custom)
+            if let plusImage = UIImage(named: "ic_btn_plus_green") {
+                addButton.setImage(plusImage, for: .normal)
+            } else {
+                print("❌ Image not found: ic_btn_plus_green")
+            }
             addButton.addTarget(self, action: #selector(handleAddButtonTapped), for: .touchUpInside)
             addButton.translatesAutoresizingMaskIntoConstraints = false
 
@@ -192,13 +196,13 @@ extension ProfileController: UITableViewDataSource {
         }else if sections[section] == .bike{
             return "Bike"
         }else if sections[section] == .raceNumber{
-            return "Race Number"
+            return "Region"
         }else if sections[section] == .skillLevel{
             return "Skill Level"
         }else if sections[section] == .emergency{
             return "Emergency Contact"
         }else if sections[section] == .evolvegtinfo{
-            return "Asra Information"
+            return "Other Information"
         }else{
             return nil
         }

@@ -268,12 +268,17 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
     }
     
     @objc func actionRadio(_ sender: UIButton) {
-        for i in 0..<(eventDetails?.trainingData?.count ?? 0) {
-            if eventDetails?.trainingData?[i].isSelected == true {
-                eventDetails?.trainingData?[i].isSelected = false
-            }
+//        for i in 0..<(eventDetails?.trainingData?.count ?? 0) {
+//            if eventDetails?.trainingData?[i].isSelected == true {
+//                eventDetails?.trainingData?[i].isSelected = false
+//            }
+//        }
+        if eventDetails?.trainingData?[sender.tag].isSelected == true {
+            eventDetails?.trainingData?[sender.tag].isSelected = false
+        } else {
+            eventDetails?.trainingData?[sender.tag].isSelected = true
         }
-        eventDetails?.trainingData?[sender.tag].isSelected = true
+        
         DispatchQueue.main.async {
             self.eventDetailsView.reloadData()
         }
@@ -283,7 +288,7 @@ extension EventDetailsController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForHeaderInSection
         section: Int) -> String? {
         if sections[section] == .trainings{
-            return " Select Trainings"
+            return appMasterData?.trainingSelectionHeading
         }else if sections[section] == .rentals{
             return " Select Rentals"
         }else  if sections[section] == .eventClasses{

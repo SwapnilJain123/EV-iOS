@@ -135,6 +135,7 @@ class ProfileRequestInfo: Codable {
     var everBeenTrack: Int?
     var bikes: [Bike]?
     var region:String?
+    var transponderNo:String?
     
     enum CodingKeys: String, CodingKey {
         case evDob = "ev_dob"
@@ -159,6 +160,7 @@ class ProfileRequestInfo: Codable {
         case evRaceLicence = "ev_race_licence"
         case motoSkill = "moto_skill"
         case bikes, region
+        case transponderNo = "transponder_no"
     }
 }
 struct BillingAdressUpdateRequest:Codable {

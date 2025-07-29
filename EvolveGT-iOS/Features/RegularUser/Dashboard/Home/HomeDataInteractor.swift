@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
+var appMasterData:ThemeData?
+
 protocol HomeViewDelegate{
-    
     func didFetchDetails(profileData : ProfileData?, sections : [HomeSection])
     func didFetchCoachDuties(assignedEvents : AssignedDuty)
-    
 }
 
 protocol NotificationDelegate {
@@ -32,7 +32,7 @@ class HomeDataInteractor : BaseInteractor{
     var logoutAPIResponseDelegate : LogoutAPIResponseDelegate?
     var profileData = ProfileData()
     var notificationDelegate : NotificationDelegate?
-
+    let interactor = RegisterInteractor()
     
     func fetchUserDetails() {
         delegate?.showProgressIndicator(message: LoadingIndicatorMessages.loadingProfileData)
@@ -65,6 +65,17 @@ class HomeDataInteractor : BaseInteractor{
             }
         }
         profileApi.fetchUserDetails(userId: AppEngine.sharedInstance.userID)
+    }
+    
+    func getMasterData() {
+        interactor.checkEmailVerification { result in
+            switch result {
+            case .success(let themeData):
+                appMasterData = themeData
+            case .failure(let error):
+                print("Failed to fetch theme: \(error.localizedDescription)")
+            }
+        }
     }
     
     func getNotificationList(page: Int) {
@@ -315,6 +326,8 @@ class HomeDataInteractor : BaseInteractor{
         }
         profileApi.updateDeviceToken(userId: AppEngine.sharedInstance.userID, deviceToken: token)
     }
+    
+    
 }
 enum HomeSection: Int, CaseIterable{
     case profile

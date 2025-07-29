@@ -97,7 +97,7 @@ class EventParticipantsController : ETViewController, cancelEventDelegete{
                 })
             case "By Training":
                 let trainings = self.interactor.getAvailableTrainings()
-                self.presentSelectionMenu(title: "Select Training", data: trainings, dismissHandler: { selectedTraining in
+                self.presentSelectionMenu(title: appMasterData?.trainingSelectionHeading ?? "", data: trainings, dismissHandler: { selectedTraining in
                     if(selectedTraining.first != nil){
                         self.interactor.filterByTraining(training: selectedTraining.first!)
                     }
