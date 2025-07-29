@@ -98,18 +98,29 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if settings[indexPath.section].settingsType == .more{
-            let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
-            vc.contentTitle = settings[indexPath.section].menuItems[indexPath.row].title ?? ""
+//            let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"InfoDisplayVC") as! InfoDisplayController
+//            vc.contentTitle = settings[indexPath.section].menuItems[indexPath.row].title ?? ""
+//            if indexPath.row == 0{
+//                let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
+//                vc.url = CheckoutApiConstants.TERMSANDCONDITIONS
+//                vc.screenTitle = ScreenTitle.TITLE_TERMS_N_CONDITIONS
+//                self.ext.pushViewController(viewController: vc)
+//                return
+//            }else if indexPath.row == 1{
+//                vc.text = AppConstants.PRIVACY_POLICY
+//            }else{
+//                vc.text = AppConstants.REFUND_POLICY
+//            }
+//            self.ext.pushViewController(viewController: vc)
+            
+            let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
+            
             if indexPath.row == 0{
-                let vc = self.ext.getViewController(storyBoard: "Settings", VCIdentifier:"TermsAndConditionViewController") as! TermsAndConditionViewController
                 vc.url = CheckoutApiConstants.TERMSANDCONDITIONS
                 vc.screenTitle = ScreenTitle.TITLE_TERMS_N_CONDITIONS
-                self.ext.pushViewController(viewController: vc)
-                return
             }else if indexPath.row == 1{
-                vc.text = AppConstants.PRIVACY_POLICY
-            }else{
-                vc.text = AppConstants.REFUND_POLICY
+                vc.url = CheckoutApiConstants.PRIVACY_POLICY
+                vc.screenTitle = ScreenTitle.TITLE_PRIVACY_POLICY
             }
             self.ext.pushViewController(viewController: vc)
         }

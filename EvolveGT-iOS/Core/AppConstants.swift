@@ -130,6 +130,8 @@ struct ScreenTitle{
     static let TITLE_COACH_DUTIES = "Coach Duties"
     static let TITLE_TERMS_N_CONDITIONS = "Terms & Conditions"
     static let TITLE_CANCELLATIONPOLICY = "Cancellation Policy"
+    static let TITLE_PRIVACY_POLICY = "Privacy Policy"
+
 
     static let TITLE_SETTINGS = "Settings"
     

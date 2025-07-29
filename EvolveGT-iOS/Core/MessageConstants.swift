@@ -47,8 +47,6 @@ struct MessageConstants {
 </p>
 """
     
-    
-    
 }
 
 struct ValidationErrors{
@@ -70,17 +68,22 @@ struct ValidationErrors{
     static let amaExpiryRequired = "Please select your AMA expiry date"
     static let mailingAddressRequired = "No mailing address found. Please add a new address"
     static let billingAddressRequired = "No billing address found. Please add a new address"
-     static let countryRequired = "Please select your country"
-     static let stateRequired = "Please select your state"
+    static let countryRequired = "Please select your country"
+    static let stateRequired = "Please select your state"
     static let cityRequired = "Please provide your city"
-     static let addressRequired = "Please provide your address"
+    static let addressRequired = "Please provide your address"
     static let postalCodeRequired = "Please provide your postal code"
     
     static let emptyNameAndLocation = "Please provide name and location of event"
     static let emptyLicense = "Please provide your license number"
     static let emptyLicenseIssuedState = "Please select license issued state"
-     static let incorrectConfirmPassword = "Password mismatch"
-     static let emptyPassword = "Please provide a valid password"
+    static let incorrectConfirmPassword = "Password mismatch"
+    static let emptyPassword = "Please provide a valid password"
+    
+    static let invalidExpertStatus = "Please provide a valid expert status"
+    static let invalidTransponderNo = "Please provide a valid transponder number"
+    static let invalidSponsor = "Please provide a valid sponsors"
+    static let invalidTeam = "Please provide a valid team"
 }
 
 //Mark: - Indicator Messages

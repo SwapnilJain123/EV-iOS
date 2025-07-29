@@ -8,6 +8,23 @@
 
 import Foundation
 
+class Bike: Codable {
+    let make: String
+    let model: String
+    let cc: String
+    let year: String
+    let transponder: String
+    
+    // Custom initializer
+    init(make: String, model: String, cc: String, year: String, transponder: String) {
+        self.make = make
+        self.model = model
+        self.cc = cc
+        self.year = year
+        self.transponder = transponder
+    }
+}
+
 class UserDetails: Codable {
     var userID, oldID: Int?
     var username, password: String?
@@ -36,6 +53,8 @@ class UserDetails: Codable {
     var customerID: String?
     var enableMyDuties: Bool?
     var status, evStaff, newsletter, everBeenTrack, day_worker: Int?
+    var bikes:[Bike]?
+    var region:String?
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
@@ -114,6 +133,8 @@ class UserDetails: Codable {
         case fullProfileImage = "full_profile_image"
         case customerID = "customer_number"
         case enableMyDuties = "enable_my_duties"
+        case bikes
+        case region
         
     }
     

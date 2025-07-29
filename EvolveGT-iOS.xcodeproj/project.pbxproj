@@ -786,6 +786,12 @@
 		5574BEC92DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */; };
 		5574BECA2DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */; };
 		5574BECB2DA14C5A003C5DE9 /* EventRiderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */; };
+		5586A1B82E34E74E00AB4C2A /* SponsorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586A1B72E34E74E00AB4C2A /* SponsorController.swift */; };
+		5586A1B92E34E74E00AB4C2A /* SponsorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586A1B72E34E74E00AB4C2A /* SponsorController.swift */; };
+		5586A1BA2E34E74E00AB4C2A /* SponsorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586A1B72E34E74E00AB4C2A /* SponsorController.swift */; };
+		5586A1BC2E34E75B00AB4C2A /* BikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586A1BB2E34E75B00AB4C2A /* BikeController.swift */; };
+		5586A1BD2E34E75B00AB4C2A /* BikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586A1BB2E34E75B00AB4C2A /* BikeController.swift */; };
+		5586A1BE2E34E75B00AB4C2A /* BikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586A1BB2E34E75B00AB4C2A /* BikeController.swift */; };
 		55AB31A32DB1756900422D39 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31A22DB1756900422D39 /* NotificationListResponse.swift */; };
 		55AB31A42DB1756900422D39 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31A22DB1756900422D39 /* NotificationListResponse.swift */; };
 		55AB31A52DB1756900422D39 /* NotificationListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB31A22DB1756900422D39 /* NotificationListResponse.swift */; };
@@ -1117,6 +1123,8 @@
 		45BD9641FEE51201C82C944D /* Pods-EvolveGT-QA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolveGT-QA.release.xcconfig"; path = "Target Support Files/Pods-EvolveGT-QA/Pods-EvolveGT-QA.release.xcconfig"; sourceTree = "<group>"; };
 		48749E7F76E1EEE4573EB984 /* Pods_EvolveGT_UAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolveGT_UAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5574BEC82DA14C4F003C5DE9 /* EventRiderQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRiderQuery.swift; sourceTree = "<group>"; };
+		5586A1B72E34E74E00AB4C2A /* SponsorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorController.swift; sourceTree = "<group>"; };
+		5586A1BB2E34E75B00AB4C2A /* BikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeController.swift; sourceTree = "<group>"; };
 		55AB31A22DB1756900422D39 /* NotificationListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListResponse.swift; sourceTree = "<group>"; };
 		55AB31AE2DB178A700422D39 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		55AB31AF2DB178A700422D39 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -1792,6 +1800,8 @@
 		104B8DCC2489327D008BE5DA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5586A1BB2E34E75B00AB4C2A /* BikeController.swift */,
+				5586A1B72E34E74E00AB4C2A /* SponsorController.swift */,
 				104B8DCD2489329A008BE5DA /* ProfileController.swift */,
 				104B8DCF248932BF008BE5DA /* Profile.storyboard */,
 				104B8DD1248ABE5D008BE5DA /* ProfileViewCells.swift */,
@@ -2638,9 +2648,11 @@
 				109EEDCB250263F000E84D2F /* WaiverApi.swift in Sources */,
 				1012EA9D27B43C93007220B3 /* EmergencyContactController.swift in Sources */,
 				109D6E86248635F1009446A0 /* GiftCardCell.swift in Sources */,
+				5586A1BE2E34E75B00AB4C2A /* BikeController.swift in Sources */,
 				10716FD9247AF8AF0032C056 /* ProductDetails.swift in Sources */,
 				1039FE20244F33A100190088 /* ApiConstsant.swift in Sources */,
 				100A2A262457674C00EF2B9F /* UpgradeSkillRequest.swift in Sources */,
+				5586A1B92E34E74E00AB4C2A /* SponsorController.swift in Sources */,
 				10D6013E2633F5460097D180 /* EventRaceClass.swift in Sources */,
 				103B26B3249B62EF00BB8CB9 /* InfoDisplayController.swift in Sources */,
 				10048F35246EC50D00684A87 /* ShopsItemRequest.swift in Sources */,
@@ -2715,6 +2727,7 @@
 				103B24EA249940BE00BB8CB9 /* TextFieldExtension.swift in Sources */,
 				103B24EB249940BE00BB8CB9 /* AppConstants.swift in Sources */,
 				103B24EC249940BE00BB8CB9 /* ProfileController.swift in Sources */,
+				5586A1BD2E34E75B00AB4C2A /* BikeController.swift in Sources */,
 				105D84FF27A1468400B269AA /* ShowPassportInteractor.swift in Sources */,
 				103B24ED249940BE00BB8CB9 /* CompletedEvent.swift in Sources */,
 				103B24EE249940BE00BB8CB9 /* CompletedEventCell.swift in Sources */,
@@ -2796,6 +2809,7 @@
 				103B2529249940BE00BB8CB9 /* Event.swift in Sources */,
 				103B252A249940BE00BB8CB9 /* UISwitchExtension.swift in Sources */,
 				103B252B249940BE00BB8CB9 /* SignatureReaderController.swift in Sources */,
+				5586A1BA2E34E74E00AB4C2A /* SponsorController.swift in Sources */,
 				103B252C249940BE00BB8CB9 /* CheckoutApiConstant.swift in Sources */,
 				103B252D249940BE00BB8CB9 /* TabbedViewController.swift in Sources */,
 				103B252E249940BE00BB8CB9 /* ForgotPasswordController.swift in Sources */,
@@ -2946,6 +2960,7 @@
 				103B25C6249940CC00BB8CB9 /* CartApiConstant.swift in Sources */,
 				10BB1270251BC1CE00320A84 /* RegisterInteractor.swift in Sources */,
 				103B25C7249940CC00BB8CB9 /* ProfileViewCells.swift in Sources */,
+				5586A1B82E34E74E00AB4C2A /* SponsorController.swift in Sources */,
 				103B25C8249940CC00BB8CB9 /* PwdResetAckController.swift in Sources */,
 				103B25C9249940CC00BB8CB9 /* ApiClient.swift in Sources */,
 				103B25CA249940CC00BB8CB9 /* AlertService.swift in Sources */,
@@ -3139,6 +3154,7 @@
 				10A551CF250F52DE0049C3DB /* SignViewController.swift in Sources */,
 				10D6012026305C360097D180 /* TransferAmountSuccessViewController.swift in Sources */,
 				103B2664249940CC00BB8CB9 /* LoginResponse.swift in Sources */,
+				5586A1BC2E34E75B00AB4C2A /* BikeController.swift in Sources */,
 				103B2665249940CC00BB8CB9 /* DropDownList.swift in Sources */,
 				103B2666249940CC00BB8CB9 /* EventDetailsController.swift in Sources */,
 				10A551A9250648AF0049C3DB /* RegistrationCells.swift in Sources */,
@@ -3329,7 +3345,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.7;
+				MARKETING_VERSION = 2.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3356,7 +3372,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.7;
+				MARKETING_VERSION = 2.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.appstore;
 				PRODUCT_NAME = EvolveGT;
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct Sponsor: Codable {
+    let id: Int
+    let name: String
+}
+
 struct ThemeData: Codable {
     let bottomCaption1: String?
     let bottomCaption2: String?
@@ -31,6 +36,7 @@ struct ThemeData: Codable {
     let payMode: String?
     let payPalClientId: String?
     let payPalSecretKey: String?
+    let allSponsors: [Sponsor]?
     
     enum CodingKeys: String, CodingKey {
         case bottomCaption1, bottomCaption2, eWaiver, eEmailVerification
@@ -44,6 +50,7 @@ struct ThemeData: Codable {
         case raceOrganizationEmail = "race_organization_email"
         case licenseTitle = "license_title"
         case payMode, payPalClientId, payPalSecretKey
+        case allSponsors
     }
 }
 

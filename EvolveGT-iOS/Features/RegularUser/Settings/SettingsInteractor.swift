@@ -85,8 +85,8 @@ class SettingsItem{
         item.settingsType = .more
         let termsPolicy = UserPreference(id: 1, title: "Terms of Use", status: 1)
         let privacyPolicy = UserPreference(id: 2, title: "Privacy Policy", status: 1)
-        let refundPolicy = UserPreference(id: 3, title: "Refund Policy", status: 1)
-        item.menuItems = [termsPolicy, privacyPolicy, refundPolicy]
+      //  let refundPolicy = UserPreference(id: 3, title: "Refund Policy", status: 1)
+        item.menuItems = [termsPolicy, privacyPolicy]
         return item
     }
     
