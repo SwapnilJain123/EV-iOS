@@ -18,3 +18,11 @@ class ViewController: UIViewController {
 
 }
 
+
+
+//do {
+//    let decoded = try JSONDecoder().decode(EventDetails.self, from: response!)
+//    print("success")
+//   } catch {
+//       print("Decoding failed with error: \(error)")
+//   }

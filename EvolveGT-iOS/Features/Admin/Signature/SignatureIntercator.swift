@@ -27,6 +27,7 @@ class SignatureIntercator : BaseInteractor{
              self.delegate?.hideEmptyPageError()
             if error == nil{
                 Log.i("Signature Request Success - ")
+                
                 if let signatureResponse = self.decodeFromJson(response!, modelType: SignatureResponse.self), var signature = signatureResponse.signature{
                     
                     signature = signature.replacingOccurrences(of: AppConstants.ImageTag, with: "")

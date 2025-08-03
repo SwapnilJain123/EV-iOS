@@ -202,7 +202,7 @@ class MrlData: Codable{
     var userID : String?
     var season : String?
     var slug : String?
-    var membershipId : String?
+    var membershipId : Int?
     
     enum CodingKeys: String, CodingKey {
         case membership = "membership"
