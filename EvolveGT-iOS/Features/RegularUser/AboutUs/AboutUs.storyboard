@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About Us View Controller-->
+        <scene sceneID="DMM-x0-fB6">
+            <objects>
+                <viewController storyboardIdentifier="aboutUsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mOI-b3-G6A" customClass="AboutUsViewController" customModule="EvolveGT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dMb-lQ-oRr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg2" translatesAutoresizingMaskIntoConstraints="NO" id="qI1-JY-m19">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Cz-Bw-wx0">
+                                <rect key="frame" x="107" y="345" width="200" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="VFB-5a-QxW"/>
+                                    <constraint firstAttribute="width" constant="200" id="WkF-Xz-NLC"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u9x-Jb-7SM">
+                                <rect key="frame" x="30" y="762" width="354" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 854" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DW-Jt-lgV">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latest version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkR-hz-cJf">
+                                        <rect key="frame" x="0.0" y="33" width="354" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Cl1-5T-nKm"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="amC-7M-f5k"/>
+                        <color key="backgroundColor" name="RootBackGround"/>
+                        <constraints>
+                            <constraint firstItem="qI1-JY-m19" firstAttribute="leading" secondItem="amC-7M-f5k" secondAttribute="leading" id="6fo-KZ-DiM"/>
+                            <constraint firstItem="2Cz-Bw-wx0" firstAttribute="centerY" secondItem="amC-7M-f5k" secondAttribute="centerY" id="Etz-bg-j3P"/>
+                            <constraint firstAttribute="bottom" secondItem="qI1-JY-m19" secondAttribute="bottom" id="J7h-xb-Zgw"/>
+                            <constraint firstItem="2Cz-Bw-wx0" firstAttribute="centerX" secondItem="amC-7M-f5k" secondAttribute="centerX" id="KTg-tw-Qb1"/>
+                            <constraint firstItem="qI1-JY-m19" firstAttribute="top" secondItem="dMb-lQ-oRr" secondAttribute="top" id="PxN-A7-T3J"/>
+                            <constraint firstItem="amC-7M-f5k" firstAttribute="trailing" secondItem="qI1-JY-m19" secondAttribute="trailing" id="WIq-Qv-Sc5"/>
+                            <constraint firstItem="u9x-Jb-7SM" firstAttribute="leading" secondItem="dMb-lQ-oRr" secondAttribute="leadingMargin" constant="10" id="amM-Wa-q7F"/>
+                            <constraint firstItem="amC-7M-f5k" firstAttribute="bottom" secondItem="u9x-Jb-7SM" secondAttribute="bottom" constant="50" id="goh-xO-W4v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u9x-Jb-7SM" secondAttribute="trailing" constant="10" id="knv-7Z-w4a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutUsLogo" destination="2Cz-Bw-wx0" id="amE-Rm-sGD"/>
+                        <outlet property="updateLabel" destination="kkR-hz-cJf" id="Bdn-HV-zO5"/>
+                        <outlet property="versionLabel" destination="9DW-Jt-lgV" id="oIc-2G-37O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIa-UU-0Da" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210.1449275362319" y="148.66071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash_bg2" width="518" height="920"/>
+        <image name="splash_logo" width="780" height="1191"/>
+        <namedColor name="RootBackGround">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
